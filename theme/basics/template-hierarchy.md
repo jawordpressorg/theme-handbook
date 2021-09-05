@@ -3,24 +3,30 @@
 -->
 # テンプレート階層
 
-<!--
+<!--　
 As discussed, [template files](https://developer.wordpress.org/themes/basics/template-files/ "Template files page") are modular, reusable files, used to generate the web pages on your WordPress site. Some template files (such as the header and footer template) are used on all of your site’s pages, while others are used only under specific conditions.
 -->
 前述のとおり、[テンプレートファイル](https://developer.wordpress.org/themes/basics/template-files/ "テンプレートファイルのページ")は、モジュール式の再利用可能なファイルで、WordPress　サイトの　Web　ページを生成するために使用されます。テンプレートファイルには、ヘッダーやフッターのテンプレートなど、サイトのすべてのページで使用されるものと、特定の条件下でのみ使用されるものがあります。
 
-<!--
+<!--　
 This article explains **how WordPress determines which template file(s) to use on individual pages**. If you want to customize an existing WordPress theme it will help you decide which template file needs to be edited.
 -->
 この記事では、**WordPress　が個々のページで使用するテンプレートファイルを決定する方法**について説明します。既存の　WordPress　テーマをカスタマイズしたい場合に、どのテンプレートファイルを編集する必要があるかを判断するのに役立ちます。
 
-<!--
+<!--　
 Tip: You can also use [Conditional Tags](https://developer.wordpress.org/themes/basics/conditional-tags/ "Conditional Tags") to control which templates are loaded on a specific page.
 -->
 ヒント：[条件付きタグ](https://developer.wordpress.org/themes/basics/conditional-tags/ "条件付きタグ")を使って、特定のページでどのテンプレートを読み込むかをコントロールすることもできます。
 
+<!-- 
 ## The Template File Hierarchy
+-->
+## テンプレートファイル階層
 
+<!-- 
 ### Overview
+-->
+### 概要
 
 WordPress uses the [query string](https://wordpress.org/support/article/glossary/#query-string) to decide which template or set of templates should be used to display the page. The query string is information that is contained in the link to each part of your website.
 
@@ -38,7 +44,10 @@ When you are using a [child theme](https://developer.wordpress.org/themes/advan
 If a child theme contains the specific template such as `category-unicorns.php` and the parent theme contains lower prioritized template such as `category.php`, then child theme’s `category-unicorns.php` is used.  
 Contrary, if a child theme contains general template only such as `category.php` and the parent theme contains the specific one such as `category-unicorns.php`, then parent’s template `category-unicorns.php` is used.
 
+<!--
 ### Examples
+-->
+### 例
 
 If your blog is at `http://example.com/blog/` and a visitor clicks on a link to a category page such as `http://example.com/blog/category/your-cat/`, WordPress looks for a template file in the current theme’s directory that matches the category’s ID to generate the correct page. More specifically, WordPress follows this procedure:
 
@@ -48,7 +57,10 @@ If your blog is at `http://example.com/blog/` and a visitor clicks on a link to 
 4.  If `category.php` does not exist, WordPress will look for a generic archive template, `archive.php`.
 5.  If `archive.php` is also missing, WordPress will fall back to the main theme template file, `index.php`.
 
+<!-- 
 ### Visual Overview
+-->
+### 外観図
 
 The following diagram shows which template files are called to generate a WordPress page based on the WordPress template hierarchy.
 
@@ -56,11 +68,17 @@ The following diagram shows which template files are called to generate a WordPr
 
 You can also [interact with this diagram](http://wphierarchy.com/).
 
+<!--
 ## The Template Hierarchy In Detail
+-->
+## テンプレート階層の詳細
 
 While the template hierarchy is easier to understand as a diagram, the following sections describe the order in which template files are called by WordPress for a number of query types.
 
+<!-- 
 ### Home Page display
+-->
+### ホームページ表示
 
 By default, WordPress sets your site’s home page to display your latest blog posts. This page is called the blog posts index. You can also set your blog posts to display on a separate static page. The template file `home.php` is used to render the blog posts index, whether it is being used as the front page or on separate static page. If `home.php` does not exist, WordPress will use `index.php`.
 
@@ -69,7 +87,10 @@ By default, WordPress sets your site’s home page to display your latest blog p
 
 Note: If `front-page.php` exists, it will override the `home.php` template.
 
+<!-- 
 ### Front Page display
+-->
+### フロントページ表示
 
 The `front-page.php` template file is used to render your site’s front page, whether the front page displays the blog posts index (mentioned above) or a static page. The front page template takes precedence over the blog posts index (`home.php`) template. If the `front-page.php` file does not exist, WordPress will either use the `home.php` or `page.php` files depending on the setup in Settings → Reading. If neither of those files exist, it will use the `index.php` file.
 
@@ -80,7 +101,10 @@ The `front-page.php` template file is used to render your site’s front page, w
 
 As you can see, there are a lot of rules to what path WordPress takes. Using the chart above is the best way to determine what WordPress will display.
 
+<!--
 ### Privacy Policy Page display
+-->
+### プライバシーポリシーページ表示
 
 The `privacy-policy.php` template file is used to render your site’s Privacy Policy page. The Privacy Policy page template takes precedence over the static page (`page.php`) template. If the `privacy-policy.php` file does not exist, WordPress will either use the `page.php` or `singular.php` files depending on the available templates. If neither of those files exist, it will use the `index.php` file.
 
@@ -92,7 +116,10 @@ The `privacy-policy.php` template file is used to render your site’s Privacy P
 6.  `singular.php`
 7.  `index.php`
 
+<!--
 ### Single Post
+-->
+### 個別投稿表示
 
 The single post template file is used to render a single post. WordPress uses the following path:
 
@@ -102,7 +129,10 @@ The single post template file is used to render a single post. WordPress uses th
 4.  `singular.php` – Then it falls back to `singular.php`.
 5.  `index.php` – Finally, as mentioned above, WordPress ultimately falls back to `index.php`.
 
+<!--　
 ### Single Page
+-->
+### 個別ページ表示
 
 The template file used to render a static page (`page` post-type). Note that unlike other post-types, `page` is special to WordPress and uses the following path:
 
@@ -113,7 +143,10 @@ The template file used to render a static page (`page` post-type). Note that unl
 5.  `singular.php`
 6.  `index.php`
 
+<!-- 
 ### Category
+-->
+### カテゴリー表示
 
 Rendering category archive index pages uses the following path in WordPress:
 
@@ -123,7 +156,10 @@ Rendering category archive index pages uses the following path in WordPress:
 4.  `archive.php`
 5.  `index.php`
 
+<!--
 ### Tag
+-->
+### タグ表示
 
 To display a tag archive index page, WordPress uses the following path:
 
@@ -133,7 +169,10 @@ To display a tag archive index page, WordPress uses the following path:
 4.  `archive.php`
 5.  `index.php`
 
+<!-- 
 ### Custom Taxonomies
+-->
+### カスタムタクソノミー表示
 
 [Custom taxonomies](https://developer.wordpress.org/themes/basics/categories-tags-custom-taxonomies/) use a slightly different template file path:
 
@@ -143,7 +182,10 @@ To display a tag archive index page, WordPress uses the following path:
 4.  `archive.php`
 5.  `index.php`
 
+<!-- 
 ### Custom Post Types
+-->
+### カスタム投稿タイプ表示
 
 [Custom Post Types](https://developer.wordpress.org/themes/basics/post-types/) use the following path to render the appropriate archive index page.
 
@@ -153,7 +195,10 @@ To display a tag archive index page, WordPress uses the following path:
 
 (For rendering a single post type template, refer to the [single post display](#single-post "Single Post Display") section above.)
 
+<!-- 
 ### Author display
+-->
+### 作成者表示
 
 Based on the above examples, rendering author archive index pages is fairly explanatory:
 
@@ -163,7 +208,10 @@ Based on the above examples, rendering author archive index pages is fairly expl
 4.  `archive.php`
 5.  `index.php`
 
+<!--
 ### Date
+-->
+### 日付別表示
 
 Date-based archive index pages are rendered as you would expect:
 
@@ -171,21 +219,29 @@ Date-based archive index pages are rendered as you would expect:
 2.  `archive.php`
 3.  `index.php`
 
+<!-- 
 ### Search Result
+-->
+### 検索結果表示
 
 Search results follow the same pattern as other template types:
 
 1.  `search.php`
 2.  `index.php`
 
+<!-- 
 ### 404 (Not Found)
-
+-->
+### 404 (Not Found) 表示
 Likewise, 404 template files are called in this order:
 
 1.  `404.php`
 2.  `index.php`
 
+<!-- 
 ### Attachment
+-->
+### 添付ファイル表示
 
 Rendering an attachment page (`attachment` post-type) uses the following path:
 
@@ -200,6 +256,9 @@ Rendering an attachment page (`attachment` post-type) uses the following path:
 6.  `singular.php`
 7.  `index.php`
 
+<!-- 
+### Embeds
+-->
 ### Embeds
 
 The embed template file is used to render a post which is being embedded. Since 4.5, WordPress uses the following path:
@@ -209,7 +268,10 @@ The embed template file is used to render a post which is being embedded. Since
 3.  `embed.php` – WordPress then falls back to embed`.php`.
 4.  Finally, WordPress ultimately falls back to its own `wp-includes/theme-compat/embed.php` template.
 
+<!-- 
 ## Non-ASCII Character Handling
+-->
+## 非ASCII文字の取り扱い
 
 Since WordPress 4.7, any dynamic part of a template name which includes non-ASCII characters in its name actually supports both the un-encoded and the encoded form, in that order. You can choose which to use.
 
@@ -223,7 +285,10 @@ Here’s the page template hierarchy for a page named “Hello World 😀” wit
 
 The same behaviour applies to post slugs, term names, and author nicenames.
 
+<!-- 
 ## Filter Hierarchy
+-->
+## 階層のフィルター
 
 The WordPress template system lets you filter the hierarchy. This means that you can insert and change things at specific points of the hierarchy. The filter (located in the [`get_query_template()`](https://developer.wordpress.org/reference/functions/get_query_template/) function) uses this filter name: `"{$type}_template"` where `$type` is the template type.
 
@@ -247,7 +312,10 @@ Here is a list of all available filters in the template hierarchy:
 *   `archive_template`
 *   `index_template`
 
+<!-- 
 ### Example
+-->
+### 例
 
 For example, let’s take the default author hierarchy:
 
