@@ -1,13 +1,22 @@
-<--
+<!--　
 # Template Hierarchy
---->
+-->
 # テンプレート階層
 
+<!--
 As discussed, [template files](https://developer.wordpress.org/themes/basics/template-files/ "Template files page") are modular, reusable files, used to generate the web pages on your WordPress site. Some template files (such as the header and footer template) are used on all of your site’s pages, while others are used only under specific conditions.
+-->
+前述のとおり、[テンプレートファイル](https://developer.wordpress.org/themes/basics/template-files/ "テンプレートファイルのページ")は、モジュール式の再利用可能なファイルで、WordPress　サイトの　Web　ページを生成するために使用されます。テンプレートファイルには、ヘッダーやフッターのテンプレートなど、サイトのすべてのページで使用されるものと、特定の条件下でのみ使用されるものがあります。
 
+<!--
 This article explains **how WordPress determines which template file(s) to use on individual pages**. If you want to customize an existing WordPress theme it will help you decide which template file needs to be edited.
+-->
+この記事では、**WordPress　が個々のページで使用するテンプレートファイルを決定する方法**について説明します。既存の　WordPress　テーマをカスタマイズしたい場合に、どのテンプレートファイルを編集する必要があるかを判断するのに役立ちます。
 
-Tip: You can also use [Conditional Tags](https://developer.wordpress.org/themes/basics/conditional-tags/ "Conditional Tags") to control which templates are loaded on a specific page.
+<!--
+Tip: You can also use [Conditional Tags](https://developer.wordpress.org/themes/basics/conditional-tags/ "Conditional Tags") to control which templates are loaded on a specific page.
+-->
+ヒント：[条件付きタグ](https://developer.wordpress.org/themes/basics/conditional-tags/ "条件付きタグ")を使って、特定のページでどのテンプレートを読み込むかをコントロールすることもできます。
 
 ## The Template File Hierarchy
 
