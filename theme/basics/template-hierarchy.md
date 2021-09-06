@@ -28,21 +28,43 @@ Tip: You can also use [Conditional Tags](https://developer.wordpress.org/themes/
 -->
 ### 概要
 
+<!-- 
 WordPress uses the [query string](https://wordpress.org/support/article/glossary/#query-string) to decide which template or set of templates should be used to display the page. The query string is information that is contained in the link to each part of your website.
+-->
+WordPress は、[クエリ文字列](https://wordpress.org/support/article/glossary/#query-string) を使用して、どのテンプレートまたはテンプレートのセットを使用してページを表示するかを決定します。クエリ文字列は、ウェブサイトの各部分へのリンクに含まれる情報です。
 
+<!-- 
 Put simply, WordPress searches down through the template hierarchy until it finds a matching template file. To determine which template file to use, WordPress:
+-->
+簡単に言うと、WordPress はテンプレートの階層を検索して、一致するテンプレートファイルを見つけます。 どのテンプレートファイルを使用するかを決定するために、WordPress:
 
+<!-- 
 1.  Matches every query string to a query type to decide which page is being requested (for example, a search page, a category page, etc);
 2.  Selects the template in the order determined by the template hierarchy;
 3.  Looks for template files with specific names in the current theme’s directory and uses the **first matching template file** as specified by the hierarchy.
+-->
+1.  すべてのクエリ文字列をクエリタイプにマッチさせ、どのページがリクエストされているかを判断します（例：検索ページ、カテゴリページなど）。
+2.  テンプレート階層で決められた順序でテンプレートを選択する。
+3.  現在のテーマのディレクトリ内で特定の名前のテンプレートファイルを探し、階層で指定された**最初にマッチするテンプレートファイル**を使用する。
 
+<!-- 
 With the exception of the basic `index.php` template file, you can choose whether you want to implement a particular template file or not.
+-->
+基本的な `index.php` テンプレートファイルを除いて、特定のテンプレートファイルを実装するかどうかを選択できます。
 
+<!-- 
 If WordPress cannot find a template file with a matching name, it will skip to the next file in the hierarchy. If WordPress cannot find any matching template file, the theme’s `index.php` file will be used.
+-->
+一致する名前のテンプレートファイルが見つからない場合、WordPress は次の階層のファイルにスキップします。一致するテンプレートファイルが見つからない場合は、テーマの `index.php` ファイルが使用されます。
 
+<!--
 When you are using a [child theme](https://developer.wordpress.org/themes/advanced-topics/child-themes/), any file you add to your child theme will over-ride the same file in the parent theme. For example, both themes contain the same template `category.php`, then child theme’s template is used.  
 If a child theme contains the specific template such as `category-unicorns.php` and the parent theme contains lower prioritized template such as `category.php`, then child theme’s `category-unicorns.php` is used.  
 Contrary, if a child theme contains general template only such as `category.php` and the parent theme contains the specific one such as `category-unicorns.php`, then parent’s template `category-unicorns.php` is used.
+-->
+[子テーマ](https://developer.wordpress.org/themes/advanced-topics/child-themes/)を使用している場合、子テーマに追加したファイルは、親テーマの同じファイルよりも優先されます。例えば、両方のテーマに同じテンプレート `category.php` がある場合、子テーマのテンプレートが使われます。 
+子テーマが `category-unicorns.php` のような特定のテンプレートを含み、親テーマが `category.php` のような優先順位の低いテンプレートを含む場合、子テーマの `category-unicorns.php` が使用されます。 
+逆に、子テーマが `category.php` のような一般的なテンプレートのみを含み、親テーマが `category-unicorns.php` のような特定のテンプレートを含む場合は、親テーマのテンプレート `category-unicorns.php` が使用されます。
 
 <!--
 ### Examples
