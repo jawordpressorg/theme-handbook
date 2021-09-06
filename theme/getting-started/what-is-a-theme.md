@@ -1,9 +1,13 @@
-# What is a Theme?
+<!-- # What is a Theme? -->
+# テーマとは
 
-A WordPress theme changes the design of your website, often including its layout. Changing your theme changes how your site looks on the front-end, i.e. what a visitor sees when they browse to your site on the web. There are thousands of free WordPress themes in the [WordPress.org Theme Directory](https://wordpress.org/themes/), though many WordPress sites use custom themes.
+<!-- A WordPress theme changes the design of your website, often including its layout. Changing your theme changes how your site looks on the front-end, i.e. what a visitor sees when they browse to your site on the web. There are thousands of free WordPress themes in the [WordPress.org Theme Directory](https://wordpress.org/themes/), though many WordPress sites use custom themes. -->
+WordPress のテーマは、Web サイトのデザインを変更するもので、多くの場合、そのレイアウトも含みます。テーマを変更すると、フロントエンドでのサイトの見え方が変わります。つまり、訪問者がウェブ上であなたのサイトを閲覧したときに見えるものということです。多くの WordPress サイトはカスタムテーマを使用していますが、WordPress.org のテーマディレクトリには何千もの無料の WordPress テーマがあります。
 
-## What can themes do?
+<!-- ## What can themes do? -->
+## テーマでできること
 
+<!-- 
 Themes take the content and data stored by WordPress and display it in the browser. When you create a WordPress theme, you decide how that content looks and is displayed. There are many options available to you when building your theme. For example:
 
 *   Your theme can have different layouts, such as static or responsive, using one column or two.
@@ -13,13 +17,28 @@ Themes take the content and data stored by WordPress and display it in the brows
 *   Other design elements like images and videos can be included anywhere in your theme.
 
 WordPress themes are incredibly powerful. But, as with every web design project, a theme is more than color and layout. Good themes improve engagement with your website’s content *in addition* to being beautiful.
+-->
+テーマは、WordPress が保存しているコンテンツやデータを、ブラウザに表示します。WordPress のテーマを作成すると、そのコンテンツがどのように見えるか、どのように表示されるかが決まります。テーマを構築する際には、さまざまなオプションが用意されています。例えば、以下のようなものがあります。
 
-## What are themes made of?
+* テーマには、静的レイアウトやレスポンシブレイアウト、1列や2列のレイアウトなど、さまざまなレイアウトを設定できる。
+* テーマでは、コンテンツを表示したい場所に表示することができる。
+* テーマでは、コンテンツが表示されるデバイスやアクションを指定できる。
+* タイポグラフィやデザイン要素をCSSでカスタマイズできる。
+* 画像や動画などのデザイン要素を、テーマのどこにでも入れることができる。
 
-At their most basic level, WordPress themes are collections of different files that work together to create what you see, as well as how your site behaves.
+WordPress のテーマは非常に強力です。しかし、他のウェブデザインプロジェクトと同様に、テーマは色やレイアウトだけではありません。優れたテーマは、美しさに加えて、ウェブサイトのコンテンツへのエンゲージメントを高めます。
 
-### Required files
 
+<!-- ## What are themes made of? -->
+## テーマは何でできているの？
+
+<!-- At their most basic level, WordPress themes are collections of different files that work together to create what you see, as well as how your site behaves. -->
+WordPressテーマは、最も基本的なレベルではさまざまなファイルの集合体であり、それらが連動してサイトの表示や動作を作ります。
+
+<!-- ### Required files -->
+### 必要なファイル
+
+<!--
 There are only **two files absolutely required in a WordPress** theme:
 
 1.  `index.php` – the main template file
@@ -32,7 +51,21 @@ Though not required, you may see additional files in a theme’s folder includin
 *   CSS files
 *   Graphics
 *   JavaScript
-*   Text files – usually license info*,* `readme.txt` instructions, and a changelog file
+*   Text files – usually license info*,* `readme.txt` instructions, and a changelog file
+-->
+
+WordPress テーマに **絶対に必要な2つのファイル** は:
+
+1.  `index.php` – テンプレートのメインファイル
+2.  `style.css` – メインのスタイルファイル
+
+必須ではありませんが、テーマのフォルダ内に以下のような追加ファイルが表示される場合があります。
+*   PHP ファイル - [テンプレートファイル](https://developer.wordpress.org/themes/basics/template-files/ "Template Files Page")として読み込まれます
+*   [ローカライゼーションファイル](https://developer.wordpress.org/theme/functionality/localization/ "Link to the localization section of the theme developer handbook")
+*   CSS ファイル
+*   グラフィック
+*   JavaScript
+*   テキストファイル – `readme.txt` 説明などのライセンス情報や変更のログファイルによく使われます
 
 ## What is the difference between a theme and a plugin?
 
