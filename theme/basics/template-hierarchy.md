@@ -95,33 +95,55 @@ You can also [interact with this diagram](http://wphierarchy.com/).
 -->
 ## テンプレート階層の詳細
 
+<!-- 
 While the template hierarchy is easier to understand as a diagram, the following sections describe the order in which template files are called by WordPress for a number of query types.
+-->
+テンプレートの階層は図で見るとわかりやすいのですが、以下のセクションでは、いくつかのクエリタイプに対して WordPress からテンプレートファイルが呼び出される順番を説明します。
 
 <!-- 
 ### Home Page display
 -->
 ### ホームページ表示
 
+<!-- 
 By default, WordPress sets your site’s home page to display your latest blog posts. This page is called the blog posts index. You can also set your blog posts to display on a separate static page. The template file `home.php` is used to render the blog posts index, whether it is being used as the front page or on separate static page. If `home.php` does not exist, WordPress will use `index.php`.
+-->
+WordPress のデフォルトでは、サイトのトップページに最新のブログ投稿が表示されるように設定されています。このページをブログ投稿インデックスと呼びます。また、ブログ投稿を別の固定ページに表示するように設定することもできます。ブログ投稿インデックスの表示には、テンプレートファイル `home.php` が使用されますが、これはフロントページとして使用する場合も、別の固定ページとして使用する場合も同じです。home.php` が存在しない場合、WordPress は `index.php` を使用します。
 
 1.  `home.php`
 2.  `index.php`
 
+<!--
 Note: If `front-page.php` exists, it will override the `home.php` template.
+-->
+注意: `front-page.php` が存在する場合は、 `home.php` テンプレートが上書きされます。
 
 <!-- 
 ### Front Page display
 -->
 ### フロントページ表示
 
+<!--
 The `front-page.php` template file is used to render your site’s front page, whether the front page displays the blog posts index (mentioned above) or a static page. The front page template takes precedence over the blog posts index (`home.php`) template. If the `front-page.php` file does not exist, WordPress will either use the `home.php` or `page.php` files depending on the setup in Settings → Reading. If neither of those files exist, it will use the `index.php` file.
+-->
+`front-page.php` テンプレートファイルはサイトのフロントページの表示に使用されます。フロントページは(上述の)ブログ投稿インデックスか、固定ページを表示します。フロントページのテンプレートは、ブログ投稿インデックス（`home.php`）のテンプレートよりも優先されます。`front-page.php` ファイルが存在しない場合、WordPress は 設定 > 表示設定 での設定に応じて`home.php`または`page.php`ファイルを使用します。もしこれらのファイルが何方も存在しない場合は、`index.php`ファイルを使用します。
 
+<!--
 1.  `front-page.php` – Used for both “**your latest posts**” or “**a static page**” as set in the **front page displays** section of Settings → Reading.
 2.  `home.php` – If WordPress cannot find `front-page.php` and “**your latest posts**” is set in the **front page displays** section, it will look for `home.php`. Additionally, WordPress will look for this file when the **posts page** is set in the **front page displays** section.
 3.  `page.php` – When “**front page**” is set in the **front page displays** section.
 4.  `index.php` – When “**your latest posts**” is set in the **front page displays** section but `home.php` does not exist *or* when **front page** is set but `page.php` does not exist.
+-->
 
+1. `front-page.php` - 設定 > 表示設定 セクションで「**フロントページの表示**」が「**最新の投稿**」または「**固定ページ**」どちらになっている場合でも使われる。
+2. `home.php` - WordPress が　`front-page.php` を見つけられず、且つ「**フロントページの表示**」セクションで「**最新の投稿**」が設定されている場合、`home.php` を参照します。加えて、WordPress は「**フロントページの表示**」セクションで「**投稿ページ**」が設定されている場合にもこのファイルを参照します。
+3. `page.php` – 「**フロントページの表示**」セクションで**フロントページ**が設定されている場合。
+4. `index.php` – 「**フロントページの表示**」セクションで「**最新の投稿**」が設定されており、且つ `home.php` が存在しない場合。または**フロントページ**が設定されているが `page.php` が存在しない場合。
+
+<!--
 As you can see, there are a lot of rules to what path WordPress takes. Using the chart above is the best way to determine what WordPress will display.
+-->
+このように、WordPressがどのような経路をとるかには多くのルールがあります。上の図を使用することは、WordPress が何を表示するかを特定する最良の方法です。
 
 <!--
 ### Privacy Policy Page display
