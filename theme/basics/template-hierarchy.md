@@ -71,21 +71,32 @@ Contrary, if a child theme contains general template only such as `category.php
 -->
 ### 例
 
+<!--
 If your blog is at `http://example.com/blog/` and a visitor clicks on a link to a category page such as `http://example.com/blog/category/your-cat/`, WordPress looks for a template file in the current theme’s directory that matches the category’s ID to generate the correct page. More specifically, WordPress follows this procedure:
+-->
+ブログの　URL　が`http://example.com/blog/`で、訪問者が`http://example.com/blog/category/your-cat/`などのカテゴリーページへのリンクをクリックした場合、WordPress はテーマのディレクトリ内で、カテゴリーの　ID　に一致するテンプレートファイルを探し、正しいページを生成します。具体的には、WordPress　は次の順序に従います。
 
+<!--
 1.  Looks for a template file in the current theme’s directory that matches the category’s slug. If the category slug is “unicorns,” then WordPress looks for a template file named `category-unicorns.php`.
 2.  If `category-unicorns.php` is missing and the category’s ID is 4, WordPress looks for a template file named `category-4.php`.
 3.  If `category-4.php` is missing, WordPress will look for a generic category template file, `category.php`.
 4.  If `category.php` does not exist, WordPress will look for a generic archive template, `archive.php`.
 5.  If `archive.php` is also missing, WordPress will fall back to the main theme template file, `index.php`.
+-->
+1.  現在のテーマのディレクトリ内で、カテゴリーのスラッグに一致するテンプレートファイルを探します。もしカテゴリーのスラッグが「unicorns」であれば、WordPress　は`category-unicorns.php`という名前のテンプレートファイルを探します。
+2. `category-unicorns.php`がなく、カテゴリの　ID　が4の場合、WordPress　は `category-4.php` という名前のテンプレートファイルを探します。
+3. `category-4.php`がない場合、WordPress　は一般的なカテゴリーのテンプレートファイルである`category.php`を探します。
+4. `category.php`が存在しない場合、WordPress　は一般的なアーカイブのテンプレートである　`archive.php`を探します。
+5. `archive.php`も見つからない場合、WordPress　はテーマのメインテンプレートファイルである`index.php`で処理します。
 
 <!-- 
 ### Visual Overview
 -->
 ### 外観図
-
+<!-- 
 The following diagram shows which template files are called to generate a WordPress page based on the WordPress template hierarchy.
-
+-->
+以下の図では、WordPress　のテンプレート階層に基づいて、どのテンプレートファイルが呼び出されて　WordPress　のページが生成されるかを表しています。
 [![](https://developer.wordpress.org/files/2014/10/Screenshot-2019-01-23-00.20.04-1024x639.png)](https://developer.wordpress.org/files/2014/10/Screenshot-2019-01-23-00.20.04.png)
 
 You can also [interact with this diagram](http://wphierarchy.com/).
@@ -150,12 +161,24 @@ As you can see, there are a lot of rules to what path WordPress takes. Using the
 -->
 ### プライバシーポリシーページ表示
 
+<!--
 The `privacy-policy.php` template file is used to render your site’s Privacy Policy page. The Privacy Policy page template takes precedence over the static page (`page.php`) template. If the `privacy-policy.php` file does not exist, WordPress will either use the `page.php` or `singular.php` files depending on the available templates. If neither of those files exist, it will use the `index.php` file.
+-->
+`privacy-policy.php` テンプレートファイルは、あなたのサイトのプライバシーポリシーページをレンダリングするために使われます。プライバシーポリシーページのテンプレートは、静的ページ（`page.php`）のテンプレートよりも優先されます。`privacy-policy.php` ファイルが存在しない場合、WordPress は利用可能なテンプレートに応じて `page.php` または `singular.php` ファイルを使用します。これらのファイルが存在しない場合は、`index.php`ファイルを使用します。
 
+<!--
 1.  `privacy-policy.php` – Used for the Privacy Policy page set in the **Change your Privacy Policy page** section of Settings → Privacy.
 2.  `custom template file` – The [page template](https://developer.wordpress.org/themes/template-files-section/page-template-files/) assigned to the page. See `get_page_templates()`.
 3.  `page-{slug}.php` – If the page slug is `privacy`, WordPress will look to use `page-privacy.php`.
 4.  `page-{id}.php` – If the page ID is 6, WordPress will look to use `page-6.php`.
+5.  `page.php`
+6.  `singular.php`
+7.  `index.php`
+-->
+1.  `privacy-policy.php` – 設定」→「プライバシー」の「**プライバシーポリシーページの変更**」で設定したプライバシーポリシーページに使用されます。
+2.  `custom template file` – ページに割り当てられた[ページテンプレート](https://developer.wordpress.org/themes/template-files-section/page-template-files/)です。詳しくは`get_page_templates()`をご覧ください。
+3.  `page-{slug}.php` – ページスラッグが `privacy` の場合、WordPress は `page-privacy.php` の使用を検討します。
+4.  `page-{id}.php` – ページIDが6の場合、WordPressは`page-6.php`を使おうとします。
 5.  `page.php`
 6.  `singular.php`
 7.  `index.php`
@@ -165,24 +188,45 @@ The `privacy-policy.php` template file is used to render your site’s Privacy P
 -->
 ### 個別投稿表示
 
+<!--
 The single post template file is used to render a single post. WordPress uses the following path:
+-->
+個別投稿のテンプレートファイルは、1つの投稿を表示するために使用されます。WordPressでは、以下のパスを使用します:
 
+<!--
 1.  `single-{post-type}-{slug}.php` – (Since 4.4) First, WordPress looks for a template for the specific post. For example, if [post type](https://developer.wordpress.org/themes/basics/post-types/) is `product` and the post slug is `dmc-12`, WordPress would look for `single-product-dmc-12.php`.
 2.  `single-{post-type}.php` – If the post type is `product`, WordPress would look for `single-product.php`.
 3.  `single.php` – WordPress then falls back to `single.php`.
 4.  `singular.php` – Then it falls back to `singular.php`.
 5.  `index.php` – Finally, as mentioned above, WordPress ultimately falls back to `index.php`.
+-->
+1.  `single-{post-type}-{slug}.php` – まず、WordPressは特定の記事のテンプレートを探します(4.4以降) 。例えば、[投稿タイプ](https://developer.wordpress.org/themes/basics/post-types/)が `product` で、記事のスラッグが `dmc-12` の場合、WordPress は `single-product-dmc-12.php` を探します。
+2.  `single-{post-type}.php` – 投稿タイプが `product` であれば、WordPress は `single-product.php` を探します。
+3.  `single.php` – WordPressは次に　`single.php`　へフォールバックします。
+4.  `singular.php` – その次に　`singular.php`　へフォールバックします。
+5.  `index.php` – 最後に、前述のとおり、WordPressは最終的に　`index.php`　へフォールバックします。
 
 <!--　
 ### Single Page
 -->
 ### 個別ページ表示
 
+<!--
 The template file used to render a static page (`page` post-type). Note that unlike other post-types, `page` is special to WordPress and uses the following path:
+-->
+個別ページ（ `page` 投稿タイプ）をレンダリングするために使用されるテンプレートファイルです。他の投稿タイプとは異なり、`page`は WordPress 特有のもので、以下のパスを使用することに注意してください。
 
+<!--
 1.  `custom template file` – The [page template](https://developer.wordpress.org/themes/template-files-section/page-template-files/) assigned to the page. See `[get_page_templates()](https://developer.wordpress.org/reference/functions/get_page_templates/)`.
 2.  `page-{slug}.php` – If the page slug is `recent-news`, WordPress will look to use `page-recent-news.php`.
 3.  `page-{id}.php` – If the page ID is 6, WordPress will look to use `page-6.php`.
+4.  `page.php`
+5.  `singular.php`
+6.  `index.php`
+-->
+1.  `カスタムテンプレートファイル` - ページに割り当てられた[ページテンプレート](https://developer.wordpress.org/themes/template-files-section/page-template-files/)です。[get_page_templates()](https://developer.wordpress.org/reference/functions/get_page_templates/)`を参照してください。
+2.  `page-{slug}.php` – ページスラッグが `recent-news` の場合、WordPress は `page-recent-news.php` を使用しようとします。
+3.  `page-{id}.php` – ページ ID が6の場合、WordPress は `page-6.php` を使おうとします。
 4.  `page.php`
 5.  `singular.php`
 6.  `index.php`
