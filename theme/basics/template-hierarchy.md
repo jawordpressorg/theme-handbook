@@ -1,19 +1,19 @@
-<!--　
+<!-- 
 # Template Hierarchy
 -->
 # テンプレート階層
 
-<!--　
+<!-- 
 As discussed, [template files](https://developer.wordpress.org/themes/basics/template-files/ "Template files page") are modular, reusable files, used to generate the web pages on your WordPress site. Some template files (such as the header and footer template) are used on all of your site’s pages, while others are used only under specific conditions.
 -->
-前述のとおり、[テンプレートファイル](https://developer.wordpress.org/themes/basics/template-files/ "テンプレートファイルのページ")は、モジュール式の再利用可能なファイルで、WordPress　サイトの　Web　ページを生成するために使用されます。テンプレートファイルには、ヘッダーやフッターのテンプレートなど、サイトのすべてのページで使用されるものと、特定の条件下でのみ使用されるものがあります。
+前述のとおり、[テンプレートファイル](https://developer.wordpress.org/themes/basics/template-files/ "テンプレートファイルのページ")は、モジュール式の再利用可能なファイルで、WordPress サイトの Web ページを生成するために使用されます。テンプレートファイルには、ヘッダーやフッターのテンプレートなど、サイトのすべてのページで使用されるものと、特定の条件下でのみ使用されるものがあります。
 
-<!--　
+<!-- 
 This article explains **how WordPress determines which template file(s) to use on individual pages**. If you want to customize an existing WordPress theme it will help you decide which template file needs to be edited.
 -->
-この記事では、**WordPress　が個々のページで使用するテンプレートファイルを決定する方法**について説明します。既存の　WordPress　テーマをカスタマイズしたい場合に、どのテンプレートファイルを編集する必要があるかを判断するのに役立ちます。
+この記事では、**WordPress　が個々のページで使用するテンプレートファイルを決定する方法**について説明します。既存の WordPress テーマをカスタマイズしたい場合に、どのテンプレートファイルを編集する必要があるかを判断するのに役立ちます。
 
-<!--　
+<!-- 
 Tip: You can also use [Conditional Tags](https://developer.wordpress.org/themes/basics/conditional-tags/ "Conditional Tags") to control which templates are loaded on a specific page.
 -->
 ヒント：[条件付きタグ](https://developer.wordpress.org/themes/basics/conditional-tags/ "条件付きタグ")を使って、特定のページでどのテンプレートを読み込むかをコントロールすることもできます。
@@ -36,15 +36,15 @@ WordPress は、[クエリ文字列](https://wordpress.org/support/article/gloss
 <!-- 
 Put simply, WordPress searches down through the template hierarchy until it finds a matching template file. To determine which template file to use, WordPress:
 -->
-簡単に言うと、WordPress はテンプレートの階層を検索して、一致するテンプレートファイルを見つけます。 どのテンプレートファイルを使用するかを決定するために、WordPress:
+簡単に言うと、WordPress はテンプレートの階層を検索して、一致するテンプレートファイルを見つけるのです。以下のような手順で WordPress はどのテンプレートファイルを使用するかを決定します。
 
 <!-- 
 1.  Matches every query string to a query type to decide which page is being requested (for example, a search page, a category page, etc);
 2.  Selects the template in the order determined by the template hierarchy;
 3.  Looks for template files with specific names in the current theme’s directory and uses the **first matching template file** as specified by the hierarchy.
 -->
-1.  すべてのクエリ文字列をクエリタイプにマッチさせ、どのページがリクエストされているかを判断します（例：検索ページ、カテゴリページなど）。
-2.  テンプレート階層で決められた順序でテンプレートを選択する。
+1.  すべてのクエリ文字列をクエリタイプにマッチさせ、どのページがリクエストされているかを判断する（例：検索ページ、カテゴリページなど）。
+2.  テンプレート階層で決められた順序によりテンプレートを選択する。
 3.  現在のテーマのディレクトリ内で特定の名前のテンプレートファイルを探し、階層で指定された**最初にマッチするテンプレートファイル**を使用する。
 
 <!-- 
@@ -55,7 +55,7 @@ With the exception of the basic `index.php` template file, you can choose whethe
 <!-- 
 If WordPress cannot find a template file with a matching name, it will skip to the next file in the hierarchy. If WordPress cannot find any matching template file, the theme’s `index.php` file will be used.
 -->
-一致する名前のテンプレートファイルが見つからない場合、WordPress は次の階層のファイルにスキップします。一致するテンプレートファイルが見つからない場合は、テーマの `index.php` ファイルが使用されます。
+一致する名前のテンプレートファイルが見つからない場合、WordPress は次の階層のファイルにスキップします。一致するテンプレートファイルが何も見つからない場合は、テーマの `index.php` ファイルが使用されます。
 
 <!--
 When you are using a [child theme](https://developer.wordpress.org/themes/advanced-topics/child-themes/), any file you add to your child theme will over-ride the same file in the parent theme. For example, both themes contain the same template `category.php`, then child theme’s template is used.  
@@ -116,7 +116,7 @@ WordPress のデフォルトでは、サイトのトップページに最新の�
 <!--
 Note: If `front-page.php` exists, it will override the `home.php` template.
 -->
-注意: `front-page.php` が存在する場合は、 `home.php` テンプレートが上書きされます。
+注意: `front-page.php` が存在する場合は、 `home.php` テンプレートが優先されます。
 
 <!-- 
 ### Front Page display
