@@ -74,7 +74,7 @@ Contrary, if a child theme contains general template only such as `category.php
 <!--
 If your blog is at `http://example.com/blog/` and a visitor clicks on a link to a category page such as `http://example.com/blog/category/your-cat/`, WordPress looks for a template file in the current theme’s directory that matches the category’s ID to generate the correct page. More specifically, WordPress follows this procedure:
 -->
-ブログの　URL　が`http://example.com/blog/`で、訪問者が`http://example.com/blog/category/your-cat/`などのカテゴリーページへのリンクをクリックした場合、WordPress はテーマのディレクトリ内で、カテゴリーの　ID　に一致するテンプレートファイルを探し、正しいページを生成します。具体的には、WordPress　は次の順序に従います。
+ブログの URL が`http://example.com/blog/`で、訪問者が`http://example.com/blog/category/your-cat/`などのカテゴリーページへのリンクをクリックした場合、WordPress はテーマのディレクトリ内で、カテゴリーの　ID　に一致するテンプレートファイルを探し、正しいページを生成します。具体的には、WordPress は次の順序に従います。
 
 <!--
 1.  Looks for a template file in the current theme’s directory that matches the category’s slug. If the category slug is “unicorns,” then WordPress looks for a template file named `category-unicorns.php`.
@@ -83,11 +83,11 @@ If your blog is at `http://example.com/blog/` and a visitor clicks on a link to 
 4.  If `category.php` does not exist, WordPress will look for a generic archive template, `archive.php`.
 5.  If `archive.php` is also missing, WordPress will fall back to the main theme template file, `index.php`.
 -->
-1.  現在のテーマのディレクトリ内で、カテゴリーのスラッグに一致するテンプレートファイルを探します。もしカテゴリーのスラッグが「unicorns」であれば、WordPress　は`category-unicorns.php`という名前のテンプレートファイルを探します。
-2. `category-unicorns.php`がなく、カテゴリの　ID　が4の場合、WordPress　は `category-4.php` という名前のテンプレートファイルを探します。
-3. `category-4.php`がない場合、WordPress　は一般的なカテゴリーのテンプレートファイルである`category.php`を探します。
-4. `category.php`が存在しない場合、WordPress　は一般的なアーカイブのテンプレートである　`archive.php`を探します。
-5. `archive.php`も見つからない場合、WordPress　はテーマのメインテンプレートファイルである`index.php`で処理します。
+1.  現在のテーマのディレクトリ内で、カテゴリーのスラッグに一致するテンプレートファイルを探します。もしカテゴリーのスラッグが「unicorns」であれば、WordPress は`category-unicorns.php`という名前のテンプレートファイルを探します。
+2. `category-unicorns.php`がなく、カテゴリの ID が4の場合、WordPress　は `category-4.php` という名前のテンプレートファイルを探します。
+3. `category-4.php`がない場合、WordPress は一般的なカテゴリーのテンプレートファイルである`category.php`を探します。
+4. `category.php`が存在しない場合、WordPress は一般的なアーカイブのテンプレートである`archive.php`を探します。
+5. `archive.php`も見つからない場合、WordPress はテーマのメインテンプレートファイルである`index.php`で処理します。
 
 <!-- 
 ### Visual Overview
@@ -96,10 +96,13 @@ If your blog is at `http://example.com/blog/` and a visitor clicks on a link to 
 <!-- 
 The following diagram shows which template files are called to generate a WordPress page based on the WordPress template hierarchy.
 -->
-以下の図では、WordPress　のテンプレート階層に基づいて、どのテンプレートファイルが呼び出されて　WordPress　のページが生成されるかを表しています。
+以下の図では、WordPress のテンプレート階層に基づいて、どのテンプレートファイルが呼び出されて WordPress のページが生成されるかを表しています。
 [![](https://developer.wordpress.org/files/2014/10/Screenshot-2019-01-23-00.20.04-1024x639.png)](https://developer.wordpress.org/files/2014/10/Screenshot-2019-01-23-00.20.04.png)
 
+<!-- 
 You can also [interact with this diagram](http://wphierarchy.com/).
+-->
+または[この図に直接ふれる](http://wphierarchy.com/)こともできます。
 
 <!--
 ## The Template Hierarchy In Detail
@@ -200,13 +203,13 @@ The single post template file is used to render a single post. WordPress uses th
 4.  `singular.php` – Then it falls back to `singular.php`.
 5.  `index.php` – Finally, as mentioned above, WordPress ultimately falls back to `index.php`.
 -->
-1.  `single-{post-type}-{slug}.php` – まず、WordPressは特定の記事のテンプレートを探します(4.4以降) 。例えば、[投稿タイプ](https://developer.wordpress.org/themes/basics/post-types/)が `product` で、記事のスラッグが `dmc-12` の場合、WordPress は `single-product-dmc-12.php` を探します。
-2.  `single-{post-type}.php` – 投稿タイプが `product` であれば、WordPress は `single-product.php` を探します。
-3.  `single.php` – WordPressは次に　`single.php`　へフォールバックします。
-4.  `singular.php` – その次に　`singular.php`　へフォールバックします。
-5.  `index.php` – 最後に、前述のとおり、WordPressは最終的に　`index.php`　へフォールバックします。
+1.  `single-{post-type}-{slug}.php` – まず、WordPressは特定の記事のテンプレートを探します(4.4以降) 。例えば、[投稿タイプ](https://developer.wordpress.org/themes/basics/post-types/)が`product`で、記事のスラッグが`dmc-12`の場合、WordPress は `single-product-dmc-12.php`を探します。
+2.  `single-{post-type}.php` – 投稿タイプが `product` であれば、WordPress は`single-product.php`を探します。
+3.  `single.php` – WordPressは次に`single.php`へフォールバックします。
+4.  `singular.php` – その次に`singular.php`へフォールバックします。
+5.  `index.php` – 最後に、前述のとおり、WordPressは最終的に`index.php`へフォールバックします。
 
-<!--　
+<!-- 
 ### Single Page
 -->
 ### 個別ページ表示
@@ -236,7 +239,10 @@ The template file used to render a static page (`page` post-type). Note that unl
 -->
 ### カテゴリー表示
 
+<!-- 
 Rendering category archive index pages uses the following path in WordPress:
+-->
+カテゴリーアーカイブ・インデックスページは、WordPressでは以下の順で表示されます。
 
 1.  `category-{slug}.php` – If the category’s slug is `news`, WordPress will look for `category-news.php`.
 2.  `category-{id}.php` – If the category’s ID is `6`, WordPress will look for `category-6.php`.
