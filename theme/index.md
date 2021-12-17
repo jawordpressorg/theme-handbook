@@ -3,10 +3,14 @@
 -->
 # テーマハンドブック
 
-<!-- *Welcome to the WordPress Theme Developer Handbook, your resource for learning all about the exciting world of WordPress themes.*  -->
+<!--
+*Welcome to the WordPress Theme Developer Handbook, your resource for learning all about the exciting world of WordPress themes.*
+-->
 興味深い WordPress テーマのすべてを学ぶための WordPress テーマ開発者向けハンドブックへようこそ。
 
-<!-- The Theme Developer Handbook is a repository for all things WordPress themes. Whether you’re new to WordPress themes, or you’re an experienced theme developer, you should be able to find the answer to many of your theme-related questions right here. -->
+<!--
+The Theme Developer Handbook is a repository for all things WordPress themes. Whether you’re new to WordPress themes, or you’re an experienced theme developer, you should be able to find the answer to many of your theme-related questions right here.
+-->
 WordPress テーマ開発者向けハンドブックは、WordPress のテーマに関するあらゆる情報を掲載しています。ここでは WordPress テーマを初めてご利用になられる方も経験豊富なテーマ開発者もテーマに関する多くの疑問の答えを探すことができるでしょう。
 
 <!--
@@ -24,8 +28,12 @@ WordPress テーマ開発者向けハンドブックは、WordPress のテーマ
 5.  テーマの基礎を理解したら、[上級者向けのトピック](https://developer.wordpress.org/theme/advanced-topics/)で「子テーマ」、「UI のベストプラクティス」、「テーマのテスト」などについて学びましょう。
 6.  テーマを世界に向けて配る準備ができたら、最終セッションの[「テーマのリリース」](https://developer.wordpress.org/theme/release/)で「テーマ配布のベストプラクティス」、「WordPress.org のテーマディレクトリへの準備」についてご確認ください。
 
-<!-- Tip: If you want to learn about experimental block themes go to the [Block Editor Handbook](https://developer.wordpress.org/block-editor/how-to-guides/themes/). The Theme Developer Handbook is being updated with information about new features. -->
+<!--
+Tip: If you want to learn about experimental block themes go to the [Block Editor Handbook](https://developer.wordpress.org/block-editor/how-to-guides/themes/). The Theme Developer Handbook is being updated with information about new features.
+-->
 Tip: 実験的なブロックについては、ブロックエディタハンドブックをご覧ください。テーマ開発者向けハンドブックでも新たに加わる機能の情報は更新されています。
 
-<!-- The WordPress Theme Developer Handbook is created by the WordPress community, for the WordPress community. We are always looking for more contributors; if you’re interested stop by the [docs team blog](https://make.wordpress.org/docs) to find out more about getting involved. -->
+<!--
+The WordPress Theme Developer Handbook is created by the WordPress community, for the WordPress community. We are always looking for more contributors; if you’re interested stop by the [docs team blog](https://make.wordpress.org/docs) to find out more about getting involved.
+-->
 この WordPress テーマ開発者向けハンドブックは、WordPress のコミュニティによって、WordPress のコミュニティのために作成されています。いつでも貢献者を募集しておりますので、興味のある方は、[ドキュメントチームブログ](https://make.wordpress.org/docs)をご覧ください。
