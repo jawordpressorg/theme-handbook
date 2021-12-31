@@ -43,9 +43,9 @@ Put simply, WordPress searches down through the template hierarchy until it find
 2.  Selects the template in the order determined by the template hierarchy;
 3.  Looks for template files with specific names in the current theme’s directory and uses the **first matching template file** as specified by the hierarchy.
 -->
-1.  すべてのクエリ文字列をクエリタイプにマッチさせ、どのページがリクエストされているかを判断する（例：検索ページ、カテゴリページなど）。
-2.  テンプレート階層で決められた順序によりテンプレートを選択する。
-3.  現在のテーマのディレクトリ内で特定の名前のテンプレートファイルを探し、階層で指定された**最初にマッチするテンプレートファイル**を使用する。
+1.  すべてのクエリ文字列をクエリタイプにマッチさせ、どのページがリクエストされているかを判断します（例：検索ページ、カテゴリページなど）。
+2.  テンプレート階層で決められた順序によりテンプレートを選択します。
+3.  現在のテーマのディレクトリ内で特定の名前のテンプレートファイルを探し、階層で指定された**最初にマッチするテンプレートファイル**を使用します。
 
 <!-- 
 With the exception of the basic `index.php` template file, you can choose whether you want to implement a particular template file or not.
@@ -149,7 +149,7 @@ The `front-page.php` template file is used to render your site’s front page, w
 4.  `index.php` – When “**your latest posts**” is set in the **front page displays** section but `home.php` does not exist *or* when **front page** is set but `page.php` does not exist.
 -->
 
-1. `front-page.php` - 設定 > 表示設定 セクションで「**フロントページの表示**」が「**最新の投稿**」または「**固定ページ**」どちらになっている場合でも使われる。
+1. `front-page.php` - 設定 > 表示設定 セクションで「**フロントページの表示**」が「**最新の投稿**」または「**固定ページ**」どちらになっている場合でも使われます。
 2. `home.php` - WordPress が　`front-page.php` を見つけられず、且つ「**フロントページの表示**」セクションで「**最新の投稿**」が設定されている場合、`home.php` を参照します。加えて、WordPress は「**フロントページの表示**」セクションで「**投稿ページ**」が設定されている場合にもこのファイルを参照します。
 3. `page.php` – 「**フロントページの表示**」セクションで**フロントページ**が設定されている場合。
 4. `index.php` – 「**フロントページの表示**」セクションで「**最新の投稿**」が設定されており、且つ `home.php` が存在しない場合。または**フロントページ**が設定されているが `page.php` が存在しない場合。
@@ -189,12 +189,12 @@ The `privacy-policy.php` template file is used to render your site’s Privacy P
 <!--
 ### Single Post
 -->
-### 個別投稿表示
+### 個別投稿
 
 <!--
 The single post template file is used to render a single post. WordPress uses the following path:
 -->
-個別投稿のテンプレートファイルは、1つの投稿を表示するために使用されます。WordPressでは、以下のパスを使用します:
+個別投稿のテンプレートファイルは、1つの投稿を表示するために使用されます。WordPressでは、以下の順で表示されます:
 
 <!--
 1.  `single-{post-type}-{slug}.php` – (Since 4.4) First, WordPress looks for a template for the specific post. For example, if [post type](https://developer.wordpress.org/themes/basics/post-types/) is `product` and the post slug is `dmc-12`, WordPress would look for `single-product-dmc-12.php`.
@@ -212,12 +212,12 @@ The single post template file is used to render a single post. WordPress uses th
 <!-- 
 ### Single Page
 -->
-### 個別ページ表示
+### 個別ページ
 
 <!--
 The template file used to render a static page (`page` post-type). Note that unlike other post-types, `page` is special to WordPress and uses the following path:
 -->
-個別ページ（ `page` 投稿タイプ）をレンダリングするために使用されるテンプレートファイルです。他の投稿タイプとは異なり、`page`は WordPress 特有のもので、以下のパスを使用することに注意してください。
+個別ページ（`page` 投稿タイプ）をレンダリングするために使用されるテンプレートファイルです。他の投稿タイプとは異なり、`page` は WordPress 特有のもので、以下の順で表示されることに注意してください。
 
 <!--
 1.  `custom template file` – The [page template](https://developer.wordpress.org/themes/template-files-section/page-template-files/) assigned to the page. See `[get_page_templates()](https://developer.wordpress.org/reference/functions/get_page_templates/)`.
@@ -237,15 +237,22 @@ The template file used to render a static page (`page` post-type). Note that unl
 <!-- 
 ### Category
 -->
-### カテゴリー表示
+### カテゴリー
 
 <!-- 
 Rendering category archive index pages uses the following path in WordPress:
 -->
-カテゴリーアーカイブ・インデックスページは、WordPressでは以下の順で表示されます。
+カテゴリーアーカイブインデックスページは、WordPressでは以下の順で表示されます。
 
+<!--
 1.  `category-{slug}.php` – If the category’s slug is `news`, WordPress will look for `category-news.php`.
 2.  `category-{id}.php` – If the category’s ID is `6`, WordPress will look for `category-6.php`.
+3.  `category.php`
+4.  `archive.php`
+5.  `index.php`
+-->
+1. `category-{slug}.php` – カテゴリーのスラッグが `news` ならば WordPress は `category-news.php` を探します。
+2. `category-{id}.php` – カテゴリー ID が `6` ならば WordPress は `category-6.php` を探します。
 3.  `category.php`
 4.  `archive.php`
 5.  `index.php`
@@ -253,12 +260,22 @@ Rendering category archive index pages uses the following path in WordPress:
 <!--
 ### Tag
 -->
-### タグ表示
+### タグ
 
+<!-- 
 To display a tag archive index page, WordPress uses the following path:
+-->
+タグアーカイブインデックスページは、WordPress では以下の順で表示されます。
 
+<!-- 
 1.  `tag-{slug}.php` – If the tag’s slug is `sometag`, WordPress will look for `tag-sometag.php`.
 2.  `tag-{id}.php` – If the tag’s ID is `6`, WordPress will look for `tag-6.php`.
+3.  `tag.php`
+4.  `archive.php`
+5.  `index.php`
+-->
+1. `tag-{slug}.php` – タグのスラッグが `sometag` ならば WordPress は `tag-sometag.php` を探します。
+2. `tag-{id}.php` – タグの ID が `6` ならば WordPress は `tag-6.php` を探します。
 3.  `tag.php`
 4.  `archive.php`
 5.  `index.php`
@@ -266,12 +283,22 @@ To display a tag archive index page, WordPress uses the following path:
 <!-- 
 ### Custom Taxonomies
 -->
-### カスタムタクソノミー表示
+### カスタムタクソノミー
 
+<!-- 
 [Custom taxonomies](https://developer.wordpress.org/themes/basics/categories-tags-custom-taxonomies/) use a slightly different template file path:
+-->
+[カスタムタクソノミー](https://developer.wordpress.org/themes/basics/categories-tags-custom-taxonomies/)は少し異なる順で表示されます。
 
+<!--
 1.  `taxonomy-{taxonomy}-{term}.php` – If the taxonomy is `sometax`, and taxonomy’s term is `someterm`, WordPress will look for `taxonomy-sometax-someterm.php.` In the case of [post formats](https://developer.wordpress.org/themes/functionality/post-formats/), the taxonomy is ‘post\_format’ and the terms are ‘post-format-{format}. i.e. `taxonomy-post_format-post-format-link.php` for the link post format.
 2.  `taxonomy-{taxonomy}.php` – If the taxonomy were `sometax`, WordPress would look for `taxonomy-sometax.php`.
+3.  `taxonomy.php`
+4.  `archive.php`
+5.  `index.php`
+-->
+1. `taxonomy-{taxonomy}-{term}.php` – タクソノミーが `sometax`、タクソノミーの用語が `someterm` ならば WordPress は `taxonomy-sometax-someterm.php` を探します。[投稿フォーマット](https://developer.wordpress.org/themes/functionality/post-formats/)の場合、タクソノミーは 'post_format'、タクソノミーの用語は 'post_format-{format}'。つまりリンク投稿フォーマットだと `taxonomy-post_format-post-format-link.php`。
+2.  `taxonomy-{taxonomy}.php` – タクソノミーが `sometax` ならば WordPress は `taxonomy-sometax.php` を探します。
 3.  `taxonomy.php`
 4.  `archive.php`
 5.  `index.php`
@@ -279,25 +306,46 @@ To display a tag archive index page, WordPress uses the following path:
 <!-- 
 ### Custom Post Types
 -->
-### カスタム投稿タイプ表示
+### カスタム投稿タイプ
 
+<!-- 
 [Custom Post Types](https://developer.wordpress.org/themes/basics/post-types/) use the following path to render the appropriate archive index page.
+-->
+[カスタム投稿タイプ](https://developer.wordpress.org/themes/basics/post-types/)は以下の順で、適切なアーカイブインデックスページを表示します。
 
+<!-- 
 1.  `archive-{post_type}.php` – If the post type is `product`, WordPress will look for `archive-product.php`.
 2.  `archive.php`
 3.  `index.php`
+-->
+1. `archive-{post_type}.php` – 投稿タイプが `product` ならば WordPress は `archive-product.php` を探します。
+2.  `archive.php`
+3.  `index.php`
 
+<!-- 
 (For rendering a single post type template, refer to the [single post display](#single-post "Single Post Display") section above.)
+-->
+(投稿タイプの個別投稿のテンプレートの表示については、上記の[個別投稿](#single-post "個別投稿")の項を参照してください。)
 
 <!-- 
 ### Author display
 -->
-### 作成者表示
+### 投稿者表示
 
+<!-- 
 Based on the above examples, rendering author archive index pages is fairly explanatory:
+-->
+上記の例から、投稿者アーカイブのインデックスページの表示は、かなり説明的です。
 
+<!-- 
 1.  `author-{nicename}.php` – If the author’s nice name is `matt`, WordPress will look for `author-matt.php`.
 2.  `author-{id}.php` – If the author’s ID were `6`, WordPress will look for `author-6.php`.
+3.  `author.php`
+4.  `archive.php`
+5.  `index.php`
+-->
+1. `author-{nicename}.php` – 投稿者のニックネームが `matt` ならば WordPress は `author-matt.php` を探します。
+2. `author-{id}.php` – 投稿者の ID が `6` ならば WordPress は `author-6.php` を探します。
 3.  `author.php`
 4.  `archive.php`
 5.  `index.php`
@@ -305,10 +353,18 @@ Based on the above examples, rendering author archive index pages is fairly expl
 <!--
 ### Date
 -->
-### 日付別表示
+### 日付
 
+<!-- 
 Date-based archive index pages are rendered as you would expect:
+-->
+日付別アーカイブインデックスページは、以下の順に表示されます。
 
+<!-- 
+1.  `date.php`
+2.  `archive.php`
+3.  `index.php`
+-->
 1.  `date.php`
 2.  `archive.php`
 3.  `index.php`
@@ -316,29 +372,48 @@ Date-based archive index pages are rendered as you would expect:
 <!-- 
 ### Search Result
 -->
-### 検索結果表示
+### 検索結果
 
+<!-- 
 Search results follow the same pattern as other template types:
+-->
+検索結果は、他のテンプレートタイプと同じパターンで表示されます。
 
+<!-- 
+1.  `search.php`
+2.  `index.php`
+-->
 1.  `search.php`
 2.  `index.php`
 
 <!-- 
 ### 404 (Not Found)
 -->
-### 404 (Not Found) 表示
-Likewise, 404 template files are called in this order:
+### 404 (Not Found) 
 
+<!-- 
+Likewise, 404 template files are called in this order:
+-->
+同様に、404テンプレートファイルも以下の順で呼び出されます。
+
+<!-- 
+1.  `404.php`
+2.  `index.php`
+-->
 1.  `404.php`
 2.  `index.php`
 
 <!-- 
 ### Attachment
 -->
-### 添付ファイル表示
+### 添付ファイル
 
+<!-- 
 Rendering an attachment page (`attachment` post-type) uses the following path:
+-->
+添付ファイルページ（`attachment` 投稿タイプ）は、以下の順で表示されます。
 
+<!-- 
 1.  `{MIME-type}.php` – can be any [MIME type](http://en.wikipedia.org/wiki/Internet_media_type "http://en.wikipedia.org/wiki/Internet_media_type") (For example: `image.php`, `video.php`, `pdf.php`). For `text/plain`, the following path is used (in order):
     1.  `text-plain.php`
     2.  `plain.php`
@@ -349,18 +424,38 @@ Rendering an attachment page (`attachment` post-type) uses the following path:
 5.  `single.php`
 6.  `singular.php`
 7.  `index.php`
+-->
+1. `{MIME-type}.php` – 任意の[MIME タイプ（メディアタイプ）](https://ja.wikipedia.org/wiki/%E3%83%A1%E3%83%87%E3%82%A3%E3%82%A2%E3%82%BF%E3%82%A4%E3%83%97) (例: `image.php`, `video.php`, `pdf.php`)。`text/plain` ならば以下の順で表示されます。
+    1.  `text-plain.php`
+    2.  `plain.php`
+    3.  `text.php`
+2. `attachment.php`
+3. `single-attachment-{slug}.php` – 例えば、添付ファイルのスラッグが `holiday` であれば、WordPress は `single-attachment-holiday.php` を探します。
+4. `single-attachment.php`
+5. `single.php`
+6. `singular.php`
+7. `index.php`
 
 <!-- 
 ### Embeds
 -->
-### Embeds
+### 埋め込み
 
+<!-- 
 The embed template file is used to render a post which is being embedded. Since 4.5, WordPress uses the following path:
+-->
+埋め込みテンプレートファイルは、埋め込み対象の記事を表示するために使用されます。4.5 以降、WordPress は以下の順で表示します。
 
+<!-- 
 1.  `embed-{post-type}-{post_format}.php` – First, WordPress looks for a template for the specific post. For example, if its post type is `post` and it has the audio format, WordPress would look for `embed-post-audio.php`.
 2.  `embed-{post-type}.php` – If the post type is `product`, WordPress would look for `embed-product.php`.
 3.  `embed.php` – WordPress then falls back to embed`.php`.
 4.  Finally, WordPress ultimately falls back to its own `wp-includes/theme-compat/embed.php` template.
+-->
+1. `embed-{post-type}-{post_format}.php` – まず、WordPressは特定の投稿のためのテンプレートを探します。例えば、投稿タイプが `post` で、オーディオ形式であれば、WordPress は `embed-post-audio.php` を探します。
+2. `embed-{post-type}.php` – 投稿タイプが `product` ならば WordPress は `embed-product.php` を探します。
+3. `embed.php` – 次に WordPress は `embed.php` をフォールバックとします。
+4. 最後に、WordPress は最終的に自身のテンプレートである `wp-includes/theme-compat/embed.php` に戻ります。
 
 <!-- 
 ## Non-ASCII Character Handling
