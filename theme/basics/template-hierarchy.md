@@ -11,7 +11,7 @@ As discussed, [template files](https://developer.wordpress.org/themes/basics/tem
 <!-- 
 This article explains **how WordPress determines which template file(s) to use on individual pages**. If you want to customize an existing WordPress theme it will help you decide which template file needs to be edited.
 -->
-この記事では、**WordPress　が個々のページで使用するテンプレートファイルを決定する方法**について説明します。既存の WordPress テーマをカスタマイズしたい場合に、どのテンプレートファイルを編集する必要があるかを判断するのに役立ちます。
+この記事では、**WordPress が個々のページで使用するテンプレートファイルを決定する方法**について説明します。既存の WordPress テーマをカスタマイズしたい場合に、どのテンプレートファイルを編集する必要があるかを判断するのに役立ちます。
 
 <!-- 
 Tip: You can also use [Conditional Tags](https://developer.wordpress.org/themes/basics/conditional-tags/ "Conditional Tags") to control which templates are loaded on a specific page.
@@ -31,7 +31,7 @@ Tip: You can also use [Conditional Tags](https://developer.wordpress.org/themes/
 <!-- 
 WordPress uses the [query string](https://wordpress.org/support/article/glossary/#query-string) to decide which template or set of templates should be used to display the page. The query string is information that is contained in the link to each part of your website.
 -->
-WordPress は、[クエリ文字列](https://wordpress.org/support/article/glossary/#query-string) を使用して、どのテンプレートまたはテンプレートのセットを使用してページを表示するかを決定します。クエリ文字列は、ウェブサイトの各部分へのリンクに含まれる情報です。
+WordPress は、[クエリ文字列](https://wordpress.org/support/article/glossary/#query-string) を使用して、どのテンプレートまたはテンプレートのセットを使用してページを表示するかを決定します。クエリ文字列はウェブサイトの各部分へのリンクに含まれる情報です。
 
 <!-- 
 Put simply, WordPress searches down through the template hierarchy until it finds a matching template file. To determine which template file to use, WordPress:
@@ -74,7 +74,7 @@ Contrary, if a child theme contains general template only such as `category.php
 <!--
 If your blog is at `http://example.com/blog/` and a visitor clicks on a link to a category page such as `http://example.com/blog/category/your-cat/`, WordPress looks for a template file in the current theme’s directory that matches the category’s ID to generate the correct page. More specifically, WordPress follows this procedure:
 -->
-ブログの URL が`http://example.com/blog/`で、訪問者が`http://example.com/blog/category/your-cat/`などのカテゴリーページへのリンクをクリックした場合、WordPress はテーマのディレクトリ内で、カテゴリーの　ID　に一致するテンプレートファイルを探し、正しいページを生成します。具体的には、WordPress は次の順序に従います。
+例えば、ブログの URL が`http://example.com/blog/`だとして、(ブログの)訪問者が`http://example.com/blog/category/your-cat/`などのカテゴリーページへのリンクをクリックしたとします。この時 WordPress はテーマのディレクトリ内でカテゴリーの ID に一致するテンプレートファイルを探し、正しいページを生成します。より具体的にいうと、WordPress は次の順に従います。
 
 <!--
 1.  Looks for a template file in the current theme’s directory that matches the category’s slug. If the category slug is “unicorns,” then WordPress looks for a template file named `category-unicorns.php`.
@@ -83,11 +83,11 @@ If your blog is at `http://example.com/blog/` and a visitor clicks on a link to 
 4.  If `category.php` does not exist, WordPress will look for a generic archive template, `archive.php`.
 5.  If `archive.php` is also missing, WordPress will fall back to the main theme template file, `index.php`.
 -->
-1.  現在のテーマのディレクトリ内で、カテゴリーのスラッグに一致するテンプレートファイルを探します。もしカテゴリーのスラッグが「unicorns」であれば、WordPress は`category-unicorns.php`という名前のテンプレートファイルを探します。
-2. `category-unicorns.php`がなく、カテゴリの ID が4の場合、WordPress　は `category-4.php` という名前のテンプレートファイルを探します。
-3. `category-4.php`がない場合、WordPress は一般的なカテゴリーのテンプレートファイルである`category.php`を探します。
-4. `category.php`が存在しない場合、WordPress は一般的なアーカイブのテンプレートである`archive.php`を探します。
-5. `archive.php`も見つからない場合、WordPress はテーマのメインテンプレートファイルである`index.php`で処理します。
+1.  現在のテーマのディレクトリ内で、カテゴリーのスラッグに一致するテンプレートファイルを探します。もしカテゴリーのスラッグが「unicorns」であれば、WordPress は `category-unicorns.php` という名前のテンプレートファイルを探します。
+2. `category-unicorns.php` がなく、カテゴリの ID が 4 の場合、WordPress は `category-4.php` という名前のテンプレートファイルを探します。
+3. `category-4.php` がない場合、WordPress は一般的なカテゴリーのテンプレートファイルである `category.php` を探します。
+4. `category.php` が存在しない場合、WordPress は一般的なアーカイブのテンプレートである `archive.php` を探します。
+5. `archive.php` も見つからない場合、WordPress はテーマのメインテンプレートファイルである `index.php` で処理します。
 
 <!-- 
 ### Visual Overview
@@ -102,7 +102,7 @@ The following diagram shows which template files are called to generate a WordPr
 <!-- 
 You can also [interact with this diagram](http://wphierarchy.com/).
 -->
-または[この図に直接ふれる](http://wphierarchy.com/)こともできます。
+または[対話式バージョン](http://wphierarchy.com/)もあります。
 
 <!--
 ## The Template Hierarchy In Detail
@@ -122,7 +122,7 @@ While the template hierarchy is easier to understand as a diagram, the following
 <!-- 
 By default, WordPress sets your site’s home page to display your latest blog posts. This page is called the blog posts index. You can also set your blog posts to display on a separate static page. The template file `home.php` is used to render the blog posts index, whether it is being used as the front page or on separate static page. If `home.php` does not exist, WordPress will use `index.php`.
 -->
-WordPress のデフォルトでは、サイトのトップページに最新のブログ投稿が表示されるように設定されています。このページをブログ投稿インデックスと呼びます。また、ブログ投稿を別の固定ページに表示するように設定することもできます。ブログ投稿インデックスの表示には、テンプレートファイル `home.php` が使用されますが、これはフロントページとして使用する場合も、別の固定ページとして使用する場合も同じです。home.php` が存在しない場合、WordPress は `index.php` を使用します。
+WordPress のデフォルトでは、サイトのトップページに最新のブログ投稿が表示されるように設定されています。このページをブログ投稿インデックスと呼びます。また、ブログ投稿を別の固定ページに表示するように設定することもできます。ブログ投稿インデックスの表示には、テンプレートファイル `home.php` が使用されますが、これはフロントページとして使用する場合も、別の固定ページとして使用する場合も同じです。`home.php` が存在しない場合、WordPress は `index.php` を使用します。
 
 1.  `home.php`
 2.  `index.php`
@@ -130,7 +130,7 @@ WordPress のデフォルトでは、サイトのトップページに最新の�
 <!--
 Note: If `front-page.php` exists, it will override the `home.php` template.
 -->
-注意: `front-page.php` が存在する場合は、 `home.php` テンプレートが優先されます。
+注意: `front-page.php` が存在する場合は、 `home.php` テンプレートが優先されます。
 
 <!-- 
 ### Front Page display
@@ -140,7 +140,7 @@ Note: If `front-page.php` exists, it will override the `home.php` template.
 <!--
 The `front-page.php` template file is used to render your site’s front page, whether the front page displays the blog posts index (mentioned above) or a static page. The front page template takes precedence over the blog posts index (`home.php`) template. If the `front-page.php` file does not exist, WordPress will either use the `home.php` or `page.php` files depending on the setup in Settings → Reading. If neither of those files exist, it will use the `index.php` file.
 -->
-`front-page.php` テンプレートファイルはサイトのフロントページの表示に使用されます。フロントページは(上述の)ブログ投稿インデックスか、固定ページを表示します。フロントページのテンプレートは、ブログ投稿インデックス（`home.php`）のテンプレートよりも優先されます。`front-page.php` ファイルが存在しない場合、WordPress は 設定 > 表示設定 での設定に応じて`home.php`または`page.php`ファイルを使用します。もしこれらのファイルが何方も存在しない場合は、`index.php`ファイルを使用します。
+`front-page.php` テンプレートファイルはサイトのフロントページの表示に使用されます。フロントページは(上述の)ブログ投稿インデックスか、固定ページを表示します。フロントページのテンプレートは、ブログ投稿インデックス（`home.php`）のテンプレートよりも優先されます。`front-page.php` ファイルが存在しない場合、WordPress は 設定 > 表示設定 での設定に応じて `home.php` または `page.php` ファイルを使用します。もしこれらのファイルが何方も存在しない場合は、`index.php` ファイルを使用します。
 
 <!--
 1.  `front-page.php` – Used for both “**your latest posts**” or “**a static page**” as set in the **front page displays** section of Settings → Reading.
@@ -149,10 +149,10 @@ The `front-page.php` template file is used to render your site’s front page, w
 4.  `index.php` – When “**your latest posts**” is set in the **front page displays** section but `home.php` does not exist *or* when **front page** is set but `page.php` does not exist.
 -->
 
-1. `front-page.php` - 設定 > 表示設定 セクションで「**フロントページの表示**」が「**最新の投稿**」または「**固定ページ**」どちらになっている場合でも使われます。
-2. `home.php` - WordPress が　`front-page.php` を見つけられず、且つ「**フロントページの表示**」セクションで「**最新の投稿**」が設定されている場合、`home.php` を参照します。加えて、WordPress は「**フロントページの表示**」セクションで「**投稿ページ**」が設定されている場合にもこのファイルを参照します。
-3. `page.php` – 「**フロントページの表示**」セクションで**フロントページ**が設定されている場合。
-4. `index.php` – 「**フロントページの表示**」セクションで「**最新の投稿**」が設定されており、且つ `home.php` が存在しない場合。または**フロントページ**が設定されているが `page.php` が存在しない場合。
+1. `front-page.php` - 設定 > 表示設定 セクションで「**フロントページの表示**」が「**最新の投稿**」または「**固定ページ**」どちらになっている場合でも使われます。
+2. `home.php` - WordPress が `front-page.php` を見つけられず、且つ「**フロントページの表示**」セクションで「**最新の投稿**」が設定されている場合、`home.php` を参照します。加えて、WordPress は「**フロントページの表示**」セクションで「**投稿ページ**」が設定されている場合にもこのファイルを参照します。
+3. `page.php` – 「**フロントページの表示**」セクションで**フロントページ**が設定されている場合。
+4. `index.php` – 「**フロントページの表示**」セクションで「**最新の投稿**」が設定されており、且つ `home.php` が存在しない場合。または**フロントページ**が設定されているが `page.php` が存在しない場合。
 
 <!--
 As you can see, there are a lot of rules to what path WordPress takes. Using the chart above is the best way to determine what WordPress will display.
@@ -179,9 +179,9 @@ The `privacy-policy.php` template file is used to render your site’s Privacy P
 7.  `index.php`
 -->
 1.  `privacy-policy.php` – 設定」→「プライバシー」の「**プライバシーポリシーページの変更**」で設定したプライバシーポリシーページに使用されます。
-2.  `custom template file` – ページに割り当てられた[ページテンプレート](https://developer.wordpress.org/themes/template-files-section/page-template-files/)です。詳しくは`get_page_templates()`をご覧ください。
+2.  `custom template file` – ページに割り当てられた[ページテンプレート](https://developer.wordpress.org/themes/template-files-section/page-template-files/)です。詳しくは `get_page_templates()` をご覧ください。
 3.  `page-{slug}.php` – ページスラッグが `privacy` の場合、WordPress は `page-privacy.php` の使用を検討します。
-4.  `page-{id}.php` – ページIDが6の場合、WordPressは`page-6.php`を使おうとします。
+4.  `page-{id}.php` – ページ ID が 6 の場合、WordPressは `page-6.php` を使おうとします。
 5.  `page.php`
 6.  `singular.php`
 7.  `index.php`
@@ -194,7 +194,7 @@ The `privacy-policy.php` template file is used to render your site’s Privacy P
 <!--
 The single post template file is used to render a single post. WordPress uses the following path:
 -->
-個別投稿のテンプレートファイルは、1つの投稿を表示するために使用されます。WordPressでは、以下の順で表示されます:
+個別投稿のテンプレートファイルは、1 つの投稿を表示するために使用されます。WordPress では、以下の順で表示されます:
 
 <!--
 1.  `single-{post-type}-{slug}.php` – (Since 4.4) First, WordPress looks for a template for the specific post. For example, if [post type](https://developer.wordpress.org/themes/basics/post-types/) is `product` and the post slug is `dmc-12`, WordPress would look for `single-product-dmc-12.php`.
@@ -203,11 +203,11 @@ The single post template file is used to render a single post. WordPress uses th
 4.  `singular.php` – Then it falls back to `singular.php`.
 5.  `index.php` – Finally, as mentioned above, WordPress ultimately falls back to `index.php`.
 -->
-1.  `single-{post-type}-{slug}.php` – まず、WordPressは特定の記事のテンプレートを探します(4.4以降) 。例えば、[投稿タイプ](https://developer.wordpress.org/themes/basics/post-types/)が`product`で、記事のスラッグが`dmc-12`の場合、WordPress は `single-product-dmc-12.php`を探します。
-2.  `single-{post-type}.php` – 投稿タイプが `product` であれば、WordPress は`single-product.php`を探します。
-3.  `single.php` – WordPressは次に`single.php`へフォールバックします。
-4.  `singular.php` – その次に`singular.php`へフォールバックします。
-5.  `index.php` – 最後に、前述のとおり、WordPressは最終的に`index.php`へフォールバックします。
+1.  `single-{post-type}-{slug}.php` – まず、WordPress は特定の記事のテンプレートを探します(4.4 以降) 。例えば、[投稿タイプ](https://developer.wordpress.org/themes/basics/post-types/)が `product` で、記事のスラッグが `dmc-12` の場合、WordPress は `single-product-dmc-12.php` を探します。
+2.  `single-{post-type}.php` – 投稿タイプが `product` であれば、WordPress は `single-product.php` を探します。
+3.  `single.php` – 次に WordPress は `single.php` へフォールバックします。
+4.  `singular.php` – その次に `singular.php` へフォールバックします。
+5.  `index.php` – 最終的には、前述のとおり、WordPress は `index.php` へフォールバックします。
 
 <!-- 
 ### Single Page
@@ -228,8 +228,8 @@ The template file used to render a static page (`page` post-type). Note that unl
 6.  `index.php`
 -->
 1.  `カスタムテンプレートファイル` - ページに割り当てられた[ページテンプレート](https://developer.wordpress.org/themes/template-files-section/page-template-files/)です。[get_page_templates()](https://developer.wordpress.org/reference/functions/get_page_templates/)`を参照してください。
-2.  `page-{slug}.php` – ページスラッグが `recent-news` の場合、WordPress は `page-recent-news.php` を使用しようとします。
-3.  `page-{id}.php` – ページ ID が6の場合、WordPress は `page-6.php` を使おうとします。
+2.  `page-{slug}.php` – ページスラッグが `recent-news` の場合、WordPress は `page-recent-news.php` を使用しようとします。
+3.  `page-{id}.php` – ページ ID が6の場合、WordPress は `page-6.php` を使おうとします。
 4.  `page.php`
 5.  `singular.php`
 6.  `index.php`
@@ -251,8 +251,8 @@ Rendering category archive index pages uses the following path in WordPress:
 4.  `archive.php`
 5.  `index.php`
 -->
-1. `category-{slug}.php` – カテゴリーのスラッグが `news` ならば WordPress は `category-news.php` を探します。
-2. `category-{id}.php` – カテゴリー ID が `6` ならば WordPress は `category-6.php` を探します。
+1. `category-{slug}.php` – カテゴリーのスラッグが `news` ならば WordPress は `category-news.php` を探します。
+2. `category-{id}.php` – カテゴリー ID が `6` ならば WordPress は `category-6.php` を探します。
 3.  `category.php`
 4.  `archive.php`
 5.  `index.php`
@@ -274,8 +274,8 @@ To display a tag archive index page, WordPress uses the following path:
 4.  `archive.php`
 5.  `index.php`
 -->
-1. `tag-{slug}.php` – タグのスラッグが `sometag` ならば WordPress は `tag-sometag.php` を探します。
-2. `tag-{id}.php` – タグの ID が `6` ならば WordPress は `tag-6.php` を探します。
+1. `tag-{slug}.php` – タグのスラッグが `sometag` ならば WordPress は `tag-sometag.php` を探します。
+2. `tag-{id}.php` – タグの ID が `6` ならば WordPress は `tag-6.php` を探します。
 3.  `tag.php`
 4.  `archive.php`
 5.  `index.php`
@@ -297,8 +297,8 @@ To display a tag archive index page, WordPress uses the following path:
 4.  `archive.php`
 5.  `index.php`
 -->
-1. `taxonomy-{taxonomy}-{term}.php` – タクソノミーが `sometax`、タクソノミーの用語が `someterm` ならば WordPress は `taxonomy-sometax-someterm.php` を探します。[投稿フォーマット](https://developer.wordpress.org/themes/functionality/post-formats/)の場合、タクソノミーは 'post_format'、タクソノミーの用語は 'post_format-{format}'。つまりリンク投稿フォーマットだと `taxonomy-post_format-post-format-link.php`。
-2.  `taxonomy-{taxonomy}.php` – タクソノミーが `sometax` ならば WordPress は `taxonomy-sometax.php` を探します。
+1. `taxonomy-{taxonomy}-{term}.php` – タクソノミーが `sometax`、タクソノミーの用語が `someterm` ならば WordPress は `taxonomy-sometax-someterm.php` を探します。[投稿フォーマット](https://developer.wordpress.org/themes/functionality/post-formats/)の場合、タクソノミーは 'post_format'、タクソノミーの用語は 'post_format-{format}' です。つまりリンク投稿フォーマットだと `taxonomy-post_format-post-format-link.php` となります。
+2.  `taxonomy-{taxonomy}.php` – タクソノミーが `sometax` ならば WordPress は `taxonomy-sometax.php` を探します。
 3.  `taxonomy.php`
 4.  `archive.php`
 5.  `index.php`
@@ -318,7 +318,7 @@ To display a tag archive index page, WordPress uses the following path:
 2.  `archive.php`
 3.  `index.php`
 -->
-1. `archive-{post_type}.php` – 投稿タイプが `product` ならば WordPress は `archive-product.php` を探します。
+1. `archive-{post_type}.php` – 投稿タイプが `product` ならば WordPress は `archive-product.php` を探します。
 2.  `archive.php`
 3.  `index.php`
 
@@ -344,8 +344,8 @@ Based on the above examples, rendering author archive index pages is fairly expl
 4.  `archive.php`
 5.  `index.php`
 -->
-1. `author-{nicename}.php` – 投稿者のニックネームが `matt` ならば WordPress は `author-matt.php` を探します。
-2. `author-{id}.php` – 投稿者の ID が `6` ならば WordPress は `author-6.php` を探します。
+1. `author-{nicename}.php` – 投稿者のニックネームが `matt` ならば WordPress は `author-matt.php` を探します。
+2. `author-{id}.php` – 投稿者の ID が `6` ならば WordPress は `author-6.php` を探します。
 3.  `author.php`
 4.  `archive.php`
 5.  `index.php`
@@ -425,12 +425,12 @@ Rendering an attachment page (`attachment` post-type) uses the following path:
 6.  `singular.php`
 7.  `index.php`
 -->
-1. `{MIME-type}.php` – 任意の[MIME タイプ（メディアタイプ）](https://ja.wikipedia.org/wiki/%E3%83%A1%E3%83%87%E3%82%A3%E3%82%A2%E3%82%BF%E3%82%A4%E3%83%97) (例: `image.php`, `video.php`, `pdf.php`)。`text/plain` ならば以下の順で表示されます。
+1. `{MIME-type}.php` – 任意の[MIME タイプ（メディアタイプ）](https://ja.wikipedia.org/wiki/%E3%83%A1%E3%83%87%E3%82%A3%E3%82%A2%E3%82%BF%E3%82%A4%E3%83%97) (例: `image.php`, `video.php`, `pdf.php`)。`text/plain` ならば以下の順で表示されます。
     1.  `text-plain.php`
     2.  `plain.php`
     3.  `text.php`
 2. `attachment.php`
-3. `single-attachment-{slug}.php` – 例えば、添付ファイルのスラッグが `holiday` であれば、WordPress は `single-attachment-holiday.php` を探します。
+3. `single-attachment-{slug}.php` – 例えば、添付ファイルのスラッグが `holiday` であれば、WordPress は `single-attachment-holiday.php` を探します。
 4. `single-attachment.php`
 5. `single.php`
 6. `singular.php`
@@ -452,7 +452,7 @@ The embed template file is used to render a post which is being embedded. Since
 3.  `embed.php` – WordPress then falls back to embed`.php`.
 4.  Finally, WordPress ultimately falls back to its own `wp-includes/theme-compat/embed.php` template.
 -->
-1. `embed-{post-type}-{post_format}.php` – まず、WordPressは特定の投稿のためのテンプレートを探します。例えば、投稿タイプが `post` で、オーディオ形式であれば、WordPress は `embed-post-audio.php` を探します。
+1. `embed-{post-type}-{post_format}.php` – まず、WordPressは特定の投稿のためのテンプレートを探します。例えば、投稿タイプが `post` で、オーディオ形式であれば、WordPress は `embed-post-audio.php` を探します。
 2. `embed-{post-type}.php` – 投稿タイプが `product` ならば WordPress は `embed-product.php` を探します。
 3. `embed.php` – 次に WordPress は `embed.php` をフォールバックとします。
 4. 最終的に、WordPress は自身のテンプレートである `wp-includes/theme-compat/embed.php` をフォールバックとします。
