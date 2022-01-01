@@ -50,7 +50,7 @@ Put simply, WordPress searches down through the template hierarchy until it find
 <!-- 
 With the exception of the basic `index.php` template file, you can choose whether you want to implement a particular template file or not.
 -->
-基本的な `index.php` テンプレートファイルを除いて、特定のテンプレートファイルを実装するかどうかを選択できます。
+基本的な `index.php` テンプレートファイルを例外として、特定のテンプレートファイルを実装するかどうかを選択できます。
 
 <!-- 
 If WordPress cannot find a template file with a matching name, it will skip to the next file in the hierarchy. If WordPress cannot find any matching template file, the theme’s `index.php` file will be used.
