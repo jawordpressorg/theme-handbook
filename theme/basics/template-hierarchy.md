@@ -455,16 +455,22 @@ The embed template file is used to render a post which is being embedded. Since
 1. `embed-{post-type}-{post_format}.php` – まず、WordPressは特定の投稿のためのテンプレートを探します。例えば、投稿タイプが `post` で、オーディオ形式であれば、WordPress は `embed-post-audio.php` を探します。
 2. `embed-{post-type}.php` – 投稿タイプが `product` ならば WordPress は `embed-product.php` を探します。
 3. `embed.php` – 次に WordPress は `embed.php` をフォールバックとします。
-4. 最後に、WordPress は最終的に自身のテンプレートである `wp-includes/theme-compat/embed.php` に戻ります。
+4. 最終的に、WordPress は自身のテンプレートである `wp-includes/theme-compat/embed.php` をフォールバックとします。
 
 <!-- 
 ## Non-ASCII Character Handling
 -->
-## 非ASCII文字の取り扱い
+## 非 ASCII 文字の取り扱い
 
+<!-- 
 Since WordPress 4.7, any dynamic part of a template name which includes non-ASCII characters in its name actually supports both the un-encoded and the encoded form, in that order. You can choose which to use.
+-->
+WordPress 4.7以降、テンプレート名の動的部分に非 ASCII 文字が含まれている場合、実際にはエンコードされていない形式とエンコードされた形式の両方を順にサポートしています。どちらを使うか選択することができます。
 
+<!-- 
 Here’s the page template hierarchy for a page named “Hello World 😀” with an ID of `6`:
+-->
+以下は、IDが `6` である "Hello World 😀" という名前のページのテンプレート階層です。
 
 *   `page-hello-world-😀.php`
 *   `page-hello-world-%f0%9f%98%80.php`
@@ -472,16 +478,25 @@ Here’s the page template hierarchy for a page named “Hello World 😀” wit
 *   `page.php`
 *   `singular.php`
 
+<!-- 
 The same behaviour applies to post slugs, term names, and author nicenames.
+-->
+投稿スラッグ、ターム名、投稿者のニックネームも同じ動作になります。
 
 <!-- 
 ## Filter Hierarchy
 -->
 ## 階層のフィルター
 
+<!-- 
 The WordPress template system lets you filter the hierarchy. This means that you can insert and change things at specific points of the hierarchy. The filter (located in the [`get_query_template()`](https://developer.wordpress.org/reference/functions/get_query_template/) function) uses this filter name: `"{$type}_template"` where `$type` is the template type.
+-->
+WordPressのテンプレートシステムでは、階層をフィルターを適用できます。つまり、階層の特定のポイントに何かを挿入したり、変更したりすることができるのです。フィルター（[`get_query_template()`](https://developer.wordpress.org/reference/functions/get_query_template/)関数にあります）は、以下のフィルター名を使用します： `"{$type}_template"` ここで `$type` はテンプレートタイプを表します。
 
+<!-- 
 Here is a list of all available filters in the template hierarchy:
+-->
+以下に、テンプレート階層で利用可能なすべてのフィルタの一覧を示します。
 
 *   `embed_template`
 *   `404_template`
@@ -506,14 +521,21 @@ Here is a list of all available filters in the template hierarchy:
 -->
 ### 例
 
+<!-- 
 For example, let’s take the default author hierarchy:
+-->
+例として、デフォルトの作成者別での階層を以下に挙げてみます。
 
 *   `author-{nicename}.php`
 *   `author-{id}.php`
 *   `author.php`
 
-To add `author-{role}.php` before `author.php`, we can manipulate the actual hierarchy using the ‘author\_template’ template type. This allows a request for /author/username where username has the role of editor to display using author-editor.php if present in the current themes directory.  
+<!-- 
+To add `author-{role}.php` before `author.php`, we can manipulate the actual hierarchy using the ‘author\_template’ template type. This allows a request for /author/username where username has the role of editor to display using author-editor.php if present in the current themes directory. 
+-->
+ここで `author-{role}.php` を `author.php` の前に追加するには、'author_template' テンプレートタイプを使用して実際の階層を操作することができます。これにより、/author/username へのリクエストがあった時 username が編集者の権限を持つ場合に、現在のテーマディレクトリに author-editor.php があれば表示することができます。
 
+```
 function author\_role\_template( $templates = '' ) { 
     $author = get\_queried\_object(); 
     $role = $author->roles\[0\];
@@ -533,5 +555,4 @@ function author\_role\_template( $templates = '' ) {
 } 
 
 add\_filter( 'author\_template', 'author\_role\_template' );
-
-[Expand full source code](#)[Collapse full source code](#)
+```
