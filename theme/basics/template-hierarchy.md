@@ -130,7 +130,7 @@ WordPress のデフォルトでは、サイトのトップページに最新の�
 <!--
 Note: If `front-page.php` exists, it will override the `home.php` template.
 -->
-注意: `front-page.php` が存在する場合は、 `home.php` テンプレートが優先されます。
+注意: `front-page.php` が存在する場合は、 `home.php` テンプレートに優先します。
 
 <!-- 
 ### Front Page display
@@ -140,7 +140,7 @@ Note: If `front-page.php` exists, it will override the `home.php` template.
 <!--
 The `front-page.php` template file is used to render your site’s front page, whether the front page displays the blog posts index (mentioned above) or a static page. The front page template takes precedence over the blog posts index (`home.php`) template. If the `front-page.php` file does not exist, WordPress will either use the `home.php` or `page.php` files depending on the setup in Settings → Reading. If neither of those files exist, it will use the `index.php` file.
 -->
-`front-page.php` テンプレートファイルはサイトのフロントページの表示に使用されます。フロントページは(上述の)ブログ投稿インデックスか、固定ページを表示します。フロントページのテンプレートは、ブログ投稿インデックス（`home.php`）のテンプレートよりも優先されます。`front-page.php` ファイルが存在しない場合、WordPress は 設定 > 表示設定 での設定に応じて `home.php` または `page.php` ファイルを使用します。もしこれらのファイルが何方も存在しない場合は、`index.php` ファイルを使用します。
+`front-page.php` テンプレートファイルはサイトのフロントページの表示に使用されます。フロントページは(上述の)ブログ投稿インデックスか、固定ページを表示します。フロントページのテンプレートは、ブログ投稿インデックス（`home.php`）のテンプレートよりも優先されます。`front-page.php` ファイルが存在しない場合、WordPress は 設定 > 表示設定 での設定に応じて `home.php` または `page.php` ファイルを使用します。もしこれらのファイルがどちらも存在しない場合は、`index.php` ファイルを使用します。
 
 <!--
 1.  `front-page.php` – Used for both “**your latest posts**” or “**a static page**” as set in the **front page displays** section of Settings → Reading.
@@ -178,8 +178,8 @@ The `privacy-policy.php` template file is used to render your site’s Privacy P
 6.  `singular.php`
 7.  `index.php`
 -->
-1.  `privacy-policy.php` – 設定」→「プライバシー」の「**プライバシーポリシーページの変更**」で設定したプライバシーポリシーページに使用されます。
-2.  `custom template file` – ページに割り当てられた[ページテンプレート](https://developer.wordpress.org/themes/template-files-section/page-template-files/)です。詳しくは `get_page_templates()` をご覧ください。
+1.  `privacy-policy.php` – 「設定」→「プライバシー」の「**プライバシーポリシーページの変更**」で設定したプライバシーポリシーページに使用されます。
+2.  `カスタムテンプレートファイル` – ページに割り当てられた[ページテンプレート](https://developer.wordpress.org/themes/template-files-section/page-template-files/)です。詳しくは `get_page_templates()` をご覧ください。
 3.  `page-{slug}.php` – ページスラッグが `privacy` の場合、WordPress は `page-privacy.php` の使用を検討します。
 4.  `page-{id}.php` – ページ ID が 6 の場合、WordPressは `page-6.php` を使おうとします。
 5.  `page.php`
@@ -491,7 +491,7 @@ The same behaviour applies to post slugs, term names, and author nicenames.
 <!-- 
 The WordPress template system lets you filter the hierarchy. This means that you can insert and change things at specific points of the hierarchy. The filter (located in the [`get_query_template()`](https://developer.wordpress.org/reference/functions/get_query_template/) function) uses this filter name: `"{$type}_template"` where `$type` is the template type.
 -->
-WordPressのテンプレートシステムでは、階層をフィルターを適用できます。つまり、階層の特定のポイントに何かを挿入したり、変更したりすることができるのです。フィルター（[`get_query_template()`](https://developer.wordpress.org/reference/functions/get_query_template/)関数にあります）は、以下のフィルター名を使用します： `"{$type}_template"` ここで `$type` はテンプレートタイプを表します。
+WordPressのテンプレートシステムでは、階層にフィルターを適用できます。つまり、階層の特定のポイントに何かを挿入したり、変更したりすることができるのです。フィルター（[`get_query_template()`](https://developer.wordpress.org/reference/functions/get_query_template/)関数にあります）は、以下のフィルター名を使用します： `"{$type}_template"` ここで `$type` はテンプレートタイプを表します。
 
 <!-- 
 Here is a list of all available filters in the template hierarchy:
@@ -536,23 +536,23 @@ To add `author-{role}.php` before `author.php`, we can manipulate the actual hie
 ここで `author-{role}.php` を `author.php` の前に追加するには、'author_template' テンプレートタイプを使用して実際の階層を操作することができます。これにより、/author/username へのリクエストがあった時 username が編集者の権限を持つ場合に、現在のテーマディレクトリに author-editor.php があれば表示することができます。
 
 ```
-function author\_role\_template( $templates = '' ) { 
-    $author = get\_queried\_object(); 
-    $role = $author->roles\[0\];
+function author_role_template( $templates = '' ) { 
+    $author = get_queried_object(); 
+    $role = $author->roles[0];
 
-    if ( ! is\_array( $templates ) && ! empty( $templates ) ) { 
-        $templates = locate\_template( array( "author-$role.php", $templates ), false ); 
+    if ( ! is_array( $templates ) && ! empty( $templates ) ) { 
+        $templates = locate_template( array( "author-$role.php", $templates ), false ); 
     } elseif ( empty( $templates ) ) { 
-        $templates = locate\_template( "author-$role.php", false ); 
+        $templates = locate_template( "author-$role.php", false ); 
     } else { 
-        $new\_template = locate\_template( array( "author-$role.php" ) );
+        $new_template = locate_template( array( "author-$role.php" ) );
 
-        if ( ! empty( $new\_template ) ) { 
-            array\_unshift( $templates, $new\_template ); 
+        if ( ! empty( $new_template ) ) { 
+            array_unshift( $templates, $new_template ); 
         } 
     } 
     return $templates; 
 } 
 
-add\_filter( 'author\_template', 'author\_role\_template' );
+add_filter( 'author_template', 'author_role_template' );
 ```
