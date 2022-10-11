@@ -29,13 +29,15 @@ If you’re on a Windows-based machine use [Notepad](http://en.wikipedia.org/wik
 
 Copy and paste the following code into your newly created `style.css` file:
 
-<br />
-/\*<br />
-Theme Name: My First WordPress Theme<br />
-\*/</p>
-<p>body {<br />
-background: #21759b;<br />
-}<br />
+```php
+/*
+Theme Name: My First WordPress Theme
+*/
+
+body {
+background: #21759b;
+}
+```
 
 [Reference Gist](https://gist.github.com/philiparthurmoore/0496a9b659c12280666d)
 
@@ -43,42 +45,49 @@ background: #21759b;<br />
 
 Now create a file named `index.php` and put it into your theme’s folder, adding the following code to it:
 
-<br />
-&lt;!DOCTYPE html><br />
-&lt;html><br />
-&lt;head><br />
-&lt;meta charset="&lt;?php bloginfo( 'charset' ); ?>"><br />
-&lt;title>&lt;?php wp\_title( '|', true, 'right' ); ?>&lt;/title><br />
-&lt;link rel="stylesheet" href="&lt;?php echo esc\_url( get\_stylesheet\_uri() ); ?>" type="text/css" /><br />
-&lt;?php wp\_head(); ?><br />
-&lt;/head><br />
-&lt;body><br />
-&lt;h1>&lt;?php bloginfo( 'name' ); ?>&lt;/h1><br />
-&lt;h2>&lt;?php bloginfo( 'description' ); ?>&lt;/h2></p>
-<p>&lt;?php if ( have\_posts() ) : while ( have\_posts() ) : the\_post(); ?></p>
-<p>&lt;h3>&lt;?php the\_title(); ?>&lt;/h3></p>
-<p>&lt;?php the\_content(); ?><br />
-&lt;?php wp\_link\_pages(); ?><br />
-&lt;?php edit\_post\_link(); ?></p>
-<p>&lt;?php endwhile; ?></p>
-<p>&lt;?php<br />
-if ( get\_next\_posts\_link() ) {<br />
-next\_posts\_link();<br />
-}<br />
-?><br />
-&lt;?php<br />
-if ( get\_previous\_posts\_link() ) {<br />
-previous\_posts\_link();<br />
-}<br />
-?></p>
-<p>&lt;?php else: ?></p>
-<p>&lt;p>No posts found. :(&lt;/p></p>
-<p>&lt;?php endif; ?><br />
-&lt;?php wp\_footer(); ?><br />
-&lt;/body><br />
-&lt;/html><br />
+```php
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="<?php bloginfo( 'charset' ); ?>">
+<title><?php wp_title( '|', true, 'right' ); ?></title>
+<link rel="stylesheet" href="<?php echo esc_url( get_stylesheet_uri() ); ?>" type="text/css" />
+<?php wp_head(); ?>
+</head>
+<body>
+<h1><?php bloginfo( 'name' ); ?></h1>
+<h2><?php bloginfo( 'description' ); ?></h2>
 
-[Expand full source code](#)[Collapse full source code](#)
+<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+
+<h3><?php the_title(); ?></h3>
+
+<?php the_content(); ?>
+<?php wp_link_pages(); ?>
+<?php edit_post_link(); ?>
+
+<?php endwhile; ?>
+
+<?php
+if ( get_next_posts_link() ) {
+next_posts_link();
+}
+?>
+<?php
+if ( get_previous_posts_link() ) {
+previous_posts_link();
+}
+?>
+
+<?php else: ?>
+
+<p>No posts found. :(</p>
+
+<?php endif; ?>
+<?php wp_footer(); ?>
+</body>
+</html>
+```
 
 [Reference Gist](https://gist.github.com/philiparthurmoore/b1f47c15d3eb2c573924)
 

@@ -29,15 +29,17 @@ Javascript is growing in popularity for web developers, and it’s being used to
 
 ### Including jQuery in your theme
 
-[jQuery](http://www.jquery.com) is a popular JavaScript library to make working with JavaScript easier and more reliable across browsers. If you use jQuery, be sure to [follow the handbook guidelines on including JavaScript](https://make.wordpress.org/docs/theme-developer-handbook/theme-basics/including-css-and-javascript/#javascript). Giving your theme’s enqueued .js files a dependency array of `array( 'jquery' )` ensures that the jQuery script has been downloaded and loaded before your theme’s code.
+[jQuery](http://www.jquery.com) is a popular JavaScript library to make working with JavaScript easier and more reliable across browsers. If you use jQuery, be sure to [follow the handbook guidelines on including JavaScript](https://developer.wordpress.org/themes/basics/including-css-javascript/). Giving your theme’s enqueued .js files a dependency array of `array( 'jquery' )` ensures that the jQuery script has been downloaded and loaded before your theme’s code.
 
 #### Using $
 
 Because the copy of jQuery included in WordPress loads in (link needed) `noConflict()` mode, use this wrapper code in your theme’s .js files to map “$” to “jQuery”:
 
+\[javascript\]
 ( function( $ ) {
 // Your code goes here
 } )( jQuery );
+\[/javascript\]
 
 This wrapper (called an Immediately Invoked Function Expression, or IIFE) lets you pass in a variable—jQuery—on the bottom line, and give it the name “$” internally. Within this wrapper you may use `$` to select elements as normal.
 
@@ -45,28 +47,36 @@ This wrapper (called an Immediately Invoked Function Expression, or IIFE) lets y
 
 Every time you select an element with jQuery, it performs a query through your document’s markup. These queries are very fast, but they do take time—you can make your site respond faster by re-using your jQuery objects instead of using a new query. So instead of repeating selectors:
 
+\[javascript\]
 // Anti-pattern
 $('.post img').addClass('theme-image');
 $('.post img').on('click', function() { /\* ... \*/ });
+\[/javascript\]
 
 it is recommended to **cache your selectors** so you can re-use the returned element without having to repeat the lookup process:
 
+\[javascript\]
 var $postImage = $('.post img');
 // All image tags within posts can now be accessed through $postImage
 $postImage.addClass('theme-image');
 $postImage.on('click', function() { /\* ... \*/ });
+\[/javascript\]
 
 ### Event Handling
 
 When you use jQuery methods like `.bind` or `.click`, jQuery creates a new browser event object to handle processing the requested event. Each new event created takes a small amount of memory, but the amount of memory required goes up the more events you bind. If you have a page with a hundred anchor tags and wanted to fire a \`logClick\` event handler whenever a user clicked a link, it is very easy to write code like this:
 
+\[javascript\]
 // Anti-pattern
 $('a').click( logClick );
+\[/javascript\]
 
 This works, but under the hood you have asked jQuery to create a new event handler for every link on your page.
 
 **Event delegation** is a way to accomplish the same effect with less overhead. Because events in jQuery “bubble”—that is, a click event will fire on a link, then on the link’s surrounding `<p>` tag, then on the `div` container, and so on up to the `document` object itself—we can put a single event handler higher up in the page structure, and still catch the click events for all of those links:
 
+\[javascript\]
 // Bind one handler at the document level, which is triggered
 // whenever there is a "click" event originating from an "a" tag
 $(document).on('click', 'a', logClick);
+\[/javascript\]

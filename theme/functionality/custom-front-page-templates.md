@@ -40,11 +40,11 @@ Use only the home.php template file for the blog posts index. Do not use a Custo
 
 ### is\_front\_page
 
-The [Conditional Tag](https://codex.wordpress.org/Conditional_Tags "Conditional Tags") [is\_front\_page()](https://codex.wordpress.org/Function_Reference/is_front_page) checks if the site front page is being displayed. Returns true when the site front page is being displayed, regardless of whether ‘[Settings](https://codex.wordpress.org/Administration_Panels#Reading "Administration Panels") > [Reading](https://codex.wordpress.org/Settings_Reading_SubPanel "Settings Reading SubPanel") ->Front page displays’ is set to “Your latest posts” or “A static page”.
+The [Conditional Tag](https://codex.wordpress.org/Conditional_Tags "Conditional Tags") [](https://codex.wordpress.org/Function_Reference/is_front_page)[is\_front\_page()](https://developer.wordpress.org/reference/functions/is_front_page/) checks if the site front page is being displayed. Returns true when the site front page is being displayed, regardless of whether ‘[Settings](https://codex.wordpress.org/Administration_Panels#Reading "Administration Panels") > [Reading](https://codex.wordpress.org/Settings_Reading_SubPanel "Settings Reading SubPanel") ->Front page displays’ is set to “Your latest posts” or “A static page”.
 
 ### is\_home
 
-The [Conditional Tag](https://codex.wordpress.org/Conditional_Tags "Conditional Tags") [is\_home()](https://codex.wordpress.org/Function_Reference/is_home) checks if the blog posts index is being displayed. Returns true when the blog posts index is being displayed: when the site front page is being displayed and ‘[Settings](https://codex.wordpress.org/Administration_Panels#Reading "Administration Panels") > [Reading](https://codex.wordpress.org/Settings_Reading_SubPanel "Settings Reading SubPanel") ->Front page displays’ is set to “Your latest posts”, or when ‘[Settings](https://codex.wordpress.org/Administration_Panels#Reading "Administration Panels") > [Reading](https://codex.wordpress.org/Settings_Reading_SubPanel "Settings Reading SubPanel") ->Front page displays’ is set to “A static page” and the “Posts Page” value is the current [Page](https://codex.wordpress.org/Pages "Pages") being displayed.
+The [Conditional Tag](https://codex.wordpress.org/Conditional_Tags "Conditional Tags") [](https://codex.wordpress.org/Function_Reference/is_home)[is\_home()](https://developer.wordpress.org/reference/functions/is_home/) checks if the blog posts index is being displayed. Returns true when the blog posts index is being displayed: when the site front page is being displayed and ‘[Settings](https://codex.wordpress.org/Administration_Panels#Reading "Administration Panels") > [Reading](https://codex.wordpress.org/Settings_Reading_SubPanel "Settings Reading SubPanel") ->Front page displays’ is set to “Your latest posts”, or when ‘[Settings](https://codex.wordpress.org/Administration_Panels#Reading "Administration Panels") > [Reading](https://codex.wordpress.org/Settings_Reading_SubPanel "Settings Reading SubPanel") ->Front page displays’ is set to “A static page” and the “Posts Page” value is the current [Page](https://codex.wordpress.org/Pages "Pages") being displayed.
 
 When the site front page is being displayed and ‘[Settings](https://codex.wordpress.org/Administration_Panels#Reading "Administration Panels") > [Reading](https://codex.wordpress.org/Settings_Reading_SubPanel "Settings Reading SubPanel") ->Front page displays’ is set to “Your latest posts”, both[is\_front\_page()](https://developer.wordpress.org/reference/functions/is_front_page/) and [is\_home()](https://developer.wordpress.org/reference/functions/is_home/) will return true.
 
@@ -54,55 +54,68 @@ If it exists, the front-page.php template file is used on the site’s front pag
 
 ### Conditional display within front-page.php
 
-One way to allow front-page.php to account for both options for ‘[Settings](https://codex.wordpress.org/Administration_Panels#Reading "Administration Panels") > [Reading](https://codex.wordpress.org/Settings_Reading_SubPanel "Settings Reading SubPanel") ->Front page displays’ is to add a conditional inside of front-page.php itself, using [get\_option( 'show\_on\_front' )](https://codex.wordpress.org/Option_Reference#Reading "Option Reference"), [](https://codex.wordpress.org/Function_Reference/get_home_template "Function Reference/get home template")[get\_home\_template()](https://developer.wordpress.org/reference/functions/get_home_template/), and[](https://codex.wordpress.org/Function_Reference/get_page_template "Function Reference/get page template")[get\_page\_template()](https://developer.wordpress.org/reference/functions/get_page_template/).
+One way to allow front-page.php to account for both options for ‘[Settings](https://codex.wordpress.org/Administration_Panels#Reading "Administration Panels") > [Reading](https://codex.wordpress.org/Settings_Reading_SubPanel "Settings Reading SubPanel") ->Front page displays’ is to add a conditional inside of front-page.php itself, using [get\_option( 'show\_on\_front' )](https://codex.wordpress.org/Option_Reference#Reading "Option Reference"), [](https://codex.wordpress.org/Function_Reference/get_home_template "Function Reference/get home template")[get\_home\_template()](https://developer.wordpress.org/reference/functions/get_home_template/) , and[](https://codex.wordpress.org/Function_Reference/get_page_template "Function Reference/get page template")[get\_page\_template()](https://developer.wordpress.org/reference/functions/get_page_template/) .
 
-Method 1: including custom content directly within front-page.php:
+Method 1: including custom content directly within front-page.php:  
 
-if ( 'posts' == get\_option( 'show\_on\_front' ) ) {
-    include( get\_home\_template() );
+```php
+if ( 'posts' == get_option( 'show_on_front' ) ) {
+    include( get_home_template() );
 } else {
     // Custom content markup goes here
 }
+```
 
-Method 2: including any page template:
+  
+Method 2: including any page template:  
 
-if ( 'posts' == get\_option( 'show\_on\_front' ) ) {
-    include( get\_home\_template() );
+```php
+if ( 'posts' == get_option( 'show_on_front' ) ) {
+    include( get_home_template() );
 } else {
-    include( get\_page\_template() );
+    include( get_page_template() );
 }
+```
 
 ### Filtering frontpage\_template
 
-Another way to allow the site front page to display either a static page/custom content or the blog posts index, without adding conditional code within front-page.php, is to [filter frontpage\_template](https://codex.wordpress.org/Function_Reference/get_query_template "Function Reference/get query template"), by adding a filter callback to functions.php:
+Another way to allow the site front page to display either a static page/custom content or the blog posts index, without adding conditional code within front-page.php, is to [filter frontpage\_template](https://codex.wordpress.org/Function_Reference/get_query_template "Function Reference/get query template"), by adding a filter callback to functions.php:  
 
-function themeslug\_filter\_front\_page\_template( $template ) {
-    return is\_home() ? '' : $template;
+```php
+function themeslug_filter_front_page_template( $template ) {
+    return is_home() ? '' : $template;
 }
-add\_filter( 'frontpage\_template', 'themeslug\_filter\_front\_page\_template' );
+add_filter( 'frontpage_template', 'themeslug_filter_front_page_template' );
+```
 
+  
 This method causes WordPress to bypass the front-page.php template file altogether when the blog posts index is being displayed.
 
 ## Adding custom query loops to front-page.php
 
-If the front-page.php template file includes a default [WordPress Loop](https://codex.wordpress.org/The_Loop "The Loop"), like so:
+If the front-page.php template file includes a default [WordPress Loop](https://codex.wordpress.org/The_Loop "The Loop"), like so:  
 
+```php
 &lt;?php
-if ( have\_posts() ) : while ( have\_posts() ) : the\_post();
+if ( have_posts() ) : while ( have_posts() ) : the_post();
     // do something
 endwhile; else:
     // no posts found
 endif;
+```
 
+  
 That loop applies to the post content of the static page assigned to ‘[Settings](https://codex.wordpress.org/Administration_Panels#Reading "Administration Panels") > [Reading](https://codex.wordpress.org/Settings_Reading_SubPanel "Settings Reading SubPanel") ->Posts page’.
 
-To display custom loops (latest blog posts, custom/featured content, etc.), add secondary loop queries using calls to [WP\_Query](https://codex.wordpress.org/Class_Reference/WP_Query "Class Reference/WP Query"). For example, to show the 3 latest blog posts:
+To display custom loops (latest blog posts, custom/featured content, etc.), add secondary loop queries using calls to [WP\_Query](https://codex.wordpress.org/Class_Reference/WP_Query "Class Reference/WP Query"). For example, to show the 3 latest blog posts:  
 
-$latest\_blog\_posts = new WP\_Query( array( 'posts\_per\_page' => 3 ) );
+```php
+$latest_blog_posts = new WP_Query( array( 'posts_per_page' =&gt; 3 ) );
 
-if ( $latest\_blog\_posts->have\_posts() ) : while ( $latest\_blog\_posts->have\_posts() ) : $latest\_blog\_posts->the\_post();
+if ( $latest_blog_posts-&gt;have_posts() ) : while ( $latest_blog_posts-&gt;have_posts() ) : $latest_blog_posts-&gt;the_post();
     // Loop output goes here
 endwhile; endif;
+```
 
 ## Pagination
 

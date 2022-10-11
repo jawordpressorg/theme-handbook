@@ -8,7 +8,7 @@ In our recipe website, the **categories** would be Breakfast, Lunch, Dinner, App
 
 Chocolate, ginger, and chicken are all examples of **tags**.  They are another level of specificity that provides meaning to the user.
 
-Lastly, there are taxonomies. In reality, categories and tags are examples of default taxonomies which simply are a way to organize content.  Taxonomies are the method of classifying content and data in WordPress. When you use a taxonomy you’re grouping similar things together. The taxonomy refers to the sum of those groups. As with [Post Types](https://developer.wordpress.org/themes/functionality/pages-posts-custom-post-types/ "Pages, Posts, & Custom Post Types"), there are a number of default taxonomies, and you can also create your own.
+Lastly, there are taxonomies. In reality, categories and tags are examples of default taxonomies which simply are a way to organize content.  Taxonomies are the method of classifying content and data in WordPress. When you use a taxonomy you’re grouping similar things together. The taxonomy refers to the sum of those groups. As with Post Types, there are a number of default taxonomies, and you can also create your own.
 
 Recipes are normally organized by category and tag, but there are some other helpful ways to break the recipes down to be more user friendly.  For example, the recipe website might want an easy way to display recipes by cook time. A custom taxonomy of cook time with 0-30 min, 30-min to an hour, 1 to 2 hours, 2+ hours would be a great breakdown.  Additionally, cook method such as grill, oven, stove, refrigerator, etc would be another example of a custom taxonomy that would be relevant for the site.  There could also be a custom taxonomy for how spicy the recipe is and then a rating from 1-5 on spiciness.
 
@@ -22,7 +22,7 @@ The default taxonomies in WordPress are:
 
 ### Terms
 
-Terms are items within your taxonomy. So, for example, if you have the *Animal* taxonomy you would have the terms, dogs, cats, and sheep. Terms can be created via the WordPress admin, or you can use the [wp\_insert\_term()](https://developer.wordpress.org/reference/functions/wp_insert_term/ "wp_insert_term") function.
+Terms are items within your taxonomy. So, for example, if you have the *Animal* taxonomy you would have the terms, dogs, cats, and sheep. Terms can be created via the WordPress admin, or you can use the [](https://developer.wordpress.org/reference/functions/wp_insert_term/ "wp_insert_term")[wp\_insert\_term()](https://developer.wordpress.org/reference/functions/wp_insert_term/) function.
 
 ## Database Schema
 

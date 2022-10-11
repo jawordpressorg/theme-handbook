@@ -1,10 +1,6 @@
 # Data Validation
 
-Data validation is the process of analyzing the data against a predefined pattern (or patterns) with a definitive result: valid or invalid.
-
-Usually this applies to data coming from external sources such as user input and calls to web services via API.
-
-Simple examples of data validation:
+Data validation is the process of analyzing the data against a predefined pattern (or patterns) with a definitive result: valid or invalid. Usually this applies to data coming from external sources such as user input and calls to web services via API. Simple examples of data validation:
 
 *   Check that required fields have not been left blank
 *   Check that an entered phone number only contains numbers and punctuation
@@ -13,8 +9,7 @@ Simple examples of data validation:
 
 **Data validation should be performed as early as possible.** That means validating the data before performing any actions.
 
-Note:  
-Validation can be performed by using JavaScript on the front end and by using PHP on the back end.
+Note: Validation can be performed by using JavaScript on the front end and by using PHP on the back end.
 
 ## Validating the Data
 
@@ -39,63 +34,50 @@ WordPress provides many useful functions that help validate different kinds of d
 *   `[username_exists()](/reference/functions/username_exists/)` checks if username exists.
 *   `[validate_file()](/reference/functions/validate_file/)` will validate that an entered file path is a real path (but not whether the file exists).
 
-Check the the list of [conditional tags](https://developer.wordpress.org/themes/references/list-of-conditional-tags/) for more functions like these.  
-Search for functions with names like these: `*_exists()`, `*_validate()`, and `is_*()`. Not all of these are validation functions, but many are helpful.
+Check the the list of [conditional tags](https://developer.wordpress.org/themes/references/list-of-conditional-tags/) for more functions like these. Search for functions with names like these: `*_exists()`, `*_validate()`, and `is_*()`. Not all of these are validation functions, but many are helpful.
 
 ### Custom PHP and JavaScript functions
 
-You can write your own PHP and JavaScript functions and include them in your plugin. When writing a validation function, you’ll want to name it like a question (examples: is\_phone, is\_available, is\_us\_zipcode).
-
-The function should return a boolean, either true or false, depending on whether the data is valid or not. This will allow using the function as a condition.
+You can write your own PHP and JavaScript functions and include them in your plugin. When writing a validation function, you’ll want to name it like a question (examples: is\_phone, is\_available, is\_us\_zipcode). The function should return a boolean, either true or false, depending on whether the data is valid or not. This will allow using the function as a condition.
 
 ## Example 1
 
-Let’s say you have an U.S. zip code input field that a user submits.
+Let’s say you have an U.S. zip code input field that a user submits. \[html\]<input id="wporg\_zip\_code" type="text" maxlength="10" name="wporg\_zip\_code">\[/html\] The text field allows up to 10 characters of input with no limitations on the types of characters that can be used. Users could enter something valid like `1234567890` or something invalid (and evil) like `eval()`. The `maxlength` attribute on our `input` field is only enforced by the browser, so you still need to validate the length of the input on the server. If you don’t, an attacker could alter the maxlength value. By using validation we can ensure we’re accepting only valid zip codes. First you need to write a function to validate a U.S. zip codes:
 
-<input id="wporg\_zip\_code" type="text" maxlength="10" name="wporg\_zip\_code">
-
-The text field allows up to 10 characters of input with no limitations on the types of characters that can be used. Users could enter something valid like `1234567890` or something invalid (and evil) like `eval()`.
-
-The `maxlength` attribute on our `input` field is only enforced by the browser, so you still need to validate the length of the input on the server. If you don’t, an attacker could alter the maxlength value.
-
-By using validation we can ensure we’re accepting only valid zip codes.
-
-First you need to write a function to validate a U.S. zip codes:
-
-<?php function is\_us\_zip\_code($zip\_code) { // scenario 1: empty if (empty($zip\_code)) { return false; } // scenario 2: more than 10 characters if (strlen(trim($zip\_code)) > 10) {
+```php
+<?php function is_us_zip_code($zip_code) { // scenario 1: empty if (empty($zip_code)) { return false; } // scenario 2: more than 10 characters if (strlen(trim($zip_code)) > 10) {
         return false;
     }
 
     // scenario 3: incorrect format
-    if (!preg\_match('/^\\d{5}(\\-?\\d{4})?$/', $zip\_code)) {
+    if (!preg_match('/^\d{5}(\-?\d{4})?$/', $zip_code)) {
         return false;
     }
 
     // passed successfully
     return true;
 }
+```
 
 When processing the form, your code should check the `wporg_zip_code` field and perform the action based on the result:
 
-if ( isset( $\_POST\['wporg\_zip\_code'\] ) && is\_us\_zip\_code( $\_POST\['wporg\_zip\_code'\] ) ) {
+```php
+if ( isset( $_POST['wporg_zip_code'] ) && is_us_zip_code( $_POST['wporg_zip_code'] ) ) {
     // your action
 }
+```
 
 ## Example 2
 
-Say you’re going to query the database for some posts, and you want to give the user the ability to sort the query results.
+Say you’re going to query the database for some posts, and you want to give the user the ability to sort the query results. This example code checks an incoming sort key (stored in the “orderby” input parameter) for validity by comparing it against an array of allowed sort keys using the built-in PHP function [`in_array`](//secure.php.net/in_array). This prevents the user from passing in malicious data and potentially compromising the website. Before checking the incoming sort key against the array, the key is passed into the built-in WordPress function [`sanitize_key`](https://codex.wordpress.org/Function_Reference/sanitize_key). This function ensures, among other things, that the key is in lowercase ([`in_array`](//secure.php.net/in_array) performs a *case-sensitive* search). Passing “true” into the third parameter of [`in_array`](//php.net/in_array) enables strict type checking, which tells the function to not only compare values but value *[types](http://php.net/manual/en/language.types.php)* as well. This allows the code to be certain that the incoming sort key is a string and not some other data type.
 
-This example code checks an incoming sort key (stored in the “orderby” input parameter) for validity by comparing it against an array of allowed sort keys using the built-in PHP function [`in_array`](//secure.php.net/in_array). This prevents the user from passing in malicious data and potentially compromising the website.
-
-Before checking the incoming sort key against the array, the key is passed into the built-in WordPress function [`sanitize_key`](https://codex.wordpress.org/Function_Reference/sanitize_key). This function ensures, among other things, that the key is in lowercase ([`in_array`](//secure.php.net/in_array) performs a *case-sensitive* search).
-
-Passing “true” into the third parameter of [`in_array`](//php.net/in_array) enables strict type checking, which tells the function to not only compare values but value *[types](http://php.net/manual/en/language.types.php)* as well. This allows the code to be certain that the incoming sort key is a string and not some other data type.
-
+```php
 <?php
-$allowed\_keys = \['author', 'post\_author', 'date', 'post\_date'\];
+$allowed_keys = ['author', 'post_author', 'date', 'post_date'];
 
-$orderby = sanitize\_key( $\_POST\['orderby'\] );
+$orderby = sanitize_key( $_POST['orderby'] );
 
-if ( in\_array( $orderby, $allowed\_keys, true ) ) {
+if ( in_array( $orderby, $allowed_keys, true ) ) {
     // modify the query to sort by the orderby key
 }
+```

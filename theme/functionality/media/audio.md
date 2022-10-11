@@ -8,12 +8,16 @@ You can directly embed audio files and play them back using a simple shortcode *
 
 Following shortcode displays audio player that loads music.mp3 file:
 
-\[audio src="music.mp3"\]
+```php
+[[audio src="music.mp3"]]
+```
 
 To use the shortcode from template file, use do\_shortcode function. When music.mp3 file was stored in (theme\_directory)/sounds directory, insert following code into your template file:
 
-$music\_file = get\_template\_directory\_uri() . "/sounds/music.mp3"; 
-echo do\_shortcode('\[audio mp3=' . $music\_file . '\]');
+```php
+$music_file = get_template_directory_uri() . "/sounds/music.mp3";
+echo do_shortcode('[[audio mp3=' . $music_file . ']]');
+```
 
 The shortcode creates the audio player as shown in the screenshot below.
 
@@ -39,15 +43,19 @@ Causes the media to automatically play as soon as the media file is ready.
 
 The following example starts playing music immediately after the page load and loops.
 
-echo do\_shortcode('\[audio mp3=' . $music\_file . ' loop = "on" autoplay = 1\]');
+```php
+echo do_shortcode('[[audio mp3=' . $music_file . ' loop = "on" autoplay = 1]]');
+```
 
 ### Styling
 
 If you want to change the look & feel of audio player, you can do so by targeting the default class name of “wp-audio-shortcode”. If you insert following code into your style.css, half width of audio player will be displayed.
 
+```css
 .wp-audio-shortcode {
   width: 50%;
 }
+```
 
 #### Supported Audio format
 

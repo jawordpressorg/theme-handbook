@@ -31,12 +31,14 @@ Tip: **Any time you’re accepting potentially unsafe data, it is important to v
 
 Let’s say we have an input field named title.
 
-<input id="title" type="text" name="title">
+\[html\]<input id="title" type="text" name="title">\[/html\]
 
 You can sanitize the input data with the [sanitize\_text\_field()](https://developer.wordpress.org/reference/functions/sanitize_text_field/) function:
 
-$title = sanitize\_text\_field( $\_POST\['title'\] );
-update\_post\_meta( $post->ID, 'title', $title );
+```php
+$title = sanitize_text_field( $_POST['title'] );
+update_post_meta( $post->ID, 'title', $title );
+```
 
 Behind the scenes, [sanitize\_text\_field()](https://developer.wordpress.org/reference/functions/sanitize_text_field/) does the following:
 
@@ -63,35 +65,47 @@ WordPress has a few helper functions you can use for most common scenarios.
 
 *   [esc\_html()](https://developer.wordpress.org/reference/functions/esc_html/) – Use this function anytime an HTML element encloses a section of data being displayed.
 
-<?php echo esc\_html( $title ); ?>
+```php
+<?php echo esc_html( $title ); ?>
+```
 
 *   [esc\_url()](https://developer.wordpress.org/reference/functions/esc_url/) – Use this function on all URLs, including those in the `src` and `href` attributes of an HTML element.
 
-<img src="<?php echo esc\_url( $great\_user\_picture\_url ); ?>" />
+```php
+<img src="<?php echo esc_url( $great_user_picture_url ); ?>" />
+```
 
 *   [esc\_js()](https://developer.wordpress.org/reference/functions/esc_js/) – Use this function for inline Javascript.
 
-<a href="#" onclick="<?php echo esc\_js( $custom\_js ); ?>">Click me</a>
+```php
+<a href="#" onclick="<?php echo esc_js( $custom_js ); ?>">Click me</a>
+```
 
 *   [esc\_attr()](https://developer.wordpress.org/reference/functions/esc_attr/) – Use this function on everything else that’s printed into an HTML element’s attribute.
 
-<ul class="<?php echo esc\_attr( $stored\_class ); ?>"> </ul>
+```php
+<ul class="<?php echo esc_attr( $stored_class ); ?>"> </ul>
+```
 
 *   [esc\_textarea()](https://developer.wordpress.org/reference/functions/esc_textarea/) – encodes text for use inside a textarea element.
 
-<textarea><?php echo esc\_textarea( $text ); ?></textarea>
+```php
+<textarea><?php echo esc_textarea( $text ); ?></textarea>
+```
 
 Tip: Output escaping should occur as late as possible.
 
 ### Escaping with Localization
 
-Rather than using `echo` to output data, it’s common to use the WordPress localization functions, such as [\_e()](https://developer.wordpress.org/reference/functions/_e/) or [\_\_()](https://developer.wordpress.org/reference/functions/__/).
+Rather than using `echo` to output data, it’s common to use the WordPress localization functions, such as [\_e()](https://developer.wordpress.org/reference/functions/_e/) or [\_\_()](https://developer.wordpress.org/reference/functions/__/) .
 
 These functions simply wrap a localization function inside an escaping function:
 
-esc\_html\_e( 'Hello World', 'text\_domain' );
+```php
+esc_html_e( 'Hello World', 'text_domain' );
 // same as
-echo esc\_html( \_\_( 'Hello World', 'text\_domain' ) );
+echo esc_html( __( 'Hello World', 'text_domain' ) );
+```
 
 These helper functions combine localization and escaping:
 
@@ -108,20 +122,24 @@ In the case that you need to escape your output in a specific way, the function 
 
 This function makes sure that only the specified HTML elements, attributes, and attribute values will occur in your output, and normalizes HTML entities.
 
-$allowed\_html = \[
-    'a'      => \[
-        'href'  => \[\],
-        'title' => \[\],
-    \],
-    'br'     => \[\],
-    'em'     => \[\],
-    'strong' => \[\],
-\];
-echo wp\_kses( $custom\_content, $allowed\_html );
+```php
+$allowed_html = [
+    'a'      =&gt; [
+        'href'  =&gt; [],
+        'title' =&gt; [],
+    ],
+    'br'     =&gt; [],
+    'em'     =&gt; [],
+    'strong' =&gt; [],
+];
+echo wp_kses( $custom_content, $allowed_html );
+```
 
 [wp\_kses\_post()](https://developer.wordpress.org/reference/functions/wp_kses_post/) is a wrapper function for wp\_kses where `$allowed_html` is a set of rules used by post content.
 
-echo wp\_kses\_post( $post\_content );
+```php
+echo wp_kses_post( $post_content );
+```
 
 ## Database Escaping
 
@@ -139,8 +157,8 @@ The escaped SQL query ($sql in this example) can then be used with one of the me
 
 ### Inserting and Updating Data
 
-*   [$](https://developer.wordpress.org/reference/classes/wpdb/update/)[wpdb](https://developer.wordpress.org/reference/classes/wpdb/)\->update()
-*   [$](https://developer.wordpress.org/reference/classes/wpdb/insert/)[wpdb](https://developer.wordpress.org/reference/classes/wpdb/)\->insert()
+*   [$](https://developer.wordpress.org/reference/classes/wpdb/update/)[wpdb::update()](https://developer.wordpress.org/reference/classes/wpdb/update/)
+*   [$](https://developer.wordpress.org/reference/classes/wpdb/insert/)[wpdb::insert()](https://developer.wordpress.org/reference/classes/wpdb/insert/)
 
 ### Like Statements
 

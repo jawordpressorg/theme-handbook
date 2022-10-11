@@ -33,7 +33,6 @@ The directory needs a name. It’s best practice to give a child theme the same 
 
 Next, you’ll need to create a stylesheet file named `style.css`, which will contain all of the CSS rules and declarations that control the look of your theme. Your stylesheet must contain the below required header comment at the very top of the file. This tells WordPress basic info about the theme, including the fact that it is a child theme with a particular parent.
 
-</p>
 /\*
  Theme Name:   Twenty Fifteen Child
  Theme URI:    http://example.com/twenty-fifteen-child/
@@ -47,9 +46,6 @@ Next, you’ll need to create a stylesheet file named `style.css`, which will co
  Tags:         light, dark, two-columns, right-sidebar, responsive-layout, accessibility-ready
  Text Domain:  twentyfifteenchild
 \*/
-<p>
-
-[Expand full source code](#)[Collapse full source code](#)
 
 The following information is required:
 
@@ -83,7 +79,6 @@ If the parent theme loads both stylesheets, the child theme does not need to do 
 
 If the parent theme loads its style using a function starting with `get_template`, such as `[get_template_directory()](https://developer.wordpress.org/reference/functions/get_template_directory/)` and `[get_template_directory_uri()](https://developer.wordpress.org/reference/functions/get_template_directory_uri/)`, the child theme needs to load just the child styles, using the parent’s handle in the dependency parameter.
 
-</p>
 add\_action( 'wp\_enqueue\_scripts', 'my\_theme\_enqueue\_styles' );
 function my\_theme\_enqueue\_styles() {
     wp\_enqueue\_style( 'child-style', get\_stylesheet\_uri(),
@@ -91,11 +86,9 @@ function my\_theme\_enqueue\_styles() {
         wp\_get\_theme()->get('Version') // this only works if you have Version in the style header
     );
 }
-<p>
 
 If the parent theme loads its style using a function starting with `get_stylesheet`, such as `[get_stylesheet_directory()](https://developer.wordpress.org/reference/functions/get_stylesheet_directory/)` and `[get_stylesheet_directory_uri()](https://developer.wordpress.org/reference/functions/get_stylesheet_directory_uri/)`, the child theme needs to load both parent and child stylesheets. Be sure to use the same handle name as the parent does for the parent styles.
 
-</p>
 add\_action( 'wp\_enqueue\_scripts', 'my\_theme\_enqueue\_styles' );
 function my\_theme\_enqueue\_styles() {
     $parenthandle = 'parent-style'; // This is 'twentyfifteen-style' for the Twenty Fifteen theme.
@@ -109,9 +102,6 @@ function my\_theme\_enqueue\_styles() {
         $theme->get('Version') // this only works if you have Version in the style header
     );
 }
-<p>
-
-[Expand full source code](#)[Collapse full source code](#)
 
 ### 4\. Install child theme
 
@@ -147,7 +137,6 @@ In that way, the `functions.php` of a child theme provides a smart, trouble-free
 
 The structure of `functions.php` is simple: An opening PHP tag at the top, and below it, your bits of PHP. In it you can put as many or as few functions as you wish. The example below shows an elementary `functions.php` file that does one simple thing: Adds a favicon link to the head element of HTML pages.
 
-</p>
 <?php // Opening PHP tag - nothing should be before this, not even whitespace
 
 // Custom Function to Include
@@ -155,8 +144,6 @@ function my\_favicon\_link() {
     echo '<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />' . "\\n";
 }
 add\_action( 'wp\_head', 'my\_favicon\_link' );
-
-<p>
 
 Tip: The fact that a child theme’s functions.php is loaded first means that you can make the user functions of your theme pluggable —that is, replaceable by a child theme— by declaring them conditionally.
 
@@ -172,19 +159,15 @@ For more information about what to include in your child theme’s `functions.ph
 
 ## Referencing or Including Other Files
 
-When you need to include files that reside within your child theme’s directory structure, you will need to use [get\_stylesheet\_directory()](https://developer.wordpress.org/reference/functions/get_stylesheet_directory/). Since the `style.css` is in the root of your child theme’s subdirectory, [get\_stylesheet\_directory()](https://developer.wordpress.org/reference/functions/get_stylesheet_directory/) points to your child theme’s directory (not the parent theme’s directory). To reference the parent theme directory, you would use [get\_template\_directory()](https://developer.wordpress.org/reference/functions/get_template_directory/) instead.
+When you need to include files that reside within your child theme’s directory structure, you will need to use [get\_stylesheet\_directory()](https://developer.wordpress.org/reference/functions/get_stylesheet_directory/) . Since the `style.css` is in the root of your child theme’s subdirectory, [get\_stylesheet\_directory()](https://developer.wordpress.org/reference/functions/get_stylesheet_directory/) points to your child theme’s directory (not the parent theme’s directory). To reference the parent theme directory, you would use [get\_template\_directory()](https://developer.wordpress.org/reference/functions/get_template_directory/) instead.
 
 Below is an example illustrating how to use [get\_stylesheet\_directory()](https://developer.wordpress.org/reference/functions/get_stylesheet_directory/) when referencing a file stored within the child theme directory:
 
-</p>
 <?php require\_once( get\_stylesheet\_directory(). '/my\_included\_file.php' ); ?>
-<p>
 
 Meanwhile, this example uses `[get_stylesheet_directory_uri()](https://developer.wordpress.org/reference/functions/get_stylesheet_directory_uri/)` to display an image that is stored within the `/images` folder in the child theme directory.
 
-</p>
 <img src="<?php echo get\_stylesheet\_directory\_uri(); ?>/images/my\_picture.png" alt="" />
-<p>
 
 Unlike `get_stylesheet_directory()`, which returns a file path, `get_stylesheet_directory_uri()` returns a URL, which is useful for front-end assets.
 
@@ -194,14 +177,11 @@ Scripts and styles should each be enqueued with their own function, and then tho
 
 WordPress won’t automatically load the stylesheet for your child theme on the front-end. Below is an example of using the `[wp_enqueue_scripts()](https://developer.wordpress.org/reference/functions/wp_enqueue_scripts/)` action hook to call a function that enqueues the child theme’s stylesheet.
 
-</p>
 <?php
 add\_action( 'wp\_enqueue\_scripts', 'my\_plugin\_add\_stylesheet' );
 function my\_plugin\_add\_stylesheet() {
     wp\_enqueue\_style( 'my-style', get\_stylesheet\_directory\_uri() . '/style.css', false, '1.0', 'all' );
 }
-
-<p>
 
 ## Special Considerations
 
@@ -213,12 +193,10 @@ A child theme inherits [post formats](https://developer.wordpress.org/themes/fun
 
 To support RTL languages, add a `rtl.css` file to your child theme, containing:
 
-</p>
 /\*
 Theme Name: Twenty Fifteen Child
 Template: twentyfifteen
 \*/
-<p>
 
 Even if the parent theme does not have an `rtl.css` file, it’s recommended to add the `rtl.css` file to your child theme. WordPress will auto-load the `rtl.css` file only if `[is_rtl()](https://developer.wordpress.org/reference/functions/is_rtl/)` is true.
 
@@ -244,7 +222,6 @@ To internationalize a child theme follow these steps:
 
 #### Example: textdomain
 
-</p>
 <?php
 /\*\*
   \* Set up My Child Theme's textdomain.
@@ -257,18 +234,14 @@ function twentyfifteenchild\_theme\_setup() {
 }
 add\_action( 'after\_setup\_theme', 'twentyfifteenchild\_theme\_setup' );
 
-<p>
-
 At this point, strings in the child theme are ready for translation. To ensure they are properly internationalized for translation, each string needs to have the `twentyfifteenchild` textdomain.
 
 #### Example: gettext functions
 
 Here is an example of echoing the phrase “Code is Poetry”:
 
-</p>
 <?php
 esc\_html\_e( 'Code is Poetry', 'twentyfifteenchild' );
 ?>
-<p>
 
 The text domain defined in `[load_child_theme_textdomain()](https://developer.wordpress.org/reference/functions/load_child_theme_textdomain/)` should be used to translate all strings in the child theme. In the event that a template file from the parent them has been included, the textdomain should be changed from the one defined in the parent theme to the one defined by the child theme.

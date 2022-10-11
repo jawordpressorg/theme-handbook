@@ -4,7 +4,6 @@ WordPress displays comments in your theme based on the settings and code in the 
 
 ## Simple comments loop
 
-</p>
 //Get only the approved comments
 $args = array(
     'status' => 'approve'
@@ -22,20 +21,15 @@ if ( $comments ) {
 } else {
  echo 'No comments found.';
 }
-<p>
-
-[Expand full source code](#)[Collapse full source code](#)
 
 The `comments.php` template contains all the logic needed to pull comments out of the database and display them in your theme.
 
 Before we explore the template file you’ll want to know how to pull in the partial template file on the appropriate pages such as `single.php`. You’ll wrap the comment [template tag](https://developer.wordpress.org/themes/basics/template-tags/) in a conditional statement so comments.php is only pulled in if it makes sense to do.
 
-</p>
 // If comments are open or we have at least one comment, load up the comment template.
  if ( comments\_open() || get\_comments\_number() ) :
      comments\_template();
  endif;
-<p>
 
 ![functionality-comments-01](https://developer.wordpress.org/files/2014/10/functionality-comments-01.png)
 
@@ -43,7 +37,6 @@ Before we explore the template file you’ll want to know how to pull in the par
 
 Here’s an example of the `comments.php` template included with the Twenty Thirteen theme:
 
-</p>
 <?php
 /\*\*
  \* The template for displaying Comments.
@@ -103,9 +96,6 @@ if ( post\_password\_required() )
 	<?php comment\_form(); ?>
 
 </div><!-- #comments -->
-<p>
-
-[Expand full source code](#)[Collapse full source code](#)
 
 ## Breaking down the comments.php
 
@@ -122,7 +112,6 @@ The above `comments.php` can be broken down to the below parts for better unders
 
 This template begins by identifying the template.
 
-</p>
 <?php
 /\*\*
  \* The template for displaying Comments.
@@ -134,11 +123,8 @@ This template begins by identifying the template.
  \* @since Twenty Thirteen 1.0
  \*/
 
-<p>
-
 Next, there’s a test to see if the post is password protected and, if so, it stops processing the template.
 
-</p>
 /\*
  \* If the current post is protected by a password and the visitor has not yet
  \* entered the password we will return early without loading the comments.
@@ -146,36 +132,30 @@ Next, there’s a test to see if the post is password protected and, if so, it s
 if ( post\_password\_required() )
  return;
 ?>
-<p>
 
 Finally, there’s a test to see if there are comments associated with this post.
 
-</p>
 <div id="comments" class="comments-area">
 
 	<?php if ( have\_comments() ) : ?>
-<p>
 
 ### Comments Title
 
 Prints out the header that appears above the comments.
 
-Note: Uses the [\_nx()](https://developer.wordpress.org/reference/functions/_nx/) translation function so other developers can provide alternative language translations.
+Note: Uses the [](https://developer.wordpress.org/reference/functions/_nx/)[\_nx()](https://developer.wordpress.org/reference/functions/_nx/) translation function so other developers can provide alternative language translations.
 
-</p>
 <h2 class="comments-title">
 			<?php
 				printf( \_nx( 'One thought on "%2$s"', '%1$s thoughts on "%2$s"', get\_comments\_number(), 'comments title', 'twentythirteen' ),
 					number\_format\_i18n( get\_comments\_number() ), '<span>' . get\_the\_title() . '</span>' );
 			?>
 		</h2>
-<p>
 
 ### Comment Listing
 
 The following snippet creates an ordered listing of comments using the [wp\_list\_comments()](https://developer.wordpress.org/reference/functions/wp_list_comments/) function.
 
-</p>
 <ol class="comment-list">
 			<?php
 				wp\_list\_comments( array(
@@ -185,13 +165,11 @@ The following snippet creates an ordered listing of comments using the [wp\_list
 				) );
 			?>
 		</ol><!-- .comment-list -->
-<p>
 
 ### Comment Pagination
 
 Checks to see if there are enough comments to merit adding comment navigation and, if so, create comment navigation.
 
-</p>
 		<?php
 			// Are there comments to navigate through?
 			if ( get\_comment\_pages\_count() > 1 && get\_option( 'page\_comments' ) ) :
@@ -202,29 +180,24 @@ Checks to see if there are enough comments to merit adding comment navigation an
 			<div class="nav-next"><?php next\_comments\_link( \_\_( 'Newer Comments &rarr;', 'twentythirteen' ) ); ?></div>
 		</nav><!-- .comment-navigation -->
 		<?php endif; // Check for comment navigation ?>
-<p>
 
 ### Comments are closed message.
 
 If comments aren’t open, displays a line indicating that they’re closed.
 
-</p>
 		<?php if ( ! comments\_open() && get\_comments\_number() ) : ?>
 		<p class="no-comments"><?php \_e( 'Comments are closed.' , 'twentythirteen' ); ?></p>
 		<?php endif; ?>
-<p>
 
 ### The End
 
 This section ends the comments loop, includes the comment form, and closes the comment wrapper.
 
-</p>
 	<?php endif; // have\_comments() ?>
 
 	<?php comment\_form(); ?>
 
 </div><!-- #comments -->
-<p>
 
 ## Comments Pagination
 
@@ -234,25 +207,19 @@ Enabling comments pagination is done in two steps.
 1.  Enable paged comments within WordPress by going to *Settings* > *Discussion* , and checking the box “*Break comments into pages*” . You can enter any number for the “*top level comments per page*”.
 2.  Open your `comments.php` template file and add the following line where you want the comment pagination to appear.
 
-</p>
 <div class="pagination">
     <?php paginate\_comments\_links(); ?>
 </div>
-<p>
 
 ## Alternative Comment Template
 
 On some occasions you may want display your comments differently within your theme. For this you would build an alternate file (ex. short-comments.php) and call it as follows:
 
-</p>
  <?php comments\_template( '/short-comments.php' ); ?> 
-<p>
 
 The path to the file used for an alternative comments template should be relative to the current theme root directory, and include any subfolders. So if the custom comments template is in a folder inside the theme, it may look like this when called:
 
-</p>
 <?php comments\_template( '/custom-templates/alternative-comments.php' ); ?>
-<p>
 
 ## Function Reference
 

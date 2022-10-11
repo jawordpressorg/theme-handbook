@@ -6,12 +6,14 @@ WordPress 4.1 also added support for rendering JavaScript-heavy and/or high-quan
 
 In order to introduce a concept of having one template for multiple Customizer controls of the same type, we needed to introduce a way to register a type of control with the Customize Manager. Previously, custom control objects were only encountered when custom controls were added using `[WP_Customize_Manager::add_control()](https://developer.wordpress.org/reference/classes/wp_customize_manager/add_control/)`. But detecting added control types to render one template per type wouldn’t allow new controls to be created dynamically if no other instances of that type were loaded. `[WP_Customize_Manager::register_control_type()](https://developer.wordpress.org/reference/classes/wp_customize_manager/register_control_type/) solves this:`
 
-add\_action( 'customize\_register', 'prefix\_customize\_register' );
-function prefix\_customize\_register( $wp\_customize ) {
-  // Define a custom control class, WP\_Customize\_Custom\_Control.
+```php
+add_action( 'customize_register', 'prefix_customize_register' );
+function prefix_customize_register( $wp_customize ) {
+  // Define a custom control class, WP_Customize_Custom_Control.
   // Register the class so that its JS template is available in the Customizer.
-  $wp\_customize->register\_control\_type( 'WP\_Customize\_Custom\_Control' );
+  $wp_customize->register_control_type( 'WP_Customize_Custom_Control' );
 }
+```
 
 All registered control types have their templates printed to the customizer by `WP_Customize_Manager::print_control_templates()`.
 
@@ -26,11 +28,13 @@ While Customizer control data has always been passed to the control JS models, a
 
 You can add additional parameters specific to your custom control by overriding `[WP_Customize_Control::to_json()](https://developer.wordpress.org/reference/classes/wp_customize_control/to_json/)` in your custom control subclass. In most cases, you’ll want to call the parent class’ `to_json()` method also, to ensure that all core variables are exported as well. Here’s an example from the core color control:
 
-public function to\_json() {
-  parent::to\_json();
-  $this->json\['statuses'\] = $this->statuses;
-  $this->json\['defaultValue'\] = $this->setting->default;
+```php
+public function to_json() {
+  parent::to_json();
+  $this->json['statuses'] = $this->statuses;
+  $this->json['defaultValue'] = $this->setting->default;
 }
+```
 
 ## JS/Underscore Templating
 
@@ -38,13 +42,14 @@ Once you’ve registered your custom control class as a control type and exporte
 
 Underscore-style custom control templates are very similar to PHP. As more and more of WordPress core becomes JavaScript-driven, these templates are becoming increasingly more common. Some sample template code in core can be found in [media](https://core.trac.wordpress.org/browser/trunk/src/wp-includes/media-template.php), [revisions](https://core.trac.wordpress.org/browser/trunk/src/wp-admin/includes/revision.php#L260), the [theme browser](https://core.trac.wordpress.org/browser/trunk/src/wp-admin/themes.php#L293), and even [in the Twenty Fifteen theme](https://core.trac.wordpress.org/browser/trunk/src/wp-content/themes/twentyfifteen/inc/customizer.php#L266), where a JS template is used to both save the color scheme data and instantly preview color scheme changes in the Customizer. The best way to learn how these templates work is to study similar code in core and, accordingly, here is a brief example:
 
-class WP\_Customize\_Color\_Control extends WP\_Customize\_Control {
+```php
+class WP_Customize_Color_Control extends WP_Customize_Control {
   public $type = 'color';
 // ...
-  /\*\*
-   \* Render a JS template for the content of the color picker control.
-   \*/
-  public function content\_template() {
+  /**
+   * Render a JS template for the content of the color picker control.
+   */
+  public function content_template() {
     ?>
     <# var defaultValue = '';
     if ( data.defaultValue ) {
@@ -63,14 +68,13 @@ class WP\_Customize\_Color\_Control extends WP\_Customize\_Control {
         <span class="description customize-control-description">{{{ data.description }}}</span>
       <# } #>
       <div class="customize-control-content">
-        <input class="color-picker-hex" type="text" maxlength="7" placeholder="<?php esc\_attr\_e( 'Hex Value' ); ?>" {{ defaultValue }} />
+        <input class="color-picker-hex" type="text" maxlength="7" placeholder="<?php esc_attr_e( 'Hex Value' ); ?>" {{ defaultValue }} />
       </div>
     </label>
     <?php
   }
 }
-
-[Expand full source code](#)[Collapse full source code](#)
+```
 
 In the above template for the core custom color control, you can see that after the closing PHP tag, we have a JS template. notation is used around statements to be evaluated – in most cases, this is used for conditionals. All of the control instance data that we exported to JS is stored in the \`data\` object, and we can print a variable using double (escaped) or triple (unescaped) brace notation `{{ }}`. As I said before, the best way to get the hang of writing controls like this is to read through existing examples. [`WP_Customize_Upload_Control`](https://core.trac.wordpress.org/browser/trunk/src/wp-includes/class-wp-customize-control.php#L639) was recently [updated to leverage this API](https://core.trac.wordpress.org/changeset/30309) as well, integrating nicely with the way the media manager is implemented, and squeezing a ton of functionality out of a minimal amount of code. If you want some really good practice, try converting some of the other core controls to use this API – and submit patches to core too, of course!
 

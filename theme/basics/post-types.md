@@ -10,17 +10,19 @@ The [Template files](https://developer.wordpress.org/themes/basics/template-fil
 
 ## Default Post Types
 
-There are five default Post Types readily available to users or internally used by the WordPress installation:
+There are several default Post Types readily available to users or internally used by the WordPress installation. The most common are:
 
 *   Post (Post Type: ‘post’)
 *   Page (Post Type: ‘page’)
 *   Attachment (Post Type: ‘attachment’)
 *   Revision (Post Type: ‘revision’)
 *   Navigation menu (Post Type: ‘nav\_menu\_item’)
+*   Block templates (Post Type: ‘wp\_template’)
+*   Template parts (Post Type: ‘wp\_template\_part’)
 
 The Post Types above can be modified and removed by a plugin or theme, but it’s not recommended that you remove built-in functionality for a widely-distributed theme or plugin.
 
-The most common post types you will interact with as a Theme Developer are Post, Page, Attachment, and Custom Post Types.  It’s out of the scope of this handbook to flesh out the Revision and Navigation Menu Post Types.  However, it is important to note that you will interact with and build the functionality of [navigation menus](https://developer.wordpress.org/themes/functionality/navigation-menus/) and that will be detailed later in this handbook.
+It’s out of the scope of this handbook to explain other post types in detail. However, it is important to note that you will interact with and build the functionality of [navigation menus](https://developer.wordpress.org/themes/functionality/navigation-menus/) and that will be detailed later in this handbook.
 
 ### Post
 
@@ -33,20 +35,18 @@ Posts are used in blogs. They are:
 
 The template files that display the Post post type are:
 
-*   `single.php` and `single-post.php`
-*   `category.php` and all its iterations
-*   `tag.php` and all its iterations
-*   `taxonomy.php` and all its iterations
-*   `archive.php` and all its iterations
-*   `author.php` and all its iterations
-*   `date.php` and all its iterations
-*   `search.php`
-*   `home.php`
-*   `index.php`
+*   `singl`e and `single-post`
+*   `category` and all its iterations
+*   `ta`g and all its iterations
+*   `taxonomy` and all its iterations
+*   `archive` and all its iterations
+*   `author` and all its iterations
+*   `date` and all its iterations
+*   `search`
+*   `home`
+*   `index`
 
-Additionally, theme developers can display Post post types in `front-page.php` if they so desire.
-
-[Read more about Post Template Files](https://developer.wordpress.org/themes/template-files-section/post-template-files/).
+[Read more about Post Template Files in classic themes](https://developer.wordpress.org/themes/template-files-section/post-template-files/).
 
 ### Page
 
@@ -54,18 +54,16 @@ Pages are a static Post Type, outside of the normal blog stream/feed. Their feat
 
 *   non-time dependent and without a time stamp
 *   are not organized using the categories and/or tags taxonomies
-*   can have page templates applied to them
 *   can be organized in a hierarchical structure — i.e. pages can be parents/children of other pages
 
 The template files that display the Page post type are:
 
-*   `page.php` and all its iterations
-*   `$custom.php` and all its iterations
-*   `front-page.php`
-*   `search.php`
-*   `index.php`
+*   `page` and all its iterations
+*   `front-page`
+*   `search`
+*   `index`
 
-[Read more about Page Template Files](https://developer.wordpress.org/themes/template-files-section/page-template-files/).
+[Read more about Page Template Files in classic themes](https://developer.wordpress.org/themes/template-files-section/page-template-files/).
 
 ### Attachment
 
@@ -76,13 +74,13 @@ Attachments are commonly used to display images or media in content, and may als
 
 The template files that display the Attachment post type are:
 
-*   `MIME_type.php`
-*   `attachment.php`
-*   `single-attachment.php`
-*   `single.php`
-*   `index.php`
+*   `MIME_type`
+*   `attachment`
+*   `single-attachment`
+*   `single`
+*   `index`
 
-[Read more about Attachment Template Files](https://developer.wordpress.org/themes/template-files-section/attachment-template-files/).
+[Read more about Attachment Template Files in classic themes](https://developer.wordpress.org/themes/template-files-section/attachment-template-files/).
 
 ## Custom Post Types
 
@@ -92,11 +90,9 @@ You can learn more about [creating custom post types in the WordPress Plugin Dev
 
 While you generally won’t develop Custom Post Types in your theme, you may want to code ways to display Custom Post Types that were created by a plugin.  The following templates can display Custom post types:
 
-*   `single-{post-type}.php`
-*   `archive-{post-type}.php`
-*   `search.php`
-*   `index.php`
+*   `single-{post-type}`
+*   `archive-{post-type}`
+*   `search`
+*   `index`
 
-Additionally, Theme Developers can display Custom Post Types in any template file, often by using [multiple loops](https://developer.wordpress.org/themes/basics/the-loop/#multiple-loops).
-
-[Read more about Custom Post Type Templates](https://developer.wordpress.org/themes/template-files-section/custom-post-type-template-files/).
+[Read more about Custom Post Type Templates in classic themes](https://developer.wordpress.org/themes/template-files-section/custom-post-type-template-files/).

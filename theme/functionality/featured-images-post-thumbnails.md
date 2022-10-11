@@ -6,9 +6,11 @@ Featured images (also sometimes called Post Thumbnails) are images that represen
 
 Themes must declare support for the Featured Image function before the Featured Image interface will appear on the Edit screen. Support is declared by putting the following in your theme’s [functions.php](https://make.wordpress.org/docs/theme-developer-handbook/theme-basics/theme-functions/ "Theme Functions") file:
 
-add\_theme\_support( 'post-thumbnails' );
+```php
+add_theme_support( 'post-thumbnails' );
+```
 
-Note: To enable Featured Image only for specific post types, see [add\_theme\_support()](https://developer.wordpress.org/reference/functions/add_theme_support/ "Allows a theme to register its support of a certain feature...")
+Note: To enable Featured Image only for specific post types, see [](https://developer.wordpress.org/reference/functions/add_theme_support/ "Allows a theme to register its support of a certain feature...")[](https://developer.wordpress.org/reference/functions/add_theme_support/)[add\_theme\_support()](https://developer.wordpress.org/reference/functions/add_theme_support/)
 
 ## Setting a Featured Image
 
@@ -33,76 +35,96 @@ By default, the Featured Image meta box is displayed in the sidebar of the Edit 
 
 The default image sizes of WordPress are “Thumbnail”, “Medium”, “Large” and “Full Size” (the original size of the image you uploaded). These image sizes can be configured in the WordPress Administration Media panel under **\>Settings > Media**. You can also define your own image size by passing an array with your image dimensions:
 
-<br />
-the\_post\_thumbnail(); // Without parameter ->; Thumbnail<br />
-the\_post\_thumbnail( 'thumbnail' ); // Thumbnail (default 150px x 150px max)<br />
-the\_post\_thumbnail( 'medium' ); // Medium resolution (default 300px x 300px max)<br />
-the\_post\_thumbnail( 'medium\_large' ); // Medium-large resolution (default 768px x no height limit max)<br />
-the\_post\_thumbnail( 'large' ); // Large resolution (default 1024px x 1024px max)<br />
-the\_post\_thumbnail( 'full' ); // Original image resolution (unmodified)<br />
-the\_post\_thumbnail( array( 100, 100 ) ); // Other resolutions (height, width)<br />
+```php
+the_post_thumbnail(); // Without parameter ->; Thumbnail
+the_post_thumbnail( 'thumbnail' ); // Thumbnail (default 150px x 150px max)
+the_post_thumbnail( 'medium' ); // Medium resolution (default 300px x 300px max)
+the_post_thumbnail( 'medium_large' ); // Medium-large resolution (default 768px x no height limit max)
+the_post_thumbnail( 'large' ); // Large resolution (default 1024px x 1024px max)
+the_post_thumbnail( 'full' ); // Original image resolution (unmodified)
+the_post_thumbnail( array( 100, 100 ) ); // Other resolutions (height, width)
+```
 
 ## Add Custom Featured Image Sizes
 
 In addition to defining image sizes individually using
 
-the\_post\_thumbnail( array(  ,  ) );
+```php
+the_post_thumbnail( array(  ,  ) );
+```
 
 you can create custom featured image sizes in your theme’s functions file that can then be called in your theme’s template files.
 
-add\_image\_size( 'category-thumb', 300, 9999 ); // 300 pixels wide (and unlimited height)
+```php
+add_image_size( 'category-thumb', 300, 9999 ); // 300 pixels wide (and unlimited height)
+```
 
 Here is an example of how to create custom Featured Image sizes in your theme’s `functions.php` file.
 
-if ( function\_exists( 'add\_theme\_support' ) ) {<br />
-    add\_theme\_support( 'post-thumbnails' );<br />
-    set\_post\_thumbnail\_size( 150, 150, true ); // default Featured Image dimensions (cropped)</p>
-<p>    // additional image sizes<br />
-    // delete the next line if you do not need additional image sizes<br />
-    add\_image\_size( 'category-thumb', 300, 9999 ); // 300 pixels wide (and unlimited height)<br />
+```php
+if ( function_exists( 'add_theme_support' ) ) {
+    add_theme_support( 'post-thumbnails' );
+    set_post_thumbnail_size( 150, 150, true ); // default Featured Image dimensions (cropped)
+
+    // additional image sizes
+    // delete the next line if you do not need additional image sizes
+    add_image_size( 'category-thumb', 300, 9999 ); // 300 pixels wide (and unlimited height)
  }
+```
 
 ## Set the Featured Image Output Size
 
 To be used in the current Theme’s functions.php file.  
 You can use `set_post_thumbnail_size()` to set the default Featured Image size by resizing the image proportionally (that is, without distorting it):
 
-set\_post\_thumbnail\_size( 50, 50 ); // 50 pixels wide by 50 pixels tall, resize mode
+```php
+set_post_thumbnail_size( 50, 50 ); // 50 pixels wide by 50 pixels tall, resize mode
+```
 
 Set the default Featured Image size by cropping the image (either from the sides, or from the top and bottom):
 
-set\_post\_thumbnail\_size( 50, 50, true ); // 50 pixels wide by 50 pixels tall, crop mode
+```php
+set_post_thumbnail_size( 50, 50, true ); // 50 pixels wide by 50 pixels tall, crop mode
+```
 
 ## Styling Featured Images
 
 Featured Images are given a class “wp-post-image”. They also get a class depending on the size of the thumbnail being displayed. You can style the output with these CSS selectors:
 
-img.wp-post-image<br />
-img.attachment-thumbnail<br />
-img.attachment-medium<br />
-img.attachment-large<br />
+```php
+img.wp-post-image
+img.attachment-thumbnail
+img.attachment-medium
+img.attachment-large
 img.attachment-full
+```
 
-You can also give Featured Images their own classes by using the attribute parameter in [the\_post\_thumbnail()](https://developer.wordpress.org/reference/functions/the_post_thumbnail/ "Display Post Thumbnail").  
+You can also give Featured Images their own classes by using the attribute parameter in [](https://developer.wordpress.org/reference/functions/the_post_thumbnail/ "Display Post Thumbnail")[the\_post\_thumbnail()](https://developer.wordpress.org/reference/functions/the_post_thumbnail/) .  
 Display the Featured Image with a class “alignleft”:
 
-the\_post\_thumbnail( 'thumbnail', array( 'class' => 'alignleft' ) );
+```php
+the_post_thumbnail( 'thumbnail', array( 'class' => 'alignleft' ) );
+```
 
 ## Examples
 
 ### Default Usage
 
-// check if the post or page has a Featured Image assigned to it.<br />
-if ( has\_post\_thumbnail() ) {<br />
-    the\_post\_thumbnail();<br />
-}<br />
-
-Note: To return the Featured Image for use in your PHP code instead of displaying it, use: [get\_the\_post\_thumbnail()](https://developer.wordpress.org/reference/functions/get_the_post_thumbnail/ "Retrieve Post Thumbnail")
-
-// check for a Featured Image and then assign it to a PHP variable for later use<br />
-if ( has\_post\_thumbnail() ) {<br />
-    $featured\_image = get\_the\_post\_thumbnail();<br />
+```php
+// check if the post or page has a Featured Image assigned to it.
+if ( has_post_thumbnail() ) {
+    the_post_thumbnail();
 }
+```
+
+Note: To return the Featured Image for use in your PHP code instead of displaying it, use: [](https://developer.wordpress.org/reference/functions/get_the_post_thumbnail/ "Retrieve Post Thumbnail")[](https://developer.wordpress.org/reference/functions/get_the_post_thumbnail/)[get\_the\_post\_thumbnail()](https://developer.wordpress.org/reference/functions/get_the_post_thumbnail/)
+
+```php
+// check for a Featured Image and then assign it to a PHP variable for later use
+if ( has_post_thumbnail() ) {
+    $featured_image = get_the_post_thumbnail();
+}
+```
 
 ### Linking to Post Permalink or Larger Image
 
@@ -118,22 +140,27 @@ Example 1. To link Post Thumbnails to the Post Permalink in a specific loop, use
 
 Example 2. To link **all Post Thumbnails** on your website to the Post Permalink, put this in the current Theme’s [functions.php](https://make.wordpress.org/docs/theme-developer-handbook/part-one-theme-basics/theme-functions/ "Theme Functions") file:
 
-<br />
-add\_filter( 'post\_thumbnail\_html', 'my\_post\_image\_html', 10, 3 );</p>
-<p>function my\_post\_image\_html( $html, $post\_id, $post\_image\_id ) {</p>
-<p>  $html = '<a href="' . get\_permalink( $post\_id ) . '">' . $html . '</a>';<br />
-  return $html;</p>
-<p>}<br />
+```php
+add_filter( 'post_thumbnail_html', 'my_post_image_html', 10, 3 );
+
+function my_post_image_html( $html, $post_id, $post_image_id ) {
+
+  $html = '' . $html . '';
+  return $html;
+
+}
+```
 
 This example links to the “large” Post Thumbnail image size and must be used within The Loop.
 
-<br />
- if ( has\_post\_thumbnail()) {<br />
-    $large\_image\_url = wp\_get\_attachment\_image\_src( get\_post\_thumbnail\_id(), 'large');<br />
-    echo '<a href="' . $large\_image\_url&#91;0&#93; . '">';<br />
-    the\_post\_thumbnail('thumbnail');<br />
-    echo '</a>';<br />
- }<br />
+```php
+ if ( has_post_thumbnail()) {
+    $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), 'large');
+    echo '';
+    the_post_thumbnail('thumbnail');
+    echo '';
+ }
+```
 
 ## Source File
 

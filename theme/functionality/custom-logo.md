@@ -8,13 +8,10 @@ Using a custom logo allows site owners to upload an image for their website, whi
 
 To enable the use of a custom logo in your theme, add the following to your `functions.php` file:
 
-</p>
 add\_theme\_support( 'custom-logo' );
-<p>
 
 When enabling custom logo support, you can configure five parameters by passing along arguments to the `add_theme_support()` function using an array:
 
-</p>
 function themename\_custom\_logo\_setup() {
 	$defaults = array(
 		'height'               => 100,
@@ -29,10 +26,6 @@ function themename\_custom\_logo\_setup() {
 }
 
 add\_action( 'after\_setup\_theme', 'themename\_custom\_logo\_setup' );
-
-<p>
-
-[Expand full source code](#)[Collapse full source code](#)
 
 The [after\_setup\_theme](https://developer.wordpress.org/reference/hooks/after_setup_theme/) hook is used so that the custom logo support is registered after the theme has loaded.
 
@@ -50,17 +43,14 @@ The [after\_setup\_theme](https://developer.wordpress.org/reference/hooks/after_
 
 A custom logo can be displayed in the theme using `` the_`custom_logo()` `` function. But it’s recommended to wrap the code in a `function_exists()` call to maintain backward compatibility with the older versions of WordPress, like this:
 
-</p>
 if ( function\_exists( 'the\_custom\_logo' ) ) {
 	the\_custom\_logo();
 }
-<p>
 
 Generally logos are added to the `header.php` file of the theme, but it can be elsewhere as well.
 
 If you want to get your current logo URL (or use your own markup) instead of the default markup, you can use the following code:
 
-</p>
 $custom\_logo\_id = get\_theme\_mod( 'custom\_logo' );
 $logo = wp\_get\_attachment\_image\_src( $custom\_logo\_id , 'full' );
 
@@ -69,7 +59,6 @@ if ( has\_custom\_logo() ) {
 } else {
 	echo '<h1>' . get\_bloginfo('name') . '</h1>';
 }
-<p>
 
 ### Custom logo template tags
 

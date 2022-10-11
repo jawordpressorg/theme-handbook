@@ -18,10 +18,11 @@ To link to the selected page in plugins and themes, three template tags have bee
 
 The following example will display the privacy policy link surrounded by a `div` element
 
-<br />
-if ( function\_exists( 'the\_privacy\_policy\_link' ) ) {<br />
-   the\_privacy\_policy\_link( '&lt;div>', '&lt;/div>' );<br />
-}<br />
+```php
+if ( function_exists( 'the_privacy_policy_link' ) ) {
+   the_privacy_policy_link( '<div>', '</div>' );
+}
+```
 
 ## Commenter Cookie Opt-Ins
 
@@ -37,9 +38,3 @@ For this reason, a checkbox has been added to the comment form that allows comme
 The new checkbox field is automatically added to comment forms displayed using the [comment\_form()](https://developer.wordpress.org/reference/functions/comment_form/) function inside a p.comment-form-cookies-consent element.
 
 While most themes will not require any action, it is recommended that you double check that the input and label does not require CSS adjustments in custom themes.
-
-## Bundled Themes
-
-All 8 currently supported bundled themes (Twenty Ten-Twenty Seventeen) have been updated to support these changes. Site footers will display a link to the site’s privacy policy when one has been selected, and the commenter cookie opt-in field has been styled.
-
-Child themes built on top of bundled themes should be checked to see if any adjustments are necessary for the privacy policy link in the footer.

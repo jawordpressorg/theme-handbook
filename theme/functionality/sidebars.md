@@ -45,8 +45,6 @@ function themename\_widgets\_init() {
 	) );
 }
 
-[Expand full source code](#)[Collapse full source code](#)
-
 Registering a sidebar tells WordPress that you’re creating a new widget area in **Appearance > Widgets** that users can drag their widgets to. There are two functions for registering sidebars:
 
 *   [register\_sidebar()](https://developer.wordpress.org/reference/functions/register_sidebar/)
@@ -78,8 +76,6 @@ function my\_register\_sidebars() {
 	);
 	/\* Repeat register\_sidebar() code for additional sidebars. \*/
 }
-
-[Expand full source code](#)[Collapse full source code](#)
 
 The code does the following:
 
@@ -168,5 +164,3 @@ You may want your sidebar to be populated with some widgets by default. For exam
         </aside>
    <?php endif; ?>
 </div>
-
-[Expand full source code](#)[Collapse full source code](#)
