@@ -77,11 +77,9 @@ Suppose you want some static text displayed before the list of posts on your cat
 
 Open your file and above [The Loop](https://developer.wordpress.org/themes/basics/the-loop/ "The Loop") section of your Template file, insert the following code:
 
-</p>
 <p>
 This is some text that will display at the top of the Category page.
 </p>
-<p>
 
 This text will only display on an archive page displaying posts in that category.
 
@@ -91,7 +89,6 @@ What if you want to display different text based on the category page that the v
 
 Again, this code would be added before the loop:
 
-</p>
 <?php if (is\_category('Category A')) : ?>
       <p>This is the text to describe category A</p>
 <?php elseif (is\_category('Category B')) : ?>
@@ -100,7 +97,6 @@ Again, this code would be added before the loop:
       <p>This is some generic text to describe all other category pages,
 I could be left blank</p>
 <?php endif; ?>
-<p>
 
 This code does the following:
 
@@ -116,12 +112,10 @@ To do this, use a PHP if statement that looks at the value of the $paged WordPre
 
 Put the following above The Loop:
 
-</p>
 <?php if ( $paged < 2 ) : ?>
       <p>Text for first page of Category archive.</p>
 <?php else : ?>
 <?php endif; ?>
-<p>
 
 This code asks whether the page displayed is the first page of the archive. If it is, the text for the first page is displayed. Otherwise, the text for the subsequent pages is displayed.
 
@@ -133,14 +127,10 @@ You can choose whether to display full posts or just excerpts. By displaying exc
 
 Open your file and find the loop. Look for:
 
-</p>
 the\_content()
-<p>
 
 And replace it with:
 
-</p>
 the\_excerpt()
-<p>
 
 And if your theme is displaying excerpts but you want to display the full content, replace `the_excerpt` with `the_content`.

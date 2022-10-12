@@ -19,13 +19,15 @@ You can customize the Loop across your template files to display and manipulate 
 
 The basic loop is:
 
-&lt;?php<br />
-if ( have\_posts() ) :<br />
-    while ( have\_posts() ) : the\_post();<br />
-        // Display post content<br />
-    endwhile;<br />
-endif;<br />
-?><br />
+```php
+<?php
+if ( have_posts() ) :
+    while ( have_posts() ) : the_post();
+        // Display post content
+    endwhile;
+endif;
+?>
+```
 
 This loop says that when there are posts, loop through and display the posts. Broken down into more detail:
 
@@ -36,14 +38,16 @@ This loop says that when there are posts, loop through and display the posts. Br
 
 The Loop should be placed in `index.php`, and in any other templates which are used to display post information. Because you do not want to duplicate your header over and over, the loop should always be placed after the call to `[get_header()](https://developer.wordpress.org/reference/functions/get_header/)`. For example:
 
-&lt;?php<br />
-get\_header();<br />
-if ( have\_posts() ) :<br />
-    while ( have\_posts() ) : the\_post();<br />
-        // Display post content<br />
-    endwhile;<br />
-endif;<br />
-?><br />
+```php
+<?php
+get_header();
+if ( have_posts() ) :
+    while ( have_posts() ) : the_post();
+        // Display post content
+    endwhile;
+endif;
+?>
+```
 
 In the above example, the end of the Loop is shown with an `endwhile` and `endif`. The Loop must always begin with the same `if` and `while` statements, as mentioned above and must end with the same end statements.
 
@@ -53,18 +57,22 @@ Tip: You can include a custom 404 “not found” message that will be displayed
 
 An extremely simple `index.php` file would look like:
 
-&lt;?php<br />
-get\_header();</p>
-<p>if ( have\_posts() ) :<br />
-    while ( have\_posts() ) : the\_post();<br />
-        the\_content();<br />
-    endwhile;<br />
-else :<br />
-    \_e( 'Sorry, no posts matched your criteria.', 'textdomain' );<br />
-endif;</p>
-<p>get\_sidebar();<br />
-get\_footer();<br />
-?><br />
+```php
+<?php
+get_header();
+
+if ( have_posts() ) :
+    while ( have_posts() ) : the_post();
+        the_content();
+    endwhile;
+else :
+    _e( 'Sorry, no posts matched your criteria.', 'textdomain' );
+endif;
+
+get_sidebar();
+get_footer();
+?>
+```
 
 ## What the Loop Can Display
 
@@ -107,17 +115,19 @@ Let’s take a look at some examples of the Loop in action:
 
 Most blogs have a blog archive page, which can show a number of things including the post title, thumbnail, and excerpt. The example below shows a simple loop that checks to see if there are any posts and, if there are, outputs each post’s title, thumbnail, and excerpt. If no posts exists, it displays the message in parentheses.
 
-&lt;?php<br />
-if ( have\_posts() ) :<br />
-    while ( have\_posts() ) : the\_post();<br />
-        the\_title( '&lt;h2>', '&lt;/h2>' );<br />
-        the\_post\_thumbnail();<br />
-        the\_excerpt();<br />
-    endwhile;<br />
-else:<br />
-    \_e( 'Sorry, no posts matched your criteria.', 'textdomain' );<br />
-endif;<br />
-?><br />
+```php
+<?php
+if ( have_posts() ) :
+    while ( have_posts() ) : the_post();
+        the_title( '<h2>', '</h2>' );
+        the_post_thumbnail();
+        the_excerpt();
+    endwhile;
+else:
+    _e( 'Sorry, no posts matched your criteria.', 'textdomain' );
+endif;
+?>
+```
 
 #### Individual Post
 
@@ -125,16 +135,18 @@ In WordPress, each post has its own page, which displays the relevant informatio
 
 In the example below, the loop outputs the post’s title and content. You could use this example in a post or page template file to display the most basic information about the post. You could also customize this template to add more data to the post, for example the category.
 
-&lt;?php<br />
-if ( have\_posts() ) :<br />
-    while ( have\_posts() ) : the\_post();<br />
-        the\_title( '&lt;h1>', '&lt;/h1>' );<br />
-        the\_content();<br />
-    endwhile;<br />
-else:<br />
-    \_e( 'Sorry, no pages matched your criteria.', 'textdomain' );<br />
-endif;<br />
-?><br />
+```php
+<?php
+if ( have_posts() ) :
+    while ( have_posts() ) : the_post();
+        the_title( '<h1>', '</h1>' );
+        the_content();
+    endwhile;
+else:
+    _e( 'Sorry, no pages matched your criteria.', 'textdomain' );
+endif;
+?>
+```
 
 ### Intermediate Examples
 
@@ -147,52 +159,60 @@ The example below does a couple of things:
 
 Code comments in this example provide details throughout each stage of the loop:
 
-&lt;?php<br />
-// Start the Loop.<br />
-if ( have\_posts() ) :<br />
-    while ( have\_posts() ) : the\_post();<br />
-        /\* \* See if the current post is in category 3.<br />
-          \* If it is, the div is given the CSS class "post-category-three".<br />
-          \* Otherwise, the div is given the CSS class "post".<br />
-        \*/<br />
-        if ( in\_category( 3 ) ) : ?><br />
-        &lt;div class="post-category-three"><br />
-        &lt;?php else : ?><br />
-        &lt;div class="post"><br />
-        &lt;?php endif; </p>
-<p>            // Display the post's title.<br />
-            the\_title( '&lt;h2>', ';&lt;/h2>' ); </p>
-<p>            // Display a link to other posts by this posts author.<br />
-            printf( \_\_( 'Posted by %s', 'textdomain' ), get\_the\_author\_posts\_link() );</p>
-<p>            // Display the post's content in a div.<br />
-            ?><br />
-            &lt;div class="entry"><br />
-                &lt;?php the\_content() ?><br />
-             &lt;/div></p>
-<p>            &lt;?php<br />
-            // Display a comma separated list of the post's categories.<br />
-            \_e( 'Posted in ', 'textdomain' ); the\_category( ', ' ); </p>
-<p>        // closes the first div box with the class of "post" or "post-cat-three"<br />
-       ?><br />
-       &lt;/div></p>
-<p>    &lt;?php<br />
-    // Stop the Loop, but allow for a "if not posts" situation<br />
-    endwhile; </p>
-<p>else :<br />
-    /\*<br />
-      \* The very first "if" tested to see if there were any posts to<br />
-      \* display. This "else" part tells what do if there weren't any.<br />
-     \*/<br />
-     \_e( 'Sorry, no posts matched your criteria.', 'textdomain' );</p>
-<p>// Completely stop the Loop.<br />
- endif;<br />
-?><br />
+```php
+<?php
+// Start the Loop.
+if ( have_posts() ) :
+    while ( have_posts() ) : the_post();
+        /* * See if the current post is in category 3.
+          * If it is, the div is given the CSS class "post-category-three".
+          * Otherwise, the div is given the CSS class "post".
+        */
+        if ( in_category( 3 ) ) : ?>
+        <div class="post-category-three">
+        <?php else : ?>
+        <div class="post">
+        <?php endif; 
 
-[Expand full source code](#)[Collapse full source code](#)
+            // Display the post's title.
+            the_title( '<h2>', ';</h2>' ); 
+
+            // Display a link to other posts by this posts author.
+            printf( __( 'Posted by %s', 'textdomain' ), get_the_author_posts_link() );
+
+            // Display the post's content in a div.
+            ?>
+            <div class="entry">
+                <?php the_content() ?>
+             </div>
+
+            <?php
+            // Display a comma separated list of the post's categories.
+            _e( 'Posted in ', 'textdomain' ); the_category( ', ' ); 
+
+        // closes the first div box with the class of "post" or "post-cat-three"
+       ?>
+       </div>
+
+    <?php
+    // Stop the Loop, but allow for a "if not posts" situation
+    endwhile; 
+
+else :
+    /*
+      * The very first "if" tested to see if there were any posts to
+      * display. This "else" part tells what do if there weren't any.
+     */
+     _e( 'Sorry, no posts matched your criteria.', 'textdomain' );
+
+// Completely stop the Loop.
+ endif;
+?>
+```
 
 ## Multiple Loops
 
-In some situations, you may need to use more than one loop. For example you may want to display the titles of the posts in a table of content list at the top of the page and then display the content further down the page. Since the query isn’t being changed we simply need to rewind the loop when we need to loop through the posts for a second time. For that we will use the function [rewind\_posts()](https://developer.wordpress.org/reference/functions/rewind_posts/).
+In some situations, you may need to use more than one loop. For example you may want to display the titles of the posts in a table of content list at the top of the page and then display the content further down the page. Since the query isn’t being changed we simply need to rewind the loop when we need to loop through the posts for a second time. For that we will use the function [rewind\_posts()](https://developer.wordpress.org/reference/functions/rewind_posts/) .
 
 ### Using rewind\_posts
 
@@ -200,56 +220,60 @@ You can use `[rewind_posts()](https://developer.wordpress.org/reference/function
 
 Here is an example of `rewind_posts()` in use:
 
-&lt;?php<br />
-// Start the main loop<br />
-if ( have\_posts() ) :<br />
-    while ( have\_posts() ) : the\_post();<br />
-        the\_title();<br />
-    endwhile;<br />
-endif;</p>
-<p>// Use rewind\_posts() to use the query a second time.<br />
-rewind\_posts();</p>
-<p>// Start a new loop<br />
-while ( have\_posts() ) : the\_post();<br />
-    the\_content();<br />
-endwhile;<br />
-?><br />
+```php
+<?php
+// Start the main loop
+if ( have_posts() ) :
+    while ( have_posts() ) : the_post();
+        the_title();
+    endwhile;
+endif;
 
-[Expand full source code](#)[Collapse full source code](#)
+// Use rewind_posts() to use the query a second time.
+rewind_posts();
+
+// Start a new loop
+while ( have_posts() ) : the_post();
+    the_content();
+endwhile;
+?>
+```
 
 ### Creating secondary queries and loops
 
 Using two loops with the same query was relatively easy but not always what you will need. Instead, you will often want to create a secondary query to display different content on the template. For example, you might want to display two groups of posts on the same page, but do different things to each group. A common example of this, as shown below, is displaying a single post with a list of posts from the same category below the single post.
 
-&lt;?php<br />
-// The main query.<br />
-if ( have\_posts() ) :<br />
-    while ( have\_posts() ) : the\_post();<br />
-        the\_title();<br />
-        the\_content();<br />
-    endwhile;<br />
-else :<br />
-    // When no posts are found, output this text.<br />
-    \_e( 'Sorry, no posts matched your criteria.' );<br />
-endif;<br />
-wp\_reset\_postdata();                                                        </p>
-<p>/\*<br />
- \* The secondary query. Note that you can use any category name here. In our example,<br />
- \* we use "example-category".<br />
- \*/<br />
-$secondary\_query = new WP\_Query( 'category\_name=example-category' );        </p>
-<p>// The second loop.<br />
-if ( $secondary\_query->have\_posts() )<br />
-    echo '&lt;ul>';<br />
-    while ( $secondary\_query->have\_posts() ) : $secondary\_query->the\_post();<br />
-        the\_title( '&lt;li>', '&lt;/li>' );<br />
-     endwhile;<br />
-     echo '&lt;/ul>';<br />
-endif;<br />
-wp\_reset\_postdata();<br />
-?><br />
+```php
+<?php
+// The main query.
+if ( have_posts() ) :
+    while ( have_posts() ) : the_post();
+        the_title();
+        the_content();
+    endwhile;
+else :
+    // When no posts are found, output this text.
+    _e( 'Sorry, no posts matched your criteria.' );
+endif;
+wp_reset_postdata();                                                        
 
-[Expand full source code](#)[Collapse full source code](#)
+/*
+ * The secondary query. Note that you can use any category name here. In our example,
+ * we use "example-category".
+ */
+$secondary_query = new WP_Query( 'category_name=example-category' );        
+
+// The second loop.
+if ( $secondary_query->have_posts() )
+    echo '<ul>';
+    while ( $secondary_query->have_posts() ) : $secondary_query->the_post();
+        the_title( '<li>', '</li>' );
+     endwhile;
+     echo '</ul>';
+endif;
+wp_reset_postdata();
+?>
+```
 
 As you can see in the example above, we first display a regular loop. Then we define a new variable that uses `[WP_Query](https://developer.wordpress.org/reference/classes/wp_query/)` to query a specific category; in our case, we chose the `example-category` slug.
 
@@ -272,31 +296,35 @@ Use `[wp_reset_postdata()](https://developer.wordpress.org/reference/functions/w
 
 To properly use this function, place the following code after any loops with `WP_Query`:
 
-<br />
-&lt;?php wp\_reset\_postdata(); ?><br />
+```php
+<?php wp_reset_postdata(); ?>
+```
 
 Here is an example of a loop using `WP_Query` that is reset with `[wp_reset_postdata()](https://developer.wordpress.org/reference/functions/wp_reset_postdata/)`.
 
- &lt;?php<br />
-// Example argument that defines three posts per page.<br />
-$args = array( 'posts\_per\_page' => 3 ); </p>
-<p>// Variable to call WP\_Query.<br />
-$the\_query = new WP\_Query( $args ); </p>
-<p>if ( $the\_query->have\_posts() ) :<br />
-    // Start the Loop<br />
-    while ( $the\_query->have\_posts() ) : $the\_query->the\_post();<br />
-        the\_title();<br />
-        the\_excerpt();<br />
-    // End the Loop<br />
-    endwhile;<br />
-else:<br />
-// If no posts match this query, output this text.<br />
-    \_e( 'Sorry, no posts matched your criteria.', 'textdomain' );<br />
-endif; </p>
-<p>wp\_reset\_postdata();<br />
-?> 
+```php
+ <?php
+// Example argument that defines three posts per page.
+$args = array( 'posts_per_page' => 3 ); 
 
-[Expand full source code](#)[Collapse full source code](#)
+// Variable to call WP_Query.
+$the_query = new WP_Query( $args ); 
+
+if ( $the_query->have_posts() ) :
+    // Start the Loop
+    while ( $the_query->have_posts() ) : $the_query->the_post();
+        the_title();
+        the_excerpt();
+    // End the Loop
+    endwhile;
+else:
+// If no posts match this query, output this text.
+    _e( 'Sorry, no posts matched your criteria.', 'textdomain' );
+endif; 
+
+wp_reset_postdata();
+?> 
+```
 
 ### Using wp\_reset\_query
 
@@ -306,5 +334,6 @@ Alert: `[query_posts()](https://developer.wordpress.org/reference/functions/quer
 
 To properly use this function, place the following code after any loops with `[query_posts()](https://developer.wordpress.org/reference/functions/query_posts/)`.
 
-<br />
-&lt;?php wp\_reset\_query(); ?><br />
+```php
+<?php wp_reset_query(); ?>
+```

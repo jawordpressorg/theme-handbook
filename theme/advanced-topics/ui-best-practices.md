@@ -2,9 +2,14 @@
 
 ## Logo Homepage Link
 
-The logo at the top each page should send the user to the homepage of your site. Assuming your logo is in your theme directory, this is how to display it in the `header.php` template file.
+The logo at the top each page should send the user to the homepage of your site.  
+If you are using the recommended function, [](https://developer.wordpress.org/reference/functions/the_custom_logo/)[the\_custom\_logo()](https://developer.wordpress.org/reference/functions/the_custom_logo/) or the site logo block, the logo is linked to the homepage by default.
 
-<a href="<?php echo home\_url(); ?>"><img src="<?php echo get\_stylesheet\_directory\_uri(); ?>/logo.png" alt="Home Page" /></a>
+You can also add your logo manually. Assuming your logo is in your theme directory, this is how to display it in the `header.php` template file.
+
+```php
+<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo get_stylesheet_directory_uri(); ?>/logo.png" alt="<?php esc_attr_e( 'Home Page', 'textdmomain' );?>" /></a>
+```
 
 ## Descriptive Anchor Text
 
@@ -12,11 +17,15 @@ The anchor text is the visible text for a hyperlink. Good link text should gi
 
 A bad example:
 
-The best way to learn WordPress is to start using it. To Download WordPress, [click here](https://wordpress.org/download/).
+```
+The best way to learn WordPress is to start using it. To Download WordPress, click here.
+```
 
 A better example:
 
-[Download WordPress](https://wordpress.org/download/) and start using it. That's the best way to learn.
+```
+Download WordPress and start using it. That's the best way to learn.
+```
 
 ## Style Links with Underlines
 
@@ -33,7 +42,9 @@ Having different colors for these two states helps users identify the pages the
 There are 3 other states that links can have:
 
 *   hover, when a mouse is over an element
+
 *   focus, similar to hover but for keyboard users
+
 *   active, when a user is clicking on a link
 
 Since hover and focus have similar meanings, it is useful to give them the same styles.
@@ -52,24 +63,32 @@ Make your text easy to read. By making your text large enough, you increase the 
 
 Labels inform the user what an input field is for. You can connect the label to the input by using the `for` attribute in the label. This will allow the user to click the label and focus on the input field.
 
-&lt;label for=&quot;username&quot;>Username&lt;/label><br />
-&lt;input type=&quot;text&quot; id=&quot;username&quot; name=&quot;login&quot; /><br />
+```
+<label for="username">Username</label>
+<input type="text" id="username" name="login" />
+```
 
 Labels work for radio buttons as well. Since it works using the **id** field *and not the name*, each input for the group gets its own label.
 
-&lt;input type=&quot;radio&quot; id=&quot;user\_group\_blogger&quot; name=&quot;user\_group&quot; value=&quot;blogger&quot; /><br />
-&lt;label for=&quot;user\_group\_blogger&quot;>Blogger&lt;/label></p>
-<p>&lt;input type=&quot;radio&quot;  id=&quot;user\_group\_designer&quot; name=&quot;user\_group&quot; value=&quot;designer&quot; /><br />
-&lt;label for=&quot;user\_group\_designer&quot;>Designer&lt;/label></p>
-<p>&lt;input type=&quot;radio&quot;  id=&quot;user\_group\_developer&quot; name=&quot;user\_group&quot; value=&quot;developer&quot; /><br />
-&lt;label for=&quot;user\_group\_developer&quot;>Developer&lt;/label><br />
+```
+<input type="radio" id="user_group_blogger" name="user_group" value="blogger" />
+<label for="user_group_blogger">Blogger</label>
+ 
+<input type="radio"  id="user_group_designer" name="user_group" value="designer" />
+<label for="user_group_designer">Designer</label>
+ 
+<input type="radio"  id="user_group_developer" name="user_group" value="developer" />
+<label for="user_group_developer">Developer</label>
+```
 
 ## Placeholder Text in Forms
 
 Placeholder text shows the user an example of what to type. When a user puts their cursor in the field, the placeholder text will disappear, while the label remains.
 
-&lt;label for=&quot;name&quot;>Name&lt;/label><br />
-&lt;input type=&quot;text&quot; id=&quot;name&quot; name=&quot;name&quot; placeholder=&quot;John Smith&quot; /><br />
+```
+<label for="name">Name</label>
+<input type="text" id="name" name="name" placeholder="John Smith" />
+```
 
 Use placeholders to suggest the type of data a field requires, and not as a substitute for the field label.
 

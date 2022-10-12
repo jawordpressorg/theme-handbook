@@ -16,7 +16,7 @@ You will get the following HTML output with the selected thumbnail size
 
 <img width="150" height="150" src="http://example.com/wordpress/wp-content/uploads/2016/11/sample-150x150.jpg" class="attachment-thumbnail size-thumbnail" ... />
 
-You can specify other size such as ‘full’ for original image or ‘medium’ and ‘large’ for the sizes set at **Settings > Media** in the [Administration Screen](https://codex.wordpress.org/Administration_Screens), or any pair of width and height as array. You’re also free to set custom size strings with [add\_image\_size()](https://developer.wordpress.org/reference/functions/add_image_size/);
+You can specify other size such as ‘full’ for original image or ‘medium’ and ‘large’ for the sizes set at **Settings > Media** in the [Administration Screen](https://codex.wordpress.org/Administration_Screens), or any pair of width and height as array. You’re also free to set custom size strings with [add\_image\_size()](https://developer.wordpress.org/reference/functions/add_image_size/) ;
 
 echo wp\_get\_attachment\_image( $attachment->ID, Array(640, 480) );
 

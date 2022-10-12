@@ -4,9 +4,11 @@
 
 WordPress 4.0 and 4.1 also added support for making parts of the Customizer UI be visible or hidden depending on the part of the site that the user was previewing within the Customizer preview window. A simple contextual control example would be that your theme only displays the header image and the site tagline on the front page. This is a perfect use case for the Customizer Manager’s get\_ methods, as we can modify the core controls for these settings directly to make them contextual to the front page:
 
+```php
 // Hide core sections/controls when they aren't used on the current page.
-$wp\_customize->get\_section( 'header\_image' )->active\_callback = 'is\_front\_page';
-$wp\_customize->get\_control( 'blogdescription' )->active\_callback = 'is\_front\_page';
+$wp_customize->get_section( 'header_image' )->active_callback = 'is_front_page';
+$wp_customize->get_control( 'blogdescription' )->active_callback = 'is_front_page';
+```
 
 ![](//i1.wp.com/nick.halsey.co/wp-content/uploads/sites/2/2014/08/contextual-customize-controls.gif)
 
@@ -14,45 +16,55 @@ In this contextual control example, the theme only displays the site tagline on 
 
 The `active_callback` parameter for Panels, Sections, and Controls takes a callback function name, either core or custom. This parameter can also be set when registering the object for objects that you add. Here’s an example from the Twenty Fourteen Theme:
 
-$wp\_customize->add\_section( 'featured\_content', array(
-  'title'       => \_\_( 'Featured Content', 'twentyfourteen' ),
+```php
+$wp_customize->add_section( 'featured_content', array(
+  'title'       => __( 'Featured Content', 'twentyfourteen' ),
   'description' => //...
   'priority'        => 130,
-  'active\_callback' => 'is\_front\_page',
+  'active_callback' => 'is_front_page',
 ) );
+```
 
 In the previous example, `[is_front_page](https://developer.wordpress.org/reference/functions/is_front_page/)` is used directly. But for more complex logic, such as checking if the current view is a page (or even a specific page, by id), custom functions can be used (see [#30251](https://core.trac.wordpress.org/ticket/30251) for details on why this is needed). If you don’t need to support PHP 5.2, this can be done inline:
 
-'active\_callback' => function () { return is\_page(); }
+```php
+'active_callback' => function () { return is_page(); }
+```
 
 PHP 5.2 support is as simple as creating a named function and referencing it with the active\_callback parameter:
 
+```php
 //...
-'active\_callback' => 'prefix\_return\_is\_page';
+'active_callback' => 'prefix_return_is_page';
 //...
-function prefix\_return\_is\_page() {
-  return is\_page();
+function prefix_return_is_page() {
+  return is_page();
 }
+```
 
 Within Custom Controls, Sections, and Panels, there is also an option to override the `active_callback` function directly within the custom Customizer object class:
 
-class WP\_Customize\_Greeting\_Control extends WP\_Customize\_Control {
+```php
+class WP_Customize_Greeting_Control extends WP_Customize_Control {
   // ...
-  function active\_callback() {
-    return is\_front\_page();
+  function active_callback() {
+    return is_front_page();
   }
 }
+```
 
 Finally, there is a filter that can be used to override all other `active_callback` behavior:
 
+```php
 // Hide all controls without a description when previewing single posts.
-function title\_tagline\_control\_filter( $active, $control ) {
+function title_tagline_control_filter( $active, $control ) {
   if ( '' === $control->description ) {
-    $active = is\_singular();
+    $active = is_singular();
   }
   return $active;
 }
-add\_filter( 'customize\_control\_active', 'title\_tagline\_control\_filter', 10, 2 );
+add_filter( 'customize_control_active', 'title_tagline_control_filter', 10, 2 );
+```
 
 Note that the `active_callback` API works exactly the same for all of the Customizer object types (Controls, [Sections](https://developer.wordpress.org/reference/classes/wp_customize_section/active_callback/), and [Panels](https://developer.wordpress.org/reference/classes/wp_customize_panel/active_callback/)). As an added bonus, sections will automatically be hidden if all of the controls within them are contextually hidden, and the same works for panels.
 
@@ -76,54 +88,28 @@ For these reasons, all settings are strongly recommended to leverage selective r
 
 Setting previews need to opt-in to use Selective Refresh by registering the necessary partials. In this example, largely taken from the them [Twenty Sixteen](https://wordpress.org/themes/twentysixteen), Selective Refresh is added for the `blogdescription` setting by adding a partial with the same name.
 
-function foo\_theme\_customize\_register( WP\_Customize\_Manager $wp\_customize ) {
-    $wp\_customize->selective\_refresh->add\_partial( 'blogdescription', array(
+```php
+function foo_theme_customize_register( WP_Customize_Manager $wp_customize ) {
+    $wp_customize->selective_refresh->add_partial( 'blogdescription', array(
         'selector' => '.site-description',
-        'container\_inclusive' => false,
-        'render\_callback' => function() {
+        'container_inclusive' => false,
+        'render_callback' => function() {
             bloginfo( 'description' );
         },
     ) );
 }
-add\_action( 'customize\_register', 'foo\_theme\_customize\_register' );
+add_action( 'customize_register', 'foo_theme_customize_register' );
+```
 
 If the `settings` argument is not supplied, it defaults to be the same as the partial ID, in the same way as the settings for controls default to the control ID. Here are some of the key arguments for partials:
 
-**Variable**
-
-**Type**
-
-**Description**
-
-`settings`
-
-array
-
-Setting IDs associated with the partial.
-
-`selector`
-
-string
-
-Targets the element(s) in the page markup to be refreshed.
-
-`container_inclusive`
-
-boolean
-
-If true, a refresh replaces the entire container. Otherwise, it only replaces the container’s children. Defaults to false.
-
-`render_callback`
-
-function
-
-Produces the markup to be rendered on refresh.
-
-`fallback_refresh`
-
-bool
-
-Whether or not a full page refresh should occur if the partial is not found in the document.
+| **Variable** | **Type** | **Description** |
+| --- | --- | --- |
+| `settings` | array | Setting IDs associated with the partial. |
+| `selector` | string | Targets the element(s) in the page markup to be refreshed. |
+| `container_inclusive` | boolean | If true, a refresh replaces the entire container. Otherwise, it only replaces the container’s children. Defaults to false. |
+| `render_callback` | function | Produces the markup to be rendered on refresh. |
+| `fallback_refresh` | bool | Whether or not a full page refresh should occur if the partial is not found in the document. |
 
 ### Selective Refresh JavaScript Events
 
@@ -148,60 +134,66 @@ Both themes and widgets **need to opt-in** to use Selective Refresh. All core wi
 
 In order to allow partial refreshes of widgets in a theme’s sidebars:
 
-add\_theme\_support( 'customize-selective-refresh-widgets' );
+```php
+add_theme_support( 'customize-selective-refresh-widgets' );
+```
 
 **Important:** Selective refresh for widgets requires that the theme include a `before_widget`/`after_widget` wrapper element around each widget that contains the widget’s ID. Such wrappers are the default when you `register_sidebar()`. For example:
 
-function example\_widgets\_init() {
-	register\_sidebar(
+```php
+function example_widgets_init() {
+	register_sidebar(
 		array(
-			'name'          => esc\_html\_\_( 'Sidebar', 'example' ),
+			'name'          => esc_html__( 'Sidebar', 'example' ),
 			'id'            => 'sidebar-1',
-			'description'   => esc\_html\_\_( 'Add widgets here.', 'example' ),
-			'before\_widget' => '<section id="%1$s" class="widget %2$s">', // <= Key for selective refresh.
-			'after\_widget'  => '</section>',
-			'before\_title'  => '<h2 class="widget-title">',
-			'after\_title'   => '</h2>',
+			'description'   => esc_html__( 'Add widgets here.', 'example' ),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">', // <= Key for selective refresh.
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
 		)
 	);
 }
-add\_action( 'widgets\_init', 'example\_widgets\_init' );
-
-[Expand full source code](#)[Collapse full source code](#)
+add_action( 'widgets_init', 'example_widgets_init' );
+```
 
 #### Widget Support
 
 Even if a theme supports Selective Refresh, widgets also have to opt-in. All core widgets have already enabled it. Here’s an example widget adding support for Selective Refresh:
 
-class Foo\_Widget extends WP\_Widget {
+```php
+class Foo_Widget extends WP_Widget {
 
-    public function \_\_construct() {
-        parent::\_\_construct(
+    public function __construct() {
+        parent::__construct(
             ‘foo’,
-            \_\_( 'Example', 'bar-plugin' ),
+            __( 'Example', 'bar-plugin' ),
             array(
-                'description' => \_\_( ‘An example widget’, ‘bar-plugin’ ),
-                'customize\_selective\_refresh' => true,
+                'description' => __( ‘An example widget’, ‘bar-plugin’ ),
+                'customize_selective_refresh' => true,
             )
         );
 
-        if ( is\_active\_widget( false, false, $this->id\_base ) || is\_customize\_preview() ) {
-            add\_action( 'wp\_enqueue\_scripts', array( $this, 'enqueue\_scripts' ) );
+        if ( is_active_widget( false, false, $this->id_base ) || is_customize_preview() ) {
+            add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
         }
     }
     ...
-
-[Expand full source code](#)[Collapse full source code](#)
+```
 
 Line 9 above enables Selective Refresh:
 
-'customize\_selective\_refresh' => true,
+```php
+'customize_selective_refresh' => true,
+```
 
 Line 13 above ensures the widget’s stylesheet always appears in Customizer sessions. Adding the widget won’t cause a full-page refresh to retrieve the styling:
 
-if ( is\_active\_widget( false, false, $this->id\_base ) || is\_customize\_preview() ) {
-    add\_action( 'wp\_enqueue\_scripts', array( $this, 'enqueue\_scripts' ) );
+```php
+if ( is_active_widget( false, false, $this->id_base ) || is_customize_preview() ) {
+    add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
 }
+```
 
 See [Implementing Selective Refresh Support for Widgets](https://make.wordpress.org/core/2016/03/22/implementing-selective-refresh-support-for-widgets/).
 
@@ -212,15 +204,19 @@ Widgets that rely on JavaScript for their markup will need additional steps, as 
 1.  Enqueue any JavaScript files based on `is_customize_preview()`, as shown above for stylesheets.
 2.  Add a handler for the `partial-content-rendered` event, and refresh the widget as needed:
 
+```js
 wp.customize.selectiveRefresh.bind( 'partial-content-rendered', function( placement ) {
     // logic to refresh
 } );
+```
 
 1.  If the widget includes an iframe, add a handler to refresh the partial:
 
+```js
 wp.customize.selectiveRefresh.bind( 'partial-content-moved', function( placement ) {
     // logic to refresh, perhaps conditionally
 }
+```
 
 ## Using PostMessage For Improved Setting Previewing
 
@@ -238,30 +234,36 @@ Custom CSS setting in the Customizer with the default refresh setting transport.
 
 To use postMessage, first set the transport parameter to postMessage when adding your setting. Many themes also modify core settings such as the title and tagline to leverage postMessage by modifying the transport property of those settings:
 
-$wp\_customize->get\_setting( 'blogname' )->transport        = 'postMessage';
-$wp\_customize->get\_setting( 'blogdescription' )->transport = 'postMessage';
+```php
+$wp_customize->get_setting( 'blogname' )->transport        = 'postMessage';
+$wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
+```
 
 Once the setting’s transport is set to postMessage, the setting will no longer trigger a refresh of the preview when its value changes. To implement the JavaScript to update the setting within the preview of the front-end, first create and enqueue a JavaScript file:
 
-function my\_preview\_js() {
-  wp\_enqueue\_script( 'custom\_css\_preview', 'path/to/file.js', array( 'customize-preview', 'jquery' ) );
+```php
+function my_preview_js() {
+  wp_enqueue_script( 'custom_css_preview', 'path/to/file.js', array( 'customize-preview', 'jquery' ) );
 }
-add\_action( 'customize\_preview\_init', 'my\_preview\_js' );
+add_action( 'customize_preview_init', 'my_preview_js' );
+```
 
 Your JavaScript file should look something like this:
 
+```js
 ( function( $ ) {
-  wp.customize( 'setting\_id', function( value ) {
+  wp.customize( 'setting_id', function( value ) {
     value.bind( function( to ) {
       $( '#custom-theme-css' ).html( to );
     } );
   } );
-  wp.customize( 'custom\_plugin\_css', function( value ) {
+  wp.customize( 'custom_plugin_css', function( value ) {
     value.bind( function( to ) {
       $( '#custom-plugin-css' ).html( to );
     } );
   } );
 } )( jQuery );
+```
 
 Note that you don’t necessarily need to be great with JavaScript to use postMessage – most of the code is boilerplate. The types of settings that benefit most from postMessage transport require simple JS changes such as using jQuery’s .html() or .text() methods, or swapping out a class on the `<body>` or another element to trigger a different set of CSS rules. Doing this, or simplifying the instant preview logic with fully-accurate changes updating with selective refresh, the user experience can be fast without duplicating all of the PHP logic in JS.
 
@@ -281,23 +283,23 @@ For more information on the validation behavior, and additional code examples, s
 
 Just as you can supply a `sanitize_callback` when registering a setting, you can also supply a `validate_callback` arg:
 
-$wp\_customize->add\_setting( 'established\_year', array(
-    'sanitize\_callback' => 'absint',
-    'validate\_callback' => 'validate\_established\_year'
+```php
+$wp_customize->add_setting( 'established_year', array(
+    'sanitize_callback' => 'absint',
+    'validate_callback' => 'validate_established_year'
 ) );
-function validate\_established\_year( $validity, $value ) {
+function validate_established_year( $validity, $value ) {
     $value = intval( $value );
-    if ( empty( $value ) || ! is\_numeric( $value ) ) {
-        $validity->add( 'required', \_\_( 'You must supply a valid year.' ) );
+    if ( empty( $value ) || ! is_numeric( $value ) ) {
+        $validity->add( 'required', __( 'You must supply a valid year.' ) );
     } elseif ( $value &lt; 1900 ) {
-        $validity->add( 'year\_too\_small', \_\_( 'Year is too old.' ) );
+        $validity->add( 'year_too_small', __( 'Year is too old.' ) );
     } elseif ( $value > gmdate( 'Y' ) ) {
-        $validity->add( 'year\_too\_big', \_\_( 'Year is too new.' ) );
+        $validity->add( 'year_too_big', __( 'Year is too new.' ) );
     }
     return $validity;
 }
-
-[Expand full source code](#)[Collapse full source code](#)
+```
 
 Just as supplying a `sanitize_callback` arg adds a filter for `customize_sanitize_{$setting_id}`, so too supplying a `validate_callback` arg will add a filter for `customize_validate_{$setting_id}`. Assuming that the `WP_Customize_Setting` instances apply filters on these in their `validate` methods, you can add this filter if you need to add validation for settings that have been previously added.
 
@@ -311,7 +313,8 @@ If you have a setting that is previewed purely via JavaScript (and the `postMes
 
 There is a `validate` method available on the `wp.customize.Setting` JS class (actually, the `wp.customize.Value` base class). Its name is a bit misleading, as it actually behaves very similarly to the `WP_Customize_Setting::sanitize()` PHP method, but it can be used to both sanitize and validate a value in JS. Note that this JS runs in the context of the Customizer *pane* not the preview, so any such JS should have `customize-controls` as a dependency (not `customize-preview`) and enqueued during the `customize_controls_enqueue_scripts` action. Some example JS validation:
 
-wp.customize( 'established\_year', function ( setting ) {
+```js
+wp.customize( 'established_year', function ( setting ) {
 	setting.validate = function ( value ) {
 		var code, notification;
 		var year = parseInt( value, 10 );
@@ -324,7 +327,7 @@ wp.customize( 'established\_year', function ( setting ) {
 			setting.notifications.remove( code );
 		}
 
-		code = 'year\_too\_small';
+		code = 'year_too_small';
 		if ( year &lt; 1900 ) {
 			notification = new wp.customize.Notification( code, {message: myPlugin.l10n.yearTooSmall} );
 			setting.notifications.add( code, notification );
@@ -332,7 +335,7 @@ wp.customize( 'established\_year', function ( setting ) {
 			setting.notifications.remove( code );
 		}
 
-		code = 'year\_too\_big';
+		code = 'year_too_big';
 		if ( year > new Date().getFullYear() ) {
 			notification = new wp.customize.Notification( code, {message: myPlugin.l10n.yearTooBig} );
 			setting.notifications.add( code, notification );
@@ -343,8 +346,7 @@ wp.customize( 'established\_year', function ( setting ) {
 		return value;
 	};
 } );
-
-[Expand full source code](#)[Collapse full source code](#)
+```
 
 ## Notifications
 
@@ -358,9 +360,10 @@ Any time that a `WP_Error` is returned from a validation routine on the server i
 
 While setting non-error notifications from PHP is not currently supported (see #37281), you can also add non-error notifications with JS as follows:
 
+```js
 wp.customize( 'blogname', function( setting ) {
     setting.bind( function( value ) {
-        var code = 'long\_title';
+        var code = 'long_title';
         if ( value.length > 20 ) {
             setting.notifications.add( code, new wp.customize.Notification(
                 code,
@@ -374,7 +377,6 @@ wp.customize( 'blogname', function( setting ) {
         }
     } );
 } );
-
-[Expand full source code](#)[Collapse full source code](#)
+```
 
 You can also supply “info” as a notification’s `type`. The default `type` is “error”. Custom types may also be supplied, and the notifications can be styled with CSS selector matching `notice.notice-foo` where “foo” is the type supplied. A control may also override the default behavior for how notifications are rendered by overriding the `wp.customize.Control.renderNotifications` method.

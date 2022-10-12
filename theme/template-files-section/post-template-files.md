@@ -16,7 +16,6 @@ When a static front page is used and the site has a page defined for the blog li
 
 It’s good sense to build as simply as possible in your template structure and not make more templates unless you have real need for them. Therefore, most theme developers don’t create a single-post.php file because single.php is specific enough. For the most part, all themes should have a `single.php`. Below is an example of a `single.php` file from the theme Twenty Fifteen.
 
-</p>
 <?php
 /\*\*
  \* The template for displaying all single posts and attachments
@@ -65,11 +64,8 @@ get\_header(); ?>
     </div><!-- .content-area -->
  
 <?php get\_footer(); ?>
-<p>
 
-[Expand full source code](#)[Collapse full source code](#)
-
-In the code example above you can see the header is pulled in with `[get_header()](https://developer.wordpress.org/reference/functions/get_header/)` then there are a two html tags. Next [the Loop](https://developer.wordpress.org/themes/basics/the-loop/) starts and the [template tag](https://developer.wordpress.org/themes/basics/template-tags/) `[get_template_part](https://developer.wordpress.org/reference/functions/get_template_part/)(` `'content'``, get_post_format());` pulls in the appropriate content by determining the post type with `[get_post_format()](https://developer.wordpress.org/reference/functions/get_post_format/)`. Next, [comments](https://developer.wordpress.org/themes/functionality/comments/) are pulled in with the template tag [comments\_template()](https://developer.wordpress.org/reference/functions/comments_template/). Then there is some [pagination](https://developer.wordpress.org/themes/functionality/pagination/). Lastly, the content divs are closed and then footer is pulled in with `[get_footer()](https://developer.wordpress.org/reference/functions/get_footer/)`.
+In the code example above you can see the header is pulled in with `[get_header()](https://developer.wordpress.org/reference/functions/get_header/)` then there are a two html tags. Next [the Loop](https://developer.wordpress.org/themes/basics/the-loop/) starts and the [template tag](https://developer.wordpress.org/themes/basics/template-tags/) `[get_template_part](https://developer.wordpress.org/reference/functions/get_template_part/)(` `'content'``, get_post_format());` pulls in the appropriate content by determining the post type with `[get_post_format()](https://developer.wordpress.org/reference/functions/get_post_format/)`. Next, [comments](https://developer.wordpress.org/themes/functionality/comments/) are pulled in with the template tag [](https://developer.wordpress.org/reference/functions/comments_template/)[comments\_template()](https://developer.wordpress.org/reference/functions/comments_template/) . Then there is some [pagination](https://developer.wordpress.org/themes/functionality/pagination/). Lastly, the content divs are closed and then footer is pulled in with `[get_footer()](https://developer.wordpress.org/reference/functions/get_footer/)`.
 
 ## Singular.php
 
@@ -81,7 +77,6 @@ Unless a developer includes meta data with permalinks in their templates, the `a
 
 Commonly, the title of the page being displayed by `archive.php` will be the name of the meta data the user clicked on. So if the user clicked on the Author’s name, the page name displaying all the other author’s posts will be the Author’s name and frequently there might be an additional description about the meta data. Here is a code example from Twenty Fifteen on their `achive.php` file. This snippet is the only piece of code that makes the `archive.php` file different from a `home.php` or `index.php` file.
 
-</p>
 <header class="page-header">
     <?php
         the\_archive\_title( '
@@ -101,9 +96,6 @@ Commonly, the title of the page being displayed by `archive.php` will be the nam
  
  
 <!-- .page-header -->
-<p>
-
-[Expand full source code](#)[Collapse full source code](#)
 
 ## Author.php and Date.php
 
@@ -131,7 +123,6 @@ Additionally, perhaps chocolate is a really important tag for the theme you’re
 
 Most themes have a search.php file so it is clear to users that their query went through. It is common to have some sort of header identifying the query results such as this snippet found int twenty fifteen’s theme.
 
-</p>
 <header class="page-header">
  
  
@@ -142,6 +133,5 @@ Most themes have a search.php file so it is clear to users that their query went
  
  
 <!-- .page-header -->
-<p>
 
 This code snippet pulls in the query that was searched with `get_search_query()`. Often `search.php` will only pull in the excerpt instead of the full content since the user is trying to determine if the article or page fits their search.

@@ -128,8 +128,6 @@ class My\_Widget extends WP\_Widget {
 $my\_widget = new My\_Widget();
 ?>
 
-[Expand full source code](#)[Collapse full source code](#)
-
 The code above will be explained in detail later in the article.
 
 ## Developing Widgets
@@ -167,8 +165,6 @@ class My\_Widget extends WP\_Widget {
 
 ?>
 
-[Expand full source code](#)[Collapse full source code](#)
-
 The documentation for each of these functions can be found in the widget class code:
 
 1.  `[construct](https://core.trac.wordpress.org/browser/tags/4.8/src/wp-includes/class-wp-widget.php#L175)`: Set up your widget with a description, name, and display width in your admin.
@@ -178,7 +174,7 @@ The documentation for each of these functions can be found in the widget class c
 
 ### Registering a Widget
 
-The [register\_widget()](https://developer.wordpress.org/reference/functions/register_widget/) function is used to register a widget.
+The [](https://developer.wordpress.org/reference/functions/register_widget/)[register\_widget()](https://developer.wordpress.org/reference/functions/register_widget/) function is used to register a widget.
 
 Call this function using the widgets\_init hook:
 
@@ -190,7 +186,7 @@ function wpdocs\_register\_widgets() {
 }
 ?>
 
-The HTML that wraps the widget, as well as the class for the title and widget content, is specified at the time you register the widget area using [register\_sidebar()](https://developer.wordpress.org/reference/functions/register_sidebar/).
+The HTML that wraps the widget, as well as the class for the title and widget content, is specified at the time you register the widget area using [](https://developer.wordpress.org/reference/functions/register_sidebar/)[register\_sidebar()](https://developer.wordpress.org/reference/functions/register_sidebar/) .
 
 ## Examples
 
@@ -292,8 +288,6 @@ class Foo\_Widget extends WP\_Widget {
 } // class Foo\_Widget
 
 ?>
-
-[Expand full source code](#)[Collapse full source code](#)
 
 This sample widget can then be registered in the widgets\_init hook:
 

@@ -9,29 +9,29 @@ Theme authors might need to provide a settings screen, so users can customize ho
 
 ### Menu Pages
 
-[add\_menu\_page()](https://codex.wordpress.org/Function_Reference/add_menu_page)  
-[add\_object\_page()](https://codex.wordpress.org/Function_Reference/add_object_page)  
-[add\_utility\_page()](https://codex.wordpress.org/Function_Reference/add_utility_page)  
-[remove\_menu\_page()](https://codex.wordpress.org/Function_Reference/remove_menu_page)
+[](https://codex.wordpress.org/Function_Reference/add_menu_page)[add\_menu\_page()](https://developer.wordpress.org/reference/functions/add_menu_page/)  
+[](https://codex.wordpress.org/Function_Reference/add_object_page)[add\_object\_page()](https://developer.wordpress.org/reference/functions/add_object_page/)  
+[](https://codex.wordpress.org/Function_Reference/add_utility_page)[add\_utility\_page()](https://developer.wordpress.org/reference/functions/add_utility_page/)  
+[](https://codex.wordpress.org/Function_Reference/remove_menu_page)[remove\_menu\_page()](https://developer.wordpress.org/reference/functions/remove_menu_page/)
 
 ### Sub-menu Pages
 
-[add\_submenu\_page()](https://codex.wordpress.org/Function_Reference/add_submenu_page)  
-[remove\_submenu\_page()](https://codex.wordpress.org/Function_Reference/remove_submenu_page)
+[](https://codex.wordpress.org/Function_Reference/add_submenu_page)[add\_submenu\_page()](https://developer.wordpress.org/reference/functions/add_submenu_page/)  
+[](https://codex.wordpress.org/Function_Reference/remove_submenu_page)[remove\_submenu\_page()](https://developer.wordpress.org/reference/functions/remove_submenu_page/)
 
 ### WordPress Administration Menus
 
-[add\_dashboard\_page()](https://codex.wordpress.org/Function_Reference/add_dashboard_page)  
-[add\_posts\_page()](https://codex.wordpress.org/Function_Reference/add_posts_page)  
-[add\_media\_page()](https://codex.wordpress.org/Function_Reference/add_media_page)  
-[add\_links\_page()](https://codex.wordpress.org/Function_Reference/add_links_page)  
-[add\_pages\_page()](https://codex.wordpress.org/Function_Reference/add_pages_page)  
-[add\_comments\_page()](https://codex.wordpress.org/Function_Reference/add_comments_page)  
-[add\_theme\_page()](https://codex.wordpress.org/Function_Reference/add_theme_page)  
-[add\_plugins\_page()](https://codex.wordpress.org/Function_Reference/add_plugins_page)  
-[add\_users\_page()](https://codex.wordpress.org/Function_Reference/add_users_page)  
-[add\_management\_page()](https://codex.wordpress.org/Function_Reference/add_management_page)  
-[add\_options\_page()](https://codex.wordpress.org/Function_Reference/add_options_page)
+[](https://codex.wordpress.org/Function_Reference/add_dashboard_page)[add\_dashboard\_page()](https://developer.wordpress.org/reference/functions/add_dashboard_page/)  
+[](https://codex.wordpress.org/Function_Reference/add_posts_page)[add\_posts\_page()](https://developer.wordpress.org/reference/functions/add_posts_page/)  
+[](https://codex.wordpress.org/Function_Reference/add_media_page)[add\_media\_page()](https://developer.wordpress.org/reference/functions/add_media_page/)  
+[](https://codex.wordpress.org/Function_Reference/add_links_page)[add\_links\_page()](https://developer.wordpress.org/reference/functions/add_links_page/)  
+[](https://codex.wordpress.org/Function_Reference/add_pages_page)[add\_pages\_page()](https://developer.wordpress.org/reference/functions/add_pages_page/)  
+[](https://codex.wordpress.org/Function_Reference/add_comments_page)[add\_comments\_page()](https://developer.wordpress.org/reference/functions/add_comments_page/)  
+[](https://codex.wordpress.org/Function_Reference/add_theme_page)[add\_theme\_page()](https://developer.wordpress.org/reference/functions/add_theme_page/)  
+[](https://codex.wordpress.org/Function_Reference/add_plugins_page)[add\_plugins\_page()](https://developer.wordpress.org/reference/functions/add_plugins_page/)  
+[](https://codex.wordpress.org/Function_Reference/add_users_page)[add\_users\_page()](https://developer.wordpress.org/reference/functions/add_users_page/)  
+[](https://codex.wordpress.org/Function_Reference/add_management_page)[add\_management\_page()](https://developer.wordpress.org/reference/functions/add_management_page/)  
+[](https://codex.wordpress.org/Function_Reference/add_options_page)[add\_options\_page()](https://developer.wordpress.org/reference/functions/add_options_page/)
 
 ## Every Plot Needs a Hook
 
@@ -45,35 +45,36 @@ Most developers overlook the second step in this list. You can’t simply call t
 
 Here is a simple example of these three steps described. This will add a sub-level menu item under the Settings top-level menu. When selected, that menu item will show a very basic screen.
 
-<br />
-&lt;?php<br />
-/\*\* Step 2 (from text above). \*/<br />
-add\_action( 'admin\_menu', 'my\_menu' );</p>
-<p>/\*\* Step 1. \*/<br />
-function my\_menu() {<br />
-	add\_options\_page(<br />
-		'My Options',<br />
-		'My Menu',<br />
-		'manage\_options',<br />
-		'my-unique-identifier',<br />
-		'my\_options'<br />
-	);<br />
-}</p>
-<p>/\*\* Step 3. \*/<br />
-function my\_options() {<br />
-	if ( !current\_user\_can( 'manage\_options' ) ) {<br />
-		wp\_die( \_\_( 'You do not have sufficient permissions to access this page.' ) );<br />
-	}<br />
-	echo 'Here is where I output the HTML for my screen.';<br />
-	echo '&lt;/div>&lt;pre>';<br />
-}<br />
-?><br />
+```php
+<?php
+/** Step 2 (from text above). */
+add_action( 'admin_menu', 'my_menu' );
 
-[Expand full source code](#)[Collapse full source code](#)
+/** Step 1. */
+function my_menu() {
+add_options_page(
+'My Options',
+'My Menu',
+'manage_options',
+'my-unique-identifier',
+'my_options'
+);
+}
+
+/** Step 3. */
+function my_options() {
+if ( !current_user_can( 'manage_options' ) ) {
+wp_die( __( 'You do not have sufficient permissions to access this page.' ) );
+}
+echo 'Here is where I output the HTML for my screen.';
+echo '</div><pre>';
+}
+?>
+```
 
 In this example, the function `my_menu()` adds a new item to the Settings administration menu via the [`add_options_page()`](https://codex.wordpress.org/Function_Reference/add_options_page) function.
 
-*Note:* Note that the [add\_action()](https://codex.wordpress.org/Function_Reference/add_action) call in Step 2 *registers* the my\_menu() function under the [admin\_menu](https://codex.wordpress.org/Plugin_API/Action_Reference/admin_menu) hook. **Without that, [add\_action()](https://developer.wordpress.org/reference/functions/add_action/) call, a PHP error for undefined function will be thrown**. Finally, the `add_options_page()` call refers to the `my_options()` function which contains the actual page to be displayed (and PHP code to be processed) when someone clicks the menu item.
+*Note:* Note that the [](https://codex.wordpress.org/Function_Reference/add_action)[add\_action()](https://developer.wordpress.org/reference/functions/add_action/) call in Step 2 *registers* the my\_menu() function under the [admin\_menu](https://codex.wordpress.org/Plugin_API/Action_Reference/admin_menu) hook. **Without that, [add\_action()](https://developer.wordpress.org/reference/functions/add_action/) call, a PHP error for undefined function will be thrown**. Finally, the `add_options_page()` call refers to the `my_options()` function which contains the actual page to be displayed (and PHP code to be processed) when someone clicks the menu item.
 
 These steps are described in more detail in the sections below. Remember to enclose the creation of the menu and the page in functions, and use the `admin_menu` [hook](https://codex.wordpress.org/Plugin_API/Action_Reference) to get the whole process started at the right time.
 
@@ -146,47 +147,69 @@ Since most sub-level menus belong under the Settings, Tools, or Appearance menus
 
 Dashboard
 
-<?php add\_dashboard\_page( $page\_title, $menu\_title, $capability, $menu\_slug, $function); ?>
+```php
+<?php add_dashboard_page( $page_title, $menu_title, $capability, $menu_slug, $function); ?>
+```
 
 Posts
 
-<?php add\_posts\_page( $page\_title, $menu\_title, $capability, $menu\_slug, $function); ?>
+```php
+<?php add_posts_page( $page_title, $menu_title, $capability, $menu_slug, $function); ?>
+```
 
 Media
 
-<?php add\_media\_page( $page\_title, $menu\_title, $capability, $menu\_slug, $function); ?>
+```php
+<?php add_media_page( $page_title, $menu_title, $capability, $menu_slug, $function); ?>
+```
 
 Links
 
-<?php add\_links\_page( $page\_title, $menu\_title, $capability, $menu\_slug, $function); ?>
+```php
+<?php add_links_page( $page_title, $menu_title, $capability, $menu_slug, $function); ?>
+```
 
 Pages
 
-<?php add\_pages\_page( $page\_title, $menu\_title, $capability, $menu\_slug, $function); ?>
+```php
+<?php add_pages_page( $page_title, $menu_title, $capability, $menu_slug, $function); ?>
+```
 
 Comments
 
-<?php add\_comments\_page( $page\_title, $menu\_title, $capability, $menu\_slug, $function); ?>
+```php
+<?php add_comments_page( $page_title, $menu_title, $capability, $menu_slug, $function); ?>
+```
 
 Appearance
 
-<?php add\_theme\_page( $page\_title, $menu\_title, $capability, $menu\_slug, $function); ?>
+```php
+<?php add_theme_page( $page_title, $menu_title, $capability, $menu_slug, $function); ?>
+```
 
 Plugins
 
-<?php add\_plugins\_page( $page\_title, $menu\_title, $capability, $menu\_slug, $function); ?>
+```php
+<?php add_plugins_page( $page_title, $menu_title, $capability, $menu_slug, $function); ?>
+```
 
 Users
 
-<?php add\_users\_page( $page\_title, $menu\_title, $capability, $menu\_slug, $function); ?>
+```php
+<?php add_users_page( $page_title, $menu_title, $capability, $menu_slug, $function); ?>
+```
 
 Tools
 
-<?php add\_management\_page( $page\_title, $menu\_title, $capability, $menu\_slug, $function); ?>
+```php
+<?php add_management_page( $page_title, $menu_title, $capability, $menu_slug, $function); ?>
+```
 
 Settings
 
-<?php add\_options\_page( $page\_title, $menu\_title, $capability, $menu\_slug, $function); ?>
+```php
+<?php add_options_page( $page_title, $menu_title, $capability, $menu_slug, $function); ?>
+```
 
 Also see [Theme Options](https://developer.wordpress.org/themes/customize-api/) for the currently recommended way of creating options via the Customizer API.
 
@@ -194,28 +217,29 @@ Also see [Theme Options](https://developer.wordpress.org/themes/customize-api/) 
 
 Here’s a quick example illustrating how to insert a top-level menu page and a sub-menu page, where the title on the sub-menu page is different from the top-level page. In this example, `register_my_theme_more_settings_menu` is the name of the function that displays the first sub-menu page:
 
-<br />
-function register\_my\_theme\_settings\_menu() {<br />
-	add\_menu\_page(<br />
-		&quot;My Theme's Settings&quot;,<br />
-		&quot;My Theme&quot;,<br />
-		&quot;manage\_options&quot;,<br />
-		&quot;my-theme-settings-menu&quot;<br />
-	);<br />
-}</p>
-<p>function register\_my\_theme\_more\_settings\_menu() {<br />
-	add\_submenu\_page(<br />
-		&quot;my-themes-settings-menu&quot;,<br />
-		&quot;More Settings for My Theme&quot;,<br />
-		&quot;More Settings&quot;,<br />
-		&quot;manage\_options&quot;,<br />
-		&quot;my-theme-more-settings-menu&quot;<br />
-	);<br />
-}</p>
-<p>add\_action( &quot;admin\_menu&quot;, &quot;register\_my\_theme\_settings\_menu&quot;);<br />
-add\_action( &quot;admin\_menu&quot;, &quot;register\_my\_theme\_more\_settings\_menu&quot;);<br />
+```php
+function register_my_theme_settings_menu() {
+add_menu_page(
+"My Theme's Settings",
+"My Theme",
+"manage_options",
+"my-theme-settings-menu"
+);
+}
 
-[Expand full source code](#)[Collapse full source code](#)
+function register_my_theme_more_settings_menu() {
+add_submenu_page(
+"my-theme-settings-menu",
+"More Settings for My Theme",
+"More Settings",
+"manage_options",
+"my-theme-more-settings-menu"
+);
+}
+
+add_action( "admin_menu", "register_my_theme_settings_menu");
+add_action( "admin_menu", "register_my_theme_more_settings_menu");
+```
 
 Here’s an example of adding an option page under a custom post type menu block (see also here):
 
@@ -225,62 +249,72 @@ CODE
 
 Here is an example of how to insert multiple menus into various places:
 
-&lt;?php<br />
-// Hook for adding admin menus<br />
-add\_action('admin\_menu', 'mt\_add\_pages');</p>
-<p>// Action function for hook above<br />
-function mt\_add\_pages() {<br />
-// Add a new submenu under Settings:<br />
-add\_options\_page(\_\_('Test Settings','menu-test'), \_\_('Test Settings','menu-test'), 'manage\_options', 'testsettings', 'mt\_settings\_page');</p>
-<p>// Add a new submenu under Tools:<br />
-add\_management\_page( \_\_('Test Tools','menu-test'), \_\_('Test Tools','menu-test'), 'manage\_options', 'testtools', 'mt\_tools\_page');</p>
-<p>// Add a new top-level menu (ill-advised):<br />
-add\_menu\_page(\_\_('Test Toplevel','menu-test'), \_\_('Test Top-level','menu-test'), 'manage\_options', 'mt-top-level-handle', 'mt\_toplevel\_page' );</p>
-<p>// Add a submenu to the custom top-level menu:<br />
-add\_submenu\_page('mt-top-level-handle', \_\_('Test Sub-Level','menu-test'), \_\_('Test Sub-Level','menu-test'), 'manage\_options', 'sub-page', 'mt\_sublevel\_page');</p>
-<p>// Add a second submenu to the custom top-level menu:<br />
-add\_submenu\_page('mt-top-level-handle', \_\_('Test Sub-Level 2','menu-test'), \_\_('Test Sub-Level 2','menu-test'), 'manage\_options', 'sub-page2', 'mt\_sublevel\_page2');<br />
-}</p>
-<p>// mt\_settings\_page() displays the page content for the Test settings sub-menu<br />
-function mt\_settings\_page() {<br />
-	echo &quot;&lt;/pre><br />
-	&lt;h2>&quot; . \_\_( 'Test Settings', 'menu-test' ) . &quot;&lt;/h2><br />
-	&lt;pre><br />
-	&quot;;<br />
-}</p>
-<p>// mt\_tools\_page() displays the page content for the Test Tools sub-menu<br />
-function mt\_tools\_page() {<br />
-	echo &quot;&lt;/pre><br />
-	&lt;h2>&quot; . \_\_( 'Test Tools', 'menu-test' ) . &quot;&lt;/h2><br />
-	&lt;pre><br />
-	&quot;;<br />
-}</p>
-<p>// mt\_toplevel\_page() displays the page content for the custom Test Top-Level menu<br />
-function mt\_toplevel\_page() {<br />
-	echo &quot;&lt;/pre><br />
-	&lt;h2>&quot; . \_\_( 'Test Top-Level', 'menu-test' ) . &quot;&lt;/h2><br />
-	&lt;pre><br />
-	&quot;;<br />
-}</p>
-<p>// mt\_sublevel\_page() displays the page content for the first sub-menu<br />
-// of the custom Test Toplevel menu<br />
-function mt\_sublevel\_page() {<br />
-	echo &quot;&lt;/pre><br />
-	&lt;h2>&quot; . \_\_( 'Test Sub-Level', 'menu-test' ) . &quot;&lt;/h2><br />
-	&lt;pre><br />
-&quot;;<br />
-}</p>
-<p>// mt\_sublevel\_page2() displays the page content for the second sub-menu<br />
-// of the custom Test Top-Level menu<br />
-function mt\_sublevel\_page2() {<br />
-	echo &quot;&lt;/pre><br />
-	&lt;h2>&quot; . \_\_( 'Test Sub-Level 2', 'menu-test' ) . &quot;&lt;/h2><br />
-	&lt;pre><br />
-&quot;;<br />
-}<br />
-?>
+```php
+<?php
+// Hook for adding admin menus
+add_action('admin_menu', 'mt_add_pages');
 
-[Expand full source code](#)[Collapse full source code](#)
+// Action function for hook above
+function mt_add_pages() {
+// Add a new submenu under Settings:
+add_options_page(__('Test Settings','menu-test'), __('Test Settings','menu-test'), 'manage_options', 'testsettings', 'mt_settings_page');
+
+// Add a new submenu under Tools:
+add_management_page( __('Test Tools','menu-test'), __('Test Tools','menu-test'), 'manage_options', 'testtools', 'mt_tools_page');
+
+// Add a new top-level menu (ill-advised):
+add_menu_page(__('Test Toplevel','menu-test'), __('Test Top-level','menu-test'), 'manage_options', 'mt-top-level-handle', 'mt_toplevel_page' );
+
+// Add a submenu to the custom top-level menu:
+add_submenu_page('mt-top-level-handle', __('Test Sub-Level','menu-test'), __('Test Sub-Level','menu-test'), 'manage_options', 'sub-page', 'mt_sublevel_page');
+
+// Add a second submenu to the custom top-level menu:
+add_submenu_page('mt-top-level-handle', __('Test Sub-Level 2','menu-test'), __('Test Sub-Level 2','menu-test'), 'manage_options', 'sub-page2', 'mt_sublevel_page2');
+}
+
+// mt_settings_page() displays the page content for the Test settings sub-menu
+function mt_settings_page() {
+echo "</pre>
+<h2>" . __( 'Test Settings', 'menu-test' ) . "</h2>
+<pre>
+";
+}
+
+// mt_tools_page() displays the page content for the Test Tools sub-menu
+function mt_tools_page() {
+echo "</pre>
+<h2>" . __( 'Test Tools', 'menu-test' ) . "</h2>
+<pre>
+";
+}
+
+// mt_toplevel_page() displays the page content for the custom Test Top-Level menu
+function mt_toplevel_page() {
+echo "</pre>
+<h2>" . __( 'Test Top-Level', 'menu-test' ) . "</h2>
+<pre>
+";
+}
+
+// mt_sublevel_page() displays the page content for the first sub-menu
+// of the custom Test Toplevel menu
+function mt_sublevel_page() {
+echo "</pre>
+<h2>" . __( 'Test Sub-Level', 'menu-test' ) . "</h2>
+<pre>
+";
+}
+
+// mt_sublevel_page2() displays the page content for the second sub-menu
+// of the custom Test Top-Level menu
+function mt_sublevel_page2() {
+echo "</pre>
+<h2>" . __( 'Test Sub-Level 2', 'menu-test' ) . "</h2>
+<pre>
+";
+}
+?>
+```
 
 ## Sample Menu Page
 
@@ -290,42 +324,50 @@ The previous example contains several dummy functions, such as `mt_settings_page
 
 Here is a function that does this:
 
-// mt\_settings\_page() displays the page content for the Test settings sub-menu<br />
-function mt\_settings\_page() {<br />
-	//must check that the user has the required capability<br />
-	if (!current\_user\_can('manage\_options'))<br />
-	{<br />
-		wp\_die( \_\_('You do not have sufficient permissions to access this page.') );<br />
-	}</p>
-<p>	// Variables for the field and option names<br />
-	$opt\_name = 'mt\_favorite\_color';<br />
-	$hidden\_field\_name = 'mt\_submit\_hidden';<br />
-	$data\_field\_name = 'mt\_favorite\_color';</p>
-<p>	// Read in existing option value from database<br />
-	$opt\_val = get\_option( $opt\_name );</p>
-<p>	// See if the user has posted us some information<br />
-	// If they did, this hidden field will be set to 'Y'<br />
-	if( isset($\_POST\[ $hidden\_field\_name \]) &amp;&amp; $\_POST\[ $hidden\_field\_name \] == 'Y' ) {<br />
-	// Read their posted value<br />
-	$opt\_val = $\_POST\[ $data\_field\_name \];</p>
-<p>	// Save the posted value in the database<br />
-	update\_option( $opt\_name, $opt\_val );</p>
-<p>	// Put a &quot;Settings updated&quot; message on the screen<br />
-?><br />
-&lt;div class=&quot;updated&quot;>&lt;/div></p>
-<p>&lt;div class=&quot;wrap&quot;><br />
-&lt;?php<br />
-// Header<br />
-echo &quot;&lt;h2>&quot; . \_\_( 'Menu Test Settings', 'menu-test' ) . &quot;&lt;/h2>&quot;;</p>
-<p>// Settings form<br />
-?><br />
-&lt;form action=&quot;&quot; method=&quot;post&quot; name=&quot;form1&quot;>&lt;/form><br />
-&lt;?php \_e(&quot;Favorite Color:&quot;, 'menu-test' ); ?></p>
-<p>&lt;hr /><br />
-&lt;/div><br />
-&lt;?php } ?>
+```php
+// mt_settings_page() displays the page content for the Test settings sub-menu
+function mt_settings_page() {
+//must check that the user has the required capability
+if (!current_user_can('manage_options'))
+{
+wp_die( __('You do not have sufficient permissions to access this page.') );
+}
 
-[Expand full source code](#)[Collapse full source code](#)
+// Variables for the field and option names
+$opt_name = 'mt_favorite_color';
+$hidden_field_name = 'mt_submit_hidden';
+$data_field_name = 'mt_favorite_color';
+
+// Read in existing option value from database
+$opt_val = get_option( $opt_name );
+
+// See if the user has posted us some information
+// If they did, this hidden field will be set to 'Y'
+if( isset($_POST[ $hidden_field_name ]) && $_POST[ $hidden_field_name ] == 'Y' ) {
+// Read their posted value
+$opt_val = $_POST[ $data_field_name ];
+
+// Save the posted value in the database
+update_option( $opt_name, $opt_val );
+
+// Put a "Settings updated" message on the screen
+?>
+<div class="updated"></div>
+
+<div class="wrap">
+<?php
+// Header
+echo "<h2>" . __( 'Menu Test Settings', 'menu-test' ) . "</h2>";
+
+// Settings form
+?>
+<form action="" method="post" name="form1"></form>
+<?php _e("Favorite Color:", 'menu-test' ); ?>
+
+<hr />
+</div>
+<?php } ?>
+```
 
 **A few notes:**
 
@@ -343,42 +385,48 @@ Every function that adds a new administration menu – `add_menu_page()`, `add_s
 
 One such action hook is `load-{page_hook}`, where `{page_hook}` is the value returned by one of these `add_*_page()` functions. This hook is called when the particular page is loaded. In the example below, it is used to display the “Theme is not configured” notice on all admin pages except for plugin’s options page:
 
-&lt;?php<br />
-add\_action('admin\_menu', 'my\_menu');</p>
-<p>// Here you can check if plugin is configured (e.g. check if some option is set). If not, add new hook.<br />
-// In this example hook is always added.<br />
-add\_action( 'admin\_notices', 'my\_admin\_notices' );</p>
-<p>function my\_menu() {<br />
-	// Add the new admin menu and page and save the returned hook suffix<br />
-	$hook\_suffix = add\_options\_page('My Options', 'My Theme', 'manage\_options', 'my-unique-identifier', 'my\_options');<br />
-	// Use the hook suffix to compose the hook and register an action executed when plugin's options page is loaded<br />
-	add\_action( 'load-' . $hook\_suffix , 'my\_load\_function' );<br />
-}</p>
-<p>function my\_load\_function() {<br />
-	// Current admin page is the options page for our plugin, so do not display the notice<br />
-	// (remove the action responsible for this)<br />
-	remove\_action( 'admin\_notices', 'my\_admin\_notices' );<br />
-}</p>
-<p>function my\_admin\_notices() {<br />
-	echo '&lt;pre><br />
-	&lt;div class=&quot;updated fade&quot; id=&quot;notice&quot;><br />
-	My Plugin is not configured yet. Please do it now.&lt;/div><br />
-	&lt;/pre>';<br />
-}</p>
-<p>function my\_options() {<br />
-	if (!current\_user\_can('manage\_options')) {<br />
-	wp\_die( \_\_('You do not have sufficient permissions to access this page.') );<br />
-	}</p>
-<p>	echo '&lt;/pre><br />
-	&lt;div class=&quot;wrap&quot;>';<br />
-	echo 'Here is where the form would go if I actually had options.';<br />
-	echo '&lt;/div><br />
-	&lt;pre><br />
-	';<br />
-}<br />
-?>
+```php
+<?php
+add_action('admin_menu', 'my_menu');
 
-[Expand full source code](#)[Collapse full source code](#)
+// Here you can check if plugin is configured (e.g. check if some option is set). If not, add new hook.
+// In this example hook is always added.
+add_action( 'admin_notices', 'my_admin_notices' );
+
+function my_menu() {
+// Add the new admin menu and page and save the returned hook suffix
+$hook_suffix = add_options_page('My Options', 'My Theme', 'manage_options', 'my-unique-identifier', 'my_options');
+// Use the hook suffix to compose the hook and register an action executed when plugin's options page is loaded
+add_action( 'load-' . $hook_suffix , 'my_load_function' );
+}
+
+function my_load_function() {
+// Current admin page is the options page for our plugin, so do not display the notice
+// (remove the action responsible for this)
+remove_action( 'admin_notices', 'my_admin_notices' );
+}
+
+function my_admin_notices() {
+echo '<pre>
+<div class="updated fade" id="notice">
+My Plugin is not configured yet. Please do it now.</div>
+</pre>';
+}
+
+function my_options() {
+if (!current_user_can('manage_options')) {
+wp_die( __('You do not have sufficient permissions to access this page.') );
+}
+
+echo '</pre>
+<div class="wrap">';
+echo 'Here is where the form would go if I actually had options.';
+echo '</div>
+<pre>
+';
+}
+?>
+```
 
 ## Resources
 

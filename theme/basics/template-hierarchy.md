@@ -34,7 +34,7 @@ WordPress uses the [query string](https://wordpress.org/support/article/glossary
 WordPress は、[クエリ文字列](https://wordpress.org/support/article/glossary/#query-string) を使用して、どのテンプレートまたはテンプレートのセットを使用してページを表示するかを決定します。クエリ文字列はウェブサイトの各部分へのリンクに含まれる情報です。
 
 <!-- 
-Put simply, WordPress searches down through the template hierarchy until it finds a matching template file. To determine which template file to use, WordPress:
+Put simply, WordPress searches down through the template hierarchy until it finds a matching template file. To determine which template file to use, WordPress:
 -->
 簡単に言うと、WordPress はテンプレートの階層を検索して、一致するテンプレートファイルを見つけるのです。以下のような手順で WordPress はどのテンプレートファイルを使用するかを決定します。
 
@@ -52,15 +52,19 @@ With the exception of the basic `index.php` template file, you can choose whethe
 -->
 基本的な `index.php` テンプレートファイルを例外として、特定のテンプレートファイルを実装するかどうかを選択できます。
 
+Tip: In these examples, the PHP file extension is used. In block themes, HTML files are used instead, but the template hierarchy is the same.
+
+If WordPress cannot find a template file with a matching name, it will skip to the next file in the hierarchy. If WordPress cannot find any matching template file, the theme’s `index.php` file will be used.
+
 <!-- 
 If WordPress cannot find a template file with a matching name, it will skip to the next file in the hierarchy. If WordPress cannot find any matching template file, the theme’s `index.php` file will be used.
 -->
 一致する名前のテンプレートファイルが見つからない場合、WordPress は次の階層のファイルにスキップします。一致するテンプレートファイルが何も見つからない場合は、テーマの `index.php` ファイルが使用されます。
 
 <!--
-When you are using a [child theme](https://developer.wordpress.org/themes/advanced-topics/child-themes/), any file you add to your child theme will over-ride the same file in the parent theme. For example, both themes contain the same template `category.php`, then child theme’s template is used.  
-If a child theme contains the specific template such as `category-unicorns.php` and the parent theme contains lower prioritized template such as `category.php`, then child theme’s `category-unicorns.php` is used.  
-Contrary, if a child theme contains general template only such as `category.php` and the parent theme contains the specific one such as `category-unicorns.php`, then parent’s template `category-unicorns.php` is used.
+When you are using a [child theme](https://developer.wordpress.org/themes/advanced-topics/child-themes/), any file you add to your child theme will over-ride the same file in the parent theme. For example, both themes contain the same template `category.php`, then child theme’s template is used.  
+If a child theme contains the specific template such as `category-unicorns.php` and the parent theme contains lower prioritized template such as `category.php`, then child theme’s `category-unicorns.php` is used.  
+Contrary, if a child theme contains general template only such as `category.php` and the parent theme contains the specific one such as `category-unicorns.php`, then parent’s template `category-unicorns.php` is used.
 -->
 [子テーマ](https://developer.wordpress.org/themes/advanced-topics/child-themes/)を使用している場合、子テーマに追加したファイルは、親テーマの同じファイルよりも優先されます。例えば、両方のテーマに同じテンプレート `category.php` がある場合、子テーマのテンプレートが使われます。 
 子テーマが `category-unicorns.php` のような特定のテンプレートを含み、親テーマが `category.php` のような優先順位の低いテンプレートを含む場合、子テーマの `category-unicorns.php` が使用されます。 
@@ -72,7 +76,7 @@ Contrary, if a child theme contains general template only such as `category.php
 ### 例
 
 <!--
-If your blog is at `http://example.com/blog/` and a visitor clicks on a link to a category page such as `http://example.com/blog/category/your-cat/`, WordPress looks for a template file in the current theme’s directory that matches the category’s ID to generate the correct page. More specifically, WordPress follows this procedure:
+If your blog is at `http://example.com/blog/` and a visitor clicks on a link to a category page such as `http://example.com/blog/category/your-cat/`, WordPress looks for a template file in the current theme’s directory that matches the category’s ID to generate the correct page. More specifically, WordPress follows this procedure:
 -->
 例えば、ブログの URL が`http://example.com/blog/`だとして、(ブログの)訪問者が`http://example.com/blog/category/your-cat/`などのカテゴリーページへのリンクをクリックしたとします。この時 WordPress はテーマのディレクトリ内でカテゴリーの ID に一致するテンプレートファイルを探し、正しいページを生成します。より具体的にいうと、WordPress は次の順に従います。
 
@@ -81,7 +85,7 @@ If your blog is at `http://example.com/blog/` and a visitor clicks on a link to 
 2.  If `category-unicorns.php` is missing and the category’s ID is 4, WordPress looks for a template file named `category-4.php`.
 3.  If `category-4.php` is missing, WordPress will look for a generic category template file, `category.php`.
 4.  If `category.php` does not exist, WordPress will look for a generic archive template, `archive.php`.
-5.  If `archive.php` is also missing, WordPress will fall back to the main theme template file, `index.php`.
+5.  If `archive.php` is also missing, WordPress will fall back to the main theme template file, `index.php`.
 -->
 1.  現在のテーマのディレクトリ内で、カテゴリーのスラッグに一致するテンプレートファイルを探します。もしカテゴリーのスラッグが「unicorns」であれば、WordPress は `category-unicorns.php` という名前のテンプレートファイルを探します。
 2. `category-unicorns.php` がなく、カテゴリの ID が 4 の場合、WordPress は `category-4.php` という名前のテンプレートファイルを探します。
@@ -100,7 +104,7 @@ The following diagram shows which template files are called to generate a WordPr
 [![](https://developer.wordpress.org/files/2014/10/Screenshot-2019-01-23-00.20.04-1024x639.png)](https://developer.wordpress.org/files/2014/10/Screenshot-2019-01-23-00.20.04.png)
 
 <!-- 
-You can also [interact with this diagram](http://wphierarchy.com/).
+You can also [interact with this diagram](http://wphierarchy.com/).
 -->
 または[対話式バージョン](http://wphierarchy.com/)もあります。
 
@@ -120,7 +124,7 @@ While the template hierarchy is easier to understand as a diagram, the following
 ### ホームページ表示
 
 <!-- 
-By default, WordPress sets your site’s home page to display your latest blog posts. This page is called the blog posts index. You can also set your blog posts to display on a separate static page. The template file `home.php` is used to render the blog posts index, whether it is being used as the front page or on separate static page. If `home.php` does not exist, WordPress will use `index.php`.
+By default, WordPress sets your site’s home page to display your latest blog posts. This page is called the blog posts index. You can also set your blog posts to display on a separate static page. The template file `home.php` is used to render the blog posts index, whether it is being used as the front page or on separate static page. If `home.php` does not exist, WordPress will use `index.php`.
 -->
 WordPress のデフォルトでは、サイトのトップページに最新のブログ投稿が表示されるように設定されています。このページをブログ投稿インデックスと呼びます。また、ブログ投稿を別の固定ページに表示するように設定することもできます。ブログ投稿インデックスの表示には、テンプレートファイル `home.php` が使用されますが、これはフロントページとして使用する場合も、別の固定ページとして使用する場合も同じです。`home.php` が存在しない場合、WordPress は `index.php` を使用します。
 
@@ -128,7 +132,7 @@ WordPress のデフォルトでは、サイトのトップページに最新の�
 2.  `index.php`
 
 <!--
-Note: If `front-page.php` exists, it will override the `home.php` template.
+Note: If `front-page.php` exists, it will override the `home.php` template.
 -->
 注意: `front-page.php` が存在する場合は、 `home.php` テンプレートに優先します。
 
@@ -138,15 +142,15 @@ Note: If `front-page.php` exists, it will override the `home.php` template.
 ### フロントページ表示
 
 <!--
-The `front-page.php` template file is used to render your site’s front page, whether the front page displays the blog posts index (mentioned above) or a static page. The front page template takes precedence over the blog posts index (`home.php`) template. If the `front-page.php` file does not exist, WordPress will either use the `home.php` or `page.php` files depending on the setup in Settings → Reading. If neither of those files exist, it will use the `index.php` file.
+The `front-page.php` template file is used to render your site’s front page, whether the front page displays the blog posts index (mentioned above) or a static page. The front page template takes precedence over the blog posts index (`home.php`) template. If the `front-page.php` file does not exist, WordPress will either use the `home.php` or `page.php` files depending on the setup in Settings → Reading. If neither of those files exist, it will use the `index.php` file.
 -->
 `front-page.php` テンプレートファイルはサイトのフロントページの表示に使用されます。フロントページは(上述の)ブログ投稿インデックスか、固定ページを表示します。フロントページのテンプレートは、ブログ投稿インデックス（`home.php`）のテンプレートよりも優先されます。`front-page.php` ファイルが存在しない場合、WordPress は 設定 > 表示設定 での設定に応じて `home.php` または `page.php` ファイルを使用します。もしこれらのファイルがどちらも存在しない場合は、`index.php` ファイルを使用します。
 
 <!--
-1.  `front-page.php` – Used for both “**your latest posts**” or “**a static page**” as set in the **front page displays** section of Settings → Reading.
-2.  `home.php` – If WordPress cannot find `front-page.php` and “**your latest posts**” is set in the **front page displays** section, it will look for `home.php`. Additionally, WordPress will look for this file when the **posts page** is set in the **front page displays** section.
-3.  `page.php` – When “**front page**” is set in the **front page displays** section.
-4.  `index.php` – When “**your latest posts**” is set in the **front page displays** section but `home.php` does not exist *or* when **front page** is set but `page.php` does not exist.
+1.  `front-page.php` – Used for both “**your latest posts**” or “**a static page**” as set in the **front page displays** section of Settings → Reading.
+2.  `home.php` – If WordPress cannot find `front-page.php` and “**your latest posts**” is set in the **front page displays** section, it will look for `home.php`. Additionally, WordPress will look for this file when the **posts page** is set in the **front page displays** section.
+3.  `page.php` – When “**front page**” is set in the **front page displays** section.
+4.  `index.php` – When “**your latest posts**” is set in the **front page displays** section but `home.php` does not exist *or* when **front page** is set but `page.php` does not exist.
 -->
 
 1. `front-page.php` - 設定 > 表示設定 セクションで「**フロントページの表示**」が「**最新の投稿**」または「**固定ページ**」どちらになっている場合でも使われます。
@@ -197,7 +201,7 @@ The single post template file is used to render a single post. WordPress uses th
 個別投稿のテンプレートファイルは、1 つの投稿を表示するために使用されます。WordPress では、以下の順で表示されます:
 
 <!--
-1.  `single-{post-type}-{slug}.php` – (Since 4.4) First, WordPress looks for a template for the specific post. For example, if [post type](https://developer.wordpress.org/themes/basics/post-types/) is `product` and the post slug is `dmc-12`, WordPress would look for `single-product-dmc-12.php`.
+1.  `single-{post-type}-{slug}.php` – (Since 4.4) First, WordPress looks for a template for the specific post. For example, if [post type](https://developer.wordpress.org/themes/basics/post-types/) is `product` and the post slug is `dmc-12`, WordPress would look for `single-product-dmc-12.php`.
 2.  `single-{post-type}.php` – If the post type is `product`, WordPress would look for `single-product.php`.
 3.  `single.php` – WordPress then falls back to `single.php`.
 4.  `singular.php` – Then it falls back to `singular.php`.
@@ -220,9 +224,9 @@ The template file used to render a static page (`page` post-type). Note that unl
 個別ページ（`page` 投稿タイプ）をレンダリングするために使用されるテンプレートファイルです。他の投稿タイプとは異なり、`page` は WordPress 特有のもので、以下の順で表示されることに注意してください。
 
 <!--
-1.  `custom template file` – The [page template](https://developer.wordpress.org/themes/template-files-section/page-template-files/) assigned to the page. See `[get_page_templates()](https://developer.wordpress.org/reference/functions/get_page_templates/)`.
-2.  `page-{slug}.php` – If the page slug is `recent-news`, WordPress will look to use `page-recent-news.php`.
-3.  `page-{id}.php` – If the page ID is 6, WordPress will look to use `page-6.php`.
+1.  `custom template file` – The [page template](https://developer.wordpress.org/themes/template-files-section/page-template-files/) assigned to the page. See `[get_page_templates()](https://developer.wordpress.org/reference/functions/get_page_templates/)`.
+2.  `page-{slug}.php` – If the page slug is `recent-news`, WordPress will look to use `page-recent-news.php`.
+3.  `page-{id}.php` – If the page ID is 6, WordPress will look to use `page-6.php`.
 4.  `page.php`
 5.  `singular.php`
 6.  `index.php`
@@ -245,8 +249,8 @@ Rendering category archive index pages uses the following path in WordPress:
 カテゴリーアーカイブインデックスページは、WordPressでは以下の順で表示されます。
 
 <!--
-1.  `category-{slug}.php` – If the category’s slug is `news`, WordPress will look for `category-news.php`.
-2.  `category-{id}.php` – If the category’s ID is `6`, WordPress will look for `category-6.php`.
+1.  `category-{slug}.php` – If the category’s slug is `news`, WordPress will look for `category-news.php`.
+2.  `category-{id}.php` – If the category’s ID is `6`, WordPress will look for `category-6.php`.
 3.  `category.php`
 4.  `archive.php`
 5.  `index.php`
@@ -268,8 +272,8 @@ To display a tag archive index page, WordPress uses the following path:
 タグアーカイブインデックスページは、WordPress では以下の順で表示されます。
 
 <!-- 
-1.  `tag-{slug}.php` – If the tag’s slug is `sometag`, WordPress will look for `tag-sometag.php`.
-2.  `tag-{id}.php` – If the tag’s ID is `6`, WordPress will look for `tag-6.php`.
+1.  `tag-{slug}.php` – If the tag’s slug is `sometag`, WordPress will look for `tag-sometag.php`.
+2.  `tag-{id}.php` – If the tag’s ID is `6`, WordPress will look for `tag-6.php`.
 3.  `tag.php`
 4.  `archive.php`
 5.  `index.php`
@@ -291,8 +295,8 @@ To display a tag archive index page, WordPress uses the following path:
 [カスタムタクソノミー](https://developer.wordpress.org/themes/basics/categories-tags-custom-taxonomies/)は少し異なる順で表示されます。
 
 <!--
-1.  `taxonomy-{taxonomy}-{term}.php` – If the taxonomy is `sometax`, and taxonomy’s term is `someterm`, WordPress will look for `taxonomy-sometax-someterm.php.` In the case of [post formats](https://developer.wordpress.org/themes/functionality/post-formats/), the taxonomy is ‘post\_format’ and the terms are ‘post-format-{format}. i.e. `taxonomy-post_format-post-format-link.php` for the link post format.
-2.  `taxonomy-{taxonomy}.php` – If the taxonomy were `sometax`, WordPress would look for `taxonomy-sometax.php`.
+1.  `taxonomy-{taxonomy}-{term}.php` – If the taxonomy is `sometax`, and taxonomy’s term is `someterm`, WordPress will look for `taxonomy-sometax-someterm.php.` In the case of [post formats](https://developer.wordpress.org/themes/functionality/post-formats/), the taxonomy is ‘post\_format’ and the terms are ‘post-format-{format}. i.e. `taxonomy-post_format-post-format-link.php` for the link post format.
+2.  `taxonomy-{taxonomy}.php` – If the taxonomy were `sometax`, WordPress would look for `taxonomy-sometax.php`.
 3.  `taxonomy.php`
 4.  `archive.php`
 5.  `index.php`
@@ -314,7 +318,7 @@ To display a tag archive index page, WordPress uses the following path:
 [カスタム投稿タイプ](https://developer.wordpress.org/themes/basics/post-types/)は以下の順で、適切なアーカイブインデックスページを表示します。
 
 <!-- 
-1.  `archive-{post_type}.php` – If the post type is `product`, WordPress will look for `archive-product.php`.
+1.  `archive-{post_type}.php` – If the post type is `product`, WordPress will look for `archive-product.php`.
 2.  `archive.php`
 3.  `index.php`
 -->
@@ -338,8 +342,8 @@ Based on the above examples, rendering author archive index pages is fairly expl
 上記の例から、投稿者アーカイブのインデックスページの表示は、かなり説明的です。
 
 <!-- 
-1.  `author-{nicename}.php` – If the author’s nice name is `matt`, WordPress will look for `author-matt.php`.
-2.  `author-{id}.php` – If the author’s ID were `6`, WordPress will look for `author-6.php`.
+1.  `author-{nicename}.php` – If the author’s nice name is `matt`, WordPress will look for `author-matt.php`.
+2.  `author-{id}.php` – If the author’s ID were `6`, WordPress will look for `author-6.php`.
 3.  `author.php`
 4.  `archive.php`
 5.  `index.php`
@@ -414,12 +418,12 @@ Rendering an attachment page (`attachment` post-type) uses the following path:
 添付ファイルページ（`attachment` 投稿タイプ）は、以下の順で表示されます。
 
 <!-- 
-1.  `{MIME-type}.php` – can be any [MIME type](http://en.wikipedia.org/wiki/Internet_media_type "http://en.wikipedia.org/wiki/Internet_media_type") (For example: `image.php`, `video.php`, `pdf.php`). For `text/plain`, the following path is used (in order):
+1.  `{MIME-type}.php` – can be any [MIME type](http://en.wikipedia.org/wiki/Internet_media_type "http://en.wikipedia.org/wiki/Internet_media_type") (For example: `image.php`, `video.php`, `pdf.php`). For `text/plain`, the following path is used (in order):
     1.  `text-plain.php`
     2.  `plain.php`
     3.  `text.php`
 2.  `attachment.php`
-3.  `single-attachment-{slug}.php` – For example, if the attachment slug is `holiday`, WordPress would look for `single-attachment-holiday.php`.
+3.  `single-attachment-{slug}.php` – For example, if the attachment slug is `holiday`, WordPress would look for `single-attachment-holiday.php`.
 4.  `single-attachment.php`
 5.  `single.php`
 6.  `singular.php`
@@ -442,12 +446,12 @@ Rendering an attachment page (`attachment` post-type) uses the following path:
 ### 埋め込み
 
 <!-- 
-The embed template file is used to render a post which is being embedded. Since 4.5, WordPress uses the following path:
+The embed template file is used to render a post which is being embedded. Since 4.5, WordPress uses the following path:
 -->
 埋め込みテンプレートファイルは、埋め込み対象の記事を表示するために使用されます。4.5 以降、WordPress は以下の順で表示します。
 
 <!-- 
-1.  `embed-{post-type}-{post_format}.php` – First, WordPress looks for a template for the specific post. For example, if its post type is `post` and it has the audio format, WordPress would look for `embed-post-audio.php`.
+1.  `embed-{post-type}-{post_format}.php` – First, WordPress looks for a template for the specific post. For example, if its post type is `post` and it has the audio format, WordPress would look for `embed-post-audio.php`.
 2.  `embed-{post-type}.php` – If the post type is `product`, WordPress would look for `embed-product.php`.
 3.  `embed.php` – WordPress then falls back to embed`.php`.
 4.  Finally, WordPress ultimately falls back to its own `wp-includes/theme-compat/embed.php` template.
@@ -531,7 +535,7 @@ For example, let’s take the default author hierarchy:
 *   `author.php`
 
 <!-- 
-To add `author-{role}.php` before `author.php`, we can manipulate the actual hierarchy using the ‘author\_template’ template type. This allows a request for /author/username where username has the role of editor to display using author-editor.php if present in the current themes directory. 
+To add `author-{role}.php` before `author.php`, we can manipulate the actual hierarchy using the ‘author_template’ template type. This allows a request for /author/username where username has the role of editor to display using author-editor.php if present in the current themes directory. 
 -->
 ここで `author-{role}.php` を `author.php` の前に追加するには、'author_template' テンプレートタイプを使用して実際の階層を操作することができます。これにより、/author/username へのリクエストがあった時 username が編集者の権限を持つ場合に、現在のテーマディレクトリに author-editor.php があれば表示することができます。
 
@@ -556,3 +560,7 @@ function author_role_template( $templates = '' ) {
 
 add_filter( 'author_template', 'author_role_template' );
 ```
+
+Changelog:
+
+*   **Updated** 2022-02-15. Added a notice explaining that the template hierarchy is the same for classic and block themes, but that the examples uses .php files and block themes use .html files.

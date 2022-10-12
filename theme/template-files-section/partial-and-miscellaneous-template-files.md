@@ -51,8 +51,6 @@ Below is an example of a header.php found in the twenty fifteen theme.
         </div><!-- .sidebar -->
         <div id="content" class="site-content">
 
-[Expand full source code](#)[Collapse full source code](#)
-
 Some of the code may look a little daunting at first, but if we break it down, it becomes simple enough. After the opening commment, the `head` is created. The template tag `wp_head()` pulls in all of our styles and any scripts that would appear in the head rather than the footer that we enqueued in our `functions.php` file.
 
 Next, the `body` is opened and a mix of HTML and PHP are present. You can see some conditional tags in the site branding div that tweak a little bit of what is shown based on the page the user is on. Then the site navigation is pulled in. Lastly, the main site-content div is opened which will be closed most likely in the `footer.php` file.
@@ -98,8 +96,6 @@ Here is an example of a `footer.php` file from the Twenty Fifteen theme.
  
 </body>
 </html>
-
-[Expand full source code](#)[Collapse full source code](#)
 
 ## 404.php
 
@@ -156,8 +152,6 @@ get\_header(); ?>
  
 <?php get\_footer(); ?>
 
-[Expand full source code](#)[Collapse full source code](#)
-
 ## Comments.php
 
 The `comments.php` file handles exactly what you would expect, comments. This is a partial template that is pulled into other template files to display comments that users leave on a page or post. Several different pages and posts show comments so it makes sense to have one file that can be pulled in when needed.
@@ -196,8 +190,6 @@ if ( has\_nav\_menu( 'primary' ) || has\_nav\_menu( 'social' ) || is\_active\_si
 <!-- .secondary -->
   
 <?php endif; >
-
-[Expand full source code](#)[Collapse full source code](#)
 
 ## Content-{$slug}.php
 
@@ -259,5 +251,3 @@ Here is twenty fifteen’s example of a `content-page.php` template file.
  
  
 <!-- #post-## -->
-
-[Expand full source code](#)[Collapse full source code](#)

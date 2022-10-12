@@ -2,7 +2,7 @@
 
 If you’ve followed this handbook, you’ll already have a good grasp on the testing required before submitting your theme to the WordPress.org theme directory. If you haven’t, this page will give you a quick refresher.
 
-Testing is incredibly important before releasing a theme. You maybe have built the most beautiful WordPress theme, but if it breaks when someone tries to comment or insert an image, your theme isn’t ready for real world usage.
+Testing is incredibly important before releasing a theme. You may have built the most beautiful WordPress theme, but if it breaks when someone tries to comment or insert an image, your theme isn’t ready for real world usage.
 
 Before testing your theme, make sure you’ve setup a development environment. There are a number of ways to setup your environment, many of which are documented on the [Setting up a Development Environment](https://developer.wordpress.org/themes/getting-started/setting-up-a-development-environment/) page.
 
