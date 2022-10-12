@@ -52,9 +52,10 @@ With the exception of the basic `index.php` template file, you can choose whethe
 -->
 基本的な `index.php` テンプレートファイルを例外として、特定のテンプレートファイルを実装するかどうかを選択できます。
 
+<!--
 Tip: In these examples, the PHP file extension is used. In block themes, HTML files are used instead, but the template hierarchy is the same.
-
-If WordPress cannot find a template file with a matching name, it will skip to the next file in the hierarchy. If WordPress cannot find any matching template file, the theme’s `index.php` file will be used.
+-->
+ヒント: これらの例では、PHP ファイル拡張子を使用しています。ブロックテーマでは代わりに HTML　ファイルを使用しますが、テンプレート階層は同じです。
 
 <!-- 
 If WordPress cannot find a template file with a matching name, it will skip to the next file in the hierarchy. If WordPress cannot find any matching template file, the theme’s `index.php` file will be used.
@@ -560,7 +561,13 @@ function author_role_template( $templates = '' ) {
 
 add_filter( 'author_template', 'author_role_template' );
 ```
-
+<!--
 Changelog:
+-->
+変更履歴:
 
+<!--
 *   **Updated** 2022-02-15. Added a notice explaining that the template hierarchy is the same for classic and block themes, but that the examples uses .php files and block themes use .html files.
+-->
+*   **アップデート** ２０２２-02-15 例では .php ファイルを使用しているがブロックテーマでは .html ファイルを使用するが、テンプレート階層はクラシックテーマとブロックテーマで同じという注釈を追記。
+
