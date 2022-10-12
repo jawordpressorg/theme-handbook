@@ -569,5 +569,4 @@ Changelog:
 <!--
 *   **Updated** 2022-02-15. Added a notice explaining that the template hierarchy is the same for classic and block themes, but that the examples uses .php files and block themes use .html files.
 -->
-*   **アップデート** ２０２２-02-15 例では .php ファイルを使用しているがブロックテーマでは .html ファイルを使用するが、テンプレート階層はクラシックテーマとブロックテーマで同じという注釈を追記。
-
+*   **アップデート** ２０２２-02-15 この例では、.php ファイルを使用し、ブロックテーマでは .html ファイルを使用するが、テンプレート階層はクラシックテーマとブロックテーマで同じという注釈を追記。
