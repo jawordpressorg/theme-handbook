@@ -1,22 +1,50 @@
+<!--
 # Block themes
+-->
+# ブロックテーマ
 
+<!--
 A block theme is a type of WordPress theme built using blocks. You can edit all parts of a block theme in the [Site Editor](https://wordpress.org/support/article/site-editor/).
+-->
+ブロックテーマはWordPress のテーマのひとつのタイプで、ブロックを使って構築します。[サイトエディタ](https://wordpress.org/support/article/site-editor/)からブロックテーマのすべてのパーツを編集することができます。
 
+<!--
 WordPress supports block themes from version 5.9. Together with the [Styles interface](https://wordpress.org/support/article/styles-overview/), block themes are part of full site editing. They are sometimes called full site editing themes. [Learn about the background to full site editing](https://developer.wordpress.org/block-editor/getting-started/full-site-editing/).
+-->
+WordPress はバージョン 5.9 からブロックテーマをサポートしています。[Styles interface](https://wordpress.org/support/article/styles-overview/) と一緒で、ブロックテーマはフルサイト編集の一部です。これらは時々フルサイト編集テーマとも呼ばれます[フルサイト編集の背景についてはこちらで学べます](https://developer.wordpress.org/block-editor/getting-started/full-site-editing/)。
 
+<!--
 You may also be interested in reading the [support article about block themes](https://wordpress.org/support/article/block-themes/).
+-->
+[ブロックテーマについてのサポート記事](https://wordpress.org/support/article/block-themes/)を読むのも面白いかも知れません。
 
+<!--
 In this part of the handbook, you will learn about:
+-->
+このハンドブックの箇所では以下のについて学ぶことができます
 
+<!--
 *   The differences between classic themes and block themes
 *   Block theme setup
 *   Templates and template parts
 *   The theme.json configuration file
 *   Converting classic themes to block themes
+-->
+*   クラシックテーマとブロックテーマの違い
+*   ブロックテーマの設定
+*   テンプレートとテンプレートパーツ
+*   theme.json 設定ファイル
+*   クラシックテーマからブロックテーマへの変換
 
+<!--
 Prerequisits for this chapter: [Theme Basics](https://developer.wordpress.org/themes/basics/)
+-->
+この章の前提条件: [テーマの基礎](https://developer.wordpress.org/themes/basics/)
 
+<!--
 ## The benefits of block themes
+-->
+## ブロックテーマの利点
 
 Why should you create block themes? While WordPress continues to support classic themes, block themes are built to improve scalability and performance.
 
