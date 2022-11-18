@@ -46,14 +46,23 @@ Prerequisits for this chapter: [Theme Basics](https://developer.wordpress.org/th
 -->
 ## ブロックテーマの利点
 
+<!--
 Why should you create block themes? While WordPress continues to support classic themes, block themes are built to improve scalability and performance.
+-->
+どうしてブロックテーマを作成するべきなのでしょうか? WordPress はクラシックテーマのサポートを続けていますが、ブロックテーマは拡張性とパフォーマンスを向上させるために作られています。
 
 *   [Block themes enhances loading performance](https://make.wordpress.org/core/2021/07/01/block-styles-loading-enhancements-in-wordpress-5-8/) by loading styles only for rendered blocks on a page
 *   Block themes are not required to manually enqueue stylesheets for both front-end and editors
-*   Theme.json handles all aspects of [add\_theme\_support()](https://developer.wordpress.org/reference/functions/add_theme_support/)
+*   Theme.json handles all aspects of [add_theme_support()](https://developer.wordpress.org/reference/functions/add_theme_support/)
 *   Accessibility features such as Skip to content, keyboard navigation, and landmarks are generated automatically without adding additional code
 *   With a block theme, the user can edit all parts of their website without code
 *   By using the Styles interface, users can customize colors and typography for the website and for the blocks
+
+*  ブロックテーマはページに描写されるブロックについてのみのスタイルを読み込むことで[読み込みのパフォーマンスを向上させています](https://make.wordpress.org/core/2021/07/01/block-styles-loading-enhancements-in-wordpress-5-8/)
+*  ブロックテーマはフロントエンドとエディタそれぞれのタイルシートを手動でエンキューする必要がありません
+*  Theme.json は [add_theme_support()](https://developer.wordpress.org/reference/functions/add_theme_support/) の担う全てを処理できます
+*  コンテンツのスキップや、キーボードのナビゲーション、ランドマークといったアクセシビリティ機能は特別なコードを追加することなく自動で生成されます
+
 
 ## Differences and similarities between classic themes and block themes
 
