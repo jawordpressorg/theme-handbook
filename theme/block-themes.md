@@ -109,7 +109,7 @@ For theme developers that are accustomed to creating classic themes, there is a 
 | [テンプレート階層](https://ja.wordpress.org/team/handbook/theme-development/basics/template-hierarchy/)を使用 | テンプレート階層を使用 |
 | コンテンツの表示に[テンプレートタグ](https://developer.wordpress.org/themes/basics/template-tags/)のような PHP 関数を使用 | 全てにブロックを使用。*投稿コンテンツブロックは `the_content()` に相当* |
 | テキストを翻訳可能にするために [PHP 関数](https://developer.wordpress.org/apis/handbook/internationalization/)を使用 | HTML ファイルのテキストは翻訳不可能。[ブロックパターン](https://developer.wordpress.org/block-editor/reference-guides/block-api/block-patterns/)は PHP 関数を使用して翻訳可能にできる |
-| [if/elseの条件分岐](https://developer.wordpress.org/themes/basics/conditional-tags/)にPHPの関数を使用 | ブロックの設定を使い分ける |
+| [if/else の条件分岐](https://developer.wordpress.org/themes/basics/conditional-tags/)に PHP の関数を使用 | ブロックの設定を使い分ける |
 | 異なる投稿や投稿タイプを表示するために[「ループ」]((https://developer.wordpress.org/themes/basics/the-loop/))を使用 | [クエリーループブロック](https://wordpress.org/support/article/query-loop-block/)と投稿テンプレートブロックを使用 |
 | [ウィジェットエリア (サイドバー)](https://developer.wordpress.org/themes/functionality/sidebars/)と[ウィジェット](https://developer.wordpress.org/themes/functionality/widgets/)を使用可能 | ウィジェットの代わりにブロックを使用。*WordPress に（標準で）搭載されているウィジェットはブロック化されています。* |
 | [カスタマイザー](https://developer.wordpress.org/themes/customize-api/)を使用可能 | サイトエディターを使用。カスタマイザーメニューはオプションで使用可能。 |
