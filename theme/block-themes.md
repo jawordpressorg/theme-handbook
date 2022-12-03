@@ -11,7 +11,7 @@ A block theme is a type of WordPress theme built using blocks. You can edit all 
 <!--
 WordPress supports block themes from version 5.9. Together with the [Styles interface](https://wordpress.org/support/article/styles-overview/), block themes are part of full site editing. They are sometimes called full site editing themes. [Learn about the background to full site editing](https://developer.wordpress.org/block-editor/getting-started/full-site-editing/).
 -->
-WordPress はバージョン 5.9 からブロックテーマをサポートしています。[Styles interface](https://wordpress.org/support/article/styles-overview/) と一緒で、ブロックテーマはフルサイト編集の一部です。これらは時々フルサイト編集テーマとも呼ばれます[フルサイト編集の背景についてはこちらで学べます](https://developer.wordpress.org/block-editor/getting-started/full-site-editing/)。
+WordPress はバージョン 5.9 からブロックテーマをサポートしています。[スタイルインターフェース](https://wordpress.org/support/article/styles-overview/) と一緒で、ブロックテーマはフルサイト編集の一部です。これらは時々フルサイト編集テーマとも呼ばれます。[フルサイト編集の背景についてはこちらで学べます](https://developer.wordpress.org/block-editor/getting-started/full-site-editing/)。
 
 <!--
 You may also be interested in reading the [support article about block themes](https://wordpress.org/support/article/block-themes/).
