@@ -65,7 +65,7 @@ Why should you create block themes? While WordPress continues to support classic
 *  Theme.json は、[add_theme_support()](https://developer.wordpress.org/reference/functions/add_theme_support/) が担う全ての機能を処理できます
 *  コンテンツのスキップや、キーボードのナビゲーション、ランドマークといったアクセシビリティ機能は特別なコードを追加することなく自動で生成されます
 *  ブロックテーマでは、ユーザーはコードなしで Web サイトのすべての部分を編集することができます
-*  「スタイル」インターフェースにより、ウェブサイトやブロックの色やタイポグラフィーをカスタマイズすることができます
+*  「スタイル」インターフェースにより、Web サイトやブロックの色やタイポグラフィをカスタマイズすることができます
 
 <!--
 ## Differences and similarities between classic themes and block themes
