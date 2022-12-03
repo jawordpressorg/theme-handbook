@@ -21,7 +21,7 @@ You may also be interested in reading the [support article about block themes](h
 <!--
 In this part of the handbook, you will learn about:
 -->
-このハンドブックの箇所では以下のについて学ぶことができます
+ハンドブックのこのパートでは、以下のについて学ぶことができます
 
 <!--
 *   The differences between classic themes and block themes
