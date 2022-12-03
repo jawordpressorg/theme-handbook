@@ -49,7 +49,7 @@ Prerequisits for this chapter: [Theme Basics](https://developer.wordpress.org/th
 <!--
 Why should you create block themes? While WordPress continues to support classic themes, block themes are built to improve scalability and performance.
 -->
-どうしてブロックテーマを作成するべきなのでしょうか? WordPress はクラシックテーマのサポートを続けていますが、ブロックテーマは拡張性とパフォーマンスを向上させるために作られています。
+どうしてブロックテーマを作成するべきなのでしょうか ? WordPress はクラシックテーマのサポートを続けていますが、ブロックテーマは拡張性とパフォーマンスを向上させるために作られています。
 
 <!--
 *   [Block themes enhances loading performance](https://make.wordpress.org/core/2021/07/01/block-styles-loading-enhancements-in-wordpress-5-8/) by loading styles only for rendered blocks on a page
