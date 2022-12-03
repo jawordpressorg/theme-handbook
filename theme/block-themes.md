@@ -108,7 +108,7 @@ For theme developers that are accustomed to creating classic themes, there is a 
 | コンテンツの表示に PHP ファイルを使用。 | ブロックの表示に HTML を使用。HTML ファイルを WordPress が見つけられない場合に PHP をフォールバックとして使用。 *single.html は single.php に相当* |
 | [テンプレート階層](https://ja.wordpress.org/team/handbook/theme-development/basics/template-hierarchy/)を使用 | テンプレート階層を使用 |
 | コンテンツの表示に[テンプレートタグ](https://developer.wordpress.org/themes/basics/template-tags/)のような PHP 関数を使用 | 全てにブロックを使用。*投稿コンテンツブロックは `the_content()` に相当* |
-| テキストを翻訳可能にするために [PHP 関数](https://developer.wordpress.org/apis/handbook/internationalization/)を使用 | HTMLファイルのテキストは翻訳不可能。[ブロックパターン](https://developer.wordpress.org/block-editor/reference-guides/block-api/block-patterns/)はPHP関数を使用して翻訳可能にできる |
+| テキストを翻訳可能にするために [PHP 関数](https://developer.wordpress.org/apis/handbook/internationalization/)を使用 | HTML ファイルのテキストは翻訳不可能。[ブロックパターン](https://developer.wordpress.org/block-editor/reference-guides/block-api/block-patterns/)は PHP 関数を使用して翻訳可能にできる |
 | [if/elseの条件分岐](https://developer.wordpress.org/themes/basics/conditional-tags/)にPHPの関数を使用 | ブロックの設定を使い分ける |
 | 異なる投稿や投稿タイプを表示するために[「ループ」]((https://developer.wordpress.org/themes/basics/the-loop/))を使用 | [クエリーループブロック](https://wordpress.org/support/article/query-loop-block/)と投稿テンプレートブロックを使用 |
 | [ウィジェットエリア (サイドバー)](https://developer.wordpress.org/themes/functionality/sidebars/)と[ウィジェット](https://developer.wordpress.org/themes/functionality/widgets/)を使用可能 | ウィジェットの代わりにブロックを使用。*WordPress に（標準で）搭載されているウィジェットはブロック化されています。* |
