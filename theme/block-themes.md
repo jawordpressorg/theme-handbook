@@ -62,7 +62,7 @@ Why should you create block themes? While WordPress continues to support classic
 
 *  ブロックテーマは、ページに描写されるブロックについてのみのスタイルを読み込むことで[読み込みのパフォーマンスを向上させています](https://make.wordpress.org/core/2021/07/01/block-styles-loading-enhancements-in-wordpress-5-8/)
 *  ブロックテーマは、フロントエンドとエディターそれぞれのタイルシートを手動でエンキューする必要がありません
-*  Theme.json は [add_theme_support()](https://developer.wordpress.org/reference/functions/add_theme_support/) の担う全てを処理できます
+*  Theme.json は、[add_theme_support()](https://developer.wordpress.org/reference/functions/add_theme_support/) が担う全ての機能を処理できます
 *  コンテンツのスキップや、キーボードのナビゲーション、ランドマークといったアクセシビリティ機能は特別なコードを追加することなく自動で生成されます
 *  ブロックテーマでは、ユーザーはコードなしでウェブサイトのすべての部分を編集することができます
 *  「スタイル」インターフェースにより、ウェブサイトやブロックの色やタイポグラフィーをカスタマイズすることができます
