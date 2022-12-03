@@ -16,7 +16,7 @@ WordPress はバージョン 5.9 からブロックテーマをサポートし�
 <!--
 You may also be interested in reading the [support article about block themes](https://wordpress.org/support/article/block-themes/).
 -->
-[ブロックテーマについてのサポート記事](https://wordpress.org/support/article/block-themes/)を読むのも面白いかも知れません。
+[ブロックテーマについてのサポート記事](https://wordpress.org/support/article/block-themes/)を読むのもおもしろいかもしれません。
 
 <!--
 In this part of the handbook, you will learn about:
