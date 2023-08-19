@@ -31,18 +31,21 @@ An attachment page (`attachment.php`) is a single post page with the post type o
 
 Creation of attachment page is as simple as creating an attachment.php file. The attachment.php file then contains code similar to the single.php post page.
 
+```php
 <div class="entry-attachment">
-       <?php $image\_size = apply\_filters( 'wporg\_attachment\_size', 'large' ); 
-             echo wp\_get\_attachment\_image( get\_the\_ID(), $image\_size ); ?>
- 
-           <?php if ( has\_excerpt() ) : ?>
-       
-           <div class="entry-caption">
-                 <?php the\_excerpt(); ?>
-           </div><!-- .entry-caption -->
-       <?php endif; ?>
+	<?php
+	$image_size = apply_filters( 'wporg_attachment_size', 'large' );
+	echo wp_get_attachment_image( get_the_ID(), $image_size );
+	?>
+
+	<?php if ( has_excerpt() ) : ?>
+		<div class="entry-caption">
+			<?php the_excerpt(); ?>
+		</div><!-- .entry-caption -->
+	<?php endif; ?>
 </div><!-- .entry-attachment -->
+```
 
 ## Function Reference
 
-*   [get\_attachment\_template()](https://developer.wordpress.org/reference/functions/get_attachment_template/) : Retrieve path of attachment template in current or parent template.
+*   [](https://developer.wordpress.org/reference/functions/get_attachment_template/)[get\_attachment\_template()](https://developer.wordpress.org/reference/functions/get_attachment_template/) : Retrieve path of attachment template in current or parent template.

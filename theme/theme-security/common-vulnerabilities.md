@@ -19,12 +19,13 @@ But sometimes you need to do complex queries, that have not been accounted for i
 
 All data in SQL queries must be SQL-escaped before the SQL query is executed to prevent against SQL injection attacks. The best function to use for SQL-escaping is `$wpdb->prepare()` which supports both a [sprintf()](http://secure.php.net/sprintf)\-like and [vsprintf()](http://secure.php.net/vsprintf)\-like syntax.
 
-<br />
-$wpdb->get\_var( $wpdb->prepare(<br />
-  &quot;SELECT something FROM table WHERE foo = %s and status = %d&quot;,<br />
-  $name, // an unescaped string (function will do the sanitization for you)<br />
-  $status // an untrusted integer (function will do the sanitization for you)<br />
-) );<br />
+```php
+$wpdb->get_var( $wpdb->prepare(
+  "SELECT something FROM table WHERE foo = %s and status = %d",
+  $name, // an unescaped string (function will do the sanitization for you)
+  $status // an untrusted integer (function will do the sanitization for you)
+) );
+```
 
 ### Cross Site Scripting (XSS)
 
@@ -34,22 +35,25 @@ Avoid XSS vulnerabilities by escaping output, stripping out unwanted data. As a
 
 An example of one of the escaping functions is escaping URL from a user profile.
 
-<br />
-&lt;img src=&quot;&lt;?php echo esc\_url( $great\_user\_picture\_url ); ?>&quot; /><br />
+```php
+<img src="<?php echo esc_url( $great_user_picture_url ); ?>" />
+```
 
 Content that has HTML entities within can be sanitized to allow only specified HTML elements.
 
-<br />
-$allowed\_html = array(<br />
-    'a' => array(<br />
-        'href' => array(),<br />
-        'title' => array()<br />
-    ),<br />
-    'br' => array(),<br />
-    'em' => array(),<br />
-    'strong' => array(),<br />
-);</p>
-<p>echo wp\_kses( $custom\_content, $allowed\_html );<br />
+```php
+$allowed_html = array(
+    'a' => array(
+        'href' => array(),
+        'title' => array()
+    ),
+    'br' => array(),
+    'em' => array(),
+    'strong' => array(),
+);
+
+echo wp_kses( $custom_content, $allowed_html );
+```
 
 ### Cross-site Request Forgery (CSRF)
 
@@ -57,12 +61,12 @@ Cross-site request forgery or CSRF (pronounced sea-surf) is when a nefarious pa
 
 If your theme includes any HTML or HTTP-based form submissions, use a [nonce](https://developer.wordpress.org/themes/theme-security/using-nonces/) to guarantee a user intends to perform an action.
 
-</p>
-<p>&lt;form method=&quot;post&quot;><br />
-   &lt;!-- some inputs here ... --><br />
-   &lt;?php wp\_nonce\_field( 'name\_of\_my\_action', 'name\_of\_nonce\_field' ); ?><br />
-&lt;/form></p>
-<p>
+```php
+<form method="post">
+   <!-- some inputs here ... -->
+   <?php wp_nonce_field( 'name_of_my_action', 'name_of_nonce_field' ); ?>
+</form>
+```
 
 ### Staying Current
 

@@ -14,11 +14,15 @@ For the text in the theme to be able to be translated easily the text should not
 
 The following example could not be translated unless the translator modified the source code which is not very efficient.
 
+```php
 <h1>Settings Page</h1>
+```
 
 By passing the string through a localization function it can it can be easily parsed to be translated.
 
-<h1><?php \_e( 'Settings Page' ); ?></h1>
+```php
+<h1><?php _e( 'Settings Page' ); ?></h1>
+```
 
 WordPress uses [gettext](http://www.gnu.org/software/gettext/) libraries to be able to add the translations in PHP. In WordPress you should use the WordPress localization functions instead of the native PHP gettext-compliant translation functions.
 
@@ -42,11 +46,13 @@ The text domain is added to the `style.css` header so that the theme meta-data l
 
 **Example:**
 
-/\*
-\* Theme Name: My Theme
-\* Author: Theme Author
-\* Text Domain: my-theme
-\*/
+```php
+/*
+* Theme Name: My Theme
+* Author: Theme Author
+* Text Domain: my-theme
+*/
+```
 
 ##### Domain Path
 
@@ -54,12 +60,14 @@ The domain path is needed when the translations are saved in a directory other t
 
 **Example:**
 
-/\*
-\* Theme Name: My Theme
-\* Author: Theme Author
-\* Text Domain: my-theme
-\* Domain Path: /languages
-\*/
+```php
+/*
+* Theme Name: My Theme
+* Author: Theme Author
+* Text Domain: my-theme
+* Domain Path: /languages
+*/
+```
 
 #### Add text domain to strings
 
@@ -67,35 +75,51 @@ The text domain should be added as an argument to all of the localization functi
 
 **Example 1**:
 
-\_\_( 'Post' )
+```php
+__( 'Post' )
+```
 
 should become
 
-\_\_( 'Post', 'my-theme' )
+```php
+__( 'Post', 'my-theme' )
+```
 
 **Example 2**:
 
-\_e( 'Post' )
+```php
+_e( 'Post' )
+```
 
 should become
 
-\_e( 'Post', 'my-theme' )
+```php
+_e( 'Post', 'my-theme' )
+```
 
 **Example 3**:
 
-\_n( '%s post', '%s posts', $count )
+```php
+_n( '%s post', '%s posts', $count )
+```
 
 should become
 
-\_n( '%s post', '%s posts', $count, 'my-theme' )
+```php
+_n( '%s post', '%s posts', $count, 'my-theme' )
+```
 
-Warning: The text domain should be passed as a string to the localization functions instead of a variable. It allows parsing tools to differentiate between text domains. Example of what not to do:
+Warning: The text domain should be passed as a string to the localization functions instead of a variable. It allows parsing tools to differentiate between text domains. Example of what not to do:  
 
-\_\_( 'Translate me.' , $text\_domain );
+```php
+__( 'Translate me.' , $text_domain );
+```
+
+  
 
 #### Loading Translations
 
-The translations in WordPress are saved in `.po` and `.mo` files which need to be loaded. They can be loaded by using the functions`[load_theme_textdomain()](https://developer.wordpress.org/reference/functions/load_theme_textdomain/)` or `[load_child_theme_textdomain()](https://developer.wordpress.org/reference/functions/load_child_theme_textdomain/)`. This loads `{locale}.mo` from your theme’s base directory or `{text-domain}-{locale}.mo` from the WordPress theme language folder in `/wp-content/languages/themes/`.
+The translations in WordPress are saved in `.po` and `.mo` files which need to be loaded. They can be loaded by using the functions `[load_theme_textdomain()](https://developer.wordpress.org/reference/functions/load_theme_textdomain/)` or `[load_child_theme_textdomain()](https://developer.wordpress.org/reference/functions/load_child_theme_textdomain/)`. This loads `{locale}.mo` from your theme’s base directory or `{text-domain}-{locale}.mo` from the WordPress theme language folder in `/wp-content/languages/themes/`.
 
 Note: As of version 4.6 WordPress automatically checks the language directory in `wp-content` for translations from [translate.wordpress.org](https://translate.wordpress.org/). This means that plugins that are translated via translate.wordpress.org do not require `load_plugin_textdomain()` anymore.  
 If you don’t want to add a `load_plugin_textdomain()` call to your plugin you should set the `Requires at least:` field in your readme.txt to 4.6.
@@ -109,12 +133,14 @@ To find out more about the different language and country codes, see [the list o
 
 **Example:**
 
-function my\_theme\_load\_theme\_textdomain() {
-    load\_theme\_textdomain( 'my-theme', get\_template\_directory() . '/languages' );
+```php
+function my_theme_load_theme_textdomain() {
+    load_theme_textdomain( 'my-theme', get_template_directory() . '/languages' );
 }
-add\_action( 'after\_setup\_theme', 'my\_theme\_load\_theme\_textdomain' );
+add_action( 'after_setup_theme', 'my_theme_load_theme_textdomain' );
+```
 
-This function should ideally be run within the themes’ `function.php`.
+This function should ideally be run within the theme’s `function.php`.
 
 ##### Language Packs
 

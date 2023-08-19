@@ -10,25 +10,15 @@ When developing themes, it is best to do it in an environment identical to the p
 
 ## Your WordPress local development environment
 
-For developing WordPress themes, you need to set up a development environment suited to WordPress.  To get started, you will need a local server stack and a text editor.  There are a number of options, including:
-
-**Local Server Stack**
-
-*   A local server stack, such as LAMP (**L**inux **A**pache **M**ySQL/**M**ariaDB **P**HP) or WAMP (**W**indows **A**pache **M**ySQL/**M**ariaDB **P**HP) is a server (much like the server that runs on your web server), which you will configure on your local machine. You can install pre-bundled programs that contain all of these, like [MAMP](http://www.mamp.info/) (for Mac), or [XAMPP](http://www.apachefriends.org/index.html) (Mac or Windows) to quickly setup your environment.
-
-**Virtualized Environment**
-
-*   A virtualized such created with Vagrant and VirtualBox allows you to create easily reproducible development environments. [Varying Vagrant Vagrants (VVV)](https://github.com/Varying-Vagrant-Vagrants/VVV) is a popular Vagrant option which creates a WordPress development environment.
+For developing WordPress themes, you need to set up a development environment suited to WordPress.  To get started, you will need a local server stack and a text editor. There are a number of options, for example MAMP, XAMPP, Varying Vagrant Vagrants (VVV) or Docker. For more information see [Installing a local server.](https://make.wordpress.org/core/handbook/tutorials/installing-a-local-server/)
 
 **Text Editor**
 
-In addition to a local server environment, you also need a text editor to write your code. Your choice of text editor is personal, but remember that a good text editor can speed up your development process. Your text editor can be everything from a basic tool for writing code to a fully integrated development environment (IDE) with tools for debugging and testing. It’s worth doing research, and some even include support for WordPress development. Popular choices are Atom, Sublime Text, and PhpStorm.
-
-You can find a [list of tutorials for setting up development environments at the bottom of the page.](https://developer.wordpress.org/themes/getting-started/setting-up-a-development-environment/#further-resources)
+In addition to a local server environment, you also need a text editor to write your code. Your choice of text editor is personal, but remember that a good text editor can speed up your development process. Your text editor can be everything from a basic tool for writing code to a fully integrated development environment (IDE) with tools for debugging and testing. It’s worth doing research, and some even include support for WordPress development. Popular choices are Atom, Sublime Text, VSCode and PhpStorm.
 
 ## Supporting older versions of WordPress
 
-It’s standard practice for WordPress themes to support *at least two versions back* to ensure a minimum of backward compatibility. For example, if the current version of WordPress is at 4.6, then you should also make sure that your theme works well in versions 4.5 and 4.4 as well.
+It’s standard practice for WordPress themes to support *at least two versions back* to ensure a minimum of backward compatibility. For example, if the current version of WordPress is at 5.8, then you should also make sure that your theme works well in versions 5.7 and 5.6 as well.
 
 You can refer to the [WordPress Releases](https://wordpress.org/download/releases/) page to access older versions of WordPress. Then you can download and install older WordPress versions, creating multiple development sites, each running different WordPress versions for testing.
 
@@ -44,12 +34,16 @@ The [WP\_DEBUG](https://codex.wordpress.org/WP_DEBUG "WP_DEBUG") PHP constant i
 
 2\. Change:
 
-define( 'WP\_DEBUG', false );
+```php
+define( 'WP_DEBUG', false );
+```
 
-  
 to
 
- define( 'WP\_DEBUG', true );
+```php
+define( 'WP_DISABLE_FATAL_ERROR_HANDLER', true ); // 5.2 and later
+define( 'WP_DEBUG', true );
+```
 
 Note: While normally set to ‘false’ in the *wp-config.php* file, development copies of WordPress—alpha and beta versions of the upcoming release—WP\_DEBUG is already set to ‘true’ by default.
 
@@ -59,11 +53,15 @@ Note: While normally set to ‘false’ in the *wp-config.php* file, development
 
 WP\_DEBUG\_LOG is used in conjunction with WP\_DEBUG to log all error messages to a debug.log within your WordPress /wp-content/ directory. To enable this functionality set WP\_DEBUG\_LOG to true within your wp-config.php file.
 
-define( 'WP\_DEBUG\_LOG', true );
+```php
+define( 'WP_DEBUG_LOG', true );
+```
 
 WP\_DEBUG\_DISPLAY is used to control whether debug messages display within the HTML of your theme pages. To display error messages on the screen as they occur, configure this setting to ‘true’ within your *wp-config.php* file.
 
-define( 'WP\_DEBUG\_DISPLAY', true );
+```php
+define( 'WP_DEBUG_DISPLAY', true );
+```
 
 With the WP\_DEBUG and WP\_DEBUG\_DISPLAY enabled, error messages will display at the top of your site pages.
 
@@ -73,19 +71,19 @@ Note: Errors will display in the frontend and admin areas of your site. These de
 
 ## Other WordPress Development Tools
 
-In addition to WP\_DEBUG, the following plugins and unit test data sets are an important part of your [development toolset](http://nacin.com/2010/04/23/5-ways-to-debug-wordpress/) and help you develop better WordPress themes.
+In addition to WP\_DEBUG, the following plugins and unit test data sets are an important part of your development toolset and help you develop better WordPress themes.
 
-#### **Test Data**
+#### Test Data
 
-**WordPress.org Theme Unit Test Data**
+**WordPress.org Theme Test Data**
 
-[WordPress.org Theme Unit Test Data](https://codex.wordpress.org/Theme_Unit_Test) is an XML file containing dummy test data that you can upload to test how themes perform with different types and layouts of content.
+[WordPress.org Theme Test Data](https://codex.wordpress.org/Theme_Unit_Test) is an XML file containing dummy test data that you can upload to test how themes perform with different types and layouts of content.
 
 **WordPress.com Theme Unit Test Data**
 
 [WordPress.com Theme Unit Test Data](http://themetest.wordpress.com/) is dummy test data that you can upload to a WordPress installation to test your theme, including WordPress.com-specific features.
 
-#### **Plugins**
+#### Plugins
 
 **Debug Bar** **(WordPress plugin)**
 
@@ -103,22 +101,10 @@ In addition to WP\_DEBUG, the following plugins and unit test data sets are an i
 
 [Monster Widget](https://wordpress.org/plugins/monster-widget/) consolidates the core WordPress widgets into a single widget allowing you to test widgets styling and functionality in your theme.
 
-**Developer (WordPress plugin)**
-
-[Developer](https://wordpress.org/plugins/developer/) helps optimize your development environment by allowing easy installation of tools and plugins that help in troubleshooting and ensuring code quality.
-
 **Theme-Check (WordPress plugin)**
 
 [Theme-Check](https://wordpress.org/plugins/theme-check/ "Theme-Check: A simple and easy way to test your theme for all the latest WordPress standards and practices.") tests your theme for compliance with the latest WordPress standards and practices.
 
 ## WordPress Theme Review Guidelines
 
-In addition to the above development tools, it’s a good idea to stay up to date on the WordPress.org Theme Review Team’s [Guidelines](https://make.wordpress.org/themes/guidelines/) for theme submission and guidance on meeting [WordPress Coding Standards](https://make.wordpress.org/core/handbook/best-practices/coding-standards/).  These guidelines are the “gold standard” for quality theme development and are useful, even if you don’t plan on releasing a theme on WordPress.org.
-
-## Further Resources
-
-*   [Developing WordPress Locally With MAMP](http://www.smashingmagazine.com/2011/09/28/developing-wordpress-locally-with-mamp/ "Setting up your Development Environment for WordPress.com VIP") (Mac, MAMP)
-*   [How to Setup a WordPress Development Environment for Windows](http://code.tutsplus.com/articles/how-to-setup-a-wordpress-development-environment-for-windows--wp-23365 "How to Setup a WordPress Development Environment for Windows") (Windows, XAMPP)
-*   [WordPress Theme Review VVV: A Quick Vagrant Setup for Testing Themes](http://wptavern.com/wordpress-theme-review-vvv-a-quick-vagrant-setup-for-testing-and-reviewing-themes " WordPress Theme Review VVV: A Quick Vagrant Setup for Testing Themes") (Cross-platform, Vagrant)
-*   [Setting up your Development Environment](http://vip.wordpress.com/documentation/development-environment/ "Setting up your Development Environment for WordPress.com VIP") (WordPress.com VIP)
-*   [wptest.io](http://wptest.io/ "A fantastically exhaustive set of test data to measure the integrity of your plugins and themes.") – an exhaustive set of WordPress test data derived from [WordPress’ Theme Unit Test](https://codex.wordpress.org/Theme_Unit_Test "Theme Unit Test")
+In addition to the above development tools, it’s a good idea to stay up to date on the WordPress.org Themes Team’s [guidelines for theme submission](https://make.wordpress.org/themes/handbook/review/required/) and guidance on meeting [WordPress Coding Standards](https://make.wordpress.org/core/handbook/best-practices/coding-standards/). These guidelines are the “gold standard” for quality theme development and are useful, even if you don’t plan on releasing a theme on WordPress.org.

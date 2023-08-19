@@ -72,14 +72,25 @@ Tip: A quick, safe method for creating a new page template is to make a copy of�
 
 To create a global template, write an opening PHP comment at the top of the file that states the template’s name.  
 
-`<br /> &lt;?php /* Template Name: Example Template */ ?><br />`
+```
+<?php /* Template Name: Example Template */ ?>
+```
 
   
 It’s a good idea to choose a name that describes what the template does as the name is visible to WordPress users when they are editing the page. For example, you could name your template Homepage, Blog, or Portfolio.
 
 This example from the TwentyFourteen theme creates a page template called Full Width Page:  
 
-`&lt;?php<br /> /**<br /> * Template Name: Full Width Page<br /> *<br /> * @package WordPress<br /> * @subpackage Twenty_Fourteen<br /> * @since Twenty Fourteen 1.0<br /> */<br />`
+```
+<?php
+/**
+* Template Name: Full Width Page
+*
+* @package WordPress
+* @subpackage Twenty_Fourteen
+* @since Twenty Fourteen 1.0
+*/
+```
 
   
 ![basics-page-templates-03](https://developer.wordpress.org/files/2014/10/basics-page-templates-03.png)Once you upload the file to your theme’s folder (e.g., page-templates), go to the **Page > Edit** screen in your admin dashboard.
@@ -107,7 +118,14 @@ To create a page template to specific post types, add a line under the template 
 
 Example:  
 
-`<br /> &lt;?php<br /> /*<br /> Template Name: Full-width layout<br /> Template Post Type: post, page, event<br /> */<br /> // Page code here...<br />`
+```
+<?php
+/*
+Template Name: Full-width layout
+Template Post Type: post, page, event
+*/
+// Page code here...
+```
 
   
 
@@ -119,9 +137,23 @@ When at least one template exists for a post type, the ‘Post Attributes’ met
 
 Let’s say you want to publicly release a theme with support for post type templates. WordPress versions before 4.7 will ignore the Template Post Type header and show the template in the list of page templates, even though it only works for regular posts. To prevent that, you can hook into the theme\_page\_templates filter to exclude it from the list. Here’s an example:  
 
-`   <br /> /**<br /> * Hides the custom post template for pages on WordPress 4.6 and older<br /> *<br /> * @param array $post_templates Array of page templates. Keys are filenames, values are translated names.<br /> * @return array Filtered array of page templates.<br /> */<br /> function makewp_exclude_page_templates( $post_templates ) {<br /> if ( version_compare( $GLOBALS['wp_version'], '4.7', '&lt;' ) ) {<br /> unset( $post_templates['templates/my-full-width-post-template.php'] );<br /> }<br /> return $post_templates;<br /> }<br /> add_filter( 'theme_page_templates', 'makewp_exclude_page_templates' );<br />  [Expand full source code](#)[Collapse full source code](#)     `
+```
+/**
+* Hides the custom post template for pages on WordPress 4.6 and older
+*
+* @param array $post_templates Array of page templates. Keys are filenames, values are translated names.
+* @return array Filtered array of page templates.
+*/
+function makewp_exclude_page_templates( $post_templates ) {
+if ( version_compare( $GLOBALS['wp_version'], '4.7', '<' ) ) {
+unset( $post_templates['templates/my-full-width-post-template.php'] );
+}
+return $post_templates;
+}
+add_filter( 'theme_page_templates', 'makewp_exclude_page_templates' );
+```
 
-  
+`   `  
 That way you can support custom post type templates in WordPress 4.7 and beyond while maintaining full backward compatibility.
 
 Note that theme\_page\_templates is actually a dynamic theme\_{$post\_type}\_templates filter. The dynamic portion of the hook name, $post\_type, refers to the post type supported by the templates. E.g. you can hook into theme\_product\_templates to filter the list of templates for the product post type.
@@ -130,7 +162,15 @@ Note that theme\_page\_templates is actually a dynamic theme\_{$post\_type}\_tem
 
 You can make smaller, page-specific changes with [Conditional Tags](https://developer.wordpress.org/themes/basics/conditional-tags/) in your theme’s `page.php` file. For instance, the below example code loads the file `header-home.php` for your front page, but loads another file (`header-about.php`) for your About page, and then applies the default `header.php` for all other pages.  
 
-`<br /> if ( is_front_page() ) :<br /> get_header( 'home' );<br /> elseif ( is_page( 'About' ) ) :<br /> get_header( 'about' );<br /> else:<br /> get_header();<br /> endif;<br />`
+```
+if ( is_front_page() ) :
+get_header( 'home' );
+elseif ( is_page( 'About' ) ) :
+get_header( 'about' );
+else:
+get_header();
+endif;
+```
 
   
 [You can learn more about Conditional Tags here.](https://developer.wordpress.org/themes/basics/conditional-tags/)
@@ -139,7 +179,9 @@ You can make smaller, page-specific changes with [Conditional Tags](https://dev
 
 If your template uses the `[body_class()](https://developer.wordpress.org/reference/functions/body_class/)` function, WordPress will print classes in the `body` tag for the post type class name (`page`), the page’s ID (`page-id-{ID}`), and the page template used. For the default `page.php`, the class name generated is `page-template-default`:  
 
-`<br /> &lt;body class="page page-id-6 page-template-default"><br />`
+```
+<body class="page page-id-6 page-template-default">
+```
 
   
 
@@ -147,14 +189,15 @@ Note: A specialized template (`page-{slug}.php` or `page-{ID}.php`) also gets
 
 When using a custom page template, the class `page-template` will print, along with a class naming the specific template. For example, if your custom page template file is named as follows:  
 
-`<br /> &lt;?php<br /> /* Template Name: My Custom Page */<br /> ?gt;<br />`
+```
+<?php
+/* Template Name: My Custom Page */
+?gt;
+```
 
   
 Then then rendered HTML generated will be as follows:  
-
-`<br /> &lt;body class="page page-id-6 page-template page-template-my-custom-page-php"><br />`
-
-  
+`   ```php <body class="page page-id-6 page-template page-template-my-custom-page-php"> ```   `  
 Notice the `page-template-my-custom-page-php` class that is applied to the `body` tag.
 
 ## Page Template Functions

@@ -10,37 +10,51 @@ Note: This section describes the handling of images in the Media Library. If you
 
 To display the image in the Media Library, use `[wp_get_attachment_image()](https://developer.wordpress.org/reference/functions/wp_get_attachment_image/)` function.
 
-echo wp\_get\_attachment\_image( $attachment->ID, 'thumbnail' );
+```php
+echo wp_get_attachment_image( $attachment->ID, 'thumbnail' );
+```
 
 You will get the following HTML output with the selected thumbnail size
 
+```markup
 <img width="150" height="150" src="http://example.com/wordpress/wp-content/uploads/2016/11/sample-150x150.jpg" class="attachment-thumbnail size-thumbnail" ... />
+```
 
-You can specify other size such as ‘full’ for original image or ‘medium’ and ‘large’ for the sizes set at **Settings > Media** in the [Administration Screen](https://codex.wordpress.org/Administration_Screens), or any pair of width and height as array. You’re also free to set custom size strings with [add\_image\_size()](https://developer.wordpress.org/reference/functions/add_image_size/);
+You can specify other size such as ‘full’ for original image or ‘medium’ and ‘large’ for the sizes set at **Settings > Media** in the [Administration Screen](https://codex.wordpress.org/Administration_Screens), or any pair of width and height as array. You’re also free to set custom size strings with [add\_image\_size()](https://developer.wordpress.org/reference/functions/add_image_size/) ;
 
-echo wp\_get\_attachment\_image( $attachment->ID, Array(640, 480) );
+```php
+echo wp_get_attachment_image( $attachment->ID, array(640, 480) );
+```
 
 ### Getting URL of image
 
 If you want to get the URL of the image, use `[wp_get_attachment_image_src()](https://developer.wordpress.org/reference/functions/wp_get_attachment_image_src/)`. It returns an array (URL, width, height, is\_intermediate), or `false`, if no image is available.
 
-$image\_attributes = wp\_get\_attachment\_image\_src( $attachment->ID );
-if ( $image\_attributes ) : ?>
-    <img src="<?php echo $image\_attributes\[0\]; ?>" width="<?php echo $image\_attributes\[1\]; ?>" height="<?php echo $image\_attributes\[2\]; ?>" />
+```php
+<?php 
+$image_attributes = wp_get_attachment_image_src( $attachment->ID );
+if ( $image_attributes ) : ?>
+    <img src="<?php echo $image_attributes[0]; ?>" width="<?php echo $image_attributes[1]; ?>" height="<?php echo $image_attributes[2]; ?>" />
 <?php endif; ?>
+```
 
 ### Alignments
 
 When adding the image in your site, you can specify the image alignment as right, left, center or none. WordPress core automatically adds CSS classes to align the image:
 
 *   alignright
+
 *   alignleft
+
 *   aligncenter
+
 *   alignnone
 
 This is the sample output when center align si chosen
 
+```markup
 <img class="aligncenter size-full wp-image-131" src= ... />
+```
 
 In order to take advantage of these CSS classes for alignment and text wrapping, your theme must include the styles in a stylesheet such as the [main stylesheet file](https://developer.wordpress.org/themes/basics/main-stylesheet-style-css/). You can use the `style.css` bundled with official themes such as Twenty Seventeen for reference.
 
@@ -48,20 +62,30 @@ In order to take advantage of these CSS classes for alignment and text wrapping,
 
 If a Caption was specified to image in the Media Library, HTML `img` element was enclosed by the shortcode \[caption\] and \[/caption\].
 
-<div class="mceTemp"><dl id="attachment\_133" class="wp-caption aligncenter" style="width: 1210px"><dt class="wp-caption-dt"><img class="size-full wp-image-133" src="http://example.com/wordpress/wp-content/uploads/2016/11/sample.jpg" alt="sun set" width="1200" height="400" /></dt><dd class="wp-caption-dd">Sun set over the sea</dd></dl></div>
+```markup
+<div class="mceTemp">
+  <dl id="attachment_133" class="wp-caption aligncenter" style="width: 1210px">
+    <dt class="wp-caption-dt">
+      <img class="size-full wp-image-133" src="http://example.com/wordpress/wp-content/uploads/2016/11/sample.jpg" alt="sun set" width="1200" height="400" />
+    </dt>
+    <dd class="wp-caption-dd">Sun set over the sea</dd>
+  </dl>
+</div>
+```
 
 And, it will be rendered as in HTML as the figure tag:
 
-<figure id="attachment\_133" style="width: 1200px" class="wp-caption aligncenter">
- <img class="size-full wp-image-133" src="http://example.com/wordpress/wp-content/uploads/2016/11/sample.jpg" alt="sun set" width="1200" height="400" srcset= ... />
-
-<figcaption class="wp-caption-text">Sun set over the sea</figcaption>
-
+```markup
+<figure id="attachment_133" style="width: 1200px" class="wp-caption aligncenter">
+  <img class="size-full wp-image-133" src="http://example.com/wordpress/wp-content/uploads/2016/11/sample.jpg" alt="sun set" width="1200" height="400" srcset= ... />
+  <figcaption class="wp-caption-text">Sun set over the sea</figcaption>
 </figure>
+```
 
 Similar to alignments, your theme must include following styles.
 
 *   `wp-caption`
+
 *   `wp-caption-text`
 
 ## WebP support and default MIME type of sub size image output
@@ -74,13 +98,15 @@ When images are uploaded, WordPress generates smaller sub sizes as defined using
 
 The following example shows how to generate all sub sizes for JPG images using WebP:
 
+```php
 <?php
-function wporg\_image\_editor\_output\_format( $formats ) {
-    $formats\['image/jpg'\] = 'image/webp';
- 
-    return $formats;
+function wporg_image_editor_output_format( $formats ) {
+    $formats['image/jpg'] = 'image/webp';
+ 
+    return $formats;
 }
-add\_filter( 'image\_editor\_output\_format', 'wporg\_image\_editor\_output\_format' );
+add_filter( 'image_editor_output_format', 'wporg_image_editor_output_format' );
+```
 
 **Note:** both the GD and ImageMagick libraries support the WebP format in both lossy and lossless. However, only ImageMagick supports animated images.
 
@@ -89,6 +115,9 @@ Setting the output format to WebP will verify if the web server supports it, and
 #### References
 
 *   `[wp_get_attachment_image()](https://developer.wordpress.org/reference/functions/wp_get_attachment_image/)`
+
 *   `[wp_get_attachment_image_src()](https://developer.wordpress.org/reference/functions/wp_get_attachment_image_src/)`
+
 *   [Styling Images in Posts and Pages](https://codex.wordpress.org/Styling_Images_in_Posts_and_Pages)
+
 *   [CSS (Codex)](https://codex.wordpress.org/CSS)

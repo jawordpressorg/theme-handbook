@@ -1,12 +1,11 @@
 # Credits
 
-This list of credits is taken from revisions as pages are migrated over.
-
 *   @ancawonka
 *   @Anthonynotes
 *   @atachibana
 *   @austingunter
-*   @BandonRandon
+*   @bandonrandon
+*   @utz119
 *   @BFTrick
 *   @BigActual
 *   @bkozma
@@ -16,8 +15,10 @@ This list of credits is taken from revisions as pages are migrated over.
 *   @charliehanger
 *   @claymonk
 *   @code\_poet
+*   @colorful-tones
 *   @crondeau
 *   @davidjlaietta
+*   @daisyo
 *   @digisavvy
 *   @DrewAPicture
 *   @enricchi
@@ -25,6 +26,7 @@ This list of credits is taken from revisions as pages are migrated over.
 *   @fabianapsimoes
 *   @fiveo
 *   @grapplerulrich
+*   @greenshady
 *   @hanni
 *   @hlashbrooke
 *   @hardeepasrani
@@ -64,6 +66,7 @@ This list of credits is taken from revisions as pages are migrated over.
 *   @Otto42
 *   @ozzyr
 *   @philiparthurmoore
+*   @poena
 *   @PriscillaBiju
 *   @rachelbaker
 *   @Raporteur
@@ -72,6 +75,7 @@ This list of credits is taken from revisions as pages are migrated over.
 *   @rhauptman
 *   @RussE
 *   @ryanr14
+*   @SagarGurnani
 *   @samuelsidler
 *   @sarahovenall
 *   @semblance\_er

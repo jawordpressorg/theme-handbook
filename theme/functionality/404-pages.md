@@ -16,11 +16,12 @@ To use your theme’s `header.php` file, open your `404.php` file. At the top, a
 
 For example:
 
-<br />
-/\*\*<br />
- \* The template for displaying 404 pages (Not Found)<br />
- \*/<br />
-get\_header();<br />
+```php
+/**
+ * The template for displaying 404 pages (Not Found)
+ */
+get_header();
+```
 
 ## Adding the body to your 404 Page
 
@@ -28,23 +29,26 @@ To make the 404 page functional you have to add the body content to your templat
 
 Example:
 
-<br />
-&lt;div id=&quot;primary&quot; class=&quot;content-area&quot;><br />
-		&lt;div id=&quot;content&quot; class=&quot;site-content&quot; role=&quot;main&quot;></p>
-<p>			&lt;header class=&quot;page-header&quot;><br />
-				&lt;h1 class=&quot;page-title&quot;>&lt;?php \_e( 'Not Found', 'twentythirteen' ); ?>&lt;/h1><br />
-			&lt;/header></p>
-<p>			&lt;div class=&quot;page-wrapper&quot;><br />
-				&lt;div class=&quot;page-content&quot;><br />
-					&lt;h2>&lt;?php \_e( 'This is somewhat embarrassing, isn’t it?', 'twentythirteen' ); ?>&lt;/h2><br />
-					&lt;p>&lt;?php \_e( 'It looks like nothing was found at this location. Maybe try a search?', 'twentythirteen' ); ?>&lt;/p></p>
-<p>					&lt;?php get\_search\_form(); ?><br />
-				&lt;/div>&lt;!-- .page-content --><br />
-			&lt;/div>&lt;!-- .page-wrapper --></p>
-<p>		&lt;/div>&lt;!-- #content --><br />
-	&lt;/div>&lt;!-- #primary --><br />
+```php
+<div id="primary" class="content-area">
+		<div id="content" class="site-content" role="main">
 
-[Expand full source code](#)[Collapse full source code](#)
+			<header class="page-header">
+				<h1 class="page-title"><?php _e( 'Not Found', 'twentythirteen' ); ?></h1>
+			</header>
+
+			<div class="page-wrapper">
+				<div class="page-content">
+					<h2><?php _e( 'This is somewhat embarrassing, isn’t it?', 'twentythirteen' ); ?></h2>
+					<p><?php _e( 'It looks like nothing was found at this location. Maybe try a search?', 'twentythirteen' ); ?></p>
+
+					<?php get_search_form(); ?>
+				</div><!-- .page-content -->
+			</div><!-- .page-wrapper -->
+
+		</div><!-- #content -->
+	</div><!-- #primary -->
+```
 
 This example is from the Twenty Thirteen theme that comes with WordPress. This adds some text and a search form in the 404 page.
 
@@ -56,8 +60,9 @@ The final step when creating a 404 page is to add the footer. You may also add a
 
 Example:
 
-<br />
-get\_sidebar();<br />
-get\_footer();<br />
+```php
+get_sidebar();
+get_footer();
+```
 
 Now you have a functional 404 page with a search form and some text in case a user stumbles upon the wrong page. Once you make sure the `404.php` has been uploaded, you can test your 404 page. Just type a URL address for your website that doesn’t exist. You can try something like `http://example.com/fred.php`. This is sure to result in a 404 error unless you actually have a PHP file called `` fred.php`.` ``

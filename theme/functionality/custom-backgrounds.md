@@ -10,39 +10,41 @@ Theme developer needs 2 steps to implement it.
 
 Use [add\_theme\_support()](https://developer.wordpress.org/reference/functions/add_theme_support/) in the `functions.php` file to enable custom backgrounds.
 
-</p>
-add\_theme\_support( 'custom-background' );
-<p>
+```php
+add_theme_support( 'custom-background' );
+```
 
+  
 You can specify default parameters. In below example using default ‘#0000ff’ background color (blue) with ‘wapuu.jpg’ background image that was stored under the /images folder.
 
-</p>
+```php
 $args = array(
     'default-color' => '0000ff',
-    'default-image' => get\_template\_directory\_uri() . '/images/wapuu.jpg',
+    'default-image' => get_template_directory_uri() . '/images/wapuu.jpg',
 );
-add\_theme\_support( 'custom-background', $args );
-<p>
+add_theme_support( 'custom-background', $args );
+```
 
-By calling [add\_theme\_support()](https://developer.wordpress.org/reference/functions/add_theme_support/), Customizer displays ‘Background Image’ menu and ‘Background Color’ section in Colors menu.
+  
+By calling [add\_theme\_support()](https://developer.wordpress.org/reference/functions/add_theme_support/) , Customizer displays ‘Background Image’ menu and ‘Background Color’ section in Colors menu.
 
 ## Display Custom Backgrounds
 
 In general, invokes [wp\_head()](https://developer.wordpress.org/reference/functions/wp_head/) and [body\_class()](https://developer.wordpress.org/reference/functions/body_class/) in `header.php` file to display the custom backgrounds.
 
-</p>
+```php
 <!DOCTYPE html>
 <html>
 <head>
-    <?php wp\_head(); ?>
+    <?php wp_head(); ?>
 </head>
-<body <?php body\_class(); ?>>
-<p>
+<body <?php body_class(); ?>>
+```
 
 [wp\_head()](https://developer.wordpress.org/reference/functions/wp_head/) generates an extra style sheet in-line with the HTML headers, usually right before the end of the document’s HEAD element. The extra style sheet overrides the background values from the theme’s style sheet.  
 In our example, following code will be generated in the HTML. Notice that body tag includes “custom-background ” class.
 
-</p>
+```php
 <!DOCTYPE html>
 <html lang="en-US" class="no-js">
 
@@ -63,9 +65,7 @@ body.custom-background {
 <body class="home page-template-default page page-id-211 logged-in admin-bar no-customize-support custom-background">
 
 	...
-<p>
-
-[Expand full source code](#)[Collapse full source code](#)
+```
 
 Now you’ll see repeated background images
 
@@ -75,17 +75,18 @@ Now you’ll see repeated background images
 
 This is another example of default value set.
 
-</p>
-$another\_args = array(
+```php
+$another_args = array(
     'default-color'      => '0000ff',
-    'default-image'      => get\_template\_directory\_uri() . '/images/wapuu.jpg',
+    'default-image'      => get_template_directory_uri() . '/images/wapuu.jpg',
     'default-position-x' => 'right',
     'default-position-y' => 'top',
     'default-repeat'     => 'no-repeat',
 );
-add\_theme\_support( 'custom-background', $another\_args );
-<p>
+add_theme_support( 'custom-background', $another_args );
+```
 
+  
 This will show single image at the top right corner as below.
 
 ![](https://developer.wordpress.org/files/2017/03/custom_background_2.jpg)

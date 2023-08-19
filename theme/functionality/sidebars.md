@@ -25,27 +25,27 @@ To begin, `register_sidebar()` has several parameters that should always be def
 
 To register a sidebar we use `register_sidebar` and the `widgets_init` function.
 
-function themename\_widgets\_init() {
-	register\_sidebar( array(
-		'name'          => \_\_( 'Primary Sidebar', 'theme\_name' ),
+```php
+<?php
+function themename_widgets_init() {
+	register_sidebar( array(
+		'name'          => __( 'Primary Sidebar', 'theme_name' ),
 		'id'            => 'sidebar-1',
-		'before\_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after\_widget'  => '</aside>',
-		'before\_title'  => '<h3 class="widget-title">',
-		'after\_title'   => '</h3>',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
 	) );
-
-	register\_sidebar( array(
-		'name'          => \_\_( 'Secondary Sidebar', 'theme\_name' ),
+	register_sidebar( array(
+		'name'          => __( 'Secondary Sidebar', 'theme_name' ),
 		'id'            => 'sidebar-2',
-		'before\_widget' => '<ul><li id="%1$s" class="widget %2$s">',
-		'after\_widget'  => '</li></ul>',
-		'before\_title'  => '<h3 class="widget-title">',
-		'after\_title'   => '</h3>',
+		'before_widget' => '<ul><li id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</li></ul>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
 	) );
 }
-
-[Expand full source code](#)[Collapse full source code](#)
+```
 
 Registering a sidebar tells WordPress that you’re creating a new widget area in **Appearance > Widgets** that users can drag their widgets to. There are two functions for registering sidebars:
 
@@ -62,24 +62,25 @@ For widget areas in header and footer, it makes sense to name them “Header Wid
 
 The following code, added to `functions.php` registers a sidebar:
 
-add\_action( 'widgets\_init', 'my\_register\_sidebars' );
-function my\_register\_sidebars() {
-	/\* Register the 'primary' sidebar. \*/
-	register\_sidebar(
+```php
+<?php
+add_action( 'widgets_init', 'my_register_sidebars' );
+function my_register_sidebars() {
+	/* Register the 'primary' sidebar. */
+	register_sidebar(
 		array(
 			'id'            => 'primary',
-			'name'          => \_\_( 'Primary Sidebar' ),
-			'description'   => \_\_( 'A short description of the sidebar.' ),
-			'before\_widget' => '<div id="%1$s" class="widget %2$s">',
-			'after\_widget'  => '</div>',
-			'before\_title'  => '<h3 class="widget-title">',
-			'after\_title'   => '</h3>',
+			'name'          => __( 'Primary Sidebar' ),
+			'description'   => __( 'A short description of the sidebar.' ),
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h3 class="widget-title">',
+			'after_title'   => '</h3>',
 		)
 	);
-	/\* Repeat register\_sidebar() code for additional sidebars. \*/
+	/* Repeat register_sidebar() code for additional sidebars. */
 }
-
-[Expand full source code](#)[Collapse full source code](#)
+```
 
 The code does the following:
 
@@ -108,9 +109,11 @@ A sidebar template contains the code for your sidebar. WordPress recognizes the 
 
 2\. Add the following code:
 
+```php
 <div id="sidebar-primary" class="sidebar">
-	<?php dynamic\_sidebar( 'primary' ); ?>
+	<?php dynamic_sidebar( 'primary' ); ?>
 </div>
+```
 
 Note that `dynamic_sidebar` takes a single parameter of `$index`, which can be either the sidebar’s name or id.
 
@@ -118,11 +121,15 @@ Note that `dynamic_sidebar` takes a single parameter of `$index`, which can be e
 
 To load your sidebar in your theme, use the `get_sidebar` function. This should be inserted into the template file where you want the sidebar to display. To load the default `sidebar.php` use the following:
 
-<?php get\_sidebar(); ?>
+```php
+<?php get_sidebar(); ?>
+```
 
 To display the Primary sidebar, pass the `$name` parameter to the function:
 
-<?php get\_sidebar( 'primary' ); ?>
+```php
+<?php get_sidebar( 'primary' ); ?>
+```
 
 ## Customizing your Sidebar
 
@@ -134,39 +141,48 @@ You may wish to display content if the user hasn’t added any widgets to the si
 
 This code checks to see if the sidebar is active, if not it displays some content:
 
+```php
 <div id="sidebar-primary" class="sidebar">
-	<?php if ( is\_active\_sidebar( 'primary' ) ) : ?>
-		<?php dynamic\_sidebar( 'primary' ); ?>
+	<?php if ( is_active_sidebar( 'primary' ) ) : ?>
+		<?php dynamic_sidebar( 'primary' ); ?>
 	<?php else : ?>
 		<!-- Time to add some widgets! -->
 	<?php endif; ?>
 </div>
+```
 
 ### Display Default Widgets
 
 You may want your sidebar to be populated with some widgets by default. For example, display the Search, Archive, and Meta Widgets.  To do this you would use:
 
+```php
 <div id="primary" class="sidebar">
-    <?php do\_action( 'before\_sidebar' ); ?>
-    <?php if ( ! dynamic\_sidebar( 'sidebar-primary' ) ) : ?>
-        <aside id="search" class="widget widget\_search">
-           <?php get\_search\_form(); ?>
-        </aside>
-        <aside id="archives" class"widget">
-            <h3 class="widget-title"><?php \_e( 'Archives', 'shape' ); ?></h3>
-            <ul>
-                <?php wp\_get\_archives( array( 'type' => 'monthly' ) ); ?>
-            </ul>
-        </aside>
-        <aside id="meta" class="widget">
-            <h3 class="widget-title"><?php \_e( 'Meta', 'shape' ); ?></h3>
-            <ul>
-                <?php wp\_register(); ?>
-                <li><?php wp\_loginout(); ?></li>
-                <?php wp\_meta(); ?>
-            </ul>
-        </aside>
-   <?php endif; ?>
-</div>
 
-[Expand full source code](#)[Collapse full source code](#)
+	<?php do_action( 'before_sidebar' ); ?>
+
+	<?php if ( ! dynamic_sidebar( 'sidebar-primary' ) ) : ?>
+
+		<aside id="search" class="widget widget_search">
+			<?php get_search_form(); ?>
+		</aside><!-- #search -->
+
+		<aside id="archives" class"widget">
+			<h3 class="widget-title"><?php _e( 'Archives', 'shape' ); ?></h3>
+			<ul>
+				<?php wp_get_archives( array( 'type' => 'monthly' ) ); ?>
+			</ul>
+		</aside><!-- #archives -->
+
+		<aside id="meta" class="widget">
+			<h3 class="widget-title"><?php _e( 'Meta', 'shape' ); ?></h3>
+			<ul>
+				<?php wp_register(); ?>
+				<li><?php wp_loginout(); ?></li>
+				<?php wp_meta(); ?>
+			</ul>
+		</aside><!-- #meta -->
+
+	<?php endif; ?>
+
+</div><!-- #primary -->
+```

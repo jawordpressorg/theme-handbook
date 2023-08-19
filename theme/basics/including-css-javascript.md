@@ -12,7 +12,7 @@ Tip: WordPress includes a number of JavaScript files as part of the software pac
 
 The basics are:
 
-1.  Enqueue the script or style using `wp_enqueue_script()` or `wp_enqueue_style()`
+1.  Enqueue the script or style using `wp_enqueue_script()`, `wp_enqueue_style()`, or `wp_enqueue_block_style`.
 
 ### Stylesheets
 
@@ -20,15 +20,19 @@ Your CSS stylesheets are used to customize the presentation of your theme. A sty
 
 Rather then loading the stylesheet in your `header.php` file, you should load it in using `wp_enqueue_style`. In order to load your main stylesheet, you can enqueue it in `functions.php`
 
-To enqueue `style.css`
+To enqueue `style.css`:
 
-wp\_enqueue\_style( 'style', get\_stylesheet\_uri() );
+```php
+wp_enqueue_style( 'style', get_stylesheet_uri() );
+```
 
 This will look for a stylesheet named “style” and load it.
 
 The basic function for enqueuing a style is:
 
-wp\_enqueue\_style( $handle, $src, $deps, $ver, $media );
+```php
+wp_enqueue_style( $handle, $src, $deps, $ver, $media );
+```
 
 You can include these parameters:
 
@@ -40,7 +44,62 @@ You can include these parameters:
 
 So if you wanted to load a stylesheet named “slider.css” in a folder named “CSS” in you theme’s root directory, you would use:
 
-wp\_enqueue\_style( 'slider', get\_template\_directory\_uri() . '/css/slider.css',false,'1.1','all');
+```php
+wp_enqueue_style( 'slider', get_template_directory_uri() . '/css/slider.css', false, '1.1', 'all');
+```
+
+## Including CSS for block styles
+
+In addition to `wp_enqueue_style()`, you can use `wp_enqueue_block_style()` to enqueue styles for blocks. [wp\_enqueue\_block\_style()](https://developer.wordpress.org/reference/functions/wp_enqueue_block_style/) requires WordPress version 5.9 or later.
+
+A key part of creating block themes is performance. With, `wp_enqueue_block_style()`, the theme only loads the CSS for the selected block when the block is used on the page.
+
+The additional style is loaded in the editor and the front, after the block style provided by WordPress and the Gutenberg plugin. You can use this method to add block styles that you can not add via `theme.json`. For example, media queries.
+
+This code example changes the size and text color of the date in the latest comments block. Because this is a `time` HTML element that is nested inside other HTML elements, can not be styled using `theme.json`.
+
+First, create a new CSS file with the name of the block: `latest-comments.css`.  
+Where you place the file depends on how you organize your theme files. In the example, the file is placed inside the folders `assets/CSS/blocks`.
+
+The CSS class for the time element is `wp-block-latest-comments__comment-date`. The prefix and the block name are followed by the partial, separated by two underscores.
+
+You can read more about the naming convention for the block editor in the [coding guidelines](https://developer.wordpress.org/block-editor/contributors/code/coding-guidelines/#naming).
+
+The text color and font size are added with CSS custom properties that are generated from `theme.json`:
+
+```css
+.wp-block-latest-comments__comment-date {
+	color: var(--wp--preset--color--primary);
+	font-size: var(--wp--preset--font-size--small);
+}
+```
+
+Next, enqueue the block style inside the themes setup function.
+
+The block name is placed inside an array to load more than one block style.  
+A `foreach` loop walks through each block in the array and creates a handle, src (source), and path argument.  
+`wp_enqueue_block_style()` then enqueues the file using the block name and argument:  
+`wp_enqueue_block_style( "prefix/blockname", $args );`
+
+In the code example, the prefix is “core” since the style is for a core block. When you style blocks from plugins, you need to adjust the prefix.
+
+```php
+function myfirsttheme_setup() {
+	/*
+	 * Load additional block styles.
+	 */
+	$styled_blocks = ['latest-comments'];
+	foreach ( $styled_blocks as $block_name ) {
+		$args = array(
+			'handle' => "myfirsttheme-$block_name",
+			'src'    => get_theme_file_uri( "assets/css/blocks/$block_name.css" ),
+			$args['path'] = get_theme_file_path( "assets/css/blocks/$block_name.css" ),
+		);
+		wp_enqueue_block_style( "core/$block_name", $args );
+	}
+}
+add_action( 'after_setup_theme', 'myfirsttheme_setup' );
+```
 
 ### Scripts
 
@@ -50,593 +109,98 @@ Any additional JavaScript files required by a theme should be loaded using `wp_
 
 Enqueue your script:
 
-wp\_enqueue\_script( $handle, $src, $deps, $ver, $in\_footer);
+```php
+wp_enqueue_script( $handle, $src, $deps, $ver, $args );
+```
 
 *   **$handle** is the name for the script.
 *   **$src** defines where the script is located.
 *   **$deps** is an array that can handle any script that your new script depends on, such as jQuery.
 *   **$ver** lets you list a version number.
-*   **$in\_footer** is a boolean parameter (true/false) that allows you to place your scripts in the footer of your HTML document rather then in the header, so that it does not delay the loading of the DOM tree.
+*   **$args** an array of arguments that define footer printing (via an `in_footer` key) and script loading strategies (via a `strategy` key) such as `defer` or `async`. This replaces/overloads the `$in_footer` parameter as of WordPress version 6.3.
 
 Your enqueue function may look like this:
 
-wp\_enqueue\_script( 'script', get\_template\_directory\_uri() . '/js/script.js', array ( 'jquery' ), 1.1, true);
+```php
+wp_enqueue_script( 'script', get_template_directory_uri() . '/js/script.js', array( 'jquery' ), 1.1, true);
+```
+
+### Delayed Script Loading
+
+WordPress provides support for specifying a script loading strategy via the `wp_register_script()` and `wp_enqueue_script()` functions, by way of the `strategy` key within the new `$args` array parameter introduced in WordPress 6.3.
+
+Supported strategies are as follows:
+
+*   **defer**
+    *   Added by specifying an array key value pair of `'strategy' => 'defer'` to the $args parameter.
+    *   Scripts marked for deferred execution — via the `defer` script attribute — are only executed once the DOM tree has fully loaded (but before the `DOMContentLoaded` and window load events). Deferred scripts are executed in the same order they were printed/added in the DOM, unlike asynchronous scripts.
+*   **async**
+    *   Added by specifying an array key value pair of `'strategy' => 'async'` to the `$args` parameter.
+    *   Scripts marked for asynchronous execution — via the `async` script attribute — are executed as soon as they are loaded by the browser. Asynchronous scripts do not have a guaranteed execution order, as script B (although added to the DOM after script A) may execute first given that it may complete loading prior to script A. Such scripts may execute either before the DOM has been fully constructed or after the `DOMContentLoaded` event.
+
+Following is an example of specifying a loading strategy during script registration:
+
+```php
+wp_register_script( 
+    'foo', 
+    '/path/to/foo.js', 
+    array(), 
+    '1.0.0', 
+    array( 
+        'strategy'  => 'defer',
+    )
+);
+```
+
+The same approach applies when using `wp_enqueue_script()`.
+
+When specifying a delayed script loading strategy, consideration of the script’s dependency tree (its dependencies and/or dependents) is taken into account when deciding on an “eligible strategy” so as not to result in application of a strategy that is valid for one script but detrimental to others in the tree by causing an unintended out of order of execution. As a result of such logic, the intended loading strategy that you pass via the `$args` parameter may not be the final (chosen) strategy, but it will never be detrimental to (or stricter than) the intended strategy.
 
 ### The Comment Reply Script
 
-WordPress comments have quite a bit of functionality in them right out of the box, including threaded comments and enhanced comment forms. In order for comments to work properly, they require some JavaScript. However, since there are certain options that need to be defined within this JavaScript, the comment-reply script should be added to every theme that uses comments.
+WordPress comments have quite a bit of functionality in them right out of the box, including threaded comments and enhanced comment forms. In order for comments to work properly, they require some JavaScript. However, since there are certain options that need to be defined within this JavaScript, the comment-reply script should be added to every classic theme that uses comments.
 
-The proper way to include comment reply is to use conditional tags to check if certain conditions exist, so that the script isn’t being loaded unnecessarily. For instance, you can only load scripts on single post pages using `is_singular`, and check to make sure that “Enable threaded comments” is selected by the user. So you can set up a function like:
+**In block themes, the script is included when you place a comment block. You do not need to add it manually.**
 
-if ( is\_singular() && comments\_open() && get\_option( 'thread\_comments' ) ) {
-    wp\_enqueue\_script( 'comment-reply' );
+The proper way to include comment reply in classic themes is to use conditional tags to check if certain conditions exist, so that the script isn’t being loaded unnecessarily. For instance, you can only load scripts on single post pages using `[is_singular](https://developer.wordpress.org/reference/functions/is_singular/)`, and check to make sure that “Enable threaded comments” is selected by the user. So you can set up a function like:
+
+```php
+if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+	wp_enqueue_script( 'comment-reply' );
 }
+```
 
 If comments are enabled by the user, and we are on a post page, then the comment reply script will be loaded. Otherwise, it will not.
 
-### Combining Enqueue Functions [#Combining Enqueue Functions](https://developer.wordpress.org/themes/basics/including-css-javascript/#combining-enqueue-functions)
+### Combining Enqueue Functions
 
-It is best to combine all enqueued scripts and styles into a single function, and then call them using the `wp_enqueue_scripts` action. This function and action should be located somewhere below the initial setup (performed above).
+It is best to combine all enqueued scripts and styles into a single function, and then call them using the `wp_enqueue_scripts` action. This function and action should be located somewhere below the initial setup (performed above):
 
-function add\_theme\_scripts() {
-  wp\_enqueue\_style( 'style', get\_stylesheet\_uri() );
- 
-  wp\_enqueue\_style( 'slider', get\_template\_directory\_uri() . '/css/slider.css', array(), '1.1', 'all');
- 
-  wp\_enqueue\_script( 'script', get\_template\_directory\_uri() . '/js/script.js', array ( 'jquery' ), 1.1, true);
- 
-    if ( is\_singular() && comments\_open() && get\_option( 'thread\_comments' ) ) {
-      wp\_enqueue\_script( 'comment-reply' );
-    }
+```php
+function add_theme_scripts() {
+	wp_enqueue_style( 'style', get_stylesheet_uri() );
+
+	wp_enqueue_style( 'slider', get_template_directory_uri() . '/css/slider.css', array(), '1.1', 'all' );
+
+	wp_enqueue_script( 'script', get_template_directory_uri() . '/js/script.js', array( 'jquery' ), 1.1, true );
+
+	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+		wp_enqueue_script( 'comment-reply' );
+	}
 }
-add\_action( 'wp\_enqueue\_scripts', 'add\_theme\_scripts' );
+add_action( 'wp_enqueue_scripts', 'add_theme_scripts' );
+```
 
 ## Default Scripts Included and Registered by WordPress
 
-By default, WordPress includes many popular scripts commonly used by web developers, as well as the scripts used by WordPress itself. Some of them are listed in the table below:
+By default, WordPress includes many popular scripts commonly used by web developers, as well as the scripts used by WordPress itself. Some of them are listed on this reference page:
 
-**Script Name**
-
-**Handle**
-
-**Needed Dependency \***
-
-[Image Cropper](http://www.defusion.org.uk/)
-
-Image cropper (not used in core, see jcrop)
-
-[Jcrop](http://deepliquid.com/content/Jcrop.html)
-
-jcrop
-
-[SWFObject](http://code.google.com/p/swfobject/)
-
-swfobject
-
-[SWFUpload](http://swfupload.org/)
-
-swfupload
-
-[SWFUpload Degrade](http://swfupload.org/)
-
-swfupload-degrade
-
-[SWFUpload Queue](http://swfupload.org/)
-
-swfupload-queue
-
-[SWFUpload Handlers](http://swfupload.org/)
-
-swfupload-handlers
-
-[jQuery](http://jquery.com/)
-
-jquery
-
-json2 (for AJAX calls)
-
-[jQuery Form](http://plugins.jquery.com/project/form/)
-
-jquery-form
-
-jquery
-
-[jQuery Color](http://plugins.jquery.com/project/color/)
-
-jquery-color
-
-jquery
-
-[jQuery Masonry](http://masonry.desandro.com/)
-
-jquery-masonry
-
-jquery
-
-[jQuery UI Core](http://jqueryui.com/)
-
-jquery-ui-core
-
-jquery
-
-jQuery UI Widget
-
-jquery-ui-widget
-
-jquery
-
-jQuery UI Mouse
-
-jquery-ui-mouse
-
-jquery
-
-[jQuery UI Accordion](http://jqueryui.com/demos/accordion/)
-
-jquery-ui-accordion
-
-jquery
-
-[jQuery UI Autocomplete](http://jqueryui.com/demos/autocomplete/)
-
-jquery-ui-autocomplete
-
-jquery
-
-[jQuery UI Slider](http://jqueryui.com/demos/slider/)
-
-jquery-ui-slider
-
-jquery
-
-[jQuery UI Progressbar](http://jqueryui.com/demos/progressbar/)
-
-jquery-ui-progressbar
-
-jquery
-
-[jQuery UI Tabs](http://jqueryui.com/demos/tabs/)
-
-jquery-ui-tabs
-
-jquery
-
-[jQuery UI Sortable](http://jqueryui.com/demos/sortable/)
-
-jquery-ui-sortable
-
-jquery
-
-[jQuery UI Draggable](http://jqueryui.com/demos/draggable/)
-
-jquery-ui-draggable
-
-jquery
-
-[jQuery UI Droppable](http://jqueryui.com/demos/droppable/)
-
-jquery-ui-droppable
-
-jquery
-
-[jQuery UI Selectable](http://jqueryui.com/demos/selectable/)
-
-jquery-ui-selectable
-
-jquery
-
-[jQuery UI Position](http://jqueryui.com/demos/position/)
-
-jquery-ui-position
-
-jquery
-
-[jQuery UI Datepicker](http://jqueryui.com/demos/datepicker/)
-
-jquery-ui-datepicker
-
-jquery
-
-[jQuery UI Tooltips](http://jqueryui.com/demos/tooltip/)
-
-jquery-ui-tooltip
-
-jquery
-
-[jQuery UI Resizable](http://jqueryui.com/demos/resizable/)
-
-jquery-ui-resizable
-
-jquery
-
-[jQuery UI Dialog](http://jqueryui.com/demos/dialog/)
-
-jquery-ui-dialog
-
-jquery
-
-[jQuery UI Button](http://jqueryui.com/demos/button/)
-
-jquery-ui-button
-
-jquery
-
-[jQuery UI Effects](http://jqueryui.com/effect/)
-
-jquery-effects-core
-
-jquery
-
-[jQuery UI Effects – Blind](http://jqueryui.com/effect/)
-
-jquery-effects-blind
-
-jquery-effects-core
-
-[jQuery UI Effects – Bounce](http://jqueryui.com/effect/)
-
-jquery-effects-bounce
-
-jquery-effects-core
-
-[jQuery UI Effects – Clip](http://jqueryui.com/effect/)
-
-jquery-effects-clip
-
-jquery-effects-core
-
-[jQuery UI Effects – Drop](http://jqueryui.com/effect/)
-
-jquery-effects-drop
-
-jquery-effects-core
-
-[jQuery UI Effects – Explode](http://jqueryui.com/effect/)
-
-jquery-effects-explode
-
-jquery-effects-core
-
-[jQuery UI Effects – Fade](http://jqueryui.com/effect/)
-
-jquery-effects-fade
-
-jquery-effects-core
-
-[jQuery UI Effects – Fold](http://jqueryui.com/effect/)
-
-jquery-effects-fold
-
-jquery-effects-core
-
-[jQuery UI Effects – Highlight](http://jqueryui.com/effect/)
-
-jquery-effects-highlight
-
-jquery-effects-core
-
-[jQuery UI Effects – Pulsate](http://jqueryui.com/effect/)
-
-jquery-effects-pulsate
-
-jquery-effects-core
-
-[jQuery UI Effects – Scale](http://jqueryui.com/effect/)
-
-jquery-effects-scale
-
-jquery-effects-core
-
-[jQuery UI Effects – Shake](http://jqueryui.com/effect/)
-
-jquery-effects-shake
-
-jquery-effects-core
-
-[jQuery UI Effects – Slide](http://jqueryui.com/effect/)
-
-jquery-effects-slide
-
-jquery-effects-core
-
-[jQuery UI Effects – Transfer](http://jqueryui.com/effect/)
-
-jquery-effects-transfer
-
-jquery-effects-core
-
-[MediaElement.js (WP 3.6+)](http://mediaelementjs.com/)
-
-wp-mediaelement
-
-jquery
-
-[jQuery Schedule](http://trainofthoughts.org/blog/2007/02/15/jquery-plugin-scheduler/)
-
-schedule
-
-jquery
-
-[jQuery Suggest](https://web.archive.org/web/20111017233444/http://plugins.jquery.com/project/suggest)
-
-suggest
-
-jquery
-
-[ThickBox](https://codex.wordpress.org/ThickBox)
-
-thickbox
-
-[jQuery HoverIntent](http://cherne.net/brian/resources/jquery.hoverIntent.html)
-
-hoverIntent
-
-jquery
-
-[jQuery Hotkeys](http://plugins.jquery.com/project/hotkeys)
-
-jquery-hotkeys
-
-jquery
-
-[Simple AJAX Code-Kit](http://code.google.com/p/tw-sack/)
-
-sack
-
-[QuickTags](http://www.alexking.org/)
-
-quicktags
-
-[Iris (Colour picker)](https://github.com/automattic/Iris)
-
-iris
-
-jquery
-
-[Farbtastic (deprecated)](http://acko.net/dev/farbtastic)
-
-farbtastic
-
-jquery
-
-[ColorPicker (deprecated)](http://mattkruse.com/)
-
-colorpicker
-
-jquery
-
-[Tiny MCE](http://tinymce.moxiecode.com/)
-
-tiny\_mce
-
-Autosave
-
-autosave
-
-WordPress AJAX Response
-
-wp-ajax-response
-
-List Manipulation
-
-wp-lists
-
-WP Common
-
-common
-
-WP Editor
-
-editorremov
-
-WP Editor Functions
-
-editor-functions
-
-AJAX Cat
-
-ajaxcat
-
-Admin Categories
-
-admin-categories
-
-Admin Tags
-
-admin-tags
-
-Admin custom fields
-
-admin-custom-fields
-
-Password Strength Meter
-
-password-strength-meter
-
-Admin Comments
-
-admin-comments
-
-Admin Users
-
-admin-users
-
-Admin Forms
-
-admin-forms
-
-XFN
-
-xfn
-
-Upload
-
-upload
-
-PostBox
-
-postbox
-
-Slug
-
-slug
-
-Post
-
-post
-
-Page
-
-page
-
-Link
-
-link
-
-Comment
-
-comment
-
-Threaded Comments
-
-comment-reply
-
-Admin Gallery
-
-admin-gallery
-
-Media Upload
-
-media-upload
-
-Admin widgets
-
-admin-widgets
-
-Word Count
-
-word-count
-
-Theme Preview
-
-theme-preview
-
-[JSON for JS](https://github.com/douglascrockford/JSON-js)
-
-json2
-
-[Plupload Core](http://www.plupload.com/)
-
-plupload
-
-[Plupload All Runtimes](http://www.plupload.com/example_all_runtimes.php)
-
-plupload-all
-
-[Plupload HTML4](http://www.plupload.com/example_all_runtimes.php)
-
-plupload-html4
-
-[Plupload HTML5](http://www.plupload.com/example_all_runtimes.php)
-
-plupload-html5
-
-[Plupload Flash](http://www.plupload.com/example_all_runtimes.php)
-
-plupload-flash
-
-[Plupload Silverlight](http://www.plupload.com/example_all_runtimes.php)
-
-plupload-silverlight
-
-[Underscore js](http://underscorejs.org/)
-
-underscore
-
-[Backbone js](http://backbonejs.org/)
-
-backbone
-
-**Removed from Core**
-
-**Script Name**
-
-**Handle**
-
-**Removed Version**
-
-**Replaced With**
-
-[Scriptaculous Root](http://script.aculo.us/)
-
-scriptaculous-root
-
-WP 3.5
-
-Google Version
-
-[Scriptaculous Builder](http://script.aculo.us/)
-
-scriptaculous-builder
-
-WP 3.5
-
-Google Version
-
-[Scriptaculous Drag & Drop](http://script.aculo.us/)
-
-scriptaculous-dragdrop
-
-WP 3.5
-
-Google Version
-
-[Scriptaculous Effects](http://script.aculo.us/)
-
-scriptaculous-effects
-
-WP 3.5
-
-Google Version
-
-[Scriptaculous Slider](http://script.aculo.us/)
-
-scriptaculous-slider
-
-WP 3.5
-
-Google Version
-
-[Scriptaculous](http://script.aculo.us/) Sound
-
-scriptaculous-sound
-
-WP 3.5
-
-Google Version
-
-[Scriptaculous Controls](http://script.aculo.us/)
-
-scriptaculous-controls
-
-WP 3.5
-
-Google Version
-
-[Scriptaculous](http://script.aculo.us/)
-
-scriptaculous
-
-WP 3.5
-
-Google Version
-
-[Prototype Framework](http://www.prototypejs.org/)
-
-prototype
-
-WP 3.5
-
-Google Version
+> [](https://developer.wordpress.org/reference/functions/wp_enqueue_script/)[wp\_enqueue\_script()](https://developer.wordpress.org/reference/functions/wp_enqueue_script/)
 
 **The list is far from complete.** You can find a full list of included files in [wp-includes/script-loader.php](https://core.trac.wordpress.org/browser/trunk/src/wp-includes/script-loader.php).
+
+/
+
+Changelog:
+
+*   Updated 2023-02-24: Added information about [wp\_enqueue\_block\_style()](https://developer.wordpress.org/reference/functions/wp_enqueue_block_style/) .
