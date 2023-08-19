@@ -18,6 +18,7 @@
 *   @colorful-tones
 *   @crondeau
 *   @davidjlaietta
+*   @daisyo
 *   @digisavvy
 *   @DrewAPicture
 *   @enricchi
@@ -74,6 +75,7 @@
 *   @rhauptman
 *   @RussE
 *   @ryanr14
+*   @SagarGurnani
 *   @samuelsidler
 *   @sarahovenall
 *   @semblance\_er

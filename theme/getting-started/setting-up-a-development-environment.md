@@ -34,13 +34,13 @@ The [WP\_DEBUG](https://codex.wordpress.org/WP_DEBUG "WP_DEBUG") PHP constant i
 
 2\. Change:
 
-```
+```php
 define( 'WP_DEBUG', false );
 ```
 
 to
 
-```
+```php
 define( 'WP_DISABLE_FATAL_ERROR_HANDLER', true ); // 5.2 and later
 define( 'WP_DEBUG', true );
 ```
@@ -53,13 +53,13 @@ Note: While normally set to ‘false’ in the *wp-config.php* file, development
 
 WP\_DEBUG\_LOG is used in conjunction with WP\_DEBUG to log all error messages to a debug.log within your WordPress /wp-content/ directory. To enable this functionality set WP\_DEBUG\_LOG to true within your wp-config.php file.
 
-```
+```php
 define( 'WP_DEBUG_LOG', true );
 ```
 
 WP\_DEBUG\_DISPLAY is used to control whether debug messages display within the HTML of your theme pages. To display error messages on the screen as they occur, configure this setting to ‘true’ within your *wp-config.php* file.
 
-```
+```php
 define( 'WP_DEBUG_DISPLAY', true );
 ```
 

@@ -38,7 +38,9 @@ It is far easier to create one `header.php` file and have all of your theme tem
 
 Another reason to use template tags is to display dynamic data, i.e. data from the database. In your header, you could manually include the `title` tag, like so:
 
+```xml
 <title>My Personal Website</title>
+```
 
 However, doing this means manually editing your theme any time you want to change the title of your website. Instead, it’s easier to include the `[bloginfo( 'name' )](https://developer.wordpress.org/reference/functions/bloginfo/)` template tag, which automatically fetch the site title from the database. Now, you can change the title of your site in WordPress, rather than having to hard code your theme templates.
 
@@ -46,7 +48,9 @@ However, doing this means manually editing your theme any time you want to chang
 
 Using template tags is very simple. In any template file you can use a template tag by simply printing one line of php code to call the template tag. Printing the header.php file is as simple as:
 
-get\_header();
+```php
+get_header();
+```
 
 ### Parameters
 
@@ -54,11 +58,15 @@ Some template tags let you pass parameters. Parameters are extra pieces of infor
 
 For example, the `[bloginfo()](https://developer.wordpress.org/reference/functions/bloginfo/ "bloginfo template tag")` template tag allows you to give it a parameter telling WordPress the specific piece of information you want. To print the blog name, you just pass along the parameter “name,” like so:
 
+```php
 bloginfo( 'name' );
+```
 
 To print the version of WordPress that the blog is running on, you would pass a parameter of “version”:
 
+```php
 bloginfo( 'version' );
+```
 
 For each template tag, the parameters differ. A list of the parameters and what they can do can be found on specific template tag pages located throughout the [code reference](https://developer.wordpress.org/reference/).
 
@@ -68,16 +76,20 @@ Many template tags work within the [WordPress Loop](https://developer.wordpress.
 
 The WordPress loop begins with:
 
-if ( have\_posts() ) :
-	while ( have\_posts() ) :
-		the\_post();
+```php
+if ( have_posts() ) :
+	while ( have_posts() ) :
+		the_post();
+```
 
 Template tags that work within the loop must be in the middle area, before the ending section of the loop below:
 
+```php
 	endwhile;
 else :
-	\_e( 'Sorry, no posts matched your criteria.', 'devhub' );
+	_e( 'Sorry, no posts matched your criteria.', 'devhub' );
 endif;
+```
 
 Some of template tags that need to be inside of the loop include
 

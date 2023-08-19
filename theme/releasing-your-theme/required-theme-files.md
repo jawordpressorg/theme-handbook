@@ -10,7 +10,7 @@ Classic themes must  include the required theme files. These files must follow 
 1.  **style.css  
     **Your theme’s main [stylesheet](https://developer.wordpress.org/themes/basics/including-css-javascript/) file. This file will also include information about your theme, such as author name, version number, and plugin URL, in it’s header.
 2.  **index.php  
-    **The main [template file](https://developer.wordpress.org/themes/basics/page-templates/) for your theme. This will be the template for the homepage on your site unless a static front page is specified. If you *only* include this template file, it must include all functionality of your theme. However, you can use as many relevant template files as you want in your theme.
+    **The main [template](https://developer.wordpress.org/themes/basics/template-files/) file for your theme. This will be the template for the homepage on your site unless a static front page is specified. If you *only* include this template file, it must include all functionality of your theme. However, you can use as many relevant template files as you want in your theme.
 3.  ****comments.php  
     ****The comment template which is included wherever comments are allowed. This file should provide support for threaded comments and trackbacks, and should style author comments differently then user comments. See the [Comments](https://developer.wordpress.org/themes/functionality/comments/) page for more information.
 4.  **screenshot  

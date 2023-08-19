@@ -16,77 +16,106 @@ A Sticky Post is the post will be placed at the top of the front page of posts. 
 
 Display just the first sticky post. At least one post must be designated as a “sticky post” or else the loop will display all posts:
 
-$sticky = get\_option( 'sticky\_posts' );
-$query = new WP\_Query( 'p=' . $sticky\[0\] );
+```php
+<?php
+$sticky = get_option( 'sticky_posts' );
+$query  = new WP_Query( 'p=' . $sticky[0] );
+```
 
 Display just the first sticky post, if none return the last post published:
 
-$args = array(
-        'posts\_per\_page' => 1,
-        'post\_\_in' => get\_option( 'sticky\_posts' ),
-        'ignore\_sticky\_posts' => 1
+```php
+<?php
+$args  = array(
+	'posts_per_page'      => 1,
+	'post__in'            => get_option( 'sticky_posts' ),
+	'ignore_sticky_posts' => 1,
 );
-$query = new WP\_Query( $args );
+$query = new WP_Query( $args );
+```
 
 Display just the first sticky post, if none return nothing:
 
-$sticky = get\_option( 'sticky\_posts' );
-$args = array(
-        'posts\_per\_page' => 1,
-        'post\_\_in' => $sticky,
-        'ignore\_sticky\_posts' => 1
+```php
+<?php
+$args   = array(
+	'posts_per_page'      => 1,
+	'post__in'            => get_option( 'sticky_posts' ),
+	'ignore_sticky_posts' => 1,
 );
-$query = new WP\_Query( $args );
-if ( isset( $sticky\[0\] ) ) {
-    // insert here your stuff...
+$query  = new WP_Query( $args );
+if ( isset( $sticky[0] ) ) {
+	// Insert here your stuff...
 }
+```
 
 ### Don’t Show Sticky Posts
 
 Exclude all sticky posts from the query:
 
-$query = new WP\_Query( array( 'post\_\_not\_in' => get\_option( 'sticky\_posts' ) ) );
+```php
+<?php
+$args  = array( 'post__not_in' => get_option( 'sticky_posts' ) );
+$query = new WP_Query( $args );
+```
 
 Exclude sticky posts from a category. Return ALL posts within the category, but don’t show sticky posts at the top. The ‘sticky posts’ will still show in their natural position (e.g. by date):
 
-$query = new WP\_Query( 'ignore\_sticky\_posts=1&posts\_per\_page=3&cat=6' );
+```php
+<?php
+$args  = array(
+	'ignore_sticky_posts' => 1,
+	'posts_per_page'      => 3,
+	'cat'                 => 6,
+);
+$query = new WP_Query( $args );
+```
 
 Exclude sticky posts from a category. Return posts within the category, but exclude sticky posts completely, and adhere to paging rules:
 
-$paged = get\_query\_var( 'paged' ) ? get\_query\_var( 'paged' ) : 1;
-$sticky = get\_option( 'sticky\_posts' );
-$args = array(
-        'cat' => 3,
-        'ignore\_sticky\_posts' => 1,
-        'post\_\_not\_in' => $sticky,
-        'paged' => $paged
+```php
+<?php
+$args  = array(
+	'cat'                 => 3,
+	'ignore_sticky_posts' => 1,
+	'post__not_in'        => get_option( 'sticky_posts' ),
+	'paged'               => get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1,
 );
-$query = new WP\_Query( $args );
+$query = new WP_Query( $args );
+```
 
 Note: Use get\_query\_var( ‘page’ ) if you want this query to work in a Page template that you’ve set as your static front page.
 
+```php
 <?php
-/\* Get all Sticky Posts \*/
-$sticky = get\_option( 'sticky\_posts' );
+/* Get all Sticky Posts */
+$sticky = get_option( 'sticky_posts' );
 
-/\* Sort Sticky Posts, newest at the top \*/
+/* Sort Sticky Posts, newest at the top */
 rsort( $sticky );
 
-/\* Get top 5 Sticky Posts \*/
-$sticky = array\_slice( $sticky, 0, 5 );
+/* Get top 5 Sticky Posts */
+$sticky = array_slice( $sticky, 0, 5 );
 
-/\* Query Sticky Posts \*/
-$query = new WP\_Query( array( 'post\_\_in' => $sticky, 'ignore\_sticky\_posts' => 1 ) );
-?>
+/* Query Sticky Posts */
+$query = new WP_Query( array(
+	'post__in'            => $sticky,
+	'ignore_sticky_posts' => 1,
+) );
+```
 
 ## Style Sticky Posts
 
 To help theme authors perform simpler styling, the [post\_class()](https://developer.wordpress.org/reference/functions/post_class/) function is used to add class=”…” to DIV, just add:
 
-<div id="post-<?php the\_ID(); ?>" <?php post\_class(); ?>>
+```php
+<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+```
 
 The [post\_class()](https://developer.wordpress.org/reference/functions/post_class/) outputs the class=”whatever” piece for that div. This includes several different classes of value: post, hentry (for hAtom microformat pages), category-X (where X is the slug of every category the post is in), and tag-X (similar, but with tags). It also adds “sticky” for posts marked as Sticky Posts.
 
-.sticky { color:red; }
+```css
+.sticky { color: red; }
+```
 
 Note: The “sticky” class is only added for sticky posts on the first page of the home page ([](https://developer.wordpress.org/reference/functions/is_home/)[is\_home()](https://developer.wordpress.org/reference/functions/is_home/) is true and [](https://developer.wordpress.org/reference/functions/is_paged/)[is\_paged()](https://developer.wordpress.org/reference/functions/is_paged/) is false)

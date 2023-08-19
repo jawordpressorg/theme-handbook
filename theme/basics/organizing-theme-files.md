@@ -6,34 +6,37 @@ While WordPress themes technically only require two files (`index.php` in classi
 
 As mentioned previously, the default Twenty themes are some of the best examples of good theme development. For instance, here is how the [Twenty Seventeen Theme](https://wordpress.org/themes/twentyseventeen/) organizes its [file structure](https://core.trac.wordpress.org/browser/trunk/src/wp-content/themes/twentyseventeen):
 
-assets (dir)
-      - css (dir)
-      - images (dir)
-      - js (dir)
-inc (dir)
-template-parts (dir)
-      - footer (dir)
-      - header (dir)
-      - navigation (dir)
-      - page (dir)
-      - post (dir)
-404.php
-archive.php
-comments.php
-footer.php
-front-page.php
-functions.php
-header.php
-index.php
-page.php
-README.txt
-rtl.css
-screenshot.png
-search.php
-searchform.php
-sidebar.php
-single.php
-style.css
+```
+.
+├── assets (dir)/
+│   ├── css (dir)
+│   ├── images (dir)
+│   └── js (dir)
+├── inc (dir)
+├── template-parts (dir)/
+│   ├── footer (dir)
+│   ├── header (dir)
+│   ├── navigation (dir)
+│   ├── page (dir)
+│   └── post (dir)
+├── 404.php
+├── archive.php
+├── comments.php
+├── footer.php
+├── front-page.php
+├── functions.php
+├── header.php
+├── index.php
+├── page.php
+├── README.txt
+├── rtl.css
+├── screenshot.png
+├── search.php
+├── searchform.php
+├── sidebar.php
+├── single.php
+└── style.css
+```
 
 You can see that the main theme template files are in the root directory, while JavaScript, CSS, images are placed in assets directory, template-parts are placed in under respective subdirectory of template-parts and collection of  functions related to core functionalities are placed in inc directory.
 

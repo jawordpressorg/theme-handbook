@@ -1,7 +1,9 @@
 # Internationalization
 
-Text inside Template or Template parts that are HTML files can not be made translatable.  
-  
+Text inside Template or Template parts that are HTML files can not be made translatable.
+
+## Using text in block patterns
+
 A pattern block can be used to insert translatable content inside a block template. Since those files are PHP-based, there is a mechanism to mark strings for translation or to supply dynamic URLs.
 
 Example block pattern:
@@ -26,17 +28,20 @@ register_block_pattern(
 );
 ```
 
-You can hide the pattern from the block inserter using the argument `'inserter' => false`.
+## Text in theme.json and style variation files
 
-Add the pattern in a template or template part using the pattern block:
+WordPress assures that texts in theme.json keys are translation ready. The theme developer does not need to wrap text strings inside gettext functionality like `__()`.
 
-```
-<!-- wp:group -->
-<div class="wp-block-group">
-    <!-- wp:pattern {"slug":"myfirsttheme/wordpress-credit"} /-->
-</div>
-<!-- /wp:group -->
-```
+The following keys are translatable in WordPress 6.1:
+
+*   Style variation name
+*   Font size name
+*   Font family name
+*   Color name
+*   Gradient name
+*   Duotone name
+*   Custom template name
+*   Template part name
 
 ## Resource links
 
@@ -44,4 +49,5 @@ Learn more about [internationalization](https://developer.wordpress.org/apis/ha
 
 Changelog:
 
+*   **Updated** 2022-11-07 Added information about theme.json
 *   **Created** 2022-01-24

@@ -77,9 +77,9 @@ Suppose you want some static text displayed before the list of posts on your cat
 
 Open your file and above [The Loop](https://developer.wordpress.org/themes/basics/the-loop/ "The Loop") section of your Template file, insert the following code:
 
-<p>
-This is some text that will display at the top of the Category page.
-</p>
+```markup
+<p>This is some text that will display at the top of the Category page.</p>
+```
 
 This text will only display on an archive page displaying posts in that category.
 
@@ -89,14 +89,15 @@ What if you want to display different text based on the category page that the v
 
 Again, this code would be added before the loop:
 
-<?php if (is\_category('Category A')) : ?>
-      <p>This is the text to describe category A</p>
-<?php elseif (is\_category('Category B')) : ?>
-      <p>This is the text to describe category B</p>
+```php
+<?php if ( is_category( 'Category A' ) ) : ?>
+	<p>This is the text to describe category A.</p>
+<?php elseif ( is_category( 'Category B' ) ) : ?>
+	<p>This is the text to describe category B.</p>
 <?php else : ?>
-      <p>This is some generic text to describe all other category pages,
-I could be left blank</p>
+	<p>This is some generic text to describe all other category pages, I could be left blank.</p>
 <?php endif; ?>
+```
 
 This code does the following:
 
@@ -112,10 +113,11 @@ To do this, use a PHP if statement that looks at the value of the $paged WordPre
 
 Put the following above The Loop:
 
+```php
 <?php if ( $paged < 2 ) : ?>
-      <p>Text for first page of Category archive.</p>
-<?php else : ?>
+	<p>Text for first page of Category archive.</p>
 <?php endif; ?>
+```
 
 This code asks whether the page displayed is the first page of the archive. If it is, the text for the first page is displayed. Otherwise, the text for the subsequent pages is displayed.
 
@@ -127,10 +129,14 @@ You can choose whether to display full posts or just excerpts. By displaying exc
 
 Open your file and find the loop. Look for:
 
-the\_content()
+```php
+the_content()
+```
 
 And replace it with:
 
-the\_excerpt()
+```php
+the_excerpt()
+```
 
 And if your theme is displaying excerpts but you want to display the full content, replace `the_excerpt` with `the_content`.

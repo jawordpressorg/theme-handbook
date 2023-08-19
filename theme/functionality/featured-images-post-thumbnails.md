@@ -22,14 +22,14 @@ By default, the Featured Image meta box is displayed in the sidebar of the Edit 
 
 ## Function Reference
 
-`[add_image_size()](https://developer.wordpress.org/reference/functions/add_image_size/ "Register a new image size")`– Register a new image size…  
-`[set_post_thumbnail_size()](https://developer.wordpress.org/reference/functions/set_post_thumbnail_size/ "Registers an image size for the post thumbnail")` – Registers an image size for the post thumbnail…
+`[add_image_size()](https://developer.wordpress.org/reference/functions/add_image_size/ "Register a new image size")` – Register a new image size.
+`[set_post_thumbnail_size()](https://developer.wordpress.org/reference/functions/set_post_thumbnail_size/ "Registers an image size for the post thumbnail")` – Registers an image size for the post thumbnail.
 
-`[has_post_thumbnail()](https://developer.wordpress.org/reference/functions/has_post_thumbnail/ "Check if post has an image attached")` – Check if post has an image attached…  
-`[the_post_thumbnail()](https://developer.wordpress.org/reference/functions/the_post_thumbnail/ "Display Post Thumbnail")` – Display Post Thumbnail…
+`[has_post_thumbnail()](https://developer.wordpress.org/reference/functions/has_post_thumbnail/ "Check if post has an image attached")` – Check if post has an image attached.
+`[the_post_thumbnail()](https://developer.wordpress.org/reference/functions/the_post_thumbnail/ "Display Post Thumbnail")` – Display Post Thumbnail.
 
-`[get_the_post_thumbnail()](https://developer.wordpress.org/reference/functions/get_the_post_thumbnail/ "Retrieve Post Thumbnail")` – Retrieve Post Thumbnail…  
-`[get_post_thumbnail_id()](https://developer.wordpress.org/reference/functions/get_post_thumbnail_id/ "Retrieve Post Thumbnail ID")` – Retrieve Post Thumbnail ID…
+`[get_the_post_thumbnail()](https://developer.wordpress.org/reference/functions/get_the_post_thumbnail/ "Retrieve Post Thumbnail")` – Retrieve Post Thumbnail.
+`[get_post_thumbnail_id()](https://developer.wordpress.org/reference/functions/get_post_thumbnail_id/ "Retrieve Post Thumbnail ID")` – Retrieve Post Thumbnail ID.
 
 ## Image Sizes
 
@@ -69,12 +69,12 @@ if ( function_exists( 'add_theme_support' ) ) {
     // additional image sizes
     // delete the next line if you do not need additional image sizes
     add_image_size( 'category-thumb', 300, 9999 ); // 300 pixels wide (and unlimited height)
- }
+}
 ```
 
 ## Set the Featured Image Output Size
 
-To be used in the current Theme’s functions.php file.  
+To be used in the current Theme’s functions.php file.
 You can use `set_post_thumbnail_size()` to set the default Featured Image size by resizing the image proportionally (that is, without distorting it):
 
 ```php
@@ -91,7 +91,7 @@ set_post_thumbnail_size( 50, 50, true ); // 50 pixels wide by 50 pixels tall, cr
 
 Featured Images are given a class “wp-post-image”. They also get a class depending on the size of the thumbnail being displayed. You can style the output with these CSS selectors:
 
-```php
+```css
 img.wp-post-image
 img.attachment-thumbnail
 img.attachment-medium
@@ -99,7 +99,7 @@ img.attachment-large
 img.attachment-full
 ```
 
-You can also give Featured Images their own classes by using the attribute parameter in [](https://developer.wordpress.org/reference/functions/the_post_thumbnail/ "Display Post Thumbnail")[the\_post\_thumbnail()](https://developer.wordpress.org/reference/functions/the_post_thumbnail/) .  
+You can also give Featured Images their own classes by using the attribute parameter in [](https://developer.wordpress.org/reference/functions/the_post_thumbnail/ "Display Post Thumbnail")[the\_post\_thumbnail()](https://developer.wordpress.org/reference/functions/the_post_thumbnail/) .
 Display the Featured Image with a class “alignleft”:
 
 ```php
@@ -132,20 +132,21 @@ Alert: Don’t use these two examples together in the same Theme.
 
 Example 1. To link Post Thumbnails to the Post Permalink in a specific loop, use the following within your Theme’s template files:
 
-<?php if ( has\_post\_thumbnail()) : ?>
-    <a href="<?php the\_permalink(); ?>" alt="<?php the\_title\_attribute(); ?>">
-        <?php the\_post\_thumbnail(); ?>
+```php
+<?php if ( has_post_thumbnail()) : ?>
+    <a href="<?php the_permalink(); ?>" alt="<?php the_title_attribute(); ?>">
+        <?php the_post_thumbnail(); ?>
     </a>
 <?php endif; ?>
+```
 
 Example 2. To link **all Post Thumbnails** on your website to the Post Permalink, put this in the current Theme’s [functions.php](https://make.wordpress.org/docs/theme-developer-handbook/part-one-theme-basics/theme-functions/ "Theme Functions") file:
 
 ```php
 add_filter( 'post_thumbnail_html', 'my_post_image_html', 10, 3 );
-
 function my_post_image_html( $html, $post_id, $post_image_id ) {
 
-  $html = '' . $html . '';
+  $html = '<a href="' . get_permalink( $post_id ) . '">' . $html . '</a>';
   return $html;
 
 }
@@ -154,12 +155,12 @@ function my_post_image_html( $html, $post_id, $post_image_id ) {
 This example links to the “large” Post Thumbnail image size and must be used within The Loop.
 
 ```php
- if ( has_post_thumbnail()) {
+if ( has_post_thumbnail()) {
     $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), 'large');
-    echo '';
+    echo '<a href="' . $large_image_url[0] . '">';
     the_post_thumbnail('thumbnail');
-    echo '';
- }
+    echo '</a>';
+}
 ```
 
 ## Source File
@@ -169,5 +170,7 @@ This example links to the “large” Post Thumbnail image size and must be used
 ## External Resources
 
 *   [Everything you need to know about WordPress 2.9’s post image feature](http://justintadlock.com/archives/2009/11/16/everything-you-need-to-know-about-wordpress-2-9s-post-image-feature)
+
 *   [The Ultimative Guide For the\_post\_thumbnail In WordPress 2.9](http://wpengineer.com/the-ultimative-guide-for-the_post_thumbnail-in-wordpress-2-9/)
+
 *   [New in WordPress 2.9: Post Thumbnail Images](http://markjaquith.wordpress.com/2009/12/23/new-in-wordpress-2-9-post-thumbnail-images/)

@@ -39,94 +39,83 @@ A widget as it appears to a site visitor.
 
 HTML output for this widget looks like this:
 
-<div id="text-7" class="widget widget\_text">
-<!-- Widget Container -->
-    <div class="widget-wrap">
-        <h4 class="widgettitle">This is a text widget</h4>
-        <!-- Title -->
-        <div class="textwidget">
-        <!-- Content of Widget -->
-            I can put HTML in here. <a href="http://google.com/">Search me!</a>
-        </div>
-    </div>
-</div>
+```php
+<div id="text-7" class="widget widget_text">
+
+	<div class="widget-wrap">
+
+		<h4 class="widgettitle">
+			This is a text widget
+		</h4><!-- .widgettitle -->
+
+		<div class="textwidget">
+			I can put HTML in here. <a href="http://google.com/">Search me!</a>
+		</div><!-- .textwidget -->
+
+	</div><!-- .widget-wrap -->
+
+</div><!-- #text-7 -->
+```
 
 Each widget has its own way of outputting HTML that is relevant to the data being displayed. The wrapper tags for the widget are defined by the widget area in which it is being displayed.
 
 The PHP code necessary to create a widget like the built-in text widget looks like this:
 
+```php
 <?php
-
-class My\_Widget extends WP\_Widget {
-
-	function \_\_construct() {
-
-		parent::\_\_construct(
+class My_Widget extends WP_Widget {
+	public function __construct() {
+		parent::__construct(
 			'my-text',  // Base ID
 			'My Text'   // Name
 		);
-
-		add\_action( 'widgets\_init', function() {
-			register\_widget( 'My\_Widget' );
+		add_action( 'widgets_init', function() {
+			register_widget( 'My_Widget' );
 		});
-
 	}
 
 	public $args = array(
-		'before\_title'  => '<h4 class="widgettitle">',
-		'after\_title'   => '</h4>',
-		'before\_widget' => '<div class="widget-wrap">',
-		'after\_widget'  => '</div></div>'
+		'before_title'  => '<h4 class="widgettitle">',
+		'after_title'   => '</h4>',
+		'before_widget' => '<div class="widget-wrap">',
+		'after_widget'  => '</div></div>',
 	);
 
 	public function widget( $args, $instance ) {
-
-		echo $args\['before\_widget'\];
-
-		if ( ! empty( $instance\['title'\] ) ) {
-			echo $args\['before\_title'\] . apply\_filters( 'widget\_title', $instance\['title'\] ) . $args\['after\_title'\];
+		echo $args['before_widget'];
+		if ( ! empty( $instance['title'] ) ) {
+			echo $args['before_title'] . apply_filters( 'widget_title', $instance['title'] ) . $args['after_title'];
 		}
-
 		echo '<div class="textwidget">';
-
-		echo esc\_html\_\_( $instance\['text'\], 'text\_domain' );
-
+		echo esc_html__( $instance['text'], 'text_domain' );
 		echo '</div>';
-
-		echo $args\['after\_widget'\];
-
+		echo $args['after_widget'];
 	}
 
 	public function form( $instance ) {
-
-		$title = ! empty( $instance\['title'\] ) ? $instance\['title'\] : esc\_html\_\_( '', 'text\_domain' );
-		$text = ! empty( $instance\['text'\] ) ? $instance\['text'\] : esc\_html\_\_( '', 'text\_domain' );
+		$title = ! empty( $instance['title'] ) ? $instance['title'] : esc_html__( '', 'text_domain' );
+		$text  = ! empty( $instance['text'] ) ? $instance['text'] : esc_html__( '', 'text_domain' );
 		?>
 		<p>
-		<label for="<?php echo esc\_attr( $this->get\_field\_id( 'title' ) ); ?>"><?php echo esc\_html\_\_( 'Title:', 'text\_domain' ); ?></label>
-			<input class="widefat" id="<?php echo esc\_attr( $this->get\_field\_id( 'title' ) ); ?>" name="<?php echo esc\_attr( $this->get\_field\_name( 'title' ) ); ?>" type="text" value="<?php echo esc\_attr( $title ); ?>">
+			<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php echo esc_html__( 'Title:', 'text_domain' ); ?></label>
+			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>">
 		</p>
 		<p>
-			<label for="<?php echo esc\_attr( $this->get\_field\_id( 'Text' ) ); ?>"><?php echo esc\_html\_\_( 'Text:', 'text\_domain' ); ?></label>
-			<textarea class="widefat" id="<?php echo esc\_attr( $this->get\_field\_id( 'text' ) ); ?>" name="<?php echo esc\_attr( $this->get\_field\_name( 'text' ) ); ?>" type="text" cols="30" rows="10"><?php echo esc\_attr( $text ); ?></textarea>
+			<label for="<?php echo esc_attr( $this->get_field_id( 'Text' ) ); ?>"><?php echo esc_html__( 'Text:', 'text_domain' ); ?></label>
+			<textarea class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'text' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'text' ) ); ?>" type="text" cols="30" rows="10"><?php echo esc_attr( $text ); ?></textarea>
 		</p>
 		<?php
-
 	}
 
-	public function update( $new\_instance, $old\_instance ) {
-
-		$instance = array();
-
-		$instance\['title'\] = ( !empty( $new\_instance\['title'\] ) ) ? strip\_tags( $new\_instance\['title'\] ) : '';
-		$instance\['text'\] = ( !empty( $new\_instance\['text'\] ) ) ? $new\_instance\['text'\] : '';
-
+	public function update( $new_instance, $old_instance ) {
+		$instance          = array();
+		$instance['title'] = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
+		$instance['text']  = ( ! empty( $new_instance['text'] ) ) ? $new_instance['text'] : '';
 		return $instance;
 	}
-
 }
-$my\_widget = new My\_Widget();
-?>
+$my_widget = new My_Widget();
+```
 
 The code above will be explained in detail later in the article.
 
@@ -142,11 +131,10 @@ To create and display a widget, you need to do the following:
 
 The [WP\_Widget](https://developer.wordpress.org/reference/classes/wp_widget/) class is located in [wp-includes/class-wp-widget.php](https://core.trac.wordpress.org/browser/tags/4.8/src/wp-includes/class-wp-widget.php)
 
+```php
 <?php
-
-class My\_Widget extends WP\_Widget {
-
-	public function \_\_construct() {
+class My_Widget extends WP_Widget {
+	public function __construct() {
 		// actual widget processes
 	}
 
@@ -158,12 +146,11 @@ class My\_Widget extends WP\_Widget {
 		// outputs the options form in the admin
 	}
 
-	public function update( $new\_instance, $old\_instance ) {
+	public function update( $new_instance, $old_instance ) {
 		// processes widget options to be saved
 	}
 }
-
-?>
+```
 
 The documentation for each of these functions can be found in the widget class code:
 
@@ -178,13 +165,13 @@ The [](https://developer.wordpress.org/reference/functions/register_widget/)[reg
 
 Call this function using the widgets\_init hook:
 
+```php
 <?php
-add\_action( 'widgets\_init', 'wpdocs\_register\_widgets' );
-
-function wpdocs\_register\_widgets() {
-	register\_widget( 'My\_Widget' );
+add_action( 'widgets_init', 'wpdocs_register_widgets' );
+function wpdocs_register_widgets() {
+	register_widget( 'My_Widget' );
 }
-?>
+```
 
 The HTML that wraps the widget, as well as the class for the title and widget content, is specified at the time you register the widget area using [](https://developer.wordpress.org/reference/functions/register_sidebar/)[register\_sidebar()](https://developer.wordpress.org/reference/functions/register_sidebar/) .
 
@@ -208,123 +195,115 @@ Finally, when all of the above is defined, you instantiate your new widget class
 
 ### Sample Widget
 
+```php
 <?php
-
-/\*\*
- \* Adds Foo\_Widget widget.
- \*/
-class Foo\_Widget extends WP\_Widget {
-
-	/\*\*
-	 \* Register widget with WordPress.
-	 \*/
-	public function \_\_construct() {
-		parent::\_\_construct(
-			'foo\_widget', // Base ID
-			'Foo\_Widget', // Name
-			array( 'description' => \_\_( 'A Foo Widget', 'text\_domain' ), ) // Args
-        );
-    }
-
-	/\*\*
-	 \* Front-end display of widget.
-	 \*
-	 \* @see WP\_Widget::widget()
-	 \*
-	 \* @param array $args     Widget arguments.
-	 \* @param array $instance Saved values from database.
-	 \*/
+/**
+ * Adds Foo_Widget widget.
+ */
+class Foo_Widget extends WP_Widget {
+	/**
+	 * Register widget with WordPress.
+	 */
+	public function __construct() {
+		parent::__construct(
+			'foo_widget', // Base ID
+			'Foo_Widget', // Name
+			array( 'description' => __( 'A Foo Widget', 'text_domain' ) ) // Args
+		);
+	}
+	/**
+	 * Front-end display of widget.
+	 *
+	 * @see WP_Widget::widget()
+	 *
+	 * @param array $args     Widget arguments.
+	 * @param array $instance Saved values from database.
+	 */
 	public function widget( $args, $instance ) {
 		extract( $args );
-		$title = apply\_filters( 'widget\_title', $instance\['title'\] );
-
-		echo $before\_widget;
+		$title = apply_filters( 'widget_title', $instance['title'] );
+		echo $before_widget;
 		if ( ! empty( $title ) ) {
-			echo $before\_title . $title . $after\_title;
+			echo $before_title . $title . $after_title;
 		}
-		echo \_\_( 'Hello, World!', 'text\_domain' );
-		echo $after\_widget;
+		echo __( 'Hello, World!', 'text_domain' );
+		echo $after_widget;
 	}
-
-	/\*\*
-	 \* Back-end widget form.
-	 \*
-	 \* @see WP\_Widget::form()
-	 \*
-	 \* @param array $instance Previously saved values from database.
-	 \*/
+	/**
+	 * Back-end widget form.
+	 *
+	 * @see WP_Widget::form()
+	 *
+	 * @param array $instance Previously saved values from database.
+	 */
 	public function form( $instance ) {
-		if ( isset( $instance\[ 'title' \] ) ) {
-			$title = $instance\[ 'title' \];
-		}
-		else {
-			$title = \_\_( 'New title', 'text\_domain' );
+		if ( isset( $instance['title'] ) ) {
+			$title = $instance['title'];
+		} else {
+			$title = __( 'New title', 'text_domain' );
 		}
 		?>
 		<p>
-		    <label for="<?php echo $this->get\_field\_name( 'title' ); ?>"><?php \_e( 'Title:' ); ?></label>
-            <input class="widefat" id="<?php echo $this->get\_field\_id( 'title' ); ?>" name="<?php echo $this->get\_field\_name( 'title' ); ?>" type="text" value="<?php echo esc\_attr( $title ); ?>" />
-         </p>
-    <?php
-    }
-
-	/\*\*
-	 \* Sanitize widget form values as they are saved.
-	 \*
-	 \* @see WP\_Widget::update()
-	 \*
-	 \* @param array $new\_instance Values just sent to be saved.
-	 \* @param array $old\_instance Previously saved values from database.
-	 \*
-	 \* @return array Updated safe values to be saved.
-	 \*/
-	public function update( $new\_instance, $old\_instance ) {
-		$instance = array();
-		$instance\['title'\] = ( !empty( $new\_instance\['title'\] ) ) ? strip\_tags( $new\_instance\['title'\] ) : '';
-
+			<label for="<?php echo $this->get_field_name( 'title' ); ?>"><?php _e( 'Title:' ); ?></label>
+			<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
+		 </p>
+		<?php
+	}
+	/**
+	 * Sanitize widget form values as they are saved.
+	 *
+	 * @see WP_Widget::update()
+	 *
+	 * @param array $new_instance Values just sent to be saved.
+	 * @param array $old_instance Previously saved values from database.
+	 *
+	 * @return array Updated safe values to be saved.
+	 */
+	public function update( $new_instance, $old_instance ) {
+		$instance          = array();
+		$instance['title'] = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
 		return $instance;
 	}
-
-} // class Foo\_Widget
-
-?>
+} // class Foo_Widget
+```
 
 This sample widget can then be registered in the widgets\_init hook:
 
+```php
 <?php
-// Register Foo\_Widget widget
-add\_action( 'widgets\_init', 'register\_foo' );
-    
-function register\_foo() { 
-    register\_widget( 'Foo\_Widget' ); 
+// Register Foo_Widget widget
+add_action( 'widgets_init', 'register_foo' );
+function register_foo() {
+	register_widget( 'Foo_Widget' );
 }
-?>
+```
 
 ### Example with a Namespace
 
 If you use PHP 5.3 with namespaces you should call the constructor directly as in the following example:
 
+```php
 <?php
-namespace a\\b\\c;
+namespace a\b\c;
 
-class My\_Widget\_Class extends \\WP\_Widget {
-	function \_\_construct() {
-		parent::\_\_construct( 'baseID', 'name' );
+class My_Widget_Class extends \WP_Widget {
+	public function __construct() {
+		parent::__construct( 'baseID', 'name' );
 	}
 	// ... rest of the functions
 }
-?>
+```
 
 and call the register widget with:
 
+```php
 <?php
-// Register Foo\_Widget widget
-add\_action( 'widgets\_init', 'register\_my\_widget' );
-
-function register\_my\_widget() {
-    register\_widget( 'a\\b\\c\\My\_Widget\_Class' );
+// Register Foo_Widget widget
+add_action( 'widgets_init', 'register_my_widget' );
+function register_my_widget() {
+	register_widget( 'a\b\c\My_Widget_Class' );
 }
-?>
+```
 
 See [this answer at stack exchange](http://stackoverflow.com/questions/5247302/php-namespace-5-3-and-wordpress-widget/5247436#5247436) for more detail.
 
@@ -332,14 +311,16 @@ See [this answer at stack exchange](http://stackoverflow.com/questions/5247302/p
 
 If you want to use a widget inside another template file, rather than in a sidebar, you can use `[the_widget()](https://developer.wordpress.org/reference/functions/the_widget/)` to display it programmatically. The function accepts widget class names. You pass the widget class name to the function like this:
 
-<?php the\_title(); ?>
+```php
+<?php the_title(); ?>
 
 <div class="content">
-    <?php the\_content(); ?>
-</div>
+	<?php the_content(); ?>
+</div><!-- .content -->
 
 <div class="widget-section">
-    <?php the\_widget( 'My\_Widget\_Class' ); ?>
-</div>
+	<?php the_widget( 'My_Widget_Class' ); ?>
+</div><!-- .widget-section -->
+```
 
 You may want to use this approach if you need to use a widget in a specific area on a page, such as displaying a list of events next to a form in a section on the front page of your site or displaying an email capture form on a mega-menu alongside your navigation.

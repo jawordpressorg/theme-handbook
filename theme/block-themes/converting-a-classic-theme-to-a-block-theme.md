@@ -5,15 +5,15 @@ While you can find many [benefits](https://developer.wordpress.org/themes/block-
 *   Converting a classic theme may affect child themes. Consider the potential impacts before converting.
 *   theme.json requires WordPress version 5.8 or later. Consequently, the support for Internet Explorer 11 was dropped when WordPress 5.8 was released. If your classic theme supports IE11, converting to a block theme potentially impacts the theme’s appearance.
 
-## Gradually adopting the Full Site Editing
+## Gradually adopting the Site Editing features
 
-There are several ways to slowly adopt the Full Site Editing features on a classic theme.
+There are several ways to slowly adopt the Site Editing features on a classic theme.
 
-**Universal themes**  
+**Universal themes**
 A universal theme is a block theme that has the Customizer options. The Customizer is not available as a default on a block theme, but you can enable it by adding `customize_register` on functions.php. Learn more about [customize\_register](https://developer.wordpress.org/reference/hooks/customize_register/).
 
-**Hybrid themes**  
-A hybrid theme is a classic theme that adopts the Full Site Editing features such as [theme.json](https://developer.wordpress.org/themes/advanced-topics/theme-json/) or [template editor.](https://make.wordpress.org/core/2021/06/16/introducing-the-template-editor-in-wordpress-5-8/) For example, you can enable color pallets or set default content width by simply adding theme.json on your classic theme.
+**Hybrid themes**
+A hybrid theme is a classic theme that adopts the Site Editing features such as [theme.json](https://developer.wordpress.org/themes/advanced-topics/theme-json/) or [template editor.](https://make.wordpress.org/core/2021/06/16/introducing-the-template-editor-in-wordpress-5-8/) For example, you can enable color pallets or set default content width by simply adding theme.json on your classic theme.
 
 Note: Adding a theme.json enables global styles, but it does not enable the styles interface.
 
@@ -38,8 +38,7 @@ There are several ways to enable the template editor:
 
 To use theme.json without the template editor, theme authors can opt-out of this feature by removing the `block-templates` theme support:
 
-```
-
+```php
 remove_theme_support( 'block-templates' );
 ```
 

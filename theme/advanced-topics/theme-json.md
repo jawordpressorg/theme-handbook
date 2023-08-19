@@ -13,19 +13,19 @@ Some of the things you can do with theme.json are:
 *   Add font sizes
 *   Add default widths for content and wide content
 *   Add custom CSS properties
-*   Assign template parts to template part areas  
-    
+*   Assign template parts to template part areas
+
 
 When you add theme.json to your theme, the [template editor](https://make.wordpress.org/core/2021/06/16/introducing-the-template-editor-in-wordpress-5-8/) is enabled.
 
-There are important differences between what is available for `theme.json` in WordPress version 5.8 (version 1), WordPress 5.9 and newer (version 2), and the Gutenberg plugin (experimental features).  
+There are important differences between what is available for `theme.json` in WordPress version 5.8 (version 1), WordPress 5.9 and newer (version 2), and the Gutenberg plugin (experimental features).
 This page includes information about version 2 of `theme.json`.
 
 **This page is a complement to the [How-to guide](https://developer.wordpress.org/block-editor/how-to-guides/themes/theme-json/) in the block editor handbook and to the [theme.json reference](https://developer.wordpress.org/block-editor/reference-guides/theme-json-reference).**
 
 ## How to create a theme.json file
 
-**Tip:** When developing your theme.json file, you can disable cache to see your changes applied faster.  
+**Tip:** When developing your theme.json file, you can disable cache to see your changes applied faster.
 Set either [WP\_DEBUG](https://wordpress.org/support/article/debugging-in-wordpress/#wp_debu) or [SCRIPT\_DEBUG](https://wordpress.org/support/article/debugging-in-wordpress/#script_debug) to ‘true’ in your [wp-config.php file.](https://wordpress.org/support/article/editing-wp-config-php/)
 
 Create a new file called `theme.json` inside the root folder of your theme. 
@@ -52,7 +52,7 @@ Add the section name, place your settings between the curly brackets, and separa
     "version": 2,
     "settings": {
           "color": {},
-          "typography": {}  
+          "typography": {}
     }
 }
 ```
@@ -68,7 +68,7 @@ You can target both the website and blocks with settings and styles:
 	"settings": {
 		"color": { ... }, // Global settings
 		"blocks": {
-			"core/group": { 
+			"core/group": {
 				"color": { ... }, // Group block color settings
 				"typography": { ... } // Group typography settings
 			}
@@ -124,7 +124,7 @@ This example shows a color palette added only to the paragraph block with a sing
                 }
             }
         }
-    }        
+    }
 }
 ```
 
@@ -151,7 +151,7 @@ Values stored in the settings.custom area (or `settings.blocks.BLOCKNAME.custom`
                 }
             }
         }
-    }        
+    }
 }
 ```
 
@@ -161,10 +161,10 @@ The above will cause the CSS variable `--wp--custom--fruit` to be created with a
 
 Theme.json works with both classic PHP-based themes as well as block themes. Theme.json does not work with the classic editor.
 
-If you add a `theme.json` file to an existing theme, you may need to adjust the theme’s CSS and remove duplicate styles for `theme.json` to work properly.  
+If you add a `theme.json` file to an existing theme, you may need to adjust the theme’s CSS and remove duplicate styles for `theme.json` to work properly.
 Additionally, the alignment mechanism for “full” and “wide” blocks works differently with a theme.json present and should be considered.
 
-Note that the settings in `theme.json` replace many of the calls to `add_theme_support()`. The color palette in `theme.json` is the equivalent of `add_theme_support( 'editor-color-palette', …).`  
+Note that the settings in `theme.json` replace many of the calls to `add_theme_support()`. The color palette in `theme.json` is the equivalent of `add_theme_support( 'editor-color-palette', …).`
 When both are present, the palette from `theme.json` takes precedence.
 
 ## Settings
@@ -180,6 +180,8 @@ Each color, gradient, and duotone has three key- and value pairs:
 #### Color palette
 
 The color value for the palette item can be any valid CSS color value such as “blue” or a hex color such as “#00FF00”.
+
+When creating a custom color palette in your theme, it is recommended to include colors with the slug base for the background of your site and `contrast` for the main text color.
 
 #### Gradients
 
@@ -215,7 +217,7 @@ Duotone colors are expressed in an array assigned to the “colors” key. They 
                 ],
                 "duotone": [
                     {
-                        "slug": "purple-and-yellow",					
+                        "slug": "purple-and-yellow",
                         "colors": [ "#D1D1E4", "#EEEADD" ],
                         "name": "Purple and yellow"
                     }
@@ -280,7 +282,7 @@ There is an open ticket with a [full description of the issue](https://github.co
 
 Enable custom margin, padding, and custom spacing units:
 
-```
+```json
 {
 	"version": 2,
 	"settings": {
@@ -290,6 +292,141 @@ Enable custom margin, padding, and custom spacing units:
 			"units": [ "px", "em", "rem", "vh", "vw", "%" ]
 		}
 	}
+}
+```
+
+#### Spacing scale
+
+WordPress generates custom spacing scale by default. Users can select these options for blocks that support margin, padding, and block gap via the editor UI. The default scale has seven steps, as shown in the following table:
+
+| CSS Custom Property | CSS Value | Label |
+| --- | --- | --- |
+| `–wp–preset–spacing–20` | `0.44rem` | 2X-Small |
+| `–wp–preset–spacing–30` | `0.67rem` | X-Small |
+| `–wp–preset–spacing–40` | `1rem` | Small |
+| `–wp–preset–spacing–50` | `1.5rem` | Medium |
+| `–wp–preset–spacing–60` | `2.25rem` | Large |
+| `–wp–preset–spacing–70` | `3.38rem` | X-Large |
+| `–wp–preset–spacing–80` | `5.06rem` | 2X-Large |
+
+Theme authors can use the custom properties to define default margin, padding, or block gap styles via `theme.json`. The following code shows how to set the top and bottom margin for the core Heading block:
+
+```json
+{
+    "version": 2,
+    "styles": {
+        "blocks": {
+            "core/heading": {
+                "spacing": {
+                    "margin": {
+                        "top": "var( --wp--preset--spacing--60 )",
+                        "bottom": "var( --wp--preset--spacing--40 )"
+                    }
+                }
+            }
+        }
+    }
+}
+```
+
+#### Custom spacing scale
+
+WordPress allows theme authors to create a custom spacing scale by providing a set of configuration instructions for generating it. When generated, each step in the scale creates a custom CSS property with the slug of `--wp--preset--spacing--{step}` (steps appear in increments of 10, regardless of their value).
+
+The `spacingScale` object has five sub-settings that themes can configure:
+
+*   **operator:** The operator used to increment the scale. The available options are `+` (addition) and `*` (multiplication). The default value is `*`.
+*   **increment:** A number in which to increment the scale by when used in conjunction with the `operator` setting. The default value is `1.5`.
+*   **steps:** The total number of steps in the scale. The default value is `7`.
+*   **mediumStep:** The medium value of the scale. The default value is `1.5`.
+*   **unit:** A valid CSS spacing unit. The available options are `px`, `em`, `rem`, `vh`, `vw`, and `%`. The default value is `rem`.
+
+The following example is a custom scale with five steps that increments by `0.25rem`:
+
+```json
+{
+    "version": 2,
+    "settings": {
+        "spacing": {
+            "spacingScale": {
+                "operator": "+",
+                "increment": 0.25,
+                "steps": 5,
+                "mediumStep": 0.75,
+                "unit": "rem"
+            }
+        }
+    }
+}
+```
+
+**Note #1:** The `mediumStep` value is always assigned to the `--wp--preset--spacing--50` preset when WordPress generates the CSS, and the other preset slugs in the scale extend up/down from this middle number in increments of `10`.
+
+**Note #2:** The spacing scale will never go below `--wp--preset--spacing--10`. For scales with more than 10 steps, the bottom end of the scale will not generate presets because the `mediumStep` is always set to `--wp--preset--spacing--50`.
+
+#### Custom spacing sizes
+
+For theme authors who want more precise control over the spacing options available to users, they can build out the individual spacing sizes instead of using the WordPress spacing scale system. This provides control over the option’s name, size, and slug.
+
+The `spacingSizes` option allows themes to define an array of size objects. Each size object accepts three values:
+
+*   **name:** The human-readable title for the size, which can be translated.
+*   **size:** A valid CSS size. This can be a number and unit, a fluid size using `clamp()`, or a reference to another custom CSS property.
+*   **slug:** The slug for the size, which will be appended to a generated CSS custom property: `--wp--preset--spacing--{slug}`.
+
+The following example is an example of creating a five-step scale that increments by `0.25rem`. However, theme authors are not limited in how they set up their sizes.
+
+```json
+{
+    "version": 2,
+    "settings": {
+        "spacing": {
+            "spacingSizes": [
+                {
+                    "name": "Step 1",
+                    "size": "0.25rem",
+                    "slug": "10"
+                },
+                {
+                    "name": "Step 2",
+                    "size": "0.5rem",
+                    "slug": "20"
+                },
+                {
+                    "name": "Step 3",
+                    "size": "0.75rem",
+                    "slug": "30"
+                },
+                {
+                    "name": "Step 4",
+                    "size": "1rem",
+                    "slug": "40"
+                },
+                {
+                    "name": "Step 5",
+                    "size": "1.25rem",
+                    "slug": "50"
+                }
+            ]
+        }
+    }
+}
+```
+
+For theme authors who want to implement fluid spacing sizes, they should use the `spacingSizes` setting instead of `spacingScale`. This allows for the use of custom `clamp()` values.
+
+#### Disabling custom spacing size
+
+Theme authors can force users into using the standardized scale set by the theme. To do this, they must set the `customSpacingSize` setting to `false` (defaults to `true`). This disables the custom spacing option in the editor UI but leaves the control for the theme’s defined sizes available.
+
+```json
+{
+    "version": 2,
+    "settings": {
+        "spacing": {
+            "customSpacingSize": false
+        }
+    }
 }
 ```
 
@@ -351,7 +488,7 @@ Example:
 		"color": {
 			"link": true
                  },
-                "typography": { 
+                "typography": {
                          "lineHeight": true
                 }
          }
@@ -364,6 +501,8 @@ Or, you can enable `AppearanceTools` to enable these features in one single sett
 *   color: link
 *   spacing: blockGap, margin, padding
 *   typography: lineHeight
+*   dimensions: minHeight
+*   position: sticky
 
 ```
 {
@@ -429,7 +568,7 @@ Styles that are applied to blocks are placed under *styles.blocks.BLOCKNAME*:
 
 ### `Theme.json` elements
 
-Blocks can have multiple HTML elements. You can use `elements` to style headings (H1-H6) and links inside blocks.  
+Blocks can have multiple HTML elements. You can use `elements` to style headings (H1-H6) and links inside blocks.
 In this example, background color and padding are added to the read more link inside the post excerpt block:
 
 ```
@@ -461,7 +600,7 @@ In this example, background color and padding are added to the read more link in
 
 ## Assigning template parts
 
-You assign default template parts to template areas in the templateParts section.  
+You assign default template parts to template areas in the templateParts section.
 Add three keys: `name`, the file name of the template part file without the file extension, `area`, the name of the template area, and `title`, the visible name in the editor. There are three template areas to choose from: header, footer, and uncategorized (general).
 
 Example from Twenty Twenty-Two:
@@ -493,9 +632,9 @@ Example from Twenty Twenty-Two:
 
 ## Defining custom templates
 
-In a classic theme, custom page templates are identified with a file header. In a block theme, you can list block templates in the `theme.json` file.  
-All templates that are listed in the customTemplates section of `theme.json` are selectable in the Site Editor. For templates to be editable in the template editor, the template’s file name needs to be prefixed with the post type (usually `post-` or `page-`).  
-  
+In a classic theme, custom page templates are identified with a file header. In a block theme, you can list block templates in the `theme.json` file.
+All templates that are listed in the customTemplates section of `theme.json` are selectable in the Site Editor. For templates to be editable in the template editor, the template’s file name needs to be prefixed with the post type (usually `post-` or `page-`).
+
 Add two keys: `name`, the file name of the template part file without the file extension, `title`, the visible name in the editor. There is also an optional setting where you decide which post types that can use the template. The key is `postTypes`, followed by the name of the post type:
 
 ```
@@ -542,14 +681,10 @@ With the below example, the users see “Dark” as the label for this style var
 *   [Theme.json How-to Guide](https://developer.wordpress.org/block-editor/how-to-guides/themes/theme-json/)
 *   [Theme.json reference](https://developer.wordpress.org/block-editor/reference-guides/theme-json-reference)
 
-Changelog:
-
+*   **Updated** 2023-2-24 Added color slug recommendations.
+*   **Updated** 2023-01-16 Added spacing scale, custom spacing scale, custom spacing sizes, and disabling custom spacing size sections.
 *   **Updated** 2022-08-05 Added notes to the Layout section to clarify differences between classic and `theme.json` wide/full layouts.
 *   **Updated** 2022-07-13 Added information about enabling WP\_DEBUG to disable cache for theme.json.
 *   **Updated** 2022-05-17 Added Global Styles variations.
 *   **Updated** 2022-02-15. Added % to spacing units, added information about templateParts and customTemplates.
-*   **Created** 2022-01-20
-
-* * *
-
-Written by @pbking and @poena.
+*   **Created** 2022-02

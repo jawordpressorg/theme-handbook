@@ -88,7 +88,7 @@ The archive post type template is used when visitors request a custom post type 
 
 The page template is used when visitors request individual pages, which are a built-in template.
 
-**page-{slug}.php (classic theme) or archive-{post-type}.html (block theme)**
+**page-{slug}.php (classic theme) or page-{slug}.html (block theme)**
 
 The page slug template is used when visitors request a specific page, for example one with the “about” slug (page-about.php).
 
@@ -110,9 +110,9 @@ The author page template is used whenever a visitor loads an author page.
 
 **date.php (classic theme) or date.html (block theme)**
 
-The date/time template is used when posts are requested by date or time. For example, the pages generated with these slugs:  
-http://example.com/blog/2014/  
-http://example.com/blog/2014/05/  
+The date/time template is used when posts are requested by date or time. For example, the pages generated with these slugs:
+http://example.com/blog/2014/
+http://example.com/blog/2014/05/
 http://example.com/blog/2014/05/26/
 
 **archive.php (classic theme) or archive.html (block theme)**
@@ -159,9 +159,11 @@ For example, in your `index.php` you can include other files in your final gener
 
 Here is an example of WordPress template tags to *include* specific templates into your page:
 
-<?php get\_sidebar(); ?>
-<?php get\_template\_part( 'featured-content' ); ?>
-<?php get\_footer(); ?>
+```php
+<?php get_sidebar(); ?>
+<?php get_template_part( 'featured-content' ); ?>
+<?php get_footer(); ?>
+```
 
 There’s an entire page on [Template Tags](https://developer.wordpress.org/themes/basics/template-tags/ "Template Tags") that you can dive into to learn all about them.
 
@@ -173,7 +175,7 @@ In block themes you use blocks instead of template tags. Block markup is the HTM
 
 To include a header or footer template part, add the block markup for the template part. The `slug` is the name of the part. If the file you want to include is called `header.html`, then the slug is “header”:
 
-```
+```markup
 <!-- wp:template-part {"slug":"header"} /-->
 (your page content)
 <!-- wp:template-part {"slug":"footer"} /-->
@@ -181,6 +183,6 @@ To include a header or footer template part, add the block markup for the templa
 
 To include the search form, use the block markup for the search block:
 
-```
+```markup
 <!-- wp:search {"label":"Search","buttonText":"Search"} /-->
 ```

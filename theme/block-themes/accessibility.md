@@ -1,4 +1,4 @@
-# Accessibility
+# Block theme accessibility
 
 Block themes support accessibility and simplify the process for adding accessibility.
 
@@ -6,19 +6,19 @@ Block themes support accessibility and simplify the process for adding accessibi
 
 Group, Template part, and Query blocks can become a landmark. There are two ways to create landmark.
 
-**Using block markup**  
+**Using block markup**
 `”tagName":"header”` creates header landmark.
 
 ```
-<!-- wp:group {"tagName":"header"} -->
+<!-- wp:group {"tagName":"header","layout":{"type":"constrained"}} -->
 <header class="wp-block-group"><!-- wp:site-title /--></header>
 <!-- /wp:group -->
 ```
 
-**Using site editor**  
-HTML element under Advanced section in the Block panel provides the following landmark options.  
+**Using site editor**
+HTML element under Advanced section in the Block panel provides the following landmark options.
 
-HTML element under Advanced section in the Block panel provides the following landmark options.  
+HTML element under Advanced section in the Block panel provides the following landmark options.
 `<header>` `<main>` `<section>` `<article>` `<aside>` `<footer>`.
 
 ## Skip to content
@@ -26,7 +26,7 @@ HTML element under Advanced section in the Block panel provides the following la
 By selecting `<main>` landmark on Group, Template part, or Query block generates the Skip to Content link. Learn more about the [skip to content link here](https://make.wordpress.org/themes/handbook/review/required/#3-accessibility).
 
 ```
-<!-- wp:group {"tagName":"main"} -->
+<!-- wp:group {"tagName":"main","layout":{"type":"constrained"}} -->
 <main class="wp-block-group"><!-- wp:heading -->
 <h2 id="hello-world">Hello World</h2>
 <p>Welcome to WordPress. This is your first post. </p>
@@ -48,4 +48,5 @@ Navigation block enables the following accessibility without additional code.
 
 Changelog:
 
+*   **Updated** 2023-03-08 Updated code examples to reflect WordPress 6.1 block markup.
 *   **Created** 2022-01-25

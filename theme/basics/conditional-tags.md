@@ -6,11 +6,13 @@ The code begins by checking to see **if** a statement is true or false. If the s
 
 For example, you could ask if a user is logged in, and then provide a different greeting depending on the result.
 
-    if ( is\_user\_logged\_in() ):
-        echo 'Welcome, registered user!';
-    else:
-        echo 'Welcome, visitor!';
-    endif;
+```php
+if ( is_user_logged_in() ) :
+	echo 'Welcome, registered user!';
+else :
+	echo 'Welcome, visitor!';
+endif;
+```
 
 Note the close relation these tags have to [WordPress Template Hierarchy](https://developer.wordpress.org/themes/basics/template-hierarchy/).
 
@@ -63,31 +65,45 @@ This condition returns true when the Dashboard or the administration panels are 
 
 Returns true when any single Post (or attachment, or custom Post Type) is being displayed. This condition returns false if you are on a page.
 
-**is\_single( ’17’ )**
+```php
+is_single( '17' );
+```
 
 [is\_single()](https://developer.wordpress.org/reference/functions/is_single/) can also check for certain posts by ID and other parameters. The above example proves true when Post 17 is being displayed as a single Post.
 
-**is\_single( ‘Irish Stew’ )**
+```php
+is_single( 'Irish Stew' );
+```
 
 Parameters include Post titles, as well. In this case, it proves true when the Post with title “Irish Stew” is being displayed as a single Post.
 
-**is\_single( ‘beef-stew’ )**
+```php
+is_single( 'beef-stew' );
+```
 
 Proves true when the Post with Post Slug “beef-stew” is being displayed as a single Post.
 
-**is\_single( array( 17, ‘beef-stew’, ‘Irish Stew’ ) )**
+```php
+is_single( array( 17, 'beef-stew', 'Irish Stew' ) );
+```
 
 Returns true when the single post being displayed is either post ID 17, or the post\_name is “beef-stew”, or the post\_title is “Irish Stew”.
 
-**is\_single( array( 17, 19, 1, 11 ) )**
+```php
+is_single( array( 17, 19, 1, 11 ) );
+```
 
 Returns true when the single post being displayed is either post ID = 17, post ID = 19, post ID = 1 or post ID = 11.
 
-**is\_single( array( ‘beef-stew’, ‘pea-soup’, ‘chilli’ ) )**
+```php
+is_single( array( 'beef-stew', 'pea-soup', 'chilli' ) );
+```
 
 Returns true when the single post being displayed is either the post\_name “beef-stew”, post\_name “pea-soup” or post\_name “chilli”.
 
-**is\_single( array( ‘Beef Stew’, ‘Pea Soup’, ‘Chilli’ ) )**
+```php
+is_single( array( 'Beef Stew', 'Pea Soup', 'Chilli' ) );
+```
 
 Returns true when the single post being displayed is either the post\_title is “Beef Stew”, post\_title is “Pea Soup” or post\_title is “Chilli”.
 
@@ -105,7 +121,10 @@ Returns true for any is\_single, is\_page, and is\_attachment. It does allow tes
 
 Returns true if the “Stick this post to the front page” check box has been checked for the current post. In this example, no post ID argument is given, so the post ID for the Loop post is used.
 
-**is\_sticky( ’17’ )**  
+```php
+is_sticky( '17' );
+```
+
 Returns true when Post 17 is considered a sticky post.
 
 ### A Post Type
@@ -114,7 +133,9 @@ Returns true when Post 17 is considered a sticky post.
 
 You can test to see if the current post is of a certain type by including [](https://developer.wordpress.org/reference/functions/get_post_type/ "Function Reference/get_post_type")[get\_post\_type()](https://developer.wordpress.org/reference/functions/get_post_type/) in your conditional. It’s not really a conditional tag, but it returns the [registered post type](https://developer.wordpress.org/reference/functions/register_post_type/ "Function Reference/Register Post Type") of the current post.
 
-**if ( ‘book’ == [get\_post\_type()](https://developer.wordpress.org/reference/functions/get_post_type/) ) …**
+```php
+if ( 'book' == get_post_type() ) { ... }
+```
 
 [](https://developer.wordpress.org/reference/functions/post_type_exists/ "Function Reference/post_type_exists")[post\_type\_exists()](https://developer.wordpress.org/reference/functions/post_type_exists/)
 
@@ -126,7 +147,9 @@ Returns true if a given post type is a registered post type. This does not test 
 
 Returns true if this $post\_type has been set with hierarchical support when registered.
 
-**is\_post\_type\_hierarchical( ‘book’ )**
+```php
+ is_post_type_hierarchical( 'book' );
+```
 
 Returns true if the book post type was registered as having support for hierarchical.
 
@@ -136,7 +159,9 @@ Returns true if the book post type was registered as having support for hierarch
 
 Returns true on any post type archive.
 
-**is\_post\_type\_archive( $post\_type )**
+```php
+is_post_type_archive( $post_type );
+```
 
 Returns true if on a post type archive page that matches $post\_type (can be a single post type or an array of post types).
 
@@ -160,23 +185,33 @@ This section refers to WordPress Pages, not any generic webpage from your blog, 
 
 When any Page is being displayed.
 
-**is\_page( ’42’ )**
+```php
+is_page( '42' );
+```
 
 When Page 42 (ID) is being displayed.
 
-**is\_page( ‘About Me And Joe’ )**
+```php
+is_page( 'About Me And Joe' );
+```
 
 When the Page with a *post\_title* of “About Me And Joe” is being displayed.
 
-**is\_page( ‘about-me’ )**
+```php
+is_page( 'about-me' );
+```
 
 When the Page with a *post\_name* (slug) of “about-me” is being displayed.
 
-**is\_page( array( 42, ‘about-me’, ‘About Me And Joe’ ) )**
+```php
+is_page( array( 42, 'about-me', 'About Me And Joe' ) );
+```
 
 Returns true when the Pages displayed is either *post ID* = 42, or *post\_name* is “about-me”, or *post\_title* is “About Me And Joe”.
 
-**is\_page( array( 42, 54, 6 ) )**
+```php
+is_page( array( 42, 54, 6 ) );
+```
 
 Returns true when the Pages displayed is either *post ID* = 42, or *post ID* = 54, or *post ID* = 6.
 
@@ -186,50 +221,67 @@ You can use this code to check whether you’re on the nth page in a Post or Pag
 
 ##### Example 1
 
+```php
 <?php
-  $paged = $wp\_query->get( 'page' );
-  if ( ! $paged || $paged < 2 ) {
-    // This is not a paginated page (or it's simply the first page of a paginated page/post)    } else {
-    // This is a paginated page.
-} ?>
+$paged = $wp_query->get( 'page' );
+if ( ! $paged || $paged < 2 ) :
+	// This is not a paginated page (or it's simply the first page of a paginated page/post)
+else :
+	// This is a paginated page.
+endif;
+```
 
 ##### Example 2
 
-<?php $paged = get\_query\_var( 'page' ) ? get\_query\_var( 'page' ) : false;
-    if ( $paged == false )  {
-    // This is not a paginated page (or it's simply the first page of a paginated page/post) }  else  {
-    // This is a paginated page.
-    }
-?>
+```php
+<?php
+$paged = get_query_var( 'page' ) ? get_query_var( 'page' ) : false;
+if ( $paged == false ) :
+	// This is not a paginated page (or it's simply the first page of a paginated page/post)
+else :
+	// This is a paginated page.
+endif;
+```
 
 #### Testing for Sub-Pages
 
 There is no `is_subpage()` function, but you can test this with a little code:
 
-**Snippet 1**
+```php
+<?php
+global $post; // if outside the loop
 
-<?php  global $post; // if outside the loop
-   if ( is\_page() && $post->post\_parent ) {
-     // This is a subpage
-   } else {
-     // This is not a subpage
-   }
-?>
+if ( is_page() && $post->post_parent ) :
+	// This is a subpage
+else :
+	// This is not a subpage
+endif;
+```
+
+**Snippet 1**
 
 You can create your own is\_subpage() function using the code in Snippet 2. Add it to your functions.php file. It tests for a parent page in the same way as Snippet 1, but will return the ID of the page parent if there is one, or false if there isn’t.
 
 **Snippet 2**
 
-function is\_subpage() {
-    global $post;                              // load details about this page
+```php
+<?php
+function is_subpage() {
+	// Load details about this page.
+	global $post;
 
-    if ( is\_page() && $post->post\_parent ) {   // test to see if the page has a parent
-        return $post->post\_parent;             // return the ID of the parent post
+	// Test to see if the page has a parent
+	if ( is_page() && $post->post_parent ) {
+		// return the ID of the parent post
+		return $post->post_parent;
 
-    } else {                                   // there is no parent so ...
-        return false;                          // ... the answer to the question is false
-    }
+	// there is no parent so ...
+	} else {
+		// ... the answer to the question is false
+		return false;
+	}
 }
+```
 
 It is advisable to use a function like that in Snippet 2, rather than using the simple test like Snippet 1, if you plan to test for sub-pages frequently.
 
@@ -237,37 +289,24 @@ To test if the parent of a page is a specific page, for instance “About” (pa
 
 **Snippet 3**
 
-<?php if ( is\_page( 'about' ) || '2' == $post->post\_parent ) {
-    // the page is "About", or the parent of the page is "About"
-    $bannerimg = 'about.jpg';
-} elseif ( is\_page( 'learning' ) || '56' == $post->post\_parent ) {
-    $bannerimg = 'teaching.jpg';
-} elseif ( is\_page( 'admissions' ) || '15' == $post->post\_parent ) {
-    $bannerimg = 'admissions.jpg';
+```php
+<?php
+// The page is "About", or the parent of the page is "About".
+if ( is_page( 'about' ) || '2' == $post->post_parent ) {
+	$bannerimg = 'about.jpg';
+} elseif ( is_page( 'learning' ) || '56' == $post->post_parent ) {
+	$bannerimg = 'teaching.jpg';
+} elseif ( is_page( 'admissions' ) || '15' == $post->post_parent ) {
+	$bannerimg = 'admissions.jpg';
+// Just in case we are at an unclassified page, perhaps the home page
 } else {
-    $bannerimg = 'home.jpg'; // just in case we are at an unclassified page, perhaps the home page
+	$bannerimg = 'home.jpg';
 }
-?>
+```
 
 Snippet 4 is a function that allows you to carry out the tests above more easily. This function will return true if we are looking at the page in question (so “About”) or one of its sub pages (so a page with a parent with ID “2”).
 
 **Snippet 4**
-
-function is\_tree( $pid ) {      // $pid = The ID of the page we're looking for pages underneath
-    global $post;               // load details about this page
-
-    if ( is\_page($pid) )
-        return true;            // we're at the page or at a sub page
-
-    $anc = get\_post\_ancestors( $post->ID );
-    foreach ( $anc as $ancestor ) {
-        if( is\_page() && $ancestor == $pid ) {
-            return true;
-        }
-    }
-
-    return false;  // we aren't at the page, and the page is not an ancestor
-}
 
 Add Snippet 4 to your functions.php file, and call is\_tree( ‘id’ ) to see if the current page is the page, or is a sub page of the page. In Snippet 3, is\_tree( ‘2’ ) would replace “is\_page( ‘about’ ) || ‘2’ == $post->post\_parent” inside the first if tag.
 
@@ -281,7 +320,9 @@ Allows you to determine whether or not you are in a page template or if a specif
 
 Is a Page Template being used?
 
-**is\_page\_template( ‘about.php’ )**
+```php
+is_page_template( 'about.php' );
+```
 
 Is Page Template ‘about’ being used? Note that unlike other conditionals, if you want to specify a particular Page Template, you need to use the filename, such as about.php or my\_page\_template.php.
 
@@ -293,31 +334,45 @@ Note: if the file is in a subdirectory you must include this as well. Meaning th
 
 When a Category archive page is being displayed.
 
-**is\_category( ‘9’ )**
+```php
+is_category( '9' );
+```
 
 When the archive page for Category 9 is being displayed.
 
-**is\_category( ‘Stinky Cheeses’ )**
+```php
+is_category( 'Stinky Cheeses' );
+```
 
 When the archive page for the Category with Name “Stinky Cheeses” is being displayed.
 
-**is\_category( ‘blue-cheese’ )**
+```php
+is_category( 'blue-cheese' );
+```
 
 When the archive page for the Category with Category Slug “blue-cheese” is being displayed.
 
-**is\_category( array( 9, ‘blue-cheese’, ‘Stinky Cheeses’ ) )**
+```php
+is_category( array( 9, 'blue-cheese', 'Stinky Cheeses' ) );
+```
 
 Returns true when the category of posts being displayed is either term\_ID 9, or slug “blue-cheese”, or name “Stinky Cheeses”.
 
-**in\_category( ‘5’ )**
+```php
+in_category( '5' );
+```
 
 Returns true if the current post is in the specified category id.
 
-**in\_category( array( 1, 2, 3 ) )**
+```php
+in_category( array( 1, 2, 3 ) );
+```
 
 Returns true if the current post is in either category 1, 2, or 3.
 
-**! in\_category( array( 4, 5, 6 ) )**
+```php
+! in_category( array( 4, 5, 6 ) );
+```
 
 Returns true if the current post is NOT in either category 4, 5, or 6. Note the ! at the beginning.
 
@@ -331,23 +386,33 @@ See also [](https://developer.wordpress.org/reference/functions/is_archive/ "Fun
 
 When any Tag archive page is being displayed.
 
-**is\_tag( ‘mild’ )**
+```php
+is_tag( 'mild' );
+```
 
 When the archive page for tag with the slug of ‘mild’ is being displayed.
 
-**is\_tag( array( ‘sharp’, ‘mild’, ‘extreme’ ) )**
+```php
+is_tag( array( 'sharp', 'mild', 'extreme' ) );
+```
 
 Returns true when the tag archive being displayed has a slug of either “sharp”, “mild”, or “extreme”.
 
-**[has\_tag()](https://developer.wordpress.org/reference/functions/has_tag/)**
+```php
+has_tag();
+```
 
 When the current post has a tag. Must be used inside The Loop.
 
-**has\_tag( ‘mild’ )**
+```php
+has_tag( 'mild' );
+```
 
 When the current post has the tag ‘mild’.
 
-**has\_tag( array( ‘sharp’, ‘mild’, ‘extreme’ ) )**
+```php
+has_tag( array( 'sharp', 'mild', 'extreme' ) );
+```
 
 When the current post has any of the tags in the array.
 
@@ -359,15 +424,21 @@ See also [](https://developer.wordpress.org/reference/functions/is_archive/ "Fun
 
 When any Taxonomy archive page is being displayed.
 
-**is\_tax( ‘flavor’ )**
+```php
+is_tax( 'flavor' );
+```
 
 When a Taxonomy archive page for the flavor taxonomy is being displayed.
 
-**is\_tax( ‘flavor’, ‘mild’)**
+```php
+is_tax( 'flavor', 'mild');
+```
 
 When the archive page for the flavor taxonomy with the slug of ‘mild’ is being displayed.
 
-**is\_tax( ‘flavor’, array( ‘sharp’, ‘mild’, ‘extreme’ ) )**
+```php
+is_tax( 'flavor', array( 'sharp', 'mild', 'extreme' ) );
+```
 
 Returns true when the flavor taxonomy archive being displayed has a slug of either “sharp”, “mild”, or “extreme”.
 
@@ -375,11 +446,15 @@ Returns true when the flavor taxonomy archive being displayed has a slug of eith
 
 Check if the current post has any of given terms. The first parameter should be an empty string. It expects a taxonomy slug/name as a second parameter.
 
-**has\_term( ‘green’, ‘color’ )**
+```php
+has_term( 'green', 'color' );
+```
 
 When the current post has the term ‘green’ from taxonomy ‘color’.
 
-**has\_term( array( ‘green’, ‘orange’, ‘blue’ ), ‘color’ )**
+```php
+has_term( array( 'green', 'orange', 'blue' ), 'color' );
+```
 
 When the current post has any of the terms in the array.
 
@@ -397,19 +472,27 @@ When a particular taxonomy is registered via [](https://developer.wordpress.org/
 
 When any Author page is being displayed.
 
-**is\_author( ‘4’ )**
+```php
+is_author( '4' );
+```
 
 When the archive page for Author number (ID) 4 is being displayed.
 
-**is\_author( ‘Vivian’ )**
+```php
+is_author( 'Vivian' );
+```
 
 When the archive page for the Author with Nickname “Vivian” is being displayed.
 
-**is\_author( ‘john-jones’ )**
+```php
+is_author( 'john-jones' );
+```
 
 When the archive page for the Author with Nicename “john-jones” is being displayed.
 
-**is\_author( array( 4, ‘john-jones’, ‘Vivian’ ) )**
+```php
+is_author( array( 4, 'john-jones', 'Vivian' ) );
+```
 
 When the archive page for the author is either user ID 4, or user\_nicename “john-jones”, or nickname “Vivian”.
 
@@ -483,11 +566,15 @@ When an attachment document to a post or Page is being displayed. An attachment 
 
 When any of the following return true: `is_single()`, `is_page()` or `is_attachment()`.
 
-**is\_singular( ‘book’ )**
+```php
+is_singular( 'book' );
+```
 
 True when viewing a post of the Custom Post Types book.
 
-**is\_singular( array( ‘newspaper’, ‘book’ ) )**
+```php
+is_singular( array( 'newspaper', 'book' ) );
+```
 
 True when viewing a post of the Custom Post Types newspaper or book.
 
@@ -519,30 +606,35 @@ When the current post has an excerpt
 
 When the post 42 (ID) has an excerpt.
 
-<?php // Get $post if you're inside a function global $post;
-   if ( empty( $post->post\_excerpt ) ) {
-    // This post has no excerpt
-   } else {
-    // This post has excerpt
-  }
-?>
+```php
+<?php
+// Get $post if you're inside a function global $post;
+if ( empty( $post->post_excerpt ) ) {
+	// This post has no excerpt
+} else {
+	// This post has excerpt
+}
+```
 
-**Other use**  
+**Other use**
 When you need to hide the auto displayed excerpt and only display your post’s excerpts.
 
+```php
 <?php
-  if ( ! has\_excerpt() ) {
-      echo '';
-  } else {
-      the\_excerpt();
-  }
-?>
+if ( ! has_excerpt() ) {
+	echo '';
+} else {
+	the_excerpt();
+}
+```
 
 Replace auto excerpt for a text or code.
 
-<?php if ( ! has\_excerpt() ) {
-    // your text or code
-} ?>
+```php
+<?php if ( ! has_excerpt() ) {
+	// your text or code
+}
+```
 
 ### Has A Nav Menu Assigned
 
@@ -608,32 +700,31 @@ Here are working samples to demonstrate how to use these conditional tags.
 
 This example shows how to use `[is_single()](https://developer.wordpress.org/reference/functions/is_single/)` to display something specific only when viewing a single post page:
 
-if ( is\_single() ) {
-
-   echo 'This is just one of many fabulous entries in the ' . single\_cat\_title() . ' category!';
-
+```php
+<?php
+if ( is_single() ) {
+	echo 'This is just one of many fabulous entries in the ' . single_cat_title() . ' category!';
 }
+```
 
 Another example of how to use Conditional Tags in the Loop. Choose to display content or excerpt in index.php when this is a display single post or the home page.
 
-if ( is\_home() || is\_single() ) {
-
-   the\_content();
-
+```php
+<?php
+if ( is_home() || is_single() ) {
+	the_content();
+} else {
+	the_excerpt();
 }
-else {
-
-   the\_excerpt();
-
-}
+```
 
 When you need display a code or element, in a place that is NOT the home page.
 
-<?php if ( ! is\_home() ) {
-
- // Insert your markup ...
-
-} ?>
+```php
+<?php if ( ! is_home() ) {
+	// Insert your markup ...
+}
+```
 
 ### Check for Multiple Conditionals
 
@@ -641,87 +732,105 @@ You can use [PHP operators](https://www.php.net/manual/en/language.operators.php
 
 This is handy if you need to check whether combinations of conditionals evaluate to true or false.
 
-// Check to see if any of 2 conditionals are met
-if ( is\_single() || is\_page() ) {
- // If it's a single post or a single page, do something special
+```php
+<?php
+
+// Check to see if any of 2 conditionals are met.
+if ( is_single() || is_page() ) {
+	// If it's a single post or a single page, do something special.
+}
+if ( is_archive() && ! is_category( 'nachos' ) ) {
+	// If it's an archive page for any category EXCEPT nachos, do something special.
+}
+```
+
+```php
+<?php
+
+// Check to see if 3 conditionals are met.
+if ( $query->is_main_query() && is_post_type_archive( 'products' ) && ! is_admin() ) {
+	// If it's the main query on a custom post type archive for Products.
+	// And if we're not in the WordPress admin, then do something special.
 }
 
-if ( is\_archive() && ! is\_category( 'nachos' ) ) {
- // If it's an archive page for any category EXCEPT nachos, do something special
+if ( is_post_type_archive( 'movies' ) || is_tax( 'genre' ) || is_tax( 'actor' ) ) {
+	// If it's a custom post type archive for Movies.
+	// Or it's a taxonomy archive for Genre.
+	// Or it's a taxonomy archive for Actor, do something special.
 }
-
-// Check to see if 3 conditionals are met
-if ( $query->is\_main\_query() && is\_post\_type\_archive( 'products' ) && ! is\_admin() ) {
-
- // If it's the main query on a custom post type archive for Products
- // And if we're not in the WordPress admin, then do something special
-
-}
-if ( is\_post\_type\_archive( 'movies' ) || is\_tax( 'genre' ) || is\_tax( 'actor' )  ) {
- // If it's a custom post type archive for Movies
- // Or it's a taxonomy archive for Genre
- // Or it's a taxonomy archive for Actor, do something special
-}
+```
 
 ### Date Based Differences
 
 If someone browses our site by date, let’s distinguish posts in different years by using different colors:
 
-<?php // this starts The Loop
-if ( have\_posts() ) : while ( have\_posts() ) : the\_post(); ?>
-<h2 id="post-<?php the\_ID(); ?>">
-<a href="<?php the\_permalink() ?>" rel="bookmark"><?php the\_title(); ?></a></h2>
+```php
+<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
-<small><?php the\_time('F jS, Y') ?> by <?php the\_author() ?></small>
+	<h2 id="post-<?php the_ID(); ?>">
+		<a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
+	</h2>
 
-<?php
-// are we showing a date-based archive?
-if ( is\_date() ) {
- if ( date( 'Y' ) != get\_the\_date( 'Y' ) ) {
- // this post was written in a previous year
- // so let's style the content using the "oldentry" class
- echo '<div class="oldentry">';
- } else {
- echo '<div class="entry">';
- }
-} else {
- echo '<div class="entry">';
-}
+	<small>
+		<?php the_time( 'F jS, Y' ); ?> by <?php the_author(); ?>
+	</small>
 
-the\_content( 'Read the rest of this entry »' );
-?></div>
+	<?php
+	// Are we showing a date-based archive?
+	if ( is_date() ) {
+		if ( date( 'Y' ) != get_the_date( 'Y' ) ) {
+			// this post was written in a previous year
+			// so let's style the content using the "oldentry" class
+			echo '<div class="oldentry">';
+		} else {
+			echo '<div class="entry">';
+		}
+	} else {
+		echo '<div class="entry">';
+	}
+	the_content( 'Read the rest of this entry »' );
+	echo '</div>';
+	?>
+
+<?php endwhile; endif; ?>
+```
 
 ### Variable Sidebar Content
 
 This example will display different content in your sidebar based on what page the reader is currently viewing.
 
+```php
 <div id="sidebar">
-<?php // let's generate info appropriate to the page being displayed
-if ( is\_home() ) {
- // we're on the home page, so let's show a list of all top-level categories
-    wp\_list\_categories( 'optionall=0&sort\_column=name&list=1&children=0' );
-} elseif ( is\_category() ) {
- // we're looking at a single category view, so let's show \_all\_ the categories
-    wp\_list\_categories( 'optionall=1&sort\_column=name&list=1&children=1&hierarchical=1' )
-} elseif ( is\_single() ) {
- // we're looking at a single page, so let's not show anything in the sidebar
-} elseif ( is\_page() ) {
- // we're looking at a static page. Which one?
- if ( is\_page( 'About' ) ) {
- // our about page.
- echo "This is my about page!";
- } elseif ( is\_page( 'Colophon' ) ) {
- echo "This is my colophon page, running on WordPress " . bloginfo( 'version' ) . "";
- } else {
- // catch-all for other pages
- echo "Vote for Pedro!";
- }
+
+<?php
+// Let's generate info appropriate to the page being displayed.
+if ( is_home() ) {
+	// We're on the home page, so let's show a list of all top-level categories.
+	wp_list_categories( 'optionall=0&sort_column=name&list=1&children=0' );
+} elseif ( is_category() ) {
+	// We're looking at a single category view, so let's show _all_ the categories.
+	wp_list_categories( 'optionall=1&sort_column=name&list=1&children=1&hierarchical=1' );
+} elseif ( is_single() ) {
+	// We're looking at a single page, so let's not show anything in the sidebar.
+} elseif ( is_page() ) {
+	// We're looking at a static page. Which one?
+	if ( is_page( 'About' ) ) {
+		// Our about page.
+		echo 'This is my about page!';
+	} elseif ( is_page( 'Colophon' ) ) {
+		echo 'This is my colophon page, running on WordPress ' . bloginfo( 'version' ) . '';
+	} else {
+		// Catch-all for other pages.
+		echo 'Vote for Pedro!';
+	}
 } else {
- // catch-all for everything else (archives, searches, 404s, etc)
- echo "Pedro offers you his protection.";
-} // That's all, folks!
+	// Catch-all for everything else (archives, searches, 404s, etc)
+	echo 'Pedro offers you his protection.';
+}
 ?>
-</div>
+
+</div><!-- #sidebar -->
+```
 
 ### Helpful 404 Page
 
@@ -731,11 +840,13 @@ The [Creating an Error 404 Page](https://codex.wordpress.org/Creating_an_Error_4
 
 At times queries performed in other templates such as sidebar.php may corrupt certain conditional tags. For instance, in header.php a conditional tag works properly but doesn’t work in a theme’s footer.php. The trick is to put wp\_reset\_query before the conditional test in the footer. For example:
 
-<?php wp\_reset\_query();
- if ( is\_page( '2' ) ) {
-  echo 'This is page 2!';
- }
-?>
+```php
+<?php
+wp_reset_query();
+if ( is_page( '2' ) ) {
+	echo 'This is page 2!';
+}
+```
 
 ## Conditional Tags Index
 

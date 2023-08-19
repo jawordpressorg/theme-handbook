@@ -6,6 +6,7 @@ One of the best ways to understand theme coding standards is to find examples of
 
 Packaged in every version of WordPress since version 3.0 (and named after the year they were released in), the default themes are some of the best to study how themes are built. This is because they are designed with broad use in mind and fully adhere to WordPress coding standards. You can download and study their theme files, and keep them around as examples to reference while learning how to develop your own themes:
 
+*   [Twenty Twenty-Three (block theme)](https://core.trac.wordpress.org/browser/trunk/src/wp-content/themes/twentytwentythree)
 *   [Twenty Twenty-Two (block theme)](https://core.trac.wordpress.org/browser/trunk/src/wp-content/themes/twentytwentytwo)
 *   [Twenty Twenty-One](https://core.trac.wordpress.org/browser/trunk/src/wp-content/themes/twentytwentyone)
 *   [Twenty Twenty](https://core.trac.wordpress.org/browser/trunk/src/wp-content/themes/twentytwenty)

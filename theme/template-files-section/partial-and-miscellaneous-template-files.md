@@ -14,42 +14,44 @@ Almost all themes have a `header.php` file as the functionality and maintainabil
 
 Below is an example of a header.php found in the twenty fifteen theme.
 
+```php
 <!DOCTYPE html>
-<html <?php language\_attributes(); ?> class="no-js">
+<html <?php language_attributes(); ?> class="no-js">
 <head>
     <meta charset="<?php bloginfo( 'charset' ); ?>">
     <meta name="viewport" content="width=device-width">
     <link rel="profile" href="http://gmpg.org/xfn/11">
-    <link rel="pingback" href="<?php bloginfo( 'pingback\_url' ); ?>">
-    <!--\[if lt IE 9\]>
-    <script src="<?php echo esc\_url( get\_template\_directory\_uri() ); ?>/js/html5.js"></script>
-    <!\[endif\]-->
-    <?php wp\_head(); ?>
+    <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+    <!--[if lt IE 9]>
+    <script src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/html5.js"></script>
+    <![endif]-->
+    <?php wp_head(); ?>
 </head>
- 
-<body <?php body\_class(); ?>>
+
+<body <?php body_class(); ?>>
     <div id="page" class="hfeed site">
-        <a class="skip-link screen-reader-text" href="#content"><?php \_e( 'Skip to content', 'twentyfifteen' ); ?></a>
+        <a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'twentyfifteen' ); ?></a>
         <div id="sidebar" class="sidebar">
             <header id="masthead" class="site-header" role="banner">
                 <div class="site-branding">
-                    <?php if ( is\_front\_page() && is\_home() ) : ?>
+                    <?php if ( is_front_page() && is_home() ) : ?>
                     <h1 class="site-title">
-                        <a href="<?php echo esc\_url( home\_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+                        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
                     </h1>
                     <?php else : ?>
-                    <a href="<?php echo esc\_url( home\_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+                    <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
                     <?php endif;
-                    $description = get\_bloginfo( 'description', 'display' );
-                    if ( $description || is\_customize\_preview() ) :
+                    $description = get_bloginfo( 'description', 'display' );
+                    if ( $description || is_customize_preview() ) :
                         echo $description;
                     endif; ?>
-                    <button class="secondary-toggle"><?php \_e( 'Menu and widgets', 'twentyfifteen' ); ?></button>
+                    <button class="secondary-toggle"><?php _e( 'Menu and widgets', 'twentyfifteen' ); ?></button>
                 </div><!-- .site-branding -->
             </header><!-- .site-header -->
-            <?php get\_sidebar(); ?>
+            <?php get_sidebar(); ?>
         </div><!-- .sidebar -->
         <div id="content" class="site-content">
+```
 
 Some of the code may look a little daunting at first, but if we break it down, it becomes simple enough. After the opening commment, the `head` is created. The template tag `wp_head()` pulls in all of our styles and any scripts that would appear in the head rather than the footer that we enqueued in our `functions.php` file.
 
@@ -65,37 +67,34 @@ Often developers will put [widgetized areas](https://developer.wordpress.org/the
 
 Here is an example of a `footer.php` file from the Twenty Fifteen theme.
 
-    </div>
- 
- 
-<!-- .site-content -->
- 
- 
- 
+```php
+</div><!-- .site-content -->
+
 <footer id="colophon" class="site-footer" role="contentinfo">
- 
- 
-<div class="site-info">
-            <?php /\*\* \* Fires before the Twenty Fifteen footer text for footer customization. \* \* @since Twenty Fifteen 1.0 \*/ do\_action( 'twentyfifteen\_credits' ); ?>
-            <a href="<?php echo esc\_url( \_\_( 'https://wordpress.org/', 'twentyfifteen' ) ); ?>"><?php printf( \_\_( 'Proudly powered by %s', 'twentyfifteen' ), 'WordPress' ); ?></a>
-        </div>
- 
- 
-<!-- .site-info -->
-    </footer>
- 
- 
-<!-- .site-footer -->
- 
-</div>
- 
- 
-<!-- .site -->
- 
-<?php wp\_footer(); ?>
- 
+
+	<div class="site-info">
+
+		<?php
+		/**
+		 * Fires before the Twenty Fifteen footer text for footer customization.
+		 *
+		 * @since Twenty Fifteen 1.0
+		 */
+		do_action( 'twentyfifteen_credits' );
+		?>
+		<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'twentyfifteen' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'twentyfifteen' ), 'WordPress' ); ?></a>
+
+	</div><!-- .site-info -->
+
+</footer><!-- .site-footer -->
+
+</div><!-- .site -->
+
+<?php wp_footer(); ?>
+
 </body>
 </html>
+```
 
 ## 404.php
 
@@ -103,54 +102,32 @@ When users try to visit a page on your website that doesn’t exist they’ll be
 
 Here is an example of a 404.php template file from the twenty fifteen theme.
 
-get\_header(); ?>
- 
- 
- 
+```php
+<?php get_header(); ?>
+
 <div id="primary" class="content-area">
-        <main id="main" class="site-main" role="main">
- 
- 
- 
-<section class="error-404 not-found">
- 
- 
-<header class="page-header">
- 
- 
-<h1 class="page-title"><?php \_e( 'Oops! That page can’t be found.', 'twentyfifteen' ); ?></h1>
- 
- 
-                </header>
- 
- 
-<!-- .page-header -->
- 
- 
- 
-<div class="page-content">
- 
- 
-<?php \_e( 'It looks like nothing was found at this location. Maybe try a search?', 'twentyfifteen' ); ?>
- 
- 
-                    <?php get\_search\_form(); ?>
-                </div>
- 
- 
-<!-- .page-content -->
-            </section>
- 
- 
-<!-- .error-404 -->
- 
-        </main><!-- .site-main -->
-    </div>
- 
- 
-<!-- .content-area -->
- 
-<?php get\_footer(); ?>
+
+	<main id="main" class="site-main" role="main">
+
+		<section class="error-404 not-found">
+
+			<header class="page-header">
+				<h1 class="page-title"><?php _e( 'Oops! That page can’t be found.', 'twentyfifteen' ); ?></h1>
+			</header><!-- .page-header -->
+
+			<div class="page-content">
+				<?php _e( 'It looks like nothing was found at this location. Maybe try a search?', 'twentyfifteen' ); ?>
+				<?php get_search_form(); ?>
+			</div><!-- .page-content -->
+
+		</section><!-- .error-404 -->
+
+	</main><!-- .site-main -->
+
+</div><!-- .content-area -->
+
+<?php get_footer(); ?>
+```
 
 ## Comments.php
 
@@ -164,32 +141,21 @@ A lot of themes utilize sidebars to display widgets.  For a sidebar to work in 
 
 Here is an example of a sidebar template file from the twenty fifteen theme. Notice at the bottom the sidebar is pulled in using `<?php dynamic_sidebar( 'sidebar-1' ); >`. Now whatever, widgets are put into that sidebar will display on the page that is using this pulling in this template.
 
-if ( has\_nav\_menu( 'primary' ) || has\_nav\_menu( 'social' ) || is\_active\_sidebar( 'sidebar-1' ) ) : >
-  
- 
- 
- 
-<div id="secondary" class="secondary"> 
- 
-    <?php if ( is\_active\_sidebar( 'sidebar-1' ) ) : >
-  
- 
- 
- 
-<div id="widget-area" class="widget-area" role="complementary">
-            <?php dynamic\_sidebar( 'sidebar-1' ); >
-        </div>
- 
-  
-    <!-- .widget-area -->
-    <?php endif; >
-  
-</div>
- 
-  
-<!-- .secondary -->
-  
-<?php endif; >
+```php
+<?php if ( has_nav_menu( 'primary' ) || has_nav_menu( 'social' ) || is_active_sidebar( 'sidebar-1' ) ) : ?>
+
+	<div id="secondary" class="secondary">
+
+		<?php if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
+			<div id="widget-area" class="widget-area" role="complementary">
+				<?php dynamic_sidebar( 'sidebar-1' ); ?>
+			</div><!-- .widget-area -->
+		<?php endif; ?>
+
+	</div><!-- .secondary -->
+
+<?php endif; ?>
+```
 
 ## Content-{$slug}.php
 
@@ -201,53 +167,28 @@ You’ll want to use the `get_template_part()` [template tag](https://developer.
 
 Here is twenty fifteen’s example of a `content-page.php` template file.
 
-<article id="post-<?php the\_ID(); ?>" <?php post\_class(); ?>>
-    <?php // Post thumbnail. twentyfifteen\_post\_thumbnail(); ?>
- 
- 
- 
-<header class="entry-header">
-        <?php the\_title( '
- 
-<h1 class="entry-title">', '</h1>
- 
- 
-' ); ?>
-    </header>
- 
- 
-<!-- .entry-header -->
- 
- 
- 
-<div class="entry-content">
-        <?php the\_content(); ?>
-        <?php wp\_link\_pages( array( 'before' => '
- 
-<div class="page-links"><span class="page-links-title">' . \_\_( 'Pages:', 'twentyfifteen' ) . '</span>',
-                'after'       => '</div>
- 
- 
-',
-                'link\_before' => '<span>',
-                'link\_after'  => '</span>',
-                'pagelink'    => '<span class="screen-reader-text">' . \_\_( 'Page', 'twentyfifteen' ) . ' </span>%',
-                'separator'   => '<span class="screen-reader-text">, </span>',
-            ) );
-        ?>
-    </div>
- 
- 
-<!-- .entry-content -->
- 
-    <?php edit\_post\_link( \_\_( 'Edit', 'twentyfifteen' ), '
- 
-<footer class="entry-footer"><span class="edit-link">', '</span></footer>
- 
- 
-<!-- .entry-footer -->' ); ?>
- 
-</article>
- 
- 
-<!-- #post-## -->
+```php
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+
+	<header class="entry-header">
+		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+	</header><!-- .entry-header -->
+
+	<div class="entry-content">
+		<?php the_content(); ?>
+		<?php
+		wp_link_pages( array(
+			'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'twentyfifteen' ) . '</span>',
+			'after'       => '</div>',
+			'link_before' => '<span>',
+			'link_after'  => '</span>',
+			'pagelink'    => '<span class="screen-reader-text">' . __( 'Page', 'twentyfifteen' ) . ' </span>%',
+			'separator'   => '<span class="screen-reader-text">, </span>',
+		) );
+		?>
+	</div><!-- .entry-content -->
+
+	<?php edit_post_link( __( 'Edit', 'twentyfifteen' ), '<footer class="entry-footer"><span class="edit-link">', '</span></footer><!-- .entry-footer -->' ); ?>
+
+</article><!-- #post-## -->
+```

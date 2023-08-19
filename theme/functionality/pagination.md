@@ -5,12 +5,8 @@ Pagination allows your user to *page* back and forth through multiple pages of c
 WordPress can use pagination when:
 
 *   Viewing lists of posts when more posts exist than can fit on one page, or
-*   Breaking up longer posts by manually by using the following tag.
-    
-    ```php
-     <!--nextpage--> 
-    ```
-    
+
+*   Breaking up longer posts by manually by using the following tag: `<!--nextpage-->`
 
 ## Using Pagination to Navigate Post Lists
 
@@ -25,25 +21,27 @@ This simplified example shows where you can add pagination functions for the mai
 ```php
 <?php if ( have_posts() ) : ?>
 
-	<!-- Add the pagination functions here. -->
+    <!-- Start the pagination functions before the loop. -->
+    <div class="nav-previous alignleft"><?php next_posts_link( 'Older posts' ); ?></div>
+    <div class="nav-next alignright"><?php previous_posts_link( 'Newer posts' ); ?></div>
+    <!-- End the pagination functions before the loop. -->
 
 	<!-- Start of the main loop. -->
-	<?php while ( have_posts() ) : the_post(); ?>
+	<?php while ( have_posts() ) : the_post();  ?>
 
 	<!-- the rest of your theme's main loop -->
 
-	<?php endwhile; ?>
-	<!-- End of the main loop -->
+    <?php endwhile; ?>
+    <!-- End of the main loop -->
 
-	<!-- Add the pagination functions here. -->
-
-<div class="nav-previous alignleft"><?php next_posts_link( 'Older posts' ); ?></div>
-
-<div class="nav-next alignright"><?php previous_posts_link( 'Newer posts' ); ?></div>
+    <!-- Start the pagination functions after the loop. -->
+    <div class="nav-previous alignleft"><?php next_posts_link( 'Older posts' ); ?></div>
+    <div class="nav-next alignright"><?php previous_posts_link( 'Newer posts' ); ?></div>
+    <!-- End the pagination functions after the loop. -->
 
 <?php else : ?>
 
-<?php _e('Sorry, no posts matched your criteria.'); ?>
+	<?php _e( 'Sorry, no posts matched your criteria.' ); ?>
 
 <?php endif; ?>
 ```
@@ -53,7 +51,7 @@ This simplified example shows where you can add pagination functions for the mai
 Note: When using any of these pagination functions outside the template file with the loop that is being paginated, you must call the global variable $wp\_query.
 
 ```php
-function your_themes_pagination(){
+function your_themes_pagination() {
 	global $wp_query;
 	echo paginate_links();
 }
@@ -68,7 +66,7 @@ WordPress has numerous functions for displaying links to other pages in your loo
 One of the simplest methods is [](https://developer.wordpress.org/reference/functions/posts_nav_link/)[posts\_nav\_link()](https://developer.wordpress.org/reference/functions/posts_nav_link/) . Simply place the function in your template after your loop. This generates both links to the next page of posts and previous page of posts where applicable. This function is ideal for themes that have simple pagination requirements.
 
 ```php
- posts_nav_link(); 
+posts_nav_link();
 ```
 
 **next\_posts\_link & prev\_posts\_link**
@@ -118,13 +116,8 @@ next_post_link();
 
 ### Pagination within a post
 
-WordPress gives you a tag that can be placed in post content to enable pagination for that post.  
-
-```php
-<!--nextpage-->
-```
-
-  
+WordPress gives you a tag that can be placed in post content to enable pagination for that post:
+`<!--nextpage-->`
 If you use that tag in the content, you need to ensure that the [wp\_link\_pages](https://developer.wordpress.org/reference/functions/wp_link_pages/) function is placed in your single.php template within the loop.
 
 ```php
@@ -135,9 +128,10 @@ If you use that tag in the content, you need to ensure that the [wp\_link\_pages
 
 		<?php the_content(); ?>
 
-		<?php wp_link_pages(); ?> 
+		<?php wp_link_pages(); ?>
 
 	<?php endwhile; ?>
+	<!-- End of the main loop. -->
 
 <?php endif; ?>
 ```

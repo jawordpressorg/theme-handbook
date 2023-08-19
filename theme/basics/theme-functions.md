@@ -40,7 +40,10 @@ With `functions.php` you can:
 *   Enable WordPress features with `[add_theme_support()](https://developer.wordpress.org/reference/functions/add_theme_support/)`. For example, turn on post thumbnails, post formats, and navigation menus.
 *   Define functions you wish to reuse in multiple theme template files.
 
-Warning: If a WordPress plugin calls the same function, or filter, as you do in your `functions.php`, the results can be unexpected, even causing your site to be disabled.
+Warning:
+In WordPress, naming conflicts can occur when two or more functions, classes, or variables have the same name. This can cause errors or unexpected behavior in a WordPress site. It is the responsibility of both the theme developer and plugin developer to avoid naming conflicts in their respective code.
+
+Theme developers should ensure that their functions, classes, and variables have unique names that do not conflict with those used by WordPress core or other plugins. They should also prefix their function and class names with a unique identifier, such as the theme name or abbreviation, to minimize the chances of a naming conflict.
 
 ## Examples
 
@@ -57,14 +60,15 @@ To create this initial function, start a new function entitled `myfirsttheme_set
 ```php
 if ( ! function_exists( 'myfirsttheme_setup' ) ) :
 /**
-* Sets up theme defaults and registers support for various WordPress features
-*
-*  It is important to set up these functions before the init hook so that none of these
-*  features are lost.
-*
-*  @since MyFirstTheme 1.0
-*/
-function myfirsttheme_setup() {
+ * Sets up theme defaults and registers support for various WordPress
+ * features.
+ *
+ * It is important to set up these functions before the init hook so
+ * that none of these features are lost.
+ *
+ *  @since MyFirstTheme 1.0
+ */
+function myfirsttheme_setup() { ... }
 ```
 
 Note: In the above example, the function myfirsttheme\_setup is started but not closed out. Be sure to close out your functions.
@@ -85,8 +89,8 @@ You can set up multiple menus in `functions.php`. They can be added using `[reg
 
 ```php
 register_nav_menus( array(
-	'primary'   =&gt; __( 'Primary Menu', 'myfirsttheme' ),
-	'secondary' =&gt; __( 'Secondary Menu', 'myfirsttheme' )
+    'primary'   => __( 'Primary Menu', 'myfirsttheme' ),
+    'secondary' => __( 'Secondary Menu', 'myfirsttheme' )
 ) );
 ```
 
@@ -115,7 +119,7 @@ add_theme_support( 'post-thumbnails' );
 [Post formats](https://developer.wordpress.org/themes/functionality/post-formats/ "Post Formats") allow users to format their posts in different ways. This is useful for allowing bloggers to choose different formats and templates based on the content of the post. `add_theme_support()` is also used for Post Formats. This is **recommended**.
 
 ```php
-add_theme_support( 'post-formats',  array ( 'aside', 'gallery', 'quote', 'image', 'video' ) );
+add_theme_support( 'post-formats',  array( 'aside', 'gallery', 'quote', 'image', 'video' ) );
 ```
 
 [Learn more about post formats.](https://developer.wordpress.org/themes/functionality/post-formats/)
@@ -124,11 +128,13 @@ add_theme_support( 'post-formats',  array ( 'aside', 'gallery', 'quote', 'image'
 
 In block themes, the following theme supports are enabled automatically:
 
-*   add\_theme\_support( ‘post-thumbnails’ );
-*   add\_theme\_support( ‘responsive-embeds’ );
-*   add\_theme\_support( ‘editor-styles’ );
-*   add\_theme\_support( ‘html5’, array(‘style’,’script’, ) );
-*   add\_theme\_support( ‘automatic-feed-links’ );
+```php
+add_theme_support( 'post-thumbnails' );
+add_theme_support( 'responsive-embeds' );
+add_theme_support( 'editor-styles' );
+add_theme_support( 'html5', array( 'style','script' ) );
+add_theme_support( 'automatic-feed-links' );
+```
 
 #### Initial Setup Example
 
@@ -138,45 +144,46 @@ As shown at the bottom of this example, you must add the required `[add_action()
 
 ```php
 if ( ! function_exists( 'myfirsttheme_setup' ) ) :
-/**
- * Sets up theme defaults and registers support for various WordPress features.
- *
- * Note that this function is hooked into the after_setup_theme hook, which runs
- * before the init hook. The init hook is too late for some features, such as indicating
- * support post thumbnails.
- */
-function myfirsttheme_setup() {
-
 	/**
+	 * Sets up theme defaults and registers support for various
+	 * WordPress features.
+	 *
+	 * Note that this function is hooked into the after_setup_theme
+	 * hook, which runs before the init hook. The init hook is too late
+	 * for some features, such as indicating support post thumbnails.
+	 */
+	function myfirsttheme_setup() {
+
+    /**
 	 * Make theme available for translation.
 	 * Translations can be placed in the /languages/ directory.
 	 */
-	load_theme_textdomain( 'myfirsttheme', get_template_directory() . '/languages' );
+		load_theme_textdomain( 'myfirsttheme', get_template_directory() . '/languages' );
 
-	/**
-	 * Add default posts and comments RSS feed links to &lt;head&gt;.
-	 */
-	add_theme_support( 'automatic-feed-links' );
+		/**
+		 * Add default posts and comments RSS feed links to <head>.
+		 */
+		add_theme_support( 'automatic-feed-links' );
 
-	/**
-	 * Enable support for post thumbnails and featured images.
-	 */
-	add_theme_support( 'post-thumbnails' );
+		/**
+		 * Enable support for post thumbnails and featured images.
+		 */
+		add_theme_support( 'post-thumbnails' );
 
-	/**
-	 * Add support for two custom navigation menus.
-	 */
-	register_nav_menus( array(
-		'primary'   =&gt; __( 'Primary Menu', 'myfirsttheme' ),
-		'secondary' =&gt; __('Secondary Menu', 'myfirsttheme' )
-	) );
+		/**
+		 * Add support for two custom navigation menus.
+		 */
+		register_nav_menus( array(
+			'primary'   => __( 'Primary Menu', 'myfirsttheme' ),
+			'secondary' => __( 'Secondary Menu', 'myfirsttheme' ),
+		) );
 
-	/**
-	 * Enable support for the following post formats:
-	 * aside, gallery, quote, image, and video
-	 */
-	add_theme_support( 'post-formats', array ( 'aside', 'gallery', 'quote', 'image', 'video' ) );
-}
+		/**
+		 * Enable support for the following post formats:
+		 * aside, gallery, quote, image, and video
+		 */
+		add_theme_support( 'post-formats', array( 'aside', 'gallery', 'quote', 'image', 'video' ) );
+	}
 endif; // myfirsttheme_setup
 add_action( 'after_setup_theme', 'myfirsttheme_setup' );
 ```
@@ -186,8 +193,9 @@ add_action( 'after_setup_theme', 'myfirsttheme_setup' );
 In classic themes, a content width is added to your `functions.php` file to ensure that no content or assets break the container of the site. The content width sets the maximum allowed width for any content added to your site, including uploaded images. In the example below, the content area has a maximum width of 800 pixels. No content will be larger than that.
 
 ```php
-if ( ! isset ( $content_width) )
+if ( ! isset ( $content_width) ) {
     $content_width = 800;
+}
 ```
 
 Themes that include a theme.json configuration file does not need to include the variable in functions.php. Instead, the content width is added to the layout setting in theme.json. You can [learn more about using theme.json in the advanced section](https://developer.wordpress.org/themes/advanced-topics/theme-json/).
@@ -205,7 +213,7 @@ There are other common features you can include in `functions.php`. Listed below
 
 ## Your *functions.php* File
 
-If you choose to include all of the functions listed above, this is what your *functions.php* might look like. It has been commented with references to above.
+If you choose to include all the functions listed above, this is what your *functions.php* might look like. It has been commented with references to above.
 
 ```php
 /**
@@ -216,52 +224,57 @@ If you choose to include all of the functions listed above, this is what your *f
  */
 
 /**
- * First, let's set the maximum content width based on the theme's design and stylesheet.
+ * First, let's set the maximum content width based on the theme's
+ * design and stylesheet.
  * This will limit the width of all uploaded images and embeds.
  */
-if ( ! isset( $content_width ) )
+if ( ! isset( $content_width ) ) {
 	$content_width = 800; /* pixels */
+}
+
 
 if ( ! function_exists( 'myfirsttheme_setup' ) ) :
-/**
- * Sets up theme defaults and registers support for various WordPress features.
- *
- * Note that this function is hooked into the after_setup_theme hook, which runs
- * before the init hook. The init hook is too late for some features, such as indicating
- * support post thumbnails.
- */
-function myfirsttheme_setup() {
 
 	/**
-	 * Make theme available for translation.
-	 * Translations can be placed in the /languages/ directory.
+	 * Sets up theme defaults and registers support for various
+	 * WordPress features.
+	 *
+	 * Note that this function is hooked into the after_setup_theme
+	 * hook, which runs before the init hook. The init hook is too late
+	 * for some features, such as indicating support post thumbnails.
 	 */
-	load_theme_textdomain( 'myfirsttheme', get_template_directory() . '/languages' );
+	function myfirsttheme_setup() {
 
-	/**
-	 * Add default posts and comments RSS feed links to &lt;head&gt;.
-	 */
-	add_theme_support( 'automatic-feed-links' );
+		/**
+		 * Make theme available for translation.
+		 * Translations can be placed in the /languages/ directory.
+		 */
+		load_theme_textdomain( 'myfirsttheme', get_template_directory() . '/languages' );
 
-	/**
-	 * Enable support for post thumbnails and featured images.
-	 */
-	add_theme_support( 'post-thumbnails' );
+		/**
+		 * Add default posts and comments RSS feed links to <head>.
+		 */
+		add_theme_support( 'automatic-feed-links' );
 
-	/**
-	 * Add support for two custom navigation menus.
-	 */
-	register_nav_menus( array(
-		'primary'   =&gt; __( 'Primary Menu', 'myfirsttheme' ),
-		'secondary' =&gt; __('Secondary Menu', 'myfirsttheme' )
-	) );
+		/**
+		 * Enable support for post thumbnails and featured images.
+		 */
+		add_theme_support( 'post-thumbnails' );
 
-	/**
-	 * Enable support for the following post formats:
-	 * aside, gallery, quote, image, and video
-	 */
-	add_theme_support( 'post-formats', array ( 'aside', 'gallery', 'quote', 'image', 'video' ) );
-}
+		/**
+		 * Add support for two custom navigation menus.
+		 */
+		register_nav_menus( array(
+			'primary'   => __( 'Primary Menu', 'myfirsttheme' ),
+			'secondary' => __( 'Secondary Menu', 'myfirsttheme' ),
+		) );
+
+		/**
+		 * Enable support for the following post formats:
+		 * aside, gallery, quote, image, and video
+		 */
+		add_theme_support( 'post-formats', array( 'aside', 'gallery', 'quote', 'image', 'video' ) );
+	}
 endif; // myfirsttheme_setup
 add_action( 'after_setup_theme', 'myfirsttheme_setup' );
 ```

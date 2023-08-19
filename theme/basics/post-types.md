@@ -37,7 +37,7 @@ The template files that display the Post post type are:
 
 *   `singl`e and `single-post`
 *   `category` and all its iterations
-*   `ta`g and all its iterations
+*   `tag` and all its iterations
 *   `taxonomy` and all its iterations
 *   `archive` and all its iterations
 *   `author` and all its iterations

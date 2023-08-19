@@ -26,9 +26,11 @@ Note that while actual post content won’t change, the theme can display a post
 *   **audio** – An audio file. Could be used for Podcasting.
 *   **chat** – A chat transcript, like so:
 
+```bash
 John: foo
 Mary: bar
 John: foo 2
+```
 
 Note: When writing or editing a Post, “Standard” designates that no Post Format is specified. Also if an invalid format is specified, “Standard” (no format) is applied by default.
 
@@ -49,10 +51,13 @@ Note: When writing or editing a Post, “Standard” designates that no Post For
 
 Themes need to use [](https://developer.wordpress.org/reference/functions/add_theme_support/)[add\_theme\_support()](https://developer.wordpress.org/reference/functions/add_theme_support/) in the *functions.php* file to tell WordPress which post formats to support by passing an array of formats like so:
 
-function themename\_post\_formats\_setup() {
- add\_theme\_support( 'post-formats', array( 'aside', 'gallery' ) );
+```php
+<?php
+function themename_post_formats_setup() {
+	add_theme_support( 'post-formats', array( 'aside', 'gallery' ) );
 }
-add\_action( 'after\_setup\_theme', 'themename\_post\_formats\_setup' );
+add_action( 'after_setup_theme', 'themename_post_formats_setup' );
+```
 
 The [after\_setup\_theme](https://developer.wordpress.org/reference/hooks/after_setup_theme/) hook is used so that the post formats support is registered after the theme has loaded.
 
@@ -60,21 +65,26 @@ The [after\_setup\_theme](https://developer.wordpress.org/reference/hooks/after_
 
 Post Types need to use [](https://developer.wordpress.org/reference/functions/add_post_type_support/)[add\_post\_type\_support()](https://developer.wordpress.org/reference/functions/add_post_type_support/) in the *functions.php* file to tell WordPress which post formats to support:
 
-function themename\_custom\_post\_formats\_setup() {
- // add post-formats to post\_type 'page'
- add\_post\_type\_support( 'page', 'post-formats' );
- // add post-formats to post\_type 'my\_custom\_post\_type'
- add\_post\_type\_support( 'my\_custom\_post\_type', 'post-formats' );
+```php
+<?php
+function themename_custom_post_formats_setup() {
+	// add post-formats to post_type 'page'
+	add_post_type_support( 'page', 'post-formats' );
+	// add post-formats to post_type 'my_custom_post_type'
+	add_post_type_support( 'my_custom_post_type', 'post-formats' );
 }
-add\_action( 'init', 'themename\_custom\_post\_formats\_setup' );
+add_action( 'init', 'themename_custom_post_formats_setup' );
+```
 
 Or in the function [](https://developer.wordpress.org/reference/functions/register_post_type/)[register\_post\_type()](https://developer.wordpress.org/reference/functions/register_post_type/) , add ‘post-formats’, in ‘supports’ parameter array:
 
+```php
+<?php
 $args = array(
- ...
- 'supports' => array('title', 'editor', 'author', 'post-formats')
+	'supports' => array( 'title', 'editor', 'author', 'post-formats' ),
 );
-register\_post\_type('book', $args);
+register_post_type( 'book', $args );
+```
 
 [add\_post\_type\_support](https://developer.wordpress.org/reference/functions/add_post_type_support/) should be hooked to [init](https://developer.wordpress.org/reference/hooks/init/) hook, as custom post types may not have been registered at [after\_setup\_theme](https://developer.wordpress.org/reference/hooks/after_setup_theme/).
 
@@ -82,9 +92,12 @@ register\_post\_type('book', $args);
 
 In the theme, use [](https://developer.wordpress.org/reference/functions/get_post_format/)[get\_post\_format()](https://developer.wordpress.org/reference/functions/get_post_format/) to check the format for a post, and change its presentation accordingly. Note that posts with the default format will return a value of FALSE. Alternatively, use the [](https://developer.wordpress.org/reference/functions/has_post_format/)[has\_post\_format()](https://developer.wordpress.org/reference/functions/has_post_format/) [conditional tag](https://developer.wordpress.org/themes/basics/conditional-tags/):
 
-if ( has\_post\_format( 'video' )) {
-  echo 'this is the video format';
+```php
+<?php
+if ( has_post_format( 'video' ) ) {
+	echo 'This is the video format.';
 }
+```
 
 ### Suggested Styling
 
@@ -92,9 +105,11 @@ An alternate approach to formats is through styling rules. Themes should use the
 
 For example, one could hide post titles from status format posts by putting this in your theme’s stylesheet:
 
+```css
 .format-status .post-title {
-     display:none;
+     display: none;
 }
+```
 
 Each of the formats lend themselves to a certain type of “style”, as dictated by modern usage. It is well to keep in mind the intended usage for each format when applying styles.
 
@@ -110,9 +125,12 @@ A chat in particular will probably tend towards a monospaced type display, in ma
 
 [Child Themes](https://developer.wordpress.org/themes/advanced-topics/child-themes/) inherit the post formats defined by the parent theme. Calling [](https://developer.wordpress.org/reference/functions/add_theme_support/)[add\_theme\_support()](https://developer.wordpress.org/reference/functions/add_theme_support/) for post formats in a child theme must be done at a later priority than that of the parent theme and will **override** the existing list, not add to it.
 
-add\_action( 'after\_setup\_theme', 'childtheme\_formats', 11 );
-function childtheme\_formats(){
-     add\_theme\_support( 'post-formats', array( 'aside', 'gallery', 'link' ) );
+```php
+<?php
+add_action( 'after_setup_theme', 'childtheme_formats', 11 );
+function childtheme_formats() {
+	 add_theme_support( 'post-formats', array( 'aside', 'gallery', 'link' ) );
 }
+```
 
 Calling [remove\_theme\_support(‘post-formats’)](https://developer.wordpress.org/reference/functions/remove_theme_support/) will remove it all together.

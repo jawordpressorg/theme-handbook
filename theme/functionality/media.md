@@ -14,7 +14,7 @@ To retrieve the attachment ID, use `[get_posts()](https://developer.wordpress.or
 // Insert into the Loop
 $args = array(
     'post_parent'    => get_the_ID(),
-    'post_type'      => 'attachment', 
+    'post_type'      => 'attachment',
 );
 $attachments = get_posts( $args );
 if ( $attachments ) {
@@ -29,7 +29,7 @@ If you want to retrieve images from the post ID only, specify post\_mime\_type a
 ```php
 $args = array(
     'post_parent'    => get_the_ID(),
-    'post_type'      => 'attachment', 
+    'post_type'      => 'attachment',
     'post_mime_type' => 'image',
 );
 ```

@@ -2,15 +2,15 @@
 
 A block template is made up of a list of blocks. Any WordPress block can be used in a template.
 
-Templates are designs for pages and can include one or more template parts.  
+Templates are designs for pages and can include one or more template parts.
 Template parts are used to organize a theme in smaller reusable structural parts. They are commonly used for site headers and site footers.
 
 ## Block markup
 
-Templates and template parts contain block markup that represents blocks and block settings.  
+Templates and template parts contain block markup that represents blocks and block settings.
 The block markup differs from standard HTML and uses attributes in JSON format.
 
-In a standard HTML file, you would include an HTML tag, `<head>`, and `<body>`.  
+In a standard HTML file, you would include an HTML tag, `<head>`, and `<body>`.
 In block themes, these HTML elements are added for you. Necessary PHP hooks that you would add to a classic theme, including `wp_head()`, `wp_body_open()`, and `wp_footer()`, are also added automatically. The markup that is inside the template file is printed between the opening and closing body tags.
 
 A block is added to a template with an HTML comment that includes a prefix, the block name, and optional attributes. In the example below, the source is WordPress, which uses the prefix “wp,” and the block is the site title:
@@ -25,7 +25,7 @@ You place block attributes inside the comment, between curly brackets. In this e
 <!-- wp:site-title {"level":2} /-->
 ```
 
-There are both self-closing and multi-line blocks.  
+There are both self-closing and multi-line blocks.
 When adding a heading with custom text, the block markup includes both the HTML comment and the HTML tag. The id is generated automatically to create an anchor to make it easier to link to page sections.
 
 ```
@@ -74,7 +74,7 @@ If WordPress can not find an HTML template file, it will try to find a PHP file 
 
 ### How to create templates with code
 
-Create a new HTML file for each template and place them inside the templates folder in your theme.  
+Create a new HTML file for each template and place them inside the templates folder in your theme.
 Add the markup for the blocks you want to display.
 
 ### How to create templates in the Site Editor
@@ -119,24 +119,17 @@ In the editor, template parts support alignments when they are used as inner blo
 
 ### How to create template parts with code
 
-To manually create template parts with code, you need an HTML file for each template part.  
+To manually create template parts with code, you need an HTML file for each template part.
 \-The file does not include the template part block itself but rather the inner blocks, the content inside the template part.
 
 **Example of how to create a header:**
 
-Create a new HTML file called header.html inside your themes `parts` folder.  
+Create a new HTML file called header.html inside your themes `parts` folder.
 Open the file in your code editor and add a group block with a background color:
 
 ```
-<!-- wp:group {"backgroundColor":"vivid-cyan-blue"} -->
-<div class="wp-block-group has-vivid-cyan-blue-background-color has-background"></div><!-- /wp:group -->
-```
-
-Set the group block to full width by adding the align attribute: `"align":"full"` and the class name “`alignfull`“:
-
-```
-<!-- wp:group {"align":"full","backgroundColor":"vivid-cyan-blue"} -->
-<div class="wp-block-group alignfull has-vivid-cyan-blue-background-color has-background"></div>
+<!-- wp:group {"backgroundColor":"vivid-cyan-blue","layout":{"type":"constrained"}} -->
+<div class="wp-block-group has-vivid-cyan-blue-background-color has-background"></div>
 <!-- /wp:group -->
 ```
 
@@ -155,8 +148,8 @@ style="padding-top:2em;padding-right:2em;padding-bottom:2em;padding-left:2em"
 Complete code for the group block:
 
 ```
-<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"2em","right":"2em","bottom":"2em","left":"2em"}}},"backgroundColor":"vivid-cyan-blue"} -->
-<div class="wp-block-group alignfull has-vivid-cyan-blue-background-color has-background" style="padding-top:2em;padding-right:2em;padding-bottom:2em;padding-left:2em"></div>
+<!-- wp:group {"style":{"spacing":{"padding":{"top":"2em","right":"2em","bottom":"2em","left":"2em"}}},"backgroundColor":"vivid-cyan-blue","layout":{"type":"constrained"}} -->
+<div class="wp-block-group has-vivid-cyan-blue-background-color has-background" style="padding-top:2em;padding-right:2em;padding-bottom:2em;padding-left:2em"></div>
 <!-- /wp:group -->
 ```
 
@@ -169,12 +162,12 @@ Inside the group, add the site title block:
 Complete code with the group and site title:
 
 ```
-<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"2em","right":"2em","bottom":"2em","left":"2em"}}},"backgroundColor":"vivid-cyan-blue"} --><div class="wp-block-group alignfull has-vivid-cyan-blue-background-color has-background" style="padding-top:2em;padding-right:2em;padding-bottom:2em;padding-left:2em"><!-- wp:site-title /--></div><!-- /wp:group -->
+<!-- wp:group {"style":{"spacing":{"padding":{"top":"2em","right":"2em","bottom":"2em","left":"2em"}}},"backgroundColor":"vivid-cyan-blue","layout":{"type":"constrained"}} --><div class="wp-block-group has-vivid-cyan-blue-background-color has-background" style="padding-top:2em;padding-right:2em;padding-bottom:2em;padding-left:2em"><!-- wp:site-title /--></div><!-- /wp:group -->
 ```
 
 ### How to manually include a template part in a template
 
-To add a template part to a template, add the block markup for the template part block and use the template slug inside the slug attribute.  
+To add a template part to a template, add the block markup for the template part block and use the template slug inside the slug attribute.
 If the name of the template part file is header.html, the slug is “header”, and the key- and value pair for the attribute are `"slug":"header"`:
 
 ```
@@ -202,9 +195,9 @@ If you would like the template part to be selectable in the block inserter, you 
 
 ### How to create template parts in the Site Editor
 
-The Site Editor’s Template Parts section displays a list of all template parts.  
-You can create unlimited template parts using the Add New button. In this view, you can also clear customizations from theme template parts and delete user-created template parts.  
-  
+The Site Editor’s Template Parts section displays a list of all template parts.
+You can create unlimited template parts using the Add New button. In this view, you can also clear customizations from theme template parts and delete user-created template parts.
+
 When creating the template part, you are asked to enter a name and select between three template part areas: General, header, and footer. Next, the editor opens the template part in isolation. You will only see the template part and not the full template or post content. Add the blocks that you wish to use, and save.
 
 ### Template Editing mode
@@ -213,7 +206,7 @@ Please see the article on [How to edit templates via the Post Editor](https://wo
 
 ## Changes made in the Site Editor are stored in the database
 
-You can make changes to templates and template parts in two ways: by editing the .html file directly in your code editor, or using the Site Editor.  
+You can make changes to templates and template parts in two ways: by editing the .html file directly in your code editor, or using the Site Editor.
 Changes that you make in the Site Editor are stored in the database, and are not reflected in the theme’s HTML files. The saved version of the template takes precedence over any changes that you make to the HTML files.
 
 To check if a template has been changed, view the list of templates from the Navigation Sidebar in the Site Editor. Changes are indicated by the blue dot next to the template settings menu:
@@ -224,5 +217,6 @@ To remove the changes made in the Site Editor and display content from the HTML 
 
 Changelog:
 
+*   **Updated** 2023-03-08 Updated code examples to reflect WordPress 6.1 block markup.
 *   **Updated** 2022-02-15 Added information about changes in the site editor being saved to the database.
 *   **Created** 2022-01-20
