@@ -240,7 +240,7 @@ This section ends the comments loop, includes the comment form, and closes the c
 
 ## Comments Pagination
 
-If you have a lot of comments (which makes your page long), then there are a number of potential benefits to paginating your comments. Pagination helps improve page load speed, especially on mobile devices.  
+If you have a lot of comments (which makes your page long), then there are a number of potential benefits to paginating your comments. Pagination helps improve page load speed, especially on mobile devices.
 Enabling comments pagination is done in two steps.
 
 1.  Enable paged comments within WordPress by going to *Settings* > *Discussion* , and checking the box “*Break comments into pages*” . You can enter any number for the “*top level comments per page*”.
@@ -251,9 +251,7 @@ Enabling comments pagination is done in two steps.
 	<?php paginate_comments_links(); ?>
 </div>
 ```
-
-## Alternative Comment Template
-
+=======
 On some occasions you may want display your comments differently within your theme. For this you would build an alternate file (ex. short-comments.php) and call it as follows:
 
 ```php

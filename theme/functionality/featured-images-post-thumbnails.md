@@ -22,13 +22,13 @@ By default, the Featured Image meta box is displayed in the sidebar of the Edit 
 
 ## Function Reference
 
-`[add_image_size()](https://developer.wordpress.org/reference/functions/add_image_size/ "Register a new image size")` – Register a new image size.  
+`[add_image_size()](https://developer.wordpress.org/reference/functions/add_image_size/ "Register a new image size")` – Register a new image size.
 `[set_post_thumbnail_size()](https://developer.wordpress.org/reference/functions/set_post_thumbnail_size/ "Registers an image size for the post thumbnail")` – Registers an image size for the post thumbnail.
 
-`[has_post_thumbnail()](https://developer.wordpress.org/reference/functions/has_post_thumbnail/ "Check if post has an image attached")` – Check if post has an image attached.  
+`[has_post_thumbnail()](https://developer.wordpress.org/reference/functions/has_post_thumbnail/ "Check if post has an image attached")` – Check if post has an image attached.
 `[the_post_thumbnail()](https://developer.wordpress.org/reference/functions/the_post_thumbnail/ "Display Post Thumbnail")` – Display Post Thumbnail.
 
-`[get_the_post_thumbnail()](https://developer.wordpress.org/reference/functions/get_the_post_thumbnail/ "Retrieve Post Thumbnail")` – Retrieve Post Thumbnail.  
+`[get_the_post_thumbnail()](https://developer.wordpress.org/reference/functions/get_the_post_thumbnail/ "Retrieve Post Thumbnail")` – Retrieve Post Thumbnail.
 `[get_post_thumbnail_id()](https://developer.wordpress.org/reference/functions/get_post_thumbnail_id/ "Retrieve Post Thumbnail ID")` – Retrieve Post Thumbnail ID.
 
 ## Image Sizes
@@ -74,7 +74,7 @@ if ( function_exists( 'add_theme_support' ) ) {
 
 ## Set the Featured Image Output Size
 
-To be used in the current Theme’s functions.php file.  
+To be used in the current Theme’s functions.php file.
 You can use `set_post_thumbnail_size()` to set the default Featured Image size by resizing the image proportionally (that is, without distorting it):
 
 ```php
@@ -99,7 +99,7 @@ img.attachment-large
 img.attachment-full
 ```
 
-You can also give Featured Images their own classes by using the attribute parameter in [](https://developer.wordpress.org/reference/functions/the_post_thumbnail/ "Display Post Thumbnail")[the\_post\_thumbnail()](https://developer.wordpress.org/reference/functions/the_post_thumbnail/) .  
+You can also give Featured Images their own classes by using the attribute parameter in [](https://developer.wordpress.org/reference/functions/the_post_thumbnail/ "Display Post Thumbnail")[the\_post\_thumbnail()](https://developer.wordpress.org/reference/functions/the_post_thumbnail/) .
 Display the Featured Image with a class “alignleft”:
 
 ```php

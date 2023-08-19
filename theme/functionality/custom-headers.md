@@ -141,7 +141,7 @@ update your `header.php` file to:
 
 ### Displaying Custom Header
 
-To display the custom header, function [get\_header\_image()](https://developer.wordpress.org/reference/functions/get_header_image/) retrieves the header image. [get\_custom\_header()](https://developer.wordpress.org/reference/functions/get_custom_header/) gets the custom header data.  
+To display the custom header, function [get\_header\_image()](https://developer.wordpress.org/reference/functions/get_header_image/) retrieves the header image. [get\_custom\_header()](https://developer.wordpress.org/reference/functions/get_custom_header/) gets the custom header data.
 E.g. below shows how custom header images can be used to display the header in the theme. The below code goes into header.php file.
 
 ```php

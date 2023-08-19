@@ -6,7 +6,7 @@ Block themes support accessibility and simplify the process for adding accessibi
 
 Group, Template part, and Query blocks can become a landmark. There are two ways to create landmark.
 
-**Using block markup**  
+**Using block markup**
 `”tagName":"header”` creates header landmark.
 
 ```
@@ -15,10 +15,10 @@ Group, Template part, and Query blocks can become a landmark. There are two ways
 <!-- /wp:group -->
 ```
 
-**Using site editor**  
-HTML element under Advanced section in the Block panel provides the following landmark options.  
+**Using site editor**
+HTML element under Advanced section in the Block panel provides the following landmark options.
 
-HTML element under Advanced section in the Block panel provides the following landmark options.  
+HTML element under Advanced section in the Block panel provides the following landmark options.
 `<header>` `<main>` `<section>` `<article>` `<aside>` `<footer>`.
 
 ## Skip to content

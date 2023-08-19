@@ -4,11 +4,11 @@
 
 Block themes require a `style.css` file and a `templates/index.html` file. A block theme that supports WordPress 5.9 or older also requires an `index.php` file in the root folder.
 
-You need to place all HTML template files inside the `templates` folder. If you place template files in the wrong folder, the theme will not load correctly.  
+You need to place all HTML template files inside the `templates` folder. If you place template files in the wrong folder, the theme will not load correctly.
 Template part files are optional. If they are included, they must be placed inside a folder called `parts`.
 
-The theme.json configuration file is optional but strongly recommended. [Learn more about theme.json](https://developer.wordpress.org/themes/advanced-topics/theme-json/).  
-  
+The theme.json configuration file is optional but strongly recommended. [Learn more about theme.json](https://developer.wordpress.org/themes/advanced-topics/theme-json/).
+
 In addition to the required files, the theme can include a theme.json, a functions.php file, and any additional PHP files, CSS, images, or JavaScript to enhance the theme.
 
 Example file structure:

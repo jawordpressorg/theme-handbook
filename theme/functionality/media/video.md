@@ -37,7 +37,7 @@ The following basic options are supported:
 
 #### Poster
 
-Defines image to show as placeholder before the media plays.  
+Defines image to show as placeholder before the media plays.
 The following same code takes `album_cover.jpg` stored in `(theme directory)/images` folder as the initial image:
 
 ```php

@@ -4,7 +4,7 @@
 
 ## Example scenario:
 
-*The classic theme has a customizer option for displaying a call to action in the site header.  
+*The classic theme has a customizer option for displaying a call to action in the site header.
 The call to action is limited to one position, chosen by the theme developer. The user can only turn it on or off, not reposition it or use it more than once.* *The user can only customize a single text input and there are limited color options.*
 
 The original Customizer option has the following settings:
@@ -30,7 +30,7 @@ The purpose of recreating the call to action using blocks in the editor, is to g
 
 ### Adding existing utility classes
 
-Once you have a copy of the markup, to make the blocks match the existing call to action, re-add any utility CSS classes from the original component.  
+Once you have a copy of the markup, to make the blocks match the existing call to action, re-add any utility CSS classes from the original component.
 If your utility class is called “call-to-action\_\_large”, you would add `"className":"call-to-action__large"` to the block comment, and `call-to-action__large` to the `class` attribute of the element.
 
 ## Step 2: Register the block pattern
@@ -103,7 +103,7 @@ Becomes:
 ',
 ```
 
-Next, you need to get the color codes from the text- and background color options.  
+Next, you need to get the color codes from the text- and background color options.
 The names of the color theme mods are: `myfirsttheme_action_text_color` and `myfirsttheme_action_bgcolor`.
 
 Escape the theme mod with `esc_attr()`, and include the default color of the call to action as your fallback:

@@ -281,7 +281,7 @@ The `unregister_block_pattern_category()` function accepts one argument: `tit
 By default, WordPress registers several block patterns and categories. However, theme developers can unregister some or all of these using the following methods:
 
 *   `remove_theme_support( 'core-block-patterns' );` – removes **all** core patterns and should be hooked to either the `init` or the [`after_theme_setup()`](https://developer.wordpress.org/reference/hooks/after_setup_theme/) hooks. Or,
-*   [`unregister_block_pattern()`](https://developer.wordpress.org/block-editor/reference-guides/block-api/block-patterns/#unregister_block_pattern) – to unregister individual patterns.  
+*   [`unregister_block_pattern()`](https://developer.wordpress.org/block-editor/reference-guides/block-api/block-patterns/#unregister_block_pattern) – to unregister individual patterns.
     Example: `unregister_block_pattern( 'core/two-buttons' ); // Removes core two-buttons pattern`
 
 Furthermore, you can disable the calling and displaying of patterns from the WordPress [Block Pattern Directory](https://wordpress.org/patterns/) within you theme by utilizing the [`should_load_remote_block_patterns`](https://developer.wordpress.org/reference/hooks/should_load_remote_block_patterns/) filter.

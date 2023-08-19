@@ -40,7 +40,7 @@ With `functions.php` you can:
 *   Enable WordPress features with `[add_theme_support()](https://developer.wordpress.org/reference/functions/add_theme_support/)`. For example, turn on post thumbnails, post formats, and navigation menus.
 *   Define functions you wish to reuse in multiple theme template files.
 
-Warning:  
+Warning:
 In WordPress, naming conflicts can occur when two or more functions, classes, or variables have the same name. This can cause errors or unexpected behavior in a WordPress site. It is the responsibility of both the theme developer and plugin developer to avoid naming conflicts in their respective code.
 
 Theme developers should ensure that their functions, classes, and variables have unique names that do not conflict with those used by WordPress core or other plugins. They should also prefix their function and class names with a unique identifier, such as the theme name or abbreviation, to minimize the chances of a naming conflict.
@@ -60,7 +60,7 @@ To create this initial function, start a new function entitled `myfirsttheme_set
 ```php
 if ( ! function_exists( 'myfirsttheme_setup' ) ) :
 /**
- * Sets up theme defaults and registers support for various WordPress  
+ * Sets up theme defaults and registers support for various WordPress
  * features.
  *
  * It is important to set up these functions before the init hook so
@@ -133,7 +133,7 @@ add_theme_support( 'post-thumbnails' );
 add_theme_support( 'responsive-embeds' );
 add_theme_support( 'editor-styles' );
 add_theme_support( 'html5', array( 'style','script' ) );
-add_theme_support( 'automatic-feed-links' ); 
+add_theme_support( 'automatic-feed-links' );
 ```
 
 #### Initial Setup Example

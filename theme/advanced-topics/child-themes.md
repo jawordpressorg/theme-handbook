@@ -86,7 +86,7 @@ There are a few things to keep in mind:
 
 *   the functions named `get_stylesheet`\* look for a child theme first and then the parent.
 
-The recommended way of enqueuing the stylesheets is to add a `wp_enqueue_scripts` action and use `[wp_enqueue_style()](https://developer.wordpress.org/reference/functions/wp_enqueue_style/)` in your child theme’s `functions.php`.  
+The recommended way of enqueuing the stylesheets is to add a `wp_enqueue_scripts` action and use `[wp_enqueue_style()](https://developer.wordpress.org/reference/functions/wp_enqueue_style/)` in your child theme’s `functions.php`.
 If you do not have one, create a `functions.php` in your child theme’s directory. The first line of your child theme’s `functions.php` will be an opening PHP tag (<?php), after which you can write the PHP code according to what your parent theme does.
 
 If the parent theme loads both stylesheets, the child theme does not need to do anything.
@@ -236,7 +236,7 @@ Even if the parent theme does not have an `rtl.css` file, it’s recommended to 
 
 Child themes can be prepared for translation into other languages by using the WordPress [Internationalization API](https://developer.wordpress.org/themes/functionality/internationalization/). There are special considerations regarding internationalization of child themes.
 
-To internationalize a child theme follow these steps:  
+To internationalize a child theme follow these steps:
 1\. Add a languages directory.
 
 *   For example: `twentyfifteen-child/languages/`

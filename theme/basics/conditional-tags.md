@@ -616,7 +616,7 @@ if ( empty( $post->post_excerpt ) ) {
 }
 ```
 
-**Other use**  
+**Other use**
 When you need to hide the auto displayed excerpt and only display your post’s excerpts.
 
 ```php

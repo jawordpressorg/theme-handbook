@@ -18,7 +18,7 @@ The basic form of gallery shortcode is:
 [gallery]
 ```
 
-Tip:  
+Tip:
 If you use the \[gallery\] shortcode without using the `ids` argument in your post or page, only images that are “attached” to that post or page will be displayed.
 
 If you need to add multiple images with ID’s, use the following sample shortcode
@@ -28,7 +28,7 @@ If you need to add multiple images with ID’s, use the following sample shortc
 [gallery ids="10, 205, 552, 607"]
 ```
 
-Tip:  
+Tip:
 NOTE: find the proper IDs of the images for the gallery. Go to Media library and click on the respected image and ID will appear on the URL.
 
 To use the shortcode from the template file, use the [do\_shortcode()](https://developer.wordpress.org/reference/functions/do_shortcode/) function. Insert the following code into your template file:
@@ -61,7 +61,7 @@ If you need to filter the shortcodes, the following example gives you some tips
 
 ```php
 // Note: 'the_content' filter is used to filter the content of the
-// post after it is retrieved from the database and before it is 
+// post after it is retrieved from the database and before it is
 // printed to the screen.
 <?php
 $gallery_shortcode = '[gallery id="' . intval( $post->post_parent ) . '"]';
@@ -103,7 +103,7 @@ If you need to print it on template file, use the [do\_shortcode()](https://deve
 
 #### columns
 
-The Columns options specify the number of columns in the gallery. The default value is 3.  
+The Columns options specify the number of columns in the gallery. The default value is 3.
 If you want to increase the number of column in the galley, use the following shortcode.
 
 ```php

@@ -58,7 +58,7 @@ The additional style is loaded in the editor and the front, after the block styl
 
 This code example changes the size and text color of the date in the latest comments block. Because this is a `time` HTML element that is nested inside other HTML elements, can not be styled using `theme.json`.
 
-First, create a new CSS file with the name of the block: `latest-comments.css`.  
+First, create a new CSS file with the name of the block: `latest-comments.css`.
 Where you place the file depends on how you organize your theme files. In the example, the file is placed inside the folders `assets/CSS/blocks`.
 
 The CSS class for the time element is `wp-block-latest-comments__comment-date`. The prefix and the block name are followed by the partial, separated by two underscores.
@@ -76,9 +76,9 @@ The text color and font size are added with CSS custom properties that are gener
 
 Next, enqueue the block style inside the themes setup function.
 
-The block name is placed inside an array to load more than one block style.  
-A `foreach` loop walks through each block in the array and creates a handle, src (source), and path argument.  
-`wp_enqueue_block_style()` then enqueues the file using the block name and argument:  
+The block name is placed inside an array to load more than one block style.
+A `foreach` loop walks through each block in the array and creates a handle, src (source), and path argument.
+`wp_enqueue_block_style()` then enqueues the file using the block name and argument:
 `wp_enqueue_block_style( "prefix/blockname", $args );`
 
 In the code example, the prefix is “core” since the style is for a core block. When you style blocks from plugins, you need to adjust the prefix.
@@ -141,12 +141,12 @@ Supported strategies are as follows:
 Following is an example of specifying a loading strategy during script registration:
 
 ```php
-wp_register_script( 
-    'foo', 
-    '/path/to/foo.js', 
-    array(), 
-    '1.0.0', 
-    array( 
+wp_register_script(
+    'foo',
+    '/path/to/foo.js',
+    array(),
+    '1.0.0',
+    array(
         'strategy'  => 'defer',
     )
 );

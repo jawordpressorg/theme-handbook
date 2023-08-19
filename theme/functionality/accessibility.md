@@ -2,7 +2,7 @@
 
 A WordPress theme should generate pages everyone can use, including those who cannot see or use a mouse.
 
-To create an accessible theme, you need to have knowledge of web standards for HTML, CSS, and JavaScript.  
+To create an accessible theme, you need to have knowledge of web standards for HTML, CSS, and JavaScript.
 You also need to be aware of best practices for web accessibility and have basic knowledge of the [Web Content Accessibility Guidelines](https://www.w3.org/WAI/WCAG21/quickref/), WCAG.
 
 To succeed in making your theme accessible, accessibility should be considered from the start of your project as part of your project specification. By making the right decisions from the beginning, you can avoid making last-minute adjustments that can be costly, time-consuming, and of low quality.

@@ -13,19 +13,19 @@ Some of the things you can do with theme.json are:
 *   Add font sizes
 *   Add default widths for content and wide content
 *   Add custom CSS properties
-*   Assign template parts to template part areas  
-    
+*   Assign template parts to template part areas
+
 
 When you add theme.json to your theme, the [template editor](https://make.wordpress.org/core/2021/06/16/introducing-the-template-editor-in-wordpress-5-8/) is enabled.
 
-There are important differences between what is available for `theme.json` in WordPress version 5.8 (version 1), WordPress 5.9 and newer (version 2), and the Gutenberg plugin (experimental features).  
+There are important differences between what is available for `theme.json` in WordPress version 5.8 (version 1), WordPress 5.9 and newer (version 2), and the Gutenberg plugin (experimental features).
 This page includes information about version 2 of `theme.json`.
 
 **This page is a complement to the [How-to guide](https://developer.wordpress.org/block-editor/how-to-guides/themes/theme-json/) in the block editor handbook and to the [theme.json reference](https://developer.wordpress.org/block-editor/reference-guides/theme-json-reference).**
 
 ## How to create a theme.json file
 
-**Tip:** When developing your theme.json file, you can disable cache to see your changes applied faster.  
+**Tip:** When developing your theme.json file, you can disable cache to see your changes applied faster.
 Set either [WP\_DEBUG](https://wordpress.org/support/article/debugging-in-wordpress/#wp_debu) or [SCRIPT\_DEBUG](https://wordpress.org/support/article/debugging-in-wordpress/#script_debug) to ‘true’ in your [wp-config.php file.](https://wordpress.org/support/article/editing-wp-config-php/)
 
 Create a new file called `theme.json` inside the root folder of your theme. 
@@ -52,7 +52,7 @@ Add the section name, place your settings between the curly brackets, and separa
     "version": 2,
     "settings": {
           "color": {},
-          "typography": {}  
+          "typography": {}
     }
 }
 ```
@@ -68,7 +68,7 @@ You can target both the website and blocks with settings and styles:
 	"settings": {
 		"color": { ... }, // Global settings
 		"blocks": {
-			"core/group": { 
+			"core/group": {
 				"color": { ... }, // Group block color settings
 				"typography": { ... } // Group typography settings
 			}
@@ -124,7 +124,7 @@ This example shows a color palette added only to the paragraph block with a sing
                 }
             }
         }
-    }        
+    }
 }
 ```
 
@@ -151,7 +151,7 @@ Values stored in the settings.custom area (or `settings.blocks.BLOCKNAME.custom`
                 }
             }
         }
-    }        
+    }
 }
 ```
 
@@ -161,10 +161,10 @@ The above will cause the CSS variable `--wp--custom--fruit` to be created with a
 
 Theme.json works with both classic PHP-based themes as well as block themes. Theme.json does not work with the classic editor.
 
-If you add a `theme.json` file to an existing theme, you may need to adjust the theme’s CSS and remove duplicate styles for `theme.json` to work properly.  
+If you add a `theme.json` file to an existing theme, you may need to adjust the theme’s CSS and remove duplicate styles for `theme.json` to work properly.
 Additionally, the alignment mechanism for “full” and “wide” blocks works differently with a theme.json present and should be considered.
 
-Note that the settings in `theme.json` replace many of the calls to `add_theme_support()`. The color palette in `theme.json` is the equivalent of `add_theme_support( 'editor-color-palette', …).`  
+Note that the settings in `theme.json` replace many of the calls to `add_theme_support()`. The color palette in `theme.json` is the equivalent of `add_theme_support( 'editor-color-palette', …).`
 When both are present, the palette from `theme.json` takes precedence.
 
 ## Settings
@@ -217,7 +217,7 @@ Duotone colors are expressed in an array assigned to the “colors” key. They 
                 ],
                 "duotone": [
                     {
-                        "slug": "purple-and-yellow",					
+                        "slug": "purple-and-yellow",
                         "colors": [ "#D1D1E4", "#EEEADD" ],
                         "name": "Purple and yellow"
                     }
@@ -488,7 +488,7 @@ Example:
 		"color": {
 			"link": true
                  },
-                "typography": { 
+                "typography": {
                          "lineHeight": true
                 }
          }
@@ -568,7 +568,7 @@ Styles that are applied to blocks are placed under *styles.blocks.BLOCKNAME*:
 
 ### `Theme.json` elements
 
-Blocks can have multiple HTML elements. You can use `elements` to style headings (H1-H6) and links inside blocks.  
+Blocks can have multiple HTML elements. You can use `elements` to style headings (H1-H6) and links inside blocks.
 In this example, background color and padding are added to the read more link inside the post excerpt block:
 
 ```
@@ -600,7 +600,7 @@ In this example, background color and padding are added to the read more link in
 
 ## Assigning template parts
 
-You assign default template parts to template areas in the templateParts section.  
+You assign default template parts to template areas in the templateParts section.
 Add three keys: `name`, the file name of the template part file without the file extension, `area`, the name of the template area, and `title`, the visible name in the editor. There are three template areas to choose from: header, footer, and uncategorized (general).
 
 Example from Twenty Twenty-Two:
@@ -632,9 +632,9 @@ Example from Twenty Twenty-Two:
 
 ## Defining custom templates
 
-In a classic theme, custom page templates are identified with a file header. In a block theme, you can list block templates in the `theme.json` file.  
-All templates that are listed in the customTemplates section of `theme.json` are selectable in the Site Editor. For templates to be editable in the template editor, the template’s file name needs to be prefixed with the post type (usually `post-` or `page-`).  
-  
+In a classic theme, custom page templates are identified with a file header. In a block theme, you can list block templates in the `theme.json` file.
+All templates that are listed in the customTemplates section of `theme.json` are selectable in the Site Editor. For templates to be editable in the template editor, the template’s file name needs to be prefixed with the post type (usually `post-` or `page-`).
+
 Add two keys: `name`, the file name of the template part file without the file extension, `title`, the visible name in the editor. There is also an optional setting where you decide which post types that can use the template. The key is `postTypes`, followed by the name of the post type:
 
 ```

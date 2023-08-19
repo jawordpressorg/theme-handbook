@@ -1,8 +1,20 @@
+<!--
 # Theme Handbook
+-->
 
-*Welcome to the WordPress Theme Developer Handbook, your resource for learning all about the exciting world of WordPress themes.* 
+# テーマハンドブック
 
+<!--
+*Welcome to the WordPress Theme Developer Handbook, your resource for learning all about the exciting world of WordPress themes.*
+-->
+
+興味深い WordPress テーマのすべてを学ぶための WordPress テーマ開発者向けハンドブックへようこそ。
+
+<!--
 The Theme Developer Handbook is a repository for all things WordPress themes. Whether you’re new to WordPress themes, or you’re an experienced theme developer, you should be able to find the answer to many of your theme-related questions right here.
+-->
+
+WordPress テーマ開発者向けハンドブックは、WordPress のテーマに関するあらゆる情報を掲載しています。ここでは WordPress テーマを初めてご利用になられる方も経験豊富なテーマ開発者もテーマに関する多くの疑問の答えを探すことができるでしょう。
 
 In this handbook, you can learn how to build **block themes or classic themes.**
 
@@ -12,7 +24,7 @@ In this handbook, you can learn how to build **block themes or classic themes.**
 1.  If you’re new to developing WordPress themes, start with section 1, where you can [find out what a theme is](https://developer.wordpress.org/theme/getting-started/what-is-a-theme/), learn about [WordPress’ license](https://developer.wordpress.org/theme/getting-started/wordpress-licensing-the-gpl/), and [set up your development environment](https://developer.wordpress.org/theme/getting-started/setting-up-a-development-environment/).
 2.  Once you’re through the introduction, continue with the [Theme Basics](https://developer.wordpress.org/theme/basics/) section.
 
-It is recommended to read through both the block theme section and the classic theme sections.  
+It is recommended to read through both the block theme section and the classic theme sections.
 This will give you an understanding of the differences between the two types of themes, and help you choose what type of theme to build.
 
 If you’ve got to grips with the basics of themes, check out the [Advanced Theme Topics](https://developer.wordpress.org/theme/advanced-topics/) to learn about child themes, best UI practices, theme testing and more.
@@ -21,4 +33,8 @@ Once you’ve got your theme ready for the world, the final section will cover [
 
 * * *
 
+<!--
 The WordPress Theme Developer Handbook is created by the WordPress community, for the WordPress community. We are always looking for more contributors; if you’re interested stop by the [docs team blog](https://make.wordpress.org/docs) to find out more about getting involved.
+-->
+
+この WordPress テーマ開発者向けハンドブックは、WordPress のコミュニティによって、WordPress のコミュニティのために作成されています。いつでも貢献者を募集しておりますので、興味のある方は、[ドキュメントチームブログ](https://make.wordpress.org/docs)をご覧ください。

@@ -116,8 +116,8 @@ next_post_link();
 
 ### Pagination within a post
 
-WordPress gives you a tag that can be placed in post content to enable pagination for that post:  
-`<!--nextpage-->`  
+WordPress gives you a tag that can be placed in post content to enable pagination for that post:
+`<!--nextpage-->`
 If you use that tag in the content, you need to ensure that the [wp\_link\_pages](https://developer.wordpress.org/reference/functions/wp_link_pages/) function is placed in your single.php template within the loop.
 
 ```php
