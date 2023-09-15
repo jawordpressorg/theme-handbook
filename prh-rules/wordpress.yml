@@ -98,12 +98,18 @@ rules:
   - pattern: 。)
     expected: )
   # 半角数字の前後には半角スペースを入れない
-  - pattern: /(.) ([0-9]) (.)/
-    expected: $1$2$3
-  - pattern: /(.)([0-9]) (.)/
-    expected: $1$2$3
-  - pattern: /(.) ([0-9])(.)/
-    expected: $1$2$3
+  - pattern: /([^ -~]) ([0-9])/
+    expected: $1$2
+    specs:
+      - from: バージョン 12
+        to:   バージョン12
+  - pattern: /([0-9]) ([^ -~])/
+    expected: $1$2
+    specs:
+      - from: 12 件
+        to:   12件
+      - from: RC1 は
+        to:   RC1は
   - pattern: /^[^#] \)$/
     expected: ああああ
 
