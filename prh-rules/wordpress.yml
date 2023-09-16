@@ -1428,6 +1428,8 @@ rules:
         to:   ならば、
       - from: ならば WordPress
         to:   ならば WordPress
+      - from: なら WordPress
+        to:   なら WordPress
   - pattern: /著わ([さしすせそ])/
     expected: 著$1
   - pattern: 著い
@@ -1821,6 +1823,9 @@ rules:
       - クエリーストリング
   - expected: クエリー
     pattern:  /クエリ(?!ー)/
+    specs:
+      - from: クエリ
+        to:   クエリー
   - expected: クオート
     pattern:  /クォート|クオーテーション|クォーテーション/
   - expected: クオリティ
