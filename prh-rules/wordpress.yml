@@ -98,12 +98,18 @@ rules:
   - pattern: 。)
     expected: )
   # 半角数字の前後には半角スペースを入れない
-  - pattern: /(.) ([0-9]) (.)/
-    expected: $1$2$3
-  - pattern: /(.)([0-9]) (.)/
-    expected: $1$2$3
-  - pattern: /(.) ([0-9])(.)/
-    expected: $1$2$3
+  - pattern: /([^ -~]) ([0-9])/
+    expected: $1$2
+    specs:
+      - from: バージョン 12
+        to:   バージョン12
+  - pattern: /([0-9]) ([^ -~])/
+    expected: $1$2
+    specs:
+      - from: 12 件
+        to:   12件
+      - from: RC1 は
+        to:   RC1は
   - pattern: /^[^#] \)$/
     expected: ああああ
 
@@ -1413,13 +1419,17 @@ rules:
     expected: 内蔵
   - pattern: /なか([かでに])/
     expected: 中$1
-  - pattern: /なら(ば(?!、)|[びぶべぼん])/
+  - pattern: /なら(ば(?![、\s])|[びぶべぼん])/
     expected: 並$1
     specs:
       - from: ならびに
         to:   並びに
       - from: ならば、
         to:   ならば、
+      - from: ならば WordPress
+        to:   ならば WordPress
+      - from: なら WordPress
+        to:   なら WordPress
   - pattern: /著わ([さしすせそ])/
     expected: 著$1
   - pattern: 著い
@@ -1497,10 +1507,13 @@ rules:
     expected: 冷や$1
   - pattern: /連([らりるれろっ])|つらな([らりるれろっ])/
     expected: 連な$1
-  - pattern: はさまざま
-    expected: はさまざま
-  - pattern: /はさ([まみむめもん])/
+  - pattern: /はさ([まみむめもん])(?!ざま)/
     expected: 挟$1
+    specs:
+      - from: はさまざま
+        to:   はさまざま
+      - from: はさまる
+        to:   挟まる
   - pattern: おそれ
     expected: 恐れ
   - pattern: /([^っ])さきに/
@@ -1549,8 +1562,13 @@ rules:
     expected: 必要
   - pattern: /あたえ([たつてらりるれろっ])/
     expected: 与え$1
-  - pattern: /すす([まみむめもん])/
+  - pattern: /(?<!お)すす([まみむめもん])/
     expected: 進$1
+    specs:
+      - from: おすすめ
+        to:   おすすめ
+      - from: すすめ
+        to:   進め
   - pattern: 焦点をあて
     expected: 焦点を当て
   - pattern: /おも([いうえおわっ])/
@@ -1803,8 +1821,11 @@ rules:
       - クエリストリング
       - クエリ文字列
       - クエリーストリング
-  - expected: クエリー$1
+  - expected: クエリー
     pattern:  /クエリ(?!ー)/
+    specs:
+      - from: クエリ
+        to:   クエリー
   - expected: クオート
     pattern:  /クォート|クオーテーション|クォーテーション/
   - expected: クオリティ
@@ -2501,7 +2522,12 @@ rules:
   - expected: RFC $1
     pattern:  /RFC([0-9])/
   - expected: 権限グループ
-    pattern:  /ロール/
+    pattern:  /(?<!コント)ロール/
+    specs:
+      - from: ロールごと
+        to:   権限グループごと
+      - from: コントロール
+        to:   コントロール
   - expected: RRDtool
     pattern:  /\bRRDtool\b/i
   - expected: RSpec
@@ -2637,7 +2663,12 @@ rules:
     pattern:  /(当)?てて/
     regexpMustEmpty: $1
   - expected: で
-    pattern:  /でで/
+    pattern:  /でで(?!き)/
+    specs:
+      - from: でで
+        to:   で
+      - from: これでできる
+        to:   これでできる
   - expected: $1の
     pattern:  /([^も])のの/
   - expected: は
