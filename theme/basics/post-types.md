@@ -6,7 +6,7 @@
 <!--
 There are many different types of content in WordPress. These content types are normally described as Post Types, which may be a little confusing since it refers to all different types of content in WordPress. For example, a post is a specific Post Type, and so is a page.
 -->
-WordPress にはさまざまな種類のコンテンツがあり、これらのコンテンツのことを「投稿タイプ」と呼びます。ただし、WordPress にあるさまざまな種類のコンテンツをのことも「投稿タイプ」と呼ぶため、少し混乱するかもしれません。たとえば、投稿 (post) は「投稿タイプ」のひとつですが、固定ページ (page) も同様に「投稿タイプ」と呼びます。
+WordPress にはさまざまな種類のコンテンツがあり、これらのコンテンツのことを「投稿タイプ」と呼びます。ただし、WordPress にあるさまざまな種類のコンテンツをのことも投稿タイプと呼ぶため、少し混乱するかもしれません。たとえば、投稿は投稿タイプのひとつですが、固定ページも同様に投稿タイプと呼びます。
 
 <!--
 Internally, all of the Post Types are stored in the same place — in the wp\_posts database table — but are differentiated by a database column called post\_type.
