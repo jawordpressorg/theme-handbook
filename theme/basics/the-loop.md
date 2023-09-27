@@ -412,7 +412,7 @@ In some situations, you may need to use more than one loop. For example you may 
 <!--
 You can use `[rewind_posts()](https://developer.wordpress.org/reference/functions/rewind_posts/)` to loop through the *same* query a second time. This is useful if you want to display the same query twice in different locations on a page.
 -->
-`[rewind_posts()](https://developer.wordpress.org/reference/functions/rewind_posts/)` を使うと、*同じ*クエリーを2回ループさせることができます。同じクエリーをページの異なる箇所に使いたい場合に有用です。
+`[rewind_posts()](https://developer.wordpress.org/reference/functions/rewind_posts/)` を使うと、**同じ**クエリーを2回ループさせることができます。同じクエリーをページの異なる箇所に使いたい場合に有用です。
 
 <!--
 Here is an example of `rewind_posts()` in use:
