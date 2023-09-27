@@ -58,7 +58,7 @@ The Post Types above can be modified and removed by a plugin or theme, but it’
 <!--
 It’s out of the scope of this handbook to explain other post types in detail. However, it is important to note that you will interact with and build the functionality of [navigation menus](https://developer.wordpress.org/themes/functionality/navigation-menus/) and that will be detailed later in this handbook.
 -->
-このハンドブックではその他の投稿タイプについて詳しく説明しませんが、ナビゲーションメニューについてはこのハンドブックでのちほど詳しく説明します。
+このハンドブックではその他の投稿タイプについて詳しく説明しませんが、[ナビゲーションメニュー](https://developer.wordpress.org/themes/functionality/navigation-menus/)の機能を操作して構築する事は重要であり、これについてはこのハンドブックでのちほど詳しく説明します。
 
 <!--
 ### Post
