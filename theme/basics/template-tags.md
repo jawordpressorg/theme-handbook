@@ -210,6 +210,7 @@ If the template tag you want to use doesn’t have to be within the loop
 <!--
 then you can put it in any file you’d like, for instance in the sidebar, header, or footer template files.
 -->
+これらのタグは、サイドバー、ヘッダー、フッターなど、テンプレートファイルの好きな箇所で使うことができます。
 
 <!--
 These are functions that typically do not require the global post object.

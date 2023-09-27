@@ -21,7 +21,7 @@ To put it simply, the Loop is true to its name: it loops through each post retri
 <!--
 You can use the Loop for a number of different things, for example to:
 -->
-ループは次のような様々な用途で使用できます:
+ループは次のようなさまざまな用途で使用できます:
 
 <!--
 *   display post titles and excerpts on your blog’s homepage;
@@ -419,6 +419,7 @@ Here is an example of `rewind_posts()` in use:
 -->
 `rewind_posts()` の例です:
 
+<!--
 ```php
 <?php
 // Start the main loop
@@ -437,6 +438,25 @@ while ( have_posts() ) : the_post();
 endwhile;
 ?>
 ```
+-->
+```php
+<?php
+// メインループを開始する
+if ( have_posts() ) :
+    while ( have_posts() ) : the_post();
+        the_title();
+    endwhile;
+endif;
+
+// 同じクエリーを再度使うために rewind_posts() を呼び出す
+rewind_posts();
+
+// 新しいループを開始する
+while ( have_posts() ) : the_post();
+    the_content();
+endwhile;
+?>
+```
 
 <!--
 ### Creating secondary queries and loops
@@ -448,6 +468,7 @@ Using two loops with the same query was relatively easy but not always what you 
 -->
 同じクエリーでループを2つ使うのは簡単ですが、必ずしもそれが求めているものであるとは限りません。しばしば、テンプレートの中で異なるコンテンツを表示するために2つ目のクエリーを作りたいでしょう。たとえば、同じページの中で2つのグループの投稿を表示して、それぞれのグループで異なる処理をする場合です。よくある使い方は、以下のように、投稿のコンテンツの下に同じカテゴリーに属する投稿のリストを表示することです。
 
+<!--
 ```php
 <?php
 // The main query.
@@ -469,6 +490,38 @@ wp_reset_postdata();
 $secondary_query = new WP_Query( 'category_name=example-category' );        
 
 // The second loop.
+if ( $secondary_query->have_posts() )
+    echo '<ul>';
+    while ( $secondary_query->have_posts() ) : $secondary_query->the_post();
+        the_title( '<li>', '</li>' );
+     endwhile;
+     echo '</ul>';
+endif;
+wp_reset_postdata();
+?>
+```
+-->
+```php
+<?php
+// メインクエリー
+if ( have_posts() ) :
+    while ( have_posts() ) : the_post();
+        the_title();
+        the_content();
+    endwhile;
+else :
+    // 投稿が見つからない場合はこの文章を表示する
+    _e( 'Sorry, no posts matched your criteria.' );
+endif;
+wp_reset_postdata();
+
+/*
+ * 2つ目のクエリー。この例では "example-category" カテゴリーの記事を取得していますが、
+ * どのようなカテゴリ名でも構いません。
+ */
+$secondary_query = new WP_Query( 'category_name=example-category' );        
+
+// 2つ目のループ
 if ( $secondary_query->have_posts() )
     echo '<ul>';
     while ( $secondary_query->have_posts() ) : $secondary_query->the_post();
@@ -535,6 +588,7 @@ Here is an example of a loop using `WP_Query` that is reset with `[wp_reset_post
 -->
 以下は `WP_Query` を使ったループを `[wp_reset_postdata()](https://developer.wordpress.org/reference/functions/wp_reset_postdata/)` でリセットする例です。
 
+<!--
 ```php
  <?php
 // Example argument that defines three posts per page.
@@ -558,6 +612,30 @@ endif;
 wp_reset_postdata();
 ?> 
 ```
+-->
+```php
+ <?php
+// 1ページに3投稿ずつ表示するための引数
+$args = array( 'posts_per_page' => 3 ); 
+
+// WP_Query を呼び出す変数
+$the_query = new WP_Query( $args ); 
+
+if ( $the_query->have_posts() ) :
+    // ループを開始する
+    while ( $the_query->have_posts() ) : $the_query->the_post();
+        the_title();
+        the_excerpt();
+    // ループを終了する
+    endwhile;
+else:
+// このクエリーに合致する投稿がない場合には、このテキストを表示する
+    _e( 'Sorry, no posts matched your criteria.', 'textdomain' );
+endif; 
+
+wp_reset_postdata();
+?> 
+```
 
 <!--
 ### Using wp\_reset\_query
@@ -567,7 +645,7 @@ wp_reset_postdata();
 <!--
 Using `[wp_reset_query()](https://developer.wordpress.org/reference/functions/wp_reset_query/)` restores the [WP\_Query](https://developer.wordpress.org/reference/classes/wp_query/) and global `$post` data to the original main query. You **MUST** use this function to reset your loop if you use `[query_posts()](https://developer.wordpress.org/reference/functions/query_posts/)` within your loop. You can use it after custom loops with [WP\_Query](https://developer.wordpress.org/reference/classes/wp_query/) because it actually calls `[wp_reset_postdata()](https://developer.wordpress.org/reference/functions/wp_reset_postdata/)` when it runs. However, it’s best practice to use `[wp_reset_postdata()](https://developer.wordpress.org/reference/functions/wp_reset_postdata/)` with any custom loops involving `WP_Query`.
 -->
-`[wp_reset_query()](https://developer.wordpress.org/reference/functions/wp_reset_query/)` を使うと、 [WP_Query](https://developer.wordpress.org/reference/classes/wp_query/) とグローバル変数の `$post` データを元のメインループのクエリにリストアできます。ループの中で `[query_posts()](https://developer.wordpress.org/reference/functions/query_posts/)` を使った場合は、この関数を使ってループを**必ず**リセットする必要があります。この関数は裏で `[wp_reset_postdata()](https://developer.wordpress.org/reference/functions/wp_reset_postdata/)` が実行されるので、 [WP_Query](https://developer.wordpress.org/reference/classes/wp_query/) を使ったカスタムループの後でこの関数を使うこともできます。ただし、 `WP_Query` が関係するループでは `[wp_reset_postdata()](https://developer.wordpress.org/reference/functions/wp_reset_postdata/)` を使うことが推奨されています。
+`[wp_reset_query()](https://developer.wordpress.org/reference/functions/wp_reset_query/)` を使うと、 [WP_Query](https://developer.wordpress.org/reference/classes/wp_query/) とグローバル変数の `$post` データを元のメインループのクエリーにリストアできます。ループの中で `[query_posts()](https://developer.wordpress.org/reference/functions/query_posts/)` を使った場合は、この関数を使ってループを**必ず**リセットする必要があります。この関数は裏で `[wp_reset_postdata()](https://developer.wordpress.org/reference/functions/wp_reset_postdata/)` が実行されるので、 [WP_Query](https://developer.wordpress.org/reference/classes/wp_query/) を使ったカスタムループの後でこの関数を使うこともできます。ただし、 `WP_Query` が関係するループでは `[wp_reset_postdata()](https://developer.wordpress.org/reference/functions/wp_reset_postdata/)` を使うことが推奨されています。
 
 <!--
 Alert: `[query_posts()](https://developer.wordpress.org/reference/functions/query_posts/)` is *not best practice* and should be avoided if at all possible. Therefore, you shouldn’t have much use for `[wp_reset_query()](https://developer.wordpress.org/reference/functions/wp_reset_query/)`.
