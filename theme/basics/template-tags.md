@@ -88,7 +88,7 @@ By encapsulating all of the code for a particular chunk of content, template tag
 <!--
 It is far easier to create one `header.php` file and have all of your theme templates like `single.php`, `page.php`, `front-page.php`, etc. reference that one theme file using `[get_header()](https://developer.wordpress.org/reference/functions/get_header/)` than copying and pasting the code into each theme file. It also makes maintenance easier. Whenever you make a change in your `header.php` file, the change is automatically carried over into all of your other theme files.
 -->
-`header.php` ファイルを1つ作成して `single.php`, `page.php`, `front-page.php` といったテーマファイルで `[get_header()](https://developer.wordpress.org/reference/functions/get_header/)` を使ってその内容を参照するほうが、すべてのテーマファイルの中にまったく同じコードをコピー&ペーストするよりもはるかに簡単です。 `header.php` ファイルを編集すると、自動的にすべてのテーマファイルの中に反映されるので、テーマの保守も容易になります。
+`header.php` ファイルを1つ作成して `single.php`, `page.php`, `front-page.php` といったテーマファイルで `[get_header()](https://developer.wordpress.org/reference/functions/get_header/)` を使ってその内容を参照するほうが、各テーマファイルの中にまったく同じコードをコピー&ペーストするよりもはるかに簡単です。 `header.php` ファイルを編集すると、自動的にすべてのテーマファイルの中に反映されるので、テーマの保守も容易になります。
 
 <!--
 Another reason to use template tags is to display dynamic data, i.e. data from the database. In your header, you could manually include the `title` tag, like so:
