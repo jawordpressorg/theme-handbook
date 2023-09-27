@@ -105,7 +105,7 @@ Any [template tags](https://developer.wordpress.org/themes/basics/template-tags/
 <!--
 Tip: You can include a custom 404 “not found” message that will be displayed if no posts matching the specified criteria are available. The message must be placed between the `endwhile` and `endif` statements, as seen in examples below.
 -->
-ヒント: 条件に合致する投稿がない場合に、独自の404「見つかりませんでした」のメッセージを表示できます。次の例のように、メッセージは `endwhile` と `endif` の間に記述する必要があります。
+ヒント: 条件に合致する投稿がない場合に、独自の404「見つかりませんでした」のメッセージを表示できます。次の例のように、このメッセージは `endwhile` と `endif` の間に記述する必要があります。
 
 <!--
 An extremely simple `index.php` file would look like:
