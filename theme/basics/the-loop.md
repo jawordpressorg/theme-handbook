@@ -519,7 +519,7 @@ It’s important when using multiple loops in a template that you reset them. No
 <!--
 Use `[wp_reset_postdata()](https://developer.wordpress.org/reference/functions/wp_reset_postdata/)` when you are running custom or multiple loops with `WP_Query`. This function restores the global `$post` variable to the current post in the main query. If you’re following best practices, this is the most common function you will use to reset loops.
 -->
-`WP_Query` を使ってカスタムループや複数のループを実行する際は `[wp_reset_postdata()](https://developer.wordpress.org/reference/functions/wp_reset_postdata/)` を使ってください。この関数はグローバル変数の `$post` 変数の内容をメインクエリーの投稿のものにリセットします。これはループをリセットする際に最もよく使う関数です。
+`WP_Query` を使ってカスタムループや複数のループを実行する際は `[wp_reset_postdata()](https://developer.wordpress.org/reference/functions/wp_reset_postdata/)` を使ってください。この関数はグローバル変数の `$post` の内容をメインクエリーの投稿のものにリストアします。これはループをリセットする際に最もよく使う関数です。
 
 <!--
 To properly use this function, place the following code after any loops with `WP_Query`:
