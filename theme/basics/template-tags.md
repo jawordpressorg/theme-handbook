@@ -202,7 +202,7 @@ The main reason why some functions require the loop is because they require the 
 <!--
 If the template tag you want to use doesn’t have to be within the loop
 -->
-次に示すような、ループの中で使う必要がないテンプレートタグについては、サイドバーやヘッダー、フッターのテンプレートファイルなど、どこでも使うことができます。
+次に示すような、ループの中で使う必要がないテンプレートタグについては、どこでも使うことができます。
 
 *   [wp\_list\_cats()](https://developer.wordpress.org/reference/functions/wp_list_cats/)
 *   [wp\_list\_pages()](https://developer.wordpress.org/reference/functions/wp_list_pages/)
