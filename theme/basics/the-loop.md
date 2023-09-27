@@ -248,7 +248,7 @@ WordPress の投稿には個別のページがあり、関連する情報が表�
 <!--
 In the example below, the loop outputs the post’s title and content. You could use this example in a post or page template file to display the most basic information about the post. You could also customize this template to add more data to the post, for example the category.
 -->
-以下のループの例では、投稿のタイトルとコンテンツを表示します。投稿や固定ページのテンプレートファイルで使うと、投稿に関する基本的な情報を表示できます。このテンプレートをカスタマイズすれば、カテゴリーといったデータを追加できます。
+以下のループの例では、投稿のタイトルとコンテンツを表示します。投稿や固定ページのテンプレートファイルで使うと、投稿に関する基本的な情報を表示できます。このテンプレートをカスタマイズすれば、カテゴリーといったより多くのデータを投稿に追加できます。
 
 ```php
 <?php
