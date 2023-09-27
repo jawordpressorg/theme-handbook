@@ -112,7 +112,7 @@ The template files that display the Post post type are:
 <!--
 [Read more about Post Template Files in classic themes](https://developer.wordpress.org/themes/template-files-section/post-template-files/).
 -->
-[クラシックテーマでの投稿 (post) のテンプレートファイルについてはこちらをご覧ください](https://developer.wordpress.org/themes/template-files-section/post-template-files/)。
+[クラシックテーマでの投稿テンプレートファイルについてはこちらをご覧ください](https://developer.wordpress.org/themes/template-files-section/post-template-files/)。
 
 <!--
 ### Page
