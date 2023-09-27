@@ -21,7 +21,7 @@ In addition to the default Post Types, you can also create Custom Post Types.
 <!--
 The [Template files](https://developer.wordpress.org/themes/basics/template-files/) page briefly mentioned that different Post Types are displayed by different Template files.  As the whole purpose of a Template file is to display content a certain way, the Post Types purpose is to categorize what type of content you are dealing with. Generally speaking, certain Post Types are tied to certain template files.
 -->
-[テンプレートファイル](https://developer.wordpress.org/themes/basics/template-files/)のページでは、投稿タイプはそれぞれ対応するテンプレートファイルで表示すると説明しました。投稿タイプは扱っているコンテンツの種類を分類するためのものであり、テンプレートファイルはそれにもとづいてコンテンツを表示するものです。一般的には、特定の投稿タイプと特定のテンプレートファイルは紐づいています。
+[テンプレートファイル](https://developer.wordpress.org/themes/basics/template-files/)のページでは、投稿タイプはそれぞれ対応するテンプレートファイルで表示されると説明しました。投稿タイプは扱っているコンテンツの種類を分類するためのものであり、テンプレートファイルはそれにもとづいてコンテンツを表示するものです。一般的には、特定の投稿タイプと特定のテンプレートファイルは紐づいています。
 
 <!--
 ## Default Post Types
