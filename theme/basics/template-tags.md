@@ -32,7 +32,7 @@ A template tag is simply a piece of code that tells WordPress to get something f
 *   A WordPress function
 *   Optional parameters
 -->
-*   PHP タグ
+*   PHP コードタグ
 *   WordPress 関数
 *   任意のパラメータ
 
