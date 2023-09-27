@@ -149,7 +149,7 @@ bloginfo( 'version' );
 <!--
 For each template tag, the parameters differ. A list of the parameters and what they can do can be found on specific template tag pages located throughout the [code reference](https://developer.wordpress.org/reference/).
 -->
-テンプレートタグごとに、パラメータは異なります。パラメータの一覧とそれぞれのパラメータの役割については[リファレンス](https://developer.wordpress.org/reference/)のテンプレートタグのページを確認してください。
+テンプレートタグごとに、パラメータは異なります。パラメータの一覧とそれぞれのパラメータの役割については[コードリファレンス](https://developer.wordpress.org/reference/)のテンプレートタグのページを確認してください。
 
 <!--
 ### Using Template Tags Within the Loop
