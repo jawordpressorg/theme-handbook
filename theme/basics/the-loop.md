@@ -572,7 +572,7 @@ Using `[wp_reset_query()](https://developer.wordpress.org/reference/functions/wp
 <!--
 Alert: `[query_posts()](https://developer.wordpress.org/reference/functions/query_posts/)` is *not best practice* and should be avoided if at all possible. Therefore, you shouldn’t have much use for `[wp_reset_query()](https://developer.wordpress.org/reference/functions/wp_reset_query/)`.
 -->
-注意: `[query_posts()](https://developer.wordpress.org/reference/functions/query_posts/)` は*推奨されておらず*、可能な限り避けてください。そのため、 `[wp_reset_query()](https://developer.wordpress.org/reference/functions/wp_reset_query/)` を使う機会も少ないでしょう。
+注意: `[query_posts()](https://developer.wordpress.org/reference/functions/query_posts/)` は**推奨されておらず**、可能な限り避けてください。そのため、 `[wp_reset_query()](https://developer.wordpress.org/reference/functions/wp_reset_query/)` を使う機会も少ないでしょう。
 
 <!--
 To properly use this function, place the following code after any loops with `[query_posts()](https://developer.wordpress.org/reference/functions/query_posts/)`.
