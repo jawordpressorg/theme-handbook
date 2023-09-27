@@ -505,7 +505,7 @@ Note that the regular loop in the example above has one difference: it calls `[w
 <!--
 It’s important when using multiple loops in a template that you reset them. Not doing so can lead to unexpected results due to how data is stored and used within the global `$post` variable. There are three main ways to reset the loop depending on the way they are called.
 -->
-テンプレートの中で複数のループを使う際に、それらをリセットすることが重要です。そうしないと、グローバル変数の `$post` 内でどのようにデータを保存し、使用するかによって予期しない結果となることがあります。呼び出し方に応じて、ループをリセットする方法が3通りあります。
+テンプレートの中で複数のループを使う際に、それらをリセットすることが重要です。そうしないと、グローバル変数の `$post` 内でどのようにデータを保存し使用するかによって、予期しない結果となることがあります。呼び出し方に応じて、ループをリセットする方法が3通りあります。
 
 *   `[wp_reset_postdata()](https://developer.wordpress.org/reference/functions/wp_reset_postdata/)`
 *   `[wp_reset_query()](https://developer.wordpress.org/reference/functions/wp_reset_query/)`
