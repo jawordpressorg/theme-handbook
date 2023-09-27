@@ -384,8 +384,8 @@ if ( have_posts() ) :
 
 else :
     /*
-      * 一番最初の "if" は表示できる投稿があるかどうかを確認します。
-      * この "else" では投稿がなかったときの処理をします。
+      * 一番最初の "if" は表示できる投稿があるかどうかを確認し、
+      * この "else" では投稿がなかったときの処理を行う
      */
      _e( 'Sorry, no posts matched your criteria.', 'textdomain' );
 
