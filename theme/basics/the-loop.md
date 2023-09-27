@@ -402,7 +402,7 @@ else :
 <!--
 In some situations, you may need to use more than one loop. For example you may want to display the titles of the posts in a table of content list at the top of the page and then display the content further down the page. Since the query isn’t being changed we simply need to rewind the loop when we need to loop through the posts for a second time. For that we will use the function [rewind\_posts()](https://developer.wordpress.org/reference/functions/rewind_posts/) .
 -->
-場合によって、複数のループを使う必要があるかもしれません。たとえば、ページ上部で投稿のタイトルを表に表示し、ページ下部でコンテンツを表示することがあるかもしれません。クエリーは変更されないため、投稿を2回目にループする場合はループを巻き戻す必要があります。その際は [rewind_posts()](https://developer.wordpress.org/reference/functions/rewind_posts/) 関数を使います。
+場合によって、複数のループを使う必要があるかもしれません。たとえば、ページ上部にある目次リストに投稿のタイトルを表示し、ページ下部でコンテンツを表示することがあるかもしれません。クエリーは変更されないため、投稿を2回目にループする場合はループを巻き戻す必要があります。その際は [rewind_posts()](https://developer.wordpress.org/reference/functions/rewind_posts/) 関数を使います。
 
 <!--
 ### Using rewind\_posts
