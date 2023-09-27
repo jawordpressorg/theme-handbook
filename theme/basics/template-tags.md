@@ -159,7 +159,7 @@ For each template tag, the parameters differ. A list of the parameters and what 
 <!--
 Many template tags work within the [WordPress Loop](https://developer.wordpress.org/themes/basics/the-loop/). This means that they are included in the template files as part of the php “loop” that generates the pages users see based upon the instructions inside of the loop.
 -->
-多くのテンプレートタグは [WordPress のループ](https://developer.wordpress.org/themes/basics/the-loop/)内で使えます。つまり、テンプレートタグが php の「ループ」の一部としてテンプレートファイルに含まれており、ループ内の実装にもとづいてページを生成します。
+多くのテンプレートタグは [WordPress のループ](https://developer.wordpress.org/themes/basics/the-loop/)内で使えます。つまり、テンプレートタグが php の「ループ」の一部としてテンプレートファイルに含まれており、ループ内の実装にもとづいてユーザーが目にするページを生成します。
 
 <!--
 The WordPress loop begins with:
