@@ -205,7 +205,7 @@ You can learn more about [creating custom post types in the WordPress Plugin Dev
 <!--
 While you generally won’t develop Custom Post Types in your theme, you may want to code ways to display Custom Post Types that were created by a plugin.  The following templates can display Custom post types:
 -->
-一般的にテーマ内でカスタム投稿タイプを新たに作ることはないものの、プラグインによって作られたカスタム投稿タイプを表示するために、カスタム投稿タイプを扱えるようにしておくことをおすすめします。次のテンプレートファイルでカスタム投稿タイプを表示できます:
+一般的にテーマ内でカスタム投稿タイプを新たに作ることはないものの、プラグインによって作られたカスタム投稿タイプを表示できるようにしておくことをおすすめします。次のテンプレートファイルでカスタム投稿タイプを表示できます:
 
 *   `single-{post-type}`
 *   `archive-{post-type}`
