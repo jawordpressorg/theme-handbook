@@ -62,7 +62,7 @@ endif;
 <!--
 This loop says that when there are posts, loop through and display the posts. Broken down into more detail:
 -->
-このループは、投稿があればループして投稿内容を表示する例です。
+このループは、投稿があればループして投稿内容を表示する例です。さらに詳しく見て見ましょう:
 
 <!--
 *   The `[have_posts()](https://developer.wordpress.org/reference/functions/have_posts/)` function checks whether there are any posts.
