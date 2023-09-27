@@ -136,7 +136,7 @@ Pages are a static Post Type, outside of the normal blog stream/feed. Their feat
 <!--
 The template files that display the Page post type are:
 -->
-固定ページ (page) を表示するテンプレートファイルは次のとおりです:
+固定ページを表示するテンプレートファイルは次のとおりです:
 
 <!--
 *   `page` and all its iterations
