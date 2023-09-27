@@ -31,7 +31,7 @@ You can use the Loop for a number of different things, for example to:
 -->
 *   ブログのホームページで投稿のタイトルや抜粋を表示する
 *   投稿のコンテンツやコメントを表示する
-*   ページの中でテンプレートタグを使ってコンテンツを表示する
+*   テンプレートタグを使ってコンテンツを個別のページに表示する
 *   [カスタム投稿タイプ](https://developer.wordpress.org/themes/functionality/pages-posts-custom-post-types/)やカスタムフィールドのデータを表示する
 
 <!--
