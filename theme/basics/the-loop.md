@@ -371,7 +371,7 @@ if ( have_posts() ) :
              </div>
 
             <?php
-            // 投稿のカテゴリをカンマで区切りで表示する
+            // 投稿のカテゴリーをカンマで区切りで表示する
             _e( 'Posted in ', 'textdomain' ); the_category( ', ' ); 
 
         // "post" か "post-cat-three" のクラスが適用された div タグを閉じる
