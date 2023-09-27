@@ -152,7 +152,7 @@ The template files that display the Page post type are:
 <!--
 [Read more about Page Template Files in classic themes](https://developer.wordpress.org/themes/template-files-section/page-template-files/).
 -->
-[クラシックテーマでの固定ページ (page) のテンプレートファイルについてはこちらをご覧ください](https://developer.wordpress.org/themes/template-files-section/page-template-files/)。
+[クラシックテーマでの固定ページテンプレートファイルについてはこちらをご覧ください](https://developer.wordpress.org/themes/template-files-section/page-template-files/)。
 
 <!--
 ### Attachment
