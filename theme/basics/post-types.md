@@ -122,7 +122,7 @@ The template files that display the Post post type are:
 <!--
 Pages are a static Post Type, outside of the normal blog stream/feed. Their features are:
 -->
-固定ページ (page) は通常のブログフィードとは違って、静的な投稿タイプです。
+固定ページは通常のブログフィードとは違って、静的な投稿タイプです。その特徴は以下の通りです:
 
 <!--
 *   non-time dependent and without a time stamp
