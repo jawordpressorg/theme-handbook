@@ -162,7 +162,7 @@ The template files that display the Page post type are:
 <!--
 Attachments are commonly used to display images or media in content, and may also be used to link to relevant files. Their features are:
 -->
-添付ファイル (attachment) はコンテンツの中で画像やメディアを表示する際に使用し、関連するファイルへのリンクとしても使用されます。
+添付ファイルはコンテンツの中で画像やメディアを表示する際に使用し、関連するファイルへのリンクとしても使用されます。
 
 <!--
 *   contain information (such as name or description) about files uploaded through the media upload system
