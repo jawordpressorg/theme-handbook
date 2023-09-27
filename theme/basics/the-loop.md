@@ -209,7 +209,7 @@ Let’s take a look at some examples of the Loop in action:
 <!--
 ### Basic Examples
 -->
-### 基本の使い方
+### 基本的な例
 
 <!--
 #### Blog Archive
