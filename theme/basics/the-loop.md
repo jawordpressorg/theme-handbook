@@ -271,7 +271,7 @@ endif;
 <!--
 #### Style Posts from Some Categories Differently
 -->
-#### カテゴリーに応じて異なる装飾をする
+#### カテゴリーに応じてスタイルを変更する
 
 <!--
 The example below does a couple of things:
