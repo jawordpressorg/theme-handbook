@@ -174,7 +174,7 @@ Attachments are commonly used to display images or media in content, and may als
 <!--
 The template files that display the Attachment post type are:
 -->
-添付ファイル (attachment) を表示するテンプレートファイルは次のとおりです:
+添付ファイルを表示するテンプレートファイルは次のとおりです:
 
 *   `MIME_type`
 *   `attachment`
