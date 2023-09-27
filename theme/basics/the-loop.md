@@ -283,7 +283,7 @@ The example below does a couple of things:
 *   Next, it makes it possible for posts with the category ID of “3” to be styled differently, utilizing the `[in_category()](https://developer.wordpress.org/reference/functions/in_category/)` template tag.
 -->
 *   まず、上記の例と同様に、各投稿のタイトル、時刻、投稿者、コンテンツ、カテゴリーを表示します。
-*   次に、 `[in_category()](https://developer.wordpress.org/reference/functions/in_category/)` テンプレートタグを使って、カテゴリー ID が "3" の投稿に異なる装飾を適用します。
+*   次に、 `[in_category()](https://developer.wordpress.org/reference/functions/in_category/)` テンプレートタグを使って、カテゴリー ID が "3" の投稿に異なるスタイルを適用します。
 
 <!--
 Code comments in this example provide details throughout each stage of the loop:
