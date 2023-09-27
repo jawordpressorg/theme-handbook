@@ -84,7 +84,7 @@ Posts are used in blogs. They are:
 <!--
 The template files that display the Post post type are:
 -->
-投稿 (post) を表示するテンプレートファイルは次のとおりです:
+投稿を表示するテンプレートファイルは次のとおりです:
 
 <!--
 *   `singl`e and `single-post`
