@@ -153,8 +153,8 @@ The Loop can display a number of different elements for each post. For example, 
 *   `[the_title()](https://developer.wordpress.org/reference/functions/the_title/)` – the title of the post or page
 *   `[the_time()](https://developer.wordpress.org/reference/functions/the_time/)` – the time or date for the post or page. This can be customized using standard php date function formatting.
 -->
-*   `[next_post_link()](https://developer.wordpress.org/reference/functions/next_post_link/)` – 現在の投稿の*後*に公開された投稿へのリンク
-*   `[previous_post_link()](https://developer.wordpress.org/reference/functions/previous_post_link/)` – 現在の投稿の*前*に公開された投稿へのリンク
+*   `[next_post_link()](https://developer.wordpress.org/reference/functions/next_post_link/)` – 現在の投稿の**後**に公開された投稿へのリンク
+*   `[previous_post_link()](https://developer.wordpress.org/reference/functions/previous_post_link/)` – 現在の投稿の**前**に公開された投稿へのリンク
 *   `[the_category()](https://developer.wordpress.org/reference/functions/the_category/)` – 表示している投稿や固定ページに関連するカテゴリー
 *   `[the_author()](https://developer.wordpress.org/reference/functions/the_author/)` – 投稿や固定ページの投稿者
 *   `[the_content()](https://developer.wordpress.org/reference/functions/the_content/)` – 投稿や固定ページのコンテンツ
