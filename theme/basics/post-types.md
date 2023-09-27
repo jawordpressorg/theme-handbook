@@ -185,7 +185,7 @@ The template files that display the Attachment post type are:
 <!--
 [Read more about Attachment Template Files in classic themes](https://developer.wordpress.org/themes/template-files-section/attachment-template-files/).
 -->
-[クラシックテーマでの添付ファイル (attachment) のテンプレートファイルについてはこちらをご覧ください](https://developer.wordpress.org/themes/template-files-section/attachment-template-files/)。
+[クラシックテーマでの添付ファイルテンプレートファイルについてはこちらをご覧ください](https://developer.wordpress.org/themes/template-files-section/attachment-template-files/)。
 
 <!--
 ## Custom Post Types
