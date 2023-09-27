@@ -21,7 +21,7 @@ To put it simply, the Loop is true to its name: it loops through each post retri
 <!--
 You can use the Loop for a number of different things, for example to:
 -->
-ループは次のような場合に使用できます:
+ループは次のような様々な用途で使用できます:
 
 <!--
 *   display post titles and excerpts on your blog’s homepage;
