@@ -68,7 +68,7 @@ It’s out of the scope of this handbook to explain other post types in detail. 
 <!--
 Posts are used in blogs. They are:
 -->
-投稿 (post) はブログでよく使われます。
+投稿はブログでよく使われます。
 
 <!--
 *   displayed in reverse sequential order by time, with the newest post first
