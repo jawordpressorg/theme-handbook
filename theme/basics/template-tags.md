@@ -131,7 +131,7 @@ Some template tags let you pass parameters. Parameters are extra pieces of infor
 <!--
 For example, the `[bloginfo()](https://developer.wordpress.org/reference/functions/bloginfo/ "bloginfo template tag")` template tag allows you to give it a parameter telling WordPress the specific piece of information you want. To print the blog name, you just pass along the parameter “name,” like so:
 -->
-たとえば、 `[bloginfo()](https://developer.wordpress.org/reference/functions/bloginfo/)` テンプレートタグでは WordPress に関する情報のうち、どの情報を取得するかをパラメータで指定できます。ブログの名前を取得するには、パラメータとして "name" を指定します:
+たとえば、 `[bloginfo()](https://developer.wordpress.org/reference/functions/bloginfo/)` テンプレートタグでは WordPress に関する情報のうち、どの情報を取得するかをパラメータで指定できます。ブログの名前を表示するには、パラメータとして "name" を指定します:
 
 ```php
 bloginfo( 'name' );
