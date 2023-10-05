@@ -21,7 +21,7 @@ rules:
     expected: " "
   - pattern: "  "
     expected: " "
-  # 英数字は半角文字を使う
+  # 数字は半角文字を使う
   - pattern: ０
     expected: "0"
   - pattern: １
@@ -63,31 +63,174 @@ rules:
     expected: )
   - pattern: ：
     expected: ":"
-  # 半角英字と全角文字の間には、半角スペースを入れる
-  - pattern: /([^\x01-\x7E])([a-zA-Z]+)([^\x01-\x7E])/
-    expected: $1 $2 $3
-  - pattern: /^([a-zA-Z]+)([^\x01-\x7E])/
+  # 半角英字と数字の間には半角スペースを入れない（例外としてPHP、WordPress、Gutenberg、WP、IE、Windows、英語月は除く）
+  - pattern: /(\b(?!PHP|WordPress|Gutenberg|WP|IE|Windows|January|February|March|April|May|June|July|August|September|October|November|December)[A-Za-z]+\b) ([0-9])/
+    expected: $1$2
+    specs:
+      - from: WordPress 5
+        to:   WordPress 5
+      - from: PHP 8
+        to:   PHP 8
+      - from: Gutenberg 5
+        to:   Gutenberg 5
+      - from: IE 11
+        to:   IE 11
+      - from: version 5
+        to:   version5
+      - from: January 5
+        to:   January 5
+  # 数字と半角英字の間には半角スペースを入れない
+  - pattern: /([0-9]) ([a-zA-Z])/
+    expected: $1$2
+    specs:
+      - from: 5 version
+        to:   5version
+  # 、。「」『』を除く文字と数字の間には半角スペースを入れない
+  - pattern: /([^\x01-\x7E、。「」『』]) ([0-9])/
+    expected: $1$2
+    specs:
+      - from: バージョン 12
+        to:   バージョン12
+      - from: バージョン 12
+        to:   バージョン12
+      - from: です。12
+        to:   です。12
+      - from: 「バージョン」12
+        to:   「バージョン」12
+  # 数字と、–。「」『』を除く文字の間には半角スペースを入れない
+  - pattern: /([0-9]) ([^\x01-\x7E–、。「」『』])/
+    expected: $1$2
+    specs:
+      - from: RC1 は
+        to:   RC1は
+      - from: 12 件
+        to:   12件
+      - from: 12。
+        to:   12。
+      - from: 12「バージョン」
+        to:   12「バージョン」
+      - from: 12 - バージョン
+        to:   12 - バージョン
+      - from: 12 – バージョン
+        to:   12 – バージョン
+  # 半角英字と、。「」『』…を除く文字の間には、半角スペースを入れる
+  - pattern: /([a-zA-Z])([^\x01-\x7E、。「」『』…])/
     expected: $1 $2
+    specs:
+      - from: WordPressは
+        to:   WordPress は
+      - from: WordPress、または
+        to:   WordPress、または
+      - from: WordPress「バージョン」
+        to:   WordPress「バージョン」
+      - from: WordPress…
+        to:   WordPress…
+  # 、。「」『』を除く全角文字と半角英字の間には、半角スペースを入れる
+  - pattern: /([^\x01-\x7E、。「」『』])([a-zA-Z])/
+    expected: $1 $2
+    specs:
+      - from: このWordPress
+        to:   この WordPress
+      - from: また、WordPress
+        to:   また、WordPress
+      - from: です。WordPress
+        to:   です。WordPress
+      - from: 「WordPress
+        to:   「WordPress
+      - from: 『WordPress
+        to:   『WordPress
+  # 、。「」『』の前には半角スペースを入れない
+  - pattern: /([ ])([、。「」『』])/
+    expected: $2
+    specs:
+      - from: 準備をしましょう 。
+        to:   準備をしましょう。
+      - from: または 「
+        to:   または「
+  # 、。「」『』の後には半角スペースを入れない
+  - pattern: /([、。「」『』])([ ])/
+    expected: $1
+    specs:
+      - from: 準備をしましょう。 または
+        to:   準備をしましょう。または
+      - from: WordPress」 または
+        to:   WordPress」または
   # 疑問符、感嘆符の前に半角スペースを入れる
   - pattern: /([^ ])([!?])/
     expected: $1 $2
+    specs:
+      - from: 準備をしましょう!
+        to:   準備をしましょう !
+      - from: 準備はできましたか?
+        to:   準備はできましたか ?
+  # 疑問符、感嘆符の後に半角スペースを入れる (例外としてコロン記号と)。「」『』を除く)
+  - pattern: /([!?])([^ :、。「」『』)])/
+    expected: $1 $2
+    specs:
+      - from: "!WordPress"
+        to:   "! WordPress"
+      - from: "?または"
+        to:   "? または"
+      - from: "WordPress !:"
+        to:   "WordPress !:"
+      - from: "!「WordPress"
+        to:   "!「WordPress"
+      - from: "?『WordPress"
+        to:   "?『WordPress"
+      - from: (WordPress !)
+        to:   (WordPress !)
+      - from: 「WordPress !」
+        to:   「WordPress !」
   # 丸括弧の内側に半角スペースを入れない
   - pattern: /\( (.)/
     expected: ($1
+    specs:
+      - from: ( WordPress
+        to:   (WordPress
   - pattern: /(.) \)/
     expected: $1)
-  # 丸括弧の前に半角スペースを入れる (例外として。、は除く)
-  - pattern: /([^ 。、])\(/
+    specs:
+      - from: WordPress )
+        to:   WordPress)
+  # 丸括弧の前に半角スペースを入れる (例外として。、」』は除く)
+  - pattern: /([^ 。、」』])\(/
     expected: $1 (
+    specs:
+      - from: WordPress(
+        to:   WordPress (
+      - from: です。(
+        to:   です。(
+      - from: また、(
+        to:   また、(
+      - from: 「WordPress」(
+        to:   「WordPress」(
   # 丸括弧の前に半角スペースを入れない (。、)
   - pattern: /([。、]) \(/
     expected: $1(
-  # 丸括弧の後に半角スペースを入れる (例外として。、は除く)
-  - pattern: /\)([^ 。、\n\r\n\r])/
+  # 丸括弧の後に半角スペースを入れる (例外としてコロン記号と。、「」『』は除く)
+  - pattern: /\)([^ :。、「」『』\n\r\n\r])/
     expected: ) $1
-  # 丸括弧の後に半角スペースを入れない (。、)
-  - pattern: /\) ([。、])/
+    specs:
+      - from: WordPress)または
+        to:   WordPress) または
+      - from: "WordPress):"
+        to:   "WordPress):"
+      - from: WordPress)。
+        to:   WordPress)。
+      - from: WordPress)」
+        to:   WordPress)」
+      - from: WordPress)『
+        to:   WordPress)『
+  # 丸括弧の後に半角スペースを入れない (。、「」『』)
+  - pattern: /\) ([。、「」『』])/
     expected: )$1
+    specs:
+      - from: WordPress) 。
+        to:   WordPress)。
+      - from: WordPress) 」
+        to:   WordPress)」
+      - from: WordPress) 『
+        to:   WordPress)『
   # コロンの前に半角スペースを入れない
   - pattern: /(.) :/
     expected: "$1:"
@@ -97,21 +240,6 @@ rules:
   # 丸括弧内には句点は付けない
   - pattern: 。)
     expected: )
-  # 半角数字の前後には半角スペースを入れない
-  - pattern: /([^ -~]) ([0-9])/
-    expected: $1$2
-    specs:
-      - from: バージョン 12
-        to:   バージョン12
-  - pattern: /([0-9]) ([^ -~])/
-    expected: $1$2
-    specs:
-      - from: 12 件
-        to:   12件
-      - from: RC1 は
-        to:   RC1は
-  - pattern: /^[^#] \)$/
-    expected: ああああ
 
   - pattern: /つく([らりるれろっ])/
     expected: 作$1
@@ -135,8 +263,13 @@ rules:
       - つけ加
       - つけくわ
     expected: 付け加
-  - pattern: つけた
-    expected: 付け足
+  - pattern: /つけた([さしすせそ])/
+    expected: 付け足$1
+    specs:
+      - from: つけたす
+        to:   付け足す
+      - from: 見つけた
+        to:   見つけた
   - pattern: 関連づけ
     expected: 関連付け
   - pattern: 受付
@@ -649,7 +782,7 @@ rules:
   - pattern: /辿([らりるれろっ])/
     expected: たど$1
   # 一貫性は必要なものの、両方よく出てくるので漢字またはひらがな NG は厳しすぎる気がするのでひとまず解除
-  # - pattern: 例えば
+  # - pattern: たとえば
   #  expected: たとえば
   - pattern:
       - 譬え
@@ -823,8 +956,13 @@ rules:
     expected: ふせん
   - pattern: 殆ど
     expected: ほとんど
-  - pattern: 正に
+  - pattern: /(?<!修)正に/
     expected: まさに
+    specs:
+      - from: それは正に
+        to:   それはまさに
+      - from: その修正には
+        to:   その修正には
   - pattern:
       - 益々
       - 増々
@@ -1723,7 +1861,16 @@ rules:
   - expected: アスタリスク
     pattern:  /アステリスク/
   - expected: アーキテクチャー
-    pattern:  /アーキテクチャ|アーキティクチャ/
+    pattern:
+      - /アーキテクチャ(?!ー)/
+      - /アーキティクチャ/
+    specs:
+      - from: アーキティクチャ
+        to:   アーキテクチャー
+      - from: アーキテクチャは
+        to:   アーキテクチャーは
+      - from: アーキテクチャーは
+        to:   アーキテクチャーは
   - expected: アクティビティ
     pattern:  /\bActivity\b|アクティビティー/
   - expected: アダプタ
@@ -1752,8 +1899,8 @@ rules:
     pattern:  /インスパイヤ/
   - expected: インスペクタ
     pattern:  /インスペクター/
-  - expected: インタフェイス
-    pattern:  /インタフェイス|インターフェース|インターフェース|インターフェィス/
+  - expected: インターフェース
+    pattern:  /インタフェイス|インターフェィス/
   - expected: インタプリタ
     pattern:  /インタープリタ|インタプリター|インタープリター/
   - expected: インデックス
@@ -1786,6 +1933,11 @@ rules:
       - エンティティー
   - expected: エントリ
     pattern:  /エントリー/
+  - expected: エントリー
+    pattern:  /エントリ(?!ー)/
+    specs:
+      - from: エントリ
+        to:   エントリー
   - expected: オブザーバ
     pattern:  /オブザーバー|オブサーバー|オブサーバ/
   - expected: オプション
@@ -1863,7 +2015,12 @@ rules:
   - expected: コンテナ
     pattern:  /コンテナー/
   - expected: コンピューター
-    pattern:  /コンピュータ/
+    pattern:  /コンピュータ(?!ー)/
+    specs:
+      - from: コンピュータを
+        to:   コンピューターを
+      - from: コンピューターを
+        to:   コンピューターを
   - expected: コンポーネント
     pattern:  /コンポネント/
   - expected: コントローラ
@@ -2032,8 +2189,13 @@ rules:
     pattern:  /ファイアーウォール|ファイヤーウォール|ファイヤウォール|ファイヤーウオール/
   - expected: ファイバチャネル
     pattern:  /ファイバチャンネル|ファイバチャネル|ファイバーチャンネル/
-  - expected: フィルター
-    pattern:  /フィルタ(?!ー)/
+  - expected: フィルター$1
+    pattern:  /フィルタ([^ーリ])/
+    specs:
+      - from: フィルタする
+        to:   フィルターする
+      - from: フィルタリングする
+        to:   フィルタリングする
   - expected: フィクスチャ
     pattern:  /フィクスチャー/
   - expected: フェイルオーバー
@@ -2093,7 +2255,12 @@ rules:
   - expected: メンテナンス
     pattern:  /メインテナンス/
   - expected: メンテナンス$1
-    pattern:  /メンテ([^ナ])/
+    pattern:  /メンテ([^ナー])/
+    specs:
+      - from: メンテする
+        to:   メンテナンスする
+      - from: ドキュメンテーション
+        to:   ドキュメンテーション
   - expected: モジュール
     pattern:  /\bmodule\b|\bModule\b/
   - expected: レジューム
@@ -2163,7 +2330,12 @@ rules:
   - expected: コミッター$1
     pattern:  /コミッタ([^ー])/
   - expected: ユーザー
-    pattern:  /ユーザ(?!ー)/
+    pattern:  /ユーザ(?!ー|ビリティ)/
+    specs:
+      - from: ユーザと
+        to:   ユーザーと
+      - from: ユーザビリティは
+        to:   ユーザビリティは
   - expected: ユーザビリティ
     pattern:  /ユーザービリティ/
   - expected: ディレクター
