@@ -16,7 +16,7 @@ WordPress テーマ開発者向けハンドブックは、WordPress のテーマ
 <!-- 
 In this handbook, you can learn how to build **block themes or classic themes.**
  -->
-このハンドブックでは、*ブロックテーマやクラシックテーマ** の構築のしかたを学習できます。
+このハンドブックでは、**ブロックテーマやクラシックテーマ** の構築のしかたを学習できます。
 
 <!-- 
 *   A block theme is a new theme that you can use from WordPress version 5.9. It is built mainly using HTML and a theme configuration file. The block theme is composed entirely of blocks, allowing you to edit all parts of your site in the Site Editor.
