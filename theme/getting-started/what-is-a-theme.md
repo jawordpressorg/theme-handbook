@@ -1,173 +1,234 @@
-<!--
-# What is a Theme?
--->
+<!-- 
+# What Is a Theme?
+ -->
+# テーマとは ?
 
-# テーマとは
+<!-- 
+A WordPress theme represents the design of your website. It can control everything from colors, to fonts, to the entire layout. In essence, what you see when viewing the front-end of your site is shaped by the theme.
+ -->
+WordPress のテーマは、Web サイトのデザインを表します。色からフォント、レイアウト全体まで、すべてをコントロールできます。要するに、サイトのフロントエンドを見たときに見えるものは、テーマによって形作られているのです。
 
-<!--
-A WordPress theme changes the design of your website, often including its layout. Changing your theme changes how your site looks on the front-end, i.e. what a visitor sees when they browse to your site on the web. There are thousands of free WordPress themes in the [WordPress.org Theme Directory](https://wordpress.org/themes/), though many WordPress sites use custom themes.
--->
+<!-- 
+[![A collage of site designs at an angle.](https://i0.wp.com/developer.wordpress.org/files/2023/11/twenty-twenty-two-collage.jpg?resize=2400%2C1500&ssl=1)](https://i0.wp.com/developer.wordpress.org/files/2023/11/twenty-twenty-two-collage.jpg?ssl=1)
+ -->
+[![斜めにコラージュされたサイトデザイン。](https://i0.wp.com/developer.wordpress.org/files/2023/11/twenty-twenty-two-collage.jpg?resize=2400%2C1500&ssl=1)](https://i0.wp.com/developer.wordpress.org/files/2023/11/twenty-twenty-two-collage.jpg?ssl=1)
 
-WordPress のテーマは、Web サイトのデザインを変更するもので、多くの場合、そのレイアウトも含みます。テーマを変更すると、フロントエンドでのサイトの見え方が変わります。つまり、訪問者がウェブ上であなたのサイトを閲覧したときに見えるものということです。多くの WordPress サイトはカスタムテーマを使用していますが、WordPress.org のテーマディレクトリには何千もの無料の WordPress テーマがあります。
+<!-- 
+Templates from the default Twenty Twenty-Two theme.
+ -->
+WordPress 5.9デフォルトの Twenty Twenty-Two テーマのテンプレート。
 
-<!--
+<!-- 
+There are 1,000s of free WordPress themes in the [WordPress.org Theme Directory](https://wordpress.org/themes/) and even more from third-party directories and shops. Many people and businesses also have bespoke (custom-made) themes for their sites.
+ -->
+[WordPress.org テーマディレクトリ](https://wordpress.org/themes/)には1,000以上の無償 WordPress テーマがあり、サードパーティーのディレクトリやショップからもさらに多くのテーマが提供されています。また、多くの人々や企業が、自分たちのサイト用に特注 (カスタム・メイド) のテーマを持っています。
+
+<!-- 
 ## What can themes do?
--->
+ -->
+## テーマは何ができるの ?
 
-## テーマでできること
+<!-- 
+Themes take the content stored by WordPress and display it in the browser. When you create a WordPress theme, you decide how that content looks and is displayed. There are many options available to you when building your theme. The biggest limit is your imagination. 
+ -->
+テーマは、WordPress が格納したコンテンツをブラウザに表示します。WordPress テーマを作成する際、コンテンツの見た目や表示方法を決めるのはあなたです。テーマを構築する際に利用できるオプションはたくさんあります。最大の限界は、あなたの想像力です。
 
-<!--
-Themes take the content and data stored by WordPress and display it in the browser. When you create a WordPress theme, you decide how that content looks and is displayed. There are many options available to you when building your theme. For example:
--->
+<!-- 
+As a theme creator, you can:
+ -->
+テーマ作者として、あなたは次のことができます:
 
-テーマは、WordPress が保存しているコンテンツやデータを、ブラウザに表示します。WordPress のテーマを作成すると、そのコンテンツがどのように見えるか、どのように表示されるかが決まります。テーマを構築する際には、さまざまなオプションが用意されています。例えば、以下のようなものがあります。
+<!-- 
+*   Create different layouts, such as one, two or more columns.
+*   Control the typography of the site with custom font choices.
+*   Skin the site with any color scheme you want.
+*   Put a sidebar on the left or right side of the page. Or, have no sidebar at all.
+*   Display featured images alongside posts.
+ -->
+*   1カラム、2カラム、またはそれ以上のカラムなど、さまざまなレイアウトを作成する。
+*   カスタムフォントの選択で、サイトのタイポグラフィをコントロールする。
+*   好きなカラースキームで、サイトを装飾する。
+*   サイドバーをページの左側または右側に配置する。または、サイドバーは一切なし。
+*   記事の横に、特徴的な画像を表示する。
 
-<!--
-*   Your theme can have different layouts, such as static or responsive, using one column or two.
+<!-- 
+[![The WordPress site editor showing the homepage template with a dotted black background and a three-column grid of posts.](https://i0.wp.com/developer.wordpress.org/files/2023/11/twenty-twenty-three-style-variation.jpg?resize=2400%2C1255&ssl=1)](https://i0.wp.com/developer.wordpress.org/files/2023/11/twenty-twenty-three-style-variation.jpg?ssl=1)
+ -->
+[![WordPress サイトエディターでは、黒を基調としたドット柄の背景と、3カラムの投稿グリッドで構成されたホームページのテンプレートが表示される。](https://i0.wp.com/developer.wordpress.org/files/2023/11/twenty-twenty-three-style-variation.jpg?resize=2400%2C1255&ssl=1)](https://i0.wp.com/developer.wordpress.org/files/2023/11/twenty-twenty-three-style-variation.jpg?ssl=1)
 
-*   Your theme can display content anywhere you want it to be displayed.
+<!-- 
+Editing a Twenty Twenty-Three theme style variation.
+ -->
+Twenty Twenty-Three テーマのスタイルバリエーションを編集する。
 
-*   Your theme can specify which devices or actions make your content visible.
+<!-- 
+The WordPress theming system is incredibly powerful. As with every web design project, a good theme is more than defining a layout or two and a few custom colors. The best themes improve engagement with a website’s content *in addition* to being beautiful.
+ -->
+WordPress のテーマ設定システムは信じられないほど強力です。すべての Web デザインプロジェクトがそうであるように、良いテーマはレイアウトを1つか2つ定義し、いくつかのカスタムカラーを定義するだけではありません。最高のテーマは、美しくする *だけでなく*、Web サイトのコンテンツとのエンゲージメントを向上させます。
 
-*   Your theme can customize its typography and design elements using CSS or [theme.json](https://developer.wordpress.org/themes/advanced-topics/theme-json/).
+<!-- 
+There really are not many limits to the possibilities. Outside of your imagination, theme creation requires some baseline knowledge, which is covered in the [Reading this handbook](https://developer.wordpress.org/themes/getting-started/reading-this-handbook/) page of this chapter. That’s what this handbook is all about—*teaching you what you need to know to build themes of your own*.
+ -->
+本当に可能性は無限です。あなたの想像力以外では、テーマの作成にはいくつかの基本的な知識が必要で、それは本章の[このハンドブックを読む](https://developer.wordpress.org/themes/getting-started/reading-this-handbook/)のページでカバーされています。それがこのハンドブックのすべてです。— つまり、*あなた独自のテーマを構築するために知るべきことを教えるのです*。
 
-*   Other design elements like images and videos can be included anywhere in your theme.
--->
+<!-- 
+## Theme types
+ -->
+z## テーマの種類
 
-*   テーマには、静的レイアウトやレスポンシブレイアウト、1列や2列のレイアウトなど、さまざまなレイアウトを設定できる。
-*   テーマでは、コンテンツを表示したい場所に表示することができる。
-*   テーマでは、コンテンツが表示されるデバイスやアクションを指定できる。
-*   テーマでは、CSS または [theme.json](https://developer.wordpress.org/themes/advanced-topics/theme-json/) を使用して、タイポグラフィやデザイン要素をカスタマイズできる。
-*   画像や動画などのデザイン要素を、テーマのどこにでも入れることができる。
+<!-- 
+WordPress supports two primary types of themes: **block** and **classic**.
+ -->
+WordPress は主に2種類のテーマをサポートしています: **ブロック** と **クラシック** です。
 
-<!--
-WordPress themes are incredibly powerful. But, as with every web design project, a theme is more than color and layout. Good themes improve engagement with your website’s content *in addition* to being beautiful.
--->
+<!-- 
+There is also a classic subtype that is called a **hybrid** theme, and you’ll learn about it below, too. But the most important distinction is block vs. classic.
+ -->
+また、**ハイブリッド** テーマと呼ばれるクラシックのサブタイプもあり、それについても後述します。しかし、最も重要な相違は、ブロックとクラシックです。
 
-WordPress のテーマは非常に強力です。しかし、他のウェブデザインプロジェクトと同様に、テーマは色やレイアウトだけではありません。優れたテーマは、美しさに加えて、ウェブサイトのコンテンツへのエンゲージメントを高めます。
+<!-- 
+Technically, you can even build your own theming system altogether. That’s outside the scope of this handbook, but it’s at least worth noting that WordPress lets you build pretty much whatever you set your mind to.
+ -->
+技術的には、独自のテーマ設定システムも構築できます。それはこのハンドブックの範囲外ですが、WordPress は、あなたが思い描くほとんどすべてのものを構築できるということは、少なくとも注目に値します。
 
-<!--
+<!-- 
+### Block themes
+ -->
+### ブロック・テーマ
+
+<!-- 
+Block themes are the modern method of building WordPress themes. They generally follow a standard set of conventions and are built entirely out of blocks. This handbook will primarily focus on building themes using this method because it is the future of the WordPress project.
+ -->
+ブロックテーマは、WordPress テーマを構築する最新の方法です。通常、標準的な規約に従い、すべてブロックで構築されます。このハンドブックでは、主にこの方法でテーマを構築することに焦点を当てます。なぜなら、これが WordPress プロジェクトの未来なのですから。
+
+<!-- 
+Block themes rely on HTML-based [block templates](https://developer.wordpress.org/themes/templates/) that contain block markup. Both creators and users can edit the templates in the Site Editor. Users can also customize [global settings and styles](https://developer.wordpress.org/themes/global-settings-and-styles/) defined by the theme’s `theme.json` file through the Styles interface. 
+ -->
+ブロックテーマは、ブロックマークアップを含む HTML ベースの[ブロックテンプレート](https://developer.wordpress.org/themes/templates/)に依存しています。作成者もユーザーも、サイトエディターでテンプレートを編集できます。また、ユーザーはスタイル・インターフェイスを通して、テーマの `theme.json` ファイルで定義された[グローバル設定とスタイル](https://developer.wordpress.org/themes/global-settings-and-styles/)をカスタマイズできます。
+
+<!-- 
+It’s also possible to export a theme directly from the Site Editor without touching any code. Technically, you cannot create a new theme from scratch entirely from the editor, but you can modify the templates and styles of an existing theme—in essence, creating a custom theme of your own.
+ -->
+また、コードを一切触ることなく、サイトエディターから直接テーマをエクスポートできます。技術的には、エディターで完全にゼロから新しいテーマを作成できませんが、既存のテーマのテンプレートやスタイルを変更できます。— 要するに、独自のカスタムテーマを作成するのです。
+
+<!-- 
+[![WordPress site editor with a single post template that shows a design with a yellow background and black text.](https://i0.wp.com/developer.wordpress.org/files/2023/11/site-editor-styles.png?resize=2400%2C1255&ssl=1)](https://i0.wp.com/developer.wordpress.org/files/2023/11/site-editor-styles.png?ssl=1)
+ -->
+[![WordPress サイトエディターで、黄色い背景と黒いテキストのデザインを示す単一投稿テンプレート。](https://i0.wp.com/developer.wordpress.org/files/2023/11/site-editor-styles.png?resize=2400%2C1255&ssl=1)](https://i0.wp.com/developer.wordpress.org/files/2023/11/site-editor-styles.png?ssl=1)
+
+<!-- 
+Editing a theme’s styles in the Site Editor.
+ -->
+サイトエディターでテーマのスタイルを編集する。
+
+<!-- 
+### Classic themes
+ -->
+### クラシック・テーマ
+
+<!-- 
+Classic themes use a PHP-based templating system, which is still supported in WordPress today. They are still in wide use because they were built on the theming system that was first introduced in 2005 with the launch of [WordPress 1.5](https://wordpress.org/news/2005/02/strayhorn/). There is a long and deep history of classic theming in WordPress, which continues on. For this reason, the handbook maintains documentation for classic themes in the [Classic Themes](https://developer.wordpress.org/themes/classic-themes/) chapter.
+ -->
+クラシックテーマは、PHP ベースのテンプレートシステムを使用しており、WordPress では現在もサポートされています。これらは、2005年に[WordPress 1.5](https://wordpress.org/news/2005/02/strayhorn/)が発表されたときに初めて導入されたテーマシステムにもとづいて構築されているため、今でも広く使われています。WordPress には、クラシック・テーマ設定の長く深い歴史があり、それは今も続いています。このため、ハンドブックでは[クラシック・テーマ](https://developer.wordpress.org/themes/classic-themes/)の章にクラシック・テーマのドキュメントを維持しています。
+
+<!-- 
+Unlike block themes, classic themes have far fewer standards to adhere to, but there are APIs you can use for specific features. The classic theme creation process also requires some minimal PHP, HTML, and CSS code knowledge, at least.
+ -->
+ブロック・テーマとは異なり、クラシック・テーマは準拠すべき標準がはるかに少ないですが、特定の機能のために使用できる API があります。クラシック・テーマの作成プロセスには、最低限の PHP、HTML、CSS コードの知識も必要です。
+
+<!-- 
+[![WordPress customizer showing the Twenty Twenty-Two theme. On the left is a list of options, and on the right a preview of the site homepage.](https://i0.wp.com/developer.wordpress.org/files/2023/11/customizer-twenty-twenty.jpg?resize=2400%2C1255&ssl=1)](https://i0.wp.com/developer.wordpress.org/files/2023/11/customizer-twenty-twenty.jpg?ssl=1)
+ -->
+[![Twenty Twenty-Two テーマを表示する WordPress カスタマイザー。左側はオプションのリスト、右側はサイトのホームページのプレビュー。](https://i0.wp.com/developer.wordpress.org/files/2023/11/customizer-twenty-twenty.jpg?resize=2400%2C1255&ssl=1)](https://i0.wp.com/developer.wordpress.org/files/2023/11/customizer-twenty-twenty.jpg?ssl=1)
+
+<!-- 
+Editing the default Twenty Twenty theme styles in the customizer.
+ -->
+カスタマイザーで WordPress 4.7デフォルトの Twenty Twenty テーマスタイルを編集する。
+
+<!-- 
+### Hybrid themes
+ -->
+### ハイブリッド・テーマ
+
+<!-- 
+Hybrid themes are merely classic themes that have adopted some modern block-related features, such as [global settings and styles](https://developer.wordpress.org/themes/global-settings-and-styles/) or [block template parts](https://developer.wordpress.org/themes/templates/template-parts/). This is a widely agreed-upon term by the community, but it is not an “official” theme type. At the end of the day, hybrids are still classic themes.
+ -->
+ハイブリッド・テーマとは、[グローバル設定とスタイル](https://developer.wordpress.org/themes/global-settings-and-styles/)や[ブロック・テンプレートパーツ](https://developer.wordpress.org/themes/templates/template-parts/)などのモダンなブロック関連機能を採用したクラシック・テーマに過ぎません。これはコミュニティによって広く合意された用語ですが、「公式」なテーマタイプではありません。結局のところ、ハイブリッドはクラシック・テーマであることに変わりはありません。
+
+<!-- 
+## Become familiar with themes
+ -->
+## テーマに習熟する
+
+<!-- 
+To build a WordPress theme of your own, you should familiarize yourself with how themes work from a user’s viewpoint. Before diving into the creation process, try [installing a theme](https://wordpress.org/documentation/article/work-with-themes/) and playing around with it.
+ -->
+独自の WordPress テーマを作成するには、ユーザーの視点からテーマがどのように機能するのかを熟知する必要があります。作成プロセスに入る前に、[テーマをインストール](https://wordpress.org/documentation/article/work-with-themes/)して、遊んでみてください。
+
+<!-- 
+WordPress comes with several default themes, titled *Twenty \[Year\]*, but you should also try other themes from the [Theme Directory](https://wordpress.org/themes/) just to get a feel for the possibilities.
+ -->
+WordPress には、*Twenty \[Year\]* と題されたいくつかのデフォルトテーマが付属していますが、可能性を感じるために、[テーマディレクトリ](https://wordpress.org/themes/)から他のテーマも試してみてください。
+
+<!-- 
 ## What are themes made of?
--->
+ -->
+## テーマは何でできているの ?
 
-## テーマは何でできているの？
+<!-- 
+Themes can include many different folders and file types. The list below is non-exhaustive, but it includes some of common things you might see:
+ -->
+テーマには、さまざまな種類のフォルダーやファイルが含まれます。以下のリストは網羅的なものではありませんが、よく見かけるものも含まれています:
 
-<!--
-At their most basic level, WordPress themes are collections of different files that work together to create what you see, as well as how your site behaves.
--->
-
-WordPressテーマは、最も基本的なレベルではさまざまなファイルの集合体であり、それらが連動してサイトの表示や動作を作ります。
-
-<!--
-### Required files
--->
-
-### 必要なファイル
-
-<!--
-There are only **two files absolutely required in a WordPress** theme:
--->
-
-WordPress テーマに **絶対に必要な2つのファイル** は:
-
-<!--
-1.  `index.php` (classic themes) or `index.html` (block themes) – the main template file
-
-3.  `style.css` – the main style file
--->
-
-1.  `index.php` – テンプレートのメインファイル
-2.  `style.css` – メインのスタイルファイル
-
-<!--
-Though not required, you may see additional files in a theme’s folder including:
--->
-
-必須ではありませんが、テーマのフォルダ内に以下のような追加ファイルが表示される場合があります。
-
-<!--
-*   Classic themes are built with PHP files – including [template files](https://developer.wordpress.org/themes/basics/template-files/ "Template Files Page")
-
-*   Block themes are built with blocks and HTML files
-
-*   [Localization files](https://developer.wordpress.org/theme/functionality/localization/ "Link to the localization section of the theme developer handbook")
-
-*   CSS files
-
-*   Graphics
-
+<!-- 
+*   Templates (`.html` in block themes and `.php` in classic themes)
+*   CSS Stylesheets
 *   JavaScript
-
-*   Text files – usually license info*,* `readme.txt` instructions, and a changelog file
--->
-
-*   クラシックテーマは、[テンプレートファイル](https://developer.wordpress.org/themes/basics/template-files/)を含む PHP ファイルで構築されています
-*   ブロックテーマは、ブロックと HTML ファイルで構築されています
-*   [ローカライゼーションファイル](https://developer.wordpress.org/theme/functionality/localization/ "Link to the localization section of the theme developer handbook")
-*   CSS ファイル
-*   グラフィック
+*   PHP
+*   Media (images, audio, video, etc.)
+*   JSON
+ -->
+*   テンプレート (ブロック・テーマでは `.html`、クラシック・テーマでは `.php` )
+*   CSS スタイルシート
 *   JavaScript
-*   テキストファイル – `readme.txt` 説明などのライセンス情報や変更のログファイルによく使われます
+*   PHP
+*   メディア (画像、音声、動画など)
+*   JSON
 
-<!--
-## What is the difference between a theme and a plugin?
--->
+<!-- 
+You will learn more about the specific folders and files used to create a theme in the next chapter: [Core Concepts](https://developer.wordpress.org/themes/core-concepts).
+ -->
+テーマを作成するための具体的なフォルダーやファイルについては、次の章で詳しく学習します: [コア・コンセプト](https://developer.wordpress.org/themes/core-concepts)を参照してください。
 
-## テーマとプラグインの違いは?
+<!-- 
+## What is the difference between themes and plugins?
+ -->
+## テーマとプラグインの違いとは ?
 
-<!--
-It is common to find cross-over between features found in themes and plugins. However, best practices are:
--->
+<!-- 
+It is common for there to be overlap between features found in themes and plugins. However, best practices are:
+ -->
+テーマとプラグインの機能が重複していることは一般的です。しかし、ベストプラクティスは:
 
-テーマとプラグインの機能が混在しているのはよくあることです。しかし、ベストプラクティスは次の通りです。
+<!-- 
+*   Themes control the *presentation* of content.
+*   Plugins control the behaviors and features of your site.
+ -->
+*   テーマは、コンテンツの *表示* をコントロールする。
+*   プラグインは、サイトの挙動や特徴をコントロールする。
 
-<!--
-*   a theme controls the *presentation* of content; whereas
+<!-- 
+Any theme that you create should not add site-critical functionality. Doing so means that a user loses access to that functionality when they change their theme.
+ -->
+作成するテーマは、サイトにとって重要な機能を追加すべきではありません。そうすると、ユーザーがテーマを変更したときにその機能へのアクセスを失うことになります。
 
-*   a plugin is used to control the behavior and features of your WordPress site.
--->
+<!-- 
+For example, say you build a theme with a portfolio feature. Users who build their portfolio with your feature will lose it when they change themes. By leaving critical features to plugins, you make it possible to change the design of a website while its features remain intact.
+ -->
+たとえば、ポートフォリオ機能付きのテーマを構築したとします。あなたの機能でポートフォリオを構築したユーザーは、テーマを変更するとその機能を失うことになるでしょう。重要な機能をプラグインに任せることで、機能をそのままに Web サイトのデザインを変更することが可能になるのです。
 
-*   テーマは、コンテンツの「見せ方」をコントロールするもの
-*   プラグインは、WordPress サイトの動作や機能をコントロールするもの
-
-<!--
-**Any theme you create should not add critical functionality.** Doing so means that when a user changes their theme, they lose access to that functionality. For example, say you build a theme with a portfolio feature. Users who build their portfolio with your feature will lose it when they change themes.
--->
-
-**作成するテーマには、重要な機能を追加するべきではありません。** ユーザーがテーマを変更したときに、その機能が使えなくなってしまいます。例えば、あなたがポートフォリオ機能を持つテーマを作ったとします。この機能を使ってポートフォリオを作成したユーザーは、テーマを変更するとその機能を失うことになります。
-
-<!--
-By moving critical features to plugins, you make it possible for the design of your website to change, while the functionality remains the same.
--->
-
-重要な機能をプラグインに移行することで、機能はそのままでウェブサイトのデザインを変更することができます。
-
-<!--
-Note: Remember, some users switch themes often. It is best practice to make sure any functionality your site requires, even if the design changes, is in a separate plugin.
--->
-
-注: テーマを頻繁に変更するユーザーがいることを忘れないでください。サイトが必要とする機能は、たとえデザインが変わっても、別のプラグインに入れておくことがベストプラクティスです。
-
-<!--
-## Themes on WordPress.org
--->
-
-## WordPress.org 上のテーマ
-
-<!--
-One of the safest places to download WordPress themes is in the [WordPress.org Theme Directory](https://wordpress.org/themes/ "WordPress Theme Directory"). All themes are closely reviewed, and must meet rigorous [theme review guidelines](https://developer.wordpress.org/themes/releasing-your-theme/theme-review-guidelines/) to ensure quality and security.
--->
-
-WordPress のテーマをダウンロードする最も安全な場所のひとつに、[WordPress.org のテーマディレクトリ](https://wordpress.org/themes/ "WordPress Theme Directory")があります。すべてのテーマは厳密に審査され、品質と安全性を確保するための厳格な[テーマ審査ガイドライン](https://developer.wordpress.org/theme/release/theme-review-guidelines/)をクリアしなければなりません。
-
-<!--
-## Getting Started
--->
-
-## はじめ方
-
-<!--
-Now you know what a theme is it’s time to get started. If you haven’t already done so yet, you should [set up your local development environment](https://developer.wordpress.org/themes/getting-started/setting-up-a-development-environment/). You can then [check out some examples of WordPress themes](https://developer.wordpress.org/themes/getting-started/theme-development-examples/) or, continue to the next section, [Theme Basics](https://developer.wordpress.org/themes/basics/).
--->
-
-テーマが何であるかがわかったところで、いよいよ始めましょう。まだ準備できていないのであれば、[ローカル開発環境をセットアップします](https://developer.wordpress.org/themes/getting-started/setting-up-a-development-environment/)。その後、[WordPress テーマの例をチェックする](https://developer.wordpress.org/themes/getting-started/theme-development-examples/)か、次のセクション、[テーマの基本](https://developer.wordpress.org/themes/basics/)に進んでください。
+<!-- 
+Remember, some users switch themes often. It is best practice to make sure any functionality their sites require, even if the design changes, is in a separate plugin.
+ -->
+テーマを頻繁に変更するユーザーもいることを忘れないでください。たとえデザインが変わっても、彼らのサイトが必要とする機能が別のプラグインにあることを確認するのがベストプラクティスです。
