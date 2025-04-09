@@ -29,11 +29,11 @@ Visually, a widget comprises two areas:
 
 For example, here is the layout of the built-in text widget in the admin and on the front-end:
 
-![Sample Editable Widget](https://make.wordpress.org/docs/files/2013/06/widget_visual.png)
+![Sample Editable Widget](https://i0.wp.com/make.wordpress.org/docs/files/2013/06/widget_visual.png?ssl=1)
 
 A widget form in the admin area.
 
-![A widget as it appars to a site visitor.](https://make.wordpress.org/docs/files/2013/06/Widget-front-end.png)
+![A widget as it appars to a site visitor.](https://i0.wp.com/make.wordpress.org/docs/files/2013/06/Widget-front-end.png?ssl=1)
 
 A widget as it appears to a site visitor.
 
@@ -161,7 +161,7 @@ The documentation for each of these functions can be found in the widget class c
 
 ### Registering a Widget
 
-The [](https://developer.wordpress.org/reference/functions/register_widget/)[register\_widget()](https://developer.wordpress.org/reference/functions/register_widget/) function is used to register a widget.
+The [register\_widget()](https://developer.wordpress.org/reference/functions/register_widget/) function is used to register a widget.
 
 Call this function using the widgets\_init hook:
 
@@ -173,7 +173,7 @@ function wpdocs_register_widgets() {
 }
 ```
 
-The HTML that wraps the widget, as well as the class for the title and widget content, is specified at the time you register the widget area using [](https://developer.wordpress.org/reference/functions/register_sidebar/)[register\_sidebar()](https://developer.wordpress.org/reference/functions/register_sidebar/) .
+The HTML that wraps the widget, as well as the class for the title and widget content, is specified at the time you register the widget area using [register\_sidebar()](https://developer.wordpress.org/reference/functions/register_sidebar/).
 
 ## Examples
 

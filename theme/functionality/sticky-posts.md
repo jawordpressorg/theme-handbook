@@ -8,7 +8,7 @@ A Sticky Post is the post will be placed at the top of the front page of posts. 
 2.  In the right side menu, Click Edit link of Visibility option in Publish group
 3.  Click Stick this post to the front page option
 
-![](https://developer.wordpress.org/files/2017/01/sticked_post.jpg)
+![](https://i0.wp.com/developer.wordpress.org/files/2017/01/sticked_post.jpg?resize=307%2C449&ssl=1)
 
 ## Display Sticky Posts
 
@@ -84,7 +84,7 @@ $args  = array(
 $query = new WP_Query( $args );
 ```
 
-Note: Use get\_query\_var( ‘page’ ) if you want this query to work in a Page template that you’ve set as your static front page.
+Use get\_query\_var( ‘page’ ) if you want this query to work in a Page template that you’ve set as your static front page.
 
 ```php
 <?php
@@ -118,4 +118,4 @@ The [post\_class()](https://developer.wordpress.org/reference/functions/post_cla
 .sticky { color: red; }
 ```
 
-Note: The “sticky” class is only added for sticky posts on the first page of the home page ([](https://developer.wordpress.org/reference/functions/is_home/)[is\_home()](https://developer.wordpress.org/reference/functions/is_home/) is true and [](https://developer.wordpress.org/reference/functions/is_paged/)[is\_paged()](https://developer.wordpress.org/reference/functions/is_paged/) is false)
+The “sticky” class is only added for sticky posts on the first page of the home page ([is\_home()](https://developer.wordpress.org/reference/functions/is_home/) is true and [is\_paged()](https://developer.wordpress.org/reference/functions/is_paged/) is false)

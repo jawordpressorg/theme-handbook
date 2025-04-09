@@ -103,9 +103,9 @@ Any [template tags](https://developer.wordpress.org/themes/basics/template-tags/
 すべての投稿に適用したい[テンプレートタグ](https://developer.wordpress.org/themes/basics/template-tags/)は、開始文と終了文の間に記述する必要があります。
 
 <!--
-Tip: You can include a custom 404 “not found” message that will be displayed if no posts matching the specified criteria are available. The message must be placed between the `endwhile` and `endif` statements, as seen in examples below.
+You can include a custom 404 “not found” message that will be displayed if no posts matching the specified criteria are available. The message must be placed between the `endwhile` and `endif` statements, as seen in examples below.
 -->
-ヒント: 条件に合致する投稿がない場合に、独自の404「見つかりませんでした」のメッセージを表示できます。次の例のように、このメッセージは `endwhile` と `endif` の間に記述する必要があります。
+条件に合致する投稿がない場合に、独自の404「見つかりませんでした」のメッセージを表示できます。次の例のように、このメッセージは `endwhile` と `endif` の間に記述する必要があります。
 
 <!--
 An extremely simple `index.php` file would look like:
@@ -648,9 +648,9 @@ Using `[wp_reset_query()](https://developer.wordpress.org/reference/functions/wp
 `[wp_reset_query()](https://developer.wordpress.org/reference/functions/wp_reset_query/)` を使うと、 [WP_Query](https://developer.wordpress.org/reference/classes/wp_query/) とグローバル変数の `$post` データを元のメインループのクエリーにリストアできます。ループの中で `[query_posts()](https://developer.wordpress.org/reference/functions/query_posts/)` を使った場合は、この関数を使ってループを**必ず**リセットする必要があります。この関数は裏で `[wp_reset_postdata()](https://developer.wordpress.org/reference/functions/wp_reset_postdata/)` が実行されるので、 [WP_Query](https://developer.wordpress.org/reference/classes/wp_query/) を使ったカスタムループの後でこの関数を使うこともできます。ただし、 `WP_Query` が関係するループでは `[wp_reset_postdata()](https://developer.wordpress.org/reference/functions/wp_reset_postdata/)` を使うことが推奨されています。
 
 <!--
-Alert: `[query_posts()](https://developer.wordpress.org/reference/functions/query_posts/)` is *not best practice* and should be avoided if at all possible. Therefore, you shouldn’t have much use for `[wp_reset_query()](https://developer.wordpress.org/reference/functions/wp_reset_query/)`.
+`[query_posts()](https://developer.wordpress.org/reference/functions/query_posts/)` is *not best practice* and should be avoided if at all possible. Therefore, you shouldn’t have much use for `[wp_reset_query()](https://developer.wordpress.org/reference/functions/wp_reset_query/)`.
 -->
-注意: `[query_posts()](https://developer.wordpress.org/reference/functions/query_posts/)` は**推奨されておらず**、可能な限り避けてください。そのため、 `[wp_reset_query()](https://developer.wordpress.org/reference/functions/wp_reset_query/)` を使う機会も少ないでしょう。
+`[query_posts()](https://developer.wordpress.org/reference/functions/query_posts/)` は**推奨されておらず**、可能な限り避けてください。そのため、 `[wp_reset_query()](https://developer.wordpress.org/reference/functions/wp_reset_query/)` を使う機会も少ないでしょう。
 
 <!--
 To properly use this function, place the following code after any loops with `[query_posts()](https://developer.wordpress.org/reference/functions/query_posts/)`.

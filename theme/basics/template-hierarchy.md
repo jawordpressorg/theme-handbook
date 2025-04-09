@@ -17,10 +17,10 @@ This article explains **how WordPress determines which template file(s) to use o
 この記事では、**WordPress が個々のページで使用するテンプレートファイルを決定する方法**について説明します。既存の WordPress テーマをカスタマイズしたい場合に、どのテンプレートファイルを編集する必要があるかを判断するのに役立ちます。
 
 <!--
-Tip: You can also use [Conditional Tags](https://developer.wordpress.org/themes/basics/conditional-tags/ "Conditional Tags") to control which templates are loaded on a specific page.
+You can also use [Conditional Tags](https://developer.wordpress.org/themes/basics/conditional-tags/ "Conditional Tags") to control which templates are loaded on a specific page.
 -->
 
-ヒント：[条件付きタグ](https://developer.wordpress.org/themes/basics/conditional-tags/ "条件付きタグ")を使って、特定のページでどのテンプレートを読み込むかをコントロールすることもできます。
+[条件付きタグ](https://developer.wordpress.org/themes/basics/conditional-tags/ "条件付きタグ")を使って、特定のページでどのテンプレートを読み込むかをコントロールすることもできます。
 
 <!--
 ## The Template File Hierarchy
@@ -63,10 +63,10 @@ With the exception of the basic `index.php` template file, you can choose whethe
 基本的な `index.php` テンプレートファイルを例外として、特定のテンプレートファイルを実装するかどうかを選択できます。
 
 <!--
-Tip: In these examples, the PHP file extension is used. In block themes, HTML files are used instead, but the template hierarchy is the same.
+In these examples, the PHP file extension is used. In block themes, HTML files are used instead, but the template hierarchy is the same.
 -->
 
-ヒント: これらの例では、PHP ファイル拡張子を使用しています。ブロックテーマでは代わりに HTML　ファイルを使用しますが、テンプレート階層は同じです。
+これらの例では、PHP ファイル拡張子を使用しています。ブロックテーマでは代わりに HTML　ファイルを使用しますが、テンプレート階層は同じです。
 
 <!--
 If WordPress cannot find a template file with a matching name, it will skip to the next file in the hierarchy. If WordPress cannot find any matching template file, the theme’s `index.php` file will be used.
@@ -75,8 +75,8 @@ If WordPress cannot find a template file with a matching name, it will skip to t
 一致する名前のテンプレートファイルが見つからない場合、WordPress は次の階層のファイルにスキップします。一致するテンプレートファイルが何も見つからない場合は、テーマの `index.php` ファイルが使用されます。
 
 <!--
-When you are using a [child theme](https://developer.wordpress.org/themes/advanced-topics/child-themes/), any file you add to your child theme will over-ride the same file in the parent theme. For example, both themes contain the same template `category.php`, then child theme’s template is used.
-If a child theme contains the specific template such as `category-unicorns.php` and the parent theme contains lower prioritized template such as `category.php`, then child theme’s `category-unicorns.php` is used.
+When you are using a [child theme](https://developer.wordpress.org/themes/advanced-topics/child-themes/), any file you add to your child theme will over-ride the same file in the parent theme. For example, both themes contain the same template `category.php`, then child theme’s template is used.  
+If a child theme contains the specific template such as `category-unicorns.php` and the parent theme contains lower prioritized template such as `category.php`, then child theme’s `category-unicorns.php` is used.  
 Contrary, if a child theme contains general template only such as `category.php` and the parent theme contains the specific one such as `category-unicorns.php`, then parent’s template `category-unicorns.php` is used.
 -->
 
@@ -122,7 +122,7 @@ The following diagram shows which template files are called to generate a WordPr
 
 以下の図では、WordPress のテンプレート階層に基づいて、どのテンプレートファイルが呼び出されて WordPress のページが生成されるかを表しています。
 
-[![](https://developer.wordpress.org/files/2014/10/Screenshot-2019-01-23-00.20.04-1024x639.png)](https://developer.wordpress.org/files/2014/10/Screenshot-2019-01-23-00.20.04.png)
+[![](https://i0.wp.com/developer.wordpress.org/files/2014/10/Screenshot-2019-01-23-00.20.04.png?resize=1024%2C639&ssl=1)](https://i0.wp.com/developer.wordpress.org/files/2014/10/Screenshot-2019-01-23-00.20.04.png?ssl=1)
 
 <!--
 ## The Template Hierarchy In Detail
@@ -152,10 +152,10 @@ WordPress のデフォルトでは、サイトのトップページに最新の�
 2.  `index.php`
 
 <!--
-Note: If `front-page.php` exists, it will override the `home.php` template.
+If `front-page.php` exists, it will override the `home.php` template.
 -->
 
-注意: `front-page.php` が存在する場合は、 `home.php` テンプレートに優先します。
+`front-page.php` が存在する場合は、 `home.php` テンプレートに優先します。
 
 <!--
 ### Front Page display
@@ -462,7 +462,7 @@ Rendering an attachment page (`attachment` post-type) uses the following path:
     2.  `plain.php`
     3.  `text.php`
 2.  `attachment.php`
-3.  `single-attachment-{slug}.php` – For example, if the attachment slug is `holiday`, WordPress would look for `single-attachment-holiday.php`.
+3.  `single-attachment-{slug}.php` – For example, if the attachment slug is `holiday`, WordPress would look for `single-attachment-holiday.php`.
 4.  `single-attachment.php`
 5.  `single.php`
 6.  `singular.php`
@@ -479,6 +479,8 @@ Rendering an attachment page (`attachment` post-type) uses the following path:
 5. `single.php`
 6. `singular.php`
 7. `index.php`
+
+As of WordPress 6.4, attachment pages are [no longer enabled by default](https://make.wordpress.org/core/2023/10/16/changes-to-attachment-pages/) on new installations. Users can enable them with a plugin, so it is still good practice to test your theme and ensure it properly displays content when viewing an attachment page.
 
 <!--
 ### Embeds
@@ -576,9 +578,7 @@ Here is a list of all available filters in the template hierarchy:
 
 ### 例
 
-<!--
 For example, let’s take the default author hierarchy:
--->
 
 *   `author-{nicename}.php`
 *   `author-{id}.php`
@@ -619,5 +619,4 @@ Changelog:
 <!--
 *   **Updated** 2022-02-15. Added a notice explaining that the template hierarchy is the same for classic and block themes, but that the examples uses .php files and block themes use .html files.
 -->
-
-*   **アップデート** ２０２２-02-15 この例では、.php ファイルを使用し、ブロックテーマでは .html ファイルを使用するが、テンプレート階層はクラシックテーマとブロックテーマで同じという注釈を追記。
+*   **アップデート** 2022-02-15。この例では、.php ファイルを使用し、ブロックテーマでは .html ファイルを使用するが、テンプレート階層はクラシックテーマとブロックテーマで同じという注釈を追記。

@@ -27,7 +27,7 @@ Below is an example of a header.php found in the twenty fifteen theme.
     <![endif]-->
     <?php wp_head(); ?>
 </head>
-
+ 
 <body <?php body_class(); ?>>
     <div id="page" class="hfeed site">
         <a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'twentyfifteen' ); ?></a>
