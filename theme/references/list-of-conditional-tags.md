@@ -6,68 +6,68 @@ Conditional Tags are a boolean data type that can be used in your Template Files
 
 ## Complete List of Conditional Tags
 
-*   [](https://codex.wordpress.org/Function_Reference/is_front_page "Function Reference/is front page")[is\_front\_page()](https://developer.wordpress.org/reference/functions/is_front_page/)
-*   [](https://codex.wordpress.org/Function_Reference/is_home "Function Reference/is home")[is\_home()](https://developer.wordpress.org/reference/functions/is_home/)
-*   [](https://codex.wordpress.org/Function_Reference/is_front_page "Function Reference/is front page")[is\_front\_page()](https://developer.wordpress.org/reference/functions/is_front_page/)
-*   [](https://codex.wordpress.org/Function_Reference/is_home "Function Reference/is home")[is\_home()](https://developer.wordpress.org/reference/functions/is_home/)
-*   [](https://codex.wordpress.org/Function_Reference/is_admin "Function Reference/is admin")[is\_admin()](https://developer.wordpress.org/reference/functions/is_admin/)
-*   [](https://codex.wordpress.org/Function_Reference/is_network_admin "Function Reference/is network admin")[is\_network\_admin()](https://developer.wordpress.org/reference/functions/is_network_admin/)
-*   [](https://codex.wordpress.org/Function_Reference/is_admin_bar_showing "Function Reference/is admin bar showing")[is\_admin\_bar\_showing()](https://developer.wordpress.org/reference/functions/is_admin_bar_showing/)
-*   [](https://codex.wordpress.org/Function_Reference/is_single "Function Reference/is single")[is\_single()](https://developer.wordpress.org/reference/functions/is_single/)
-*   [](https://codex.wordpress.org/Function_Reference/is_sticky "Function Reference/is sticky")[is\_sticky()](https://developer.wordpress.org/reference/functions/is_sticky/)
+*   [is\_front\_page()](https://codex.wordpress.org/Function_Reference/is_front_page "Function Reference/is front page")
+*   [is\_home()](https://codex.wordpress.org/Function_Reference/is_home "Function Reference/is home")
+*   [is\_front\_page()](https://codex.wordpress.org/Function_Reference/is_front_page "Function Reference/is front page")
+*   [is\_home()](https://codex.wordpress.org/Function_Reference/is_home "Function Reference/is home")
+*   [is\_admin()](https://codex.wordpress.org/Function_Reference/is_admin "Function Reference/is admin")
+*   [is\_network\_admin()](https://codex.wordpress.org/Function_Reference/is_network_admin "Function Reference/is network admin")
+*   [is\_admin\_bar\_showing()](https://codex.wordpress.org/Function_Reference/is_admin_bar_showing "Function Reference/is admin bar showing")
+*   [is\_single()](https://codex.wordpress.org/Function_Reference/is_single "Function Reference/is single")
+*   [is\_sticky()](https://codex.wordpress.org/Function_Reference/is_sticky "Function Reference/is sticky")
 *   [is\_post\_type\_hierarchical( $post\_type )](https://codex.wordpress.org/Function_Reference/is_post_type_hierarchical "Function Reference/is post type hierarchical")
-*   [](https://codex.wordpress.org/Function_Reference/is_post_type_archive "Function Reference/is post type archive")[is\_post\_type\_archive()](https://developer.wordpress.org/reference/functions/is_post_type_archive/)
-*   [](https://codex.wordpress.org/Function_Reference/is_comments_popup "Function Reference/is comments popup")[is\_comments\_popup()](https://developer.wordpress.org/reference/functions/is_comments_popup/)
-*   [](https://codex.wordpress.org/Function_Reference/comments_open "Function Reference/comments open")[comments\_open()](https://developer.wordpress.org/reference/functions/comments_open/)
-*   [](https://codex.wordpress.org/Function_Reference/pings_open "Function Reference/pings open")[pings\_open()](https://developer.wordpress.org/reference/functions/pings_open/)
-*   [](https://codex.wordpress.org/Function_Reference/is_page "Function Reference/is page")[is\_page()](https://developer.wordpress.org/reference/functions/is_page/)
-*   [](https://codex.wordpress.org/Function_Reference/is_page_template "Function Reference/is page template")[is\_page\_template()](https://developer.wordpress.org/reference/functions/is_page_template/)
+*   [is\_post\_type\_archive()](https://codex.wordpress.org/Function_Reference/is_post_type_archive "Function Reference/is post type archive")
+*   [is\_comments\_popup()](https://codex.wordpress.org/Function_Reference/is_comments_popup "Function Reference/is comments popup")
+*   [comments\_open()](https://codex.wordpress.org/Function_Reference/comments_open "Function Reference/comments open")
+*   [pings\_open()](https://codex.wordpress.org/Function_Reference/pings_open "Function Reference/pings open")
+*   [is\_page()](https://codex.wordpress.org/Function_Reference/is_page "Function Reference/is page")
+*   [is\_page\_template()](https://codex.wordpress.org/Function_Reference/is_page_template "Function Reference/is page template")
 *   [is\_category( $category )](https://codex.wordpress.org/Function_Reference/is_category "Function Reference/is category")
-*   [](https://codex.wordpress.org/Function_Reference/is_tag "Function Reference/is tag")[is\_tag()](https://developer.wordpress.org/reference/functions/is_tag/)
-*   [](https://codex.wordpress.org/Function_Reference/is_tax "Function Reference/is tax")[is\_tax()](https://developer.wordpress.org/reference/functions/is_tax/)
-*   [](https://codex.wordpress.org/Function_Reference/has_term "Function Reference/has term")[has\_term()](https://developer.wordpress.org/reference/functions/has_term/)
+*   [is\_tag()](https://codex.wordpress.org/Function_Reference/is_tag "Function Reference/is tag")
+*   [is\_tax()](https://codex.wordpress.org/Function_Reference/is_tax "Function Reference/is tax")
+*   [has\_term()](https://codex.wordpress.org/Function_Reference/has_term "Function Reference/has term")
 *   [term\_exists( $term, $taxonomy, $parent )](https://codex.wordpress.org/Function_Reference/term_exists "Function Reference/term exists")
 *   [is\_taxonomy\_hierarchical( $taxonomy )](https://codex.wordpress.org/Function_Reference/is_taxonomy_hierarchical "Function Reference/is taxonomy hierarchical")
 *   [taxonomy\_exists( $taxonomy )](https://codex.wordpress.org/Function_Reference/taxonomy_exists "Function Reference/taxonomy exists")
-*   [](https://codex.wordpress.org/Function_Reference/is_author "Function Reference/is author")[is\_author()](https://developer.wordpress.org/reference/functions/is_author/)
-*   [](https://codex.wordpress.org/Function_Reference/is_date "Function Reference/is date")[is\_date()](https://developer.wordpress.org/reference/functions/is_date/)
-*   [](https://codex.wordpress.org/Function_Reference/is_year "Function Reference/is year")[is\_year()](https://developer.wordpress.org/reference/functions/is_year/)
-*   [](https://codex.wordpress.org/Function_Reference/is_month "Function Reference/is month")[is\_month()](https://developer.wordpress.org/reference/functions/is_month/)
-*   [](https://codex.wordpress.org/Function_Reference/is_day "Function Reference/is day")[is\_day()](https://developer.wordpress.org/reference/functions/is_day/)
-*   [](https://codex.wordpress.org/Function_Reference/is_time "Function Reference/is time")[is\_time()](https://developer.wordpress.org/reference/functions/is_time/)
-*   [](https://codex.wordpress.org/Function_Reference/is_new_day "Function Reference/is new day")[is\_new\_day()](https://developer.wordpress.org/reference/functions/is_new_day/)
-*   [](https://codex.wordpress.org/Function_Reference/is_archive "Function Reference/is archive")[is\_archive()](https://developer.wordpress.org/reference/functions/is_archive/)
-*   [](https://codex.wordpress.org/Function_Reference/is_search "Function Reference/is search")[is\_search()](https://developer.wordpress.org/reference/functions/is_search/)
-*   [](https://codex.wordpress.org/Function_Reference/is_404 "Function Reference/is 404")[is\_404()](https://developer.wordpress.org/reference/functions/is_404/)
-*   [](https://codex.wordpress.org/Function_Reference/is_paged "Function Reference/is paged")[is\_paged()](https://developer.wordpress.org/reference/functions/is_paged/)
-*   [](https://codex.wordpress.org/Function_Reference/is_attachment "Function Reference/is attachment")[is\_attachment()](https://developer.wordpress.org/reference/functions/is_attachment/)
+*   [is\_author()](https://codex.wordpress.org/Function_Reference/is_author "Function Reference/is author")
+*   [is\_date()](https://codex.wordpress.org/Function_Reference/is_date "Function Reference/is date")
+*   [is\_year()](https://codex.wordpress.org/Function_Reference/is_year "Function Reference/is year")
+*   [is\_month()](https://codex.wordpress.org/Function_Reference/is_month "Function Reference/is month")
+*   [is\_day()](https://codex.wordpress.org/Function_Reference/is_day "Function Reference/is day")
+*   [is\_time()](https://codex.wordpress.org/Function_Reference/is_time "Function Reference/is time")
+*   [is\_new\_day()](https://codex.wordpress.org/Function_Reference/is_new_day "Function Reference/is new day")
+*   [is\_archive()](https://codex.wordpress.org/Function_Reference/is_archive "Function Reference/is archive")
+*   [is\_search()](https://codex.wordpress.org/Function_Reference/is_search "Function Reference/is search")
+*   [is\_404()](https://codex.wordpress.org/Function_Reference/is_404 "Function Reference/is 404")
+*   [is\_paged()](https://codex.wordpress.org/Function_Reference/is_paged "Function Reference/is paged")
+*   [is\_attachment()](https://codex.wordpress.org/Function_Reference/is_attachment "Function Reference/is attachment")
 *   [wp\_attachment\_is\_image( $post\_id )](https://codex.wordpress.org/Function_Reference/wp_attachment_is_image "Function Reference/wp attachment is image")
 *   [is\_local\_attachment( $url )](https://codex.wordpress.org/Function_Reference/is_local_attachment "Function Reference/is local attachment")
-*   [](https://codex.wordpress.org/Function_Reference/is_singular "Function Reference/is singular")[is\_singular()](https://developer.wordpress.org/reference/functions/is_singular/)
+*   [is\_singular()](https://codex.wordpress.org/Function_Reference/is_singular "Function Reference/is singular")
 *   [post\_type\_exists( $post\_type )](https://codex.wordpress.org/Function_Reference/post_type_exists "Function Reference/post type exists")
-*   [](https://codex.wordpress.org/Function_Reference/is_main_query "Function Reference/is main query")[is\_main\_query()](https://developer.wordpress.org/reference/functions/is_main_query/)
-*   [](https://codex.wordpress.org/Function_Reference/is_new_day "Function Reference/is new day")[is\_new\_day()](https://developer.wordpress.org/reference/functions/is_new_day/)
-*   [](https://codex.wordpress.org/Function_Reference/is_feed "Function Reference/is feed")[is\_feed()](https://developer.wordpress.org/reference/functions/is_feed/)
-*   [](https://codex.wordpress.org/Function_Reference/is_trackback "Function Reference/is trackback")[is\_trackback()](https://developer.wordpress.org/reference/functions/is_trackback/)
-*   [](https://codex.wordpress.org/Function_Reference/is_preview "Function Reference/is preview")[is\_preview()](https://developer.wordpress.org/reference/functions/is_preview/)
-*   [](https://codex.wordpress.org/Function_Reference/in_the_loop "Function Reference/in the loop")[in\_the\_loop()](https://developer.wordpress.org/reference/functions/in_the_loop/)
-*   [](https://codex.wordpress.org/Function_Reference/is_dynamic_sidebar "Function Reference/is dynamic sidebar")[is\_dynamic\_sidebar()](https://developer.wordpress.org/reference/functions/is_dynamic_sidebar/)
-*   [](https://codex.wordpress.org/Function_Reference/is_active_sidebar "Function Reference/is active sidebar")[is\_active\_sidebar()](https://developer.wordpress.org/reference/functions/is_active_sidebar/)
+*   [is\_main\_query()](https://codex.wordpress.org/Function_Reference/is_main_query "Function Reference/is main query")
+*   [is\_new\_day()](https://codex.wordpress.org/Function_Reference/is_new_day "Function Reference/is new day")
+*   [is\_feed()](https://codex.wordpress.org/Function_Reference/is_feed "Function Reference/is feed")
+*   [is\_trackback()](https://codex.wordpress.org/Function_Reference/is_trackback "Function Reference/is trackback")
+*   [is\_preview()](https://codex.wordpress.org/Function_Reference/is_preview "Function Reference/is preview")
+*   [in\_the\_loop()](https://codex.wordpress.org/Function_Reference/in_the_loop "Function Reference/in the loop")
+*   [is\_dynamic\_sidebar()](https://codex.wordpress.org/Function_Reference/is_dynamic_sidebar "Function Reference/is dynamic sidebar")
+*   [is\_active\_sidebar()](https://codex.wordpress.org/Function_Reference/is_active_sidebar "Function Reference/is active sidebar")
 *   [is\_active\_widget( $widget\_callback, $widget\_id )](https://codex.wordpress.org/Function_Reference/is_active_widget "Function Reference/is active widget")
-*   [](https://codex.wordpress.org/Function_Reference/is_blog_installed "Function Reference/is blog installed")[is\_blog\_installed()](https://developer.wordpress.org/reference/functions/is_blog_installed/)
-*   [](https://codex.wordpress.org/Function_Reference/is_rtl "Function Reference/is rtl")[is\_rtl()](https://developer.wordpress.org/reference/functions/is_rtl/)
-*   [](https://codex.wordpress.org/Function_Reference/is_multisite "Function Reference/is multisite")[is\_multisite()](https://developer.wordpress.org/reference/functions/is_multisite/)
-*   [](https://codex.wordpress.org/Function_Reference/is_main_site "Function Reference/is main site")[is\_main\_site()](https://developer.wordpress.org/reference/functions/is_main_site/)
-*   [](https://codex.wordpress.org/Function_Reference/is_super_admin "Function Reference/is super admin")[is\_super\_admin()](https://developer.wordpress.org/reference/functions/is_super_admin/)
-*   [](https://codex.wordpress.org/Function_Reference/is_user_logged_in "Function Reference/is user logged in")[is\_user\_logged\_in()](https://developer.wordpress.org/reference/functions/is_user_logged_in/)
+*   [is\_blog\_installed()](https://codex.wordpress.org/Function_Reference/is_blog_installed "Function Reference/is blog installed")
+*   [is\_rtl()](https://codex.wordpress.org/Function_Reference/is_rtl "Function Reference/is rtl")
+*   [is\_multisite()](https://codex.wordpress.org/Function_Reference/is_multisite "Function Reference/is multisite")
+*   [is\_main\_site()](https://codex.wordpress.org/Function_Reference/is_main_site "Function Reference/is main site")
+*   [is\_super\_admin()](https://codex.wordpress.org/Function_Reference/is_super_admin "Function Reference/is super admin")
+*   [is\_user\_logged\_in()](https://codex.wordpress.org/Function_Reference/is_user_logged_in "Function Reference/is user logged in")
 *   [email\_exists( $email )](https://codex.wordpress.org/Function_Reference/email_exists "Function Reference/email exists")
 *   [username\_exists( $username )](https://codex.wordpress.org/Function_Reference/username_exists "Function Reference/username exists")
 *   [is\_plugin\_active( $path )](https://codex.wordpress.org/Function_Reference/is_plugin_active "Function Reference/is plugin active")
 *   [is\_plugin\_inactive( $path )](https://codex.wordpress.org/Function_Reference/is_plugin_inactive "Function Reference/is plugin inactive")
 *   [is\_plugin\_active\_for\_network( $path )](https://codex.wordpress.org/Function_Reference/is_plugin_active_for_network "Function Reference/is plugin active for network")
-*   [](https://codex.wordpress.org/Function_Reference/is_plugin_page "Function Reference/is plugin page")[is\_plugin\_page()](https://developer.wordpress.org/reference/functions/is_plugin_page/)
-*   [](https://codex.wordpress.org/Function_Reference/is_child_theme "Function Reference/is child theme")[is\_child\_theme()](https://developer.wordpress.org/reference/functions/is_child_theme/)
-*   [](https://codex.wordpress.org/Function_Reference/current_theme_supports "Function Reference/current theme supports")[current\_theme\_supports()](https://developer.wordpress.org/reference/functions/current_theme_supports/)
+*   [is\_plugin\_page()](https://codex.wordpress.org/Function_Reference/is_plugin_page "Function Reference/is plugin page")
+*   [is\_child\_theme()](https://codex.wordpress.org/Function_Reference/is_child_theme "Function Reference/is child theme")
+*   [current\_theme\_supports()](https://codex.wordpress.org/Function_Reference/current_theme_supports "Function Reference/current theme supports")
 *   [has\_post\_thumbnail( $post\_id )](https://codex.wordpress.org/Function_Reference/has_post_thumbnail "Function Reference/has post thumbnail")
 *   [wp\_script\_is( $handle, $list )](https://codex.wordpress.org/Function_Reference/wp_script_is "Function Reference/wp script is")
 
@@ -77,25 +77,25 @@ All of the Conditional Tags test to see whether a certain condition is met, and 
 
 ### The Main Page
 
-*   [](https://codex.wordpress.org/Function_Reference/is_home "Function Reference/is home")[is\_home()](https://developer.wordpress.org/reference/functions/is_home/)
+*   [is\_home()](https://codex.wordpress.org/Function_Reference/is_home "Function Reference/is home")
 
 ### The Front Page
 
-*   [](https://codex.wordpress.org/Function_Reference/is_front_page "Function Reference/is front page")[is\_front\_page()](https://developer.wordpress.org/reference/functions/is_front_page/)
+*   [is\_front\_page()](https://codex.wordpress.org/Function_Reference/is_front_page "Function Reference/is front page")
 
 ### The Blog Page
 
-*   [](https://codex.wordpress.org/Function_Reference/is_front_page "Function Reference/is front page")[is\_front\_page()](https://developer.wordpress.org/reference/functions/is_front_page/)
-*   [](https://codex.wordpress.org/Function_Reference/is_home "Function Reference/is home")[is\_home()](https://developer.wordpress.org/reference/functions/is_home/)
+*   [is\_front\_page()](https://codex.wordpress.org/Function_Reference/is_front_page "Function Reference/is front page")
+*   [is\_home()](https://codex.wordpress.org/Function_Reference/is_home "Function Reference/is home")
 
 ### A Single Post Page
 
-*   [](https://codex.wordpress.org/Function_Reference/is_single "Function Reference/is single")[is\_single()](https://developer.wordpress.org/reference/functions/is_single/)
+*   [is\_single()](https://codex.wordpress.org/Function_Reference/is_single "Function Reference/is single")
 
 ### A PAGE Page
 
-*   [](https://codex.wordpress.org/Function_Reference/is_page "Function Reference/is page")[is\_page()](https://developer.wordpress.org/reference/functions/is_page/)
-*   [](https://codex.wordpress.org/Function_Reference/is_page_template "Function Reference/is page template")[is\_page\_template()](https://developer.wordpress.org/reference/functions/is_page_template/)
+*   [is\_page()](https://codex.wordpress.org/Function_Reference/is_page "Function Reference/is page")
+*   [is\_page\_template()](https://codex.wordpress.org/Function_Reference/is_page_template "Function Reference/is page template")
 
 ### Has Post Thumbnail
 
@@ -103,7 +103,7 @@ All of the Conditional Tags test to see whether a certain condition is met, and 
 
 ### A Single Page, a Single Post, an Attachment or Any Other Custom Post Type
 
-*   [](https://codex.wordpress.org/Function_Reference/is_singular "Function Reference/is singular")[is\_singular()](https://developer.wordpress.org/reference/functions/is_singular/)
+*   [is\_singular()](https://codex.wordpress.org/Function_Reference/is_singular "Function Reference/is singular")
 
 ### A Category Page
 
@@ -111,49 +111,49 @@ All of the Conditional Tags test to see whether a certain condition is met, and 
 
 ### A Tag Page
 
-*   [](https://codex.wordpress.org/Function_Reference/is_tag "Function Reference/is tag")[is\_tag()](https://developer.wordpress.org/reference/functions/is_tag/)
-*   [](https://codex.wordpress.org/Function_Reference/has_tag "Function Reference/has tag")[has\_tag()](https://developer.wordpress.org/reference/functions/has_tag/)
+*   [is\_tag()](https://codex.wordpress.org/Function_Reference/is_tag "Function Reference/is tag")
+*   [has\_tag()](https://codex.wordpress.org/Function_Reference/has_tag "Function Reference/has tag")
 
 ### A Taxonomy Page (and related)
 
-*   [](https://codex.wordpress.org/Function_Reference/is_tax "Function Reference/is tax")[is\_tax()](https://developer.wordpress.org/reference/functions/is_tax/)
-*   [](https://codex.wordpress.org/Function_Reference/has_term "Function Reference/has term")[has\_term()](https://developer.wordpress.org/reference/functions/has_term/)
+*   [is\_tax()](https://codex.wordpress.org/Function_Reference/is_tax "Function Reference/is tax")
+*   [has\_term()](https://codex.wordpress.org/Function_Reference/has_term "Function Reference/has term")
 *   [term\_exists( $term, $taxonomy, $parent )](https://codex.wordpress.org/Function_Reference/term_exists "Function Reference/term exists")
 *   [is\_taxonomy\_hierarchical( $taxonomy )](https://codex.wordpress.org/Function_Reference/is_taxonomy_hierarchical "Function Reference/is taxonomy hierarchical")
 *   [taxonomy\_exists( $taxonomy )](https://codex.wordpress.org/Function_Reference/taxonomy_exists "Function Reference/taxonomy exists")
 
 ### An Author Page
 
-*   [](https://codex.wordpress.org/Function_Reference/is_author "Function Reference/is author")[is\_author()](https://developer.wordpress.org/reference/functions/is_author/)
+*   [is\_author()](https://codex.wordpress.org/Function_Reference/is_author "Function Reference/is author")
 
 ### A Date Page
 
-*   [](https://codex.wordpress.org/Function_Reference/is_date "Function Reference/is date")[is\_date()](https://developer.wordpress.org/reference/functions/is_date/)
-*   [](https://codex.wordpress.org/Function_Reference/is_year "Function Reference/is year")[is\_year()](https://developer.wordpress.org/reference/functions/is_year/)
-*   [](https://codex.wordpress.org/Function_Reference/is_month "Function Reference/is month")[is\_month()](https://developer.wordpress.org/reference/functions/is_month/)
-*   [](https://codex.wordpress.org/Function_Reference/is_day "Function Reference/is day")[is\_day()](https://developer.wordpress.org/reference/functions/is_day/)
-*   [](https://codex.wordpress.org/Function_Reference/is_time "Function Reference/is time")[is\_time()](https://developer.wordpress.org/reference/functions/is_time/)
-*   [](https://codex.wordpress.org/Function_Reference/is_new_day "Function Reference/is new day")[is\_new\_day()](https://developer.wordpress.org/reference/functions/is_new_day/)
+*   [is\_date()](https://codex.wordpress.org/Function_Reference/is_date "Function Reference/is date")
+*   [is\_year()](https://codex.wordpress.org/Function_Reference/is_year "Function Reference/is year")
+*   [is\_month()](https://codex.wordpress.org/Function_Reference/is_month "Function Reference/is month")
+*   [is\_day()](https://codex.wordpress.org/Function_Reference/is_day "Function Reference/is day")
+*   [is\_time()](https://codex.wordpress.org/Function_Reference/is_time "Function Reference/is time")
+*   [is\_new\_day()](https://codex.wordpress.org/Function_Reference/is_new_day "Function Reference/is new day")
 
 ### Any Archive Page
 
-*   [](https://codex.wordpress.org/Function_Reference/is_archive "Function Reference/is archive")[is\_archive()](https://developer.wordpress.org/reference/functions/is_archive/)
+*   [is\_archive()](https://codex.wordpress.org/Function_Reference/is_archive "Function Reference/is archive")
 
 ### A Search Result Page
 
-*   [](https://codex.wordpress.org/Function_Reference/is_search "Function Reference/is search")[is\_search()](https://developer.wordpress.org/reference/functions/is_search/)
+*   [is\_search()](https://codex.wordpress.org/Function_Reference/is_search "Function Reference/is search")
 
 ### A 404 Not Found Page
 
-*   [](https://codex.wordpress.org/Function_Reference/is_404 "Function Reference/is 404")[is\_404()](https://developer.wordpress.org/reference/functions/is_404/)
+*   [is\_404()](https://codex.wordpress.org/Function_Reference/is_404 "Function Reference/is 404")
 
 ### Is Dynamic SideBar
 
-*   [](https://codex.wordpress.org/Function_Reference/is_dynamic_sidebar "Function Reference/is dynamic sidebar")[is\_dynamic\_sidebar()](https://developer.wordpress.org/reference/functions/is_dynamic_sidebar/)
+*   [is\_dynamic\_sidebar()](https://codex.wordpress.org/Function_Reference/is_dynamic_sidebar "Function Reference/is dynamic sidebar")
 
 ### Is Sidebar Active
 
-*   [](https://codex.wordpress.org/Function_Reference/is_active_sidebar "Function Reference/is active sidebar")[is\_active\_sidebar()](https://developer.wordpress.org/reference/functions/is_active_sidebar/)
+*   [is\_active\_sidebar()](https://codex.wordpress.org/Function_Reference/is_active_sidebar "Function Reference/is active sidebar")
 
 ### Is Widget Active
 
@@ -161,7 +161,7 @@ All of the Conditional Tags test to see whether a certain condition is met, and 
 
 ### Is User Logged in
 
-*   [](https://codex.wordpress.org/Function_Reference/is_user_logged_in "Function Reference/is user logged in")[is\_user\_logged\_in()](https://developer.wordpress.org/reference/functions/is_user_logged_in/)
+*   [is\_user\_logged\_in()](https://codex.wordpress.org/Function_Reference/is_user_logged_in "Function Reference/is user logged in")
 
 ### Email Exists
 
@@ -173,15 +173,15 @@ All of the Conditional Tags test to see whether a certain condition is met, and 
 
 ### A Paged Page
 
-*   [](https://codex.wordpress.org/Function_Reference/is_paged "Function Reference/is paged")[is\_paged()](https://developer.wordpress.org/reference/functions/is_paged/)
+*   [is\_paged()](https://codex.wordpress.org/Function_Reference/is_paged "Function Reference/is paged")
 
 ### Right To Left Reading
 
-*   [](https://codex.wordpress.org/Function_Reference/is_rtl "Function Reference/is rtl")[is\_rtl()](https://developer.wordpress.org/reference/functions/is_rtl/)
+*   [is\_rtl()](https://codex.wordpress.org/Function_Reference/is_rtl "Function Reference/is rtl")
 
 ### An Attachment
 
-*   [](https://codex.wordpress.org/Function_Reference/is_attachment "Function Reference/is attachment")[is\_attachment()](https://developer.wordpress.org/reference/functions/is_attachment/)
+*   [is\_attachment()](https://codex.wordpress.org/Function_Reference/is_attachment "Function Reference/is attachment")
 
 ### Attachment Is Image
 
@@ -197,57 +197,57 @@ All of the Conditional Tags test to see whether a certain condition is met, and 
 
 ### Is Main Query
 
-*   [](https://codex.wordpress.org/Function_Reference/is_main_query "Function Reference/is main query")[is\_main\_query()](https://developer.wordpress.org/reference/functions/is_main_query/)
+*   [is\_main\_query()](https://codex.wordpress.org/Function_Reference/is_main_query "Function Reference/is main query")
 
 ### A New Day
 
-*   [](https://codex.wordpress.org/Function_Reference/is_new_day "Function Reference/is new day")[is\_new\_day()](https://developer.wordpress.org/reference/functions/is_new_day/)
+*   [is\_new\_day()](https://codex.wordpress.org/Function_Reference/is_new_day "Function Reference/is new day")
 
 ### A Syndication
 
-*   [](https://codex.wordpress.org/Function_Reference/is_feed "Function Reference/is feed")[is\_feed()](https://developer.wordpress.org/reference/functions/is_feed/)
+*   [is\_feed()](https://codex.wordpress.org/Function_Reference/is_feed "Function Reference/is feed")
 
 ### A Trackback
 
-*   [](https://codex.wordpress.org/Function_Reference/is_trackback "Function Reference/is trackback")[is\_trackback()](https://developer.wordpress.org/reference/functions/is_trackback/)
+*   [is\_trackback()](https://codex.wordpress.org/Function_Reference/is_trackback "Function Reference/is trackback")
 
 ### A Preview
 
-*   [](https://codex.wordpress.org/Function_Reference/is_preview "Function Reference/is preview")[is\_preview()](https://developer.wordpress.org/reference/functions/is_preview/)
+*   [is\_preview()](https://codex.wordpress.org/Function_Reference/is_preview "Function Reference/is preview")
 
 ### Has An Excerpt
 
-*   [](https://codex.wordpress.org/Function_Reference/has_excerpt "Function Reference/has excerpt")[has\_excerpt()](https://developer.wordpress.org/reference/functions/has_excerpt/)
+*   [has\_excerpt()](https://codex.wordpress.org/Function_Reference/has_excerpt "Function Reference/has excerpt")
 
 ### Has A Nav Menu Assigned
 
-*   [](https://codex.wordpress.org/Function_Reference/has_nav_menu "Function Reference/has nav menu")[has\_nav\_menu()](https://developer.wordpress.org/reference/functions/has_nav_menu/)
+*   [has\_nav\_menu()](https://codex.wordpress.org/Function_Reference/has_nav_menu "Function Reference/has nav menu")
 
 ### Is Blog Installed
 
-*   [](https://codex.wordpress.org/Function_Reference/is_blog_installed "Function Reference/is blog installed")[is\_blog\_installed()](https://developer.wordpress.org/reference/functions/is_blog_installed/)
+*   [is\_blog\_installed()](https://codex.wordpress.org/Function_Reference/is_blog_installed "Function Reference/is blog installed")
 
 ### Part of a Network (Multisite)
 
-*   [](https://codex.wordpress.org/Function_Reference/is_multisite "Function Reference/is multisite")[is\_multisite()](https://developer.wordpress.org/reference/functions/is_multisite/)
-*   [](https://codex.wordpress.org/Function_Reference/is_main_site "Function Reference/is main site")[is\_main\_site()](https://developer.wordpress.org/reference/functions/is_main_site/)
-*   [](https://codex.wordpress.org/Function_Reference/is_super_admin "Function Reference/is super admin")[is\_super\_admin()](https://developer.wordpress.org/reference/functions/is_super_admin/)
+*   [is\_multisite()](https://codex.wordpress.org/Function_Reference/is_multisite "Function Reference/is multisite")
+*   [is\_main\_site()](https://codex.wordpress.org/Function_Reference/is_main_site "Function Reference/is main site")
+*   [is\_super\_admin()](https://codex.wordpress.org/Function_Reference/is_super_admin "Function Reference/is super admin")
 
 ### An Active Plugin
 
 *   [is\_plugin\_active( $path )](https://codex.wordpress.org/Function_Reference/is_plugin_active "Function Reference/is plugin active")
 *   [is\_plugin\_inactive( $path )](https://codex.wordpress.org/Function_Reference/is_plugin_inactive "Function Reference/is plugin inactive")
 *   [is\_plugin\_active\_for\_network( $path )](https://codex.wordpress.org/Function_Reference/is_plugin_active_for_network "Function Reference/is plugin active for network")
-*   [](https://codex.wordpress.org/Function_Reference/is_plugin_page "Function Reference/is plugin page")[is\_plugin\_page()](https://developer.wordpress.org/reference/functions/is_plugin_page/)
+*   [is\_plugin\_page()](https://codex.wordpress.org/Function_Reference/is_plugin_page "Function Reference/is plugin page")
 
 ### A Child Theme
 
-*   [](https://codex.wordpress.org/Function_Reference/is_child_theme "Function Reference/is child theme")[is\_child\_theme()](https://developer.wordpress.org/reference/functions/is_child_theme/)
+*   [is\_child\_theme()](https://codex.wordpress.org/Function_Reference/is_child_theme "Function Reference/is child theme")
 
 ### Theme supports a feature
 
-*   [](https://codex.wordpress.org/Function_Reference/current_theme_supports "Function Reference/current theme supports")[current\_theme\_supports()](https://developer.wordpress.org/reference/functions/current_theme_supports/)
+*   [current\_theme\_supports()](https://codex.wordpress.org/Function_Reference/current_theme_supports "Function Reference/current theme supports")
 
 ### Is Previewed in the Customizer
 
-*   [](https://codex.wordpress.org/Function_Reference/is_customize_preview "Function Reference/is customize preview")[is\_customize\_preview()](https://developer.wordpress.org/reference/functions/is_customize_preview/)
+*   [is\_customize\_preview()](https://codex.wordpress.org/Function_Reference/is_customize_preview "Function Reference/is customize preview")

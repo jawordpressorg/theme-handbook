@@ -42,7 +42,7 @@ You can see that the main theme template files are in the root directory, while 
 
 There are no required folders in classic themes. In block themes, templates must be placed inside a folder called **templates**, and all template parts must be placed inside a folder called **parts**.
 
-Note: `style.css` should reside in the root directory of your theme not within the CSS directory.
+`style.css` should reside in the root directory of your theme not within the CSS directory.
 
 ### Languages folder
 

@@ -35,7 +35,7 @@ if ( comments_open() || get_comments_number() ) :
 endif;
 ```
 
-![functionality-comments-01](https://developer.wordpress.org/files/2014/10/functionality-comments-01.png)
+![functionality-comments-01](https://i0.wp.com/developer.wordpress.org/files/2014/10/functionality-comments-01.png?resize=350%2C257&ssl=1)
 
 ## Another comments.php Example
 
@@ -162,7 +162,7 @@ Finally, there’s a test to see if there are comments associated with this post
 
 Prints out the header that appears above the comments.
 
-Note: Uses the [](https://developer.wordpress.org/reference/functions/_nx/)[\_nx()](https://developer.wordpress.org/reference/functions/_nx/) translation function so other developers can provide alternative language translations.
+Uses the [\_nx()](https://developer.wordpress.org/reference/functions/_nx/) translation function so other developers can provide alternative language translations.
 
 ```php
 <h2 class="comments-title">
@@ -240,7 +240,7 @@ This section ends the comments loop, includes the comment form, and closes the c
 
 ## Comments Pagination
 
-If you have a lot of comments (which makes your page long), then there are a number of potential benefits to paginating your comments. Pagination helps improve page load speed, especially on mobile devices.
+If you have a lot of comments (which makes your page long), then there are a number of potential benefits to paginating your comments. Pagination helps improve page load speed, especially on mobile devices.  
 Enabling comments pagination is done in two steps.
 
 1.  Enable paged comments within WordPress by going to *Settings* > *Discussion* , and checking the box “*Break comments into pages*” . You can enter any number for the “*top level comments per page*”.
@@ -251,7 +251,9 @@ Enabling comments pagination is done in two steps.
 	<?php paginate_comments_links(); ?>
 </div>
 ```
-=======
+
+## Alternative Comment Template
+
 On some occasions you may want display your comments differently within your theme. For this you would build an alternate file (ex. short-comments.php) and call it as follows:
 
 ```php

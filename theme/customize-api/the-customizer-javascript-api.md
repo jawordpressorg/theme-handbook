@@ -73,7 +73,7 @@ Likewise, you can get a section’s panel ID in the same way:
 id = wp.customize.section( 'sidebar-widgets-sidebar-1' ).panel(); // returns widgets by default
 ```
 
-You can go the other way as well, to get the children of panels and sections:
+You can go the other way as well, to get the children of panels and sections:  
 
 ```javascript
 sections = wp.customize.panel( 'widgets' ).sections();controls = wp.customize.section( 'title_tagline' ).controls();
@@ -82,7 +82,7 @@ sections = wp.customize.panel( 'widgets' ).sections();controls = wp.customize.se
 You can use these to move all controls from one section to another:
 
 ```javascript
-_.each( wp.customize.section( 'title_tagline' ).controls(), function ( control ) {
+_.each( wp.customize.section( 'title_tagline' ).controls(), function ( control ) {  
     control.section( 'nav' );
 } );
 ```
@@ -96,7 +96,7 @@ wp.customize.section( 'nav' ).deactivate(); // slide up
 wp.customize.section( 'nav' ).activate({ duration: 1000 }); // slide down slowly
 wp.customize.section( 'colors' ).deactivate({ duration: 0 }); // hide immediately
 wp.customize.section( 'nav' ).deactivate({ completeCallback:
-function () {
+function () {  
     wp.customize.section( 'colors' ).activate(); // show after nav hides completely
 } } );
 ```

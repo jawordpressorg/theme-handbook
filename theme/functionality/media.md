@@ -4,7 +4,9 @@ WordPress enables theme developers to customize the look, feel, and functionalit
 
 ## General
 
-In WordPress you can upload, store, and display a variety of media such as image, video and audio files. Media can be uploaded via the **Media > Add New** in the [Administration Screen](https://codex.wordpress.org/Administration_Screens), or Add Media button on the Post/Page Editor. If a media file is uploaded within the edit screen, it will be automatically attached to the current post being created or edited. If it is uploaded via the Media’s Add New Screen or the Media Library Screen, it will be unattached, but may become attached to a post when it is inserted into a post later on.
+In WordPress you can upload, store, and display a variety of media such as image, video and audio files. Media can be uploaded via the **Media > Add New** in the [Administration Screen](https://codex.wordpress.org/Administration_Screens), or Add Media button on the Post/Page Editor.
+
+If a media file is uploaded within the edit screen, it will be automatically attached to the current post being created or edited. If it is uploaded via the Media’s Add New Screen or the Media Library Screen, it will be unattached, but may become attached to a post when it is inserted into a post later on.
 
 ### Retrieving attachment ID or image ID
 
@@ -53,4 +55,5 @@ In the Media Library, you can upload any file (with the network administrator’
 
 #### Cannot retrieve attachment
 
-When you cannot get your attached media by `[get_posts()](https://developer.wordpress.org/reference/functions/get_posts/)` or `[get_children()](https://developer.wordpress.org/reference/functions/get_children/)` function, confirm your media is really attached to the post. From the [Administration Screen](https://codex.wordpress.org/Administration_Screens), Click **Media > Library** to open the Media Library and confirm the value in “Uploaded to” column of the media.
+When you cannot get your attached media by `[get_posts()](https://developer.wordpress.org/reference/functions/get_posts/)` or `[get_children()](https://developer.wordpress.org/reference/functions/get_children/)` function, confirm your media is really attached to the post.  
+From the [Administration Screen](https://codex.wordpress.org/Administration_Screens), Click **Media > Library** to open the Media Library and confirm the value in “Uploaded to” column of the media.

@@ -36,7 +36,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 */
 ```
 
-Note: WordPress Theme Repository uses the number after “Version” in this file to determine if the theme has a new version available.
+WordPress Theme Repository uses the number after “Version” in this file to determine if the theme has a new version available.
 
 ### Explanations
 

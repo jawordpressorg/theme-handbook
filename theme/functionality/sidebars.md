@@ -6,7 +6,7 @@ A sidebar is any widgetized area of your theme. Widget areas are places in your 
 
 Widgets can be employed for a variety of purposes, ranging from listing recent posts to conducting live chats.
 
-Tip: The name “sidebars” comes from a time when widget areas were normally created in a long strip to the lefthand or righthand side of a blog. Today, sidebars have evolved beyond their original name. They can be included anywhere on your website. Think of a sidebar as **any area that contains widgets**.
+The name “sidebars” comes from a time when widget areas were normally created in a long strip to the lefthand or righthand side of a blog. Today, sidebars have evolved beyond their original name. They can be included anywhere on your website. Think of a sidebar as **any area that contains widgets**.
 
 ## Registering a Sidebar
 
@@ -54,7 +54,7 @@ Registering a sidebar tells WordPress that you’re creating a new widget area 
 
 The first lets you register one sidebar and the second lets you register multiple sidebars.
 
-Tip: It is recommended that you register sidebars individually as it allows you to give unique and descriptive names to each sidebar.
+It is recommended that you register sidebars individually as it allows you to give unique and descriptive names to each sidebar.
 
 ## Examples
 

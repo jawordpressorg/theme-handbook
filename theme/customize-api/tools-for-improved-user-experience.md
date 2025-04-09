@@ -10,7 +10,7 @@ $wp_customize->get_section( 'header_image' )->active_callback = 'is_front_page';
 $wp_customize->get_control( 'blogdescription' )->active_callback = 'is_front_page';
 ```
 
-![](//i1.wp.com/nick.halsey.co/wp-content/uploads/sites/2/2014/08/contextual-customize-controls.gif)
+![](//i0.wp.com/nick.halsey.co/wp-content/uploads/sites/2/2014/08/contextual-customize-controls.gif)
 
 In this contextual control example, the theme only displays the site tagline on the front page, so the corresponding field in the Customizer is hidden when the user navigates to a different page within the preview window.
 
@@ -224,11 +224,11 @@ The Customizer automatically handles previewing all settings out-of-the-box. Thi
 
 To further improve the user experience, the Customizer offers an API for managing setting changes directly in JavaScript, allowing for truly-live previewing. The below images show a comparison of a Custom CSS option that leverages this technology, called `postMessage`, versus the standard refresh option:
 
-![](//i1.wp.com/nick.halsey.co/wp-content/uploads/sites/2/2014/08/customize-setting-postmessage.gif)
+![](//i0.wp.com/nick.halsey.co/wp-content/uploads/sites/2/2014/08/customize-setting-postmessage.gif)
 
 Custom CSS setting in the Customizer with the postMessage setting transport.
 
-![](//i1.wp.com/nick.halsey.co/wp-content/uploads/sites/2/2014/08/customize-setting-refresh-1.gif)
+![](//i0.wp.com/nick.halsey.co/wp-content/uploads/sites/2/2014/08/customize-setting-refresh-1.gif)
 
 Custom CSS setting in the Customizer with the default refresh setting transport.
 
@@ -350,7 +350,7 @@ wp.customize( 'established_year', function ( setting ) {
 
 ## Notifications
 
-![Error notification](https://make.wordpress.org/core/files/2016/07/error-notification-300x112.png)Notifications provide user feedback, typically based on the value of a control’s setting. An error notification is added to a setting’s `notifications` collection when a setting’s validation routine returns a `WP_Error` instance. Each error added to a PHP `WP_Error` instance is represented as a `wp.customize.Notification` in JavaScript:
+![Error notification](https://i0.wp.com/make.wordpress.org/core/files/2016/07/error-notification-300x112.png?resize=300%2C112&ssl=1)Notifications provide user feedback, typically based on the value of a control’s setting. An error notification is added to a setting’s `notifications` collection when a setting’s validation routine returns a `WP_Error` instance. Each error added to a PHP `WP_Error` instance is represented as a `wp.customize.Notification` in JavaScript:
 
 *   A `WP_Error`‘s `code` is available as `notification.code` in JS.
 *   A `WP_Error`‘s `message` is available as `notification.message` in JS. Note that if there are multiple messages added to a given error code in PHP they will be concatenated into a single message in JS.

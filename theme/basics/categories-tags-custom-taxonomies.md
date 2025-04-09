@@ -22,7 +22,7 @@ The default taxonomies in WordPress are:
 
 ### Terms
 
-Terms are items within your taxonomy. So, for example, if you have the *Animal* taxonomy you would have the terms, dogs, cats, and sheep. Terms can be created via the WordPress admin, or you can use the [](https://developer.wordpress.org/reference/functions/wp_insert_term/ "wp_insert_term")[wp\_insert\_term()](https://developer.wordpress.org/reference/functions/wp_insert_term/) function.
+Terms are items within your taxonomy. So, for example, if you have the *Animal* taxonomy you would have the terms, dogs, cats, and sheep. Terms can be created via the WordPress admin, or you can use the [wp\_insert\_term()](https://developer.wordpress.org/reference/functions/wp_insert_term/ "wp_insert_term") function.
 
 ## Database Schema
 
@@ -32,7 +32,7 @@ Taxonomies and terms are stored in the following database tables:
 *   wp\_term\_taxonomy – places the term in a taxonomy
 *   wp\_term\_relationships – relates the taxonomy to an object (for example, *category* to *post)*
 
-[![taxonomy-schema](https://developer.wordpress.org/files/2014/10/taxonomy-schema.png)](https://developer.wordpress.org/files/2014/10/taxonomy-schema.png)
+[![taxonomy-schema](https://i0.wp.com/developer.wordpress.org/files/2014/10/taxonomy-schema.png?resize=311%2C452&ssl=1)](https://i0.wp.com/developer.wordpress.org/files/2014/10/taxonomy-schema.png?ssl=1)
 
 ## Templates
 
