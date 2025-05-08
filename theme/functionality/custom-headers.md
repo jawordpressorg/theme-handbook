@@ -109,7 +109,7 @@ $header_images = array(
 register_default_headers( $header_images );
 ```
 
-![](https://developer.wordpress.org/files/2014/10/custom_headers_example1.jpg)
+![](https://i0.wp.com/developer.wordpress.org/files/2014/10/custom_headers_example1.jpg?resize=393%2C712&ssl=1)
 
 Do not forget to call [register\_default\_headers()](https://developer.wordpress.org/reference/functions/register_default_headers/) to register a default image. In this example, `sunset.jpg` is the default image and `flower.jpg` is an alternative selection in Customizer.
 
@@ -170,14 +170,9 @@ endif;
 
 ## Function Reference
 
-*   [](https://developer.wordpress.org/reference/functions/header_image/)[header\_image()](https://developer.wordpress.org/reference/functions/header_image/) Display header image URL.
-
-*   [](https://developer.wordpress.org/reference/functions/get_header_image/)[get\_header\_image()](https://developer.wordpress.org/reference/functions/get_header_image/) Retrieve header image for custom header.
-
-*   [](https://developer.wordpress.org/reference/functions/get_custom_header/)[get\_custom\_header()](https://developer.wordpress.org/reference/functions/get_custom_header/) Get the header image data.
-
-*   [](https://developer.wordpress.org/reference/functions/get_random_header_image/)[get\_random\_header\_image()](https://developer.wordpress.org/reference/functions/get_random_header_image/) Retrieve header image for custom header.
-
-*   [](https://developer.wordpress.org/reference/functions/add_theme_support/)[add\_theme\_support()](https://developer.wordpress.org/reference/functions/add_theme_support/) Registers theme support for a given feature.
-
+*   [header\_image()](https://developer.wordpress.org/reference/functions/header_image/) Display header image URL.
+*   [get\_header\_image()](https://developer.wordpress.org/reference/functions/get_header_image/) Retrieve header image for custom header.
+*   [get\_custom\_header()](https://developer.wordpress.org/reference/functions/get_custom_header/) Get the header image data.
+*   [get\_random\_header\_image()](https://developer.wordpress.org/reference/functions/get_random_header_image/) Retrieve header image for custom header.
+*   [add\_theme\_support()](https://developer.wordpress.org/reference/functions/add_theme_support/) Registers theme support for a given feature.
 *   [register\_default\_headers()](https://developer.wordpress.org/reference/functions/register_default_headers/) Registers a selection of default headers to be displayed by the Customizer.

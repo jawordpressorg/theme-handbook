@@ -33,13 +33,13 @@ Listed below are the conditions under which each of the following **conditional 
 
 ### The Main Page
 
-[](https://developer.wordpress.org/reference/functions/is_home/ "Function_Reference/is_home")[is\_home()](https://developer.wordpress.org/reference/functions/is_home/)
+[is\_home()](https://developer.wordpress.org/reference/functions/is_home/ "Function_Reference/is_home")
 
 This condition returns true when the main blog page is being displayed, usually in standard reverse chronological order. If your home page has been set to a Static Page instead, then this will only prove true on the page which you set as the “Posts page” in Settings > Reading.
 
 ### The Front Page
 
-[](https://developer.wordpress.org/reference/functions/is_front_page/ "Function_Reference/is_front_page")[is\_front\_page()](https://developer.wordpress.org/reference/functions/is_front_page/)
+[is\_front\_page()](https://developer.wordpress.org/reference/functions/is_front_page/ "Function_Reference/is_front_page")
 
 This condition returns true when the front page of the site is displayed, regardless of whether it is set to show posts or a static page.
 
@@ -55,13 +55,13 @@ Returns true when:
 
 ### The Administration Panels
 
-[](https://developer.wordpress.org/reference/functions/is_admin/ "Function_Reference/is_admin")[is\_admin()](https://developer.wordpress.org/reference/functions/is_admin/)
+[is\_admin()](https://developer.wordpress.org/reference/functions/is_admin/ "Function_Reference/is_admin")
 
 This condition returns true when the Dashboard or the administration panels are being displayed.
 
 ### A Single Post Page
 
-[](https://developer.wordpress.org/reference/functions/is_single/ "Function_Reference/is_single")[is\_single()](https://developer.wordpress.org/reference/functions/is_single/)
+[is\_single()](https://developer.wordpress.org/reference/functions/is_single/ "Function_Reference/is_single")
 
 Returns true when any single Post (or attachment, or custom Post Type) is being displayed. This condition returns false if you are on a page.
 
@@ -111,13 +111,13 @@ Note: This function does not distinguish between the post ID, post title, or pos
 
 ### A Single Post, Page, or Attachment
 
-[](https://developer.wordpress.org/reference/functions/is_singular/)[is\_singular()](https://developer.wordpress.org/reference/functions/is_singular/)
+[is\_singular()](https://developer.wordpress.org/reference/functions/is_singular/)
 
 Returns true for any is\_single, is\_page, and is\_attachment. It does allow testing for post types.
 
 ### A Sticky Post
 
-[](https://developer.wordpress.org/reference/functions/is_sticky/ "Function_Reference/is_sticky")[is\_sticky()](https://developer.wordpress.org/reference/functions/is_sticky/)
+[is\_sticky()](https://developer.wordpress.org/reference/functions/is_sticky/ "Function_Reference/is_sticky")
 
 Returns true if the “Stick this post to the front page” check box has been checked for the current post. In this example, no post ID argument is given, so the post ID for the Loop post is used.
 
@@ -129,15 +129,15 @@ Returns true when Post 17 is considered a sticky post.
 
 ### A Post Type
 
-[](https://developer.wordpress.org/reference/functions/get_post_type/ "Function_Reference/get_post_type")[get\_post\_type()](https://developer.wordpress.org/reference/functions/get_post_type/)
+[get\_post\_type()](https://developer.wordpress.org/reference/functions/get_post_type/ "Function_Reference/get_post_type")
 
-You can test to see if the current post is of a certain type by including [](https://developer.wordpress.org/reference/functions/get_post_type/ "Function Reference/get_post_type")[get\_post\_type()](https://developer.wordpress.org/reference/functions/get_post_type/) in your conditional. It’s not really a conditional tag, but it returns the [registered post type](https://developer.wordpress.org/reference/functions/register_post_type/ "Function Reference/Register Post Type") of the current post.
+You can test to see if the current post is of a certain type by including [get\_post\_type()](https://developer.wordpress.org/reference/functions/get_post_type/ "Function Reference/get_post_type") in your conditional. It’s not really a conditional tag, but it returns the [registered post type](https://developer.wordpress.org/reference/functions/register_post_type/ "Function Reference/Register Post Type") of the current post.
 
 ```php
 if ( 'book' == get_post_type() ) { ... }
 ```
 
-[](https://developer.wordpress.org/reference/functions/post_type_exists/ "Function Reference/post_type_exists")[post\_type\_exists()](https://developer.wordpress.org/reference/functions/post_type_exists/)
+[post\_type\_exists()](https://developer.wordpress.org/reference/functions/post_type_exists/ "Function Reference/post_type_exists")
 
 Returns true if a given post type is a registered post type. This does not test if a post is a certain post\_type. Note: This function replaces a function called is\_post\_type which existed briefly in 3.0 development.
 
@@ -155,7 +155,7 @@ Returns true if the book post type was registered as having support for hierarch
 
 ###  A Post Type Archive
 
-[](https://developer.wordpress.org/reference/functions/is_post_type_archive/ "Function_Reference/is_post_type_archive")[is\_post\_type\_archive()](https://developer.wordpress.org/reference/functions/is_post_type_archive/)
+[is\_post\_type\_archive()](https://developer.wordpress.org/reference/functions/is_post_type_archive/ "Function_Reference/is_post_type_archive")
 
 Returns true on any post type archive.
 
@@ -169,11 +169,11 @@ To turn on post type archives, use ‘has\_archive’ => true, when [registering
 
 ### Any Page Containing Posts
 
-[](https://developer.wordpress.org/reference/functions/comments_open/ "Function_Reference/comments_open")[comments\_open()](https://developer.wordpress.org/reference/functions/comments_open/)
+[comments\_open()](https://developer.wordpress.org/reference/functions/comments_open/ "Function_Reference/comments_open")
 
 When comments are allowed for the current Post being processed in the [WordPress Loop](https://make.wordpress.org/docs/theme-developer-handbook/part-one-theme-basics/the-loop/ "The Loop").
 
-[](https://developer.wordpress.org/reference/functions/pings_open/ "Function_Reference/pings_open")[pings\_open()](https://developer.wordpress.org/reference/functions/pings_open/)
+[pings\_open()](https://developer.wordpress.org/reference/functions/pings_open/ "Function_Reference/pings_open")
 
 When pings are allowed for the current Post being processed in the WordPress Loop.
 
@@ -181,7 +181,7 @@ When pings are allowed for the current Post being processed in the WordPress Loo
 
 This section refers to WordPress Pages, not any generic webpage from your blog, or in other words to the built in *post\_type* ‘page’.
 
-[](https://developer.wordpress.org/reference/functions/is_page/ "Function_Reference/is_page")[is\_page()](https://developer.wordpress.org/reference/functions/is_page/)
+[is\_page()](https://developer.wordpress.org/reference/functions/is_page/ "Function_Reference/is_page")
 
 When any Page is being displayed.
 
@@ -316,7 +316,7 @@ Note that if you have more than one level of pages the parent page is the one di
 
 Allows you to determine whether or not you are in a page template or if a specific page template is being used.
 
-[](https://developer.wordpress.org/reference/functions/is_page_template/ "Function reference/page template")[is\_page\_template()](https://developer.wordpress.org/reference/functions/is_page_template/)
+[is\_page\_template()](https://developer.wordpress.org/reference/functions/is_page_template/ "Function reference/page template")
 
 Is a Page Template being used?
 
@@ -330,7 +330,7 @@ Note: if the file is in a subdirectory you must include this as well. Meaning th
 
 ### A Category Page
 
-[](https://developer.wordpress.org/reference/functions/is_category/ "Function reference/is category")[is\_category()](https://developer.wordpress.org/reference/functions/is_category/)
+[is\_category()](https://developer.wordpress.org/reference/functions/is_category/ "Function reference/is category")
 
 When a Category archive page is being displayed.
 
@@ -378,11 +378,11 @@ Returns true if the current post is NOT in either category 4, 5, or 6. Note the 
 
 Note: Be sure to check your spelling when testing. There’s a big difference between “is” or “in”.
 
-See also [](https://developer.wordpress.org/reference/functions/is_archive/ "Function reference/is archive")[is\_archive()](https://developer.wordpress.org/reference/functions/is_archive/) and [Category Templates](https://make.wordpress.org/docs/theme-developer-handbook/part-one-theme-basics/template-hierarchy/#category "Template Hierarchy / Category templates").
+See also [is\_archive()](https://developer.wordpress.org/reference/functions/is_archive/ "Function reference/is archive") and [Category Templates](https://make.wordpress.org/docs/theme-developer-handbook/part-one-theme-basics/template-hierarchy/#category "Template Hierarchy / Category templates").
 
 ### A Tag Page
 
-[](https://developer.wordpress.org/reference/functions/is_tag/ "Function reference/is tag")[is\_tag()](https://developer.wordpress.org/reference/functions/is_tag/)
+[is\_tag()](https://developer.wordpress.org/reference/functions/is_tag/ "Function reference/is tag")
 
 When any Tag archive page is being displayed.
 
@@ -416,11 +416,11 @@ has_tag( array( 'sharp', 'mild', 'extreme' ) );
 
 When the current post has any of the tags in the array.
 
-See also [](https://developer.wordpress.org/reference/functions/is_archive/ "Function Reference/is archive")[is\_archive()](https://developer.wordpress.org/reference/functions/is_archive/) and [Tag Templates](https://make.wordpress.org/docs/theme-developer-handbook/part-one-theme-basics/template-hierarchy/#tag "Template hierarchy/Tag template").
+See also [is\_archive()](https://developer.wordpress.org/reference/functions/is_archive/ "Function Reference/is archive") and [Tag Templates](https://make.wordpress.org/docs/theme-developer-handbook/part-one-theme-basics/template-hierarchy/#tag "Template hierarchy/Tag template").
 
 ### A Taxonomy Page
 
-[](https://developer.wordpress.org/reference/functions/is_tax/ "Function Reference/is tax")[is\_tax()](https://developer.wordpress.org/reference/functions/is_tax/)
+[is\_tax()](https://developer.wordpress.org/reference/functions/is_tax/ "Function Reference/is tax")
 
 When any Taxonomy archive page is being displayed.
 
@@ -442,7 +442,7 @@ is_tax( 'flavor', array( 'sharp', 'mild', 'extreme' ) );
 
 Returns true when the flavor taxonomy archive being displayed has a slug of either “sharp”, “mild”, or “extreme”.
 
-[](https://developer.wordpress.org/reference/functions/has_term/)[has\_term()](https://developer.wordpress.org/reference/functions/has_term/)
+[has\_term()](https://developer.wordpress.org/reference/functions/has_term/)
 
 Check if the current post has any of given terms. The first parameter should be an empty string. It expects a taxonomy slug/name as a second parameter.
 
@@ -458,17 +458,17 @@ has_term( array( 'green', 'orange', 'blue' ), 'color' );
 
 When the current post has any of the terms in the array.
 
-See also [](https://developer.wordpress.org/reference/functions/is_archive/ "Function Reference/is archive")[is\_archive()](https://developer.wordpress.org/reference/functions/is_archive/) .
+See also [is\_archive()](https://developer.wordpress.org/reference/functions/is_archive/ "Function Reference/is archive").
 
 ### A Registered Taxonomy
 
-[](https://developer.wordpress.org/reference/functions/taxonomy_exists/ "Function Reference/taxonomy exists")[taxonomy\_exists()](https://developer.wordpress.org/reference/functions/taxonomy_exists/)
+[taxonomy\_exists()](https://developer.wordpress.org/reference/functions/taxonomy_exists/ "Function Reference/taxonomy exists")
 
-When a particular taxonomy is registered via [](https://developer.wordpress.org/reference/functions/register_taxonomy/ "Function Reference/Register Taxonomy")[register\_taxonomy()](https://developer.wordpress.org/reference/functions/register_taxonomy/) . Formerly [is\_taxonomy()](https://developer.wordpress.org/reference/functions/is_taxonomy/) , which was deprecated in Version 3.0
+When a particular taxonomy is registered via [register\_taxonomy()](https://developer.wordpress.org/reference/functions/register_taxonomy/ "Function Reference/Register Taxonomy"). Formerly [is\_taxonomy()](https://developer.wordpress.org/reference/functions/is_taxonomy/) , which was deprecated in Version 3.0
 
 ### An Author Page
 
-[](https://developer.wordpress.org/reference/functions/is_author/ "Function Reference/is author")[is\_author()](https://developer.wordpress.org/reference/functions/is_author/)
+[is\_author()](https://developer.wordpress.org/reference/functions/is_author/ "Function Reference/is author")
 
 When any Author page is being displayed.
 
@@ -496,73 +496,73 @@ is_author( array( 4, 'john-jones', 'Vivian' ) );
 
 When the archive page for the author is either user ID 4, or user\_nicename “john-jones”, or nickname “Vivian”.
 
-See also [](https://developer.wordpress.org/reference/functions/is_archive/ "Function Reference/is archive")[is\_archive()](https://developer.wordpress.org/reference/functions/is_archive/) and [Author Templates](https://make.wordpress.org/docs/theme-developer-handbook/part-one-theme-basics/template-hierarchy/#author-display).
+See also [is\_archive()](https://developer.wordpress.org/reference/functions/is_archive/ "Function Reference/is archive") and [Author Templates](https://make.wordpress.org/docs/theme-developer-handbook/part-one-theme-basics/template-hierarchy/#author-display).
 
 ### A Multi-author Site
 
-[](https://developer.wordpress.org/reference/functions/is_multi_author/ "Function Reference/is multi author")[is\_multi\_author()](https://developer.wordpress.org/reference/functions/is_multi_author/)
+[is\_multi\_author()](https://developer.wordpress.org/reference/functions/is_multi_author/ "Function Reference/is multi author")
 
 When more than one author has published posts for a site. Available with Version 3.2.
 
 ### A Date Page
 
-[](https://developer.wordpress.org/reference/functions/is_date/ "Function Reference/is date")[is\_date()](https://developer.wordpress.org/reference/functions/is_date/)
+[is\_date()](https://developer.wordpress.org/reference/functions/is_date/ "Function Reference/is date")
 
 When any date-based archive page is being displayed (i.e. a monthly, yearly, daily or time-based archive).
 
-[](https://developer.wordpress.org/reference/functions/is_year/ "Function Reference/is year")[is\_year()](https://developer.wordpress.org/reference/functions/is_year/)
+[is\_year()](https://developer.wordpress.org/reference/functions/is_year/ "Function Reference/is year")
 
 When a yearly archive is being displayed.
 
-[](https://developer.wordpress.org/reference/functions/is_month/ "Function Reference/is month")[is\_month()](https://developer.wordpress.org/reference/functions/is_month/)
+[is\_month()](https://developer.wordpress.org/reference/functions/is_month/ "Function Reference/is month")
 
 When a monthly archive is being displayed.
 
-[](https://developer.wordpress.org/reference/functions/is_day/ "Function Reference/is day")[is\_day()](https://developer.wordpress.org/reference/functions/is_day/)
+[is\_day()](https://developer.wordpress.org/reference/functions/is_day/ "Function Reference/is day")
 
 When a daily archive is being displayed.
 
-[](https://developer.wordpress.org/reference/functions/is_time/ "Function Reference/is time")[is\_time()](https://developer.wordpress.org/reference/functions/is_time/)
+[is\_time()](https://developer.wordpress.org/reference/functions/is_time/ "Function Reference/is time")
 
 When an hourly, “minutely”, or “secondly” archive is being displayed.
 
-[](https://developer.wordpress.org/reference/functions/is_new_day/ "Function Reference/is new day")[is\_new\_day()](https://developer.wordpress.org/reference/functions/is_new_day/)
+[is\_new\_day()](https://developer.wordpress.org/reference/functions/is_new_day/ "Function Reference/is new day")
 
 If today is a new day according to post date. Should be used inside the loop.
 
 ### Any Archive Page
 
-[](https://developer.wordpress.org/reference/functions/is_archive/ "Function Reference/is archive")[is\_archive()](https://developer.wordpress.org/reference/functions/is_archive/)
+[is\_archive()](https://developer.wordpress.org/reference/functions/is_archive/ "Function Reference/is archive")
 
 When any type of Archive page is being displayed. Category, Tag, Author and Date based pages are all types of Archives.
 
 ### A Search Result Page
 
-[](https://developer.wordpress.org/reference/functions/is_search/ "Function Reference/is search")[is\_search()](https://developer.wordpress.org/reference/functions/is_search/)
+[is\_search()](https://developer.wordpress.org/reference/functions/is_search/ "Function Reference/is search")
 
 When a search result page archive is being displayed.
 
 ### A 404 Not Found Page
 
-[](https://developer.wordpress.org/reference/functions/is_404/ "Function Reference/is 404")[is\_404()](https://developer.wordpress.org/reference/functions/is_404/)
+[is\_404()](https://developer.wordpress.org/reference/functions/is_404/ "Function Reference/is 404")
 
 When a page displays after an “HTTP 404: Not Found” error occurs.
 
 ### A Privacy Policy Page
 
-[](https://developer.wordpress.org/reference/functions/is_privacy_policy/)[is\_privacy\_policy()](https://developer.wordpress.org/reference/functions/is_privacy_policy/)
+[is\_privacy\_policy()](https://developer.wordpress.org/reference/functions/is_privacy_policy/)
 
 When the Privacy Policy page is being displayed.
 
 ### An Attachment
 
-[](https://developer.wordpress.org/reference/functions/is_attachment/ "Function Reference/is attachment")[is\_attachment()](https://developer.wordpress.org/reference/functions/is_attachment/)
+[is\_attachment()](https://developer.wordpress.org/reference/functions/is_attachment/ "Function Reference/is attachment")
 
 When an attachment document to a post or Page is being displayed. An attachment is an image or other file uploaded through the post editor’s upload utility. Attachments can be displayed on their own ‘page’ or template.
 
 ### A Single Page, Single Post or Attachment
 
-[](https://developer.wordpress.org/reference/functions/is_singular/ "Function Reference/is singular")[is\_singular()](https://developer.wordpress.org/reference/functions/is_singular/)
+[is\_singular()](https://developer.wordpress.org/reference/functions/is_singular/ "Function Reference/is singular")
 
 When any of the following return true: `is_single()`, `is_page()` or `is_attachment()`.
 
@@ -580,25 +580,25 @@ True when viewing a post of the Custom Post Types newspaper or book.
 
 ### A Syndication
 
-[](https://developer.wordpress.org/reference/functions/is_feed/ "Function Reference/is feed")[is\_feed()](https://developer.wordpress.org/reference/functions/is_feed/)
+[is\_feed()](https://developer.wordpress.org/reference/functions/is_feed/ "Function Reference/is feed")
 
 When the site requested is a Syndication. This tag is not typically used by users; it is used internally by WordPress and is available for Plugin Developers.
 
 ### A Trackback
 
-[](https://developer.wordpress.org/reference/functions/is_trackback/ "Function Reference/is trackback")[is\_trackback()](https://developer.wordpress.org/reference/functions/is_trackback/)
+[is\_trackback()](https://developer.wordpress.org/reference/functions/is_trackback/ "Function Reference/is trackback")
 
 When the site requested is WordPress’ hook into its Trackback engine. This tag is not typically used by users; it is used internally by WordPress and is available for Plugin Developers.
 
 ### A Preview
 
-[](https://developer.wordpress.org/reference/functions/is_preview/ "Function Reference/is preview")[is\_preview()](https://developer.wordpress.org/reference/functions/is_preview/)
+[is\_preview()](https://developer.wordpress.org/reference/functions/is_preview/ "Function Reference/is preview")
 
 When a single post being displayed is viewed in Draft mode.
 
 ### Has An Excerpt
 
-[](https://developer.wordpress.org/reference/functions/has_excerpt/ "Function Reference/has excerpt")[has\_excerpt()](https://developer.wordpress.org/reference/functions/has_excerpt/)
+[has\_excerpt()](https://developer.wordpress.org/reference/functions/has_excerpt/ "Function Reference/has excerpt")
 
 When the current post has an excerpt
 
@@ -638,7 +638,7 @@ Replace auto excerpt for a text or code.
 
 ### Has A Nav Menu Assigned
 
-[](https://developer.wordpress.org/reference/functions/has_nav_menu/ "Function Reference/has nav menu")[has\_nav\_menu()](https://developer.wordpress.org/reference/functions/has_nav_menu/)
+[has\_nav\_menu()](https://developer.wordpress.org/reference/functions/has_nav_menu/ "Function Reference/has nav menu")
 
 Whether a registered nav menu location has a menu assigned
 
@@ -646,49 +646,49 @@ Returns: assigned(true) or not(false)
 
 ### Inside The Loop
 
-[](https://developer.wordpress.org/reference/functions/in_the_loop/ "Function Refence/in the loop")[in\_the\_loop()](https://developer.wordpress.org/reference/functions/in_the_loop/)
+[in\_the\_loop()](https://developer.wordpress.org/reference/functions/in_the_loop/ "Function Refence/in the loop")
 
 Check to see if you are “inside the loop”. Useful for plugin authors, this conditional returns as true when you are inside the loop.
 
 ### Is Sidebar Active
 
-[](https://developer.wordpress.org/reference/functions/is_active_sidebar/ "Function Reference/is active sidebar")[is\_active\_sidebar()](https://developer.wordpress.org/reference/functions/is_active_sidebar/)
+[is\_active\_sidebar()](https://developer.wordpress.org/reference/functions/is_active_sidebar/ "Function Reference/is active sidebar")
 
 Check to see if a given sidebar is active (in use). Returns true if the sidebar (identified by name, id, or number) is in use, otherwise the function returns false.
 
 ### Part of a Network (Multisite)
 
-[](https://developer.wordpress.org/reference/functions/is_multisite/ "Function Reference/is multisite")[is\_multisite()](https://developer.wordpress.org/reference/functions/is_multisite/)
+[is\_multisite()](https://developer.wordpress.org/reference/functions/is_multisite/ "Function Reference/is multisite")
 
 Check to see whether the current site is in a WordPress MultiSite install.
 
 ### Main Site (Multisite)
 
-[](https://developer.wordpress.org/reference/functions/is_main_site/ "Function Reference/is main site")[is\_main\_site()](https://developer.wordpress.org/reference/functions/is_main_site/)
+[is\_main\_site()](https://developer.wordpress.org/reference/functions/is_main_site/ "Function Reference/is main site")
 
 Determines if a site is the main site in a network.
 
 ### Admin of a Network (Multisite)
 
-[](https://developer.wordpress.org/reference/functions/is_super_admin/ "Function Reference/is super admin")[is\_super\_admin()](https://developer.wordpress.org/reference/functions/is_super_admin/)
+[is\_super\_admin()](https://developer.wordpress.org/reference/functions/is_super_admin/ "Function Reference/is super admin")
 
 Determines if a user is a network (super) admin.
 
 ### An Active Plugin
 
-[](https://developer.wordpress.org/reference/functions/is_plugin_active/ "Function Reference/is plugin active")[is\_plugin\_active()](https://developer.wordpress.org/reference/functions/is_plugin_active/)
+[is\_plugin\_active()](https://developer.wordpress.org/reference/functions/is_plugin_active/ "Function Reference/is plugin active")
 
 Checks if a plugin is activated.
 
 ### A Child Theme
 
-[](https://developer.wordpress.org/reference/functions/is_child_theme/ "Function Reference/is child theme")[is\_child\_theme()](https://developer.wordpress.org/reference/functions/is_child_theme/)
+[is\_child\_theme()](https://developer.wordpress.org/reference/functions/is_child_theme/ "Function Reference/is child theme")
 
 Checks whether a child theme is in use.
 
 ### Theme supports a feature
 
-[](https://developer.wordpress.org/reference/functions/current_theme_supports/ "Function Reference/current theme supports")[current\_theme\_supports()](https://developer.wordpress.org/reference/functions/current_theme_supports/)
+[current\_theme\_supports()](https://developer.wordpress.org/reference/functions/current_theme_supports/ "Function Reference/current theme supports")
 
 Checks if various theme features exist.
 
@@ -834,7 +834,7 @@ if ( is_home() ) {
 
 ### Helpful 404 Page
 
-The [Creating an Error 404 Page](https://codex.wordpress.org/Creating_an_Error_404_Page) articleh as an example of using the PHP conditional function `isset()` in the [Writing Friendly Messages](https://codex.wordpress.org/Creating_an_Error_404_Page#Writing_Friendly_Messages) section.
+The [Creating an Error 404 Page](https://codex.wordpress.org/Creating_an_Error_404_Page) article as an example of using the PHP conditional function `isset()` in the [Writing Friendly Messages](https://codex.wordpress.org/Creating_an_Error_404_Page#Writing_Friendly_Messages) section.
 
 ### In the theme’s footer.php file
 

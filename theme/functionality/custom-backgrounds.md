@@ -69,7 +69,7 @@ body.custom-background {
 
 Now you’ll see repeated background images
 
-![](https://developer.wordpress.org/files/2017/03/custom_background_1.jpg)
+![](https://i0.wp.com/developer.wordpress.org/files/2017/03/custom_background_1.jpg?resize=733%2C302&ssl=1)
 
 ## Another default example
 
@@ -89,8 +89,8 @@ add_theme_support( 'custom-background', $another_args );
   
 This will show single image at the top right corner as below.
 
-![](https://developer.wordpress.org/files/2017/03/custom_background_2.jpg)
+![](https://i0.wp.com/developer.wordpress.org/files/2017/03/custom_background_2.jpg?resize=735%2C310&ssl=1)
 
-Note: Even if we specified the ‘default-color’ as ‘#0000ff’ (blue), the background color is not blue. Setting the default-image parameter will instantly cause that value to become the effective Custom Background, whereas setting the default-color has no effect. It is just set as default background color in Color menu of Customizer, and enhanced when Administrator save it.
+Even if we specified the ‘default-color’ as ‘#0000ff’ (blue), the background color is not blue. Setting the default-image parameter will instantly cause that value to become the effective Custom Background, whereas setting the default-color has no effect. It is just set as default background color in Color menu of Customizer, and enhanced when Administrator save it.
 
-![](https://developer.wordpress.org/files/2017/03/custom_background_3.jpg)
+![](https://i0.wp.com/developer.wordpress.org/files/2017/03/custom_background_3.jpg?resize=520%2C486&ssl=1)

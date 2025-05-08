@@ -2,9 +2,9 @@
 
 ## Galleries
 
-[![](https://developer.wordpress.org/files/2014/10/Capture.png)](https://developer.wordpress.org/files/2014/10/Capture.png)
+[![](https://i0.wp.com/developer.wordpress.org/files/2014/10/Capture.png?resize=711%2C583&ssl=1)](https://i0.wp.com/developer.wordpress.org/files/2014/10/Capture.png?ssl=1)
 
-Image galleries are the best way to showcase your pictures on your WordPress sites. WordPress bundles the **Create Gallery** feature by default in the media uploader which allows you to create a simple gallery.
+Image galleries are the best way to showcase your pictures on your WordPress sites. WordPress bundles the **Create Gallery** feature by default in the media uploader which allows you to create a simple gallery.  
 
 Note: Before adding a gallery, you must have images in your media library. Otherwise, you need to upload the images into the library and can proceed on gallery creation.
 
@@ -18,8 +18,8 @@ The basic form of gallery shortcode is:
 [gallery]
 ```
 
-Tip:  
-If you use the \[gallery\] shortcode without using the `ids` argument in your post or page, only images that are “attached” to that post or page will be displayed.
+  
+If you use the \[gallery\] shortcode without using the `ids` argument in your post or page, only images that are “attached” to that post or page will be displayed.  
 
 If you need to add multiple images with ID’s, use the following sample shortcode
 
@@ -28,8 +28,8 @@ If you need to add multiple images with ID’s, use the following sample shortc
 [gallery ids="10, 205, 552, 607"]
 ```
 
-Tip:  
-NOTE: find the proper IDs of the images for the gallery. Go to Media library and click on the respected image and ID will appear on the URL.
+  
+NOTE: find the proper IDs of the images for the gallery. Go to Media library and click on the respected image and ID will appear on the URL.  
 
 To use the shortcode from the template file, use the [do\_shortcode()](https://developer.wordpress.org/reference/functions/do_shortcode/) function. Insert the following code into your template file:
 
@@ -78,13 +78,9 @@ Gallery Shortcodes supports the basic options which are listed below:
 ‘orderby’ specifies the order the thumbnails show up. The default order is ‘menu\_order’.
 
 *   menu\_order: You can reorder the images in the Gallery tab of the Add Media popup
-
 *   title: Order by the title of the image in the Media Library
-
 *   post\_date: Sort by date/time
-
 *   rand: Order randomly
-
 *   ID: Specify the post ID
 
 #### Order
@@ -138,7 +134,7 @@ Use ‘do\_shortcode’ function to print the gallery with IDs on template files
 
 #### Size
 
-Size determines the image size to use for the thumbnail display. Valid values include “thumbnail”, “medium”, “large”, “full” and any other additional image size that was registered with [](https://developer.wordpress.org/reference/functions/add_image_size/)[add\_image\_size()](https://developer.wordpress.org/reference/functions/add_image_size/) . The default value is “thumbnail”. The size of the images for “thumbnail”, “medium” and “large” can be configured in WordPress admin panel under Settings > Media.
+Size determines the image size to use for the thumbnail display. Valid values include “thumbnail”, “medium”, “large”, “full” and any other additional image size that was registered with [add\_image\_size()](https://developer.wordpress.org/reference/functions/add_image_size/). The default value is “thumbnail”. The size of the images for “thumbnail”, “medium” and “large” can be configured in WordPress admin panel under Settings > Media.
 
 For example, to display a gallery of medium sized images:
 
@@ -171,7 +167,6 @@ You are allowed to change the defaults.
 Specify where you want the image to link. The default value links to the attachment’s [permalink](https://codex.wordpress.org/Using_Permalinks). Options:
 
 *   file – Link directly to image file
-
 *   none – No link
 
 Example:
@@ -201,5 +196,4 @@ Exclude callows you to insert an “array” of comma separated attachment IDs t
 For more technical details take a reference from below links
 
 *   [Gallery Shortcode](https://codex.wordpress.org/Gallery_Shortcode)
-
-*   [Function](https://developer.wordpress.org/reference/functions/do_shortcode/) [do\_shortcode()](https://developer.wordpress.org/reference/functions/do_shortcode/)
+*   [Function do\_shortcode()](https://developer.wordpress.org/reference/functions/do_shortcode/)

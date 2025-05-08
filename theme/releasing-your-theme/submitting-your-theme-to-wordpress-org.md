@@ -8,7 +8,7 @@ If you have theme development questions, please post them in the [Developing wit
 
 ## Guidelines
 
-Make sure you review the [Theme Review Guidelines](https://make.wordpress.org/themes/handbook/review/required/) before uploading a theme. If you have questions about these guidelines, you can ask them in the [#themereview](https://wordpress.slack.com/messages/themereview/) channel in [Slack](https://chat.wordpress.org/). Anyone with a WordPress.org account can access the Making WordPress Slack.
+Make sure you review the [Theme Review Guidelines](https://make.wordpress.org/themes/handbook/review/required/) before uploading a theme. If you have questions about these guidelines, you can ask them in the [#themes](https://wordpress.slack.com/messages/themes) channel in [Slack](https://chat.wordpress.org/). Anyone with a WordPress.org account can access the Making WordPress Slack.
 
 ## Testing With Sample Data
 

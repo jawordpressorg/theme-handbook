@@ -1,282 +1,173 @@
 # Child Themes
 
-A child theme allows you to change small aspects of your site’s appearance yet still preserve your theme’s look and functionality. To understand how child themes work it is first important to understand the relationship between parent and child themes.
+Child themes are extensions of a parent theme. They allow you to modify an existing theme without directly editing that theme’s code. They are often something as simple as a few minor color changes, but they can also be complex and include custom overrides of the parent theme.
 
-## What is a Parent Theme?
+In this article, you will learn what parent and child themes are, how to create your own modifications via child themes, and what pieces of a parent theme that can be overridden.
 
-A parent theme is a complete theme which includes all of the [required WordPress template files](https://developer.wordpress.org/themes/getting-started/what-is-a-theme/#required-files) and assets for the theme to work. All themes – excluding child themes – are considered parent themes.
+## What are parent and child themes?
 
-## What is a Child Theme?
+### Parent themes
 
-As indicated in the overview, a child theme inherits the look and feel of the parent theme and all of its functions, but can be used to make modifications to any part of the theme. In this way, customizations are kept separate from the parent theme’s files. Using a child theme lets you upgrade the parent theme without affecting the customizations you’ve made to your site.
+All themes—unless they are specifically a child theme—are technically parent themes. Basically, this means that they are complete themes that can be installed and activated in WordPress. 
+
+Parent themes must have all of the required files, as outlined in the [Theme Structure](https://developer.wordpress.org/themes/core-concepts/theme-structure/) documentation. Beyond that, you don’t have to do anything special for your theme to *become a parent theme.*
+
+### Child themes
+
+A child theme includes everything from its parent theme by default. This includes the design and any of its functionality. But it can also be used to make customizations to the parent theme without directly modifying the parent theme’s files. This means that you (or your child theme’s users) can still receive updates to the parent theme without losing those modifications.
 
 Child themes:
 
-*   make your modifications portable and replicable;
+*   Make your modifications portable and replicable.
+*   Keep customizations separate from the parent theme.
+*   Allow parent themes to be updated without losing your modifications.
+*   Save on development time since you’re only writing the code you need.
+*   Are a great way to start your journey toward developing full themes.
 
-*   keep customization separate from parent theme functions;
+It’s worth noting that making extensive customizations from within a child theme can eventually become a management headache. For these more extensive projects, it is often better to fork the original theme and create a full/parent theme of your own. This is something you will need to decide on a case-by-case basis.
 
-*   allow parent themes to be updated without destroying your modifications;
+### What about grandchild themes?
 
-*   allow you to take advantage of the effort and testing put into parent theme;
+This is not currently possible. There are only two levels to the standard theme hierarchy: parent and child theme.
 
-*   save on development time since you are not recreating the wheel; and
+However, when building block themes, there are other levels to what is presented on the front end of a site (they are just not a part of the theme layer):
 
-*   are a *great way* to start learning about theme development.
+*   WordPress itself (default `theme.json`)
+*   Parent theme
+*   Child theme
+*   User customizations (can override `theme.json`, templates, and patterns)
 
-Note: If you are making extensive customizations – beyond styles and a few theme files – creating a parent theme might be a better option than a child theme. Creating a parent theme allows you to avoid issues with deprecated code in the future. This needs to be decided on a case-by-case basis.
+In a way, the user customization layer works as a “grandchild” theme of sorts. The big difference is that the changes are stored in the database instead of the filesystem.
 
-## How to Create a Child Theme
+Outside of that, there is no standard method of creating an installable grandchild theme.
 
-### 1\. Create a child theme folder
+## How to create a child theme
 
-First, create a new folder in your themes directory, located at `wp-content/themes`.
+Let’s try creating a child theme of the default [Twenty Twenty-Four](https://wordpress.org/themes/twentytwentyfour/) theme bundled with WordPress. 
 
-The directory needs a name. It’s best practice to give a child theme the same name as the parent, but with `-child` appended to the end. For example, if you were making a child theme of `twentyfifteen`, then the directory would be named `twentyfifteen-child`.
+### Create a child theme folder
 
-### 2\. Create a stylesheet: style.css
+First, your child theme needs a name. This can be whatever you want your theme to be called, but for this guide, let’s name it “Grand Sunrise.”
 
-Next, you’ll need to create a stylesheet file named `style.css`, which will contain all of the CSS rules and declarations that control the look of your theme. Your stylesheet must contain the below required header comment at the very top of the file. This tells WordPress basic info about the theme, including the fact that it is a child theme with a particular parent.
+Now create a new folder in your `wp-content/themes` directory with a kebab-case version of your theme name: `grand-sunrise`.
+
+### Create a style.css
+
+Now you’ll need to create a file named `style.css`. It is the one absolutely necessary file for a child theme to exist. All `style.css` files must contain a File Header and the required header fields, as outlined in the [Main Stylesheet](https://developer.wordpress.org/themes/core-concepts/main-stylesheet/) documentation (please review this doc if you have not already done so).
+
+As noted in the Main Stylesheet documentation, there is an additional field necessary to declare a theme as a child theme. You must add the `Template` header field to the `style.css` File Header:
 
 ```css
-/*
-Theme Name:   Twenty Fifteen Child
-Theme URI:    http://example.com/twenty-fifteen-child/
-Description:  Twenty Fifteen Child Theme
-Author:       John Doe
-Author URI:   http://example.com
-Template:     twentyfifteen
-Version:      1.0.0
-License:      GNU General Public License v2 or later
-License URI:  http://www.gnu.org/licenses/gpl-2.0.html
-Tags:         light, dark, two-columns, right-sidebar, responsive-layout, accessibility-ready
-Text Domain:  twentyfifteenchild
-*/
+/**
+ * Theme Name: Grand Sunrise
+ * Template:   twentytwentyfour
+ * ...other header fields
+ */
 ```
 
-The following information is required:
+There is one caveat to the `Template` field. It must be a 100% match of the folder name of the parent theme, relative to the `wp-content/themes` folder. In this case, we know that the Twenty Twenty-Four theme folder is located at `wp-content/themes/twentytwentyfour`. Therefore, the `Template` value must be `twentytwentyfour`.
 
-*   **Theme Name –** needs to be unique to your theme
+### Install and activate child theme
 
-*   **Template –** the name of the parent theme directory. The parent theme in our example is the Twenty Fifteen theme, so the Template will be `twentyfifteen`. You may be working with a different theme, so adjust accordingly.
+If you are not already working within a development environment with your theme in the `wp-content/themes` folder, you’ll need to move it there now. Depending on your setup, you have several options, but the easiest is to create a ZIP file of your theme and upload it to your test site via **Appearance > Themes > Add New** in your WordPress admin.
 
-Add remaining information as applicable. The only required child theme file is style.css, but functions.php is necessary to enqueue styles correctly (below).
+For more information on how to add a theme to a WordPress, read [Adding New Themes](https://wordpress.org/documentation/article/work-with-themes/#adding-new-themes) from the WordPress Documentation site.
 
-### 3\. Enqueue stylesheet
+Once your theme is installed, visit **Appearance > Themes** in your WordPress admin and locate your theme. Click the **Activate** link as shown in this screenshot:
 
-The final step is to enqueue the parent and child theme stylesheets, if needed.
+[![WordPress Appearance > Themes screen showing the popup overlay of an empty child theme.](https://i0.wp.com/developer.wordpress.org/files/2024/01/child-theme-activate.jpg?resize=2048%2C1055&ssl=1)](https://i0.wp.com/developer.wordpress.org/files/2024/01/child-theme-activate.jpg?ssl=1)
 
-Note: In the past, the common method was to import the parent theme stylesheet using `@import` inside `style.css`. This is no longer the recommended practice, as it increases the amount of time it takes style sheets to load. Plus it is possible for the parent stylesheet to get loaded twice.
+It won’t look any different from your parent theme right now because you haven’t customized it yet. But you have successfully created a child theme.
 
-The ideal way of enqueuing stylesheets is for the parent theme to load both (parent’s and child’s), but not all themes do this. Therefore, you need to examine the code of the parent theme to see what it does and to get the handle name that the parent theme uses. The handle is the first parameter of `[wp_enqueue_style()](https://developer.wordpress.org/reference/functions/wp_enqueue_style/)`.
+## Customizing your child theme
 
-There are a few things to keep in mind:
+When customizing your child theme, all the functionality documented throughout this handbook is fully available to you. But there are a few considerations you should keep in mind, which you’ll learn about in the following sections.
 
-*   the child theme is loaded before the parent theme.
+### Loading style.css
 
-*   everything is hooked to an action with a priority (default is 10) but the ones with the same priority run in the order they were loaded.
+This is an optional step and often not needed for block themes because their style handling is generally done via [`theme.json`](https://developer.wordpress.org/themes/global-settings-and-styles/). But it is often necessary if you are building a classic theme. Regardless, you only need to perform this step if you want to ensure that any CSS code in `style.css` is loaded.
 
-*   for each handle, only the first call to `[wp_enqueue_style()](https://developer.wordpress.org/reference/functions/wp_enqueue_style/)` is relevant (others ignored).
+Before proceeding with this section, be sure to review the [Including Assets](https://developer.wordpress.org/themes/core-concepts/including-assets/) documentation, which covers how to load `style.css` in more detail. In that documentation, you will learn how to enqueue stylesheets via the [`wp_enqueue_style()`](https://developer.wordpress.org/reference/functions/wp_enqueue_style/) function on the appropriate hook (note that child themes are loaded before their parent themes).
 
-*   the dependency parameter of `[wp_enqueue_style()](https://developer.wordpress.org/reference/functions/wp_enqueue_style/)` affects the order of loading.
+The ideal method of enqueueing stylesheets is when a parent theme loads both its own `style.css` and the child theme’s `style.css`. But not all themes do this. Therefore, you must examine the code of the parent theme to see which stylesheets it is enqueueing. This is different for every theme, and there are no hard rules.
 
-*   without a version number, site visitors will get whatever their browser has cached, instead of the new version.
+If the parent theme loads both stylesheets, the child theme does not need to do anything. Its stylesheet will be automatically loaded.
 
-*   using a function to get the theme’s version will return the active theme’s version (child if there is a child).
-
-*   the functions named `get_stylesheet`\* look for a child theme first and then the parent.
-
-The recommended way of enqueuing the stylesheets is to add a `wp_enqueue_scripts` action and use `[wp_enqueue_style()](https://developer.wordpress.org/reference/functions/wp_enqueue_style/)` in your child theme’s `functions.php`.  
-If you do not have one, create a `functions.php` in your child theme’s directory. The first line of your child theme’s `functions.php` will be an opening PHP tag (<?php), after which you can write the PHP code according to what your parent theme does.
-
-If the parent theme loads both stylesheets, the child theme does not need to do anything.
-
-If the parent theme loads its style using a function starting with `get_template`, such as `[get_template_directory()](https://developer.wordpress.org/reference/functions/get_template_directory/)` and `[get_template_directory_uri()](https://developer.wordpress.org/reference/functions/get_template_directory_uri/)`, the child theme needs to load just the child styles, using the parent’s handle in the dependency parameter.
+In the case of the Twenty Twenty-Four theme, it doesn’t load a stylesheet at all. So you would have to load your `style.css` via `functions.php` as shown in this code snippet:
 
 ```php
-<?php
-add_action( 'wp_enqueue_scripts', 'my_theme_enqueue_styles' );
-function my_theme_enqueue_styles() {
-	wp_enqueue_style( 'child-style',
-		get_stylesheet_uri(),
-		array( 'parenthandle' ),
-		wp_get_theme()->get( 'Version' ) // This only works if you have Version defined in the style header.
+add_action( 'wp_enqueue_scripts', 'grand_sunrise_enqueue_styles' );
+
+function grand_sunrise_enqueue_styles() {
+	wp_enqueue_style( 
+		'grand-sunrise-style', 
+		get_stylesheet_uri()
 	);
 }
 ```
 
-If the parent theme loads its style using a function starting with `get_stylesheet`, such as `[get_stylesheet_directory()](https://developer.wordpress.org/reference/functions/get_stylesheet_directory/)` and `[get_stylesheet_directory_uri()](https://developer.wordpress.org/reference/functions/get_stylesheet_directory_uri/)`, the child theme needs to load both parent and child stylesheets. Be sure to use the same handle name as the parent does for the parent styles.
+If the parent theme you are using only loads its own stylesheet, you would also use the above code to load your child theme’s `style.css`.
+
+If the parent theme loads only the active theme’s stylesheet, such as via `get_stylesheet_uri()`, then it will load the child theme’s stylesheet. In this case, you may want to also enqueue the parent theme’s stylesheet via `functions.php`, and your code would look like this:
 
 ```php
-<?php
-add_action( 'wp_enqueue_scripts', 'my_theme_enqueue_styles' );
-function my_theme_enqueue_styles() {
-	$parenthandle = 'parent-style'; // This is 'twentyfifteen-style' for the Twenty Fifteen theme.
-	$theme        = wp_get_theme();
-	wp_enqueue_style( $parenthandle,
-		get_template_directory_uri() . '/style.css',
-		array(),  // If the parent theme code has a dependency, copy it to here.
-		$theme->parent()->get( 'Version' )
-	);
-	wp_enqueue_style( 'child-style',
-		get_stylesheet_uri(),
-		array( $parenthandle ),
-		$theme->get( 'Version' ) // This only works if you have Version defined in the style header.
+add_action( 'wp_enqueue_scripts', 'grand_sunrise_enqueue_styles' );
+
+function grand_sunrise_enqueue_styles() {
+	wp_enqueue_style( 
+		'grand-sunrise-parent-style', 
+		get_parent_theme_file_uri( 'style.css' )
 	);
 }
 ```
 
-### 4\. Install child theme
+### Templates, parts, and patterns
 
-Install the child theme as you install any other theme. You can copy the folder to the site using FTP, or create a zip file of the child theme folder, choosing the option to maintain folder structure, and click on **Appearance > Themes > Add New** to upload the zip file.
+When building a child theme, you have the option to overwrite any template, part, or pattern that exists in the parent theme by adding a file of the same name in your child theme. *Note: patterns must also have the same registered `Slug` field.*
 
-### 5\. Activate child theme
+You can also add brand new templates, parts, and patterns to your child theme, even if they don’t exist in the parent. To learn more about these features, refer to these articles in the handbook:
 
-Your child theme is now ready for activation. Log in to your site’s Administration Screen, and go to **Administration Screen > Appearance > Themes**. You should see your child theme listed and ready for activation. (If your WordPress installation is multi-site enabled, then you may need to switch to your network Administration Screen to enable the theme (within the Network Admin Themes Screen tab). You can then switch back to your site-specific WordPress Administration Screen to activate your child theme.)
+*   [Templates](https://developer.wordpress.org/themes/templates/)
+*   [Patterns](https://developer.wordpress.org/themes/features/block-patterns/)
 
-Note: You may need to re-save your menu from **Appearance > Menus** and theme options (including background and header images) after activating the child theme.
+### Using functions.php
 
-## Adding Template Files
+Unlike templates and patterns, the `functions.php` file of a child theme does not override the `functions.php` file in the parent theme. In fact, they are both loaded, with the child being loaded immediately before the parent.
 
-Other than the `functions.php` file (as noted above), **any file you add to your child theme will overwrite the same file in the parent theme**.
+In that way, the `functions.php` of a child theme provides a smart, trouble-free method of modifying the functionality of a parent theme or WordPress. 
 
-In most cases, it’s best to create a copy of the template files you want to change from the parent theme, then make your modifications to the copied files, leaving the parent files unchanged. For example, if you wanted to change the code of the parent theme’s `header.php` file, you would copy the file to your child theme folder and customize it there.
+Suppose that you wanted to add a PHP function to your theme. The fastest way would be to open its `functions.php` file and put the function there. But that’s not considered a good practice—**the next time your theme is updated, your function will disappear!**
 
-Tip: There are several plugins which allow you to detect what specific template is being used on the page at which you are looking.
+It’s much better to create a child theme and add your custom code to your child theme’s `functions.php` file. The function will do the exact same job from there too, with the advantage that it will not be affected by future updates of the parent theme.
 
-*   [What The File](https://wordpress.org/plugins/what-the-file/)
-*   [What Template File Am I Viewing?](https://wordpress.org/plugins/what-template-file-am-i-viewing/)
-*   [Debug Bar](https://wordpress.org/plugins/debug-bar/)
+Do not copy code directly from the `functions.php` of a parent theme into your child theme. That will likely lead to fatal errors because of duplicate function names.
 
-You can also include files in the child theme that are not included in the parent theme. For instance, you might want to create a more specific template than is found in your parent theme, such as a template for a specific page or category archive (e.g. page-3.php would load for a Page with the ID of 3).
+To learn more about `functions.php`, check out the [Custom Functionality](https://developer.wordpress.org/themes/core-concepts/custom-functionality/) documentation.
 
-See the [Template Hierarchy](https://developer.wordpress.org/themes/basics/template-hierarchy/ "Template Heirarchy Page") page for more information about how WordPress determines which template to use.
+### Referencing or including other files
 
-## Using functions.php
+Sometimes you need to include or use custom files in your theme. When doing so, you need to make sure that you’re using the function that will give you the correct directory path or URI based on your child theme’s directory.
 
-Unlike `style.css`, the `functions.php` of a child theme does not override its counterpart from the parent. Instead, it is **loaded in addition to the parent’s functions.php**. (Specifically, it is loaded right before the parent’s file.)
-
-In that way, the `functions.php` of a child theme provides a smart, trouble-free method of modifying the functionality of a parent theme. Say that you want to add a PHP function to your theme. The fastest way would be to open its `functions.php` file and put the function there. But that’s not smart: The next time your theme is updated, your function will disappear. But there is an alternative way which is the smart way: you can create a child theme, add a `functions.php` file in it, and add your function to that file. The function will do the exact same job from there too, with the advantage that it will not be affected by future updates of the parent theme. Do not copy the full content of functions.php of the parent theme into functions.php in the child theme.
-
-The structure of `functions.php` is simple: An opening PHP tag at the top, and below it, your bits of PHP. In it you can put as many or as few functions as you wish. The example below shows an elementary `functions.php` file that does one simple thing: Adds a favicon link to the head element of HTML pages.
+For example, if you wanted to include another PHP file via your `functions.php`, you would use the [`get_theme_file_path()`](https://developer.wordpress.org/reference/functions/get_theme_file_path/) function. Here is a code snippet that shows including a `functions-helpers.php` file from an `/inc` folder in your child theme:
 
 ```php
-<?php // Opening PHP tag - nothing should be before this, not even whitespace
-// Custom Function to Include
-function my_favicon_link() {
-	echo '<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />' . "\n";
-}
-add_action( 'wp_head', 'my_favicon_link' );
+require_once get_theme_file_path( 'inc/functions-helpers.php' );
 ```
 
-Tip: The fact that a child theme’s functions.php is loaded first means that you can make the user functions of your theme pluggable —that is, replaceable by a child theme— by declaring them conditionally.
+To learn more about including files, read the [Custom Functionality](https://developer.wordpress.org/themes/core-concepts/custom-functionality/) documentation.
 
-if ( ! function\_exists( 'theme\_special\_nav' ) ) {
-    function theme\_special\_nav() {
-        //  Do something.
-    }
-}
-
-In that way, a child theme can replace a PHP function of the parent by simply declaring it beforehand.
-
-For more information about what to include in your child theme’s `functions.php` file, read through the [Theme Functions](https://developer.wordpress.org/themes/basics/theme-functions/) page.
-
-## Referencing or Including Other Files
-
-When you need to include files that reside within your child theme’s directory structure, you will need to use [get\_stylesheet\_directory()](https://developer.wordpress.org/reference/functions/get_stylesheet_directory/) . Since the `style.css` is in the root of your child theme’s subdirectory, [get\_stylesheet\_directory()](https://developer.wordpress.org/reference/functions/get_stylesheet_directory/) points to your child theme’s directory (not the parent theme’s directory). To reference the parent theme directory, you would use [get\_template\_directory()](https://developer.wordpress.org/reference/functions/get_template_directory/) instead.
-
-Below is an example illustrating how to use [get\_stylesheet\_directory()](https://developer.wordpress.org/reference/functions/get_stylesheet_directory/) when referencing a file stored within the child theme directory:
+When you need to reference a file by its URL, such as an image or stylesheet, you must use a different function: [`get_theme_file_uri()`](https://developer.wordpress.org/reference/functions/get_theme_file_uri/). Let’s look at an example of using a file named `bunny.jpg` from your theme’s `/assets/images` folder in an `<img>` HTML tag:
 
 ```php
-<?php require_once get_stylesheet_directory() . '/my_included_file.php'; ?>
+<?php $image = get_theme_file_uri( 'assets/images/bunny.jpg' ); ?>
+
+<img src="<?php echo esc_url( $image ); ?>" alt="" />
 ```
 
-Meanwhile, this example uses `[get_stylesheet_directory_uri()](https://developer.wordpress.org/reference/functions/get_stylesheet_directory_uri/)` to display an image that is stored within the `/images` folder in the child theme directory.
-
-```php
-<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/my_picture.png" alt="" />
-```
-
-Unlike `get_stylesheet_directory()`, which returns a file path, `get_stylesheet_directory_uri()` returns a URL, which is useful for front-end assets.
-
-## Enqueueing Styles and Scripts
-
-Scripts and styles should each be enqueued with their own function, and then those should be wrapped in an action. For more information, read the page on [Including CSS and JavaScript](https://developer.wordpress.org/themes/basics/including-css-javascript/).
-
-WordPress won’t automatically load the stylesheet for your child theme on the front-end. Below is an example of using the `[wp_enqueue_scripts()](https://developer.wordpress.org/reference/functions/wp_enqueue_scripts/)` action hook to call a function that enqueues the child theme’s stylesheet.
-
-```php
-<?php
-add_action( 'wp_enqueue_scripts', 'my_plugin_add_stylesheet' );
-function my_plugin_add_stylesheet() {
-	wp_enqueue_style( 'my-style', get_stylesheet_directory_uri() . '/style.css', false, '1.0', 'all' );
-}
-```
-
-## Special Considerations
-
-### Post Formats
-
-A child theme inherits [post formats](https://developer.wordpress.org/themes/functionality/post-formats/) as defined by the parent theme. But when creating child themes, be aware that using `[add_theme_support('post-formats')](https://developer.wordpress.org/reference/functions/add_theme_support/)` will **override** the formats as defined by the parent theme, not add to it.
-
-### RTL Support
-
-To support RTL languages, add a `rtl.css` file to your child theme, containing:
-
-```css
-/*
-Theme Name:   Twenty Fifteen Child
-Template:     twentyfifteen
-*/
-```
-
-Even if the parent theme does not have an `rtl.css` file, it’s recommended to add the `rtl.css` file to your child theme. WordPress will auto-load the `rtl.css` file only if `[is_rtl()](https://developer.wordpress.org/reference/functions/is_rtl/)` is true.
+You can find out more about including scripts, styles, images, and other assets from the [Including Assets](https://developer.wordpress.org/themes/core-concepts/including-assets/) documentation.
 
 ### Internationalization
 
-Child themes can be prepared for translation into other languages by using the WordPress [Internationalization API](https://developer.wordpress.org/themes/functionality/internationalization/). There are special considerations regarding internationalization of child themes.
+Like parent themes, child themes can also be internationalized and made to work in any language. To learn more, read the [Internationalization](https://developer.wordpress.org/themes/advanced-topics/internationalization/) documentation in the Theme Handbook.
 
-To internationalize a child theme follow these steps:  
-1\. Add a languages directory.
-
-*   For example: `twentyfifteen-child/languages/`
-
-2\. Add language files.
-
-*   Your filenames have to be `he_IL.po` & `he_IL.mo` (depending on your language), unlike plugin files which are `domain-he_IL.xx`.
-
-3\. Load a textdomain
-
-*   Use [load\_child\_theme\_textdomain()](https://developer.wordpress.org/reference/functions/load_child_theme_textdomain/) in `functions.php` during the after\_setup\_theme action.
-
-*   The text domain defined in [load\_child\_theme\_textdomain()](https://developer.wordpress.org/reference/functions/load_child_theme_textdomain/) should be used to translate all strings in the child theme.
-
-4\. Use GetText functions to add i18n support for your strings.
-
-#### Example: textdomain
-
-```php
-<?php
-/**
- * Set up My Child Theme's textdomain.
- *
- * Declare textdomain for this child theme.
- * Translations can be added to the /languages/ directory.
- */
-function twentyfifteenchild_theme_setup() {
-	load_child_theme_textdomain( 'twentyfifteenchild', get_stylesheet_directory() . '/languages' );
-}
-add_action( 'after_setup_theme', 'twentyfifteenchild_theme_setup' );
-```
-
-At this point, strings in the child theme are ready for translation. To ensure they are properly internationalized for translation, each string needs to have the `twentyfifteenchild` textdomain.
-
-#### Example: gettext functions
-
-Here is an example of echoing the phrase “Code is Poetry”:
-
-```php
-<?php esc_html_e( 'Code is Poetry', 'twentyfifteenchild' ); ?>
-```
-
-The text domain defined in `[load_child_theme_textdomain()](https://developer.wordpress.org/reference/functions/load_child_theme_textdomain/)` should be used to translate all strings in the child theme. In the event that a template file from the parent them has been included, the textdomain should be changed from the one defined in the parent theme to the one defined by the child theme.
+The biggest changes, as noted in the Internationalization documentation, are that you must create a unique text domain and use [`load_child_theme_textdomain()`](https://developer.wordpress.org/reference/functions/load_child_theme_textdomain/) instead of [`load_theme_textdomain()`](https://developer.wordpress.org/reference/functions/load_theme_textdomain/) when manually loading translations.

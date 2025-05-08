@@ -4,7 +4,7 @@ As discussed, [template files](https://developer.wordpress.org/themes/basics/te
 
 This article explains **how WordPress determines which template file(s) to use on individual pages**. If you want to customize an existing WordPress theme it will help you decide which template file needs to be edited.
 
-Tip: You can also use [Conditional Tags](https://developer.wordpress.org/themes/basics/conditional-tags/ "Conditional Tags") to control which templates are loaded on a specific page.
+You can also use [Conditional Tags](https://developer.wordpress.org/themes/basics/conditional-tags/ "Conditional Tags") to control which templates are loaded on a specific page.
 
 ## The Template File Hierarchy
 
@@ -20,7 +20,7 @@ Put simply, WordPress searches down through the template hierarchy until it find
 
 With the exception of the basic `index.php` template file, you can choose whether you want to implement a particular template file or not.
 
-Tip: In these examples, the PHP file extension is used. In block themes, HTML files are used instead, but the template hierarchy is the same.
+In these examples, the PHP file extension is used. In block themes, HTML files are used instead, but the template hierarchy is the same.
 
 If WordPress cannot find a template file with a matching name, it will skip to the next file in the hierarchy. If WordPress cannot find any matching template file, the theme’s `index.php` file will be used.
 
@@ -42,7 +42,7 @@ If your blog is at `http://example.com/blog/` and a visitor clicks on a link to 
 
 The following diagram shows which template files are called to generate a WordPress page based on the WordPress template hierarchy.
 
-[![](https://developer.wordpress.org/files/2014/10/Screenshot-2019-01-23-00.20.04-1024x639.png)](https://developer.wordpress.org/files/2014/10/Screenshot-2019-01-23-00.20.04.png)
+[![](https://i0.wp.com/developer.wordpress.org/files/2014/10/Screenshot-2019-01-23-00.20.04.png?resize=1024%2C639&ssl=1)](https://i0.wp.com/developer.wordpress.org/files/2014/10/Screenshot-2019-01-23-00.20.04.png?ssl=1)
 
 ## The Template Hierarchy In Detail
 
@@ -55,7 +55,7 @@ By default, WordPress sets your site’s home page to display your latest blog p
 1.  `home.php`
 2.  `index.php`
 
-Note: If `front-page.php` exists, it will override the `home.php` template.
+If `front-page.php` exists, it will override the `home.php` template.
 
 ### Front Page display
 
@@ -187,6 +187,8 @@ Rendering an attachment page (`attachment` post-type) uses the following path:
 5.  `single.php`
 6.  `singular.php`
 7.  `index.php`
+
+As of WordPress 6.4, attachment pages are [no longer enabled by default](https://make.wordpress.org/core/2023/10/16/changes-to-attachment-pages/) on new installations. Users can enable them with a plugin, so it is still good practice to test your theme and ensure it properly displays content when viewing an attachment page.
 
 ### Embeds
 

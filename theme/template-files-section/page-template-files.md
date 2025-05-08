@@ -2,7 +2,7 @@
 
 Page templates are a specific type of [template file](https://developer.wordpress.org/themes/basics/template-files/ "Template Files") that can be applied to a specific page or groups of pages.
 
-Note: As of WordPress 4.7 page templates support all post types. For more details how to set a page template to specific post types [see example below](#creating-page-templates-for-specific-post-types).
+As of WordPress 4.7 page templates support all post types. For more details how to set a page template to specific post types [see example below](#creating-page-templates-for-specific-post-types).
 
 Since a page template is a specific type of template file, here are some distinguishing features of page templates:
 
@@ -35,7 +35,7 @@ When a person browses to your website, WordPress selects which template to use f
 5.  **`singular.php` —** If `page.php` is not found, WordPress looks for and uses the theme’s template used for a single post, irregardless of post type.
 6.  **`index.php` —** If no specific page templates are assigned or found, WordPress defaults back to using the theme’s index file to render pages.
 
-Alert: There is also a WordPress-defined template named `paged.php`. It is *not* used for the page post-type but rather for displaying multiple pages of archives.
+There is also a WordPress-defined template named `paged.php`. It is *not* used for the page post-type but rather for displaying multiple pages of archives.
 
 ## Page Templates Purpose & User Control
 
@@ -52,36 +52,35 @@ Conversely, many themes include the ability to choose how many columns a page wi
 
 Dictating whether a template is for global use vs. singular use is achieved by the way the file is named and whether or not is has a specific comment.
 
-Note: Sometimes it is appropriate to have a template globally available even if it appears to be a single use case. When you’re creating themes for release, it can be hard to predict what a user will name their pages. Portfolio pages are a great example as not every WordPress user will name their portfolio the same thing or have the same page ID and yet they may want to use that template.
+Sometimes it is appropriate to have a template globally available even if it appears to be a single use case. When you’re creating themes for release, it can be hard to predict what a user will name their pages. Portfolio pages are a great example as not every WordPress user will name their portfolio the same thing or have the same page ID and yet they may want to use that template.
 
 ## File Organization of Page Templates
 
 As discussed in [Organizing Theme Files](https://developer.wordpress.org/themes/basics/organizing-theme-files/), WordPress recognizes the subfolder **page-templates**. Therefore, it’s a good idea to store your global page templates in this folder to help keep them organized.
 
-Alert: A specialized page template file (those created for only one time use) **cannot** be in a sub-folder, nor, if using a [Child Theme](https://developer.wordpress.org/themes/advanced-topics/child-themes/#how-to-create-a-child-theme), in the Parent Theme’s folder.
+A specialized page template file (those created for only one time use) **cannot** be in a sub-folder, nor, if using a [Child Theme](https://developer.wordpress.org/themes/advanced-topics/child-themes/#how-to-create-a-child-theme), in the Parent Theme’s folder.
 
 ## Creating Custom Page Templates for Global Use
 
 Sometimes you’ll want a template that can be used globally by any page, or by multiple pages.  Some developers will group their templates with a filename prefix, such as `page_two-columns.php`
 
-Alert:  ***Important!*** Do not use `page-` as a prefix, as WordPress will interpret the file as a specialized template, meant to apply to only *one* page on your site.
+***Important!*** Do not use `page-` as a prefix, as WordPress will interpret the file as a specialized template, meant to apply to only *one* page on your site.
 
 For information on theme file-naming conventions and filenames you cannot use, see [reserved theme filenames](https://developer.wordpress.org/themes/basics/template-files/#common-wordpress-template-files "Theme Development").
 
-Tip: A quick, safe method for creating a new page template is to make a copy of `page.php` and give the new file a distinct filename. That way, you start off with the HTML structure of your other pages and you can edit the new file as needed.
+A quick, safe method for creating a new page template is to make a copy of `page.php` and give the new file a distinct filename. That way, you start off with the HTML structure of your other pages and you can edit the new file as needed.
 
-To create a global template, write an opening PHP comment at the top of the file that states the template’s name.  
+To create a global template, write an opening PHP comment at the top of the file that states the template’s name.
 
-```
+```php
 <?php /* Template Name: Example Template */ ?>
 ```
 
-  
 It’s a good idea to choose a name that describes what the template does as the name is visible to WordPress users when they are editing the page. For example, you could name your template Homepage, Blog, or Portfolio.
 
-This example from the TwentyFourteen theme creates a page template called Full Width Page:  
+This example from the TwentyFourteen theme creates a page template called Full Width Page:
 
-```
+```php
 <?php
 /**
 * Template Name: Full Width Page
@@ -92,12 +91,13 @@ This example from the TwentyFourteen theme creates a page template called Full 
 */
 ```
 
-  
-![basics-page-templates-03](https://developer.wordpress.org/files/2014/10/basics-page-templates-03.png)Once you upload the file to your theme’s folder (e.g., page-templates), go to the **Page > Edit** screen in your admin dashboard.
+![basics-page-templates-03](https://i0.wp.com/developer.wordpress.org/files/2014/10/basics-page-templates-03.png?resize=180%2C212&ssl=1)
 
-`On the right hand side under **attributes** you'll see **template**.  This is where users are able to access your global page templates.`
+Once you upload the file to your theme’s folder (e.g., page-templates), go to the **Page > Edit** screen in your admin dashboard.
 
-`Tip: The select list has a maximum width of 250px, so longer names may be cut off.`
+On the right hand side under **attributes** you’ll see **template**.  This is where users are able to access your global page templates.
+
+The select list has a maximum width of 250px, so longer names may be cut off.
 
 ## Creating a Custom Page Template for One Specific Page
 
@@ -116,9 +116,9 @@ By default, a custom page template will be available to the “page” post typ
 
 To create a page template to specific post types, add a line under the template name with the post types you would like the template to support.
 
-Example:  
+Example:
 
-```
+```php
 <?php
 /*
 Template Name: Full-width layout
@@ -127,77 +127,75 @@ Template Post Type: post, page, event
 // Page code here...
 ```
 
-  
-
-Alert: This ability to add page templates to post types other than “page” post type is supported only from WordPress 4.7
+This ability to add page templates to post types other than “page” post type is supported only from WordPress 4.7
 
 When at least one template exists for a post type, the ‘Post Attributes’ meta box will be displayed in the back end, without the need to add post type support for ‘page-attributes’ or anything else. The ‘Post Attributes’ label can be customzied per post type using the ‘attributes’ label when registering a post type.
 
 **Backward Compatibility:**
 
-Let’s say you want to publicly release a theme with support for post type templates. WordPress versions before 4.7 will ignore the Template Post Type header and show the template in the list of page templates, even though it only works for regular posts. To prevent that, you can hook into the theme\_page\_templates filter to exclude it from the list. Here’s an example:  
+Let’s say you want to publicly release a theme with support for post type templates. WordPress versions before 4.7 will ignore the Template Post Type header and show the template in the list of page templates, even though it only works for regular posts. To prevent that, you can hook into the theme\_page\_templates filter to exclude it from the list. Here’s an example:
 
-```
+```php
 /**
-* Hides the custom post template for pages on WordPress 4.6 and older
-*
-* @param array $post_templates Array of page templates. Keys are filenames, values are translated names.
-* @return array Filtered array of page templates.
-*/
+ * Hides the custom post template for pages on WordPress 4.6 and older
+ *
+ * @param array $post_templates Array of page templates. Keys are filenames, values are translated names.
+ * @return array Filtered array of page templates.
+ */
 function makewp_exclude_page_templates( $post_templates ) {
-if ( version_compare( $GLOBALS['wp_version'], '4.7', '<' ) ) {
-unset( $post_templates['templates/my-full-width-post-template.php'] );
+	if ( version_compare( $GLOBALS['wp_version'], '4.7', '&lt;' ) ) {
+		unset( $post_templates['templates/my-full-width-post-template.php'] );
+	}
+	return $post_templates;
 }
-return $post_templates;
-}
+
 add_filter( 'theme_page_templates', 'makewp_exclude_page_templates' );
 ```
 
-`   `  
 That way you can support custom post type templates in WordPress 4.7 and beyond while maintaining full backward compatibility.
 
 Note that theme\_page\_templates is actually a dynamic theme\_{$post\_type}\_templates filter. The dynamic portion of the hook name, $post\_type, refers to the post type supported by the templates. E.g. you can hook into theme\_product\_templates to filter the list of templates for the product post type.
 
 ## Using Conditional Tags in Page Templates
 
-You can make smaller, page-specific changes with [Conditional Tags](https://developer.wordpress.org/themes/basics/conditional-tags/) in your theme’s `page.php` file. For instance, the below example code loads the file `header-home.php` for your front page, but loads another file (`header-about.php`) for your About page, and then applies the default `header.php` for all other pages.  
+You can make smaller, page-specific changes with [Conditional Tags](https://developer.wordpress.org/themes/basics/conditional-tags/) in your theme’s `page.php` file. For instance, the below example code loads the file `header-home.php` for your front page, but loads another file (`header-about.php`) for your About page, and then applies the default `header.php` for all other pages.
 
-```
+```php
 if ( is_front_page() ) :
-get_header( 'home' );
+	get_header( 'home' );
 elseif ( is_page( 'About' ) ) :
-get_header( 'about' );
+	get_header( 'about' );
 else:
-get_header();
+	get_header();
 endif;
 ```
 
-  
 [You can learn more about Conditional Tags here.](https://developer.wordpress.org/themes/basics/conditional-tags/)
 
 ## Identifying a Page Template
 
-If your template uses the `[body_class()](https://developer.wordpress.org/reference/functions/body_class/)` function, WordPress will print classes in the `body` tag for the post type class name (`page`), the page’s ID (`page-id-{ID}`), and the page template used. For the default `page.php`, the class name generated is `page-template-default`:  
+If your template uses the `[body_class()](https://developer.wordpress.org/reference/functions/body_class/)` function, WordPress will print classes in the `body` tag for the post type class name (`page`), the page’s ID (`page-id-{ID}`), and the page template used. For the default `page.php`, the class name generated is `page-template-default`:
 
-```
+```markup
 <body class="page page-id-6 page-template-default">
 ```
 
-  
+A specialized template (`page-{slug}.php` or `page-{ID}.php`) also gets the `page-template-default` class rather than its own body class.
 
-Note: A specialized template (`page-{slug}.php` or `page-{ID}.php`) also gets the `page-template-default` class rather than its own body class.
+When using a custom page template, the class `page-template` will print, along with a class naming the specific template. For example, if your custom page template file is named as follows:
 
-When using a custom page template, the class `page-template` will print, along with a class naming the specific template. For example, if your custom page template file is named as follows:  
-
-```
+```php
 <?php
 /* Template Name: My Custom Page */
-?gt;
+?>
 ```
 
-  
-Then then rendered HTML generated will be as follows:  
-`   ```php <body class="page page-id-6 page-template page-template-my-custom-page-php"> ```   `  
+Then then rendered HTML generated will be as follows:
+
+```markup
+<body class="page page-id-6 page-template page-template-my-custom-page-php">
+```
+
 Notice the `page-template-my-custom-page-php` class that is applied to the `body` tag.
 
 ## Page Template Functions

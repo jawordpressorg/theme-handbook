@@ -7,9 +7,7 @@ Template files are used throughout WordPress themes, but first let’s learn abo
 The term “template” is used in different ways when working with WordPress themes:
 
 *   Templates files exist within a theme and express how your site is displayed.
-
 *   [Template Hierarchy](https://developer.wordpress.org/themes/basics/template-hierarchy/) is the logic WordPress uses to decide which theme template file(s) to use, depending on the content being requested.
-
 *   [Page Templates](https://developer.wordpress.org/themes/template-files-section/page-template-files/ "Page Templates") are those that apply to pages, posts, and custom post types to change their look and feel.
 
 **In classic themes,** [Template Tags](https://developer.wordpress.org/themes/basics/template-tags/ "Template Tags") are built-in WordPress functions you can use inside a template file to retrieve and display data (such as [`the_title()`](https://developer.wordpress.org/reference/hooks/the_title/ "Function Reference/the title") and [`the_content()`](https://developer.wordpress.org/reference/hooks/the_content/ "Function Reference/the content")).
@@ -21,7 +19,6 @@ The term “template” is used in different ways when working with WordPress 
 WordPress themes are made up of template files.
 
 *   In classic themes these are PHP files that contain a mixture of HTML, [Template Tags](https://developer.wordpress.org/themes/basics/template-tags/ "Template Tags"), and PHP code.
-
 *   In block themes these are HTML files that contain HTML markup representing blocks.
 
 When you are building your theme, you will use template files to affect the layout and design of different parts of your website. For example, you would use a `header` template or template part to create a header.
@@ -35,9 +32,7 @@ The most critical template file is `the index`, which is the catch-all templat
 A template part is a piece of a template that is included as a part of another template, such as a site header. Template part can be embedded in multiple templates, simplifying theme creation. Common template parts include:
 
 *   `header.php` or `header.html` for generating the site’s header
-
 *   `footer.php` or `footer.html` for generating the footer
-
 *   `sidebar.php` or `sidebar.html` for generating the sidebar
 
 While the above template files are special-case in WordPress and apply to just one portion of a page, you can create any number of template partials and include them in other template files.
@@ -147,15 +142,11 @@ In classic themes, within WordPress templates, you can use [Template Tags](https
 
 For example, in your `index.php` you can include other files in your final generated page:
 
-*   To include the header, use [](https://developer.wordpress.org/reference/functions/get_header/ "Function Reference/get header")[get\_header()](https://developer.wordpress.org/reference/functions/get_header/)
-
-*   To include the sidebar, use [](https://developer.wordpress.org/reference/functions/get_sidebar/ "Function Reference/get sidebar")[get\_sidebar()](https://developer.wordpress.org/reference/functions/get_sidebar/)
-
-*   To include the footer, use [](https://developer.wordpress.org/reference/functions/get_footer/ "Function Reference/get footer")[get\_footer()](https://developer.wordpress.org/reference/functions/get_footer/)
-
-*   To include the search form, use [](https://developer.wordpress.org/reference/functions/get_search_form/ "Function Reference/get search form")[get\_search\_form()](https://developer.wordpress.org/reference/functions/get_search_form/)
-
-*   To include custom theme files, use [](https://developer.wordpress.org/reference/functions/get_template_part/ "Function Reference/get template part")[get\_template\_part()](https://developer.wordpress.org/reference/functions/get_template_part/)
+*   To include the header, use [get\_header()](https://developer.wordpress.org/reference/functions/get_header/ "Function Reference/get header")
+*   To include the sidebar, use [get\_sidebar()](https://developer.wordpress.org/reference/functions/get_sidebar/ "Function Reference/get sidebar")
+*   To include the footer, use [get\_footer()](https://developer.wordpress.org/reference/functions/get_footer/ "Function Reference/get footer")
+*   To include the search form, use [get\_search\_form()](https://developer.wordpress.org/reference/functions/get_search_form/ "Function Reference/get search form")
+*   To include custom theme files, use [get\_template\_part()](https://developer.wordpress.org/reference/functions/get_template_part/ "Function Reference/get template part")
 
 Here is an example of WordPress template tags to *include* specific templates into your page:
 

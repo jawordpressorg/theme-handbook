@@ -12,12 +12,11 @@ The [Accessibility Team](https://make.wordpress.org/accessibility/) have documen
 The [Themes Team](https://make.wordpress.org/themes/) has two sets of accessibility requirements for themes submitted to the WordPress.org theme directory:
 
 *   [Requirements for all themes](https://make.wordpress.org/themes/handbook/review/required/#3-accessibility)
-
 *   [Requirements for using the “‘accessibility-ready” tag](https://make.wordpress.org/themes/handbook/review/accessibility/)
 
 The accessibility-ready requirements are based on WCAG but adapted for WordPress themes.
 
-Note: “Accessibility Ready” does **not** mean that the theme meets the WCAG guidelines [AA-level](https://make.wordpress.org/accessibility/handbook/make/which-questions-should-you-ask/#levels-of-accessibility). It means that the theme reaches the minimum standards that the theme review team has set.
+“Accessibility Ready” does **not** mean that the theme meets the WCAG guidelines [AA-level](https://make.wordpress.org/accessibility/handbook/make/which-questions-should-you-ask/#levels-of-accessibility). It means that the theme reaches the minimum standards that the theme review team has set.
 
 ## The four principles of web accessibility
 
@@ -50,7 +49,6 @@ A theme designed with these four principles in mind eases the creation of an acc
 Having a high enough color contrast between background and foreground colors makes content easier to read. Theme authors must ensure that all background/foreground color contrasts for plain content text are within the level AA contrast ratio (4.5:1) specified in the Web Content Accessibility Guidelines (WCAG) 2.0 for color luminosity.
 
 *   Color may not be the only way to identify controls, links in text content, or error messages.
-
 *   If there is no text decoration on linked text, there must be a 3:1 color contrast between the link text color and the surrounding non-link text color, in addition to the other color contrast requirements.
 
 There are separate requirements for links in content (links surrounded by other text) and links that are grouped together in navigation menus. Groups of links do not need to be underlined if it is obvious from the context that they are links.
@@ -64,13 +62,11 @@ There are separate requirements for links in content (links surrounded by other 
 Users have many means to resize text, including browser settings. All content and functionality must remain available if the user resizes the text up to 200% of the original size.
 
 *   Resizing text must not trigger multi-dimensional scrolling
-
 *   Enlarged texts must not cause overflows or overlaps
 
 To avoid these issues, it is recommended to:
 
 *   Use a relative unit for font sizes and line heights
-
 *   Test your theme in different browsers and screen widths
 
 [Best practices for font sizes and resized text](https://make.wordpress.org/accessibility/handbook/design/font-sizes-and-resize-text/)
@@ -82,7 +78,6 @@ To avoid these issues, it is recommended to:
 Example:
 
 *   A header image that replaces header text
-
 *   Images used in place of text for navigation
 
 Non-decorative images included with `img` elements should have an `alt` attribute.
@@ -92,13 +87,11 @@ Non-decorative images included with `img` elements should have an `alt` attr
 Example:
 
 *   A header image used alongside header text
-
 *   Images and icons accompanying navigation text links
 
 When possible, decorative images should be included using CSS.
 
 *   Decorative images included with `img` elements should have an empty `alt` attribute: `alt=""`.
-
 *   Decorative images that are displayed together with text should be hidden from screen readers using `aria-hidden`.
 
 #### Featured images
@@ -106,7 +99,6 @@ When possible, decorative images should be included using CSS.
 The alt attribute for featured images is defined in the media library.
 
 *   If the featured image is unlinked, the alt attribute should describe the image
-
 *   If the featured image is linked to a post, the alt text should use the post title
 
 [Best practices for alt texts](https://make.wordpress.org/accessibility/handbook/content/alternative-text-for-images/)
@@ -156,9 +148,7 @@ Skip links provide a mechanism that enables users to navigate directly to conten
 In designs with multiple menus and content areas, multiple skip links can be used:
 
 *   Skip to the main navigation
-
 *   Skip to content
-
 *   Skip to footer
 
 These links may be positioned off-screen initially using an appropriate CSS technique but should remain available to screen reader users and be visible on focus for sighted keyboard navigators.
@@ -170,11 +160,8 @@ These links may be positioned off-screen initially using an appropriate CSS tech
 ### Forms
 
 *   Provide enough information for the user to be able to complete the form.
-
 *   All input fields must have a label. A placeholder text is not a replacement for the label. Input fields must also have a visible focus style.
-
 *   Group controls that belong together, for example, a set of related checkboxes, with a `fieldset` and `legend`.
-
 *   Make sure that the tab order in the form matches the visual order of the input fields: Do not move focus unexpectedly or skip past input fields.
 
 #### On Form Submission
@@ -190,7 +177,6 @@ Post-submission responses—including any error messages—should always be perc
 Use the HTML element that is the best match for the content. Use buttons when performing an action, and links when navigating to a part of a page or a new page.
 
 *   The content of the website should be available even if the user disables both JavaScript and CSS
-
 *   Establish which [browsers](https://make.wordpress.org/core/handbook/best-practices/browser-support/) your theme supports and test your theme with these browsers on different screen sizes
 
 ## Resources
@@ -198,9 +184,7 @@ Use the HTML element that is the best match for the content. Use buttons when pe
 [Make WordPress Accessible](https://make.wordpress.org/accessibility/) is the official blog for the WordPress Accessibility Team, dedicated to making WordPress accessible to as many people as possible. Anyone can join in the discussions, bug scrubs, and meetings. You can also follow discussions via email or subscribe to feeds for posts and comments.
 
 *   [Test for web accessibility](https://make.wordpress.org/accessibility/handbook/test-for-web-accessibility/)
-
 *   [Development tools](https://make.wordpress.org/accessibility/handbook/which-tools-can-i-use/useful-tools/)
-
 *   [WCAG 2 (external link)](https://www.w3.org/WAI/standards-guidelines/wcag/)
 
 Changelog:

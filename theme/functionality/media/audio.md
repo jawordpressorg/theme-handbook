@@ -21,7 +21,7 @@ echo do_shortcode('[[audio mp3=' . $music_file . ']]');
 
 The shortcode creates the audio player as shown in the screenshot below.
 
-![Audio player](https://developer.wordpress.org/files/2014/10/audio_shortcode_basic.jpg)
+![Audio player](https://i0.wp.com/developer.wordpress.org/files/2014/10/audio_shortcode_basic.jpg?resize=558%2C66&ssl=1)
 
 ### Loop and Autoplay
 
@@ -71,4 +71,4 @@ For more technical details such as the internal library that enables this functi
 
 *   [https://make.wordpress.org/core/2013/04/08/audio-video-support-in-core/](https://make.wordpress.org/core/2013/04/08/audio-video-support-in-core/).
 *   [Audio Shortcode](https://codex.wordpress.org/Audio_Shortcode)
-*   [Function](https://developer.wordpress.org/reference/functions/do_shortcode/) [do\_shortcode()](https://developer.wordpress.org/reference/functions/do_shortcode/)
+*   [Function do\_shortcode()](https://developer.wordpress.org/reference/functions/do_shortcode/)

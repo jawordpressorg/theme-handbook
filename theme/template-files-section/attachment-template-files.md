@@ -4,7 +4,7 @@ Attachments are a special post type that holds information about a file uploade
 
 For images, as an example, the attachment post type links to metadata information, about the size of the images, the thumbnails generated, the location of the image files, the HTML alt text, and even information obtained from EXIF data embedded in the images.
 
-Tip: Utilizing attachment templates to gain additional metadata information for uploads, help with SEO efforts.
+Utilizing attachment templates to gain additional metadata information for uploads, help with SEO efforts.
 
 As shown in the [template hierarchy](https://developer.wordpress.org/themes/basics/template-hierarchy/#visual-overview), you are able to display your attachments through several template files in order of fallback:
 
@@ -48,4 +48,4 @@ Creation of attachment page is as simple as creating an attachment.php file. Th
 
 ## Function Reference
 
-*   [](https://developer.wordpress.org/reference/functions/get_attachment_template/)[get\_attachment\_template()](https://developer.wordpress.org/reference/functions/get_attachment_template/) : Retrieve path of attachment template in current or parent template.
+*   [get\_attachment\_template()](https://developer.wordpress.org/reference/functions/get_attachment_template/) : Retrieve path of attachment template in current or parent template.

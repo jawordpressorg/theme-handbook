@@ -35,7 +35,7 @@ if ( comments_open() || get_comments_number() ) :
 endif;
 ```
 
-![functionality-comments-01](https://developer.wordpress.org/files/2014/10/functionality-comments-01.png)
+![functionality-comments-01](https://i0.wp.com/developer.wordpress.org/files/2014/10/functionality-comments-01.png?resize=350%2C257&ssl=1)
 
 ## Another comments.php Example
 
@@ -162,7 +162,7 @@ Finally, there’s a test to see if there are comments associated with this post
 
 Prints out the header that appears above the comments.
 
-Note: Uses the [](https://developer.wordpress.org/reference/functions/_nx/)[\_nx()](https://developer.wordpress.org/reference/functions/_nx/) translation function so other developers can provide alternative language translations.
+Uses the [\_nx()](https://developer.wordpress.org/reference/functions/_nx/) translation function so other developers can provide alternative language translations.
 
 ```php
 <h2 class="comments-title">

@@ -2,7 +2,7 @@
 
 ## Images
 
-Note: This section describes the handling of images in the Media Library. If you want to display the image file located within your theme directory, just specify the location with the img tag, and style it with CSS.
+This section describes the handling of images in the Media Library. If you want to display the image file located within your theme directory, just specify the location with the img tag, and style it with CSS.
 
 <img alt="" src="" />
 
@@ -43,11 +43,8 @@ if ( $image_attributes ) : ?>
 When adding the image in your site, you can specify the image alignment as right, left, center or none. WordPress core automatically adds CSS classes to align the image:
 
 *   alignright
-
 *   alignleft
-
 *   aligncenter
-
 *   alignnone
 
 This is the sample output when center align si chosen
@@ -85,7 +82,6 @@ And, it will be rendered as in HTML as the figure tag:
 Similar to alignments, your theme must include following styles.
 
 *   `wp-caption`
-
 *   `wp-caption-text`
 
 ## WebP support and default MIME type of sub size image output
@@ -115,9 +111,6 @@ Setting the output format to WebP will verify if the web server supports it, and
 #### References
 
 *   `[wp_get_attachment_image()](https://developer.wordpress.org/reference/functions/wp_get_attachment_image/)`
-
 *   `[wp_get_attachment_image_src()](https://developer.wordpress.org/reference/functions/wp_get_attachment_image_src/)`
-
 *   [Styling Images in Posts and Pages](https://codex.wordpress.org/Styling_Images_in_Posts_and_Pages)
-
 *   [CSS (Codex)](https://codex.wordpress.org/CSS)

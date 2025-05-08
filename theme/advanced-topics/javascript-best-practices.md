@@ -8,7 +8,7 @@ There are many useful JavaScript libraries you may want to include when building
 
 A common mistake made by beginning theme and plugin developers is to bundle their theme or plugin with their own version of the library. This may conflict with other plugins that enqueue the version bundled with WordPress. As a best practice, make your theme compatible with the version of your favorite library included with WordPress.
 
-Warning: Do not try to use your own version of a JavaScript library that is already [bundled](https://developer.wordpress.org/themes/basics/including-css-javascript/#default-scripts-included-and-registered-by-wordpress "Default Scripts Included with WordPress") with WordPress. Doing so may break core functionality and conflict with plugins.
+Do not try to use your own version of a JavaScript library that is already [bundled](https://developer.wordpress.org/themes/basics/including-css-javascript/#default-scripts-included-and-registered-by-wordpress "Default Scripts Included with WordPress") with WordPress. Doing so may break core functionality and conflict with plugins.
 
 If you feel you MUST replace the WordPress version with one of your own… well… the answer is still: don’t do it.  The versions of JavaScript libraries used by WordPress may include custom tweaks that WordPress needs to operate.  Any time you override these libraries, you risk breaking your WordPress instance. Moreover, plugins created by other authors should be written to be compatible with WordPress’s version of these libraries as well. Adding your own version may (and often does!) conflict with plugins.
 
@@ -33,7 +33,7 @@ Javascript is growing in popularity for web developers, and it’s being used to
 
 #### Using $
 
-Because the copy of jQuery included in WordPress loads in (link needed) `noConflict()` mode, use this wrapper code in your theme’s .js files to map “$” to “jQuery”:
+Because the copy of jQuery included in WordPress loads in `[noConflict()](https://api.jquery.com/jQuery.noConflict/)` mode, use this wrapper code in your theme’s .js files to map “$” to “jQuery”:
 
 ```javascript
 ( function( $ ) {

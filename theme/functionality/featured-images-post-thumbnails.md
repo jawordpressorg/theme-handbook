@@ -10,7 +10,7 @@ Themes must declare support for the Featured Image function before the Featured 
 add_theme_support( 'post-thumbnails' );
 ```
 
-Note: To enable Featured Image only for specific post types, see [](https://developer.wordpress.org/reference/functions/add_theme_support/ "Allows a theme to register its support of a certain feature...")[](https://developer.wordpress.org/reference/functions/add_theme_support/)[add\_theme\_support()](https://developer.wordpress.org/reference/functions/add_theme_support/)
+To enable Featured Image only for specific post types, see [add\_theme\_support()](https://developer.wordpress.org/reference/functions/add_theme_support/ "Allows a theme to register its support of a certain feature...")
 
 ## Setting a Featured Image
 
@@ -18,7 +18,7 @@ Once you add support for Featured Images, the Featured Image meta box will be vi
 
 By default, the Featured Image meta box is displayed in the sidebar of the Edit Post and Edit Page screens.
 
-[![devhbook-featured_image](https://make.wordpress.org/docs/files/2013/02/devhbook-featured_image1.png)](https://make.wordpress.org/docs/files/2013/02/devhbook-featured_image1.png)
+[![devhbook-featured_image](https://i0.wp.com/make.wordpress.org/docs/files/2013/02/devhbook-featured_image1.png?ssl=1)](https://i0.wp.com/make.wordpress.org/docs/files/2013/02/devhbook-featured_image1.png?ssl=1)
 
 ## Function Reference
 
@@ -99,7 +99,7 @@ img.attachment-large
 img.attachment-full
 ```
 
-You can also give Featured Images their own classes by using the attribute parameter in [](https://developer.wordpress.org/reference/functions/the_post_thumbnail/ "Display Post Thumbnail")[the\_post\_thumbnail()](https://developer.wordpress.org/reference/functions/the_post_thumbnail/) .  
+You can also give Featured Images their own classes by using the attribute parameter in [the\_post\_thumbnail()](https://developer.wordpress.org/reference/functions/the_post_thumbnail/ "Display Post Thumbnail").  
 Display the Featured Image with a class “alignleft”:
 
 ```php
@@ -117,7 +117,7 @@ if ( has_post_thumbnail() ) {
 }
 ```
 
-Note: To return the Featured Image for use in your PHP code instead of displaying it, use: [](https://developer.wordpress.org/reference/functions/get_the_post_thumbnail/ "Retrieve Post Thumbnail")[](https://developer.wordpress.org/reference/functions/get_the_post_thumbnail/)[get\_the\_post\_thumbnail()](https://developer.wordpress.org/reference/functions/get_the_post_thumbnail/)
+To return the Featured Image for use in your PHP code instead of displaying it, use: [get\_the\_post\_thumbnail()](https://developer.wordpress.org/reference/functions/get_the_post_thumbnail/ "Retrieve Post Thumbnail")
 
 ```php
 // check for a Featured Image and then assign it to a PHP variable for later use
@@ -128,7 +128,7 @@ if ( has_post_thumbnail() ) {
 
 ### Linking to Post Permalink or Larger Image
 
-Alert: Don’t use these two examples together in the same Theme.
+Don’t use these two examples together in the same Theme.
 
 Example 1. To link Post Thumbnails to the Post Permalink in a specific loop, use the following within your Theme’s template files:
 
@@ -170,7 +170,5 @@ if ( has_post_thumbnail()) {
 ## External Resources
 
 *   [Everything you need to know about WordPress 2.9’s post image feature](http://justintadlock.com/archives/2009/11/16/everything-you-need-to-know-about-wordpress-2-9s-post-image-feature)
-
 *   [The Ultimative Guide For the\_post\_thumbnail In WordPress 2.9](http://wpengineer.com/the-ultimative-guide-for-the_post_thumbnail-in-wordpress-2-9/)
-
 *   [New in WordPress 2.9: Post Thumbnail Images](http://markjaquith.wordpress.com/2009/12/23/new-in-wordpress-2-9-post-thumbnail-images/)

@@ -12,8 +12,8 @@ After completing everything above, having the proper [documentation](https://de
 
 Themes that have **3 or more distinct issues may be closed** as not-approved. Theme authors are encouraged to review the [Theme Review Guidelines](//developer.wordpress.org/themes/release/theme-review-guidelines/).
 
-Tip:  
-[“How to do a review (Draft)”](//make.wordpress.org/themes/handbook/review/how-to-do-a-review-draft/) is another practical guide to understand the review process in-depth.
+  
+[“How to do a review (Draft)”](//make.wordpress.org/themes/handbook/review/how-to-do-a-review-draft/) is another practical guide to understand the review process in-depth.  
 
 ## First Two Checks
 

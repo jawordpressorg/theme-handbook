@@ -1,6 +1,6 @@
 # Theme Functions
 
-Note: `Functions.php` can be used by both classic themes, block themes, and child themes.
+`Functions.php` can be used by both classic themes, block themes, and child themes.
 
 The `functions.php` file is where you add unique features to your WordPress theme. It can be used to hook into the core functions of WordPress to make your theme more modular, extensible, and functional.
 
@@ -8,7 +8,7 @@ The `functions.php` file is where you add unique features to your WordPress the
 
 The `functions.php` file behaves like a WordPress plugin, adding features and functionality to a WordPress site. You can use it to call WordPress functions and to define your own functions.
 
-Note: The same result can be produced using either a plugin or `functions.php`. If you are creating new features that should be available no matter what the website looks like, **it is best practice to put them in a plugin**.
+The same result can be produced using either a plugin or `functions.php`. If you are creating new features that should be available no matter what the website looks like, **it is best practice to put them in a plugin**.
 
 There are advantages and tradeoffs to either using a WordPress plugin or using `functions.php`.
 
@@ -32,7 +32,7 @@ Each theme has its own functions file, but only code in the active theme’s `f
 
 A [child theme](https://developer.wordpress.org/themes/advanced-topics/child-themes/) can have its own `functions.php` file. Adding a function to the child functions file is a risk-free way to modify a parent theme. That way, when the parent theme is updated, you don’t have to worry about your newly added function disappearing.
 
-Note: Although the child theme’s `functions.php` is loaded by WordPress right before the parent theme’s `functions.php`, it does not *override* it. The child theme’s `functions.php` can be used to augment or replace the parent theme’s functions. Similarly, `functions.php` is loaded *after any plugin files have loaded*.
+Although the child theme’s `functions.php` is loaded by WordPress right before the parent theme’s `functions.php`, it does not *override* it. The child theme’s `functions.php` can be used to augment or replace the parent theme’s functions. Similarly, `functions.php` is loaded *after any plugin files have loaded*.
 
 With `functions.php` you can:
 
@@ -40,7 +40,7 @@ With `functions.php` you can:
 *   Enable WordPress features with `[add_theme_support()](https://developer.wordpress.org/reference/functions/add_theme_support/)`. For example, turn on post thumbnails, post formats, and navigation menus.
 *   Define functions you wish to reuse in multiple theme template files.
 
-Warning:  
+  
 In WordPress, naming conflicts can occur when two or more functions, classes, or variables have the same name. This can cause errors or unexpected behavior in a WordPress site. It is the responsibility of both the theme developer and plugin developer to avoid naming conflicts in their respective code.
 
 Theme developers should ensure that their functions, classes, and variables have unique names that do not conflict with those used by WordPress core or other plugins. They should also prefix their function and class names with a unique identifier, such as the theme name or abbreviation, to minimize the chances of a naming conflict.
@@ -53,7 +53,7 @@ Below are a number of examples that you can use in your functions.php file to su
 
 A number of theme features should be included within a “setup” function that runs initially when your theme is activated. As shown below, each of these features can be added to your `functions.php` file to activate recommended WordPress features.
 
-Note: It’s important to namespace your functions with your theme name. All examples below use `myfirsttheme_` as their namespace, which should be customized based on your theme name.
+It’s important to namespace your functions with your theme name. All examples below use `myfirsttheme_` as their namespace, which should be customized based on your theme name.
 
 To create this initial function, start a new function entitled `myfirsttheme_setup()`, like so:
 

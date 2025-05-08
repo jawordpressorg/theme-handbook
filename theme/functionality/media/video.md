@@ -52,7 +52,7 @@ Defines height of the media. Value is automatically detected on file upload. Whe
 
 Defines width of the media. Value is automatically detected on file upload. When you omit this option, the media file width is used.
 
-Tip: The theme’s content\_width sets the maximum width.
+The theme’s content\_width sets the maximum width.
 
 The following example will load the audio player with 320 pixels width and 240 pixels height:
 
@@ -85,4 +85,4 @@ For more technical details such as internal library that enables this function, 
 
 *   [https://make.wordpress.org/core/2013/04/08/audio-video-support-in-core/](https://make.wordpress.org/core/2013/04/08/audio-video-support-in-core/).
 *   [Video Shortcode](https://codex.wordpress.org/Video_Shortcode)
-*   [Function](https://developer.wordpress.org/reference/functions/do_shortcode/) [do\_shortcode()](https://developer.wordpress.org/reference/functions/do_shortcode/)
+*   [Function do\_shortcode()](https://developer.wordpress.org/reference/functions/do_shortcode/)

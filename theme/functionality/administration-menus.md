@@ -1,6 +1,6 @@
 # Administration Menus
 
-Warning: This is no longer the recommended way to work with theme options. The [Customizer API](https://developer.wordpress.org/themes/customize-api/) is the recommended way to give more control and flexibility to your users
+This is no longer the recommended way to work with theme options. The [Customizer API](https://developer.wordpress.org/themes/customize-api/) is the recommended way to give more control and flexibility to your users
 
 Theme authors might need to provide a settings screen, so users can customize how their theme is used or works. The best way to do this is to create an administration menu item that allows the user to access that settings screen from all the administration screens.
 
@@ -8,29 +8,29 @@ Theme authors might need to provide a settings screen, so users can customize ho
 
 ### Menu Pages
 
-[](https://codex.wordpress.org/Function_Reference/add_menu_page)[add\_menu\_page()](https://developer.wordpress.org/reference/functions/add_menu_page/)  
-[](https://codex.wordpress.org/Function_Reference/add_object_page)[add\_object\_page()](https://developer.wordpress.org/reference/functions/add_object_page/)  
-[](https://codex.wordpress.org/Function_Reference/add_utility_page)[add\_utility\_page()](https://developer.wordpress.org/reference/functions/add_utility_page/)  
-[](https://codex.wordpress.org/Function_Reference/remove_menu_page)[remove\_menu\_page()](https://developer.wordpress.org/reference/functions/remove_menu_page/)
+[add\_menu\_page()](https://codex.wordpress.org/Function_Reference/add_menu_page)  
+[add\_object\_page()](https://codex.wordpress.org/Function_Reference/add_object_page)  
+[add\_utility\_page()](https://codex.wordpress.org/Function_Reference/add_utility_page)  
+[remove\_menu\_page()](https://codex.wordpress.org/Function_Reference/remove_menu_page)
 
 ### Sub-menu Pages
 
-[](https://codex.wordpress.org/Function_Reference/add_submenu_page)[add\_submenu\_page()](https://developer.wordpress.org/reference/functions/add_submenu_page/)  
-[](https://codex.wordpress.org/Function_Reference/remove_submenu_page)[remove\_submenu\_page()](https://developer.wordpress.org/reference/functions/remove_submenu_page/)
+[add\_submenu\_page()](https://codex.wordpress.org/Function_Reference/add_submenu_page)  
+[remove\_submenu\_page()](https://codex.wordpress.org/Function_Reference/remove_submenu_page)
 
 ### WordPress Administration Menus
 
-[](https://codex.wordpress.org/Function_Reference/add_dashboard_page)[add\_dashboard\_page()](https://developer.wordpress.org/reference/functions/add_dashboard_page/)  
-[](https://codex.wordpress.org/Function_Reference/add_posts_page)[add\_posts\_page()](https://developer.wordpress.org/reference/functions/add_posts_page/)  
-[](https://codex.wordpress.org/Function_Reference/add_media_page)[add\_media\_page()](https://developer.wordpress.org/reference/functions/add_media_page/)  
-[](https://codex.wordpress.org/Function_Reference/add_links_page)[add\_links\_page()](https://developer.wordpress.org/reference/functions/add_links_page/)  
-[](https://codex.wordpress.org/Function_Reference/add_pages_page)[add\_pages\_page()](https://developer.wordpress.org/reference/functions/add_pages_page/)  
-[](https://codex.wordpress.org/Function_Reference/add_comments_page)[add\_comments\_page()](https://developer.wordpress.org/reference/functions/add_comments_page/)  
-[](https://codex.wordpress.org/Function_Reference/add_theme_page)[add\_theme\_page()](https://developer.wordpress.org/reference/functions/add_theme_page/)  
-[](https://codex.wordpress.org/Function_Reference/add_plugins_page)[add\_plugins\_page()](https://developer.wordpress.org/reference/functions/add_plugins_page/)  
-[](https://codex.wordpress.org/Function_Reference/add_users_page)[add\_users\_page()](https://developer.wordpress.org/reference/functions/add_users_page/)  
-[](https://codex.wordpress.org/Function_Reference/add_management_page)[add\_management\_page()](https://developer.wordpress.org/reference/functions/add_management_page/)  
-[](https://codex.wordpress.org/Function_Reference/add_options_page)[add\_options\_page()](https://developer.wordpress.org/reference/functions/add_options_page/)
+[add\_dashboard\_page()](https://codex.wordpress.org/Function_Reference/add_dashboard_page)  
+[add\_posts\_page()](https://codex.wordpress.org/Function_Reference/add_posts_page)  
+[add\_media\_page()](https://codex.wordpress.org/Function_Reference/add_media_page)  
+[add\_links\_page()](https://codex.wordpress.org/Function_Reference/add_links_page)  
+[add\_pages\_page()](https://codex.wordpress.org/Function_Reference/add_pages_page)  
+[add\_comments\_page()](https://codex.wordpress.org/Function_Reference/add_comments_page)  
+[add\_theme\_page()](https://codex.wordpress.org/Function_Reference/add_theme_page)  
+[add\_plugins\_page()](https://codex.wordpress.org/Function_Reference/add_plugins_page)  
+[add\_users\_page()](https://codex.wordpress.org/Function_Reference/add_users_page)  
+[add\_management\_page()](https://codex.wordpress.org/Function_Reference/add_management_page)  
+[add\_options\_page()](https://codex.wordpress.org/Function_Reference/add_options_page)
 
 ## Every Plot Needs a Hook
 
@@ -72,7 +72,7 @@ function my_options() {
 
 In this example, the function `my_menu()` adds a new item to the Settings administration menu via the [`add_options_page()`](https://codex.wordpress.org/Function_Reference/add_options_page) function.
 
-*Note:* Note that the [](https://codex.wordpress.org/Function_Reference/add_action)[add\_action()](https://developer.wordpress.org/reference/functions/add_action/) call in Step 2 *registers* the my\_menu() function under the [admin\_menu](https://codex.wordpress.org/Plugin_API/Action_Reference/admin_menu) hook. **Without that, [add\_action()](https://developer.wordpress.org/reference/functions/add_action/) call, a PHP error for undefined function will be thrown**. Finally, the `add_options_page()` call refers to the `my_options()` function which contains the actual page to be displayed (and PHP code to be processed) when someone clicks the menu item.
+*Note:* Note that the [add\_action()](https://codex.wordpress.org/Function_Reference/add_action) call in Step 2 *registers* the my\_menu() function under the [admin\_menu](https://codex.wordpress.org/Plugin_API/Action_Reference/admin_menu) hook. **Without that, [add\_action()](https://developer.wordpress.org/reference/functions/add_action/) call, a PHP error for undefined function will be thrown**. Finally, the `add_options_page()` call refers to the `my_options()` function which contains the actual page to be displayed (and PHP code to be processed) when someone clicks the menu item.
 
 These steps are described in more detail in the sections below. Remember to enclose the creation of the menu and the page in functions, and use the `admin_menu` [hook](https://codex.wordpress.org/Plugin_API/Action_Reference) to get the whole process started at the right time.
 

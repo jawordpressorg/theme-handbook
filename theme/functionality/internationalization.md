@@ -109,7 +109,7 @@ should become
 _n( '%s post', '%s posts', $count, 'my-theme' )
 ```
 
-Warning: The text domain should be passed as a string to the localization functions instead of a variable. It allows parsing tools to differentiate between text domains. Example of what not to do:  
+The text domain should be passed as a string to the localization functions instead of a variable. It allows parsing tools to differentiate between text domains. Example of what not to do:  
 
 ```php
 __( 'Translate me.' , $text_domain );
@@ -121,8 +121,8 @@ __( 'Translate me.' , $text_domain );
 
 The translations in WordPress are saved in `.po` and `.mo` files which need to be loaded. They can be loaded by using the functions `[load_theme_textdomain()](https://developer.wordpress.org/reference/functions/load_theme_textdomain/)` or `[load_child_theme_textdomain()](https://developer.wordpress.org/reference/functions/load_child_theme_textdomain/)`. This loads `{locale}.mo` from your theme’s base directory or `{text-domain}-{locale}.mo` from the WordPress theme language folder in `/wp-content/languages/themes/`.
 
-Note: As of version 4.6 WordPress automatically checks the language directory in `wp-content` for translations from [translate.wordpress.org](https://translate.wordpress.org/). This means that plugins that are translated via translate.wordpress.org do not require `load_plugin_textdomain()` anymore.  
-If you don’t want to add a `load_plugin_textdomain()` call to your plugin you should set the `Requires at least:` field in your readme.txt to 4.6.
+As of version 4.6 WordPress automatically checks the language directory in `wp-content` for translations from [translate.wordpress.org](https://translate.wordpress.org/). This means that plugins that are translated via translate.wordpress.org do not require `load_plugin_textdomain()` anymore.  
+If you don’t want to add a `load_plugin_textdomain()` call to your plugin you should set the `Requires at least:` field in your readme.txt to 4.6.  
 
 To find out more about the different language and country codes, see [the list of languages](https://make.wordpress.org/polyglots/teams/ "https://codex.wordpress.org/WordPress_in_Your_Language").
 

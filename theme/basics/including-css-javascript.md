@@ -1,4 +1,6 @@
-# Including CSS &amp; JavaScript
+# Including CSS &amp; JavaScript (Archived)
+
+This is an old page that has been archived in favor of the newer [Including Assets documentation](https://developer.wordpress.org/themes/core-concepts/including-assets/) in the Core Concepts chapter. This page will eventually be removed and redirect to the newer doc.
 
 When you’re creating your theme, you may want to create additional stylesheets or JavaScript files. However, remember that a WordPress website will not just have your theme active, it will also be using many different plugins. So that everything works harmoniously, it’s important that theme and plugins load scripts and stylesheets using the standard WordPress method. This will ensure the site remains efficient and that there are no incompatibility issues.
 
@@ -195,7 +197,7 @@ add_action( 'wp_enqueue_scripts', 'add_theme_scripts' );
 
 By default, WordPress includes many popular scripts commonly used by web developers, as well as the scripts used by WordPress itself. Some of them are listed on this reference page:
 
-> [](https://developer.wordpress.org/reference/functions/wp_enqueue_script/)[wp\_enqueue\_script()](https://developer.wordpress.org/reference/functions/wp_enqueue_script/)
+> [wp\_enqueue\_script()](https://developer.wordpress.org/reference/functions/wp_enqueue_script/)
 
 **The list is far from complete.** You can find a full list of included files in [wp-includes/script-loader.php](https://core.trac.wordpress.org/browser/trunk/src/wp-includes/script-loader.php).
 
@@ -204,3 +206,4 @@ By default, WordPress includes many popular scripts commonly used by web develop
 Changelog:
 
 *   Updated 2023-02-24: Added information about [wp\_enqueue\_block\_style()](https://developer.wordpress.org/reference/functions/wp_enqueue_block_style/) .
+*   Updated 2024-06-06: Added alert to point readers to new doc.

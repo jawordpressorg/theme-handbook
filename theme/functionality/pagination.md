@@ -5,7 +5,6 @@ Pagination allows your user to *page* back and forth through multiple pages of c
 WordPress can use pagination when:
 
 *   Viewing lists of posts when more posts exist than can fit on one page, or
-
 *   Breaking up longer posts by manually by using the following tag: `<!--nextpage-->`
 
 ## Using Pagination to Navigate Post Lists
@@ -48,7 +47,7 @@ This simplified example shows where you can add pagination functions for the mai
 
 ### Methods for displaying pagination links
 
-Note: When using any of these pagination functions outside the template file with the loop that is being paginated, you must call the global variable $wp\_query.
+When using any of these pagination functions outside the template file with the loop that is being paginated, you must call the global variable $wp\_query.
 
 ```php
 function your_themes_pagination() {
@@ -63,7 +62,7 @@ WordPress has numerous functions for displaying links to other pages in your loo
 
 **posts\_nav\_link**
 
-One of the simplest methods is [](https://developer.wordpress.org/reference/functions/posts_nav_link/)[posts\_nav\_link()](https://developer.wordpress.org/reference/functions/posts_nav_link/) . Simply place the function in your template after your loop. This generates both links to the next page of posts and previous page of posts where applicable. This function is ideal for themes that have simple pagination requirements.
+One of the simplest methods is [posts\_nav\_link()](https://developer.wordpress.org/reference/functions/posts_nav_link/). Simply place the function in your template after your loop. This generates both links to the next page of posts and previous page of posts where applicable. This function is ideal for themes that have simple pagination requirements.
 
 ```php
 posts_nav_link();
@@ -71,14 +70,14 @@ posts_nav_link();
 
 **next\_posts\_link & prev\_posts\_link**
 
-When building a theme, use [](https://developer.wordpress.org/reference/functions/next_posts_link/)[next\_posts\_link()](https://developer.wordpress.org/reference/functions/next_posts_link/) and [prev\_posts\_link()](https://developer.wordpress.org/reference/functions/previous_posts_link/). to have control over where the previous and next posts page link appears.
+When building a theme, use [next\_posts\_link()](https://developer.wordpress.org/reference/functions/next_posts_link/) and [prev\_posts\_link()](https://developer.wordpress.org/reference/functions/previous_posts_link/). to have control over where the previous and next posts page link appears.
 
 ```php
 next_posts_link();
 previous_posts_link();
 ```
 
-If you need to pass the pagination links to a PHP variable, you can use [](https://developer.wordpress.org/reference/functions/get_next_posts_link/)[get\_next\_posts\_link()](https://developer.wordpress.org/reference/functions/get_next_posts_link/) and [](https://developer.wordpress.org/reference/functions/get_previous_posts_link/)[get\_previous\_posts\_link()](https://developer.wordpress.org/reference/functions/get_previous_posts_link/) .
+If you need to pass the pagination links to a PHP variable, you can use [get\_next\_posts\_link()](https://developer.wordpress.org/reference/functions/get_next_posts_link/) and [get\_previous\_posts\_link()](https://developer.wordpress.org/reference/functions/get_previous_posts_link/).
 
 ```php
 $next_posts = get_next_posts_link();
@@ -91,7 +90,7 @@ When you have many pages of content it is a better experience to display a list 
 
 **For WordPress 4.1+**
 
-If you want more robust pagination options, you can use [](https://developer.wordpress.org/reference/functions/the_posts_pagination/)[the\_posts\_pagination()](https://developer.wordpress.org/reference/functions/the_posts_pagination/) for WordPress 4.1 and higher. This will output a set of page numbers with links to previous and next pages of posts.
+If you want more robust pagination options, you can use [the\_posts\_pagination()](https://developer.wordpress.org/reference/functions/the_posts_pagination/) for WordPress 4.1 and higher. This will output a set of page numbers with links to previous and next pages of posts.
 
 ```php
 the_posts_pagination();
@@ -99,7 +98,7 @@ the_posts_pagination();
 
 **For WordPress prior to 4.1**
 
-If you want your pagination to support older versions of WordPress, you must use [](https://developer.wordpress.org/reference/functions/paginate_links/)[paginate\_links()](https://developer.wordpress.org/reference/functions/paginate_links/) .
+If you want your pagination to support older versions of WordPress, you must use [paginate\_links()](https://developer.wordpress.org/reference/functions/paginate_links/).
 
 ```php
 echo paginate_links();
