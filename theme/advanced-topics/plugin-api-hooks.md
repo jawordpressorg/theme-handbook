@@ -4,23 +4,23 @@ A theme should work well with WordPress plugins. Plugins add functionality by us
 
 Most hooks are executed internally by WordPress, so your theme does not need special tags for them to work. However, a few hooks need to be included in your theme templates. These hooks are fired by special Template Tags:
 
-**[](https://developer.wordpress.org/reference/functions/wp_head/ "Function Reference/wp head")[wp\_head()](https://developer.wordpress.org/reference/functions/wp_head/)**
+**[wp\_head()](https://developer.wordpress.org/reference/functions/wp_head/ "Function Reference/wp head")**
 
 Goes at the end of the <head> element of a theme’s *header.php* template file.
 
-**[](https://developer.wordpress.org/reference/functions/wp_body_open/ "Function Reference/wp head")[wp\_body\_open()](https://developer.wordpress.org/reference/functions/wp_body_open/)**
+**[wp\_body\_open()](https://developer.wordpress.org/reference/functions/wp_body_open/ "Function Reference/wp head")**
 
 Goes at the begining of the <body> element of a theme’s *header.php* template file.
 
-**[](https://developer.wordpress.org/reference/functions/wp_footer/ "Function Reference/wp footer")[wp\_footer()](https://developer.wordpress.org/reference/functions/wp_footer/)**
+**[wp\_footer()](https://developer.wordpress.org/reference/functions/wp_footer/ "Function Reference/wp footer")**
 
 Goes in *footer.php*, just before the closing </body> tag.
 
-**[](https://developer.wordpress.org/reference/functions/wp_meta/ "Function Reference/wp meta")[wp\_meta()](https://developer.wordpress.org/reference/functions/wp_meta/)**
+**[wp\_meta()](https://developer.wordpress.org/reference/functions/wp_meta/ "Function Reference/wp meta")**
 
 Typically goes in the <li>Meta</li> section of a Theme’s menu or sidebar.
 
-**[](https://developer.wordpress.org/reference/functions/comment_form/ "Function Reference/comment form")[comment\_form()](https://developer.wordpress.org/reference/functions/comment_form/)**
+**[comment\_form()](https://developer.wordpress.org/reference/functions/comment_form/ "Function Reference/comment form")**
 
 Goes in *comments.php* directly before the file’s closing tag (</div>).
 

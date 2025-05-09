@@ -3,7 +3,7 @@
 ## Logo Homepage Link
 
 The logo at the top each page should send the user to the homepage of your site.  
-If you are using the recommended function, [](https://developer.wordpress.org/reference/functions/the_custom_logo/)[the\_custom\_logo()](https://developer.wordpress.org/reference/functions/the_custom_logo/) or the site logo block, the logo is linked to the homepage by default.
+If you are using the recommended function, [the\_custom\_logo()](https://developer.wordpress.org/reference/functions/the_custom_logo/) or the site logo block, the logo is linked to the homepage by default.
 
 You can also add your logo manually. Assuming your logo is in your theme directory, this is how to display it in the `header.php` template file.
 
@@ -42,9 +42,7 @@ Having different colors for these two states helps users identify the pages the
 There are 3 other states that links can have:
 
 *   hover, when a mouse is over an element
-
 *   focus, similar to hover but for keyboard users
-
 *   active, when a user is clicking on a link
 
 Since hover and focus have similar meanings, it is useful to give them the same styles.

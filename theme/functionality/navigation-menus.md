@@ -6,7 +6,7 @@ Navigation Menus are customizable menus in your theme. They allow users to add P
 
 In your theme’s functions.php, you need to register your menu(s). This sets the name that will appear at **Appearance -> Menus**.
 
-First of all, you will use [](https://developer.wordpress.org/reference/functions/register_nav_menus/)[register\_nav\_menus()](https://developer.wordpress.org/reference/functions/register_nav_menus/) to register the menu.
+First of all, you will use [register\_nav\_menus()](https://developer.wordpress.org/reference/functions/register_nav_menus/) to register the menu.
 
 In this example, two locations are added to the “Manage Locations” tab: “Header Menu” and “Extra Menu”.
 
@@ -24,13 +24,13 @@ function register_my_menus() {
 
 ## Display Menus
 
-Once you’ve registered your menus, you need to use [](https://developer.wordpress.org/reference/functions/wp_nav_menu/)[wp\_nav\_menu()](https://developer.wordpress.org/reference/functions/wp_nav_menu/) to tell your theme where to display them. For example, add the following code to your `header.php` file to display the header-menu that was registered above.
+Once you’ve registered your menus, you need to use [wp\_nav\_menu()](https://developer.wordpress.org/reference/functions/wp_nav_menu/) to tell your theme where to display them. For example, add the following code to your `header.php` file to display the header-menu that was registered above.
 
 ```php
 wp_nav_menu( array( 'theme_location' => 'header-menu' ) );
 ```
 
-Note: A full list of parameters can be found in the [](https://developer.wordpress.org/reference/functions/wp_nav_menu/)[](https://developer.wordpress.org/reference/functions/wp_nav_menu/)[wp\_nav\_menu()](https://developer.wordpress.org/reference/functions/wp_nav_menu/) page in the function reference
+A full list of parameters can be found in the [wp\_nav\_menu()](https://developer.wordpress.org/reference/functions/wp_nav_menu/) page in the function reference
 
 Repeat this process for any additional menus you want to display in your theme. Optionally, you can add a container class which allows you to style the menu with CSS.
 
@@ -43,7 +43,7 @@ wp_nav_menu(
 );
 ```
 
-Note: A full list of CSS Classes can be found in the [](https://developer.wordpress.org/reference/functions/wp_nav_menu/)[](https://developer.wordpress.org/reference/functions/wp_nav_menu/)[wp\_nav\_menu()](https://developer.wordpress.org/reference/functions/wp_nav_menu/) page in the function reference. You can use these to style your menus.
+A full list of CSS Classes can be found in the [wp\_nav\_menu()](https://developer.wordpress.org/reference/functions/wp_nav_menu/) page in the function reference. You can use these to style your menus.
 
 ## Display Additional Contents
 
@@ -71,7 +71,7 @@ The output will display as…
 </div>  
 \[/html\]
 
-Note: To display text between the `<li>` and `<a>` elements for each menu item, use `before` and `after` parameters.
+To display text between the `<li>` and `<a>` elements for each menu item, use `before` and `after` parameters.
 
 ## Define Callback
 
