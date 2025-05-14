@@ -14,7 +14,7 @@ Single posts and their archives can be displayed using the `single.php` and `arc
 *   and their archives will use **archive-{post\_type}.php**
 *   and if you don’t have this post type archive page you can pass **BLOG\_URL?post\_type={post\_type}**
 
-where `{post_type}` is the `$post_type` argument of the [](https://developer.wordpress.org/reference/functions/register_post_type/)[register\_post\_type()](https://developer.wordpress.org/reference/functions/register_post_type/) function.
+where `{post_type}` is the `$post_type` argument of the [register\_post\_type()](https://developer.wordpress.org/reference/functions/register_post_type/) function.
 
 So for the above example, you could create `single-acme_product.php` and `archive-acme_product.php` template files for single product posts and their archives.
 

@@ -2,7 +2,7 @@
 
 The Customize API (Customizer) is a framework for live-previewing any change to WordPress. It provides a unified interface for users to customize various aspects of their theme and their site, from colors and layouts to widgets, menus, and more. Themes and plugins alike can add options to the Customizer. The Customizer is the canonical way to add options to your theme.
 
-[![The customizer as it appears in WordPress 4.6 with the Twenty Fifteen theme.](https://developer.wordpress.org/files/2014/10/customize-4.6-1024x576.png)](https://developer.wordpress.org/files/2014/10/customize-4.6.png)
+[![The customizer as it appears in WordPress 4.6 with the Twenty Fifteen theme.](https://i0.wp.com/developer.wordpress.org/files/2014/10/customize-4.6.png?resize=640%2C360&ssl=1)](https://i0.wp.com/developer.wordpress.org/files/2014/10/customize-4.6.png?ssl=1)
 
 The customizer as it appears in WordPress 4.6 with the Twenty Fifteen theme.
 

@@ -8,7 +8,7 @@ These next few steps will help you build a useful 404 page for your WordPress th
 
 As the `404.php` file is used on a page not found error, the first step is to create a file named `404.php` and add it to your WordPress theme folder.
 
-Tip: Often times a great starting point for your `404.php` is your `index.php`
+Often times a great starting point for your `404.php` is your `index.php`
 
 ## Add a file header
 
@@ -52,7 +52,7 @@ Example:
 
 This example is from the Twenty Thirteen theme that comes with WordPress. This adds some text and a search form in the 404 page.
 
-Note: You can to add your own text to make your 404 page look better.
+You can to add your own text to make your 404 page look better.
 
 ## Adding the footer and sidebar.
 

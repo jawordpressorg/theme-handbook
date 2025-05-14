@@ -1,6 +1,6 @@
 # Customizer Objects
 
-The Customize API is object-oriented. There are four main types of Customizer objects: Panels, Sections, Settings, and Controls. Settings associate UI elements (controls) with settings that are saved in the database. Sections are UI containers for controls, to improve their organization. Panels are containers for sections, allowing multiple sections to be grouped together. Each Customizer object is represented by a PHP class, and all of the objects are managed by the Customize Manager object, [WP\_Customize\_Manager](https://developer.wordpress.org/reference/classes/wp_customize_manager/). [![Graphic showing the relationship between each type of customize object](https://developer.wordpress.org/files/2017/01/Customize-Object-Hierarchy-Graphic-1024x576.png)](https://developer.wordpress.org/files/2017/01/Customize-Object-Hierarchy-Graphic.png) To add, remove, or modify any Customizer object, and to access the Customizer Manager, use the `[customize_register](https://developer.wordpress.org/reference/hooks/customize_register/)` hook:
+The Customize API is object-oriented. There are four main types of Customizer objects: Panels, Sections, Settings, and Controls. Settings associate UI elements (controls) with settings that are saved in the database. Sections are UI containers for controls, to improve their organization. Panels are containers for sections, allowing multiple sections to be grouped together. Each Customizer object is represented by a PHP class, and all of the objects are managed by the Customize Manager object, [WP\_Customize\_Manager](https://developer.wordpress.org/reference/classes/wp_customize_manager/). [![Graphic showing the relationship between each type of customize object](https://i0.wp.com/developer.wordpress.org/files/2017/01/Customize-Object-Hierarchy-Graphic.png?resize=640%2C360&ssl=1)](https://i0.wp.com/developer.wordpress.org/files/2017/01/Customize-Object-Hierarchy-Graphic.png?ssl=1) To add, remove, or modify any Customizer object, and to access the Customizer Manager, use the `[customize_register](https://developer.wordpress.org/reference/hooks/customize_register/)` hook:
 
 ```php
 function themeslug_customize_register( $wp_customize ) {
@@ -50,11 +50,11 @@ $wp_customize->add_setting( 'setting_id', array(
 ) );
 ```
 
-Alert: **Important:** Do *not* use a setting ID that looks like `widget_*`, `sidebars_widgets[*]`, `nav_menu[*]`, or `nav_menu_item[*]`. These setting ID patterns are reserved for widget instances, sidebars, nav menus, and nav menu items respectively. If you need to use “widget” in your setting ID, use it as a suffix instead of a prefix, for example “`homepage_widget`”.
+**Important:** Do *not* use a setting ID that looks like `widget_*`, `sidebars_widgets[*]`, `nav_menu[*]`, or `nav_menu_item[*]`. These setting ID patterns are reserved for widget instances, sidebars, nav menus, and nav menu items respectively. If you need to use “widget” in your setting ID, use it as a suffix instead of a prefix, for example “`homepage_widget`”.
 
 There are two primary types of settings: options and theme modifications. Options are stored directly in the wp\_options table of the WordPress database and apply to the site regardless of the active theme. Themes should rarely if ever add settings of the option type. Theme mods, on the other hand, are specific to a particular theme. Most theme options should be theme\_mods. For example, a custom CSS plugin could register a custom theme css setting as a theme\_mod, allowing each theme to have a unique set of CSS rules without losing the CSS when switching themes then switching back.
 
-[![customize-theme-mods-options](https://developer.wordpress.org/files/2014/10/customize-theme-mods-options-1024x574.png)](https://developer.wordpress.org/files/2014/10/customize-theme-mods-options.png)
+[![customize-theme-mods-options](https://i0.wp.com/developer.wordpress.org/files/2014/10/customize-theme-mods-options.png?resize=640%2C359&ssl=1)](https://i0.wp.com/developer.wordpress.org/files/2014/10/customize-theme-mods-options.png?ssl=1)
 
 Theme\_mod vs. option setting type example.
 
