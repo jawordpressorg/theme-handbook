@@ -1,30 +1,61 @@
+<!--
 # What Is a Theme?
+-->
+# テーマとは
 
+<!--
 A WordPress theme represents the design of your website. It can control everything from colors, to fonts, to the entire layout. In essence, what you see when viewing the front-end of your site is shaped by the theme.
+-->
+WordPress のテーマはサイトのデザインを表します。色、フォント、レイアウト全体に至るまで、あらゆる要素をコントロールできます。サイトのフロントエンドでの見え方は、テーマによって決まるのです。
 
 [![A collage of site designs at an angle.](https://i0.wp.com/developer.wordpress.org/files/2023/11/twenty-twenty-two-collage.jpg?resize=2400%2C1500&ssl=1)](https://i0.wp.com/developer.wordpress.org/files/2023/11/twenty-twenty-two-collage.jpg?ssl=1)
 
+<!--
 Templates from the default Twenty Twenty-Two theme.
+-->
+標準の Twenty Twenty-Two テーマ
 
+<!--
 There are 1,000s of free WordPress themes in the [WordPress.org Theme Directory](https://wordpress.org/themes/) and even more from third-party directories and shops. Many people and businesses also have bespoke (custom-made) themes for their sites.
+-->
+[WordPress.org のテーマディレクトリ](https://ja.wordpress.org/themes/)には何千もの無料の WordPress テーマがあり、サードパーティのディレクトリやショップでもさらに多くのテーマが見つかります。また、多くの個人や企業が、サイト用にカスタムメイドのテーマを作成しています。
 
+<!--
 ## What can themes do?
+-->
+## テーマでできること
 
+<!--
 Themes take the content stored by WordPress and display it in the browser. When you create a WordPress theme, you decide how that content looks and is displayed. There are many options available to you when building your theme. The biggest limit is your imagination. 
+-->
+テーマは、WordPress が保存しているコンテンツを、ブラウザに表示します。WordPress のテーマを作成すると、そのコンテンツがどのように見えるか、どのように表示されるかが決まります。テーマを構築する際には、さまざまなオプションが用意されています。
 
+<!--
 As a theme creator, you can:
+-->
+テーマの作者として、次のようなことができます:
 
+<!--
 *   Create different layouts, such as one, two or more columns.
 *   Control the typography of the site with custom font choices.
 *   Skin the site with any color scheme you want.
 *   Put a sidebar on the left or right side of the page. Or, have no sidebar at all.
 *   Display featured images alongside posts.
+-->
+*   1列や2列のレイアウトなど、さまざまなレイアウトを作成。
+*   独自のフォントなどを使ってサイトのタイポグラフィを指定。
+*   サイトの配色を好きな色に変更。
+*   サイドバーをページの左側や右側に配置。あるいはサイドバーを表示しないことも。
+*   投稿とともにアイキャッチ画像を表示。
 
 [![The WordPress site editor showing the homepage template with a dotted black background and a three-column grid of posts.](https://i0.wp.com/developer.wordpress.org/files/2023/11/twenty-twenty-three-style-variation.jpg?resize=2400%2C1255&ssl=1)](https://i0.wp.com/developer.wordpress.org/files/2023/11/twenty-twenty-three-style-variation.jpg?ssl=1)
 
 Editing a Twenty Twenty-Three theme style variation.
 
+<!--
 The WordPress theming system is incredibly powerful. As with every web design project, a good theme is more than defining a layout or two and a few custom colors. The best themes improve engagement with a website’s content *in addition* to being beautiful.
+-->
+WordPress のテーマは非常に強力です。他の Web デザインプロジェクトと同様に、良いテーマは色やレイアウトを定義するだけではありません。優れたテーマは、美しさに加えて、サイトのコンテンツへのエンゲージメントを高めます。
 
 There really are not many limits to the possibilities. Outside of your imagination, theme creation requires some baseline knowledge, which is covered in the [Reading this handbook](https://developer.wordpress.org/themes/getting-started/reading-this-handbook/) page of this chapter. That’s what this handbook is all about—*teaching you what you need to know to build themes of your own*.
 
@@ -68,27 +99,57 @@ To build a WordPress theme of your own, you should familiarize yourself with how
 
 WordPress comes with several default themes, titled *Twenty \[Year\]*, but you should also try other themes from the [Theme Directory](https://wordpress.org/themes/) just to get a feel for the possibilities.
 
+<!--
 ## What are themes made of?
+-->
+## テーマは何でできているの ?
 
+<!--
 Themes can include many different folders and file types. The list below is non-exhaustive, but it includes some of common things you might see:
+-->
+テーマには、さまざまなフォルダーやファイル形式を含めることができます。以下のリストはすべてを網羅しているわけではありませんが、一般的によく見かけるものをいくつか挙げています:
 
+<!--
 *   Templates (`.html` in block themes and `.php` in classic themes)
 *   CSS Stylesheets
 *   JavaScript
 *   PHP
 *   Media (images, audio, video, etc.)
 *   JSON
+-->
+*   テンプレートファイル (ブロックテーマでは `.html`、クラシックテーマでは `.php`)
+*   CSS スタイルシート
+*   JavaScript
+*   PHP
+*   メディア (画像、音声、動画など)
+*   JSON
 
+<!--
 You will learn more about the specific folders and files used to create a theme in the next chapter: [Core Concepts](https://developer.wordpress.org/themes/core-concepts).
+-->
+次の章では、テーマを作成する際に必要なフォルダーとファイルについて詳しく説明します: [コアコンセプト](https://developer.wordpress.org/themes/core-concepts)。
 
+<!--
 ## What is the difference between themes and plugins?
+-->
+## テーマとプラグインの違いは ?
 
+<!--
 It is common for there to be overlap between features found in themes and plugins. However, best practices are:
+-->
+テーマとプラグインの機能が重複していることがよくあります。ただし、ベストプラクティスは次の通りです:
 
+<!--
 *   Themes control the *presentation* of content.
 *   Plugins control the behaviors and features of your site.
+-->
+*   テーマは、コンテンツの**見せ方**をコントロールするもの
+*   プラグインは、サイトの動作や機能をコントロールするもの
 
+<!--
 Any theme that you create should not add site-critical functionality. Doing so means that a user loses access to that functionality when they change their theme.
+-->
+作成するテーマには、サイトにとって重要な機能を追加するべきではありません。ユーザーがテーマを変更した際に、その機能が使えなくなってしまいます。
 
 For example, say you build a theme with a portfolio feature. Users who build their portfolio with your feature will lose it when they change themes. By leaving critical features to plugins, you make it possible to change the design of a website while its features remain intact.
 
