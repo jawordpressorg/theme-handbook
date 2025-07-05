@@ -148,7 +148,7 @@ Feel free to hop around to find the specific topic you need using the handbook�
 You can also find theming tutorials and walk-throughs under the [Themes category](https://developer.wordpress.org/news/category/themes/) on the WordPress Developer blog if you can’t find the topic you’re looking for in the handbook.
  -->
 
-ハンドブックでお探しのトピックが見つからない場合は、WordPress 開発者ブログ [テーマ・カテゴリー](https://developer.wordpress.org/news/category/themes/) で、テーマ設定に関するチュートリアルやウォークスルーを見つけることもできます。
+ハンドブックでお探しのトピックが見つからない場合は、WordPress 開発者ブログの[「テーマ」カテゴリー](https://developer.wordpress.org/news/category/themes/) で、テーマ設定に関するチュートリアルやウォークスルーを見つけることもできます。
 
 <!-- 
 ### For classic themes documentation
