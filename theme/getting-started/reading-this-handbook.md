@@ -44,7 +44,7 @@ You will see HTML, CSS, PHP, JSON, and JavaScript within the handbook, so it hel
 The following are external resources that you can use to learn more, but there are 1,000s of guides and tutorials around the web:
  -->
 
-以下の外部資料は、あなたがより多くを学ぶための参考資料として使用できるが、Web 上には数千のガイドやチュートリアルが存在します:
+以下の外部資料は、あなたがより多くを学ぶための参考資料として使用できますが、Web 上には数千のガイドやチュートリアルが存在します:
 
 <!-- 
 *   [MDN Web Docs: HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
