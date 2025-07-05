@@ -116,4 +116,4 @@ The goal of this handbook is to give you a solid foundation for WordPress theme 
 If this sounds like something you’d be interested in, come along. You’re in for a journey.
  -->
 
-少しでも興味が湧いたら、この度にぜひ参加してください。旅の始まりです。
+少しでも興味が湧いたら、この旅にぜひ参加してください。旅の始まりです。
