@@ -130,7 +130,7 @@ Feel free to hop around to find the specific topic you need using the handbook�
 *Feeling pretty hardcore?* Jump over to the [Advanced Topics](https://developer.wordpress.org/themes/advanced-topics/) chapter. 
  -->
 
-*かなり硬派な感じですか ?* [上級者向けトピック](https://developer.wordpress.org/themes/advanced-topics/) 章に進んでください。
+*もっと力を入れて取り組んでいますか ?* [上級者向けトピック](https://developer.wordpress.org/themes/advanced-topics/) 章に進んでください。
 
 <!-- 
 *Can’t remember the naming format for a particular template?* Find it in the [Template Hierarchy](https://developer.wordpress.org/themes/templates/template-hierarchy/) docs.
