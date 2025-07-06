@@ -227,6 +227,7 @@ WordPress では、あなたのテーマのテスト用に実際のデータま�
 
 *   [WordPress.org テーマ・テストデータ](https://codex.wordpress.org/Theme_Unit_Test)
 *   [WordPress.com テーマ・テストデータ](http://themetest.wordpress.com/) *(WordPress.com 独自のデータを含む)*
+*   [WordPress.org テーマ・テストデータ](https://github.com/jawordpressorg/theme-test-data-ja) *日本語版*
 
 <!-- 
 If nothing else, you need some type of demo/test content to see what your theme looks like in action. You could even create test posts and pages of your own!
@@ -276,4 +277,4 @@ WordPress.org テーマチームが提供する [テーマ・ガイドライン]
 You should also follow the [WordPress Coding Standards](https://make.wordpress.org/core/handbook/best-practices/coding-standards/) when writing any code for your theme. This will help make sure what you are creating meets some minimum quality standards.
  -->
 
-また、あなたのテーマ用のコードを書く際には、[WordPress コーディング標準](https://make.wordpress.org/core/handbook/best-practices/coding-standards/) に従う必要があります。これにより、制作物が最低限の品質標準を満たしていることを確認できます。
+また、あなたのテーマ用のコードを書く際には、[WordPress コーディング規約](https://make.wordpress.org/core/handbook/best-practices/coding-standards/)、[日本語版 WordPress コーディング規約](https://ja.wordpress.org/team/handbook/coding-standards/wordpress-coding-standards/) に従う必要があります。これにより、制作物が最低限の品質標準を満たしていることを確認できます。
