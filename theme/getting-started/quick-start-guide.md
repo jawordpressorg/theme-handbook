@@ -284,7 +284,7 @@ At the very least, you should adjust those first four lines, particularly the `T
 As a final step, zip the file again with whatever utility program you have on your computer for creating ZIP files.
  -->
 
-最終ステップとして、コンピューターにインストールされている ZIP ファイルを生成するためのユーティリティ・プログラムで、ファイルを再び圧縮してください。
+最終ステップとして、コンピューターにインストールされている ZIP ファイルを生成する任意のユーティリティ・プログラムで、ファイルを再び圧縮してください。
 
 <!-- 
 ### Using the Create Block Theme plugin
