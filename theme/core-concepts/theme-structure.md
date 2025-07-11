@@ -263,7 +263,7 @@ There is no limit on what folders may be included, but the above example added t
 *   **`inc`** ([Custom Functionality](https://developer.wordpress.org/themes/core-concepts/custom-functionality/)): Themes will often have custom PHP classes or files stored in this folder for additional functionality. This folder may also be seen named as `includes`, `src`, and more.
  -->
 
-*   **`assets`** ([アセットを含む](https://developer.wordpress.org/themes/core-concepts/including-assets/)): 多くのテーマ作成者は、自身のテーマに必要な追加の CSS、画像/メディア、JavaScript を、このフォルダーに保存しています。このフォルダーは、`resources` や `public` など、他の名前で呼ばれることもあります。
+*   **`assets`** ([アセットを含める](https://developer.wordpress.org/themes/core-concepts/including-assets/)): 多くのテーマ作成者は、自身のテーマに必要な追加の CSS、画像/メディア、JavaScript を、このフォルダーに保存しています。このフォルダーは、`resources` や `public` など、他の名前で呼ばれることもあります。
 *   **`inc`** ([カスタム機能](https://developer.wordpress.org/themes/core-concepts/custom-functionality/)): テーマによっては、追加の機能を実現するために、このフォルダーにカスタム PHP クラスやファイルが格納されている場合があります。このフォルダーは、`includes` や `src` など、他の名前で呼ばれることもあります。
 
 <!-- 
