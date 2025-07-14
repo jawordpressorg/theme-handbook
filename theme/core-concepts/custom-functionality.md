@@ -108,7 +108,7 @@ WordPress のフック・システムは、ページのロード・プロセス�
 Technically, hooks are a part of the Plugin API, and you can [read the documentation](https://developer.wordpress.org/plugins/hooks/) on them in the Plugin Handbook.
  -->
 
-技術的には、フックは「プラグイン API」の一部であり、プラグイン・ハンドブックでそれらに関する [ドキュメントを確認](https://developer.wordpress.org/plugins/hooks/) できます。
+技術的には、フックはプラグイン API の一部であり、プラグイン・ハンドブックでそれらに関する [ドキュメントを確認](https://developer.wordpress.org/plugins/hooks/) できます。
 
 <!-- 
 Despite being in the Plugin API, hooks are also extremely useful in the context of themes. Like plugins, you should always run your code on a hook so that it performs its functionality at the appropriate point in the load process.
