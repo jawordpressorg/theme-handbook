@@ -100,8 +100,6 @@ WordPress のフック・システムは、ページのロード・プロセス�
  -->
 
 *   [**アクション・フック**](https://developer.wordpress.org/plugins/hooks/actions/) を使用すると、カスタム・アクション・コールバックを実行し、受け取った情報にもとづいて、アクションを実行できます。
-
-ここは原文に従わず、カッコを外した方が自然かなと思いました。
 *   [**フィルター・フック**](https://developer.wordpress.org/plugins/hooks/filters/) を使用すると、カスタム・フィルター・コールバックを介してデータをフィルタリングし、操作できます。
 
 <!-- 
@@ -139,17 +137,6 @@ To test this, open your theme’s `functions.php` file (create one if it doesn�
  -->
 
 これをテストするには、テーマの `functions.php` ファイルを (存在しない場合は作成して) 開き、以下の PHP コードを追加してください:
-
-<!-- 
-```php
-<?php
-add_action( 'after_setup_theme', 'theme_slug_setup' );
-
-function theme_slug_setup() {
-	add_theme_support( 'wp-block-styles' );
-}
-```
- -->
 
 ```php
 <?php
@@ -228,12 +215,6 @@ As you learned in [Theme Structure](https://developer.wordpress.org/themes/core-
 
 [テーマ構造](https://developer.wordpress.org/themes/core-concepts/theme-structure/) で学んだように、一部のテーマには、カスタム PHP ファイルを格納するための `/inc` という (または任意の) 名前のカスタムフォルダーが含まれています。仮にカスタムヘルパー関数用の `/inc/helpers.php` ファイルがあった場合、`get_parent_theme_file_path()` 関数を使用して、`functions.php` 経由でロードできます:
 
-<!-- 
-```php
-include get_parent_theme_file_path( 'inc/helpers.php' );
-```
- -->
-
 ```php
 include get_parent_theme_file_path( 'inc/helpers.php' );
 ```
@@ -249,12 +230,6 @@ Alternatively, if you wanted to allow a child theme to override the file with a 
  -->
 
 代わりに、子テーマがファイルを上書きできるようにし、親テーマへのフォールバックを許可したい場合は、代わりに `get_theme_file_path()` を使用できます:
-
-<!-- 
-```php
-include get_theme_file_path( 'inc/helpers.php' );
-```
- -->
 
 ```php
 include get_theme_file_path( 'inc/helpers.php' );
