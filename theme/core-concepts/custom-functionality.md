@@ -276,7 +276,7 @@ It’s not standard practice to let child theme’s override files with PHP func
 This section could otherwise be titled “How to avoid the dreaded WordPress *white screen of death*.”
  -->
 
-このセクションは、代わりに「WordPress の *死の白い画面* の回避」という見出しでもよいでしょう。
+このセクションは、代わりに「WordPress の **死の白い画面** の回避」という見出しでもよいでしょう。
 
 <!-- 
 There are various reasons that you might see a broken site with nothing but a white screen. One of those reasons is when the `functions.php` file (or any PHP file) has whitespace following its closing `?>` tag like this:
