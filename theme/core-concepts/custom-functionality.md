@@ -44,7 +44,7 @@ WordPress は、Web サイトの管理画面とフロントエンドの両方で
 Just because you *can* build plugin-like features in a theme doesn’t mean you always should, particularly if you are distributing your theme to others to use. If you are creating features that should be available regardless of the site’s design, **it is best practice to put the code in a plugin**. The rule of thumb is that themes should only deal with the site’s design.
  -->
 
-特に、あなたのテーマを他者に配布して使用してもらう場合、テーマ内でプラグインのような機能を構築 *できる* からといって、必ずしもそうすべきとは限りません。サイトのデザインにかかわらずに利用可能な機能を制作する場合、**そのコードをプラグインに配置することが、ベスト・プラクティスです**。基本的なルールとして、テーマはサイトのデザインのみを扱うべきです。
+特に、あなたのテーマを他者に配布して使用してもらう場合、テーマ内でプラグインのような機能を構築 **できる** からといって、必ずしもそうすべきとは限りません。サイトのデザインにかかわらずに利用可能な機能を制作する場合、**そのコードをプラグインに配置することが、ベスト・プラクティスです**。基本的なルールとして、テーマはサイトのデザインのみを扱うべきです。
 
 <!-- 
 While all themes can have a custom `functions.php` file, WordPress will only load the currently active theme’s.
