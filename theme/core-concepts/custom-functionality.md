@@ -99,7 +99,9 @@ WordPress のフック・システムは、ページのロード・プロセス�
 *   [**Filter hooks**](https://developer.wordpress.org/plugins/hooks/filters/) let you filter data via a custom filter callback and manipulate it.
  -->
 
-*   [**アクション・フック**](https://developer.wordpress.org/plugins/hooks/actions/) を使用すると、カスタム・アクション・コールバックを実行し、受け取った情報「にもとづいて、アクションを実行できます」。
+*   [**アクション・フック**](https://developer.wordpress.org/plugins/hooks/actions/) を使用すると、カスタム・アクション・コールバックを実行し、受け取った情報にもとづいて、アクションを実行できます。
+
+ここは原文に従わず、カッコを外した方が自然かなと思いました。
 *   [**フィルター・フック**](https://developer.wordpress.org/plugins/hooks/filters/) を使用すると、カスタム・フィルター・コールバックを介してデータをフィルタリングし、操作できます。
 
 <!-- 
