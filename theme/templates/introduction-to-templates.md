@@ -238,7 +238,7 @@ As you can see, the code is wrapped with an opening `<!--` and closing `/-->` HT
 When working with core WordPress blocks, you do not use the block namespace. For example, the `core/site-title` block doesn’t include the preceding `core/` when called:
  -->
 
-WordPress のコアのブロックを扱う場合、ブロックの名前空間は使用しません。たとえば、`core/site-title` ブロックがコールされた際、直前の `core/` は含まれません:
+WordPress のコアのブロックを扱う場合、ブロックの名前空間は使用しません。たとえば、`core/site-title` ブロックを呼び出す際、直前の `core/` は含めません:
 
 ```markup
 <!-- wp:site-title /-->
