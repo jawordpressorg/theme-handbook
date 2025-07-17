@@ -66,7 +66,7 @@ WordPress が優れているもう一つの点は、管理画面から直接テ�
 The Site Editor also lets your theme’s users overwrite your block templates and parts from within the administration interface. Any changes that users make are saved in their site’s database. These customizations are stored the same way in the database as they are in template files: as block markup.
  -->
 
-また、サイトエディターでは、テーマのユーザーが管理インターフェイス内から、あなたのブロック・テンプレートやパーツを上書きできます。ユーザーが加えた変更は、すべてサイトのデータベースに保存されます。これらのカスタマイズはテンプレート・ファイルと同じようにデータベースに保存されます: ブロック・マークアップとして。
+また、サイトエディターでは、テーマのユーザーが管理インターフェース内から、あなたのブロック・テンプレートやパーツを上書きできます。ユーザーが加えた変更は、すべてサイトのデータベースに保存されます。これらのカスタマイズはテンプレート・ファイルと同じようにデータベースに保存されます: ブロック・マークアップとして。
 
 <!-- 
 ### Templates vs. plain HTML
