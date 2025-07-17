@@ -54,7 +54,7 @@ WordPress と他のほとんどのプラットフォームとの大きな違い�
 Another thing that WordPress does well is provide a visual interface to build or customize templates directly from the admin:
  -->
 
-WordPress が優れているもう一つの点は、管理画面から直接テンプレートの構築やカスタマイズができるビジュアル・インターフェイスを提供していることです:
+WordPress が優れているもう一つの点は、管理画面から直接テンプレートの構築やカスタマイズができるビジュアル・インターフェースを提供していることです:
 
 <!-- 
 [![WordPress Site Editor with the Templates section open, showing the site's homepage.](https://i0.wp.com/developer.wordpress.org/files/2023/10/templates-interface.jpg?resize=2048%2C1071&ssl=1)](https://i0.wp.com/developer.wordpress.org/files/2023/10/templates-interface.jpg?ssl=1)
