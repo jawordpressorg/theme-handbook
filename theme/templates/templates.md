@@ -234,7 +234,7 @@ WordPress の管理画面からテンプレートにアクセスするには、�
 [![WordPress Templates interface in the Site Editor, which shows the template options on the left and preview panel on the right.](https://i0.wp.com/developer.wordpress.org/files/2023/10/templates-site-editor.jpg?resize=2048%2C1071&ssl=1)](https://i0.wp.com/developer.wordpress.org/files/2023/10/templates-site-editor.jpg?ssl=1)
  -->
 
-[![サイト・エディターの WordPress 「テンプレート」インターフェイスでは、左側にテンプレート・オプション、右側にプレビュー・パネルが表示される。](https://i0.wp.com/developer.wordpress.org/files/2023/10/templates-site-editor.jpg?resize=2048%2C1071&ssl=1)](https://i0.wp.com/developer.wordpress.org/files/2023/10/templates-site-editor.jpg?ssl=1)
+[![サイト・エディターの WordPress 「テンプレート」インターフェースでは、左側にテンプレート・オプション、右側にプレビュー・パネルが表示される。](https://i0.wp.com/developer.wordpress.org/files/2023/10/templates-site-editor.jpg?resize=2048%2C1071&ssl=1)](https://i0.wp.com/developer.wordpress.org/files/2023/10/templates-site-editor.jpg?ssl=1)
 
 <!-- 
 This screen lists all of the existing templates for the site, which can come from three locations:
