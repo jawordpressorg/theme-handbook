@@ -358,4 +358,4 @@ The only other rule is that you must register your template via your `theme.json
 Originally, custom templates were called “page templates.” This is because the feature only worked for pages in the initial implementation. Eventually, posts and other custom post types could use the feature, so it was rebranded to “custom templates.” But you may see these referred to as page templates in other documentation or on third-party sites.
  -->
 
-もともとカスタム・テンプレートは「ページ・テンプレート」と呼ばれていました。これは、初期の実装ではこの機能がページにしか使えなかったからです。最終的に、投稿やその他のカスタム投稿タイプでもこの機能が使えるようになったため、「カスタムテンプレート」に改名されました。しかし、他のドキュメントやサードパーティのサイトでは、ページテンプレートと呼ばれているのを見かけるかもしれません。
+もともとカスタム・テンプレートは「ページ・テンプレート」と呼ばれていました。これは、初期の実装ではこの機能がページにしか使えなかったからです。最終的に、投稿やその他のカスタム投稿タイプでもこの機能が使えるようになったため、「カスタム・テンプレート」に改名されました。しかし、他のドキュメントやサードパーティのサイトでは、ページ・テンプレートと呼ばれているのを見かけるかもしれません。
