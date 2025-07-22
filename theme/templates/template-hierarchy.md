@@ -179,7 +179,7 @@ If **A static page** is chosen for the **Front page displays** setting and a pag
 ### Singular hierarchy
  -->
 
-### 「個別ページ」階層
+### 「単一ページ」階層
 
 <!-- 
 When a visitor lands on a single post, page, attachment page, or entry from a custom post type, WordPress attempts to locate a template based on the queried post for that view.
