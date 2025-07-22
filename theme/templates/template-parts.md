@@ -176,7 +176,7 @@ WordPress does not currently [support nested template parts](https://github.com/
  -->
 
 どれも必須ではありません。実際、テンプレート・パーツを含める必要はまったくありません。
-WordPress は現在のところ、[テンプレート・パーツの入れ子への対応](https://github.com/WordPress/gutenberg/issues/54279) してません。たとえば、`/parts/header` フォルダーを作成して、その中に複数のヘッダー・パーツを入れることはできません。すべてのテンプレート・パーツは、あなたのテーマの `/parts` フォルダー内に直接配置する必要があります。
+WordPress は現在のところ、[テンプレート・パーツの入れ子に対応](https://github.com/WordPress/gutenberg/issues/54279) していません。たとえば、`/parts/header` フォルダーを作成して、その中に複数のヘッダー・パーツを入れることはできません。すべてのテンプレート・パーツは、あなたのテーマの `/parts` フォルダー内に直接配置する必要があります。
 
 <!-- 
 Technically, WordPress will also look in the `/block-template-parts` folder if it exists in your theme. This is for backward compatibility with an older version of WordPress. But it is recommended to always use the `/parts` folder instead.
