@@ -191,7 +191,7 @@ When a visitor lands on a single post, page, attachment page, or entry from a cu
 All singular templates can utilize a custom template, which you’ll see listed as `{custom_template}.html` in the sub-sections below. These almost always sit at the top of the hierarchy. For more information on creating custom templates, check out the “Custom Templates” section of the main [Templates](https://developer.wordpress.org/themes/templates/templates/) documentation.
  -->
 
-すべての個別ページテンプレートは、以下のサブセクションで `{custom_template}.html` とリストされているカスタム・テンプレートを利用できます。これらはほとんどの場合、階層の最上位に位置します。カスタム・テンプレート制作に関する詳細情報は、メインの [テンプレート](https://developer.wordpress.org/themes/templates/templates/) ドキュメントの、「カスタム・テンプレート」セクションをご覧ください。
+すべての単一ページテンプレートは、以下のサブセクションで `{custom_template}.html` とリストされているカスタム・テンプレートを利用できます。これらはほとんどの場合、階層の最上位に位置します。カスタム・テンプレート制作に関する詳細情報は、メインの [テンプレート](https://developer.wordpress.org/themes/templates/templates/) ドキュメントの、「カスタム・テンプレート」セクションをご覧ください。
 
 <!-- 
 #### Single hierarchy
