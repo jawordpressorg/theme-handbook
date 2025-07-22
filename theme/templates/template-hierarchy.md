@@ -32,7 +32,7 @@ When a visitor lands on any page on a WordPress site, WordPress uses the [query 
 With this data available, WordPress searches through the template hierarchy until it finds a matching template file. There are generally three potential areas that WordPress might look for a block template within the hierarchy (in order of priority):
  -->
 
-このデータをもとに、WordPress はテンプレート階層を検索し、合致するテンプレート・ファイルを見つけます。WordPress が階層内で (優先度順) ブロック・テンプレートを探す可能性のある領域は、一般的に3つあります:
+このデータをもとに、WordPress はテンプレート階層を検索し、合致するテンプレート・ファイルを見つけます。WordPress が階層内でブロック・テンプレートを探す可能性のある領域は、一般的に3つあります (リストは優先度順):
 
 <!-- 
 *   User-created templates stored under the `wp_template` post type in the database.
