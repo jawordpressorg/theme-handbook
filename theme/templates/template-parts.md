@@ -344,7 +344,7 @@ Again, any new parts you add via the editor are saved in the database. You must 
 Template part areas are essentially a way to organize similar template parts. They also appear as navigational elements within the user interface. Below, you can see the **Header** area highlighted in the template-editing sidebar:
  -->
 
-テンプレート・パーツ・エリアは、基本的に類似したテンプレート・パーツを編成するためのものです。また、これらはユーザーインターフェイスのナビゲーション要素としても表示されます。下図は、テンプレート編集サイドバーでハイライトされた **ヘッダー** エリアです:
+テンプレート・パーツ・エリアは、基本的に類似したテンプレート・パーツを編成するためのものです。また、これらはユーザーインターフェースのナビゲーション要素としても表示されます。下図は、テンプレート編集サイドバーでハイライトされた **ヘッダー** エリアです:
 
 <!-- 
 [![WordPress site editor showing a template with a three-column grid of posts. In the sidebar, the Header area is selected.](https://i0.wp.com/developer.wordpress.org/files/2023/10/parts-area-navigation.jpg?resize=2048%2C1071&ssl=1)](https://i0.wp.com/developer.wordpress.org/files/2023/10/parts-area-navigation.jpg?ssl=1)
