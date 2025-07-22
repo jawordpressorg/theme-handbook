@@ -226,7 +226,7 @@ To explore working with the visual interface, read the support guides on using t
 While not required, you should almost always register template parts via `theme.json`. Doing so will ensure that they appear in the user interface for use with the Site and Template editors with nice labels that can be translated.
  -->
 
-必須ではありませんが、ほとんどの場合、`theme.json` 経由でテンプレート・パーツを登録する必要があります。そうすることで、サイト・エディターやテンプレート・エディターで使用するユーザーインターフェイスに、翻訳可能な素敵なラベルとともに表示されます。
+必須ではありませんが、ほとんどの場合、`theme.json` 経由でテンプレート・パーツを登録する必要があります。そうすることで、サイト・エディターやテンプレート・エディターで使用するユーザーインターフェースに、翻訳可能な素敵なラベルとともに表示されます。
 
 <!-- 
 Registering template parts is covered in the [Template Parts](https://developer.wordpress.org/themes/global-settings-and-styles/template-parts/) documentation under the [Global Settings and Styles](https://developer.wordpress.org/themes/global-settings-and-styles/) chapter.
