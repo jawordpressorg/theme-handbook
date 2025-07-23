@@ -228,7 +228,7 @@ The **My Patterns** section is always where any user-created patterns will appea
 The Editor interface is a nice and easy method for creating patterns. But this is the Theme Handbook, so you’re probably wanting to know how to bundle this pattern that you’ve created with your theme.
  -->
 
-「エディター」インターフェイスは、パターンを制作するための簡単で良い手段です。しかし、これはテーマ・ハンドブックですので、おそらく、作成したこのパターンをあなたのテーマにバンドルする方法を知りたいことでしょう。
+「エディター」インターフェースは、パターンを制作するための簡単で良い手段です。しかし、これはテーマ・ハンドブックですので、おそらく、作成したこのパターンをあなたのテーマにバンドルする方法を知りたいことでしょう。
 
 <!-- 
 For that, you need to copy the pattern code itself. You’ll learn what to do with pattern code in the [Registering Patterns](https://developer.wordpress.org/themes/patterns/registering-patterns/) article in this chapter.
