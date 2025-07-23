@@ -100,7 +100,7 @@ Essentially, there are two types of patterns:
 By the nature of how the pattern system works, all patterns registered by the theme are of the **Not synced** type. There is an [open ticket for syncing theme-registered patterns](https://github.com/WordPress/gutenberg/issues/59272), but it is not currently possible.
  -->
 
-パターン・システムのしくみの性質上、テーマによって登録されたパターンはすべて **非同期** タイプです。[テーマ登録済みパターンの同期に関するチケットを開く](https://github.com/WordPress/gutenberg/issues/59272) もありますが、現在のところ不可能です。
+パターン・システムのしくみの性質上、テーマによって登録されたパターンはすべて **非同期** タイプです。[テーマ登録済みパターンを同期するチケットもオープンされています](https://github.com/WordPress/gutenberg/issues/59272)が、現在のところ不可能です。
 
 <!-- 
 ## Managing patterns in the WordPress admin
