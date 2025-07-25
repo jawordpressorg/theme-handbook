@@ -8,7 +8,7 @@
 In [Introduction to Patterns](https://developer.wordpress.org/themes/patterns/introduction-to-patterns/), you learned how to create patterns from the WordPress admin interface. Now it’s time to learn how to add these custom patterns directly to your theme
  -->
 
-[パターン入門](https://developer.wordpress.org/themes/patterns/introduction-to-patterns/) では、WordPress 管理インターフェイスからパターンを追加する方法を学びました。今度は、これらのカスタム・パターンをあなたのテーマに直接追加する方法を学びましょう。
+[パターン入門](https://developer.wordpress.org/themes/patterns/introduction-to-patterns/) では、WordPress 管理インターフェースからパターンを追加する方法を学びました。今度は、これらのカスタム・パターンをあなたのテーマに直接追加する方法を学びましょう。
 
 <!-- 
 This article will show you how to take a pattern’s block code and register it with WordPress from within your theme. It will also cover unregistering patterns and registering/unregistering pattern categories.
