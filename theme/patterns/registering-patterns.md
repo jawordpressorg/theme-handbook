@@ -232,7 +232,7 @@ Now let’s add the code that you copied from the previous section into the `/pa
 Now if you add or edit a new post in WordPress, you should see your pattern listed in the inserter. Click the **Patterns** tab and select **Featured**:
  -->
 
-これで、WordPress で新規投稿を追加または編集すると、インサーターにパターンが表示されるはずです。**パターン** タブをクリックし、**Featured** を選択します:
+これで、WordPress で新規投稿を追加または編集すると、インサーターにパターンが表示されるはずです。**パターン** タブをクリックし、**注目** を選択します:
 
 <!-- 
 [![WordPress post editor with the Patterns inserter open. The Featured sub-panel is selected and shows a single pattern.](https://i0.wp.com/developer.wordpress.org/files/2024/04/patterns-insert-custom.webp?resize=2048%2C924&ssl=1)](https://i0.wp.com/developer.wordpress.org/files/2024/04/patterns-insert-custom.webp?ssl=1)
