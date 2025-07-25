@@ -421,7 +421,7 @@ function themeslug_register_patterns() {
 There are times when you need to unregister block patterns so that they do not appear in the inserter for users. For example, you may want to remove some of the core WordPress patterns, those added by a parent theme (if you’re building a child theme), or those added by third-party plugins.
  -->
 
-ブロック・パターンの登録を解除する必要があるときがあり、そうすることで、ユーザーに対してブロック・パターンがインサーターに表示されないようにできます。たとえば、WordPress コアパターン、(子テーマを構築している場合) 親テーマによって追加されたパターン、サードパーティのプラグインによって追加されたパターンなどを削除したい場合があります。
+インサーター内でユーザーにブロック・パターンを表示しないように、ブロック・パターンの登録を解除したいときがあります。たとえば、WordPress コアパターンのいくつか、(子テーマを構築している場合) 親テーマによって追加されたパターン、サードパーティのプラグインによって追加されたパターンなどを削除したい場合があります。
 
 <!-- 
 When you need to unregister a single block pattern, you’ll use the [`unregister_block_pattern()`](https://developer.wordpress.org/reference/functions/unregister_block_pattern/) function:
