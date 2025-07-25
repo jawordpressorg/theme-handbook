@@ -394,7 +394,7 @@ PHP 経由であなたのパターンを手動で登録した場合、`register_
 Using the same example as above, try only registering your pattern if the `core/paragraph` block is registered by adding this to `functions.php`:
  -->
 
-上記と同じ例で、これを `functions.php` に追加することで、`core/paragraph` ブロックが登録されている場合、あなたのパターンを登録することのみを試してみましょう:
+上記と同じ例で、`core/paragraph` ブロックが登録されている場合にのみ、あなたのパターンを登録するように、以下のコードを `functions.php` に追加してみてください:
 
 ```php
 add_action( 'init', 'themeslug_register_patterns', 999 );
