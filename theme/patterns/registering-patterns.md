@@ -388,7 +388,7 @@ The above code uses the [`WP_Block_Type_Registry`](https://developer.wordpress.o
 If you manually registered your patterns via PHP, you only need to wrap your call to `register_block_pattern()` with your conditional check.
  -->
 
-PHP 経由であなたのパターンを手動で登録した場合、`register_block_pattern()` へのあなたのコールを、あなたの条件付きチェックでラップするだけで良いのです。
+PHP 経由であなたのパターンを手動で登録した場合、`register_block_pattern()` コールを、条件チェックでラップするだけで済みます。
 
 <!-- 
 Using the same example as above, try only registering your pattern if the `core/paragraph` block is registered by adding this to `functions.php`:
