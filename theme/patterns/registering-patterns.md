@@ -64,7 +64,7 @@ Feel free to try recreating this yourself from the editor, especially if you are
 You can also customize this however you like, but it’s recommended to keep this relatively simple for your first time creating a pattern.
  -->
 
-これも好きなようにカスタマイズできるが、初めてパターンを制作する場合は、比較的シンプルにしておくことをおすすめします。
+これも好きなようにカスタマイズできますが、初めてパターンを制作する場合は、比較的シンプルにしておくことをおすすめします。
 
 <!-- 
 Here is what the above pattern’s block markup looks like (read the [Introduction to Patterns](https://developer.wordpress.org/themes/patterns/introduction-to-patterns/) article for more information on getting pattern code):
