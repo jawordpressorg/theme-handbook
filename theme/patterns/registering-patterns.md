@@ -463,7 +463,7 @@ function themeslug_unregister_patterns() {
 While you can use `unregister_block_pattern()` to unregister individual core WordPress patterns, you can also choose to get rid of all of them by removing support for the core-block-patterns feature.
  -->
 
-`unregister_block_pattern()` を使って個々のコア WordPress パターンを登録解除できるが、コア・ブロック・パターン機能への対応を解除することでも、すべてのパターンを削除できます。
+`unregister_block_pattern()` を使って個々のコア WordPress パターンを登録解除できますが、コア・ブロック・パターン機能への対応を解除することでも、すべてのパターンを削除できます。
 
 <!-- 
 To remove all core WordPress patterns, add this code to your theme’s `functions.php` file:
