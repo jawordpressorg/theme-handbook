@@ -32,7 +32,7 @@ If you’re unfamiliar with creating custom patterns, take a moment to study the
 Your pattern can be anything you like, but for the purposes of this article, the code shared below will be of a core Cover block with some blocks nested within it, following this structure:
  -->
 
-あなたの好きなパターンでかまわないが、本稿の趣旨から、以下のコードでは、コア「カバー」ブロックと、その中にネストされたいくつかのブロックを、この構造に従って紹介します:
+あなたの好きなパターンでかまいませんが、本稿の趣旨から、以下のコードでは、コア「カバー」ブロックと、その中にネストされたいくつかのブロックを、以下の構造に従って紹介します:
 
 <!-- 
 *   Group
