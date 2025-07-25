@@ -238,7 +238,7 @@ Now if you add or edit a new post in WordPress, you should see your pattern list
 [![WordPress post editor with the Patterns inserter open. The Featured sub-panel is selected and shows a single pattern.](https://i0.wp.com/developer.wordpress.org/files/2024/04/patterns-insert-custom.webp?resize=2048%2C924&ssl=1)](https://i0.wp.com/developer.wordpress.org/files/2024/04/patterns-insert-custom.webp?ssl=1)
  -->
 
-[![パターン・インサーターが開いている、WordPress 投稿エディター。「Featured」サブパネルが選択され、1つのパターンが表示されている。](https://i0.wp.com/developer.wordpress.org/files/2024/04/patterns-insert-custom.webp?resize=2048%2C924&ssl=1)](https://i0.wp.com/developer.wordpress.org/files/2024/04/patterns-insert-custom.webp?ssl=1)
+[![パターン・インサーターが開いている、WordPress 投稿エディター。「Featured (注目)」サブパネルが選択され、1つのパターンが表示されている。](https://i0.wp.com/developer.wordpress.org/files/2024/04/patterns-insert-custom.webp?resize=2048%2C924&ssl=1)](https://i0.wp.com/developer.wordpress.org/files/2024/04/patterns-insert-custom.webp?ssl=1)
 
 <!-- 
 You should also be able to see your pattern listed under **Appearance > Editor > Patterns** in the WordPress admin.
