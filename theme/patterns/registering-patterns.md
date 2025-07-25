@@ -354,7 +354,7 @@ If you have used the auto-registration method of placing your pattern in your th
 Suppose that you wanted to only make the hero pattern you registered earlier available if the `core/paragraph` block is registered. In a real-world scenario, you’d likely be checking for a third-party block, and the `core/paragraph` block is used only for the sake of this example.
  -->
 
-`core/paragraph` ブロックが登録されている場合、あなたが以前に登録した hero パターンだけを有効化したいとします。実際のシナリオでは、サードパーティのブロックをチェックすることが多いだろうから、`core/paragraph` ブロックは、この例のためだけに使われていることになります。
+あなたが以前に登録した hero パターンを、`core/paragraph` ブロックが登録されている場合にのみ有効化したいとします。実際のシナリオでは、サードパーティのブロックをチェックすることが多いでしょう。`core/paragraph` ブロックは、この例のためだけに使用しています。
 
 <!-- 
 Try this code inside of your `functions.php` file to unregister your previously-registered pattern:
