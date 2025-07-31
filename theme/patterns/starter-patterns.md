@@ -14,7 +14,7 @@ WordPress のブロック・エディターは強力で、さまざまなレイ�
 WordPress supports two types of starter patterns for pages (or any post type) and templates. This feature lets you create starting points for your theme users to build out their pages and templates with minimal skills.
  -->
 
-WordPress は、ページ (または任意の投稿タイプ) とテンプレート向けに、2種類の「スターター」パターンをサポートしています。この機能により、あなたのテーマのユーザーが、自分たちのページやテンプレートを構築するための出発点を、最小限のスキルで作成できます。
+WordPress は、ページ (または任意の投稿タイプ) とテンプレート向けに、2種類の「スターター」パターンをサポートします。この機能を使用することで、テーマのユーザーが自身のページやテンプレートを最小限のスキルで構築するための出発点を作成できます。
 
 <!-- 
 ## Starter page patterns
