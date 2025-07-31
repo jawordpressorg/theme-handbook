@@ -96,7 +96,7 @@ And that’s literally all you must do. Define the pattern’s `Block Types` and
 This will work with any post type that has opted into the block editor, including both the default `post` and `page` post types.
  -->
 
-これは、ブロック・エディターを採用した、デフォルトの `post` と `page` 投稿タイプも含む、すべての投稿タイプで機能します。
+これはデフォルトの `post` と `page` 投稿タイプを含む、ブロック・エディターに付属するすべての投稿タイプで機能します。
 
 <!-- 
 Because page patterns are actually tied to the content, you wouldn’t typically include something like a site header or footer here. The pattern is output as post content.
