@@ -200,4 +200,4 @@ The pattern should also appear on the front end of your site when that template 
 From this point, you can use this feature however you need. Whether you’re including a pattern in a template or template part, the process is the same.
  -->
 
-この時点で、必要に応じてこの機能をご利用いただけます。テンプレートやテンプレート・パーツとして、パターンを含める場合でも、手順は同じです。
+この時点で、必要に応じてこの機能をご利用いただけます。パターンをテンプレート、またはテンプレート・パーツのどちらに含める場合も、手順は同じです。
