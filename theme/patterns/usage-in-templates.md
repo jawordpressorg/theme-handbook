@@ -194,7 +194,7 @@ Now test the addition of the pattern in the Site Editor by going to **Appearance
 The pattern should also appear on the front end of your site when that template is in use.
  -->
 
-そのテンプレートが使用されている場合、そのパターンはサイトのフロントエンドにも表示される必要があります。
+そのテンプレートが使用されている場合、そのパターンはサイトのフロントエンドにも表示されるはずです。
 
 <!-- 
 From this point, you can use this feature however you need. Whether you’re including a pattern in a template or template part, the process is the same.
