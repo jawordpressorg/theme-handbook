@@ -168,7 +168,7 @@ The technique is the same as other block type patterns. You must add the `core/q
 Let’s create a basic two-column grid that shows each post’s featured image, title, excerpt and date. You can, of course, use whatever layout and design that you want.
  -->
 
-基本的な2カラム・グリッドを作成し、各投稿のフィーチャー画像、タイトル、抜粋、日付を表示してみましょう。もちろん、お好みのレイアウトやデザインも使用できます。
+基本的な2カラム・グリッドを作成し、各投稿のアイキャッチ画像、タイトル、抜粋、日付を表示してみましょう。もちろん、お好みのレイアウトやデザインも使用できます。
 
 <!-- 
 For now, create a new `query-two-columns.php` file in your theme’s `/patterns` folder and paste this code into it:
