@@ -132,7 +132,7 @@ WordPress 管理画面で新規投稿または新規ページを開き、「カ�
 From there, if you select the pattern that you’ve registered, it will transform your inserted Cover block inside the content area:
  -->
 
-そこから、登録したパターンを選択すると、コンテンツ・エリア内に挿入した「カバー」ブロックが変形します:
+そこから、登録したパターンを選択すると、コンテンツ・エリア内に挿入した「カバー」ブロックを変換します:
 
 <!-- 
 [![WordPress post editor with a Cover block inserted into the content area with a single Heading block nested inside it.](https://i0.wp.com/developer.wordpress.org/files/2024/04/cover-pattern-replaced.webp?resize=2048%2C1064&ssl=1)](https://i0.wp.com/developer.wordpress.org/files/2024/04/cover-pattern-replaced.webp?ssl=1)
