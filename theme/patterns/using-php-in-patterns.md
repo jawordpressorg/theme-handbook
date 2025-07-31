@@ -203,7 +203,7 @@ To internationalize the Heading block’s text, you must wrap it in an internati
 There are three other places where you should also make these changes. The first is to the Paragraph block text, and then the two Button blocks. Your new `patterns/hero.php` file should look like this:
  -->
 
-これらの変更を適用する必要がある場所は、他に3ヵ所あります。最初は「段落」ブロックのテキストで、次に2つの「ボタン」ブロックです。変更後の `patterns/hero.php` ファイルは次のように表示されるはずです:
+これらの変更を適用する必要がある場所は、他に3ヵ所あります。最初は「段落」ブロックのテキストで、次に2つの「ボタン」ブロックです。変更後の `patterns/hero.php` ファイルは次のようになるはずです:
 
 ```php
 <?php
