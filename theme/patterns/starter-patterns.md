@@ -219,7 +219,7 @@ From that point, anytime a user attempted to create a new Front Page or Home tem
 The following list includes the templates that you can define via the `Template Types` field, but you can always reference the [Template Hierarchy](https://developer.wordpress.org/themes/templates/template-hierarchy/) documentation for a full overview of templates:
  -->
 
-以下のリストには、`Template Types` フィールド経由で定義可能なテンプレートが含まれているが、常に [テンプレート階層](https://developer.wordpress.org/themes/templates/template-hierarchy/) ドキュメントを参照することで、テンプレートの全体像を把握できます:
+以下のリストには、`Template Types` フィールド経由で定義可能なテンプレートが含まれていますが、常に [テンプレート階層](https://developer.wordpress.org/themes/templates/template-hierarchy/) ドキュメントを参照することで、テンプレートの全体像を把握できます:
 
 *   `index`
 *   `home`
