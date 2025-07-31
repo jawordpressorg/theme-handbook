@@ -166,7 +166,7 @@ To include this specific pattern in a template, you need to call it like so:
 Now try adding it to one of your theme’s templates, such as `/templates/home.html` or `/templates/index.html` below the header. Your template with the pattern code should look similar to this:
  -->
 
-では、あなたのテーマ・テンプレートの一つ、たとえば、ヘッダー以下にある `/templates/home.html` または `/templates/index.html` に、このコードを追加してみましょう。パターン・コードを含むあなたのテンプレートは、次のような見た目になるはずです:
+では、テーマのテンプレート、たとえば `/templates/home.html` または `/templates/index.html` などのヘッダーの下にコードを追加してみましょう。パターン・コードを含むテンプレートは、次のようになるはずです:
 
 ```markup
 <!-- wp:template-part {"slug":"header"} /-->
