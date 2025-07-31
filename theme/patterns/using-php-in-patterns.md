@@ -316,7 +316,7 @@ Change the hard coded image URLs to this:
 Your final pattern code should look like this (note that this example includes internationalized text as explained in the previous section):
  -->
 
-あなたの最終的なパターン・コードは、次のように見えるはずです (この例には、前のセクションで説明した国際化テキストを含むことに注意してください):
+あなたの最終的なパターン・コードは、次のようになるはずです (この例には、前のセクションで説明した国際化テキストを含むことに注意してください):
 
 ```php
 <?php
