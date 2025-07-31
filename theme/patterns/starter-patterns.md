@@ -248,7 +248,7 @@ The following list includes the templates that you can define via the `Template 
 When creating custom template patterns, it also makes sense to reuse those patterns within your templates. *Why rewrite code?*
  -->
 
-カスタム・テンプレート・パターンを制作する際は、あなたのテンプレート内で、それらのパターンを再利用することも有効です。*なぜコードを再記述するのですか ?*
+カスタム・テンプレート・パターンを制作する際は、あなたのテンプレート内で、それらのパターンを再利用することも有効です。*同じコードを再度、記述する必要はありません。*
 
 <!-- 
 Imagine that you created a template pattern that would work as both a Home and Index template. It would look like this:
