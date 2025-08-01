@@ -26,7 +26,7 @@ In this chapter, you will learn what patterns are and dive into the various use 
 Use the following links to locate a specific topic within this chapter. It’s best to read them in order, but if you are already familiar with the basic tenets of pattern development, feel free to jump to the topic that you’re looking for.
  -->
 
-本章の特定のトピックを探すには、以下のリンクをご利用ください。順番に読むのがベストだが、すでにパターン開発の基本的な考え方に慣れている人は、お探しのトピックに自由にジャンプしてください。
+本章の特定のトピックを探すには、以下のリンクをご利用ください。順番に読むのがベストですが、すでにパターン開発の基本的な考え方に慣れている人は、お探しのトピックに自由にジャンプしてください。
 
 <!-- 
 *   [**Introduction to Patterns**](https://developer.wordpress.org/themes/patterns/introduction-to-patterns/)**:** Provides an overview of what patterns are and how they work, giving you a foundation for later articles in the chapter.
