@@ -652,7 +652,7 @@ One of the most useful features for patterns is to use template locking to only 
 When this type of locking is applied to a container-type block, users will see a new **Content** panel when inspecting any block instead of the usual block settings:
  -->
 
-このロックのタイプがコンテナ型ブロックに適用されると、通常のブロック設定の代わりに、任意のブロックの検査の際に、ユーザーは新規 **コンテンツ** パネルを目にすることになります:
+コンテナ型ブロックにこのタイプのロックを適用すると、任意のブロックでの作業時、ユーザーには通常のブロック設定の代わりに、新規 **コンテンツ** パネルが表示されます:
 
 <!-- 
 [![WordPress post editor with an event pattern shown. The outer Group block is selected. In the sidebar, instead of the normal design and setting controls, it has a "Content" panel that shows the nested blocks.](https://i0.wp.com/developer.wordpress.org/files/2024/04/pattern-locking-content-only.webp?resize=2048%2C1061&ssl=1)](https://i0.wp.com/developer.wordpress.org/files/2024/04/pattern-locking-content-only.webp?ssl=1)
