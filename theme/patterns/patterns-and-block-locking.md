@@ -170,7 +170,7 @@ This will bring up a modal for various locking options, which you’ll learn abo
 This type of locking is shown in the UI, and a theme user will be able to override it from the UI. For publicly-distributed themes, this is a good thing. But for client work, this type of access may be undesirable. If you need to control permissions to the locking UI, see the instructions in the Locking API docs: [Change permissions to control locking ability](https://developer.wordpress.org/block-editor/how-to-guides/curating-the-editor-experience/block-locking/#change-permissions-to-control-locking-ability).
  -->
 
-このロックのタイプは UI に表示され、テーマユーザーは UI から上書きできます。一般に配布されるテーマでは、これは良いことです。しかし顧客仕事では、このようなアクセスは望ましくないかもしれません。ロック UI に対するパーミッションを制御する必要がある場合は、ロック API ドキュメントの説明をご覧ください: [パーミッションを変更して、ロック機能のコントロール](https://developer.wordpress.org/block-editor/how-to-guides/curating-the-editor-experience/block-locking/#change-permissions-to-control-locking-ability)。
+このロックのタイプは UI に表示され、テーマユーザーは UI から上書きできます。一般に配布されるテーマでは、これは良いことです。しかしお客様案件では、このようなアクセスは望ましくないかもしれません。ロック UI に対するパーミッションを制御する必要がある場合は、ロック API ドキュメントの説明をご覧ください: [パーミッションを変更して、ロック機能のコントロール](https://developer.wordpress.org/block-editor/how-to-guides/curating-the-editor-experience/block-locking/#change-permissions-to-control-locking-ability)。
 
 <!-- 
 ### Disable block movement
