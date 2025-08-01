@@ -646,7 +646,7 @@ When a user adds this pattern into their post or page content, they will be able
 One of the most useful features for patterns is to use template locking to only allow the user to customize the content of a pattern. This can be useful when you need full control over the design but need to allow user input.
  -->
 
-パターンの最も便利な機能のひとつは、テンプレート・ロック機能を使用して、ユーザーがパターンのコンテンツだけをカスタマイズできるようにすることです。これは、設計を完全に制御する必要があるが、ユーザー入力を許可する必要もある場合に便利です。
+最も便利なパターン用の機能のひとつが、テンプレート・ロック機能を使用して、ユーザーがパターンのコンテンツだけをカスタマイズできるようにすることです。これは、デザインを完全に制御する必要がある一方で、ユーザーには入力を許可したい場合に便利です。
 
 <!-- 
 When this type of locking is applied to a container-type block, users will see a new **Content** panel when inspecting any block instead of the usual block settings:
