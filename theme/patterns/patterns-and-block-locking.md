@@ -458,7 +458,7 @@ When clicking on the wrapping Group block inside your event pattern and opening 
 If you look at the underlying block markup, you will see a new `templateLock` attribute, which will be set to `all`. You will also see the `lock` attribute with both `move` and `remove` set to `true`:
  -->
 
-基礎となるブロック・マークアップを見ると、`all` に設定された、新規 `templateLock` 属性が表示されます。また、`move` と `remove` の両方が `true` に設定された、`lock` 属性も表示されます:
+内部のブロック・マークアップを見ると、新規の `templateLock` 属性があり、`all` に設定されています。また、`lock` 属性もあり、`move` と `remove` の両方が `true` に設定されています:
 
 ```markup
 <!-- wp:group {"templateLock":"all","lock":{"move":true,"remove":true}} -->
