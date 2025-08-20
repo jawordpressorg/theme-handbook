@@ -909,7 +909,7 @@ WordPress には、デフォルトで登録されているブロック・パタ�
 It’s generally best to use these default categories for your theme. This keeps a consistent UI that users will be accustomed to. But there are times when you may want to add your own categories or even remove those that are already registered.
  -->
 
-あなたのテーマには、通常はこれらのデフォルト・カテゴリーを使用するのが最適です。これにより、ユーザーが慣れ親しんだ一貫した UI を維持できます。ただし、あなた独自カテゴリーを追加したり、すでに登録されているカテゴリーを削除したい場合もあります。
+あなたのテーマには、通常はこれらのデフォルト・カテゴリーを使用するのが最適です。これにより、ユーザーが慣れ親しんだ一貫した UI を維持できます。ただし、あなた独自のカテゴリーを追加したり、すでに登録されているカテゴリーを削除したい場合もあります。
 
 <!-- 
 In this section of the article, you’ll learn how to both register and unregister custom block pattern categories.
