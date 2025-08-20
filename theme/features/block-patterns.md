@@ -560,7 +560,7 @@ Because pattern files are just PHP, you can use any of the internationalization 
 Try taking your “hero” pattern example and wrapping the custom text inside the Heading, Paragraph, and Button blocks with the `esc_html_e()` function. Your pattern file should look like this:
  -->
 
-あなたの「hero」パターン例を試して、`esc_html_e()` 関数で、カスタム・テキストを「見出し」、「段落」、「ボタン」ブロック内にラップしてみてください。あなたのパターンファイルは、次のようになります:
+あなたの「hero」パターンの例で、「見出し」、「段落」、「ボタン」ブロック内のカスタム・テキストを `esc_html_e()` 関数でラップしてみてください。あなたのパターンファイルは、次のようになります:
 
 ```php
 <?php
