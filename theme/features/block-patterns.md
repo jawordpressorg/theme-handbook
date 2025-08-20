@@ -617,7 +617,7 @@ Download an image and save it to your theme’s `/assets/images` folder (or a fo
 Then open your pattern in the editor and upload the image as the background for the Cover block, which should look like this:
  -->
 
-では、エディターであなたのパターンを開き、「カバー」ブロックの背景として画像をアップロードすると、次のように表示されます:
+では、エディターであなたのパターンを開き、「カバー」ブロックの背景として画像をアップロードしてみてください。次のように表示されます:
 
 <!-- 
 [![WordPress post editor showing a Cover block with a background image of a cityscape.](https://i0.wp.com/developer.wordpress.org/files/2023/10/patterns-cover-with-background.jpg?resize=2048%2C924&ssl=1)](https://i0.wp.com/developer.wordpress.org/files/2023/10/patterns-cover-with-background.jpg?ssl=1)
