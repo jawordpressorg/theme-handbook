@@ -826,7 +826,7 @@ function themeslug_unregister_patterns() {
 If you manually registered your patterns via PHP, you only need to wrap your call to `register_block_pattern()` with your conditional check.
  -->
 
-PHP 経由でパターンを手動で登録した場合、`register_block_pattern()` へのあなたのコールを、条件分岐でラップするだけです。
+PHP 経由でパターンを手動で登録した場合、`register_block_pattern()` の呼び出しを、条件分岐でラップするだけです。
 
 <!-- 
 Using the same example as above, try only registering your pattern if the `core/paragraph` block is registered by adding this to `functions.php`:
