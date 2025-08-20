@@ -174,7 +174,7 @@ WordPress でブロック・パターンの登録には2つの方法がありま
 The most straightforward route is the first. You’ll learn how to do both in the next sections, but this handbook will recommend using the `/patterns` folder except for in some edge cases.
  -->
 
-最も直感的なルートは、最初の方法です。次のセクションで両方の方法を学ぶことができるが、本ハンドブックでは、一部の特殊なケースを除き、`/patterns` フォルダーの使用を推奨します。
+最も直感的な方法は、最初の方法です。次のセクションで両方の方法を学びますが、本ハンドブックでは、一部の特殊なケースを除き、`/patterns` フォルダーの使用を推奨します。
 
 <!-- 
 #### Using the /patterns directory to register patterns
