@@ -780,7 +780,7 @@ Of course, since the Paragraph block is registered by core WordPress and assumin
 If you need to conditionally register an entire pattern instead of simply conditionally outputting specific parts of it (shown in the previous section), there are two methods to choose from, depending on how you prefer to register patterns.
  -->
 
-その特定のパーツを (前のセクションで示したように) 条件付きで出力する代わりに、パターン全体を条件付きで登録する必要がある場合、パターンを登録する方法には、好みに応じて2つの方法から選択できます。
+その特定のパーツを (前のセクションで示したように) 条件付きで出力する代わりに、パターン全体を条件付きで登録する必要がある場合、パターンを登録する方法は、好みに応じて2つの方法から選択できます。
 
 <!-- 
 #### Conditionally registering patterns in the /patterns folder
