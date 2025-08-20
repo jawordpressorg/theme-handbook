@@ -639,8 +639,7 @@ http://localhost/wp/wp-content/uploads/2023/10/hero-background.jpg
 You need to change both of those instances so that they point to the image that is located in your theme’s `/assets/images` folder. For this, you need do two things:
  -->
 
-これらの2つのインスタンスを両方とも変更し、あなたのテーマの `/assets/images` フォルダー内に格納されている画像を指すようにする必要があります。これには、次の2つのことを実施する必要が
-あります:
+これらの2つのインスタンスを両方とも変更し、あなたのテーマの `/assets/images` フォルダー内に格納されている画像を指すようにする必要があります。これには、次の2つのことを実施する必要があります:
 
 <!-- 
 *   Get the correct URL using a function like [`get_theme_file_uri()`](https://developer.wordpress.org/reference/functions/get_theme_file_uri/).
