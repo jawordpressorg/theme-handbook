@@ -709,7 +709,7 @@ There are times when you might want to only use a block if it is registered on t
 It’s important to note that WordPress will prompt a user to install the block if you add its block markup and it’s not installed. It won’t result in a broken website, so it’s OK to avoid using the method described in this section.
  -->
 
-そのブロック・マークアップを追加しても、それがインストールされていない場合、WordPress はユーザーにブロックのインストールを促すことに注意してください。このセクションで説明されている方法を使用しなくても、Web サイトが破損する心配はないので、問題ありません。
+ブロック・マークアップを追加しても、そのブロックがインストールされていなければ、WordPress はユーザーにブロックのインストールを促すことに注意してください。それで Web サイトが破損することはありませんので、このセクションで説明する方法を使用しなくても、問題ありません。
 
 <!-- 
 But if you would prefer to hide an unregistered block (or use an alternative), you can conditionally check if a block is registered via the [`WP_Block_Type_Registry::is_registered()`](https://developer.wordpress.org/reference/classes/wp_block_type_registry/is_registered/) method.
