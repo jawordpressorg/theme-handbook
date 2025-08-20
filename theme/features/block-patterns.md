@@ -302,7 +302,7 @@ You should also be able to see your pattern listed under **Appearance > Editor >
 Instead of using the `/patterns` folder to auto-register your patterns, you may choose to manually register them via PHP. You can mix and match both registration methods, but an individual pattern must be registered with only one method.
  -->
 
-`/patterns` フォルダーを使用してパターンを自動登録する代わりに、PHP 経由での手動登録も選択できます。両方の登録方法を組み合わせて使用できるが、個々のパターンは、1つの方法のみで登録する必要があります。
+`/patterns` フォルダーを使用してパターンを自動登録する代わりに、PHP 経由での手動登録も選択できます。両方の登録方法を組み合わせて使用できますが、個々のパターンは、1つの方法のみで登録する必要があります。
 
 <!-- 
 To register block patterns with PHP, you must use the [`register_block_pattern()`](https://developer.wordpress.org/reference/functions/register_block_pattern/) function. Here is what its signature looks like:
