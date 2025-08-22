@@ -20,7 +20,7 @@ But there are times when you simply need to step outside of what’s easily achi
 In this article, you will learn how to register per-block stylesheets, but remember that `theme.json` should be your first choice for styling in most cases.
  -->
 
-本稿では、ブロック単位スタイルシートの登録方法について説明するが、ほとんどのケースでは、スタイリングには `theme.json` を優先的に選択すべきです。
+本稿では、ブロック単位でのスタイルシートの登録方法について説明しますが、ほとんどのケースではスタイリングに `theme.json` を優先して選択すべきです。
 
 <!-- 
 ## Why use block stylesheets?
