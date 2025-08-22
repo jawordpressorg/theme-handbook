@@ -32,7 +32,7 @@ In this article, you will learn how to register per-block stylesheets, but remem
 The primary use case for block stylesheets is when you have too much CSS to add to [`styles.blocks.{blockname}.css`](https://developer.wordpress.org/themes/global-settings-and-styles/styles/styles-reference/#css) in `theme.json`. This property allows you to add custom CSS, but it’s only ideal when it’s just a small bit of code. This is because you lose out on syntax highlighting and must place everything in a single line (JSON doesn’t support line breaks).
  -->
 
-ブロック・スタイルシートの主なユースケースとは、`theme.json` に [`styles.blocks.{blockname}.css`](https://developer.wordpress.org/themes/global-settings-and-styles/styles/styles-reference/#css) に追加する CSSS があまりにも多い場合です。コードがごく短い場合、このプロパティを使用するとカスタム CSS を追加できるが、これは理想的な方法ではありません。これは、構文ハイライトが利用できず、すべてを1行に配置する必要があるためです (JSON は改行をサポートしていない)。
+ブロック・スタイルシートの主なユースケースは、`theme.json` 内の [`styles.blocks.{blockname}.css`](https://developer.wordpress.org/themes/global-settings-and-styles/styles/styles-reference/#css) に追加する CSS があまりにも多い場合です。このプロパティを使用すると、カスタム CSS を追加できますが、これはコードがごく短い場合にのみ適しています。これは、構文ハイライトが利用できず、すべてを1行に配置する必要があるためです (JSON は改行をサポートしていない)。
 
 <!-- 
 You may also be tempted to put all your custom CSS into your theme’s primary `style.css` file. That may be OK for some use cases, but the block stylesheets system often offers better performance by only loading the block’s CSS if the block is in use on a page. On the front end, it will also inline this code within the `<head>` area.
