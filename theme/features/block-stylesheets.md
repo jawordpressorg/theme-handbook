@@ -38,7 +38,7 @@ The primary use case for block stylesheets is when you have too much CSS to add 
 You may also be tempted to put all your custom CSS into your theme’s primary `style.css` file. That may be OK for some use cases, but the block stylesheets system often offers better performance by only loading the block’s CSS if the block is in use on a page. On the front end, it will also inline this code within the `<head>` area.
  -->
 
-あなたのテーマの主要な `style.css` ファイルに、あなたのカスタム CSS をすべて配置したくなるかもしれません。一部のユースケースでは問題ないかもしれませんが、the ブロック・スタイルシート・システムは、ページで使用されているブロックの CSS のみをロードすることで、通常より優れたパフォーマンスを提供します。フロントエンドでは、このコードを `<head>` エリア内にインラインで埋め込みます。
+テーマのメインの `style.css` ファイルに、すべてのカスタム CSS を配置したくなるかもしれません。一部のユースケースでは問題ないかもしれませんが、ブロック・スタイルシート・システムは、ページで使用されているブロックの CSS のみをロードすることで、通常より優れたパフォーマンスを提供します。フロントエンドでは、このコードを `<head>` エリア内にインラインで埋め込みます。
 
 <!-- 
 Creating separate stylesheets for individual blocks is also beneficial for larger and more complex projects that have a lot of custom CSS for many different blocks. The separation of the files makes it easier to organize and manage your code.
