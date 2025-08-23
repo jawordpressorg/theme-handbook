@@ -8,7 +8,7 @@
 Internationalization is the process of developing your theme in such a way that its custom text can be translated into other languages. The term is often abbreviated as “i18n” because there are 18 letters between the “i” and “n,” the first and last letters.
  -->
 
-国際化とは、カスタムテキストを他の言語に翻訳できるような方法で、あなたのテーマを開発するプロセスのことです。この用語はしばしば「i18n」と略されますが、これは「i」と「n」、つまり最初と最後の文字の間に18文字があるためです。
+国際化とは、テーマのカスタムテキストを他の言語に翻訳できるようにする、テーマ開発におけるプロセスのことです。この用語はしばしば「i18n」と略されますが、これは「i」と「n」、つまり最初と最後の文字の間に18文字があるためです。
 
 <!-- 
 In this article, you will learn how to internationalize your WordPress themes and why it is important. 
