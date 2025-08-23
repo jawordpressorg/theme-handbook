@@ -14,7 +14,7 @@ Welcome to the Features documentation. In this chapter, you will learn about var
 This chapter does not have a singular focus. Instead, it offers information on several different topics that will help you work with more advanced features, stepping beyond the basics that you learned in [Global Settings and Styles](https://developer.wordpress.org/themes/global-settings-and-styles/) and [Templates](https://developer.wordpress.org/themes/templates/).
  -->
 
-本章は単一のテーマに焦点を当てたものではありません。代わりに、より高度な機能を活用するための、複数の異なるトピックに関する情報を提供し、[グローバル設定とスタイル](https://developer.wordpress.org/themes/global-settings-and-styles/) および [テンプレート](https://developer.wordpress.org/themes/templates/) で学んだ基本を超えた内容を取り扱っています。
+本章は単一のトピックに焦点を当てたものではありません。代わりに、より高度な機能を活用するための、複数の異なるトピックに関する情報を提供し、[グローバル設定とスタイル](https://developer.wordpress.org/themes/global-settings-and-styles/) および [テンプレート](https://developer.wordpress.org/themes/templates/) で学んだ基本を超えた内容を取り扱っています。
 
 <!-- 
 ## Navigating this chapter
