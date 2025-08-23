@@ -256,7 +256,7 @@ The function accepts two parameters:
 To learn more about block variations, read the [Block Variations API](https://developer.wordpress.org/block-editor/reference-guides/block-api/block-variations/) documentation in the Block Editor Handbook.
  -->
 
-ブロック・バリエーションについて詳しく知りたい場合は、ブロック・エディター・ハンドブックの [ブロック・バリエーション API](https://developer.wordpress.org/block-editor/reference-guides/block-api/block-variations/) ドキュメントを御覧ください。
+ブロック・バリエーションについて詳しく知りたい場合は、ブロック・エディター・ハンドブックの [ブロック・バリエーション API](https://developer.wordpress.org/block-editor/reference-guides/block-api/block-variations/) ドキュメントをご覧ください。
 
 <!-- 
 To build your custom variation, the most important thing is to think about the attributes that you want to control that will set this variation apart from the default block. That’s what makes a variation a *variation*.
