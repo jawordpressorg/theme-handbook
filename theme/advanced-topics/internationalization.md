@@ -216,7 +216,7 @@ There are many other internationalization functions that you will use, and you w
 Because internationalized text is technically a PHP variable, it means that it can be exploited and become a security vulnerability. You should always use the [translate-and-escape functions](https://developer.wordpress.org/apis/internationalization/internationalization-functions/#translate-escape-functions) when possible. Otherwise, be sure to wrap them in an escaping function when outputting, as described in the [Security](https://developer.wordpress.org/themes/advanced-topics/security/) documentation.
  -->
 
-国際化されたテキストは、技術的には PHP の変数ですので、これは悪用され、セキュリティの脆弱性になる可能性があるということです。可能であれば、常に [翻訳とエスケープ関数](https://developer.wordpress.org/apis/internationalization/internationalization-functions/#translate-escape-functions) を使うべきです。そうでない場合は、[セキュリティ](https://developer.wordpress.org/themes/advanced-topics/security/) ドキュメントで説明されているように、出力する際には、必ずエスケープ関数でラップしてください。
+国際化されたテキストは、技術的には PHP の変数ですので、これは悪用され、セキュリティの脆弱性になる可能性があります。可能であれば、常に [翻訳エスケープ関数](https://developer.wordpress.org/apis/internationalization/internationalization-functions/#translate-escape-functions) を使うべきです。そうでない場合は、[セキュリティ](https://developer.wordpress.org/themes/advanced-topics/security/) ドキュメントで説明されているように、出力する際には、必ずエスケープ関数でラップしてください。
 
 <!-- 
 ### Loading translations
