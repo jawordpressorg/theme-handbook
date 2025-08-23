@@ -195,7 +195,7 @@ unregister_block_style(
 The function accepts two parameters and returns `true` or `false`, depending on whether the registration was successful:
  -->
 
-この関数は2つのパラメータを受け取り、登録が成功したか否かによって、`true` または `false` を返します:
+この関数は2つのパラメータを受け取り、登録解除が成功したか否かによって、`true` または `false` を返します:
 
 <!-- 
 *   **`$block_name`:** The name of the block, including both its namespace and slug (e.g., `core/image`).
