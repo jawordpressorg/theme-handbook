@@ -204,7 +204,7 @@ Now users can add translations for your theme without touching the code.
 As you may have noticed, the `_e()` function accepted a second parameter of `themeslug`. This should be replaced with your text domain.
  -->
 
-お気付きかもしれないが、`_e()` 関数は `themeslug` という2番目のパラメータを受け取っています。これは、あなたのテキスト・ドメインに置き換えてください。
+お気付きかもしれませんが、`_e()` 関数は `themeslug` という2番目のパラメータを受け取っています。これは、あなたのテキスト・ドメインに置き換えてください。
 
 <!-- 
 There are many other internationalization functions that you will use, and you will learn about them later. For now, the idea is to introduce you to the basic concept.
