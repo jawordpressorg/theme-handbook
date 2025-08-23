@@ -8,7 +8,7 @@
 The Block Variations API is a powerful feature that allows you to extend any registered blocks. Basically, it gives you the ability to create alternate versions of a block’s settings. This can make it easier for your users to insert blocks without the hassle of going through all of the setup they might need for a specific scenario.
  -->
 
-ブロック・バリエーション API は、任意の登録済みブロックを拡張できる強力な機能です。基本的には、ブロックの設定の代替バージョンを制作する機能を提供します。これにより、あなたのユーザーは、特定のシナリオで必要なセットアップをすべて実施する手間を省き、ブロックを挿入しやすくなります。
+ブロック・バリエーション API は、任意の登録済みブロックを拡張できる強力な機能です。基本的には、ブロックの設定の代替バージョンを制作する機能を提供します。これにより、あなたのユーザーは、本来必要な特定のシナリオでのセットアップを一切実施せずに、ブロックを挿入できるようになります。
 
 <!-- 
 The [Block Variations API](https://developer.wordpress.org/block-editor/reference-guides/block-api/block-variations/) is often pitched as a plugin developer API. In many cases, plugins are the best place for variations to live. But there are also use cases for theme creators.
