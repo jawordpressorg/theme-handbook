@@ -62,7 +62,7 @@ There are many, many ways that you could potentially change a block to make it d
 While it is more advanced than some theme features, the API does give you the flexibility to make more complex themes than what is available out of the box.
  -->
 
-一部のテーマ機能よりも高度な機能を備えていますが、API は、標準で提供されているものよりも複雑なテーマを作成する柔軟性を提供します。
+ブロック・バリーション API は、一部のテーマの機能よりも高度な機能ですが、テーマを本来よりも複雑なものにする柔軟性を提供します。
 
 <!-- 
 ### Block variations vs. block styles
