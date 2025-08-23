@@ -268,7 +268,7 @@ To build your custom variation, the most important thing is to think about the a
 For Spacer block variations, this is likely to be the `height` attribute. Suppose you wanted it to have a default of `180px`. For your variation, you’d need to set `attributes.height` and also check if `180px` is the value of the attribute in the `isActive` callback function.
  -->
 
-「スペーサー」ブロック・バリエーションの場合、これはおそらく `height` 属性です。仮にデフォルト値を `180px` にしたいとします。参考までに、`isActive` コールバック関数内の属性の値が `180px` の場合、`attributes.height` をセットし、確認する必要もあります。
+「スペーサー」ブロック・バリエーションの場合、これはおそらく `height` 属性でしょう。仮にデフォルト値を `180px` にしたいとします。バリーションでは、`attributes.height` をセットし、`isActive` コールバック関数内で属性値が `180px` かどうかを確認する必要があります。
 
 <!-- 
 Try this by pasting this code in your `block-variations.js` file:
