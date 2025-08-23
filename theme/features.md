@@ -36,4 +36,4 @@ Use the following links to locate a topic within this chapter. Each article cove
 
 *   [**ブロック・スタイル・バリエーション**](https://developer.wordpress.org/themes/features/block-style-variations/)**:** あなたのユーザーが選択できる、カスタム・ブロック・スタイル・バリエーション (別名: ブロック・スタイル) を構築します。
 *   [**ブロック・スタイルシート**](https://developer.wordpress.org/themes/features/block-stylesheets/)**:** ブロックごとのスタイルシートを登録し、あなたのカスタム CSS を分割して管理することで、あなたのテーマのロード速度を向上させます。
-*   [**ブロック・バリエーション**](https://developer.wordpress.org/themes/features/block-variations/)**:** ブロックのデフォルト設定のバリエーションを登録し、あなたのユーザーがインターフェース経由で追加できるようにします。
+*   [**ブロック・バリエーション**](https://developer.wordpress.org/themes/features/block-variations/)**:** ブロックのデフォルト設定の上にバリエーションを登録し、インターフェース経由で追加できるようにします。
