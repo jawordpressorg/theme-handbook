@@ -86,7 +86,7 @@ The answer is almost always the same as the answer to another question: *Can the
 But if you need to change a block’s settings so that it is set up differently when a user inserts an instance of it into a post, a custom block variation is probably the best route to take.
  -->
 
-ただし、ブロックの設定を変更する必要がある場合には、異なる設定に設定する必要があり、ユーザーが投稿にそのインスタンスを挿入する際には、カスタム・ブロック・バリエーションが最適な選択肢となるでしょう。
+しかし、ユーザーが投稿にブロックのインスタンスを挿入するとき異なる設定が必要なため、ブロックの設定を変更する場合は、カスタム・ブロック・バリエーションが最適な選択肢となるでしょう。
 
 <!-- 
 ## Working with block variations
