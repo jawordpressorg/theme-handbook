@@ -353,4 +353,4 @@ wp.domReady( () => {
 One important thing to note when unregistering variations is that you should wrap them in a `wp.domReady()` call. This is to ensure that the unregistering process happens later in the loading process after variations have already been registered.
  -->
 
-バリエーションを登録解除する際の重要な点は、それらを `wp.domReady()` コールで囲む必要があることです。これは、バリエーションが登録された後に、登録解除プロセスがロードプロセスの後段で実行されるようにするためです。
+バリエーションを登録解除する際の重要な注意点として、それらを `wp.domReady()` コールで囲む必要があります。これは登録解除プロセスが、ロードプロセスの後段、バリエーションが登録された後に実行されるようにするためです。
