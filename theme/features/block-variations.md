@@ -104,7 +104,7 @@ Block variations require that you work with JavaScript instead of PHP. The examp
 But the more you work with WordPress’ JavaScript packages, the more likely you’ll want to incorporate build tools into your workflow. It’s possible to use the [`@wordpress/scripts`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-scripts/) package, originally meant block development, with your theme. For a deeper dive into how this works, read [Beyond block styles, part 1: using the WordPress scripts package with themes](https://developer.wordpress.org/news/2023/07/beyond-block-styles-part-1-using-the-wordpress-scripts-package-with-themes/).
  -->
 
-しかし、WordPress の JavaScript パッケージを扱うほど、あなたのワークフローにビルド・ツールを取り入れたいと思うようになるでしょう。もともとブロック開発を目的とした [`@wordpress/scripts`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-scripts/) パッケージを、あなたのテーマで使うことも可能になります。このしくみについて詳しく知りたい人は、[ブロック・スタイルを超えて、パート1: テーマで WordPress スクリプト・パッケージを使用](https://developer.wordpress.org/news/2023/07/beyond-block-styles-part-1-using-the-wordpress-scripts-package-with-themes/) をご覧ください。
+しかし、WordPress の JavaScript パッケージを使えば使うほど、ワークフローにビルド・ツールを取り入れたいと思うでしょう。もともとブロック開発を目的とした [`@wordpress/scripts`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-scripts/) パッケージをテーマで使うことも可能です。詳細については、[ブロック・スタイルを超えて、パート1: テーマで WordPress スクリプト・パッケージを使用](https://developer.wordpress.org/news/2023/07/beyond-block-styles-part-1-using-the-wordpress-scripts-package-with-themes/) をご覧ください。
 
 <!-- 
 In the next sections, you will learn how to work with block variations by building a simple variation on the WordPress Spacer block, as shown in this screenshot:
