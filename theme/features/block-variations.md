@@ -142,7 +142,7 @@ For a deeper dive into block variations, check out these tutorials on the WordPr
 The first step for working with block variations is to create an empty file for adding your custom JavaScript to. This can be at any location you choose, but the code example below will attempt to find a `block-variations.js` in your theme’s `/assets/js` folder.
  -->
 
-ブロック・バリエーションを扱う最初のステップは、あなたのカスタム JavaScript を追加するための、空ファイルを作成することです。このファイルは任意の場所に作成できますが、以下のコード例は、あなたのテーマの `/assets/js` フォルダー内で `block-variations.js` を検索します。
+ブロック・バリエーションを扱う最初のステップとして、カスタム JavaScript を追加する空のファイルを作成します。このファイルは任意の場所に作成できますが、以下のコード例ではテーマの `/assets/js` フォルダー内の `block-variations.js` とします。
 
 <!-- 
 So your theme structure should look similar to this:
