@@ -148,7 +148,7 @@ The first step for working with block variations is to create an empty file for 
 So your theme structure should look similar to this:
  -->
 
-したがって、あなたのテーマ構造は、以下のようなものに類似しています:
+テーマの構造は、以下のようになります:
 
 <!-- 
 *   `/assets`
