@@ -20,7 +20,7 @@ Many features, unfortunately, use the term “variations” in their name. This 
 Often, you will see block style variations referred to as “block styles,” as they are in this article, but this should also not be confused with [block stylesheets](https://developer.wordpress.org/themes/features/block-stylesheets/). The two features can be used to work together, but they are not the same thing.
  -->
 
-しばしば、この記事で説明されているように、「ブロック・スタイル」と呼ばれるブロック・スタイル・バリエーションを見かけるだろうが、これと [ブロック・スタイルシート](https://developer.wordpress.org/themes/features/block-stylesheets/) を混同しないように、注意が必要です。この2つの機能は組み合わせて使用できますが、同じものではありません。
+しばしばこの記事と同じように、ブロック・スタイル・バリエーションは「ブロック・スタイル」と呼ばれますが、これと [ブロック・スタイルシート](https://developer.wordpress.org/themes/features/block-stylesheets/) を混同しないでください。この2つの機能は組み合わせて使用できますが、同じものではありません。
 
 <!-- 
 ## What are block styles?
