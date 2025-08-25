@@ -130,7 +130,7 @@ Outside of that, there is no standard method of creating an installable grandchi
 Let’s try creating a child theme of the default [Twenty Twenty-Four](https://wordpress.org/themes/twentytwentyfour/) theme bundled with WordPress. 
  -->
 
-WordPress にバンドルされているデフォルト・テーマ [Twenty Twenty-Four](https://wordpress.org/themes/twentytwentyfour/) を作成してみましょう。
+WordPress にバンドルされているデフォルト・テーマ [Twenty Twenty-Four](https://wordpress.org/themes/twentytwentyfour/) の子テーマを作成してみましょう。
 
 <!-- 
 ### Create a child theme folder
