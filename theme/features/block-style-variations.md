@@ -275,7 +275,7 @@ function themeslug_block_editor_assets() {
 To register a block style via JavaScript, you’ll use the `registerBlockStyle()` function, which works similarly to the `register_block_style()` PHP function. It just uses JavaScript syntax.
  -->
 
-JavaScript を経由でブロック・スタイルを登録するには、PHP の `register_block_style()` 関数と類似した動作をする、`registerBlockStyle()` 関数を使用します。単に JavaScript の構文を使用するだけです。
+JavaScript 経由でブロック・スタイルを登録するには、PHP の `register_block_style()` 関数と類似した動作をする、`registerBlockStyle()` 関数を使用します。単に JavaScript の構文を使用するだけです。
 
 <!-- 
 Let’s use the same example from earlier and register a “hand drawn” Image block style. Add this code to your `/assets/js/block-editor.js` file:
