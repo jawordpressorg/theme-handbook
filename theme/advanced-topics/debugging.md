@@ -66,7 +66,7 @@ This is where you will configure any debugging constants outlined in the section
 The `WP_DEBUG` constant is the only one defined in a default WordPress installation’s `wp-config.php` file. In a standard install, it is set to `false`, but it is set to `true` if you are running a development copy of WordPress.
  -->
 
-`WP_DEBUG` 定数は、デフォルトの WordPress インストールの `wp-config.php` ファイルで定義されている、唯一の定数です。標準インストールでは、`false` に設定されるが、WordPress の開発用を実行している場合は、`true` に設定されています。
+`WP_DEBUG` 定数は、デフォルトの WordPress インストールの `wp-config.php` ファイルで定義されている、唯一の定数です。標準的なインストールでは `false` に設定されていますが、開発用に WordPress を実行している場合は `true` に設定します。
 
 <!-- 
 The `WP_DEBUG` PHP constant is used to trigger the built-in “debug” mode on your WordPress installation. This allows you to view errors in your theme. It should be used in conjunction with all of the other debugging constants listed in the next sections.
