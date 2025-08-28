@@ -176,7 +176,7 @@ define( 'WP_DEBUG_LOG', true );
 There are several plugins that are helpful when debugging your theme. Each is hosted in the WordPress Plugin Directory:
  -->
 
-あなたのテーマをデバグする際には、役立つプラグインがいくつかあります。各々は、「WordPress プラグイン・ディレクトリ」でホストされています:
+テーマをデバッグする際には、役立つプラグインがいくつかあります。これらは「WordPress プラグイン・ディレクトリ」でホストされています:
 
 <!-- 
 *   [**Debug Bar**](https://wordpress.org/plugins/debug-bar/)**:** Provides a central location for debugging in your WordPress toolbar.
