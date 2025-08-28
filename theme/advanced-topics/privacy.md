@@ -14,7 +14,7 @@ WordPress 4.9.6では、EU の新しい GDPR (General Data Protection Regulation
 For the most part, this should not directly impact themes, but you should make sure that nothing in your theme’s design or functionality conflicts with these features.
  -->
 
-ほとんどの場合、これがテーマに直接影響することはないが、あなたのテーマのデザインや機能に、これらの機能と競合するものがないことを確認する必要があるでしょう。
+ほとんどの場合、これがテーマに直接影響することはありません。しかし、テーマのデザインや機能が、これらの機能と競合しないことは確認してください。
 
 <!-- 
 ## Privacy Policy page
