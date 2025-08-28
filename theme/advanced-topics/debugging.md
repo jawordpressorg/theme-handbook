@@ -72,7 +72,7 @@ The `WP_DEBUG` constant is the only one defined in a default WordPress installat
 The `WP_DEBUG` PHP constant is used to trigger the built-in “debug” mode on your WordPress installation. This allows you to view errors in your theme. It should be used in conjunction with all of the other debugging constants listed in the next sections.
  -->
 
-`WP_DEBUG` PHP 定数は、あなたの WordPress インストールの内蔵「デバグ」モードを起動するために使用されます。これにより、あなたのテーマのエラーを表示できます。この定数は、次のセクションでリストされている、他のすべてのデバグ定数と組み合わせて使用する必要があります。
+`WP_DEBUG` PHP 定数は、WordPress に内蔵された「デバッグ」モードの起動に使用されます。この起動によりテーマ内のエラーを表示できます。この定数は次のセクションで挙げた他のすべてのデバッグ定数と組み合わせて使用する必要があります。
 
 <!-- 
 You should see this line in your `wp-config.php` file:
