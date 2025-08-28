@@ -14,7 +14,7 @@ Debugging is the practice of finding and fixing errors in any software that you 
 WordPress provides some tools out of the box, but there are also plugins that you can use to enhance the experience. You’ll learn about some of these methods in this article, but you should also study the [Debugging in WordPress](https://wordpress.org/documentation/article/debugging-in-wordpress/) documentation in the Common APIs handbook.
  -->
 
-WordPress はすぐに使えるツールをいくつか提供しているが、エクスペリエンスを向上させるために使えるプラグインもあります。本稿ではこれらのメソッドのいくつかについて学びますが、共通 API ハンドブックにある [WordPress でのデバグ](https://wordpress.org/documentation/article/debugging-in-wordpress/) ドキュメントも勉強してください。
+WordPress はすぐに使えるツールをいくつか提供していますが、エクスペリエンスの向上に使えるプラグインもあります。本稿ではこれらの方法のいくつかを学びますが、共通 API ハンドブックにある [WordPress でのデバッグ](https://wordpress.org/documentation/article/debugging-in-wordpress/) ドキュメントも学習してください。
 
 <!-- 
 ## Debugging constants
