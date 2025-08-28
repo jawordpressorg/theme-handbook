@@ -154,7 +154,7 @@ The `WP_DEBUG_LOG` constant is an optional feature that you can set to log error
 Generally, if you turn off on-screen debugging messages via `WP_DEBUG_DISPLAY`, then you will want to opt for storing these messages in the debug log.
  -->
 
-一般的に、`WP_DEBUG_DISPLAY` 経由でオンスクリーン・デバグ・メッセージをオフにした際は、これらのメッセージをデバグログに保存することを選択したほうが良いでしょう。
+一般的に、`WP_DEBUG_DISPLAY` 経由で画面上のデバッグ・メッセージをオフにした際は、これらのメッセージをデバッグログに保存したほうが良いでしょう。
 
 <!-- 
 To enable logging, define the `WP_DEBUG_LOG` constant as `true` in your `wp-config.php` file:
