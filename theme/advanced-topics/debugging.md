@@ -2,7 +2,7 @@
 # Debugging
  -->
 
-# デバグ
+# デバッグ
 
 <!-- 
 Debugging is the practice of finding and fixing errors in any software that you build. And it is an essential part of WordPress theme development, regardless of whether you are building a block or classic theme. 
