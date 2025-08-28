@@ -185,5 +185,5 @@ There are several plugins that are helpful when debugging your theme. Each is ho
  -->
 
 *   [**Debug Bar**](https://wordpress.org/plugins/debug-bar/)**:** WordPress ツールバー内に、デバッグ用の機能をまとめて配置します。
-*   [**Query Monitor**](https://wordpress.org/plugins/query-monitor/)**:** データベース・クエリー、PHP エラー、フックとアクション、「ブロック・エディター」ブロック、エンキューされたスクリプトとスタイルシート、HTTP API コールなどのデバグを可能にします。
+*   [**Query Monitor**](https://wordpress.org/plugins/query-monitor/)**:** データベース・クエリー、PHP エラー、フックとアクション、「ブロック・エディター」ブロック、エンキューされたスクリプトとスタイルシート、HTTP API コールなどのデバッグを可能にします。
 *   [**Log Deprecated Notices**](https://wordpress.org/plugins/log-deprecated-notices/)**:** あなたのテーマの、不正確で非推奨の関数やファイルの使用状況を、ログに記録します。
