@@ -132,7 +132,7 @@ define( 'WP_DISABLE_FATAL_ERROR_HANDLER', true );
 If you want to disable on-screen debugging messages, you can set `WP_DEBUG_DISPLAY` to `false` in your  `wp-config.php` file:
  -->
 
-画面上のデバグ・メッセージを無効にしたい場合は、あなたの  `wp-config.php` ファイルで `WP_DEBUG_DISPLAY` を `false` に設定できます:
+画面上のデバッグ・メッセージを無効にしたい場合は `wp-config.php` ファイルで `WP_DEBUG_DISPLAY` を `false` に設定します:
 
 ```php
 define( 'WP_DEBUG_DISPLAY', false );
