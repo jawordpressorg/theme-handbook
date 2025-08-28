@@ -8,7 +8,7 @@
 Debugging is the practice of finding and fixing errors in any software that you build. And it is an essential part of WordPress theme development, regardless of whether you are building a block or classic theme. 
  -->
 
-デバグとは、ビルドしたソフトウェアのエラーを見つけて修正する習慣のことです。そして、ブロック・テーマやクラシック・テーマの構築に関係なく、WordPress テーマ開発には欠かせないものです。
+デバッグとは、ビルドしたソフトウェアのエラーを見つけて修正するプロセスです。ブロック・テーマやクラシック・テーマの構築に関係なく、WordPress テーマ開発には欠かせない処理です。
 
 <!-- 
 WordPress provides some tools out of the box, but there are also plugins that you can use to enhance the experience. You’ll learn about some of these methods in this article, but you should also study the [Debugging in WordPress](https://wordpress.org/documentation/article/debugging-in-wordpress/) documentation in the Common APIs handbook.
