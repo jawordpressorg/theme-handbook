@@ -126,7 +126,7 @@ define( 'WP_DISABLE_FATAL_ERROR_HANDLER', true );
 `WP_DEBUG_DISPLAY` is used to control whether debug messages display within the HTML of your WordPress site. By default, when `WP_DEBUG` is enabled, debugging messages will be shown on the screen. So, you can safely not define `WP_DEBUG_DISPLAY` during development.
  -->
 
-`WP_DEBUG_DISPLAY` は、あなたの WordPress サイトの HTML 内にデバグ・メッセージを表示するかどうかを制御するために使用されます。デフォルトでは、`WP_DEBUG` を有効にすると、デバグ・メッセージが画面に表示されます。そのため、開発中は `WP_DEBUG_DISPLAY` を定義しないほうが安全です。
+`WP_DEBUG_DISPLAY` は、あなたの WordPress サイトの HTML 内にデバッグ・メッセージを表示するかどうかの制御に使用されます。デフォルトでは、`WP_DEBUG` を有効にすると、デバッグ・メッセージが画面に表示されます。そのため、開発中は `WP_DEBUG_DISPLAY` を定義しないほうが安全です。
 
 <!-- 
 If you want to disable on-screen debugging messages, you can set `WP_DEBUG_DISPLAY` to `false` in your  `wp-config.php` file:
