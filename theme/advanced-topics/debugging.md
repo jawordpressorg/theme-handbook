@@ -88,7 +88,7 @@ define( 'WP_DEBUG', false );
 To enable debugging, make sure it is set to `true`, as shown here:
  -->
 
-デバグを有効にするには、ここに示すように、`true` に設定されていることを確認します:
+デバッグを有効にするには、ここに示すように、`true` に設定してください:
 
 ```php
 define( 'WP_DEBUG', true );
