@@ -8,7 +8,7 @@
 Whether you are planning to share your WordPress theme with a broad audience or aiming for a specific platform, this article will help you get your theme ready for release. It focuses on general theme testing to ensure your theme’s quality and compatibility across various environments. 
  -->
 
-あなたの WordPress テーマを幅広い読者と共有することを計画している場合でも、特定のプラットフォーム向けにする場合でも、本稿は、あなたのテーマをリリース準備するのに役立ちます。あなたのテーマの品質とさまざまな環境での互換性を保証するための一般的なテーマのテストに焦点を当てています。
+あなたの WordPress テーマを幅広いユーザーと共有することを計画している場合でも、特定のプラットフォーム向けにする場合でも、本稿は、あなたのテーマをリリース準備するのに役立ちます。あなたのテーマの品質とさまざまな環境での互換性を保証するための一般的なテーマのテストに焦点を当てています。
 
 <!-- 
 Expanding on the principles from previous sections, this article covers things like code quality, compatibility, and responsiveness. By the end, your theme will be ready to use on a live site.
