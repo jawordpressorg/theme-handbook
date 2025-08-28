@@ -20,7 +20,7 @@ WordPress はすぐに使えるツールをいくつか提供していますが�
 ## Debugging constants
  -->
 
-## デバグ定数
+## デバッグ定数
 
 <!-- 
 When creating themes from within a development environment, you should always enable debugging to ensure that your theme is not creating notices or errors. WordPress offers several constants, which you can set in your installation’s `wp-config.php` file.
