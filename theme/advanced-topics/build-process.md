@@ -110,7 +110,7 @@ First, open your theme’s `package.json` file and add the following code:
 The `@wordpress/scripts` package has several other [available scripts](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-scripts/#available-scripts) that you can add, but you will definitely need `start` and `build`.
  -->
 
-`@wordpress/scripts` パッケージには、他にも追加できる [利用可能なスクリプト](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-scripts/#available-scripts) がいくつかあるが、`start` と `build` は絶対に必要なものです。
+`@wordpress/scripts` パッケージには、他にも追加できる [利用可能なスクリプト](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-scripts/#available-scripts) がいくつかありますが、`start` と `build` は絶対に必要なものです。
 
 <!-- 
 Now open your command line tool on your computer, navigate to your theme folder, and input the following command:
