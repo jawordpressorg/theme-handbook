@@ -54,7 +54,7 @@ define( 'WP_DEBUG', false );
 This is where you will configure any debugging constants outlined in the sections below. 
  -->
 
-ここで、以下のセクションで説明する、デバグ定数を設定します。 
+ここで、以下のセクションで説明する、デバッグ定数を設定します。 
 
 <!-- 
 ### WP\_DEBUG
