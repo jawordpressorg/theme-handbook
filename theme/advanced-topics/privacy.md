@@ -136,4 +136,4 @@ The new checkbox field is automatically added to comment forms displayed using t
 While most themes will not require any action, it is recommended that you double check that the input and label does not require CSS adjustments in custom themes.
  -->
 
-ほとんどのテーマでは何もする必要はないが、カスタム・テーマでは、入力とラベルに CSS の調整が必要ないか再確認することを推奨します。
+ほとんどのテーマでは何もする必要はありませんが、カスタム・テーマでは、入力とラベルに CSS の調整が必要ないか再確認することを推奨します。
