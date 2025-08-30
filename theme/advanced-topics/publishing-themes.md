@@ -2,7 +2,7 @@
 # Publishing Themes
  -->
 
-# テーマの発表
+# テーマの公開
 
 <!-- 
 Once you have made it through the earlier documentation in this handbook and finally built your first theme, you may also want to share it with others.
