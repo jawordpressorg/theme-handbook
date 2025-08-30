@@ -226,7 +226,7 @@ To successfully self-distribute, focus on creating a secure, user-friendly websi
 Hosting your WordPress theme on [GitHub](https://github.com/) appeals to developers for its version control, collaboration features, and community engagement opportunities. It offers transparency and trust through open-source access, along with free hosting and effective issue tracking. Its developer-centric nature can limit exposure to non-technical audiences. It also lacks a direct update mechanism, posing challenges in user support (though, there are plugins that make updates possible).
  -->
 
-あなたの WordPress テーマを [GitHub](https://github.com/) でホスティングすることは、バージョン管理、コラボレーション機能、そしてコミュニティ参加の機会という点で、開発者に魅力的です。オープンソース・アクセスによる透明性と信頼性を提供し、無料ホスティングと効果的な課題の追跡機能を備えています。その開発者中心の性質は、非技術的オーディエンスへの露出を制限する可能性があります。また、直接的な更新メカニズムも欠如しており、ユーザーサポートにおいて課題を生じています (ただし、更新を可能にするプラグインは存在する)。
+あなたの WordPress テーマを [GitHub](https://github.com/) でホスティングすることは、バージョン管理、コラボレーション機能、そしてコミュニティ参加の機会という点で、開発者にとって魅力的です。オープンソース・アクセスによる透明性と信頼性が提供され、無料ホスティングと効果的な課題の追跡機能があります。ただし、その開発者向けの性質により、技術に明るくないユーザーへのアピールが制限される可能性があります。また、直接的な更新メカニズムも欠如しており、ユーザーサポートに課題があります (ただし、更新を可能にするプラグインは存在します)。
 
 <!-- 
 Best practices for GitHub hosting include maintaining clear documentation, engaging with the community, regular updates, and leveraging GitHub Pages. GitHub can be a powerful platform for collaborative theme development and distribution when used effectively.
