@@ -14,7 +14,7 @@ Welcome to the advanced theme topics documentation. In this chapter, you will le
 While this chapter is considered “advanced” it doesn’t mean you cannot learn something if you’re still getting started on your theme development journey. In many ways, the articles in this chapter are essential if you plan to distribute your theme to others, such as through the [WordPress Theme Directory](https://wordpress.org/themes/).
  -->
 
-本章は「高度な内容」と見なされているが、あなたのテーマ開発の旅がまだ始まったばかりなら、何も学べないという意味ではありません。あなたのテーマを [WordPress テーマ・ディレクトリ](https://wordpress.org/themes/) などを通じて他者に配布する予定がある場合、多くの点で、本章の各稿は不可欠なものです。
+本章は「高度な内容」としていますが、あなたのテーマ開発の旅がまだ始まったばかりなら何も学べない、という意味ではありません。あなたのテーマを [WordPress テーマ・ディレクトリ](https://wordpress.org/themes/) などを通じて他者に配布する予定がある場合、多くの点で、本章の各稿は不可欠なものです。
 
 <!-- 
 ## Navigating this chapter
