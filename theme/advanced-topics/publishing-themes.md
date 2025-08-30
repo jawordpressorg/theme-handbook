@@ -50,7 +50,7 @@ The journey to releasing your block theme begins with a simple yet necessary ste
 Before submitting your theme, make sure to thoroughly [test your theme](https://developer.wordpress.org/themes/advanced-topics/testing/). This includes not only the functionality and responsiveness of the theme but also its content presentation and block editor integration. Use diverse content types to assess how well your theme adapts and displays them, and ensure that there are no [debugging issues](https://developer.wordpress.org/themes/advanced-topics/debugging/).
  -->
 
-あなたのテーマを提出する前に、[あなたのテーマのテスト](https://developer.wordpress.org/themes/advanced-topics/testing/) を徹底的に実施しましょう。これにはテーマの機能性とレスポンシブ性だけでなく、コンテンツの表示方法やブロック・エディターとの統合性も含まれます。多様なコンテンツ・タイプを使用して、あなたのテーマがそれらをどのように適応・表示させるかを評価し、[デバグ課題](https://developer.wordpress.org/themes/advanced-topics/debugging/) が存在しないことを確認してください。
+あなたのテーマを提出する前に、[あなたのテーマのテスト](https://developer.wordpress.org/themes/advanced-topics/testing/) を徹底的に実施しましょう。これにはテーマの機能性とレスポンシブ性だけでなく、コンテンツの表示方法やブロック・エディターとの統合性も含まれます。多様なコンテンツ・タイプを使用して、あなたのテーマがそれらをどのように適応・表示させるかを評価し、[デバッグ課題](https://developer.wordpress.org/themes/advanced-topics/debugging/) が存在しないことを確認してください。
 
 <!-- 
 ### Step 3: Follow the Theme Review Guidelines
