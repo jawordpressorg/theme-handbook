@@ -133,7 +133,7 @@ hover と focus は類似した意味を持つため、同じスタイルを適�
 Though hover and focus have similar meanings, they have different interaction patterns. If you choose a subtle hover state, you should have a more easily identifiable focus state. Hovering over a link is a directed activity, where the user knows where they are in the page and only needs to identify whether that spot is linked. Focus is an undirected activity, where the user needs to discover where their focus has moved to after shifting focus from the previous location.
  -->
 
-hover と focus は類似した意味を持つものの、異なるインタラクション・パターンを有します。微妙な hover 状態を選択する場合、より識別しやすい focus 状態を設けるべきです。リンクの上に hover する行為は、ユーザーがページ内の現在位置を把握した上で、その箇所がリンクかどうかを確認するだけの、指向性のある操作なのです。Focus は、ユーザーはフォーカスを以前の位置から移動させた後、そのフォーカスがどこに移動したかを自ら発見する必要がある、非指向性のない操作なのです。
+hover と focus は類似した意味を持ちますが、異なるインタラクション・パターンを有します。微妙な hover 状態を選択する場合、より識別しやすい focus 状態を設けるべきです。リンクの上に hover する行為は指向性のある操作で、ユーザーはページ内の現在位置を把握しており、ただその箇所がリンクかどうかを確認したいだけです。Focus は指向性のない操作で、ユーザーは以前の位置からフォーカスを移動した後、どこに移動したかを発見する必要があります。
 
 <!-- 
 ## Color Contrast
