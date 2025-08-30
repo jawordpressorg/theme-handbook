@@ -150,7 +150,7 @@ If you’re still unsure about distributing your theme through the official Them
  -->
 
 *   **品質保証:** WordPress ディレクトリ内のテーマは、厳格な審査プロセスを経ているため、その品質で知られています。
-*   **ユーザー信頼度:** WordPress の基準に準拠しているから、ユーザーは公式ディレクトリのテーマを信頼する傾向があります。これにより、他でホストされているものよりも信頼性が高くなります。
+*   **ユーザー信頼度:** 公式ディレクトリのテーマは、WordPress の基準に準拠しているため、ユーザーは信頼する傾向にあります。これにより、他でホストされているものよりも信頼性が高くなります。
 
 <!-- 
 **Support and community engagement:**
