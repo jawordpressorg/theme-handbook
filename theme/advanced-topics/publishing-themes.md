@@ -14,7 +14,7 @@ Once you have made it through the earlier documentation in this handbook and fin
 In this article, you will learn how to package your theme for release and publish it for other WordPress users to install on their own websites. This documentation will focus on submitting themes to the official [WordPress Theme Directory](https://wordpress.org/themes/), but it will also cover some other options.
  -->
 
-本稿では、あなたのテーマをリリース用にパッケージ化し、他の WordPress ユーザーが自身の Web サイトにインストールできるように発表する方法を学びます。本ドキュメントでは、公式 [WordPress テーマ・ディレクトリ](https://wordpress.org/themes/) へのテーマ提出に焦点を当てますが、その他の選択肢についても説明します。
+本稿では、あなたのテーマをリリース用にパッケージ化し、他の WordPress ユーザーが自身の Web サイトにインストールできるように公開する方法を学びます。本ドキュメントでは、公式 [WordPress テーマ・ディレクトリ](https://wordpress.org/themes/) へのテーマ提出に焦点を当てますが、その他の選択肢についても説明します。
 
 <!-- 
 ## Packaging your theme for release
