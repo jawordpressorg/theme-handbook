@@ -256,4 +256,4 @@ However, challenges include intense competition, fees and revenue sharing, adher
 When hosting on third-party marketplaces, it is important to understand the audience, focus on creating high-quality theme, stay informed about marketplace policies, optimize your theme for visibility, and more. While navigating these marketplaces requires balancing their benefits and constraints, they can be a valuable avenue for distributing your WordPress theme to a large audience.
  -->
 
-サードパーティ・マーケットプレイスでホスティングする際には、オーディエンスの理解、高品質テーマの制作への注力、マーケットプレイス・ポリシーについての最新情報の把握、あなたのテーマの可視性の最適化、他が重要です。これらのマーケットプレイスを活用するには、その利点と制約のバランスを取る必要があるが、それらは、あなたの WordPress テーマを多くのオーディエンスに配布するための貴重な手段となり得ます。
+サードパーティ・マーケットプレイスでホスティングする際には、オーディエンスの理解、高品質テーマの制作への注力、マーケットプレイス・ポリシーについての最新情報の把握、あなたのテーマの可視性の最適化、他が重要です。マーケットプレイスの活用は、その利点と制約のバランスを取る必要がある一方で、あなたの WordPress テーマを多くのオーディエンスに配布する貴重な手段となる可能性があります。
