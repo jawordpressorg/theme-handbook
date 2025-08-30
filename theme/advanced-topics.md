@@ -46,7 +46,7 @@ Use the following links to locate a topic within this chapter. Each article cove
 *   [**テスト**](https://developer.wordpress.org/themes/advanced-topics/testing/)**:** あなたのテーマがさまざまな環境で動作することを確認するために、一連のテストツールを通して実行する方法です。
 *   [**デバッグ**](https://developer.wordpress.org/themes/advanced-topics/debugging/)**:** WordPress でデバッグを有効化し、あなたのテーマにエラーがないことを確認する方法です。
 *   [**セキュリティ**](https://developer.wordpress.org/themes/advanced-topics/security/)**:** あなたのテーマを悪用から守るために実施すべき、セキュリティのベスト・プラクティスの概略です。
-*   [**テーマの発表**](https://developer.wordpress.org/themes/advanced-topics/publishing-themes/)**:** あなたのテーマを WordPress.org で発表したり、他者に配布するために必要な手順です。
+*   [**テーマの公開**](https://developer.wordpress.org/themes/advanced-topics/publishing-themes/)**:** あなたのテーマを WordPress.org で公開したり、他者に配布するために必要な手順です。
 
 <!-- 
 This chapter also includes several other documents that are currently undergoing updates. These will eventually be updated or moved to more appropriate chapters:
