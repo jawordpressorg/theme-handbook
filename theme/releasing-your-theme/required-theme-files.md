@@ -8,7 +8,7 @@
 **Block theme:** See [Create a Block Theme](https://developer.wordpress.org/block-editor/how-to-guides/themes/create-block-theme/) for building a block theme  
  -->
 
-**ブロック・テーマ:** ブロック・テーマの構築については、[ブロック・テーマの制作](https://developer.wordpress.org/block-editor/how-to-guides/themes/create-block-theme/) を御覧ください。
+**ブロック・テーマ:** ブロック・テーマの構築については、[ブロック・テーマの制作](https://developer.wordpress.org/block-editor/how-to-guides/themes/create-block-theme/) をご覧ください。
 
 <!-- 
 Classic themes must  include the required theme files. These files must follow template file standards set by the themes team. For Classic themes, additional standard template files are recommended to use. Learn more about the [Organizing Theme Files](https://developer.wordpress.org/themes/basics/organizing-theme-files/).
