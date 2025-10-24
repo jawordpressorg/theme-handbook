@@ -32,7 +32,7 @@ Before testing your theme, make sure you’ve setup a development environment. T
 After you’ve setup your development environment, you’ll need test content to test your theme with. While you can create your own test content, the theme review team has created the [Theme Unit Test](https://codex.wordpress.org/Theme_Unit_Test), which includes many different types of content. This will help ensure that your theme works in circumstances you may not have anticipated.
  -->
 
-あなたの開発環境をセットアップしたら、あなたのテーマをテストするためのテストコンテンツが必要になります。独自のテストコンテンツも作成できるが、テーマレビューチームが [テーマ・ユニットテスト](https://codex.wordpress.org/Theme_Unit_Test) を作成しており、これにはさまざまな種類のコンテンツが含まれています。これにより、想定していなかった状況でもあなたのテーマが正常に動作することを確認できます。
+あなたの開発環境をセットアップしたら、あなたのテーマをテストするためのテストコンテンツが必要になります。独自のテストコンテンツも作成できますが、テーマレビューチームが [テーマ・ユニットテスト](https://codex.wordpress.org/Theme_Unit_Test) (日本語版は[こちら](https://github.com/jawordpressorg/theme-test-data-ja))を作成しており、これにはさまざまな種類のコンテンツが含まれています。これにより、想定していなかった状況でもあなたのテーマが正常に動作することを確認できます。
 
 <!-- 
 The Theme Unit Test is a WordPress export file that can be imported into any WordPress installation by using the WordPress Importer. You should import it into your local development environment.
