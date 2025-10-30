@@ -192,7 +192,7 @@ All `theme.json` code examples in this handbook include the `version` property b
 Technically, you can leave the version out, but WordPress will read your code as if it was on version `1` of the API. Using an outdated version may mean that your code will not be valid, at least as it is documented here in the handbook.
  -->
 
-技術的にはバージョンを省略できるが、その場合、WordPress はあなたのコードを API バージョン `1` のものとして解釈します。古いバージョンを使用すると、少なくとも本ハンドブックに記載されている仕様では、あなたのコードが無効になってしまう可能性があります。
+技術的にはバージョンを省略できますが、その場合、WordPress はあなたのコードを API バージョン `1` のものとして解釈します。古いバージョンを使用すると、少なくとも本ハンドブックに記載されている仕様では、あなたのコードが無効になってしまう可能性があります。
 
 <!-- 
  You should always strive to keep up to date with the latest API version and make sure it is set in your `theme.json` file.
