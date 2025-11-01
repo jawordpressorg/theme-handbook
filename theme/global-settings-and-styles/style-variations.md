@@ -112,7 +112,7 @@ The second difference between `theme.json` and style variations is the variation
 Building off the Latte variation example above, you would open your `/styles/latte.json` file and add it, as shown in this code snippet:
  -->
 
-上記の Latte バリエーションの例にもとづいて、あなたの `/styles/latte.json` ファイルを開き、このコードスニペットに示すように追加します:
+上の Latte バリエーションの例をもとに、`/styles/latte.json` ファイルを開き、以下のコードスニペットのように追加します:
 
 ```json
 {
