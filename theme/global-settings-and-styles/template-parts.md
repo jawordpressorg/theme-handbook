@@ -42,7 +42,7 @@ Technically, you can use custom template parts without ever registering them via
 
 *   UI 上でより訴求力のある、翻訳可能なタイトルをパーツに設定できます。
 *   各パーツをエリアに割り当てることができ、サイトエディターでのユーザー・エクスペリエンスを改善できます。
-*   プラグイン、スタイル・バリエーション、子テーマなどとの連携がより良好です。これらは登録されたメタデータを取得、フィルタリング、あるいは何らかの形で利用する場合があります。
+*   登録されたメタデータを取得、フィルタリング、あるいは何らかの形で利用するプラグイン、スタイルバリエーション、子テーマとの連携が向上します。
 
 <!-- 
 To register template parts, you must pass an array of objects to the `templateParts` property in `theme.json`. Each object in the array accepts three key/value pairs:
