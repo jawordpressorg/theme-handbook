@@ -14,7 +14,7 @@ The `styles` property in `theme.json` lets you configure settings at the global 
 When possible, it is recommended to add your theme styles via the `styles` property, at least for standard WordPress features. This makes it possible for users to customize them via **Appearance > Editor > Styles** without CSS specificity issues.
  -->
 
-可能な場合は、少なくとも標準的な WordPress 機能については、`styles` プロパティを介してあなたのテーマスタイルの追加を推奨します。これにより、ユーザーは CSS の特異性の問題なしに、**外観 > エディター > スタイル** 経由でそれらをカスタマイズできます。
+可能な場合は、少なくとも標準的な WordPress 機能については、`styles` プロパティを介してあなたのテーマスタイルの追加を推奨します。これにより、ユーザーは CSS の詳細度の問題なしに、**外観 > エディター > スタイル** 経由でそれらをカスタマイズできます。
 
 <!-- 
 This document contains links for learning about the available style properties and how to apply styles to your theme via its `theme.json` file.
