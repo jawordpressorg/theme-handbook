@@ -151,7 +151,7 @@ Example usage in `theme.json`:
 ## Dimensions
  -->
 
-## Dimensions
+## 寸法
 
 <!-- 
 The `dimensions` style property lets you define the minimum height for a block or element:
