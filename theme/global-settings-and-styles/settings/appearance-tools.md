@@ -166,4 +166,4 @@ For many publicly-distributed themes, this will not typically be an issue if you
 For agencies and freelancers, this could create issues for your clients. Often, these projects are meant to limit the user interface to only specific design tools that the client needs. If WordPress adds new appearance tools in a future update, it’s possible the client will see new and unfamiliar features. For this reason, leaving `appearanceTools` disabled will often make sense.
  -->
 
-代理店やフリーランサーにとって、これはあなたのクライアントに問題を引き起こす可能性があります。多くの場合、これらのプロジェクトは、UI をクライアントが必要とする特定のデザインツールのみに制限することを、目的としています。WordPress が将来のアップデートで新しい外観ツールを追加した場合、クライアントが新しく見慣れない機能に遭遇する可能性があります。こうした理由から、`appearanceTools` を無効にしたままにしておくことが、多くの場合は合理的です。
+代理店やフリーランサーにとって、これはあなたのクライアントに問題を引き起こす可能性があります。多くの場合、これらのプロジェクトでは、UI をクライアントが必要とする特定のデザインツールのみに制限しています。WordPress が将来のアップデートで新しい外観ツールを追加した場合、クライアントが新しく見慣れない機能に遭遇する可能性があります。こうした理由から、`appearanceTools` を無効にしたままにしておくことが、多くの場合は合理的です。
