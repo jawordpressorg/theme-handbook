@@ -196,7 +196,7 @@ body {
 There is no limit to the amount of nesting you can do, but keep in mind that the more you nest, the longer your CSS custom property names become.
  -->
 
-ネストできる回数に制限はないが、ネストを重ねるほど、CSS カスタム・プロパティ名が長くなる点に留意してください。
+ネストできる回数に制限はありませんが、ネストを重ねるほど、CSS カスタム・プロパティ名が長くなる点に留意してください。
 
 <!-- 
 ## Practical usage
