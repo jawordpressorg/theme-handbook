@@ -8,7 +8,7 @@
 The `settings.dimensions` property in `theme.json` gives you control over the global dimensions settings for blocks. This property lets you decide which dimension controls are available in the user interface.
  -->
 
-`theme.json` 内の `settings.dimensions` プロパティを使用すると、ブロックのグローバルな寸法の設定を制御できます。このプロパティにより、UI で利用可能な寸法制御を決定できます。
+`theme.json` 内の `settings.dimensions` プロパティを使用すると、ブロックのグローバルな寸法の設定を制御できます。このプロパティにより、UI で利用可能な寸法コントロールを決定できます。
 
 <!-- 
 In this document, you will learn what the `dimensions` property is for and how you can use it in your theme.
