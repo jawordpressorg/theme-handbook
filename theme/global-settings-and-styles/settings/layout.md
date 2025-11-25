@@ -159,7 +159,7 @@ Now open your **Site Editor** in the WordPress admin and edit a template. First,
 In the screenshot below, you can see the Post Featured Image block nested within a Group block. It breaks out of its parent container but the other post-related blocks are limited to the content width:
  -->
 
-以下のスクリーンショットでは、「グループ」ブロック内にネストされた「投稿の注目画像」ブロックを確認できます。このブロックは親コンテナから外れるが、他の投稿関連ブロックは、コンテンツ幅に制限されます:
+以下のスクリーンショットでは、「グループ」ブロック内にネストされた「アイキャッチ画像」ブロックを確認できます。このブロックは親コンテナから飛び出しますが、他の投稿関連ブロックは、コンテンツ幅に制限されます:
 
 <!-- 
 [![WordPress site editor with the Post Featured Image block selected and set to "wide width".](https://i0.wp.com/developer.wordpress.org/files/2023/10/wide-size.jpg?resize=2048%2C1066&ssl=1)](https://i0.wp.com/developer.wordpress.org/files/2023/10/wide-size.jpg?ssl=1)
