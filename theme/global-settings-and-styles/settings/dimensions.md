@@ -32,7 +32,7 @@ In this document, you will learn what the `dimensions` property is for and how y
 *   **`minHeight`:** A boolean value for enabling block support for the **Minimum Height** control.
  -->
 
-*   **`minHeight`:** **最小の高さ** 制御のブロック・サポートを有効にする真偽値。
+*   **`minHeight`:** **最小の高さ** コントロールのブロック・サポートを有効にする真偽値。
 
 <!-- 
 Take a look at the `dimensions` property in the context of a `theme.json` file with its default values:
