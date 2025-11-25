@@ -165,4 +165,4 @@ In the screenshot below, you can see the Post Featured Image block nested within
 [![WordPress site editor with the Post Featured Image block selected and set to "wide width".](https://i0.wp.com/developer.wordpress.org/files/2023/10/wide-size.jpg?resize=2048%2C1066&ssl=1)](https://i0.wp.com/developer.wordpress.org/files/2023/10/wide-size.jpg?ssl=1)
  -->
 
-[![「投稿の注目画像」ブロックが選択され、「幅広」に設定された WordPress サイト・エディター。](https://i0.wp.com/developer.wordpress.org/files/2023/10/wide-size.jpg?resize=2048%2C1066&ssl=1)](https://i0.wp.com/developer.wordpress.org/files/2023/10/wide-size.jpg?ssl=1)
+[![「アイキャッチ画像」ブロックが選択され、「幅広」に設定された WordPress サイト・エディター。](https://i0.wp.com/developer.wordpress.org/files/2023/10/wide-size.jpg?resize=2048%2C1066&ssl=1)](https://i0.wp.com/developer.wordpress.org/files/2023/10/wide-size.jpg?ssl=1)
