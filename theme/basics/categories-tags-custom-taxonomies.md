@@ -72,7 +72,7 @@ WordPress のデフォルト・タクソノミーは、次のとおりです:
 Terms are items within your taxonomy. So, for example, if you have the *Animal* taxonomy you would have the terms, dogs, cats, and sheep. Terms can be created via the WordPress admin, or you can use the [wp\_insert\_term()](https://developer.wordpress.org/reference/functions/wp_insert_term/ "wp_insert_term") function.
  -->
 
-タームとは、あなたのタクソノミー内の項目です。たとえば、*動物* というタクソノミーを定義した場合、そのタームとして犬、猫、羊などが存在します。タームは WordPress 管理画面から作成できるし、[wp\_insert\_term()](https://developer.wordpress.org/reference/functions/wp_insert_term/ "wp_insert_term") 関数も使用できます。
+タームとは、あなたのタクソノミー内の項目です。たとえば、*動物* というタクソノミーを定義した場合、そのタームとして犬、猫、羊などが存在します。タームは WordPress 管理画面から作成できますし、[wp\_insert\_term()](https://developer.wordpress.org/reference/functions/wp_insert_term/ "wp_insert_term") 関数も使用できます。
 
 <!-- 
 ## Database Schema
