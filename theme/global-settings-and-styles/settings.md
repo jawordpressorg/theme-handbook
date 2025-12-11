@@ -89,7 +89,7 @@ Use the following links to explore specific settings that you can configure in y
 *   **[`dimensions`](https://developer.wordpress.org/themes/global-settings-and-styles/settings/dimensions/):** 最小高の設定を構成します。
 *   **[`layout`](https://developer.wordpress.org/themes/global-settings-and-styles/settings/layout/):** コンテンツ幅や幅広などのレイアウト・プロパティを設定するために使用します。
 *   **[`lightbox`](https://developer.wordpress.org/themes/global-settings-and-styles/settings/lightbox/):** 画像ライトボックス機能を設定します。
-*   **[`position`](https://developer.wordpress.org/themes/global-settings-and-styles/settings/position/):** 現在、スティッキー配置のサポートを定義します。
+*   **[`position`](https://developer.wordpress.org/themes/global-settings-and-styles/settings/position/):** 現在、固定表示のサポートを定義します。
 *   **[`shadow`](https://developer.wordpress.org/themes/global-settings-and-styles/settings/shadow/):** ボックス・シャドウのサポートやカスタム・シャドウ・プリセットを設定します。
 *   **[`spacing`](https://developer.wordpress.org/themes/global-settings-and-styles/settings/spacing/):** マージンやパディングなど、間隔関連の設定を構成するために使用されます。
 *   **[`typography`](https://developer.wordpress.org/themes/global-settings-and-styles/settings/typography/):** タイポグラフィ関連の設定、カスタム・フォント・サイズの定義、フォント・ファミリーの登録に使用されます。
@@ -100,4 +100,4 @@ Use the following links to explore specific settings that you can configure in y
 The Theme Handbook also maintains a [reference for available settings](https://developer.wordpress.org/themes/global-settings-and-styles/settings/settings-reference/) based on the `theme.json` schema.
  -->
 
-テーマ・ハンドブックは、`theme.json` スキーマにもとづく [利用可能な設定のリファレンス](https://developer.wordpress.org/themes/global-settings-and-styles/settings/settings-reference/) もメンテナンスしてあります。
+テーマ・ハンドブックは、`theme.json` スキーマにもとづく [利用可能な設定のリファレンス](https://developer.wordpress.org/themes/global-settings-and-styles/settings/settings-reference/) もメンテナンスしています。
