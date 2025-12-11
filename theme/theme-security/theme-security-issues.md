@@ -2,7 +2,7 @@
 # Theme security issues
  -->
 
-# テーマ・セキュリティ課題
+# テーマ・セキュリティ問題
 
 <!-- 
 Please do not report security issues with WordPress Core to the themes team. To report an issue with WordPress itself, [follow the directions for reporting security vulnerabilities.](https://make.wordpress.org/core/handbook/testing/reporting-security-vulnerabilities/)
