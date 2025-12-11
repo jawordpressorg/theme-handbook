@@ -95,7 +95,7 @@ Test your theme update carefully and submit it through the [upload form on the t
 [Learn more about how the Themes team works with theme suspensions and delisting](https://make.wordpress.org/themes/handbook/review/theme-suspension/).
  -->
 
-[テーマチームがテーマの一時停止および削除を、どのように扱うかについて、詳しくご覧ください](https://make.wordpress.org/themes/handbook/review/theme-suspension/)。
+[テーマチームがテーマの一時停止および削除をどのように扱うかについては、こちらをご覧ください](https://make.wordpress.org/themes/handbook/review/theme-suspension/)。
 
 <!-- 
 ### Resources
