@@ -1061,7 +1061,7 @@ See also [is\_archive()](https://developer.wordpress.org/reference/functions/is_
 When more than one author has published posts for a site. Available with Version 3.2.
  -->
 
-複数の作者がサイトに投稿を公開した場合。v3.2で利用できるようになりました。
+複数の投稿者がサイトに投稿を公開した場合。v3.2で利用できるようになりました。
 
 <!-- 
 ### A Date Page
