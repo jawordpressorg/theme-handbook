@@ -14,7 +14,7 @@ Conditional Tags can be used in your Template Files in classic themes to alter t
 The code begins by checking to see **if** a statement is true or false. If the statement is found to be true, the first set of code is executed. If it’s false, the first set of code is skipped, and the second set of code (after the **else**) is executed instead.
  -->
 
-コードはまず **if** という条件が真か偽かを判定します。条件が真と判定された場合、最初のコード群が実行されます。偽の場合、最初のコード群はスキップされ、代わりに (**else** 以降の) 2番目のコード群が実行されます。
+コードはまず **if** 文が真か偽かを判定します。文が真と判定された場合、最初のコード群が実行されます。偽の場合、最初のコード群はスキップされ、代わりに (**else** 以降の) 2番目のコード群が実行されます。
 
 <!-- 
 For example, you could ask if a user is logged in, and then provide a different greeting depending on the result.
