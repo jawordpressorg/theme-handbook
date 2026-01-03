@@ -248,7 +248,7 @@ is_single( array( 'Beef Stew', 'Pea Soup', 'Chilli' ) );
 Returns true when the single post being displayed is either the post\_title is “Beef Stew”, post\_title is “Pea Soup” or post\_title is “Chilli”.
  -->
 
-表示されている個別投稿が、`post_title` が「ビーフシチュー」、`post_title` が「エンドウ豆のスープ」、または `post_title` が「チリ」のいずれかである場合に、真を返します。
+表示されている個別投稿が、`post_title` が「Beef Stew」、`post_title` が「Pea Soup」、または `post_title` が「Chilli」のいずれかである場合に、真を返します。
 
 <!-- 
 Note: This function does not distinguish between the post ID, post title, or post name. A post named “17” would be displayed if a post ID of 17 was requested. Presumably the same holds for a post with the slug “17”.
