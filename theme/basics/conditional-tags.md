@@ -218,7 +218,7 @@ is_single( array( 17, 'beef-stew', 'Irish Stew' ) );
 Returns true when the single post being displayed is either post ID 17, or the post\_name is “beef-stew”, or the post\_title is “Irish Stew”.
  -->
 
-表示されている個別投稿が、投稿 ID17、または `post_name` が「beef-stew」、または `post_title` が「Irish Stew」のいずれかに該当する場合に、真を返します。
+表示されている個別投稿の投稿 ID が 17、または `post_name` が「beef-stew」、または `post_title` が「Irish Stew」のいずれかに該当する場合に、真を返します。
 
 ```php
 is_single( array( 17, 19, 1, 11 ) );
