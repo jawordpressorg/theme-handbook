@@ -178,7 +178,7 @@ This condition returns true when the Dashboard or the administration panels are 
 Returns true when any single Post (or attachment, or custom Post Type) is being displayed. This condition returns false if you are on a page.
  -->
 
-任意の「個別投稿」(または添付ファイル、「カスタム投稿タイプ」) が表示されている場合に、真を返します。ページを表示している場合、この条件は偽を返します。
+任意の「個別投稿」(または添付ファイル、「カスタム投稿タイプ」) が表示されている場合に、真を返します。固定ページを表示している場合、この条件は偽を返します。
 
 ```php
 is_single( '17' );
