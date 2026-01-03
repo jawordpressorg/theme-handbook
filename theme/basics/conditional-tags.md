@@ -1157,7 +1157,7 @@ If today is a new day according to post date. Should be used inside the loop.
 When any type of Archive page is being displayed. Category, Tag, Author and Date based pages are all types of Archives.
  -->
 
-任意のタイプのアーカイブ・ページが表示されている場合。カテゴリー、タグ、作者、日付にもとづくページは、すべてアーカイブのタイプです。
+任意のタイプのアーカイブ・ページが表示されている場合。カテゴリー、タグ、投稿者、日付にもとづくページは、すべてアーカイブのタイプです。
 
 <!-- 
 ### A Search Result Page
