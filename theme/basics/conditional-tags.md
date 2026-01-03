@@ -1049,7 +1049,7 @@ See also [is\_archive()](https://developer.wordpress.org/reference/functions/is_
 ### A Multi-author Site
  -->
 
-### 複数作者サイト
+### 複数投稿者サイト
 
 <!-- 
 [is\_multi\_author()](https://developer.wordpress.org/reference/functions/is_multi_author/ "Function Reference/is multi author")
