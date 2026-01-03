@@ -1508,7 +1508,7 @@ Determines if a site is the main site in a network.
 Determines if a user is a network (super) admin.
  -->
 
-ユーザーがネットワーク (スーパー) 管理者であるかどうかを判定します。
+ユーザーがネットワーク (特権) 管理者であるかどうかを判定します。
 
 <!-- 
 ### An Active Plugin
