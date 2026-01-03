@@ -1672,7 +1672,7 @@ if ( is_post_type_archive( 'movies' ) || is_tax( 'genre' ) || is_tax( 'actor' ) 
 ### Date Based Differences
  -->
 
-### 日付にもとづく相違点
+### 日付にもとづく変更
 
 <!-- 
 If someone browses our site by date, let’s distinguish posts in different years by using different colors:
