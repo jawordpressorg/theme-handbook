@@ -96,7 +96,7 @@ Listed below are the conditions under which each of the following **conditional 
 This condition returns true when the main blog page is being displayed, usually in standard reverse chronological order. If your home page has been set to a Static Page instead, then this will only prove true on the page which you set as the “Posts page” in Settings > Reading.
  -->
 
-この条件は、メインのブログページが表示されている場合に真を返し、通常は標準的な新しい順で表示されます。あなたのホームページが代わりに「静的ページ」に設定されている場合、この条件が真となるのは、「設定 > 表示設定」で「投稿ページ」として設定したページのみに限定されます。
+この条件は、メインのブログページが表示されている場合に真を返します。ブログページは通常標準的な、投稿の新しい順で表示されます。あなたのホームページが代わりに「静的ページ」に設定されている場合、この条件が真となるのは、「設定 > 表示設定」で「投稿ページ」として設定したページのみに限定されます。
 
 <!-- 
 ### The Front Page
