@@ -14,7 +14,7 @@ style.css とは、すべての WordPress テーマに必要なスタイルシ�
 ## Location
  -->
 
-## ロケーション
+## ファイルの場所
 
 <!-- 
 In order for WordPress to recognize the set of theme template files as a valid theme, the style.css file needs to be located in the root directory of your theme, not a subdirectory.
