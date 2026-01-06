@@ -2,7 +2,7 @@
 # Linking Theme Files &amp; Directories
  -->
 
-# テーマ・ファイルと &amp; ディレクトリのリンク
+# テーマ・ファイル &amp; ディレクトリのリンク
 
 <!-- 
 ## Linking to Core Theme Files
