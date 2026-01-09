@@ -345,7 +345,7 @@ The same approach applies when using `wp_enqueue_script()`.
 When specifying a delayed script loading strategy, consideration of the script’s dependency tree (its dependencies and/or dependents) is taken into account when deciding on an “eligible strategy” so as not to result in application of a strategy that is valid for one script but detrimental to others in the tree by causing an unintended out of order of execution. As a result of such logic, the intended loading strategy that you pass via the `$args` parameter may not be the final (chosen) strategy, but it will never be detrimental to (or stricter than) the intended strategy.
  -->
 
-遅延スクリプト・ロード戦略を指定する際には、スクリプトの依存関係ツリー (依存関係および/または依存先) を考慮に入れ、「適格な戦略」を決定することにより、あるスクリプトには有効だがツリー内の他のスクリプトに悪影響を及ぼす (意図しない実行順序の乱れを引き起こす) 戦略が適用される事態を回避できます。このようなロジックの結果、`$args` パラメータ経由で渡した意図するロード戦略が最終 (選択) 戦略とはならない場合がありますが、意図した戦略に悪影響を与える (またはそれより厳格な) 戦略が選択されることは、決してありません。
+遅延スクリプト・ロード戦略を指定する際には、スクリプトの依存関係ツリー (依存関係および/または依存先) を考慮に入れ、あるスクリプトには有効だがツリー内の他のスクリプトに悪影響を及ぼす (意図しない実行順序の乱れを引き起こす) 戦略が適用されないように「適格な戦略」を決定します。このようなロジックの結果、`$args` パラメータ経由で渡した意図するロード戦略が最終 (選択) 戦略とはならない場合がありますが、意図した戦略に悪影響を与える (または意図した戦略よりも厳格な) 戦略が選択されることは、決してありません。
 
 <!-- 
 ### The Comment Reply Script
