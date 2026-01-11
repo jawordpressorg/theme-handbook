@@ -641,7 +641,7 @@ Here is a list of all available filters in the template hierarchy:
 For example, let ’s take the default author hierarchy:
  -->
 
-たとえば、デフォルトの作者階層を例に取ると:
+たとえば、デフォルトの投稿者階層を例に取ると:
 
 <!-- 
 *   `author-{nicename}.php`
