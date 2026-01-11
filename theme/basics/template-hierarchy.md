@@ -388,7 +388,7 @@ To display a tag archive index page, WordPress uses the following path:
 ### Author display
  -->
 
-### 作者表示
+### 投稿者表示
 
 <!--
 Based on the above examples, rendering author archive index pages is fairly explanatory:
