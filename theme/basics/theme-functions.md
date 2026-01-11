@@ -261,7 +261,7 @@ load_theme_textdomain( 'myfirsttheme', get_template_directory() . '/languages' )
 [Post thumbnails and featured images](https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/ "Featured Images & Post Thumbnails") allow your users to choose an image to represent their post. Your theme can decide how to display them, depending on its design. For example, you may choose to display a post thumbnail with each post in an archive view. Or, you may want to use a large featured image on your homepage. This feature is automatically enabled for block themes, and does not need to be included during theme setup.
  -->
 
-[投稿サムネイルと注目画像](https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/ "Featured Images & Post Thumbnails") は、あなたのユーザーが、自身の投稿を表す画像を選択できるようにします。あなたのテーマは、そのデザインに応じて、それらをどのように表示するかを決定できます。たとえば、アーカイブ表示の各投稿に、投稿サムネイルを表示するように選択できます。あるいは、あなたのホームページで、大きな注目画像を使用したい場合もあるでしょう。ブロック・テーマでは、この機能は自動的に有効化され、テーマ・セットアップ時に含める必要はありません。
+[投稿サムネイルとアイキャッチ画像](https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/ "Featured Images & Post Thumbnails") は、あなたのユーザーが、自身の投稿を表す画像を選択できるようにします。あなたのテーマは、そのデザインに応じて、それらをどのように表示するかを決定できます。たとえば、アーカイブ表示の各投稿に、投稿サムネイルを表示するように選択できます。あるいは、あなたのホームページで、大きなアイキャッチ画像を使用したい場合もあるでしょう。ブロック・テーマでは、この機能は自動的に有効化され、テーマ・セットアップ時に含める必要はありません。
 
 ```php
 add_theme_support( 'post-thumbnails' );
