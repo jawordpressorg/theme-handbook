@@ -90,7 +90,7 @@ Each theme has its own functions file, but only code in the active theme’s `f
 A [child theme](https://developer.wordpress.org/themes/advanced-topics/child-themes/) can have its own `functions.php` file. Adding a function to the child functions file is a risk-free way to modify a parent theme. That way, when the parent theme is updated, you don’t have to worry about your newly added function disappearing.
  -->
 
-[子テーマ](https://developer.wordpress.org/themes/advanced-topics/child-themes/) は、独自の `functions.php` ファイルを持つことができます。子テーマの関数ファイルに関数を追加することは、親テーマを変更するリスクのない方法です。そうすることで、親テーマが更新されても、あなたが新しく追加した関数が消えてしまう心配はありません。
+[子テーマ](https://developer.wordpress.org/themes/advanced-topics/child-themes/) は、独自の `functions.php` ファイルを持つことができます。子テーマの `functions.php` ファイルに関数を追加することは、親テーマを変更するリスクのない方法です。そうすることで、親テーマが更新されても、あなたが新しく追加した関数が消えてしまう心配はありません。
 
 <!-- 
 Although the child theme’s `functions.php` is loaded by WordPress right before the parent theme’s `functions.php`, it does not *override* it. The child theme’s `functions.php` can be used to augment or replace the parent theme’s functions. Similarly, `functions.php` is loaded *after any plugin files have loaded*.
