@@ -547,7 +547,7 @@ The embed template file is used to render a post which is being embedded. Since
 Since WordPress 4.7, any dynamic part of a template name which includes non-ASCII characters in its name actually supports both the un-encoded and the encoded form, in that order. You can choose which to use.
  -->
 
-WordPress v4.7以降、テンプレート名に含まれる動的部分で、非 ASCII 文字を含むものは、エンコードされていない形式とエンコードされた形式の両方を、実際にはその順序でサポートしています。どちらを使用するか選択できます。
+WordPress v4.7以降、テンプレート名の非 ASCII 文字を含む動的部分は、エンコードされていない形式とエンコードされた形式の両方を、その順序でサポートします。どちらを使用するか選択できます。
 
 <!--
 Here’s the page template hierarchy for a page named “Hello World 😀” with an ID of `6`:
