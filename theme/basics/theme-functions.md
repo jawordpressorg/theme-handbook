@@ -2,7 +2,7 @@
 # Theme Functions
  -->
 
-# テーマ関数
+# テーマの関数
 
 <!-- 
 `Functions.php` can be used by both classic themes, block themes, and child themes.
