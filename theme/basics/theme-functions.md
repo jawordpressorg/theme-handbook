@@ -124,7 +124,7 @@ WordPress では、2つ以上の関数、クラス、または変数が同じ名
 Theme developers should ensure that their functions, classes, and variables have unique names that do not conflict with those used by WordPress core or other plugins. They should also prefix their function and class names with a unique identifier, such as the theme name or abbreviation, to minimize the chances of a naming conflict.
  -->
 
-テーマ開発者は、自身の関数、クラス、変数が WordPress コアや他のプラグインで使用されているものと衝突しない、一意の名称であることを確認する必要があります。また、名称衝突の可能性を最小限に抑えるため、関数名やクラス名には、テーマ名や略称など、一意の識別子を接頭辞として付けるべきです。
+テーマ開発者は、自身の関数、クラス、変数が WordPress コアや他のプラグインで使用されているものと衝突しない、一意の名称であることを確認する必要があります。また、名前衝突の可能性を最小限に抑えるため、関数名やクラス名には、テーマ名や略称など、一意の識別子を接頭辞として付けるべきです。
 
 <!-- 
 ## Examples
