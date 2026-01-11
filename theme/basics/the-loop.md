@@ -176,7 +176,7 @@ The Loop can display a number of different elements for each post. For example, 
 *   `[next_post_link()](https://developer.wordpress.org/reference/functions/next_post_link/)` – 表示中の投稿の *後に* 公開された、投稿へのリンクです
 *   `[previous_post_link()](https://developer.wordpress.org/reference/functions/previous_post_link/)` – 表示中の投稿の *前に* 公開された、投稿へのリンクです
 *   `[the_category()](https://developer.wordpress.org/reference/functions/the_category/)` – 表示中の投稿またはページに関連付けられた、カテゴリーです
-*   `[the_author()](https://developer.wordpress.org/reference/functions/the_author/)` – 投稿またはページの作者です
+*   `[the_author()](https://developer.wordpress.org/reference/functions/the_author/)` – 投稿またはページの投稿者です
 *   `[the_content()](https://developer.wordpress.org/reference/functions/the_content/)` – 投稿またはページにおける、メイン・コンテンツです
 *   `[the_excerpt()](https://developer.wordpress.org/reference/functions/the_excerpt/)` – 投稿のメイン・コンテンツの最初の55語と、その後に続く省略記号 (…) または投稿全文を表示する「続きを読む」リンクです。投稿の「抜粋」フィールドを使用して、特定の抜粋の長さもカスタマイズできます。
 *   `[the_ID()](https://developer.wordpress.org/reference/functions/the_id/)` – 投稿またはページの ID です
