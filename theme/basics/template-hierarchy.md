@@ -394,7 +394,7 @@ To display a tag archive index page, WordPress uses the following path:
 Based on the above examples, rendering author archive index pages is fairly explanatory:
  -->
 
-上記の例にもとづけば、作者アーカイブ・インデックス・ページのレンダリングは、かなり自明です:
+上記の例にもとづけば、投稿者アーカイブ・インデックス・ページのレンダリングは、かなり自明です:
 
 <!--
 1.  `author-{nicename}.php` – If the author’s nice name is `matt`, WordPress will look for `author-matt.php`.
