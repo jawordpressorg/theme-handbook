@@ -213,7 +213,7 @@ You can also use [conditional tags](https://developer.wordpress.org/themes/basic
 *   `[is_page_template()](https://developer.wordpress.org/reference/functions/is_page_template/)` – ページが、特定のテンプレートを使用しているかどうかを判別するために使用できます。たとえば: `is_page_template('about-page.php')`
 *   `[is_category()](https://developer.wordpress.org/reference/functions/is_category/)` – ページまたは投稿が、指定されたカテゴリーを持っている場合、真を返します。たとえば: `is_category('news')`
 *   `[is_tag()](https://developer.wordpress.org/reference/functions/is_tag/)` – ページまたは投稿が、指定されたタグを持っている場合、真を返します
-*   `[is_author()](https://developer.wordpress.org/reference/functions/is_author/)` – 作者のアーカイブ・ページ内である場合、真を返します
+*   `[is_author()](https://developer.wordpress.org/reference/functions/is_author/)` – 投稿者のアーカイブ・ページ内である場合、真を返します
 *   `[is_search()](https://developer.wordpress.org/reference/functions/is_search/)` – 表示中のページが、検索結果ページの場合、真を返します
 *   `[is_404()](https://developer.wordpress.org/reference/functions/is_404/)` – 表示中のページが、存在しない場合、真を返します
 *   `[has_excerpt()](https://developer.wordpress.org/reference/functions/has_excerpt/)` – 投稿またはページに抜粋がある場合、真を返します
