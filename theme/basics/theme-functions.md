@@ -136,7 +136,7 @@ Theme developers should ensure that their functions, classes, and variables have
 Below are a number of examples that you can use in your functions.php file to support various features. Each of these examples are allowed in your theme if you choose to submit it to the WordPress.org theme directory.
  -->
 
-以下に、さまざまな機能をサポートするために、あなたの functions.php ファイルで使用できる、いくつかの例を示します。これらの例はいずれも、WordPress.org テーマ・ディレクトリに提出することを選択した場合、あなたのテーマでの使用が許可されています。
+以下に、さまざまな機能をサポートするために、あなたの functions.php ファイルで使用できる、いくつかの例を示します。WordPress.org テーマ・ディレクトリに登録する際、これらの例はいずれもテーマ内での使用が許可されています。
 
 <!-- 
 ### Theme Setup
