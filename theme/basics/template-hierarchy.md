@@ -374,7 +374,7 @@ To display a tag archive index page, WordPress uses the following path:
 2.  `archive.php`
 3.  `index.php`
  -->
-1.  `archive-{post_type}.php` - 投稿タイプが `product` の場合、WordPress は `archive-product.php` を探します。
+1. `archive-{post_type}.php` - 投稿タイプが `product` の場合、WordPress は `archive-product.php` を探します。
 2.  `archive.php`
 3.  `index.php`
 
