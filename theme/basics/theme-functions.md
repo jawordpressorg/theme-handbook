@@ -84,7 +84,7 @@ Meanwhile, a `functions.php` file:
 Each theme has its own functions file, but only code in the active theme’s `functions.php` is actually run. If your theme already has a functions file, you can add code to it. If not, you can create a plain-text file named `functions.php` to add to your theme’s directory, as explained below.
  -->
 
-各テーマには独自の関数ファイルがありますが、実際に実行されるのは、有効化されているテーマの `functions.php` 内のコードのみです。あなたのテーマにすでに関数ファイルがある場合は、そこにコードを追加できます。ない場合は、下記で説明するとおり、あなたのテーマのディレクトリに `functions.php` という名前のプレーン・テキストファイルを作成して追加できます。
+各テーマには独自の `functions.php` ファイルがありますが、実際に実行されるのは、有効化されているテーマの `functions.php` 内のコードのみです。あなたのテーマにすでに `functions.php` ファイルがある場合は、そこにコードを追加できます。ない場合は、下記で説明するとおり、あなたのテーマのディレクトリに `functions.php` という名前のプレーン・テキストファイルを作成して追加できます。
 
 <!-- 
 A [child theme](https://developer.wordpress.org/themes/advanced-topics/child-themes/) can have its own `functions.php` file. Adding a function to the child functions file is a risk-free way to modify a parent theme. That way, when the parent theme is updated, you don’t have to worry about your newly added function disappearing.
