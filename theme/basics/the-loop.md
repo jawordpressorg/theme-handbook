@@ -509,7 +509,7 @@ endwhile;
 Using two loops with the same query was relatively easy but not always what you will need. Instead, you will often want to create a secondary query to display different content on the template. For example, you might want to display two groups of posts on the same page, but do different things to each group. A common example of this, as shown below, is displaying a single post with a list of posts from the same category below the single post.
  -->
 
-同じクエリーを2つのループで使用するのは比較的簡単ですが、常に必要な方法とは限りません。代わりに、テンプレート上で別のコンテンツを表示するために、第二のクエリーを作成することがよくあります。たとえば、同じページに2つの投稿グループを表示したいが、各グループでは異なる処理を行いたい場合があります。以下に示すように、この一般的な例として、個別投稿を表示し、その個別投稿の下に同じカテゴリーに由来する投稿リストを表示することが挙げられます。
+同じクエリーで2つのループで使用するのは比較的簡単ですが、必ずしも求める方法ではないかもしれません。代わりに、テンプレート上で別のコンテンツを表示するために、第二のクエリーを作成することがよくあります。たとえば、同じページに2つの投稿グループを表示したいが、各グループでは異なる処理を行いたい場合があります。以下に示すように、この一般的な例として、個別投稿を表示し、その個別投稿の下に同じカテゴリーに由来する投稿リストを表示することが挙げられます。
 
 <!--
 ```php
