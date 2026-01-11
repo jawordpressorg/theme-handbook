@@ -118,7 +118,7 @@ With `functions.php` you can:
 In WordPress, naming conflicts can occur when two or more functions, classes, or variables have the same name. This can cause errors or unexpected behavior in a WordPress site. It is the responsibility of both the theme developer and plugin developer to avoid naming conflicts in their respective code.
  -->
 
-WordPress では、2つ以上の関数、クラス、または変数が同じ名称である場合に名称衝突が発生する可能性があります。これにより、WordPress サイトでエラーや予期しない挙動が引き起こされることがあります。テーマ開発者とプラグイン開発者の双方が、それぞれのコード内で、名称衝突を回避する責任を負います。
+WordPress では、2つ以上の関数、クラス、または変数が同じ名前である場合に名前衝突が発生する可能性があります。これにより、WordPress サイトでエラーや予期しない挙動が引き起こされることがあります。テーマ開発者とプラグイン開発者の双方が、それぞれのコード内で、名前衝突を回避する責任を負います。
 
 <!-- 
 Theme developers should ensure that their functions, classes, and variables have unique names that do not conflict with those used by WordPress core or other plugins. They should also prefix their function and class names with a unique identifier, such as the theme name or abbreviation, to minimize the chances of a naming conflict.
