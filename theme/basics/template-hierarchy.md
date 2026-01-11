@@ -403,7 +403,7 @@ Based on the above examples, rendering author archive index pages is fairly expl
 4.  `archive.php`
 5.  `index.php`
  -->
-1.  `author-{nicename}.php` - 作者のニックネームが `matt` の場合、WordPress は `author-matt.php` を探します。
+1.  `author-{nicename}.php` - 投稿者のニックネームが `matt` の場合、WordPress は `author-matt.php` を探します。
 2.  `author-{id}.php` - 作者の ID が6の場合、WordPress は `author-6.php` を探します。
 3.  `author.php`
 4.  `archive.php`
