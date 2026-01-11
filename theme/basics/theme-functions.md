@@ -110,7 +110,7 @@ With `functions.php` you can:
 *   Define functions you wish to reuse in multiple theme template files.
  -->
 
-*   WordPress フックを使用する。たとえば、with [the `excerpt_length`](https://developer.wordpress.org/reference/hooks/excerpt_length/) フィルターで、あなたの投稿の抜粋長を (デフォルトの55語から) 変更できます。
+*   WordPress フックを使用する。たとえば、[`excerpt_length`](https://developer.wordpress.org/reference/hooks/excerpt_length/) フィルターを使用すると、投稿の抜粋長を (デフォルトの55語から) 変更できます。
 *   `[add_theme_support()](https://developer.wordpress.org/reference/functions/add_theme_support/)` で WordPress 機能を有効化する。たとえば、投稿サムネイル、投稿フォーマット、ナビゲーション・メニューを有効化します。
 *   複数のテーマ・テンプレート・ファイルで再利用したい関数を、定義します。
 
