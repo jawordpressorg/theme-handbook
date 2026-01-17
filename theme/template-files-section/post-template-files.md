@@ -239,4 +239,4 @@ Most themes have a search.php file so it is clear to users that their query went
 This code snippet pulls in the query that was searched with `get_search_query()`. Often `search.php` will only pull in the excerpt instead of the full content since the user is trying to determine if the article or page fits their search.
  -->
 
-本コードスニペットは、`get_search_query()` で検索されたクエリーを取得します。多くの場合、`search.php` は、記事やページが検索条件に合致するか判断するため、全文ではなく抜粋のみを取得します。
+本コードスニペットは、`get_search_query()` で検索されたクエリーを取得します。多くの場合、`search.php` は、ユーザーが検索結果の記事やページが希望に合致するか判断できるよう、全文ではなく抜粋のみを取得します。
