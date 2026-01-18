@@ -207,7 +207,7 @@ If you need a refresher on what [categories, tags, & taxonomies](https://develop
 You might want most of your blog posts to display the same way except for any blogs that are categorized as recipes, because all recipes have ingredients and instrucitons sections. Therefore, you may want to build a `category-recipe.php` file to display your recipe blog posts in a grid view with some of the important details about the recipe visible.
  -->
 
-ほとんどのブログ投稿は同一の表示形式でも、「レシピ」カテゴリーに分類される投稿は、材料や手順のセクションを含めるため、例外にしたい場合があります。このようなとき`category-recipe.php` ファイルを作成すると、レシピに関する重要な詳細の一部とともにグリッドビューでブログ投稿を表示できます。
+ほとんどのブログ投稿は同一の表示形式でも、「レシピ」カテゴリーに分類される投稿は、材料や手順のセクションを含めるため、例外にしたい場合があります。このようなとき `category-recipe.php` ファイルを作成すると、レシピに関する重要な詳細の一部とともにグリッドビューでブログ投稿を表示できます。
 
 <!-- 
 Additionally, perhaps chocolate is a really important tag for the theme you’re building. It might make sense to build a `tag-chocolate.php` file so that you can display a specialized banner image of chocolate.
