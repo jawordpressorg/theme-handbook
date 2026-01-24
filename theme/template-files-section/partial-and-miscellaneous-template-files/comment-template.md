@@ -313,7 +313,7 @@ Checks to see if there are enough comments to merit adding comment navigation an
 ### Comments are closed message.
  -->
 
-### コメントは、受け付けていません。
+### 「コメントは、受け付けていません。」メッセージ
 
 <!-- 
 If comments aren’t open, displays a line indicating that they’re closed.
