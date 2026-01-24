@@ -244,7 +244,7 @@ What if you want to display different text based on the category page that the v
 Again, this code would be added before the loop:
  -->
 
-再び、本このコードは、ループの前に追加します:
+再び、本コードは、ループの前に追加します:
 
 ```php
 <?php if ( is_category( 'Category A' ) ) : ?>
