@@ -26,7 +26,7 @@ Not all template files generate the entire content that will be rendered by the 
 The `header.php` file does exactly what you would expect.  It contains all the code that the browser will render for the header. This is a partial template file because unless a different template file calls the [template tag](https://developer.wordpress.org/themes/basics/template-tags/), `get_header()`, the browser will not render the contents of this file.
  -->
 
-`header.php` ファイルは、まさに期待通りのものになります。このファイルには、ブラウザーがヘッダーとしてレンダリングする、すべてのコードが含まれています。別のテンプレート・ファイルが [テンプレート・タグ](https://developer.wordpress.org/themes/basics/template-tags/) と呼ばれる `get_header()` をコールしない限り、ブラウザーが本ファイルのコンテンツをレンダリングしないこれは、パーシャル・テンプレート・ファイルです。
+`header.php` ファイルは、まさに期待通りのものになります。このファイルには、ブラウザーがヘッダーとしてレンダリングする、すべてのコードが含まれています。このファイルはパーシャル・テンプレート・ファイルです。別のテンプレート・ファイルが [テンプレート・タグ](https://developer.wordpress.org/themes/basics/template-tags/) `get_header()` をコールしない限り、ブラウザーは本ファイルのコンテンツをレンダリングしません。
 
 <!-- 
 Often sites have the same header regardless of the page or post you’re on.  However, some sites have slight variations such as a secondary navigation or different banner image depending on the page. Your `header.php` file can handle all these variations if you use [conditional tags](https://developer.wordpress.org/themes/basics/conditional-tags/).
