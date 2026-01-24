@@ -168,7 +168,7 @@ The above `comments.php` can be broken down to the below parts for better unders
 2.  [コメント・タイトル](#comments-title)
 3.  [コメント一覧](#comment-listing)
 4.  [コメントのページ送り](#comment-pagination)
-5.  [コメントは、受け付けていません。](#comments-are-closed-message)
+5.  [「コメントは、受け付けていません。」メッセージ](#comments-are-closed-message)
 6.  [終わり](#the-end)
 
 <!-- 
