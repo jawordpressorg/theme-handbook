@@ -231,7 +231,7 @@ function themeslug_enqueue_block_styles() {
 You can also configure additional arguments for your call to `wp_enqueue_block_style()`, but the above is the minimum needed for WordPress to inline your CSS code in the `<head>` area of the site.
  -->
 
-`wp_enqueue_block_style()` 呼び出しに追加の引数も構成できますが、WordPress でサイトの `<head>` エリアにインラインで  CSS コードを挿入するために必要な最小限の方法は上の方法になります。
+`wp_enqueue_block_style()` 呼び出しに追加の引数も構成できますが、WordPress でサイトの `<head>` エリアにインラインで CSS コードを挿入するために必要な最小限の方法は上の方法になります。
 
 <!-- 
 For a deeper dive into block stylesheets, check out [Leveraging theme.json and per-block styles for more performant themes](https://developer.wordpress.org/news/2022/12/leveraging-theme-json-and-per-block-styles-for-more-performant-themes/) on the WordPress Developer Blog.
