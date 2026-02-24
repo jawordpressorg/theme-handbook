@@ -262,7 +262,7 @@ The quote format is especially well suited to posting a simple quote from a pers
 A chat in particular will probably tend towards a monospaced type display, in many cases. With some styling on the .format-chat, you can make it display the content of the post using a monospaced font, perhaps inside a gray background div or similar, thus distinguishing it visually as a chat session.
  -->
 
-特にチャットは、多くの場合、等幅フォントでの表示になる傾向があります。`.format-chat` に若干のスタイリングを施すことで、投稿のコンテンツを等幅フォントで表示させることができ、たとえば、灰色の背景の `div` 要素などの内部に配置することで、視覚的にチャットセッションとして区別できます。
+`chat` フォーマットは、多くの場合、等幅フォントでの表示になる傾向があります。`.format-chat` に若干のスタイリングを施すことで、投稿のコンテンツを等幅フォントで表示させることができ、たとえば、灰色の背景の `div` 要素などの内部に配置することで、視覚的にチャットセッションとして区別できます。
 
 <!-- 
 ### Formats in a Child Theme
