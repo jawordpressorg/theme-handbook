@@ -244,7 +244,7 @@ Each of the formats lend themselves to a certain type of “style”, as dictate
 For example, the aside, link, and status formats are simple, short, and minor. These will typically be displayed without title or author information. The aside could contain perhaps a paragraph or two, while the link would be only a sentence with a link to a URL in it. Both the link and aside might have a link to the single post page (using [the\_permalink()](https://developer.wordpress.org/reference/functions/the_permalink/)) and would thus allow comments, but the status format very likely would not have such a link.
  -->
 
-たとえば、`aside`、`link`、`status` フォーマットはシンプルで短く、軽微なものです。これらは通常、`title` や `author` 情報なしで表示されます。`aside` には1～2段落が含まれる可能性がありますが、`link` は URL へのリンクを含む一文のみとなります。`link` と `aside` の両方には個別投稿ページへのリンク ([`the_permalink()`](https://developer.wordpress.org/reference/functions/the_permalink/) を使用) が含まれる可能性があり、コメントが許可されますが、`status` フォーマットにはそのようなリンクが含まれない可能性が高いです。
+たとえば、`aside`、`link`、`status` フォーマットはシンプルで短く、付随的なものです。これらは通常、`title` や `author` 情報なしで表示されます。`aside` には1～2段落が含まれる可能性がありますが、`link` は URL へのリンクを含む一文のみとなります。`link` と `aside` の両方には個別投稿ページへのリンク ([`the_permalink()`](https://developer.wordpress.org/reference/functions/the_permalink/) を使用) が含まれる可能性があり、コメントが許可されますが、`status` フォーマットにはそのようなリンクが含まれない可能性が高くなります。
 
 <!-- 
 An image post, on the other hand, would typically just contain a single image, with or without a caption/text to go along with it. An audio/video post would be the same but with audio/video added in. Any of these three could use either plugins or standard [Embeds](https://codex.wordpress.org/Embeds) to display their content. Titles and authorship might not be displayed for them either, as the content could be self-explanatory.
