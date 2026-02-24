@@ -71,7 +71,7 @@ The following basic options are supported:
 #### loop
  -->
 
-#### loop
+#### `loop`
 
 <!-- 
 Allows for the looping of media.
@@ -91,7 +91,7 @@ Allows for the looping of media.
 #### autoplay
  -->
 
-#### autoplay
+#### `autoplay`
 
 <!-- 
 Causes the media to automatically play as soon as the media file is ready.
