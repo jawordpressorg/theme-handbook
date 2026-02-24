@@ -238,7 +238,7 @@ For example, one could hide post titles from status format posts by putting this
 Each of the formats lend themselves to a certain type of “style”, as dictated by modern usage. It is well to keep in mind the intended usage for each format when applying styles.
  -->
 
-各フォーマットは、現代の使用法によって規定される、特定の種類のある種の「スタイル」に適しています。スタイルを適用する際には、各フォーマットの意図された用途を念頭に置くことが望ましいです。
+各フォーマットは、現代の使用法によって規定される、ある種の「スタイル」に適しています。スタイルを適用する際には、各フォーマットの意図された用途を念頭に置くとよいでしょう。
 
 <!-- 
 For example, the aside, link, and status formats are simple, short, and minor. These will typically be displayed without title or author information. The aside could contain perhaps a paragraph or two, while the link would be only a sentence with a link to a URL in it. Both the link and aside might have a link to the single post page (using [the\_permalink()](https://developer.wordpress.org/reference/functions/the_permalink/)) and would thus allow comments, but the status format very likely would not have such a link.
