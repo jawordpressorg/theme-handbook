@@ -20,7 +20,7 @@ You can directly embed audio files and play them back using a simple shortcode *
 ### Audio shortcode
  -->
 
-### 音声ショートコード
+### 「音声」ショートコード
 
 <!-- 
 Following shortcode displays audio player that loads music.mp3 file:
