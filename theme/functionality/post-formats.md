@@ -274,7 +274,7 @@ A chat in particular will probably tend towards a monospaced type display, in ma
 [Child Themes](https://developer.wordpress.org/themes/advanced-topics/child-themes/) inherit the post formats defined by the parent theme. Calling [add\_theme\_support()](https://developer.wordpress.org/reference/functions/add_theme_support/) for post formats in a child theme must be done at a later priority than that of the parent theme and will **override** the existing list, not add to it.
  -->
 
-[子テーマ](https://developer.wordpress.org/themes/advanced-topics/child-themes/) は、親テーマで定義された投稿フォーマットを継承します。子テーマ内で投稿フォーマットに対して [`add_theme_support()`](https://developer.wordpress.org/reference/functions/add_theme_support/) をコールする場合、親テーマよりも低い優先度で行う必要があり、既存のリストに追加するのではなく **オーバーライド** します。
+[子テーマ](https://developer.wordpress.org/themes/advanced-topics/child-themes/) は、親テーマで定義された投稿フォーマットを継承します。子テーマ内で投稿フォーマットに対して [`add_theme_support()`](https://developer.wordpress.org/reference/functions/add_theme_support/) をコールする場合、親テーマよりも低い優先度で行う必要があり、その呼び出しは既存のリストに追加するのではなく **オーバーライド** します。
 
 ```php
 <?php
