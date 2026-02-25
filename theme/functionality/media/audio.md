@@ -139,7 +139,7 @@ If you want to change the look & feel of audio player, you can do so by targetin
 #### Supported Audio format
  -->
 
-#### 対応音声フォーマット
+#### サポートされている音声フォーマット
 
 <!-- 
 *   mp3
