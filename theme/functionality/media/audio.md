@@ -173,6 +173,6 @@ For more technical details such as the internal library that enables this functi
 *   [Function do\_shortcode()](https://developer.wordpress.org/reference/functions/do_shortcode/)
  -->
 
-*   [コアでの、音声/動画サポート](https://make.wordpress.org/core/2013/04/08/audio-video-support-in-core/).
+*   [コアでの、音声/動画サポート](https://make.wordpress.org/core/2013/04/08/audio-video-support-in-core/)
 *   [「音声」ショートコード](https://codex.wordpress.org/Audio_Shortcode)
 *   [関数 `do_shortcode()`](https://developer.wordpress.org/reference/functions/do_shortcode/)
