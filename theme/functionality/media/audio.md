@@ -149,11 +149,11 @@ If you want to change the look & feel of audio player, you can do so by targetin
 *   wav
  -->
 
-*   mp3
-*   ogg
-*   wma
-*   m4a
-*   wav
+*   `mp3`
+*   `ogg`
+*   `wma`
+*   `m4a`
+*   `wav`
 
 <!-- 
 ### References
