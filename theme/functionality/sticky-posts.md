@@ -129,7 +129,7 @@ $query = new WP_Query( $args );
 Exclude sticky posts from a category. Return posts within the category, but exclude sticky posts completely, and adhere to paging rules:
  -->
 
-カテゴリーから、固定投稿を除外します。カテゴリー内の投稿を返すが、固定投稿は完全に除外し、ページングルールに従います:
+カテゴリーから、固定投稿を除外します。カテゴリー内の投稿を返しますが、固定投稿は完全に除外し、ページングルールに従います:
 
 ```php
 <?php
