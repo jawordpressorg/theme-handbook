@@ -44,7 +44,7 @@ To use sidebars, you must register them in `functions.php`.
 To begin, `register_sidebar()` has several parameters that should always be defined regardless of whether they are marked as optional. These include x, y, and z.
  -->
 
-まず、`register_sidebar()` には、`optional` とマークされているかどうかにかかわらず、常に定義すべきパラメータがいくつかあります。これには x、y、z が含まれます。
+まず、`register_sidebar()` には、`optional` とマークされているかどうかにかかわらず、常に定義すべきパラメータがいくつかあります。これには `name`、`id`、`description` が含まれます。
 
 <!-- 
 *   **name** – your name for the sidebar. This is the name users will see in the Widgets panel.
@@ -57,10 +57,10 @@ To begin, `register_sidebar()` has several parameters that should always be def
 *   **after\_title** – HTML that is placed after every title. Should be used to close tags from `before_title`.
  -->
 
-*   **name** – サイドバーに付ける名称です。「ウィジェット」パネルに表示される名称になります。
-*   **id** – 小文字で指定する必要があります。あなたのテーマでは `dynamic_sidebar` 関数を使用してこれをコールします。
-*   **description** – サイドバーの説明文です。管理画面の「ウィジェット」パネルにも表示されます。
-*   **class** – ウィジェットの HTML に割り当てる、CSS クラス名です。
+*   **`name`** – サイドバーに付ける名称です。「ウィジェット」パネルに表示される名称になります。
+*   **`id`** – 小文字で指定する必要があります。あなたのテーマでは `dynamic_sidebar` 関数を使用してこれをコールします。
+*   **`description`** – サイドバーの説明文です。管理画面の「ウィジェット」パネルにも表示されます。
+*   **`class`** – ウィジェットの HTML に割り当てる、CSS クラス名です。
 *   **`before_widget`** – 各ウィジェットの前に配置される HTML です。
 *   **`after_widget`** – 各ウィジェットの後に配置される HTML です。`before_widget` で開始したタグを閉じるために使用します。
 *   **`before_title`** – ヘッダータグなど、各ウィジェットのタイトル前に配置される HTML です。
