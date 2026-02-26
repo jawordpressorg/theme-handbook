@@ -26,7 +26,7 @@ WordPress では、画像、動画、音声ファイルなどさまざまなメ�
 If a media file is uploaded within the edit screen, it will be automatically attached to the current post being created or edited. If it is uploaded via the Media’s Add New Screen or the Media Library Screen, it will be unattached, but may become attached to a post when it is inserted into a post later on.
  -->
 
-メディアファイルを編集画面内でアップロードした場合、作成中または編集中の、現在の投稿に自動的に添付されます。メディアの「新規追加」画面または「メディアライブラリ」画面経由でアップロードした場合、添付状態にはならず、後で投稿に挿入された際に、添付される可能性があります。
+メディアファイルを編集画面内でアップロードした場合、作成中または編集中の、現在の投稿に自動的に添付されます。メディアの「新規追加」画面または「メディアライブラリ」画面経由でアップロードした場合、添付はされず、後で投稿に挿入すると添付されます。
 
 <!-- 
 ### Retrieving attachment ID or image ID
