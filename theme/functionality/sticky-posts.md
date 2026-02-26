@@ -176,7 +176,7 @@ $query = new WP_Query( array(
 To help theme authors perform simpler styling, the [post\_class()](https://developer.wordpress.org/reference/functions/post_class/) function is used to add class=”…” to DIV, just add:
  -->
 
-テーマ作者がシンプルにスタイリングできるように、[`post_class()`](https://developer.wordpress.org/reference/functions/post_class/) 関数を使って、`div` に `class="…"` をただ追加しましょう:
+テーマ作者がシンプルにスタイリングできるように、[`post_class()`](https://developer.wordpress.org/reference/functions/post_class/) 関数を使って、`div` に `class="…"` を追加しましょう。以下を追加するだけで済みます。
 
 ```php
 <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
