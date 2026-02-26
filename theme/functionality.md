@@ -32,7 +32,7 @@ Now that you’re familiar with the basics of theme development, it’s time to 
 *   [サイドバー](https://developer.wordpress.org/themes/functionality/sidebars/ "Sidebars") – あなたのテーマに、ユーザーがウィジェットを追加できる、ウィジェット対応エリアを追加します。
 *   [ウィジェット](https://developer.wordpress.org/themes/functionality/widgets/ "Widgets") – サイドバーに追加可能な、再利用可能な PHP オブジェクトを作成します。
 *   [ナビゲーションメニュー](https://developer.wordpress.org/themes/functionality/navigation-menus/ "Navigation Menus") – あなたのテーマ内に、メニューを登録および表示します。
-*   [タクソノミーテンプレート](https://developer.wordpress.org/themes/functionality/taxonomy-templates/ "Taxonomy Templates") – あなたのタクソノミーアーカイヴページ用のテンプレートを作成します。
+*   [タクソノミーテンプレート](https://developer.wordpress.org/themes/functionality/taxonomy-templates/ "Taxonomy Templates") – あなたのタクソノミーアーカイブページ用のテンプレートを作成します。
 *   [ページネーション](https://developer.wordpress.org/themes/functionality/pagination/ "Pagination") – WordPress のビルトインページネーションと連携します。
 *   [コメント](https://developer.wordpress.org/themes/template-files-section/partial-and-miscellaneous-template-files/comment-template/ "Comments") – コメントテンプレートをカスタマイズします。
 *   [メディア](https://developer.wordpress.org/themes/functionality/media/ "Media") – WordPress コアのメディア機能と連携します。
