@@ -113,7 +113,7 @@ $query = new WP_Query( $args );
 Exclude sticky posts from a category. Return ALL posts within the category, but don’t show sticky posts at the top. The ‘sticky posts’ will still show in their natural position (e.g. by date):
  -->
 
-カテゴリーから、固定投稿を除外します。カテゴリー内の全投稿を返すが、固定投稿を先頭に表示しません。「固定投稿」は、元の位置 (たとえば、日付順) に表示されます:
+カテゴリーから、固定投稿を除外します。カテゴリー内の全投稿を返しますが、固定投稿を先頭に表示しません。「固定投稿」は、元の位置 (たとえば、日付順) に表示されます:
 
 ```php
 <?php
