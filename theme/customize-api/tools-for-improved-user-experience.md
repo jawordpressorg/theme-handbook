@@ -402,7 +402,7 @@ wp.customize.selectiveRefresh.bind( 'partial-content-moved', function( placement
 The Customizer automatically handles previewing all settings out-of-the-box. This is done by silently reloading the entire preview window, with settings being filtered by PHP in that Ajax call. While this works just fine, it can be very slow since the entire front-end must be reloaded for every single setting change. Selective Refresh improves this experience by refreshing only the elements that have changed, but due to the Ajax call, there is still a delay in seeing the changes in the preview.
  -->
 
-「カスタマイザー」は、すべての設定のプレビューを初期状態で自動的に処理します。これは、Ajax コール内において PHP が設定をフィルタリングしながら、プレビューウィンドウ全体を暗黙的にリロードすることで実現されています。この方法は問題なく動作しますが、設定変更のたびにフロントエンド全体をリロードする必要がため、非常に遅くなる場合があります。「選択的リフレッシュ」は変更された要素のみを更新することで、この体験を改善しますが、Ajax コールのため、プレビューでの変更確認には、依然として遅延が生じます。
+「カスタマイザー」は、すべての設定のプレビューを初期状態で自動的に処理します。これは、Ajax コール内において PHP が設定をフィルタリングしながら、プレビューウィンドウ全体を暗黙的にリロードすることで実現されています。この方法は問題なく動作しますが、設定変更のたびにフロントエンド全体をリロードする必要があるため、非常に遅くなる場合があります。「選択的リフレッシュ」は変更された要素のみを更新することで、この体験を改善しますが、Ajax コールのため、プレビューでの変更確認には、依然として遅延が生じます。
 
 <!-- 
 To further improve the user experience, the Customizer offers an API for managing setting changes directly in JavaScript, allowing for truly-live previewing. The below images show a comparison of a Custom CSS option that leverages this technology, called `postMessage`, versus the standard refresh option:
