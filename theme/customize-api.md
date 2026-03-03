@@ -32,4 +32,4 @@ Customizer options can be granted to users with different capabilities on a gran
 This section contains an overview of the Customize API, including code examples and discussion of best practices. For more details, it is strongly recommended that developers study the core customizer code (all core files containing “customize”). This is considered the canonical, official documentation for the Customize API outside of the inline documentation within the core code.
  -->
 
-本セクションでは、カスタマイズ API の概要を説明し、コード例やベストプラクティスに関する議論を含みます。詳細については、開発者はコアカスタマイザーコード (「customize」を含む、すべてのコアファイル) を学ぶことを強く推奨します。これは、コアコード内のインラインドキュメント外における、カスタマイズ API に関する正式な標準ドキュメントと見なされます。
+本セクションでは、カスタマイズ API の概要を説明し、コード例やベストプラクティスに関する議論を含みます。詳細については、開発者はコアカスタマイザーコード (「customize」を含む、すべてのコアファイル) を学ぶことを強く推奨します。これは、コアコード内のインラインドキュメントを除けば、カスタマイズ API に関する正式な公式ドキュメントと見なされます。
