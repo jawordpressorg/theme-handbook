@@ -138,7 +138,7 @@ WordPress v4.5で導入された、「カスタマイザー」プレビューで
 The logic in pure-JavaScript `postMessage` updates is duplicated. The JavaScript in the Customizer must mirror the PHP that produces the markup, or take shortcuts to approximate it. But Selective Refresh is DRY as there’s no duplication of JavaScript and PHP. An Ajax request retrieves the new markup for the preview.
  -->
 
-純粋な JavaScript の `postMessage` 更新のロジックは重複しています。「カスタマイザー」内の JavaScript は、マークアップを生成する PHP を反映させるか、近付けるための近道を取る必要があります。しかし「選択的リフレッシュ」は DRY であり、JavaScript と PHP の重複はありません。Ajax リクエストがプレビュー用の新しいマークアップを取得します。
+純粋な JavaScript の `postMessage` 更新のロジックは重複しています。「カスタマイザー」内の JavaScript は、マークアップを生成する PHP コードと同じものになるか、似たものになるよう近道を取る必要があります。しかし「選択的リフレッシュ」は DRY であり、JavaScript と PHP の重複はありません。Ajax リクエストがプレビュー用の新しいマークアップを取得します。
 
 <!-- 
 And because of this Ajax call, the refresh is **accurate**. It uses the filters that can alter the markup. It shows the same result that appears on the front end.
