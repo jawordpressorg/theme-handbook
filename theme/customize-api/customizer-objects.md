@@ -59,7 +59,7 @@ function my_customize_register( $wp_customize ) {
 Note: themes generally should not modify core sections and panels with the get methods, since themes should not modify core, theme-agnostic functionality. Plugins are encouraged to use these functions where necessary. Themes should not “reorganize” customizer sections that aren’t added by the theme.
  -->
 
-注記: テーマは、コアの機能を変更すべきではないので、コアのセクションやパネルを `get` メソッドで変更すべきではありません。プラグインは、必要な場合に、これらの関数を使用することが推奨されます。テーマは、テーマ自身によって追加されていないカスタマイザーのセクションを「再編成」すべきではありません。
+注記: テーマは一般に、`get` メソッドを使用してコアのセクションやパネルを変更すべきではありません。なぜなら、テーマはコアの、テーマ非依存の機能を変更すべきではないからです。必要に応じて、プラグインでこれらの関数を使うことが推奨されます。テーマは、自分で追加していないカスタマイザーのセクションを「再配置」してはいけません。
 
 <!-- 
 ## Settings
