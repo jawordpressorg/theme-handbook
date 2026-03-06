@@ -288,7 +288,7 @@ $wp_customize->add_control( new WP_Customize_Media_Control( $wp_customize, 'audi
 Note that settings associated with `WP_Customize_Media_Control` save the associated attachment ID, while all other media-related controls (children of `WP_Customize_Upload_Control`) save the media file URL to the setting. [More information](https://make.wordpress.org/core/2015/07/16/new-customizer-media-controls-in-4-3-and-4-2/) is available on Make WordPress Core. Additionally, WordPress 4.3 introduced the `WP_Customize_Cropped_Image_Control`, which provides an interface for cropping an image after selecting it. This is useful for instances where a particular aspect ratio is needed.
  -->
 
-`WP_Customize_Media_Control` に関連付けられた設定は、関連する添付ファイル ID を保存する一方、その他のメディア関連コントロール (`WP_Customize_Upload_Control` の子要素) は、設定にメディアファイルの URL を保存することに留意しましょう。[詳細情報](https://make.wordpress.org/core/2015/07/16/new-customizer-media-controls-in-4-3-and-4-2/) は、Make WordPress Core で確認できます。さらに、WordPress v4.3では、画像を選択した後にクロップするためのインターフェースを提供する `WP_Customize_Cropped_Image_Control` が導入されました。これは、特定のアスペクト比が必要な場合に便利です。
+`WP_Customize_Media_Control` に関連付けられた設定は、関連する添付ファイル ID を保存する一方、その他のメディア関連コントロール (`WP_Customize_Upload_Control` の子要素) は、設定にメディアファイルの URL を保存することに留意しましょう。[詳細情報](https://make.wordpress.org/core/2015/07/16/new-customizer-media-controls-in-4-3-and-4-2/) は、Make WordPress Core で確認できます。さらに、WordPress v4.3では、画像を選択した後に切り抜くためのインターフェースを提供する `WP_Customize_Cropped_Image_Control` が導入されました。これは、特定のアスペクト比が必要な場合に便利です。
 
 <!-- 
 ## Sections
