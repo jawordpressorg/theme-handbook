@@ -315,7 +315,7 @@ First, create a new folder on your computer, and name it *my-first-theme*. This 
 You can use any basic text editor on your computer to create a new file called style.css.
  -->
 
-あなたのコンピューター上の任意の基本テキストエディターを使用して、**style.css** という名前の新規ファイルを作成できます。
+あなたのコンピューター上の任意のテキストエディターを使用して、**style.css** という名前の新規ファイルを作成します。
 
 <!-- 
 If you’re on a Windows-based machine use [Notepad](http://en.wikipedia.org/wiki/Notepad_\(software\)) for now and if you’re using a Mac then use [TextEdit](http://en.wikipedia.org/wiki/TextEdit).
