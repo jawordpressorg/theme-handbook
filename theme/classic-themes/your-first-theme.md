@@ -26,7 +26,7 @@ This section is for a [block theme](https://developer.wordpress.org/themes/block
 The *only* files needed for a block theme is,  
  -->
 
-ブロックテーマで必要な *唯一の* ファイルは、
+ブロックテーマで必要な *最低限の* ファイルは、
 
 <!-- 
 *   **index.html**, which is the main template to display your list of posts. Index.html needs to be placed inside a folder called templates.
